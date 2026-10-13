@@ -10,7 +10,7 @@ A Dark Room-like browser game where music is combat. Text, buttons, and step gri
 | UI          | React + Tailwind v4 + shadcn    | Dark Room look: text, buttons, step grids                  |
 | State       | Zustand                         | UI/meta state (resources, unlocks, loadout)                |
 | Audio       | Tone.js                         | Transport, scheduling, built-in synths/drums, no samples   |
-| Theory      | Tonal.js                        | Scales, chords, intervals, note-to-MIDI                    |
+| Theory      | Vendored tables in `src/game/theory.ts` | Minimal degrees/romans/transpose with zero deps; Tonal.js dropped (all published lines ship a broken `main` entry — re-adopt when fixed) |
 | Persistence | localStorage versioned JSON     | Music model is serializable, no backend at first           |
 | Tests       | Vitest                          | Combat sim is pure TS, tested without audio                |
 | Hosting     | Cloudflare Pages / Vercel / itch.io | Any static host works                                  |
