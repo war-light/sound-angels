@@ -8,37 +8,36 @@ import {
   type StepSnapshot,
 } from "@/game/arrangement"
 import { midiToNote } from "@/game/theory"
+import { INSTRUMENTS } from "@/data/enemies"
 import { ensureAudio } from "./context"
-import { getVoices, initVoices } from "./synths"
+import { applyKit, getVoices, initVoices, instrumentVoices } from "./synths"
 
 export type StepHandler = (global: number, snap: StepSnapshot) => void
 
 let provider: () => Arrangement | null = () => null
 let chordVoice: () => string | null = () => null
+/** Instrument sounding a melody lane, or null when the lane is muted. */
+let melodyVoice: (slot: number) => string | null = () => "strings"
+/** Instrument holding the beat seat, or null when it is empty. */
+let beatVoice: () => string | null = () => null
 let handler: StepHandler | null = null
 let playing = false
 let stepCounter = 0
 let repeatId: number | null = null
 
-export function setArrangementProvider(p: () => Arrangement | null): void {
-  provider = p
-}
-
-/** Who voices the bar-start chord stabs (chord-slot member's instrument). */
-export function setChordVoiceProvider(p: () => string | null): void {
-  chordVoice = p
-}
-
-export function setStepHandler(h: StepHandler | null): void {
-  handler = h
-}
-
-export function isPlaying(): boolean {
-  return playing
-}
-
-export function currentStep(): number {
-  return stepCounter
+/** Single wiring site: the session store calls this once at module load. */
+export function configurePlayer(cfg: {
+  arrangement: () => Arrangement | null
+  chordVoice: () => string | null
+  melodyVoice: (slot: number) => string | null
+  beatVoice: () => string | null
+  onStep: StepHandler | null
+}): void {
+  provider = cfg.arrangement
+  chordVoice = cfg.chordVoice
+  melodyVoice = cfg.melodyVoice
+  beatVoice = cfg.beatVoice
+  handler = cfg.onStep
 }
 
 export function setBpm(bpm: number): void {
@@ -48,22 +47,34 @@ export function setBpm(bpm: number): void {
 function triggerAt(time: number, snap: StepSnapshot, bpm: number): void {
   const v = getVoices()
   const stepDur = 60 / Math.max(50, bpm) / 4 // seconds per 16th
+  // Beat source: the keeper's instrument colors drums + bass, if seated.
+  const beat = beatVoice()
+  applyKit(beat && INSTRUMENTS[beat] ? INSTRUMENTS[beat].timbre.kit : null)
+  const bassVoice = instrumentVoices(beat).bass
   if (snap.kick) v.kick.triggerAttackRelease("C1", "8n", time)
   if (snap.snare) v.snare.triggerAttackRelease("16n", time)
   if (snap.hat) v.hat.triggerAttackRelease("32n", time + 0.001)
   if (snap.bass != null) {
-    v.bass.triggerAttackRelease(midiToNote(snap.bass), "8n", time)
+    bassVoice.triggerAttackRelease(midiToNote(snap.bass), "8n", time)
   }
-  // One pooled lead voice per melody slot, staggered by milliseconds so
-  // stacked onsets stay distinct. Long notes hold for len steps.
+  // Melody lanes: each onset through its attacker's own lead voice.
+  // Unbound lanes (no placed attacker) are muted: their notes rest unplayed.
   snap.melodies.forEach((m, i) => {
+    const inst = melodyVoice(m.slot)
+    if (inst == null) return
     const at = time + i * 0.004
-    v.lead.triggerAttackRelease(midiToNote(m.midi), Math.max(0.06, m.len * stepDur * 0.9), at)
+    instrumentVoices(inst).lead.triggerAttackRelease(
+      midiToNote(m.midi), Math.max(0.06, m.len * stepDur * 0.9), at,
+    )
   })
   if (snap.step === 0 && snap.chord.length > 0) {
-    // Back-row voicing: the chord-keeper's instrument shifts the stab register.
-    const shift = chordVoice() === "piano" ? 12 : chordVoice() === "brass" ? -12 : 0
-    v.chords.triggerAttackRelease(snap.chord.map((m) => midiToNote(m + shift)), "1m", time, 0.8)
+    // Chord pad through the keeper's own pad voice. No living keeper, no pad.
+    const keeper = chordVoice()
+    if (keeper != null) {
+      instrumentVoices(keeper).pad.triggerAttackRelease(
+        snap.chord.map((m) => midiToNote(m)), "1m", time, 0.8,
+      )
+    }
   }
 }
 
@@ -98,9 +109,5 @@ export function stop(): void {
   if (!playing) return
   Tone.getTransport().stop()
   playing = false
-}
-
-/** Reset the loop position to the top (keeps voices pooled). */
-export function rewind(): void {
   stepCounter = 0
 }

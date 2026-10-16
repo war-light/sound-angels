@@ -16,10 +16,6 @@ export interface NoteEvent {
   len: number
 }
 
-export function isLongNote(e: NoteEvent): boolean {
-  return e.len >= 4
-}
-
 export interface Arrangement {
   bpm: number
   bars: number
@@ -121,14 +117,6 @@ export function toggleNoteEvent(
   return { ...arr, tracks }
 }
 
-/** Clear a whole attacker track (track-wipe enemies do this mid-fight). */
-export function deleteTrack(arr: Arrangement, slot: number): Arrangement {  checkSlot(slot)
-  const tracks = arr.tracks.map((tr, sl) =>
-    sl === slot ? grid<NoteEvent | null>(arr.bars, arr.stepsPerBar, null) : tr.map((row) => [...row]),
-  )
-  return { ...arr, tracks }
-}
-
 /** Clear every attacker track (track-wipe enemies). */
 export function clearTracks(arr: Arrangement): Arrangement {
   return { ...arr, tracks: emptyTracks(arr.bars, arr.stepsPerBar) }
@@ -161,6 +149,13 @@ export function toggleDrumStep(
 export function setBarChord(arr: Arrangement, bar: number, roman: string): Arrangement {
   if (bar < 0 || bar >= arr.bars) throw new Error(`Bar out of range: ${bar}`)
   const chords = arr.chords.map((c, b) => (b === bar ? roman : c))
+  return { ...arr, chords }
+}
+
+/** Replace the whole progression (preset picker). Cycles/truncates to fit bars. */
+export function setChords(arr: Arrangement, romans: string[]): Arrangement {
+  if (romans.length === 0) throw new Error("A progression needs at least one chord")
+  const chords = Array.from({ length: arr.bars }, (_, b) => romans[b % romans.length])
   return { ...arr, chords }
 }
 
@@ -247,14 +242,7 @@ export function hashMelodySet(
   tracks: (NoteEvent | null)[][][],
   chords: string[],
 ): string {
-  const parts: string[] = []
-  tracks.forEach((tr, slot) => {
-    tr.forEach((row, bar) => {
-      row.forEach((e, step) => {
-        if (e != null) parts.push(`${slot}:${bar}:${step}:${e.degree}:${e.len}`)
-      })
-    })
-  })
+  const parts = onsetKeysOf(tracks)
   parts.sort()
   parts.push(`chords=${chords.join(",")}`)
   const s = parts.join("|")
@@ -263,4 +251,30 @@ export function hashMelodySet(
     h = ((h << 5) + h + s.charCodeAt(i)) | 0
   }
   return (h >>> 0).toString(16).padStart(8, "0")
+}
+
+/**
+ * Content key of one melody onset. Matches the tuple format used by
+ * hashMelodySet so potency tracking and preset dedup agree on identity:
+ * same slot/bar/step/degree/len = the same note.
+ */
+export function onsetKey(slot: number, bar: number, step: number, e: NoteEvent): string {
+  return `${slot}:${bar}:${step}:${e.degree}:${e.len}`
+}
+
+function onsetKeysOf(tracks: (NoteEvent | null)[][][]): string[] {
+  const keys: string[] = []
+  tracks.forEach((tr, slot) => {
+    tr.forEach((row, bar) => {
+      row.forEach((e, step) => {
+        if (e != null) keys.push(onsetKey(slot, bar, step, e))
+      })
+    })
+  })
+  return keys
+}
+
+/** Every onset key currently on the loop. */
+export function allOnsetKeys(arr: Arrangement): string[] {
+  return onsetKeysOf(arr.tracks)
 }

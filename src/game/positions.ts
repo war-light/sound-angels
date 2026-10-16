@@ -3,13 +3,15 @@
 // is derived (party members in no slot), never stored, so it cannot desync.
 export type SlotId = "chord" | "beat" | "front"
 
+import { ATTACK_SLOTS } from "./arrangement"
+
 export interface Slots {
   chord: string | null
   beat: string | null
   front: string[]
 }
 
-export const MAX_FRONT = 3
+export const MAX_FRONT = ATTACK_SLOTS
 
 export function defaultSlots(partyIds: string[]): Slots {
   return {

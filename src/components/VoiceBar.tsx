@@ -1,29 +1,74 @@
-import { Button } from "@/components/ui/button"
+import { useEffect, useState } from "react"
+import { countOnsets } from "@/game/arrangement"
+import { hasLiveAttacker } from "@/game/combat"
 import { useSessionStore } from "@/state/useSessionStore"
 
-/** Shared party loop-energy gauge + resolve. Lives in the center stage. */
+/** True while the keyboard focus sits inside a text input (WASD captured). */
+function useTypingFocus(): boolean {
+  const [typing, setTyping] = useState(
+    () =>
+      typeof document !== "undefined" &&
+      (document.activeElement?.tagName === "INPUT" ||
+        document.activeElement?.tagName === "TEXTAREA"),
+  )
+  useEffect(() => {
+    const sync = () => {
+      const el = document.activeElement as HTMLElement | null
+      setTyping(el != null && (el.tagName === "INPUT" || el.tagName === "TEXTAREA"))
+    }
+    window.addEventListener("focusin", sync)
+    window.addEventListener("focusout", sync)
+    return () => {
+      window.removeEventListener("focusin", sync)
+      window.removeEventListener("focusout", sync)
+    }
+  }, [])
+  return typing
+}
+
+/**
+ * Read-only loop status that also says WHY wasd is dead: stopped transport,
+ * captured input focus, open chart, or nobody left to sing through.
+ */
 export function VoiceBar() {
   const fight = useSessionStore((s) => s.fight)
-  const doStrike = useSessionStore((s) => s.doStrike)
-  const ready = fight.voiceGauge >= 100 && !fight.over
+  const arrangement = useSessionStore((s) => s.arrangement)
+  const playing = useSessionStore((s) => s.playing)
+  const performerId = useSessionStore((s) => s.performerId)
+  const typing = useTypingFocus()
+
+  const voices = countOnsets(arrangement)
+  const faded = Object.values(fight.potency).filter((p) => p < 1).length
+
+  let status: string
+  if (fight.over === "player") {
+    status = "foes silenced"
+  } else if (fight.over === "enemy") {
+    status = "fallen"
+  } else if (!playing) {
+    status = "stopped — press play to sing with WASD"
+  } else if (typing) {
+    status = "keys captured by the input — click out to sing"
+  } else if (fight.activeQte?.kind === "chord" || fight.activeQte?.kind === "preset") {
+    status = "chart open — WASD belongs to the chart"
+  } else if (!hasLiveAttacker(fight) && performerId !== fight.slots.beat) {
+    status = "no living attacker — seat a voice up front"
+  } else if (voices === 0) {
+    status = "the loop is silent — sing with WASD"
+  } else if (faded > 0) {
+    status = `loop singing · ${voices} voices · ${faded} fading`
+  } else {
+    status = `loop singing · ${voices} voices`
+  }
 
   return (
     <div className="flex items-center gap-3">
-      <span className="text-muted-foreground w-20 shrink-0 text-xs tracking-widest uppercase">
-        voice {Math.round(fight.voiceGauge)}
+      <span className="text-muted-foreground text-xs tracking-widest uppercase">
+        voices
       </span>
-      <div className="bg-muted h-2 flex-1 overflow-hidden rounded-full">
-        <div className="bg-primary h-full rounded-full" style={{ width: `${fight.voiceGauge}%` }} />
-      </div>
-      <Button onClick={doStrike} disabled={!ready} size="sm">
-        {fight.over === "player"
-          ? "foes silenced"
-          : fight.over === "enemy"
-            ? "fallen"
-            : ready
-              ? "resolve!"
-              : "gathering…"}
-      </Button>
+      <span className="font-mono text-xs text-muted-foreground" role="status">
+        {status}
+      </span>
     </div>
   )
 }

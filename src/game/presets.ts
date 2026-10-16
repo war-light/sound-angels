@@ -1,7 +1,9 @@
 // Melody-set presets with cooldowns + hash-based duplicate detection.
 // Deleting a preset and recreating the identical set does NOT bypass the
 // cooldown: entries are keyed by content hash and tombstoned, never removed.
-import type { Arrangement } from "./arrangement"
+// Entries carry a snapshot of the tracks + chords so a cooled-down preset
+// can be run back (recalled) mid-fight.
+import type { Arrangement, NoteEvent } from "./arrangement"
 import { countOnsets, hashMelodySet } from "./arrangement"
 
 export interface PresetEntry {
@@ -9,6 +11,8 @@ export interface PresetEntry {
   hash: string
   cooldownUntilTick: number
   deleted: boolean
+  tracks: (NoteEvent | null)[][][]
+  chords: string[]
 }
 
 export type PresetStore = Record<string, PresetEntry>
@@ -19,8 +23,8 @@ export function cooldownFor(arr: Arrangement): number {
   return loop * 2 + Math.ceil(countOnsets(arr) / 8)
 }
 
-export function hashArrangement(arr: Arrangement): string {
-  return hashMelodySet(arr.tracks, arr.chords)
+function cloneTracks(tracks: (NoteEvent | null)[][][]): (NoteEvent | null)[][][] {
+  return tracks.map((tr) => tr.map((row) => row.map((e) => (e ? { ...e } : null))))
 }
 
 /**
@@ -33,7 +37,7 @@ export function savePreset(
   arr: Arrangement,
   nowTick: number,
 ): { store: PresetStore; entry: PresetEntry; fresh: boolean } {
-  const hash = hashArrangement(arr)
+  const hash = hashMelodySet(arr.tracks, arr.chords)
   const prev = store[hash]
   if (prev) {
     const entry: PresetEntry = { ...prev, name, deleted: false }
@@ -44,6 +48,8 @@ export function savePreset(
     hash,
     cooldownUntilTick: nowTick + cooldownFor(arr),
     deleted: false,
+    tracks: cloneTracks(arr.tracks),
+    chords: [...arr.chords],
   }
   return { store: { ...store, [hash]: entry }, entry, fresh: true }
 }
@@ -63,6 +69,36 @@ export function readyPresets(store: PresetStore, nowTick: number): PresetEntry[]
 }
 
 export function isOnCooldown(store: PresetStore, arr: Arrangement, nowTick: number): boolean {
-  const e = store[hashArrangement(arr)]
+  const e = store[hashMelodySet(arr.tracks, arr.chords)]
   return !!e && e.cooldownUntilTick > nowTick
+}
+
+export interface PresetRecall {
+  tracks: (NoteEvent | null)[][][]
+  chords: string[]
+  entry: PresetEntry
+}
+
+/**
+ * Run back a saved melody set once its cooldown has elapsed. Returns null
+ * when the hash is unknown, deleted, or still cooling down. Snapshots are
+ * cloned so the store copy stays pristine.
+ */
+export function recallPreset(
+  store: PresetStore,
+  hash: string,
+  nowTick: number,
+): PresetRecall | null {
+  const e = store[hash]
+  if (!e || e.deleted || e.cooldownUntilTick > nowTick) return null
+  return { tracks: cloneTracks(e.tracks), chords: [...e.chords], entry: e }
+}
+
+/** Reset all non-deleted preset cooldowns to 0 (called on fresh fight start). */
+export function resetPresetCooldowns(store: PresetStore): PresetStore {
+  const next: PresetStore = {}
+  for (const [hash, e] of Object.entries(store)) {
+    next[hash] = { ...e, cooldownUntilTick: 0 }
+  }
+  return next
 }

@@ -43,7 +43,7 @@ function refOctave(key: Key): number {
 }
 
 /** Normalize a pitch class to sharps, e.g. "Eb" -> "D#". */
-export function normalizePitchClass(pc: string): string {
+function normalizePitchClass(pc: string): string {
   const clean = pc.trim().replace(/s$/, "#").replace(/b$/, "b")
   if (SHARPS.includes(clean)) return clean
   const mapped = FLAT_TO_SHARP[clean]
@@ -92,11 +92,6 @@ export function degreeToMidi(key: Key, degree: number, octave?: number): number 
   return base + octaves * 12 + steps[inner]
 }
 
-/** Degree (1-based, any integer) -> pitch class, e.g. degree 3 in C minor -> "Eb". */
-export function degreeToPitchClass(key: Key, degree: number): string {
-  return pitchClassOfMidi(degreeToMidi(key, degree))
-}
-
 const ROMAN_DEGREE: Record<string, number> = {
   I: 1, II: 2, III: 3, IV: 4, V: 5, VI: 6, VII: 7,
 }
@@ -138,14 +133,8 @@ export function romanToChord(key: Key, roman: string): number[] {
   return chord
 }
 
-const INTERVAL_SEMITONES: Record<string, number> = {
-  "1P": 0, "2m": 1, "2M": 2, "3m": 3, "3M": 4, "4P": 5,
-  "4A": 6, "5d": 6, "5P": 7, "6m": 8, "6M": 9,
-  "7m": 10, "7M": 11, "8P": 12,
-}
-
 /** Pitch-class set of a key's scale (0..11, C=0). */
-export function scalePitchClasses(key: Key): Set<number> {
+function scalePitchClasses(key: Key): Set<number> {
   const steps = scaleSteps(key.scale)
   const tonic = SHARPS.indexOf(normalizePitchClass(key.tonic))
   return new Set(steps.map((s) => (tonic + s) % 12))
@@ -261,22 +250,6 @@ export function scoreProgression(key: Key, romans: string[]): ProgressionScore {
   const tier = total >= 75 ? "gold" : total >= 50 ? "silver" : "bronze"
   return { total, voiceLeading, diatonicFit, syntax, tier }
 }
-/** Transpose a key by a simple interval name (e.g. "5P", "-2M"). Scale kept. */
-export function transposeKey(key: Key, interval: string): Key {
-  const m = /^(-)?(\d+)(m|M|P|A|d)$/.exec(interval.trim())
-  if (!m) throw new Error(`Unsupported interval: ${interval}`)
-  const [, neg, num, qual] = m
-  const base = INTERVAL_SEMITONES[`${num}${qual}`]
-  if (base == null) throw new Error(`Unsupported interval: ${interval}`)
-  return transposeKeySemitones(key, neg ? -base : base)
-}
-
-/** Transpose a key by whole semitones (positive or negative). */
-export function transposeKeySemitones(key: Key, semitones: number): Key {
-  const tonic = pitchClassOfMidi(tonicMidi(key) + semitones)
-  return { ...key, tonic }
-}
-
 /**
  * 0..1 dissonance of melody notes against a chord.
  * Empty melody -> 0. Non-chord tones count 1, semitone clashes add 0.5 each.

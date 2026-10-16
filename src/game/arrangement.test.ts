@@ -1,9 +1,9 @@
 import { describe, expect, it } from "vitest"
 import {
   ATTACK_SLOTS,
+  clearTracks,
   countOnsets,
   createDefaultArrangement,
-  deleteTrack,
   hashMelodySet,
   locateStep,
   loopLength,
@@ -46,9 +46,9 @@ describe("edits", () => {
     expect(toggleDrumStep(arr, "kick", 0, 1).drums.kick[0][1]).toBe(true)
   })
 
-  it("deleteTrack clears one slot only", () => {
+  it("clearTracks wipes every slot", () => {
     const arr = createDefaultArrangement()
-    const next = deleteTrack(arr, 0)
+    const next = clearTracks(arr)
     expect(countOnsets(next)).toBe(0)
     expect(next.bass[0][0]).toBe(1)
   })
@@ -114,7 +114,7 @@ describe("hashMelodySet", () => {
   it("ignores renames by construction (hash covers notes + chords only)", () => {
     const arr = createDefaultArrangement()
     // Same content rebuilt cell by cell hashes identically.
-    const rebuilt = deleteTrack(arr, 0)
+    const rebuilt = clearTracks(arr)
     let cur = rebuilt
     arr.tracks[0].forEach((row, bar) => {
       row.forEach((e, step) => {

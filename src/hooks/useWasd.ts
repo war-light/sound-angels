@@ -7,7 +7,8 @@ const KEYS = new Set(["w", "a", "s", "d"])
 /**
  * WASD relative-motion performance. Key down moves the cursor + auditions;
  * key up records the held note into the loop at the playhead. Tab cycles the
- * active front performer. Ignores repeats and text inputs.
+ * active front performer. Ignores repeats and text inputs. Half-held presses
+ * are dropped when the window loses focus (lost keyups never trap a key).
  */
 export function useWasd(): void {
   useEffect(() => {
@@ -32,11 +33,16 @@ export function useWasd(): void {
       if (!KEYS.has(k)) return
       useSessionStore.getState().performUp(k as PerformKey)
     }
+    const blurred = () => {
+      useSessionStore.getState().releaseAllKeys()
+    }
     window.addEventListener("keydown", down)
     window.addEventListener("keyup", up)
+    window.addEventListener("blur", blurred)
     return () => {
       window.removeEventListener("keydown", down)
       window.removeEventListener("keyup", up)
+      window.removeEventListener("blur", blurred)
     }
   }, [])
 }

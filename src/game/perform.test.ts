@@ -4,7 +4,6 @@ import {
   HOME_CURSOR,
   moveCursor,
   pressToLen,
-  quantizeStep,
   stepMs,
 } from "./perform"
 
@@ -41,18 +40,6 @@ describe("pressToLen", () => {
     expect(pressToLen(190, 100)).toBe(2)
     expect(pressToLen(430, 100)).toBe(4)
     expect(pressToLen(2000, 100)).toBe(8)
-  })
-})
-
-describe("quantizeStep", () => {
-  it("snaps timestamps to the nearest step and wraps", () => {
-    expect(quantizeStep(0, 100, 32)).toBe(0)
-    expect(quantizeStep(149, 100, 32)).toBe(1)
-    expect(quantizeStep(3250, 100, 32)).toBe(1) // 32.5 -> wraps to 1
-  })
-
-  it("rejects empty loops", () => {
-    expect(() => quantizeStep(0, 100, 0)).toThrow()
   })
 })
 

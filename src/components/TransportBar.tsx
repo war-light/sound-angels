@@ -1,12 +1,6 @@
 import { Button } from "@/components/ui/button"
+import { FIGHT_KEYS, keyEquals } from "@/game/keys"
 import { useSessionStore } from "@/state/useSessionStore"
-
-const KEYS = [
-  { tonic: "C", scale: "minor" },
-  { tonic: "D", scale: "minor" },
-  { tonic: "E", scale: "minor" },
-  { tonic: "A", scale: "dorian" },
-] as const
 
 export function TransportBar() {
   const playing = useSessionStore((s) => s.playing)
@@ -14,17 +8,19 @@ export function TransportBar() {
   const bpm = useSessionStore((s) => s.arrangement.bpm)
   const key = useSessionStore((s) => s.arrangement.key)
   const fightKey = useSessionStore((s) => s.fight.key)
+  const nextKey = useSessionStore((s) => s.nextKey)
   const togglePlay = useSessionStore((s) => s.togglePlay)
   const setBpm = useSessionStore((s) => s.setBpm)
   const setKey = useSessionStore((s) => s.setKey)
+  const setRandomKey = useSessionStore((s) => s.setRandomKey)
   const reset = useSessionStore((s) => s.reset)
 
   return (
     <section className="flex flex-wrap items-center gap-3">
-      <Button onClick={togglePlay} disabled={starting} size="sm">
+      <Button onClick={() => togglePlay()} disabled={starting} >
         {starting ? "tuning…" : playing ? "halt" : "strike the hum"}
       </Button>
-      <Button onClick={reset} variant="outline" size="sm">
+      <Button onClick={() => reset()} variant="outline" >
         reset
       </Button>
       <label className="text-muted-foreground flex items-center gap-2 text-xs tracking-widest uppercase">
@@ -39,14 +35,26 @@ export function TransportBar() {
           aria-label="tempo"
         />
       </label>
-      <div className="flex items-center gap-1" title={playing ? `key locked at ${fightKey.tonic} ${fightKey.scale} for this fight` : "key for the next fight"}>
-        {KEYS.map((k) => {
-          const active = key.tonic === k.tonic && key.scale === k.scale
+      <div
+        className="flex items-center gap-1"
+        title={
+          playing
+            ? `key locked at ${fightKey.tonic} ${fightKey.scale} for this fight`
+            : nextKey == null
+              ? "random key for the next fight (all possibilities below)"
+              : `key for the next fight: ${nextKey.tonic} ${nextKey.scale}`
+        }
+      >
+        {FIGHT_KEYS.map((k) => {
+          // While fighting, the locked combat key is the truth.
+          // While stopped, highlight the picked next key (or the preview).
+          const shown = playing ? fightKey : (nextKey ?? key)
+          const active = keyEquals(shown, k)
           return (
             <Button
               key={`${k.tonic}-${k.scale}`}
               variant={active ? "default" : "ghost"}
-              size="sm"
+              
               disabled={playing}
               onClick={() => setKey({ tonic: k.tonic, scale: k.scale, octave: 4 })}
             >
@@ -54,6 +62,15 @@ export function TransportBar() {
             </Button>
           )
         })}
+        <Button
+          variant={playing ? "ghost" : nextKey == null ? "default" : "ghost"}
+          
+          disabled={playing}
+          title="roll a random key for the next fight"
+          onClick={setRandomKey}
+        >
+          ⚄ random
+        </Button>
       </div>
     </section>
   )

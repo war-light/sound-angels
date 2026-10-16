@@ -6,8 +6,6 @@ import {
   pitchClassOfMidi,
   romanToChord,
   tensionOf,
-  transposeKey,
-  transposeKeySemitones,
 } from "./theory"
 
 describe("degreeToMidi", () => {
@@ -20,18 +18,6 @@ describe("degreeToMidi", () => {
 
   it("wraps past the octave (degree 8 = tonic up)", () => {
     expect(degreeToMidi(DEFAULT_KEY, 8) - degreeToMidi(DEFAULT_KEY, 1)).toBe(12)
-  })
-
-  it("transposes whole-key: +2 semitones moves C minor to D minor", () => {
-    const d = transposeKeySemitones(DEFAULT_KEY, 2)
-    expect(d.tonic).toBe("D")
-    expect(degreeToMidi(d, 1)).toBe(degreeToMidi(DEFAULT_KEY, 1) + 2)
-  })
-
-  it("transposeKey keeps scale and moves tonic", () => {
-    const moved = transposeKey(DEFAULT_KEY, "5P")
-    expect(moved.tonic).toBe("G")
-    expect(moved.scale).toBe("minor")
   })
 })
 

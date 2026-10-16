@@ -48,13 +48,6 @@ export function pressToLen(pressMs: number, stepMs: number): number {
   return 1
 }
 
-/** Quantize a keypress timestamp to the nearest loop step index. */
-export function quantizeStep(elapsedMs: number, stepMs: number, loopSteps: number): number {
-  if (loopSteps <= 0) throw new Error(`Bad loop length: ${loopSteps}`)
-  const q = Math.round(elapsedMs / Math.max(1, stepMs)) % loopSteps
-  return (q + loopSteps) % loopSteps
-}
-
 /** 16th-step length in ms at a tempo. */
 export function stepMs(bpm: number): number {
   return 60000 / Math.min(160, Math.max(50, bpm)) / 4

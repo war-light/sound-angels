@@ -21,6 +21,10 @@ export interface Fighter {
   /** Attacker identity tags for weakness/resistance checks. */
   instrument?: string
   element?: string
+  characterId?: string
+  avatar?: string
+  title?: string
+  trait?: string
 }
 
 export function makeFighter(init: {
@@ -29,8 +33,13 @@ export function makeFighter(init: {
   name: string
   hp: number
   shield?: number
+  maxShield?: number
   instrument?: string
   element?: string
+  characterId?: string
+  avatar?: string
+  title?: string
+  trait?: string
 }): Fighter {
   return {
     id: init.id,
@@ -39,10 +48,14 @@ export function makeFighter(init: {
     hp: init.hp,
     max: init.hp,
     shield: init.shield ?? 0,
-    maxShield: Math.max(init.shield ?? 0, 0),
+    maxShield: init.maxShield ?? Math.max(init.shield ?? 0, 0),
     buffs: [],
     instrument: init.instrument,
     element: init.element,
+    characterId: init.characterId,
+    avatar: init.avatar,
+    title: init.title,
+    trait: init.trait,
   }
 }
 
@@ -123,6 +136,13 @@ export function tickBuffs(f: Fighter): { fighter: Fighter; events: string[] } {
     .filter((b) => b.ticksLeft > 0)
   cur = { ...cur, buffs }
   return { fighter: cur, events }
+}
+
+/** Compact status glyphs for buffs (poison ☠, regen +, exposed !, other ◈). */
+export function buffGlyphs(f: Fighter): string {
+  return f.buffs
+    .map((b) => (b.id === "poison" ? "☠" : b.id === "regen" ? "+" : b.id === "exposed" ? "!" : "◈"))
+    .join("")
 }
 
 /** Multiplicative damage-taken modifier from exposed (+%) / warded (-%). */
