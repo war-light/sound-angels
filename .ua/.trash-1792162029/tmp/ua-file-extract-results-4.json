@@ -1,0 +1,276 @@
+{
+  "scriptCompleted": true,
+  "filesAnalyzed": 7,
+  "filesSkipped": [],
+  "filesUnreadable": [],
+  "analysisOutcomes": {
+    "structure": {
+      "succeeded": 7,
+      "failed": 0
+    },
+    "callGraph": {
+      "succeeded": 7,
+      "failed": 0,
+      "skipped": 0
+    }
+  },
+  "results": [
+    {
+      "path": "src/data/encounters.test.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 57,
+      "nonEmptyLines": 49,
+      "metrics": {
+        "importCount": 2,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "src/data/encounters.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 90,
+      "nonEmptyLines": 81,
+      "functions": [
+        {
+          "name": "getEncounter",
+          "startLine": 58,
+          "endLine": 60,
+          "params": [
+            "id"
+          ]
+        },
+        {
+          "name": "validateEncounters",
+          "startLine": 63,
+          "endLine": 71,
+          "params": []
+        },
+        {
+          "name": "isEncounterUnlocked",
+          "startLine": 74,
+          "endLine": 79,
+          "params": [
+            "clearedIds",
+            "encounterId"
+          ]
+        },
+        {
+          "name": "getNextEncounterId",
+          "startLine": 82,
+          "endLine": 88,
+          "params": [
+            "encounterId"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "ENCOUNTERS",
+          "line": 13,
+          "isDefault": false
+        },
+        {
+          "name": "DEFAULT_ENCOUNTER_ID",
+          "line": 56,
+          "isDefault": false
+        },
+        {
+          "name": "getEncounter",
+          "line": 58,
+          "isDefault": false
+        },
+        {
+          "name": "validateEncounters",
+          "line": 63,
+          "isDefault": false
+        },
+        {
+          "name": "isEncounterUnlocked",
+          "line": 74,
+          "isDefault": false
+        },
+        {
+          "name": "getNextEncounterId",
+          "line": 82,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "getEncounter",
+          "callee": "ENCOUNTERS.find",
+          "lineNumber": 59
+        },
+        {
+          "caller": "isEncounterUnlocked",
+          "callee": "ENCOUNTERS.findIndex",
+          "lineNumber": 75
+        },
+        {
+          "caller": "isEncounterUnlocked",
+          "callee": "clearedIds.includes",
+          "lineNumber": 78
+        },
+        {
+          "caller": "getNextEncounterId",
+          "callee": "ENCOUNTERS.findIndex",
+          "lineNumber": 83
+        }
+      ],
+      "metrics": {
+        "importCount": 1,
+        "exportCount": 6,
+        "functionCount": 4,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "src/data/enemies.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 267,
+      "nonEmptyLines": 257,
+      "exports": [
+        {
+          "name": "ENEMIES",
+          "line": 40,
+          "isDefault": false
+        },
+        {
+          "name": "NEUTRAL_KIT",
+          "line": 178,
+          "isDefault": false
+        },
+        {
+          "name": "INSTRUMENTS",
+          "line": 190,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 1,
+        "exportCount": 3,
+        "functionCount": 0,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "src/data/roster.test.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 45,
+      "nonEmptyLines": 36,
+      "metrics": {
+        "importCount": 2,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "src/data/roster.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 116,
+      "nonEmptyLines": 109,
+      "functions": [
+        {
+          "name": "getCharacter",
+          "startLine": 113,
+          "endLine": 115,
+          "params": [
+            "id"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "ROSTER",
+          "line": 19,
+          "isDefault": false
+        },
+        {
+          "name": "DEFAULT_PARTY_ROSTER",
+          "line": 111,
+          "isDefault": false
+        },
+        {
+          "name": "getCharacter",
+          "line": 113,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "getCharacter",
+          "callee": "ROSTER.find",
+          "lineNumber": 114
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 3,
+        "functionCount": 1,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "src/game/combatAtb.test.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 468,
+      "nonEmptyLines": 429,
+      "functions": [
+        {
+          "name": "seq",
+          "startLine": 23,
+          "endLine": 26,
+          "params": [
+            "vals"
+          ]
+        },
+        {
+          "name": "arr",
+          "startLine": 28,
+          "endLine": 28,
+          "params": []
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "arr",
+          "callee": "createDefaultArrangement",
+          "lineNumber": 28
+        },
+        {
+          "caller": "foe",
+          "callee": "createFight",
+          "lineNumber": 291
+        }
+      ],
+      "metrics": {
+        "importCount": 4,
+        "exportCount": 0,
+        "functionCount": 2,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "src/game/timbre.test.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 63,
+      "nonEmptyLines": 57,
+      "metrics": {
+        "importCount": 3,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0
+      }
+    }
+  ]
+}

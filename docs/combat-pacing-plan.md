@@ -1,7 +1,7 @@
 # Combat Pacing Redesign Plan
 
 > [!IMPORTANT]
-> **Goal**: Fights at 90 BPM should last **1.5–2 minutes** (~90–120 seconds), not 40 seconds. Every change below feeds that target while making combat *feel* like music.
+> **Goal**: Non-weak encounters at 90 BPM should last **4–5 minutes** (~240–300 seconds), giving ample time for harmonic composition, preset recalls, and rhythmic call-and-response. Introductory/weak encounters (Echo) sit around ~2–2.5 minutes.
 
 ---
 
@@ -65,38 +65,32 @@ This gives the player **~10.6 seconds** (2 loops at 90 BPM) of pure creative set
 introLoopsLeft: number  // starts at 2, decremented at loop wrap, enemies frozen while > 0
 ```
 
-### A.3 — HP Rebalance for 1.5–2 min Fights
+### A.3 — HP Rebalance for 4–5 min Non-Weak Fights
 
-With attacks coming every ~4 loops instead of every loop, and intro adding 2 loops, a fight needs **~18–24 loops** to last 1.5–2 min. That's ~96–128 seconds.
+With attacks coming every ~4 loops, intro adding 2 loops, and track-wipes/reflections naturally punctuating combat, non-weak encounters need **~45–55 loops** to last 4–5 minutes (~240–300 s).
 
-Target DPS (3 attackers, ~8 onsets/loop, base 3, potency fade):
-- Loop 1–4: ~72 dmg/loop → ~288 total
-- Loop 5–12: ~54 dmg/loop (fade) → ~432 total
-- Loop 13–18: ~40 dmg/loop → ~240 total
-- **Total ≈ 960 dmg over 18 loops**
+Proposed HP & Shield balance:
 
-Proposed HP rebalance:
-
-| Enemy | Current HP | New HP | Shield | Reasoning |
+| Enemy | Base HP | Shield | Total Pool | Role & Pacing |
 |---|---|---|---|---|
-| Echo | 260 | **480** | 0 | Tutorial enemy, pure HP soak |
-| Mite | 130 | **220** | 0 | Comes in pairs (440 total), fast attacks |
-| Carapace | 260 | **550** | **120** | Shield-heavy tank, needs sustained brass |
-| Mirror | 160 | **350** | 0 | Mid-tier, reflect punishes sloppy play |
-| Dust Moth | 180 | **400** | 0 | Track wipe forces melody replays = time |
+| Echo | **700** | 0 | 700 | Tutorial / weak enemy: ~2–2.5 min |
+| Mite | **480** | 0 | 480 (960 pair) | Horde: comes in pairs, 45% evasion on long notes (~3.5–4 min) |
+| Carapace | **1,250** | **350** | 1,600 | Tank: 50% resist to bright/piano, heavy brass counter (~4.5–5 min) |
+| Mirror | **950** | **200** | 1,150 | Mid-tier: 50% non-chord reflect punishes reckless play (~4.5–5 min) |
+| Dust Moth | **1,100** | **250** | 1,350 | Controller: wipes tracks every ~22 s, forcing melody resets (~4.5–5 min) |
 
 ### A.4 — Party HP Rebalance
 
-With enemies hitting less often but fights lasting longer, party HP should rise slightly to survive ~5–6 enemy attack cycles without feeling impossible:
+With fights extended to 4–5 minutes, party health and shield capacities scale so the party can withstand 20–25 enemy attack cycles with active parrying and harmonic regen:
 
-| Character | Current HP | New HP | Current Shield | New Shield |
+| Character | Role | HP | Shield | Max Shield |
 |---|---|---|---|---|
-| Lyra | 20 | **28** | 0 | 0 |
-| Cael | 26 | **34** | 4 | **6** |
-| Aria | 20 | **28** | 0 | 0 |
-| Bram | 24 | **32** | 2 | **4** |
-| Ignis | 20 | **28** | 0 | 0 |
-| Vesper | 24 | **32** | 6 | **8** |
+| Lyra | Striker | **36** | 0 | **12** |
+| Cael | Defender | **44** | **8** | **18** |
+| Aria | Striker | **36** | 0 | **12** |
+| Bram | Support | **40** | **6** | **16** |
+| Ignis | Striker | **36** | 0 | **12** |
+| Vesper | Defender | **42** | **10** | **18** |
 
 ---
 
@@ -331,13 +325,14 @@ flowchart TD
 ---
 
 ## Expected Fight Duration After Changes
-
+ 
 | Scenario | Loops | Time at 90 BPM | Notes |
 |---|---|---|---|
-| Echo solo (tutorial) | 16–20 | **85–107 s** | ✅ Target range |
-| Mite swarm (2×) | 18–22 | **96–117 s** | Faster attacks but less total HP |
-| Shield & Mirror | 20–24 | **107–128 s** | Shield absorbs early DPS |
-| Discordant Choir (boss) | 24–28 | **128–149 s** | Track wipes + reflect extend fight |
+| Echo solo (tutorial / weak) | 22–28 | **117–149 s (2–2.5 min)** | Introductory soak, fast tutorial completion |
+| Mite swarm (2×) | 38–45 | **202–240 s (3.4–4 min)** | Fast attacks (14.6s cycle) + 45% long evasion |
+| Shield & Mirror (non-weak) | 48–56 | **256–298 s (4.2–5 min)** | ✅ 4–5 min target: tank shield + chord reflection |
+| Dust & Shadows (non-weak) | 46–54 | **245–288 s (4.1–4.8 min)** | ✅ 4–5 min target: periodic track-wipe resets |
+| Discordant Choir (boss) | 58–68 | **309–362 s (5.1–6 min)** | Peak trial: tank soak + reflection + track wipe |
 
 > [!NOTE]
 > All estimates assume the default 3-striker party with the seeded default melody, normal potency fade, and no stagger system. Stagger (D.2) would create variance: well-played fights finish faster, sloppy fights drag. That's good — *skill expression is duration expression*.

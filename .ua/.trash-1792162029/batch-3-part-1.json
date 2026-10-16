@@ -1,0 +1,921 @@
+{
+ "nodes": [
+  {
+   "id": "file:src/game/combat.ts",
+   "type": "file",
+   "name": "combat.ts",
+   "summary": "Core ATB combat engine advancing one 16th-step tick at a time, resolving melody damage, chord effects, enemy gauges, and parry/QTE charts.",
+   "tags": [
+    "combat",
+    "atb",
+    "tick-engine",
+    "damage",
+    "qte"
+   ],
+   "complexity": "complex",
+   "filePath": "src/game/combat.ts",
+   "languageNotes": "Pure TypeScript engine with JSON-serializable state; no Tone.js, React, or DOM."
+  },
+  {
+   "id": "file:src/game/parryChart.test.ts",
+   "type": "file",
+   "name": "parryChart.test.ts",
+   "summary": "Vitest coverage for parry chart generation, verifying motif params and deterministic seeded chart output.",
+   "tags": [
+    "test",
+    "parry",
+    "qte",
+    "deterministic",
+    "coverage"
+   ],
+   "complexity": "simple",
+   "filePath": "src/game/parryChart.test.ts"
+  },
+  {
+   "id": "file:src/game/parryChart.ts",
+   "type": "file",
+   "name": "parryChart.ts",
+   "summary": "Generative ZXCV parry chart builder producing seeded tap-and-hold motifs shaped by per-enemy pattern params.",
+   "tags": [
+    "parry",
+    "qte",
+    "chart-generator",
+    "seeded-rng",
+    "gameplay"
+   ],
+   "complexity": "moderate",
+   "filePath": "src/game/parryChart.ts"
+  },
+  {
+   "id": "file:src/game/perform.test.ts",
+   "type": "file",
+   "name": "perform.test.ts",
+   "summary": "Vitest coverage for the WASD performance cursor movement and tempo conversion helpers.",
+   "tags": [
+    "test",
+    "performance",
+    "cursor",
+    "tempo",
+    "coverage"
+   ],
+   "complexity": "simple",
+   "filePath": "src/game/perform.test.ts"
+  },
+  {
+   "id": "function:src/game/combat.ts:refreshPotency",
+   "type": "function",
+   "name": "refreshPotency",
+   "summary": "Builds full-strength echo potency for every melody onset on the loop.",
+   "tags": [
+    "combat",
+    "potency",
+    "melody-loop"
+   ],
+   "complexity": "simple",
+   "lineRange": [
+    110,
+    114
+   ]
+  },
+  {
+   "id": "function:src/game/combat.ts:reconcilePotency",
+   "type": "function",
+   "name": "reconcilePotency",
+   "summary": "Reconciles stored potency against current onsets, dropping stale keys and adding fresh ones.",
+   "tags": [
+    "combat",
+    "potency",
+    "melody-loop"
+   ],
+   "complexity": "simple",
+   "lineRange": [
+    120,
+    128
+   ]
+  },
+  {
+   "id": "function:src/game/combat.ts:createFight",
+   "type": "function",
+   "name": "createFight",
+   "summary": "Constructs initial fight state with locked key, party and enemy fighters, slots, gauges, and cooldowns.",
+   "tags": [
+    "combat",
+    "fight-setup",
+    "atb",
+    "initialization",
+    "state"
+   ],
+   "complexity": "moderate",
+   "lineRange": [
+    136,
+    229
+   ]
+  },
+  {
+   "id": "function:src/game/combat.ts:aliveParty",
+   "type": "function",
+   "name": "aliveParty",
+   "summary": "Returns party fighters that are not down.",
+   "tags": [
+    "combat",
+    "fighter",
+    "filter",
+    "utility"
+   ],
+   "complexity": "simple",
+   "lineRange": [
+    236,
+    238
+   ]
+  },
+  {
+   "id": "function:src/game/combat.ts:aliveEnemies",
+   "type": "function",
+   "name": "aliveEnemies",
+   "summary": "Returns enemy fighters that are not down.",
+   "tags": [
+    "combat",
+    "fighter",
+    "filter",
+    "utility"
+   ],
+   "complexity": "simple",
+   "lineRange": [
+    240,
+    242
+   ]
+  },
+  {
+   "id": "function:src/game/combat.ts:moveFighter",
+   "type": "function",
+   "name": "moveFighter",
+   "summary": "Moves a party fighter between deck and slots and logs the repositioning.",
+   "tags": [
+    "combat",
+    "positioning",
+    "slots",
+    "state"
+   ],
+   "complexity": "simple",
+   "lineRange": [
+    245,
+    250
+   ]
+  },
+  {
+   "id": "function:src/game/combat.ts:qteLocked",
+   "type": "function",
+   "name": "qteLocked",
+   "summary": "Reports whether an active chart currently locks arrangement recording.",
+   "tags": [
+    "combat",
+    "qte",
+    "lock-state"
+   ],
+   "complexity": "simple",
+   "lineRange": [
+    253,
+    255
+   ]
+  },
+  {
+   "id": "function:src/game/combat.ts:requestChordQte",
+   "type": "function",
+   "name": "requestChordQte",
+   "summary": "Opens a WASD chord-swap chart from Roman numerals, falling back to a random chart.",
+   "tags": [
+    "combat",
+    "qte",
+    "chord-swap",
+    "chart"
+   ],
+   "complexity": "simple",
+   "lineRange": [
+    258,
+    280
+   ]
+  },
+  {
+   "id": "function:src/game/combat.ts:requestPresetQte",
+   "type": "function",
+   "name": "requestPresetQte",
+   "summary": "Opens a WASD preset-recall chart from a melody snapshot, falling back to a random chart.",
+   "tags": [
+    "combat",
+    "qte",
+    "preset",
+    "chart"
+   ],
+   "complexity": "simple",
+   "lineRange": [
+    283,
+    313
+   ]
+  },
+  {
+   "id": "function:src/game/combat.ts:pressQteKey",
+   "type": "function",
+   "name": "pressQteKey",
+   "summary": "Forwards a key press on the active chart at the current tick.",
+   "tags": [
+    "combat",
+    "qte",
+    "input",
+    "event-handler"
+   ],
+   "complexity": "simple",
+   "lineRange": [
+    316,
+    321
+   ]
+  },
+  {
+   "id": "function:src/game/combat.ts:releaseQteKey",
+   "type": "function",
+   "name": "releaseQteKey",
+   "summary": "Forwards a key release on the active chart at the current tick.",
+   "tags": [
+    "combat",
+    "qte",
+    "input",
+    "event-handler"
+   ],
+   "complexity": "simple",
+   "lineRange": [
+    324,
+    329
+   ]
+  },
+  {
+   "id": "function:src/game/combat.ts:cancelQte",
+   "type": "function",
+   "name": "cancelQte",
+   "summary": "Cancels the active chart with a logged reason.",
+   "tags": [
+    "combat",
+    "qte",
+    "cancel",
+    "event-handler"
+   ],
+   "complexity": "simple",
+   "lineRange": [
+    332,
+    335
+   ]
+  },
+  {
+   "id": "function:src/game/combat.ts:keeperInstrument",
+   "type": "function",
+   "name": "keeperInstrument",
+   "summary": "Finds the live keeper fighter driving chord sustain effects.",
+   "tags": [
+    "combat",
+    "keeper",
+    "instrument",
+    "lookup"
+   ],
+   "complexity": "simple",
+   "lineRange": [
+    341,
+    346
+   ]
+  },
+  {
+   "id": "function:src/game/combat.ts:hasLiveAttacker",
+   "type": "function",
+   "name": "hasLiveAttacker",
+   "summary": "Checks whether any front-slot attacker is alive and able to strike.",
+   "tags": [
+    "combat",
+    "attacker",
+    "slots",
+    "lookup"
+   ],
+   "complexity": "simple",
+   "lineRange": [
+    349,
+    354
+   ]
+  },
+  {
+   "id": "function:src/game/combat.ts:beatInstrument",
+   "type": "function",
+   "name": "beatInstrument",
+   "summary": "Finds the live beat fighter driving drum and tempo effects.",
+   "tags": [
+    "combat",
+    "beat",
+    "instrument",
+    "lookup"
+   ],
+   "complexity": "simple",
+   "lineRange": [
+    360,
+    365
+   ]
+  },
+  {
+   "id": "function:src/game/combat.ts:defaultPerformerId",
+   "type": "function",
+   "name": "defaultPerformerId",
+   "summary": "Returns the default front-row performer id for melody resolution.",
+   "tags": [
+    "combat",
+    "performer",
+    "slots",
+    "lookup"
+   ],
+   "complexity": "simple",
+   "lineRange": [
+    371,
+    373
+   ]
+  },
+  {
+   "id": "function:src/game/combat.ts:laneAttacker",
+   "type": "function",
+   "name": "laneAttacker",
+   "summary": "Resolves the live attacker for a melody lane from front-row slot assignment.",
+   "tags": [
+    "combat",
+    "attacker",
+    "melody-lane",
+    "lookup"
+   ],
+   "complexity": "simple",
+   "lineRange": [
+    380,
+    389
+   ]
+  },
+  {
+   "id": "function:src/game/combat.ts:performSlot",
+   "type": "function",
+   "name": "performSlot",
+   "summary": "Maps a performer id to its front-row slot index.",
+   "tags": [
+    "combat",
+    "performer",
+    "slots",
+    "lookup"
+   ],
+   "complexity": "simple",
+   "lineRange": [
+    395,
+    399
+   ]
+  },
+  {
+   "id": "function:src/game/combat.ts:computeNoteDamage",
+   "type": "function",
+   "name": "computeNoteDamage",
+   "summary": "Computes note damage with evasion rolls, weakness/resist multipliers, and buff modifiers.",
+   "tags": [
+    "combat",
+    "damage",
+    "evasion",
+    "weakness"
+   ],
+   "complexity": "simple",
+   "lineRange": [
+    426,
+    450
+   ]
+  },
+  {
+   "id": "function:src/game/combat.ts:resolveMelodyVoice",
+   "type": "function",
+   "name": "resolveMelodyVoice",
+   "summary": "Resolves one melody voice into enemy damage, chord effects, buffs, and log lines.",
+   "tags": [
+    "combat",
+    "melody",
+    "damage",
+    "chord-effect",
+    "resolution"
+   ],
+   "complexity": "moderate",
+   "lineRange": [
+    458,
+    525
+   ]
+  },
+  {
+   "id": "function:src/game/combat.ts:advanceTick",
+   "type": "function",
+   "name": "advanceTick",
+   "summary": "Advances the fight one 16th-step tick, resolving QTE progress, enemy gauges, parry strikes, melody voices, and win/lose.",
+   "tags": [
+    "combat",
+    "tick-engine",
+    "atb",
+    "qte",
+    "win-lose"
+   ],
+   "complexity": "complex",
+   "lineRange": [
+    539,
+    817
+   ]
+  },
+  {
+   "id": "function:src/game/parryChart.ts:parryParamsFor",
+   "type": "function",
+   "name": "parryParamsFor",
+   "summary": "Merges an enemy pattern base with per-enemy overrides into effective parry motif params.",
+   "tags": [
+    "parry",
+    "motif-params",
+    "configuration"
+   ],
+   "complexity": "simple",
+   "lineRange": [
+    75,
+    83
+   ]
+  },
+  {
+   "id": "function:src/game/parryChart.ts:degreeToParryLane",
+   "type": "function",
+   "name": "degreeToParryLane",
+   "summary": "Maps a scale degree to a ZXCV parry lane.",
+   "tags": [
+    "parry",
+    "lane-mapping",
+    "utility"
+   ],
+   "complexity": "simple",
+   "lineRange": [
+    86,
+    93
+   ]
+  },
+  {
+   "id": "function:src/game/parryChart.ts:generateParryChart",
+   "type": "function",
+   "name": "generateParryChart",
+   "summary": "Generates a seeded 1-2 loop parry chart with spaced tap heads and quarter-beat holds.",
+   "tags": [
+    "parry",
+    "chart-generator",
+    "seeded-rng",
+    "gameplay"
+   ],
+   "complexity": "moderate",
+   "lineRange": [
+    111,
+    203
+   ]
+  }
+ ],
+ "edges": [
+  {
+   "source": "file:src/game/combat.ts",
+   "target": "function:src/game/combat.ts:refreshPotency",
+   "type": "contains",
+   "direction": "forward",
+   "weight": 1.0
+  },
+  {
+   "source": "file:src/game/combat.ts",
+   "target": "function:src/game/combat.ts:reconcilePotency",
+   "type": "contains",
+   "direction": "forward",
+   "weight": 1.0
+  },
+  {
+   "source": "file:src/game/combat.ts",
+   "target": "function:src/game/combat.ts:createFight",
+   "type": "contains",
+   "direction": "forward",
+   "weight": 1.0
+  },
+  {
+   "source": "file:src/game/combat.ts",
+   "target": "function:src/game/combat.ts:aliveParty",
+   "type": "contains",
+   "direction": "forward",
+   "weight": 1.0
+  },
+  {
+   "source": "file:src/game/combat.ts",
+   "target": "function:src/game/combat.ts:aliveEnemies",
+   "type": "contains",
+   "direction": "forward",
+   "weight": 1.0
+  },
+  {
+   "source": "file:src/game/combat.ts",
+   "target": "function:src/game/combat.ts:moveFighter",
+   "type": "contains",
+   "direction": "forward",
+   "weight": 1.0
+  },
+  {
+   "source": "file:src/game/combat.ts",
+   "target": "function:src/game/combat.ts:qteLocked",
+   "type": "contains",
+   "direction": "forward",
+   "weight": 1.0
+  },
+  {
+   "source": "file:src/game/combat.ts",
+   "target": "function:src/game/combat.ts:requestChordQte",
+   "type": "contains",
+   "direction": "forward",
+   "weight": 1.0
+  },
+  {
+   "source": "file:src/game/combat.ts",
+   "target": "function:src/game/combat.ts:requestPresetQte",
+   "type": "contains",
+   "direction": "forward",
+   "weight": 1.0
+  },
+  {
+   "source": "file:src/game/combat.ts",
+   "target": "function:src/game/combat.ts:pressQteKey",
+   "type": "contains",
+   "direction": "forward",
+   "weight": 1.0
+  },
+  {
+   "source": "file:src/game/combat.ts",
+   "target": "function:src/game/combat.ts:releaseQteKey",
+   "type": "contains",
+   "direction": "forward",
+   "weight": 1.0
+  },
+  {
+   "source": "file:src/game/combat.ts",
+   "target": "function:src/game/combat.ts:cancelQte",
+   "type": "contains",
+   "direction": "forward",
+   "weight": 1.0
+  },
+  {
+   "source": "file:src/game/combat.ts",
+   "target": "function:src/game/combat.ts:keeperInstrument",
+   "type": "contains",
+   "direction": "forward",
+   "weight": 1.0
+  },
+  {
+   "source": "file:src/game/combat.ts",
+   "target": "function:src/game/combat.ts:hasLiveAttacker",
+   "type": "contains",
+   "direction": "forward",
+   "weight": 1.0
+  },
+  {
+   "source": "file:src/game/combat.ts",
+   "target": "function:src/game/combat.ts:beatInstrument",
+   "type": "contains",
+   "direction": "forward",
+   "weight": 1.0
+  },
+  {
+   "source": "file:src/game/combat.ts",
+   "target": "function:src/game/combat.ts:defaultPerformerId",
+   "type": "contains",
+   "direction": "forward",
+   "weight": 1.0
+  },
+  {
+   "source": "file:src/game/combat.ts",
+   "target": "function:src/game/combat.ts:laneAttacker",
+   "type": "contains",
+   "direction": "forward",
+   "weight": 1.0
+  },
+  {
+   "source": "file:src/game/combat.ts",
+   "target": "function:src/game/combat.ts:performSlot",
+   "type": "contains",
+   "direction": "forward",
+   "weight": 1.0
+  },
+  {
+   "source": "file:src/game/combat.ts",
+   "target": "function:src/game/combat.ts:computeNoteDamage",
+   "type": "contains",
+   "direction": "forward",
+   "weight": 1.0
+  },
+  {
+   "source": "file:src/game/combat.ts",
+   "target": "function:src/game/combat.ts:resolveMelodyVoice",
+   "type": "contains",
+   "direction": "forward",
+   "weight": 1.0
+  },
+  {
+   "source": "file:src/game/combat.ts",
+   "target": "function:src/game/combat.ts:advanceTick",
+   "type": "contains",
+   "direction": "forward",
+   "weight": 1.0
+  },
+  {
+   "source": "file:src/game/parryChart.ts",
+   "target": "function:src/game/parryChart.ts:parryParamsFor",
+   "type": "contains",
+   "direction": "forward",
+   "weight": 1.0
+  },
+  {
+   "source": "file:src/game/parryChart.ts",
+   "target": "function:src/game/parryChart.ts:degreeToParryLane",
+   "type": "contains",
+   "direction": "forward",
+   "weight": 1.0
+  },
+  {
+   "source": "file:src/game/parryChart.ts",
+   "target": "function:src/game/parryChart.ts:generateParryChart",
+   "type": "contains",
+   "direction": "forward",
+   "weight": 1.0
+  },
+  {
+   "source": "file:src/game/combat.ts",
+   "target": "file:src/data/chords.ts",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:src/game/combat.ts",
+   "target": "file:src/data/enemies.ts",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:src/game/combat.ts",
+   "target": "file:src/data/roster.ts",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:src/game/combat.ts",
+   "target": "file:src/game/arrangement.ts",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:src/game/combat.ts",
+   "target": "file:src/game/keys.ts",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:src/game/combat.ts",
+   "target": "file:src/game/parryChart.ts",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:src/game/combat.ts",
+   "target": "file:src/game/perform.ts",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:src/game/combat.ts",
+   "target": "file:src/game/positions.ts",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:src/game/combat.ts",
+   "target": "file:src/game/qte.ts",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:src/game/combat.ts",
+   "target": "file:src/game/theory.ts",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:src/game/combat.ts",
+   "target": "file:src/game/units.ts",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:src/game/parryChart.test.ts",
+   "target": "file:src/game/parryChart.ts",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:src/game/parryChart.test.ts",
+   "target": "file:src/game/perform.ts",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:src/game/parryChart.ts",
+   "target": "file:src/game/perform.ts",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:src/game/parryChart.ts",
+   "target": "file:src/game/qte.ts",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:src/game/perform.test.ts",
+   "target": "file:src/game/perform.ts",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:src/game/parryChart.ts",
+   "target": "file:src/game/parryChart.test.ts",
+   "type": "tested_by",
+   "direction": "forward",
+   "weight": 0.5
+  },
+  {
+   "source": "function:src/game/combat.ts:requestChordQte",
+   "target": "function:src/game/qte.ts:harmonicChart",
+   "type": "calls",
+   "direction": "forward",
+   "weight": 0.8
+  },
+  {
+   "source": "function:src/game/combat.ts:requestChordQte",
+   "target": "function:src/game/qte.ts:createQte",
+   "type": "calls",
+   "direction": "forward",
+   "weight": 0.8
+  },
+  {
+   "source": "function:src/game/combat.ts:requestPresetQte",
+   "target": "function:src/game/qte.ts:chartFromMelody",
+   "type": "calls",
+   "direction": "forward",
+   "weight": 0.8
+  },
+  {
+   "source": "function:src/game/combat.ts:requestPresetQte",
+   "target": "function:src/game/qte.ts:createQte",
+   "type": "calls",
+   "direction": "forward",
+   "weight": 0.8
+  },
+  {
+   "source": "function:src/game/combat.ts:pressQteKey",
+   "target": "function:src/game/qte.ts:pressQte",
+   "type": "calls",
+   "direction": "forward",
+   "weight": 0.8
+  },
+  {
+   "source": "function:src/game/combat.ts:releaseQteKey",
+   "target": "function:src/game/qte.ts:releaseQte",
+   "type": "calls",
+   "direction": "forward",
+   "weight": 0.8
+  },
+  {
+   "source": "function:src/game/combat.ts:createFight",
+   "target": "function:src/game/units.ts:makeFighter",
+   "type": "calls",
+   "direction": "forward",
+   "weight": 0.8
+  },
+  {
+   "source": "function:src/game/combat.ts:createFight",
+   "target": "function:src/game/keys.ts:resolveFightKey",
+   "type": "calls",
+   "direction": "forward",
+   "weight": 0.8
+  },
+  {
+   "source": "function:src/game/combat.ts:computeNoteDamage",
+   "target": "function:src/game/units.ts:buffDamageTaken",
+   "type": "calls",
+   "direction": "forward",
+   "weight": 0.8
+  },
+  {
+   "source": "function:src/game/combat.ts:resolveMelodyVoice",
+   "target": "function:src/game/units.ts:damageThroughShield",
+   "type": "calls",
+   "direction": "forward",
+   "weight": 0.8
+  },
+  {
+   "source": "function:src/game/combat.ts:resolveMelodyVoice",
+   "target": "function:src/game/combat.ts:computeNoteDamage",
+   "type": "calls",
+   "direction": "forward",
+   "weight": 0.8
+  },
+  {
+   "source": "function:src/game/combat.ts:advanceTick",
+   "target": "function:src/game/qte.ts:missOverdueNotes",
+   "type": "calls",
+   "direction": "forward",
+   "weight": 0.8
+  },
+  {
+   "source": "function:src/game/combat.ts:advanceTick",
+   "target": "function:src/game/qte.ts:isQteComplete",
+   "type": "calls",
+   "direction": "forward",
+   "weight": 0.8
+  },
+  {
+   "source": "function:src/game/combat.ts:advanceTick",
+   "target": "function:src/game/qte.ts:qteSuccessRate",
+   "type": "calls",
+   "direction": "forward",
+   "weight": 0.8
+  },
+  {
+   "source": "function:src/game/combat.ts:advanceTick",
+   "target": "function:src/game/qte.ts:parryDamage",
+   "type": "calls",
+   "direction": "forward",
+   "weight": 0.8
+  },
+  {
+   "source": "function:src/game/combat.ts:advanceTick",
+   "target": "function:src/game/qte.ts:createQte",
+   "type": "calls",
+   "direction": "forward",
+   "weight": 0.8
+  },
+  {
+   "source": "function:src/game/combat.ts:advanceTick",
+   "target": "function:src/game/parryChart.ts:generateParryChart",
+   "type": "calls",
+   "direction": "forward",
+   "weight": 0.8
+  },
+  {
+   "source": "function:src/game/combat.ts:advanceTick",
+   "target": "function:src/game/parryChart.ts:parryParamsFor",
+   "type": "calls",
+   "direction": "forward",
+   "weight": 0.8
+  },
+  {
+   "source": "function:src/game/combat.ts:advanceTick",
+   "target": "function:src/game/units.ts:tickBuffs",
+   "type": "calls",
+   "direction": "forward",
+   "weight": 0.8
+  },
+  {
+   "source": "function:src/game/combat.ts:advanceTick",
+   "target": "function:src/game/units.ts:healFighter",
+   "type": "calls",
+   "direction": "forward",
+   "weight": 0.8
+  },
+  {
+   "source": "function:src/game/combat.ts:advanceTick",
+   "target": "function:src/game/units.ts:damageThroughShield",
+   "type": "calls",
+   "direction": "forward",
+   "weight": 0.8
+  },
+  {
+   "source": "function:src/game/combat.ts:advanceTick",
+   "target": "function:src/game/perform.ts:secondsToSteps",
+   "type": "calls",
+   "direction": "forward",
+   "weight": 0.8
+  },
+  {
+   "source": "function:src/game/parryChart.ts:generateParryChart",
+   "target": "function:src/game/perform.ts:stepMs",
+   "type": "calls",
+   "direction": "forward",
+   "weight": 0.8
+  }
+ ]
+}

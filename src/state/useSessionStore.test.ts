@@ -72,4 +72,20 @@ describe("record at keypress", () => {
     expect(useSessionStore.getState().arrangement.tracks[0][0][4]).toEqual({ degree: 3, len: 1 })
     store.releaseAllKeys()
   })
+
+  it("selectPerformerByIndex maps 0/1/2 to front-row fighters (Phase C.1)", () => {
+    const store = useSessionStore.getState()
+    const front = store.fight.slots.front
+    expect(front.length).toBeGreaterThanOrEqual(2)
+
+    store.selectPerformerByIndex(1)
+    expect(useSessionStore.getState().performerId).toBe(front[1])
+
+    store.selectPerformerByIndex(0)
+    expect(useSessionStore.getState().performerId).toBe(front[0])
+
+    // Invalid index does not crash or change performer
+    store.selectPerformerByIndex(99)
+    expect(useSessionStore.getState().performerId).toBe(front[0])
+  })
 })

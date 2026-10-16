@@ -24,7 +24,7 @@ describe("PartyCorner drag and drop", () => {
   it("drags a front attacker onto the beat seat", () => {
     render(<PartyCorner />)
     expect(useSessionStore.getState().fight.slots.front).toContain("voice-1")
-    mockDrop("back · beat", "voice-1")
+    mockDrop("beat", "voice-1")
     const fight = useSessionStore.getState().fight
     expect(fight.slots.beat).toBe("voice-1")
     expect(fight.slots.front).not.toContain("voice-1")
@@ -32,7 +32,7 @@ describe("PartyCorner drag and drop", () => {
 
   it("drags a chord keeper to the front row", () => {
     render(<PartyCorner />)
-    mockDrop("front · attackers", "voice-0")
+    mockDrop("attackers", "voice-0")
     const fight = useSessionStore.getState().fight
     expect(fight.slots.front).toContain("voice-0")
     expect(fight.slots.chord).toBeNull()
@@ -48,15 +48,15 @@ describe("PartyCorner drag and drop", () => {
   it("ignores drops with unknown fighter ids", () => {
     render(<PartyCorner />)
     const before = useSessionStore.getState().fight.slots
-    mockDrop("back · beat", "ghost")
+    mockDrop("beat", "ghost")
     expect(useSessionStore.getState().fight.slots).toEqual(before)
   })
 
   it("always shows three fixed front seats, empty or filled", () => {
     render(<PartyCorner />)
     // Default front holds two attackers: exactly one fixed seat stays empty.
-    expect(screen.getAllByText("empty")).toHaveLength(1)
-    mockDrop("front · attackers", "voice-0")
-    expect(screen.queryByText("empty")).toBeNull()
+    expect(screen.getAllByText("attackers")).toHaveLength(1)
+    mockDrop("attackers", "voice-0")
+    expect(screen.queryByText("attackers")).toBeNull()
   })
 })

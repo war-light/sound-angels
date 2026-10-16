@@ -1,0 +1,973 @@
+{
+ "nodes": [
+  {
+   "id": "file:src/game/perform.ts",
+   "type": "file",
+   "name": "perform.ts",
+   "summary": "WASD relative-motion performance model with the ZXCV parry key set and step/ms tempo conversion helpers.",
+   "tags": [
+    "performance",
+    "cursor",
+    "input-model",
+    "tempo",
+    "utility"
+   ],
+   "complexity": "moderate",
+   "filePath": "src/game/perform.ts"
+  },
+  {
+   "id": "file:src/game/qte.ts",
+   "type": "file",
+   "name": "qte.ts",
+   "summary": "Pure QTE chart model with tap/hold notes, melody and harmonic chart builders, press/release scoring, and parry damage scaling.",
+   "tags": [
+    "qte",
+    "chart-model",
+    "scoring",
+    "rhythm-input",
+    "gameplay"
+   ],
+   "complexity": "complex",
+   "filePath": "src/game/qte.ts",
+   "languageNotes": "State is JSON-serializable; charts use step offsets with per-note timing windows."
+  },
+  {
+   "id": "file:src/game/units.test.ts",
+   "type": "file",
+   "name": "units.test.ts",
+   "summary": "Vitest coverage for fighter health, shield-first damage absorption, healing, and buff lifecycle helpers.",
+   "tags": [
+    "test",
+    "fighter",
+    "buffs",
+    "shield",
+    "coverage"
+   ],
+   "complexity": "simple",
+   "filePath": "src/game/units.test.ts"
+  },
+  {
+   "id": "file:src/game/units.ts",
+   "type": "file",
+   "name": "units.ts",
+   "summary": "Shared fighter model for party and foes with shield-first damage, healing, and tick-based buff helpers.",
+   "tags": [
+    "data-model",
+    "fighter",
+    "buffs",
+    "shield",
+    "combat"
+   ],
+   "complexity": "moderate",
+   "filePath": "src/game/units.ts"
+  },
+  {
+   "id": "function:src/game/perform.ts:isParryKey",
+   "type": "function",
+   "name": "isParryKey",
+   "summary": "Type guard reporting whether a QTE key belongs to the ZXCV parry set.",
+   "tags": [
+    "input",
+    "parry",
+    "type-guard"
+   ],
+   "complexity": "simple",
+   "lineRange": [
+    17,
+    19
+   ]
+  },
+  {
+   "id": "function:src/game/perform.ts:moveCursor",
+   "type": "function",
+   "name": "moveCursor",
+   "summary": "Moves the WASD performance cursor one step with degree and octave clamping.",
+   "tags": [
+    "performance",
+    "cursor",
+    "input-model"
+   ],
+   "complexity": "simple",
+   "lineRange": [
+    35,
+    50
+   ]
+  },
+  {
+   "id": "function:src/game/perform.ts:cursorDegree",
+   "type": "function",
+   "name": "cursorDegree",
+   "summary": "Converts a performance cursor to an absolute scale degree across octaves.",
+   "tags": [
+    "performance",
+    "cursor",
+    "scale-degree"
+   ],
+   "complexity": "simple",
+   "lineRange": [
+    53,
+    55
+   ]
+  },
+  {
+   "id": "function:src/game/perform.ts:pressToLen",
+   "type": "function",
+   "name": "pressToLen",
+   "summary": "Converts press duration and step length into a held note length of 1, 2, 4, or 8 steps.",
+   "tags": [
+    "performance",
+    "note-length",
+    "timing"
+   ],
+   "complexity": "simple",
+   "lineRange": [
+    58,
+    64
+   ]
+  },
+  {
+   "id": "function:src/game/perform.ts:stepMs",
+   "type": "function",
+   "name": "stepMs",
+   "summary": "Returns the wall-clock length of one 16th step at a tempo, clamped to 50-160 BPM.",
+   "tags": [
+    "tempo",
+    "timing",
+    "utility"
+   ],
+   "complexity": "simple",
+   "lineRange": [
+    67,
+    69
+   ]
+  },
+  {
+   "id": "function:src/game/perform.ts:secondsToSteps",
+   "type": "function",
+   "name": "secondsToSteps",
+   "summary": "Converts wall-clock seconds to 16th steps at a tempo for BPM-independent warnings.",
+   "tags": [
+    "tempo",
+    "timing",
+    "conversion"
+   ],
+   "complexity": "simple",
+   "lineRange": [
+    75,
+    77
+   ]
+  },
+  {
+   "id": "function:src/game/perform.ts:stepsToMs",
+   "type": "function",
+   "name": "stepsToMs",
+   "summary": "Converts 16th steps to milliseconds at a tempo for countdown displays.",
+   "tags": [
+    "tempo",
+    "timing",
+    "conversion"
+   ],
+   "complexity": "simple",
+   "lineRange": [
+    80,
+    82
+   ]
+  },
+  {
+   "id": "function:src/game/qte.ts:degreeToPerformKey",
+   "type": "function",
+   "name": "degreeToPerformKey",
+   "summary": "Maps a scale degree to its WASD perform key by contour band.",
+   "tags": [
+    "qte",
+    "degree-mapping",
+    "input"
+   ],
+   "complexity": "simple",
+   "lineRange": [
+    98,
+    104
+   ]
+  },
+  {
+   "id": "function:src/game/qte.ts:keyToDegree",
+   "type": "function",
+   "name": "keyToDegree",
+   "summary": "Maps a WASD perform key back to a representative scale degree.",
+   "tags": [
+    "qte",
+    "degree-mapping",
+    "input"
+   ],
+   "complexity": "simple",
+   "lineRange": [
+    107,
+    118
+   ]
+  },
+  {
+   "id": "function:src/game/qte.ts:qteKeyToDegree",
+   "type": "function",
+   "name": "qteKeyToDegree",
+   "summary": "Maps any QTE key, including ZXCV parry lanes, to a scale degree for sounding hits.",
+   "tags": [
+    "qte",
+    "degree-mapping",
+    "parry"
+   ],
+   "complexity": "simple",
+   "lineRange": [
+    125,
+    140
+   ]
+  },
+  {
+   "id": "function:src/game/qte.ts:ratingWeight",
+   "type": "function",
+   "name": "ratingWeight",
+   "summary": "Converts a hit rating into a numeric weight for success-rate scoring.",
+   "tags": [
+    "qte",
+    "scoring",
+    "rating"
+   ],
+   "complexity": "simple",
+   "lineRange": [
+    143,
+    154
+   ]
+  },
+  {
+   "id": "function:src/game/qte.ts:chartFromMelody",
+   "type": "function",
+   "name": "chartFromMelody",
+   "summary": "Builds a WASD chart from recorded melody tracks, capping note count.",
+   "tags": [
+    "qte",
+    "chart-builder",
+    "melody"
+   ],
+   "complexity": "simple",
+   "lineRange": [
+    166,
+    193
+   ]
+  },
+  {
+   "id": "function:src/game/qte.ts:harmonicChart",
+   "type": "function",
+   "name": "harmonicChart",
+   "summary": "Builds a WASD chart from Roman-numeral chord roots for chord-swap challenges.",
+   "tags": [
+    "qte",
+    "chart-builder",
+    "chords"
+   ],
+   "complexity": "simple",
+   "lineRange": [
+    203,
+    233
+   ]
+  },
+  {
+   "id": "function:src/game/qte.ts:patternMotif",
+   "type": "function",
+   "name": "patternMotif",
+   "summary": "Looks up the note motif for a named rhythmic pattern.",
+   "tags": [
+    "qte",
+    "pattern",
+    "motif"
+   ],
+   "complexity": "simple",
+   "lineRange": [
+    287,
+    304
+   ]
+  },
+  {
+   "id": "function:src/game/qte.ts:fitChartToWindow",
+   "type": "function",
+   "name": "fitChartToWindow",
+   "summary": "Rescales a chart to fit the available tick window before a strike deadline.",
+   "tags": [
+    "qte",
+    "chart-builder",
+    "timing"
+   ],
+   "complexity": "simple",
+   "lineRange": [
+    311,
+    328
+   ]
+  },
+  {
+   "id": "function:src/game/qte.ts:chartKeys",
+   "type": "function",
+   "name": "chartKeys",
+   "summary": "Returns the flat key sequence of a chart for legacy sequence tracking.",
+   "tags": [
+    "qte",
+    "chart",
+    "key-sequence"
+   ],
+   "complexity": "simple",
+   "lineRange": [
+    331,
+    333
+   ]
+  },
+  {
+   "id": "function:src/game/qte.ts:chartFromPattern",
+   "type": "function",
+   "name": "chartFromPattern",
+   "summary": "Builds a chart from a named pattern motif at a given length.",
+   "tags": [
+    "qte",
+    "chart-builder",
+    "pattern"
+   ],
+   "complexity": "simple",
+   "lineRange": [
+    336,
+    356
+   ]
+  },
+  {
+   "id": "function:src/game/qte.ts:randomChart",
+   "type": "function",
+   "name": "randomChart",
+   "summary": "Builds a random WASD chart fallback when no musical material is available.",
+   "tags": [
+    "qte",
+    "chart-builder",
+    "random"
+   ],
+   "complexity": "simple",
+   "lineRange": [
+    359,
+    361
+   ]
+  },
+  {
+   "id": "function:src/game/qte.ts:synthChartFromSequence",
+   "type": "function",
+   "name": "synthChartFromSequence",
+   "summary": "Synthesizes a timed chart from a flat key sequence between start and deadline ticks.",
+   "tags": [
+    "qte",
+    "chart-builder",
+    "sequence"
+   ],
+   "complexity": "simple",
+   "lineRange": [
+    363,
+    374
+   ]
+  },
+  {
+   "id": "function:src/game/qte.ts:createQte",
+   "type": "function",
+   "name": "createQte",
+   "summary": "Creates scored QTE state with per-note status, combo counters, and payload.",
+   "tags": [
+    "qte",
+    "state",
+    "initialization"
+   ],
+   "complexity": "simple",
+   "lineRange": [
+    376,
+    409
+   ]
+  },
+  {
+   "id": "function:src/game/qte.ts:pressQte",
+   "type": "function",
+   "name": "pressQte",
+   "summary": "Scores a key press against pending notes with timing windows and hold-head handling.",
+   "tags": [
+    "qte",
+    "scoring",
+    "input",
+    "rhythm"
+   ],
+   "complexity": "moderate",
+   "lineRange": [
+    426,
+    519
+   ]
+  },
+  {
+   "id": "function:src/game/qte.ts:releaseQte",
+   "type": "function",
+   "name": "releaseQte",
+   "summary": "Scores a key release for hold tails, marking early releases as bad.",
+   "tags": [
+    "qte",
+    "scoring",
+    "holds",
+    "input"
+   ],
+   "complexity": "simple",
+   "lineRange": [
+    527,
+    571
+   ]
+  },
+  {
+   "id": "function:src/game/qte.ts:missOverdueNotes",
+   "type": "function",
+   "name": "missOverdueNotes",
+   "summary": "Marks notes past their timing window as missed at the current tick.",
+   "tags": [
+    "qte",
+    "scoring",
+    "miss",
+    "timing"
+   ],
+   "complexity": "simple",
+   "lineRange": [
+    578,
+    614
+   ]
+  },
+  {
+   "id": "function:src/game/qte.ts:isQteComplete",
+   "type": "function",
+   "name": "isQteComplete",
+   "summary": "Reports whether every chart note has been resolved as hit or miss.",
+   "tags": [
+    "qte",
+    "state",
+    "completion"
+   ],
+   "complexity": "simple",
+   "lineRange": [
+    616,
+    619
+   ]
+  },
+  {
+   "id": "function:src/game/qte.ts:isQteExpired",
+   "type": "function",
+   "name": "isQteExpired",
+   "summary": "Reports whether the chart passed its deadline without completion.",
+   "tags": [
+    "qte",
+    "state",
+    "deadline"
+   ],
+   "complexity": "simple",
+   "lineRange": [
+    621,
+    623
+   ]
+  },
+  {
+   "id": "function:src/game/qte.ts:qteSuccessRate",
+   "type": "function",
+   "name": "qteSuccessRate",
+   "summary": "Computes rating-weighted success rate across resolved notes.",
+   "tags": [
+    "qte",
+    "scoring",
+    "success-rate"
+   ],
+   "complexity": "simple",
+   "lineRange": [
+    626,
+    636
+   ]
+  },
+  {
+   "id": "function:src/game/qte.ts:parryDamage",
+   "type": "function",
+   "name": "parryDamage",
+   "summary": "Scales base parry damage by success rate with a chip-damage floor.",
+   "tags": [
+    "qte",
+    "parry",
+    "damage",
+    "scoring"
+   ],
+   "complexity": "simple",
+   "lineRange": [
+    642,
+    648
+   ]
+  },
+  {
+   "id": "function:src/game/qte.ts:beatDegreeFor",
+   "type": "function",
+   "name": "beatDegreeFor",
+   "summary": "Picks the chord-fitting scale degree for a beat key press via MIDI pitch classes.",
+   "tags": [
+    "qte",
+    "degree-mapping",
+    "chords",
+    "harmony"
+   ],
+   "complexity": "simple",
+   "lineRange": [
+    656,
+    665
+   ]
+  },
+  {
+   "id": "function:src/game/units.ts:makeFighter",
+   "type": "function",
+   "name": "makeFighter",
+   "summary": "Constructs a fighter with HP maximum, shield caps, and empty buffs.",
+   "tags": [
+    "fighter",
+    "factory",
+    "data-model"
+   ],
+   "complexity": "simple",
+   "lineRange": [
+    30,
+    60
+   ]
+  },
+  {
+   "id": "function:src/game/units.ts:isDown",
+   "type": "function",
+   "name": "isDown",
+   "summary": "Reports whether a fighter is down at zero HP.",
+   "tags": [
+    "fighter",
+    "status",
+    "utility"
+   ],
+   "complexity": "simple",
+   "lineRange": [
+    62,
+    64
+   ]
+  },
+  {
+   "id": "function:src/game/units.ts:damageThroughShield",
+   "type": "function",
+   "name": "damageThroughShield",
+   "summary": "Applies damage through shield first with overflow to HP and absorption breakdown.",
+   "tags": [
+    "fighter",
+    "damage",
+    "shield"
+   ],
+   "complexity": "simple",
+   "lineRange": [
+    70,
+    82
+   ]
+  },
+  {
+   "id": "function:src/game/units.ts:healFighter",
+   "type": "function",
+   "name": "healFighter",
+   "summary": "Heals a living fighter up to its HP maximum.",
+   "tags": [
+    "fighter",
+    "heal",
+    "utility"
+   ],
+   "complexity": "simple",
+   "lineRange": [
+    84,
+    87
+   ]
+  },
+  {
+   "id": "function:src/game/units.ts:addShield",
+   "type": "function",
+   "name": "addShield",
+   "summary": "Adds shield up to the fighter's shield cap.",
+   "tags": [
+    "fighter",
+    "shield",
+    "utility"
+   ],
+   "complexity": "simple",
+   "lineRange": [
+    89,
+    91
+   ]
+  },
+  {
+   "id": "function:src/game/units.ts:applyBuff",
+   "type": "function",
+   "name": "applyBuff",
+   "summary": "Applies a buff with same-id refresh and max-power semantics; zero ticks clears it.",
+   "tags": [
+    "fighter",
+    "buffs",
+    "status-effect"
+   ],
+   "complexity": "simple",
+   "lineRange": [
+    97,
+    114
+   ]
+  },
+  {
+   "id": "function:src/game/units.ts:tickBuffs",
+   "type": "function",
+   "name": "tickBuffs",
+   "summary": "Ticks buff durations with poison and regen effects, returning updated fighter and events.",
+   "tags": [
+    "fighter",
+    "buffs",
+    "tick",
+    "status-effect"
+   ],
+   "complexity": "simple",
+   "lineRange": [
+    121,
+    139
+   ]
+  },
+  {
+   "id": "function:src/game/units.ts:buffGlyphs",
+   "type": "function",
+   "name": "buffGlyphs",
+   "summary": "Renders buff ids as compact status glyphs for the combat log UI.",
+   "tags": [
+    "fighter",
+    "buffs",
+    "display"
+   ],
+   "complexity": "simple",
+   "lineRange": [
+    142,
+    146
+   ]
+  },
+  {
+   "id": "function:src/game/units.ts:buffDamageTaken",
+   "type": "function",
+   "name": "buffDamageTaken",
+   "summary": "Computes the incoming-damage multiplier from exposed and warded buffs.",
+   "tags": [
+    "fighter",
+    "buffs",
+    "damage"
+   ],
+   "complexity": "simple",
+   "lineRange": [
+    149,
+    156
+   ]
+  }
+ ],
+ "edges": [
+  {
+   "source": "file:src/game/perform.ts",
+   "target": "function:src/game/perform.ts:isParryKey",
+   "type": "contains",
+   "direction": "forward",
+   "weight": 1.0
+  },
+  {
+   "source": "file:src/game/perform.ts",
+   "target": "function:src/game/perform.ts:moveCursor",
+   "type": "contains",
+   "direction": "forward",
+   "weight": 1.0
+  },
+  {
+   "source": "file:src/game/perform.ts",
+   "target": "function:src/game/perform.ts:cursorDegree",
+   "type": "contains",
+   "direction": "forward",
+   "weight": 1.0
+  },
+  {
+   "source": "file:src/game/perform.ts",
+   "target": "function:src/game/perform.ts:pressToLen",
+   "type": "contains",
+   "direction": "forward",
+   "weight": 1.0
+  },
+  {
+   "source": "file:src/game/perform.ts",
+   "target": "function:src/game/perform.ts:stepMs",
+   "type": "contains",
+   "direction": "forward",
+   "weight": 1.0
+  },
+  {
+   "source": "file:src/game/perform.ts",
+   "target": "function:src/game/perform.ts:secondsToSteps",
+   "type": "contains",
+   "direction": "forward",
+   "weight": 1.0
+  },
+  {
+   "source": "file:src/game/perform.ts",
+   "target": "function:src/game/perform.ts:stepsToMs",
+   "type": "contains",
+   "direction": "forward",
+   "weight": 1.0
+  },
+  {
+   "source": "file:src/game/qte.ts",
+   "target": "function:src/game/qte.ts:degreeToPerformKey",
+   "type": "contains",
+   "direction": "forward",
+   "weight": 1.0
+  },
+  {
+   "source": "file:src/game/qte.ts",
+   "target": "function:src/game/qte.ts:keyToDegree",
+   "type": "contains",
+   "direction": "forward",
+   "weight": 1.0
+  },
+  {
+   "source": "file:src/game/qte.ts",
+   "target": "function:src/game/qte.ts:qteKeyToDegree",
+   "type": "contains",
+   "direction": "forward",
+   "weight": 1.0
+  },
+  {
+   "source": "file:src/game/qte.ts",
+   "target": "function:src/game/qte.ts:ratingWeight",
+   "type": "contains",
+   "direction": "forward",
+   "weight": 1.0
+  },
+  {
+   "source": "file:src/game/qte.ts",
+   "target": "function:src/game/qte.ts:chartFromMelody",
+   "type": "contains",
+   "direction": "forward",
+   "weight": 1.0
+  },
+  {
+   "source": "file:src/game/qte.ts",
+   "target": "function:src/game/qte.ts:harmonicChart",
+   "type": "contains",
+   "direction": "forward",
+   "weight": 1.0
+  },
+  {
+   "source": "file:src/game/qte.ts",
+   "target": "function:src/game/qte.ts:patternMotif",
+   "type": "contains",
+   "direction": "forward",
+   "weight": 1.0
+  },
+  {
+   "source": "file:src/game/qte.ts",
+   "target": "function:src/game/qte.ts:fitChartToWindow",
+   "type": "contains",
+   "direction": "forward",
+   "weight": 1.0
+  },
+  {
+   "source": "file:src/game/qte.ts",
+   "target": "function:src/game/qte.ts:chartKeys",
+   "type": "contains",
+   "direction": "forward",
+   "weight": 1.0
+  },
+  {
+   "source": "file:src/game/qte.ts",
+   "target": "function:src/game/qte.ts:chartFromPattern",
+   "type": "contains",
+   "direction": "forward",
+   "weight": 1.0
+  },
+  {
+   "source": "file:src/game/qte.ts",
+   "target": "function:src/game/qte.ts:randomChart",
+   "type": "contains",
+   "direction": "forward",
+   "weight": 1.0
+  },
+  {
+   "source": "file:src/game/qte.ts",
+   "target": "function:src/game/qte.ts:synthChartFromSequence",
+   "type": "contains",
+   "direction": "forward",
+   "weight": 1.0
+  },
+  {
+   "source": "file:src/game/qte.ts",
+   "target": "function:src/game/qte.ts:createQte",
+   "type": "contains",
+   "direction": "forward",
+   "weight": 1.0
+  },
+  {
+   "source": "file:src/game/qte.ts",
+   "target": "function:src/game/qte.ts:pressQte",
+   "type": "contains",
+   "direction": "forward",
+   "weight": 1.0
+  },
+  {
+   "source": "file:src/game/qte.ts",
+   "target": "function:src/game/qte.ts:releaseQte",
+   "type": "contains",
+   "direction": "forward",
+   "weight": 1.0
+  },
+  {
+   "source": "file:src/game/qte.ts",
+   "target": "function:src/game/qte.ts:missOverdueNotes",
+   "type": "contains",
+   "direction": "forward",
+   "weight": 1.0
+  },
+  {
+   "source": "file:src/game/qte.ts",
+   "target": "function:src/game/qte.ts:isQteComplete",
+   "type": "contains",
+   "direction": "forward",
+   "weight": 1.0
+  },
+  {
+   "source": "file:src/game/qte.ts",
+   "target": "function:src/game/qte.ts:isQteExpired",
+   "type": "contains",
+   "direction": "forward",
+   "weight": 1.0
+  },
+  {
+   "source": "file:src/game/qte.ts",
+   "target": "function:src/game/qte.ts:qteSuccessRate",
+   "type": "contains",
+   "direction": "forward",
+   "weight": 1.0
+  },
+  {
+   "source": "file:src/game/qte.ts",
+   "target": "function:src/game/qte.ts:parryDamage",
+   "type": "contains",
+   "direction": "forward",
+   "weight": 1.0
+  },
+  {
+   "source": "file:src/game/qte.ts",
+   "target": "function:src/game/qte.ts:beatDegreeFor",
+   "type": "contains",
+   "direction": "forward",
+   "weight": 1.0
+  },
+  {
+   "source": "file:src/game/units.ts",
+   "target": "function:src/game/units.ts:makeFighter",
+   "type": "contains",
+   "direction": "forward",
+   "weight": 1.0
+  },
+  {
+   "source": "file:src/game/units.ts",
+   "target": "function:src/game/units.ts:isDown",
+   "type": "contains",
+   "direction": "forward",
+   "weight": 1.0
+  },
+  {
+   "source": "file:src/game/units.ts",
+   "target": "function:src/game/units.ts:damageThroughShield",
+   "type": "contains",
+   "direction": "forward",
+   "weight": 1.0
+  },
+  {
+   "source": "file:src/game/units.ts",
+   "target": "function:src/game/units.ts:healFighter",
+   "type": "contains",
+   "direction": "forward",
+   "weight": 1.0
+  },
+  {
+   "source": "file:src/game/units.ts",
+   "target": "function:src/game/units.ts:addShield",
+   "type": "contains",
+   "direction": "forward",
+   "weight": 1.0
+  },
+  {
+   "source": "file:src/game/units.ts",
+   "target": "function:src/game/units.ts:applyBuff",
+   "type": "contains",
+   "direction": "forward",
+   "weight": 1.0
+  },
+  {
+   "source": "file:src/game/units.ts",
+   "target": "function:src/game/units.ts:tickBuffs",
+   "type": "contains",
+   "direction": "forward",
+   "weight": 1.0
+  },
+  {
+   "source": "file:src/game/units.ts",
+   "target": "function:src/game/units.ts:buffGlyphs",
+   "type": "contains",
+   "direction": "forward",
+   "weight": 1.0
+  },
+  {
+   "source": "file:src/game/units.ts",
+   "target": "function:src/game/units.ts:buffDamageTaken",
+   "type": "contains",
+   "direction": "forward",
+   "weight": 1.0
+  },
+  {
+   "source": "file:src/game/qte.ts",
+   "target": "file:src/game/arrangement.ts",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:src/game/qte.ts",
+   "target": "file:src/game/perform.ts",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:src/game/qte.ts",
+   "target": "file:src/game/theory.ts",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:src/game/units.test.ts",
+   "target": "file:src/game/units.ts",
+   "type": "imports",
+   "direction": "forward",
+   "weight": 0.7
+  },
+  {
+   "source": "file:src/game/perform.ts",
+   "target": "file:src/game/perform.test.ts",
+   "type": "tested_by",
+   "direction": "forward",
+   "weight": 0.5
+  },
+  {
+   "source": "file:src/game/units.ts",
+   "target": "file:src/game/units.test.ts",
+   "type": "tested_by",
+   "direction": "forward",
+   "weight": 0.5
+  },
+  {
+   "source": "function:src/game/qte.ts:beatDegreeFor",
+   "target": "function:src/game/theory.ts:degreeToMidi",
+   "type": "calls",
+   "direction": "forward",
+   "weight": 0.8
+  }
+ ]
+}

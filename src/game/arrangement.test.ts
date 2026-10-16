@@ -10,8 +10,9 @@ import {
   setBarChord,
   setBpm,
   snapshotStep,
-  toggleDrumStep,
+  toggleGrooveStep,
   toggleNoteEvent,
+  tweakGrooveKnobs,
 } from "./arrangement"
 describe("createDefaultArrangement", () => {
   it("builds 3 tracks over a 2x16 loop with seeded slot 0", () => {
@@ -41,9 +42,18 @@ describe("edits", () => {
     expect(() => toggleNoteEvent(arr, 0, 0, 0, { degree: 1, len: 0 })).toThrow()
   })
 
-  it("toggleDrumStep flips the cell", () => {
+  it("toggleGrooveStep edits the equipped cell immutably and marks it custom", () => {
     const arr = createDefaultArrangement()
-    expect(toggleDrumStep(arr, "kick", 0, 1).drums.kick[0][1]).toBe(true)
+    const next = toggleGrooveStep(arr, "kick", 1)
+    expect(next.groove.cell.kick).toContain(1)
+    expect(next.groove.source).toBe("custom")
+    expect(arr.groove.cell.kick).not.toContain(1)
+  })
+
+  it("tweakGrooveKnobs clamps instead of throwing", () => {
+    const arr = tweakGrooveKnobs(createDefaultArrangement(), { swing: 9, density: -1 })
+    expect(arr.groove.swing).toBe(0.6)
+    expect(arr.groove.density).toBe(0)
   })
 
   it("clearTracks wipes every slot", () => {
@@ -79,6 +89,16 @@ describe("snapshotStep", () => {
     expect(s0.melodies.every((m) => m.chordTone)).toBe(true)
     expect(s0.chord.length).toBe(3)
     expect(s0.kick).toBe(true)
+  })
+
+  it("reads kick/snare/hat off the equipped groove, with density applied", () => {
+    const arr = createDefaultArrangement()
+    // Steady card: hat on every 8th.
+    expect(snapshotStep(arr, 0, 2).hat).toBe(true)
+    const thin = tweakGrooveKnobs(arr, { density: 0 })
+    expect(snapshotStep(thin, 0, 2).hat).toBe(false)
+    // Quarter-note hits are the floor and always survive.
+    expect(snapshotStep(thin, 0, 0).kick).toBe(true)
   })
 
   it("flags non-chord tones", () => {

@@ -1,0 +1,524 @@
+{
+  "scriptCompleted": true,
+  "filesAnalyzed": 5,
+  "filesSkipped": [],
+  "filesUnreadable": [],
+  "analysisOutcomes": {
+    "structure": {
+      "succeeded": 5,
+      "failed": 0
+    },
+    "callGraph": {
+      "succeeded": 5,
+      "failed": 0,
+      "skipped": 0
+    }
+  },
+  "results": [
+    {
+      "path": "src/components/screens/CombatScreen.tsx",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 78,
+      "nonEmptyLines": 70,
+      "functions": [
+        {
+          "name": "CombatScreen",
+          "startLine": 13,
+          "endLine": 77,
+          "params": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "CombatScreen",
+          "line": 13,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "CombatScreen",
+          "callee": "useSessionStore",
+          "lineNumber": 14
+        },
+        {
+          "caller": "CombatScreen",
+          "callee": "useSessionStore",
+          "lineNumber": 15
+        },
+        {
+          "caller": "CombatScreen",
+          "callee": "useSessionStore",
+          "lineNumber": 16
+        },
+        {
+          "caller": "CombatScreen",
+          "callee": "useSessionStore",
+          "lineNumber": 17
+        },
+        {
+          "caller": "CombatScreen",
+          "callee": "useSessionStore",
+          "lineNumber": 18
+        },
+        {
+          "caller": "CombatScreen",
+          "callee": "encounters.find",
+          "lineNumber": 20
+        },
+        {
+          "caller": "CombatScreen",
+          "callee": "togglePlay",
+          "lineNumber": 43
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 1,
+        "functionCount": 1,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "src/components/screens/MenuScreen.tsx",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 148,
+      "nonEmptyLines": 137,
+      "functions": [
+        {
+          "name": "MenuScreen",
+          "startLine": 10,
+          "endLine": 148,
+          "params": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "MenuScreen",
+          "line": 10,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "MenuScreen",
+          "callee": "useSessionStore",
+          "lineNumber": 11
+        },
+        {
+          "caller": "MenuScreen",
+          "callee": "useSessionStore",
+          "lineNumber": 12
+        },
+        {
+          "caller": "MenuScreen",
+          "callee": "useSessionStore",
+          "lineNumber": 13
+        },
+        {
+          "caller": "MenuScreen",
+          "callee": "useSessionStore",
+          "lineNumber": 14
+        },
+        {
+          "caller": "MenuScreen",
+          "callee": "useSessionStore",
+          "lineNumber": 15
+        },
+        {
+          "caller": "MenuScreen",
+          "callee": "useSessionStore",
+          "lineNumber": 16
+        },
+        {
+          "caller": "MenuScreen",
+          "callee": "useState",
+          "lineNumber": 18
+        },
+        {
+          "caller": "MenuScreen",
+          "callee": "useState",
+          "lineNumber": 19
+        },
+        {
+          "caller": "MenuScreen",
+          "callee": "useState",
+          "lineNumber": 20
+        },
+        {
+          "caller": "handleWakeAudio",
+          "callee": "initVoices",
+          "lineNumber": 24
+        },
+        {
+          "caller": "handleWakeAudio",
+          "callee": "setAudioAwake",
+          "lineNumber": 25
+        },
+        {
+          "caller": "handleWakeAudio",
+          "callee": "console.error",
+          "lineNumber": 27
+        },
+        {
+          "caller": "handleAudition",
+          "callee": "setActiveNote",
+          "lineNumber": 33
+        },
+        {
+          "caller": "handleAudition",
+          "callee": "degreeToMidi",
+          "lineNumber": 34
+        },
+        {
+          "caller": "handleAudition",
+          "callee": "auditionStart",
+          "lineNumber": 35
+        },
+        {
+          "caller": "handleAudition",
+          "callee": "setTimeout",
+          "lineNumber": 36
+        },
+        {
+          "caller": "handleAudition",
+          "callee": "auditionEnd",
+          "lineNumber": 37
+        },
+        {
+          "caller": "handleAudition",
+          "callee": "setActiveNote",
+          "lineNumber": 38
+        },
+        {
+          "caller": "MenuScreen",
+          "callee": "[\n                { key: \"W\", degree: 1, name: \"Tonic\" },\n                { key: \"A\", degree: 3, name: \"Mediant\" },\n                { key: \"S\", degree: 5, name: \"Dominant\" },\n                { key: \"D\", degree: 7, name: \"Leading\" },\n              ].map",
+          "lineNumber": 75
+        },
+        {
+          "caller": "MenuScreen",
+          "callee": "handleAudition",
+          "lineNumber": 84
+        },
+        {
+          "caller": "MenuScreen",
+          "callee": "selectEncounter",
+          "lineNumber": 107
+        },
+        {
+          "caller": "MenuScreen",
+          "callee": "encounters.map",
+          "lineNumber": 110
+        },
+        {
+          "caller": "MenuScreen",
+          "callee": "isEncounterUnlocked",
+          "lineNumber": 111
+        },
+        {
+          "caller": "MenuScreen",
+          "callee": "enc.enemyIds.join",
+          "lineNumber": 114
+        },
+        {
+          "caller": "MenuScreen",
+          "callee": "handleWakeAudio",
+          "lineNumber": 126
+        },
+        {
+          "caller": "MenuScreen",
+          "callee": "toPrep",
+          "lineNumber": 127
+        },
+        {
+          "caller": "MenuScreen",
+          "callee": "setGuideOpen",
+          "lineNumber": 137
+        },
+        {
+          "caller": "MenuScreen",
+          "callee": "setGuideOpen",
+          "lineNumber": 145
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 1,
+        "functionCount": 1,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "src/components/screens/PrepScreen.tsx",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 164,
+      "nonEmptyLines": 149,
+      "functions": [
+        {
+          "name": "PrepScreen",
+          "startLine": 14,
+          "endLine": 163,
+          "params": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "PrepScreen",
+          "line": 14,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "PrepScreen",
+          "callee": "useSessionStore",
+          "lineNumber": 15
+        },
+        {
+          "caller": "PrepScreen",
+          "callee": "useSessionStore",
+          "lineNumber": 16
+        },
+        {
+          "caller": "PrepScreen",
+          "callee": "useSessionStore",
+          "lineNumber": 17
+        },
+        {
+          "caller": "PrepScreen",
+          "callee": "useSessionStore",
+          "lineNumber": 18
+        },
+        {
+          "caller": "PrepScreen",
+          "callee": "useSessionStore",
+          "lineNumber": 19
+        },
+        {
+          "caller": "PrepScreen",
+          "callee": "useSessionStore",
+          "lineNumber": 20
+        },
+        {
+          "caller": "PrepScreen",
+          "callee": "useSessionStore",
+          "lineNumber": 21
+        },
+        {
+          "caller": "PrepScreen",
+          "callee": "useSessionStore",
+          "lineNumber": 22
+        },
+        {
+          "caller": "PrepScreen",
+          "callee": "useSessionStore",
+          "lineNumber": 23
+        },
+        {
+          "caller": "PrepScreen",
+          "callee": "useState",
+          "lineNumber": 25
+        },
+        {
+          "caller": "PrepScreen",
+          "callee": "loadTutorialSeen",
+          "lineNumber": 25
+        },
+        {
+          "caller": "PrepScreen",
+          "callee": "setGuideOpen",
+          "lineNumber": 45
+        },
+        {
+          "caller": "PrepScreen",
+          "callee": "togglePlay",
+          "lineNumber": 54
+        },
+        {
+          "caller": "PrepScreen",
+          "callee": "FIGHT_KEYS.map",
+          "lineNumber": 75
+        },
+        {
+          "caller": "PrepScreen",
+          "callee": "keyEquals",
+          "lineNumber": 76
+        },
+        {
+          "caller": "PrepScreen",
+          "callee": "setKey",
+          "lineNumber": 83
+        },
+        {
+          "caller": "PrepScreen",
+          "callee": "setBpm",
+          "lineNumber": 108
+        },
+        {
+          "caller": "PrepScreen",
+          "callee": "Number",
+          "lineNumber": 108
+        },
+        {
+          "caller": "PrepScreen",
+          "callee": "setGuideOpen",
+          "lineNumber": 157
+        },
+        {
+          "caller": "PrepScreen",
+          "callee": "saveTutorialSeen",
+          "lineNumber": 158
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 1,
+        "functionCount": 1,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "src/components/screens/ResultOverlay.tsx",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 150,
+      "nonEmptyLines": 136,
+      "functions": [
+        {
+          "name": "ResultOverlay",
+          "startLine": 12,
+          "endLine": 149,
+          "params": [
+            "{ phase }"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "ResultOverlay",
+          "line": 12,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "ResultOverlay",
+          "callee": "useSessionStore",
+          "lineNumber": 13
+        },
+        {
+          "caller": "ResultOverlay",
+          "callee": "useSessionStore",
+          "lineNumber": 14
+        },
+        {
+          "caller": "ResultOverlay",
+          "callee": "useSessionStore",
+          "lineNumber": 15
+        },
+        {
+          "caller": "ResultOverlay",
+          "callee": "useSessionStore",
+          "lineNumber": 16
+        },
+        {
+          "caller": "ResultOverlay",
+          "callee": "useSessionStore",
+          "lineNumber": 17
+        },
+        {
+          "caller": "ResultOverlay",
+          "callee": "useSessionStore",
+          "lineNumber": 18
+        },
+        {
+          "caller": "ResultOverlay",
+          "callee": "useSessionStore",
+          "lineNumber": 19
+        },
+        {
+          "caller": "ResultOverlay",
+          "callee": "useSessionStore",
+          "lineNumber": 20
+        },
+        {
+          "caller": "ResultOverlay",
+          "callee": "useEffect",
+          "lineNumber": 24
+        },
+        {
+          "caller": "ResultOverlay",
+          "callee": "playVictoryJingle",
+          "lineNumber": 26
+        },
+        {
+          "caller": "ResultOverlay",
+          "callee": "playDefeatSting",
+          "lineNumber": 28
+        },
+        {
+          "caller": "ResultOverlay",
+          "callee": "encounters.findIndex",
+          "lineNumber": 31
+        },
+        {
+          "caller": "ResultOverlay",
+          "callee": "scoreProgression",
+          "lineNumber": 36
+        },
+        {
+          "caller": "ResultOverlay",
+          "callee": "chordEffectFor",
+          "lineNumber": 37
+        },
+        {
+          "caller": "handleNextEncounter",
+          "callee": "selectEncounter",
+          "lineNumber": 41
+        },
+        {
+          "caller": "handleNextEncounter",
+          "callee": "toPrep",
+          "lineNumber": 43
+        },
+        {
+          "caller": "handleRetry",
+          "callee": "reset",
+          "lineNumber": 47
+        },
+        {
+          "caller": "handleRetry",
+          "callee": "togglePlay",
+          "lineNumber": 48
+        },
+        {
+          "caller": "ResultOverlay",
+          "callee": "Math.round",
+          "lineNumber": 91
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 1,
+        "functionCount": 1,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "src/components/screens/screens.test.tsx",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 97,
+      "nonEmptyLines": 84,
+      "metrics": {
+        "importCount": 4,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0
+      }
+    }
+  ]
+}

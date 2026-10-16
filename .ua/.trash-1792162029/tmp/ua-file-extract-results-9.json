@@ -1,0 +1,2815 @@
+{
+  "scriptCompleted": true,
+  "filesAnalyzed": 25,
+  "filesSkipped": [],
+  "filesUnreadable": [],
+  "analysisOutcomes": {
+    "structure": {
+      "succeeded": 25,
+      "failed": 0
+    },
+    "callGraph": {
+      "succeeded": 25,
+      "failed": 0,
+      "skipped": 0
+    }
+  },
+  "results": [
+    {
+      "path": "src/App.tsx",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 28,
+      "nonEmptyLines": 25,
+      "functions": [
+        {
+          "name": "App",
+          "startLine": 8,
+          "endLine": 24,
+          "params": []
+        },
+        {
+          "name": "phaseForOverlay",
+          "startLine": 26,
+          "endLine": 28,
+          "params": [
+            "phase"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "App",
+          "line": 8,
+          "isDefault": true
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "App",
+          "callee": "useWasd",
+          "lineNumber": 9
+        },
+        {
+          "caller": "App",
+          "callee": "useSessionStore",
+          "lineNumber": 10
+        },
+        {
+          "caller": "App",
+          "callee": "phaseForOverlay",
+          "lineNumber": 20
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 1,
+        "functionCount": 2,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "src/components/ChordPicker.tsx",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 64,
+      "nonEmptyLines": 59,
+      "functions": [
+        {
+          "name": "ChordPicker",
+          "startLine": 13,
+          "endLine": 64,
+          "params": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "ChordPicker",
+          "line": 13,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "ChordPicker",
+          "callee": "useState",
+          "lineNumber": 14
+        },
+        {
+          "caller": "ChordPicker",
+          "callee": "useSessionStore",
+          "lineNumber": 15
+        },
+        {
+          "caller": "ChordPicker",
+          "callee": "useSessionStore",
+          "lineNumber": 16
+        },
+        {
+          "caller": "ChordPicker",
+          "callee": "chordEffectFor",
+          "lineNumber": 18
+        },
+        {
+          "caller": "ChordPicker",
+          "callee": "setTab",
+          "lineNumber": 28
+        },
+        {
+          "caller": "ChordPicker",
+          "callee": "setTab",
+          "lineNumber": 36
+        },
+        {
+          "caller": "ChordPicker",
+          "callee": "arrangement.chords.join",
+          "lineNumber": 47
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 1,
+        "functionCount": 1,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "src/components/ChordWheel.tsx",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 67,
+      "nonEmptyLines": 64,
+      "functions": [
+        {
+          "name": "ChordWheel",
+          "startLine": 10,
+          "endLine": 67,
+          "params": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "ChordWheel",
+          "line": 10,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "ChordWheel",
+          "callee": "useSessionStore",
+          "lineNumber": 11
+        },
+        {
+          "caller": "ChordWheel",
+          "callee": "useSessionStore",
+          "lineNumber": 12
+        },
+        {
+          "caller": "ChordWheel",
+          "callee": "useSessionStore",
+          "lineNumber": 13
+        },
+        {
+          "caller": "ChordWheel",
+          "callee": "useSessionStore",
+          "lineNumber": 14
+        },
+        {
+          "caller": "ChordWheel",
+          "callee": "useSessionStore",
+          "lineNumber": 15
+        },
+        {
+          "caller": "ChordWheel",
+          "callee": "arrangement.chords.join",
+          "lineNumber": 36
+        },
+        {
+          "caller": "ChordWheel",
+          "callee": "chordEffectFor",
+          "lineNumber": 38
+        },
+        {
+          "caller": "ChordWheel",
+          "callee": "CHORD_PRESETS.map",
+          "lineNumber": 41
+        },
+        {
+          "caller": "ChordWheel",
+          "callee": "Math.cos",
+          "lineNumber": 43
+        },
+        {
+          "caller": "ChordWheel",
+          "callee": "Math.sin",
+          "lineNumber": 44
+        },
+        {
+          "caller": "ChordWheel",
+          "callee": "chordEffectFor",
+          "lineNumber": 45
+        },
+        {
+          "caller": "ChordWheel",
+          "callee": "arrangement.chords.every",
+          "lineNumber": 46
+        },
+        {
+          "caller": "ChordWheel",
+          "callee": "setChords",
+          "lineNumber": 55
+        },
+        {
+          "caller": "ChordWheel",
+          "callee": "p.romans.join",
+          "lineNumber": 56
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 1,
+        "functionCount": 1,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "src/components/CombatFeedback.tsx",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 94,
+      "nonEmptyLines": 84,
+      "functions": [
+        {
+          "name": "CombatFeedback",
+          "startLine": 10,
+          "endLine": 94,
+          "params": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "CombatFeedback",
+          "line": 10,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "CombatFeedback",
+          "callee": "useSessionStore",
+          "lineNumber": 11
+        },
+        {
+          "caller": "CombatFeedback",
+          "callee": "useState",
+          "lineNumber": 12
+        },
+        {
+          "caller": "CombatFeedback",
+          "callee": "useEffect",
+          "lineNumber": 14
+        },
+        {
+          "caller": "CombatFeedback",
+          "callee": "text.includes",
+          "lineNumber": 21
+        },
+        {
+          "caller": "CombatFeedback",
+          "callee": "text.includes",
+          "lineNumber": 23
+        },
+        {
+          "caller": "CombatFeedback",
+          "callee": "text.includes",
+          "lineNumber": 25
+        },
+        {
+          "caller": "CombatFeedback",
+          "callee": "text.includes",
+          "lineNumber": 27
+        },
+        {
+          "caller": "CombatFeedback",
+          "callee": "text.includes",
+          "lineNumber": 29
+        },
+        {
+          "caller": "CombatFeedback",
+          "callee": "text.match",
+          "lineNumber": 30
+        },
+        {
+          "caller": "CombatFeedback",
+          "callee": "text.includes",
+          "lineNumber": 32
+        },
+        {
+          "caller": "CombatFeedback",
+          "callee": "text.includes",
+          "lineNumber": 34
+        },
+        {
+          "caller": "CombatFeedback",
+          "callee": "text.includes",
+          "lineNumber": 36
+        },
+        {
+          "caller": "CombatFeedback",
+          "callee": "text.match",
+          "lineNumber": 39
+        },
+        {
+          "caller": "CombatFeedback",
+          "callee": "Date.now",
+          "lineNumber": 46
+        },
+        {
+          "caller": "CombatFeedback",
+          "callee": "Math.random().toString(36).slice",
+          "lineNumber": 46
+        },
+        {
+          "caller": "CombatFeedback",
+          "callee": "Math.random().toString",
+          "lineNumber": 46
+        },
+        {
+          "caller": "CombatFeedback",
+          "callee": "Math.random",
+          "lineNumber": 46
+        },
+        {
+          "caller": "CombatFeedback",
+          "callee": "setTimeout",
+          "lineNumber": 48
+        },
+        {
+          "caller": "CombatFeedback",
+          "callee": "setTags",
+          "lineNumber": 49
+        },
+        {
+          "caller": "CombatFeedback",
+          "callee": "prev.slice",
+          "lineNumber": 49
+        },
+        {
+          "caller": "CombatFeedback",
+          "callee": "setTimeout",
+          "lineNumber": 52
+        },
+        {
+          "caller": "CombatFeedback",
+          "callee": "setTags",
+          "lineNumber": 53
+        },
+        {
+          "caller": "CombatFeedback",
+          "callee": "prev.filter",
+          "lineNumber": 53
+        },
+        {
+          "caller": "CombatFeedback",
+          "callee": "clearTimeout",
+          "lineNumber": 57
+        },
+        {
+          "caller": "CombatFeedback",
+          "callee": "clearTimeout",
+          "lineNumber": 58
+        },
+        {
+          "caller": "CombatFeedback",
+          "callee": "tags.map",
+          "lineNumber": 70
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 1,
+        "functionCount": 1,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "src/components/CombatLog.tsx",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 29,
+      "nonEmptyLines": 26,
+      "functions": [
+        {
+          "name": "CombatLog",
+          "startLine": 4,
+          "endLine": 29,
+          "params": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "CombatLog",
+          "line": 4,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "CombatLog",
+          "callee": "useSessionStore",
+          "lineNumber": 5
+        },
+        {
+          "caller": "CombatLog",
+          "callee": "useRef",
+          "lineNumber": 6
+        },
+        {
+          "caller": "CombatLog",
+          "callee": "useEffect",
+          "lineNumber": 8
+        },
+        {
+          "caller": "CombatLog",
+          "callee": "bottomRef.current.scrollIntoView",
+          "lineNumber": 10
+        },
+        {
+          "caller": "CombatLog",
+          "callee": "log.map",
+          "lineNumber": 21
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 1,
+        "functionCount": 1,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "src/components/CustomChordBuilder.test.tsx",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 48,
+      "nonEmptyLines": 39,
+      "metrics": {
+        "importCount": 1,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "src/components/CustomChordBuilder.tsx",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 280,
+      "nonEmptyLines": 258,
+      "functions": [
+        {
+          "name": "CustomChordBuilder",
+          "startLine": 12,
+          "endLine": 279,
+          "params": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "CustomChordBuilder",
+          "line": 12,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "CustomChordBuilder",
+          "callee": "useSessionStore",
+          "lineNumber": 13
+        },
+        {
+          "caller": "CustomChordBuilder",
+          "callee": "useSessionStore",
+          "lineNumber": 14
+        },
+        {
+          "caller": "CustomChordBuilder",
+          "callee": "useSessionStore",
+          "lineNumber": 15
+        },
+        {
+          "caller": "CustomChordBuilder",
+          "callee": "useSessionStore",
+          "lineNumber": 16
+        },
+        {
+          "caller": "CustomChordBuilder",
+          "callee": "useSessionStore",
+          "lineNumber": 17
+        },
+        {
+          "caller": "CustomChordBuilder",
+          "callee": "useSessionStore",
+          "lineNumber": 18
+        },
+        {
+          "caller": "CustomChordBuilder",
+          "callee": "useState",
+          "lineNumber": 20
+        },
+        {
+          "caller": "CustomChordBuilder",
+          "callee": "useState",
+          "lineNumber": 21
+        },
+        {
+          "caller": "CustomChordBuilder",
+          "callee": "useState",
+          "lineNumber": 22
+        },
+        {
+          "caller": "CustomChordBuilder",
+          "callee": "useState",
+          "lineNumber": 23
+        },
+        {
+          "caller": "CustomChordBuilder",
+          "callee": "useId",
+          "lineNumber": 24
+        },
+        {
+          "caller": "CustomChordBuilder",
+          "callee": "/minor|aeolian|dorian|phrygian/i.test",
+          "lineNumber": 26
+        },
+        {
+          "caller": "CustomChordBuilder",
+          "callee": "scoreProgression",
+          "lineNumber": 29
+        },
+        {
+          "caller": "CustomChordBuilder",
+          "callee": "chordEffectFor",
+          "lineNumber": 30
+        },
+        {
+          "caller": "handleSelectRoman",
+          "callee": "setBars",
+          "lineNumber": 35
+        },
+        {
+          "caller": "handleSelectRoman",
+          "callee": "setActiveBar",
+          "lineNumber": 37
+        },
+        {
+          "caller": "handleApply",
+          "callee": "playChordChange",
+          "lineNumber": 41
+        },
+        {
+          "caller": "handleApply",
+          "callee": "requestChordChart",
+          "lineNumber": 43
+        },
+        {
+          "caller": "handleApply",
+          "callee": "setChords",
+          "lineNumber": 45
+        },
+        {
+          "caller": "handleApply",
+          "callee": "setSavedMessage",
+          "lineNumber": 47
+        },
+        {
+          "caller": "handleApply",
+          "callee": "setTimeout",
+          "lineNumber": 48
+        },
+        {
+          "caller": "handleApply",
+          "callee": "setSavedMessage",
+          "lineNumber": 48
+        },
+        {
+          "caller": "handleSavePreset",
+          "callee": "e.preventDefault",
+          "lineNumber": 52
+        },
+        {
+          "caller": "handleSavePreset",
+          "callee": "presetName.trim",
+          "lineNumber": 53
+        },
+        {
+          "caller": "handleSavePreset",
+          "callee": "saveCustomPreset",
+          "lineNumber": 55
+        },
+        {
+          "caller": "handleSavePreset",
+          "callee": "setPresetName",
+          "lineNumber": 56
+        },
+        {
+          "caller": "handleSavePreset",
+          "callee": "setSavedMessage",
+          "lineNumber": 57
+        },
+        {
+          "caller": "handleSavePreset",
+          "callee": "setTimeout",
+          "lineNumber": 58
+        },
+        {
+          "caller": "handleSavePreset",
+          "callee": "setSavedMessage",
+          "lineNumber": 58
+        },
+        {
+          "caller": "getChordNotes",
+          "callee": "romanToChord",
+          "lineNumber": 63
+        },
+        {
+          "caller": "getChordNotes",
+          "callee": "midis.map(pitchClassOfMidi).join",
+          "lineNumber": 64
+        },
+        {
+          "caller": "getChordNotes",
+          "callee": "midis.map",
+          "lineNumber": 64
+        },
+        {
+          "caller": "CustomChordBuilder",
+          "callee": "CHORD_PRESETS.slice(0, 4).map",
+          "lineNumber": 89
+        },
+        {
+          "caller": "CustomChordBuilder",
+          "callee": "CHORD_PRESETS.slice",
+          "lineNumber": 89
+        },
+        {
+          "caller": "CustomChordBuilder",
+          "callee": "setBars",
+          "lineNumber": 94
+        },
+        {
+          "caller": "CustomChordBuilder",
+          "callee": "p.romans.join",
+          "lineNumber": 96
+        },
+        {
+          "caller": "CustomChordBuilder",
+          "callee": "bars.map",
+          "lineNumber": 106
+        },
+        {
+          "caller": "CustomChordBuilder",
+          "callee": "getChordNotes",
+          "lineNumber": 108
+        },
+        {
+          "caller": "CustomChordBuilder",
+          "callee": "setActiveBar",
+          "lineNumber": 113
+        },
+        {
+          "caller": "CustomChordBuilder",
+          "callee": "cn",
+          "lineNumber": 114
+        },
+        {
+          "caller": "CustomChordBuilder",
+          "callee": "getChordNotes",
+          "lineNumber": 142
+        },
+        {
+          "caller": "CustomChordBuilder",
+          "callee": "palette.map",
+          "lineNumber": 146
+        },
+        {
+          "caller": "CustomChordBuilder",
+          "callee": "handleSelectRoman",
+          "lineNumber": 153
+        },
+        {
+          "caller": "CustomChordBuilder",
+          "callee": "cn",
+          "lineNumber": 172
+        },
+        {
+          "caller": "CustomChordBuilder",
+          "callee": "cn",
+          "lineNumber": 232
+        },
+        {
+          "caller": "CustomChordBuilder",
+          "callee": "cn",
+          "lineNumber": 235
+        },
+        {
+          "caller": "CustomChordBuilder",
+          "callee": "cn",
+          "lineNumber": 238
+        },
+        {
+          "caller": "CustomChordBuilder",
+          "callee": "setPresetName",
+          "lineNumber": 254
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 1,
+        "functionCount": 1,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "src/components/EncounterBanner.tsx",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 175,
+      "nonEmptyLines": 161,
+      "functions": [
+        {
+          "name": "EncounterBanner",
+          "startLine": 7,
+          "endLine": 175,
+          "params": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "EncounterBanner",
+          "line": 7,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "EncounterBanner",
+          "callee": "useSessionStore",
+          "lineNumber": 8
+        },
+        {
+          "caller": "EncounterBanner",
+          "callee": "useSessionStore",
+          "lineNumber": 9
+        },
+        {
+          "caller": "EncounterBanner",
+          "callee": "useSessionStore",
+          "lineNumber": 10
+        },
+        {
+          "caller": "EncounterBanner",
+          "callee": "useSessionStore",
+          "lineNumber": 11
+        },
+        {
+          "caller": "EncounterBanner",
+          "callee": "useSessionStore",
+          "lineNumber": 12
+        },
+        {
+          "caller": "EncounterBanner",
+          "callee": "encounters.findIndex",
+          "lineNumber": 14
+        },
+        {
+          "caller": "handleSelect",
+          "callee": "isEncounterUnlocked",
+          "lineNumber": 18
+        },
+        {
+          "caller": "handleSelect",
+          "callee": "selectEncounter",
+          "lineNumber": 19
+        },
+        {
+          "caller": "handlePrev",
+          "callee": "isEncounterUnlocked",
+          "lineNumber": 26
+        },
+        {
+          "caller": "handlePrev",
+          "callee": "selectEncounter",
+          "lineNumber": 27
+        },
+        {
+          "caller": "handleNext",
+          "callee": "isEncounterUnlocked",
+          "lineNumber": 35
+        },
+        {
+          "caller": "handleNext",
+          "callee": "selectEncounter",
+          "lineNumber": 36
+        },
+        {
+          "caller": "EncounterBanner",
+          "callee": "clearedEncounterIds.includes",
+          "lineNumber": 43
+        },
+        {
+          "caller": "EncounterBanner",
+          "callee": "isEncounterUnlocked",
+          "lineNumber": 46
+        },
+        {
+          "caller": "EncounterBanner",
+          "callee": "encounters.map",
+          "lineNumber": 53
+        },
+        {
+          "caller": "EncounterBanner",
+          "callee": "isEncounterUnlocked",
+          "lineNumber": 54
+        },
+        {
+          "caller": "EncounterBanner",
+          "callee": "clearedEncounterIds.includes",
+          "lineNumber": 55
+        },
+        {
+          "caller": "EncounterBanner",
+          "callee": "handleSelect",
+          "lineNumber": 62
+        },
+        {
+          "caller": "EncounterBanner",
+          "callee": "cn",
+          "lineNumber": 65
+        },
+        {
+          "caller": "EncounterBanner",
+          "callee": "encounter.enemyIds.map",
+          "lineNumber": 144
+        },
+        {
+          "caller": "EncounterBanner",
+          "callee": "profile.weaknesses.instruments.join",
+          "lineNumber": 159
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 1,
+        "functionCount": 1,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "src/components/FoePanel.tsx",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 186,
+      "nonEmptyLines": 170,
+      "functions": [
+        {
+          "name": "FoePanel",
+          "startLine": 21,
+          "endLine": 186,
+          "params": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "FoePanel",
+          "line": 21,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "FoePanel",
+          "callee": "useSessionStore",
+          "lineNumber": 22
+        },
+        {
+          "caller": "FoePanel",
+          "callee": "fight.enemies.filter",
+          "lineNumber": 28
+        },
+        {
+          "caller": "FoePanel",
+          "callee": "isDown",
+          "lineNumber": 28
+        },
+        {
+          "caller": "FoePanel",
+          "callee": "fight.enemies.map",
+          "lineNumber": 33
+        },
+        {
+          "caller": "FoePanel",
+          "callee": "foe.id.replace",
+          "lineNumber": 36
+        },
+        {
+          "caller": "FoePanel",
+          "callee": "isDown",
+          "lineNumber": 37
+        },
+        {
+          "caller": "FoePanel",
+          "callee": "Math.max",
+          "lineNumber": 42
+        },
+        {
+          "caller": "FoePanel",
+          "callee": "Math.min",
+          "lineNumber": 42
+        },
+        {
+          "caller": "FoePanel",
+          "callee": "Math.min",
+          "lineNumber": 43
+        },
+        {
+          "caller": "FoePanel",
+          "callee": "Math.max",
+          "lineNumber": 84
+        },
+        {
+          "caller": "FoePanel",
+          "callee": "Math.round",
+          "lineNumber": 123
+        },
+        {
+          "caller": "FoePanel",
+          "callee": "profile.weaknesses.instruments.map",
+          "lineNumber": 158
+        },
+        {
+          "caller": "FoePanel",
+          "callee": "profile.resists.instruments.map",
+          "lineNumber": 164
+        },
+        {
+          "caller": "FoePanel",
+          "callee": "foe.buffs.map",
+          "lineNumber": 171
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 1,
+        "functionCount": 1,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "src/components/MelodyBankBar.tsx",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 123,
+      "nonEmptyLines": 114,
+      "functions": [
+        {
+          "name": "MelodyBankBar",
+          "startLine": 5,
+          "endLine": 122,
+          "params": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "MelodyBankBar",
+          "line": 5,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "MelodyBankBar",
+          "callee": "useSessionStore",
+          "lineNumber": 6
+        },
+        {
+          "caller": "MelodyBankBar",
+          "callee": "useSessionStore",
+          "lineNumber": 7
+        },
+        {
+          "caller": "MelodyBankBar",
+          "callee": "useSessionStore",
+          "lineNumber": 8
+        },
+        {
+          "caller": "MelodyBankBar",
+          "callee": "useSessionStore",
+          "lineNumber": 9
+        },
+        {
+          "caller": "MelodyBankBar",
+          "callee": "useState",
+          "lineNumber": 11
+        },
+        {
+          "caller": "MelodyBankBar",
+          "callee": "useState",
+          "lineNumber": 12
+        },
+        {
+          "caller": "MelodyBankBar",
+          "callee": "useState",
+          "lineNumber": 13
+        },
+        {
+          "caller": "MelodyBankBar",
+          "callee": "Object.values",
+          "lineNumber": 15
+        },
+        {
+          "caller": "handleLoad",
+          "callee": "loadMelodyTemplate",
+          "lineNumber": 18
+        },
+        {
+          "caller": "handleLoad",
+          "callee": "setActiveLoadedId",
+          "lineNumber": 20
+        },
+        {
+          "caller": "handleSave",
+          "callee": "templateName.trim",
+          "lineNumber": 25
+        },
+        {
+          "caller": "handleSave",
+          "callee": "saveToMelodyBank",
+          "lineNumber": 27
+        },
+        {
+          "caller": "handleSave",
+          "callee": "setActiveLoadedId",
+          "lineNumber": 28
+        },
+        {
+          "caller": "handleSave",
+          "callee": "setTemplateName",
+          "lineNumber": 29
+        },
+        {
+          "caller": "handleSave",
+          "callee": "setSaving",
+          "lineNumber": 30
+        },
+        {
+          "caller": "MelodyBankBar",
+          "callee": "setSaving",
+          "lineNumber": 45
+        },
+        {
+          "caller": "MelodyBankBar",
+          "callee": "setTemplateName",
+          "lineNumber": 56
+        },
+        {
+          "caller": "MelodyBankBar",
+          "callee": "handleSave",
+          "lineNumber": 58
+        },
+        {
+          "caller": "MelodyBankBar",
+          "callee": "setSaving",
+          "lineNumber": 59
+        },
+        {
+          "caller": "MelodyBankBar",
+          "callee": "setSaving",
+          "lineNumber": 70
+        },
+        {
+          "caller": "MelodyBankBar",
+          "callee": "templates.map",
+          "lineNumber": 80
+        },
+        {
+          "caller": "MelodyBankBar",
+          "callee": "[\"dawn-anthem\", \"staccato-flight\", \"solemn-ground\"].includes",
+          "lineNumber": 82
+        },
+        {
+          "caller": "MelodyBankBar",
+          "callee": "handleLoad",
+          "lineNumber": 91
+        },
+        {
+          "caller": "MelodyBankBar",
+          "callee": "tpl.tags?.map",
+          "lineNumber": 94
+        },
+        {
+          "caller": "MelodyBankBar",
+          "callee": "e.stopPropagation",
+          "lineNumber": 106
+        },
+        {
+          "caller": "MelodyBankBar",
+          "callee": "deleteFromMelodyBank",
+          "lineNumber": 107
+        },
+        {
+          "caller": "MelodyBankBar",
+          "callee": "setActiveLoadedId",
+          "lineNumber": 108
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 1,
+        "functionCount": 1,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "src/components/Meter.tsx",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 22,
+      "nonEmptyLines": 21,
+      "functions": [
+        {
+          "name": "Meter",
+          "startLine": 5,
+          "endLine": 22,
+          "params": [
+            "{\n  value,\n  barClass,\n  className,\n  children,\n}"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "Meter",
+          "line": 5,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "Meter",
+          "callee": "cn",
+          "lineNumber": 17
+        },
+        {
+          "caller": "Meter",
+          "callee": "cn",
+          "lineNumber": 18
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 1,
+        "functionCount": 1,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "src/components/PartyCorner.test.tsx",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 62,
+      "nonEmptyLines": 55,
+      "functions": [
+        {
+          "name": "mockDrop",
+          "startLine": 6,
+          "endLine": 17,
+          "params": [
+            "labelText",
+            "fighterId"
+          ]
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "mockDrop",
+          "callee": "screen.getByText",
+          "lineNumber": 7
+        },
+        {
+          "caller": "mockDrop",
+          "callee": "fireEvent.drop",
+          "lineNumber": 9
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 1,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "src/components/PartyCorner.tsx",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 309,
+      "nonEmptyLines": 289,
+      "functions": [
+        {
+          "name": "Card",
+          "startLine": 27,
+          "endLine": 148,
+          "params": [
+            "{\n  f,\n  role,\n  performing,\n  onLead,\n  numberBadge,\n}"
+          ]
+        },
+        {
+          "name": "PartyCorner",
+          "startLine": 154,
+          "endLine": 309,
+          "params": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "PartyCorner",
+          "line": 154,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "Card",
+          "callee": "isDown",
+          "lineNumber": 40
+        },
+        {
+          "caller": "Card",
+          "callee": "e.dataTransfer.setData",
+          "lineNumber": 48
+        },
+        {
+          "caller": "Card",
+          "callee": "cn",
+          "lineNumber": 51
+        },
+        {
+          "caller": "Card",
+          "callee": "cn",
+          "lineNumber": 65
+        },
+        {
+          "caller": "Card",
+          "callee": "Math.max",
+          "lineNumber": 119
+        },
+        {
+          "caller": "Card",
+          "callee": "Math.max",
+          "lineNumber": 123
+        },
+        {
+          "caller": "Card",
+          "callee": "Math.min",
+          "lineNumber": 127
+        },
+        {
+          "caller": "Card",
+          "callee": "f.buffs.map",
+          "lineNumber": 136
+        },
+        {
+          "caller": "PartyCorner",
+          "callee": "useSessionStore",
+          "lineNumber": 155
+        },
+        {
+          "caller": "PartyCorner",
+          "callee": "useSessionStore",
+          "lineNumber": 156
+        },
+        {
+          "caller": "PartyCorner",
+          "callee": "useSessionStore",
+          "lineNumber": 157
+        },
+        {
+          "caller": "PartyCorner",
+          "callee": "useSessionStore",
+          "lineNumber": 158
+        },
+        {
+          "caller": "PartyCorner",
+          "callee": "useSessionStore",
+          "lineNumber": 159
+        },
+        {
+          "caller": "PartyCorner",
+          "callee": "useState",
+          "lineNumber": 160
+        },
+        {
+          "caller": "PartyCorner",
+          "callee": "useState",
+          "lineNumber": 161
+        },
+        {
+          "caller": "PartyCorner",
+          "callee": "fight.party.map",
+          "lineNumber": 163
+        },
+        {
+          "caller": "PartyCorner",
+          "callee": "deckIds",
+          "lineNumber": 164
+        },
+        {
+          "caller": "PartyCorner",
+          "callee": "fight.party.map",
+          "lineNumber": 164
+        },
+        {
+          "caller": "drop",
+          "callee": "e.preventDefault",
+          "lineNumber": 167
+        },
+        {
+          "caller": "drop",
+          "callee": "e.dataTransfer.getData",
+          "lineNumber": 168
+        },
+        {
+          "caller": "drop",
+          "callee": "e.dataTransfer.getData",
+          "lineNumber": 168
+        },
+        {
+          "caller": "drop",
+          "callee": "byId.has",
+          "lineNumber": 169
+        },
+        {
+          "caller": "drop",
+          "callee": "moveFighter",
+          "lineNumber": 169
+        },
+        {
+          "caller": "drop",
+          "callee": "setDragOver",
+          "lineNumber": 170
+        },
+        {
+          "caller": "dropProps",
+          "callee": "e.preventDefault",
+          "lineNumber": 175
+        },
+        {
+          "caller": "dropProps",
+          "callee": "setDragOver",
+          "lineNumber": 177
+        },
+        {
+          "caller": "dropProps",
+          "callee": "setDragOver",
+          "lineNumber": 179
+        },
+        {
+          "caller": "dropProps",
+          "callee": "drop",
+          "lineNumber": 180
+        },
+        {
+          "caller": "slotRow",
+          "callee": "cn",
+          "lineNumber": 185
+        },
+        {
+          "caller": "slotRow",
+          "callee": "dropProps",
+          "lineNumber": 189
+        },
+        {
+          "caller": "slotRow",
+          "callee": "ids.map",
+          "lineNumber": 197
+        },
+        {
+          "caller": "slotRow",
+          "callee": "byId.get",
+          "lineNumber": 198
+        },
+        {
+          "caller": "slotRow",
+          "callee": "byId.get",
+          "lineNumber": 201
+        },
+        {
+          "caller": "slotRow",
+          "callee": "slotOf",
+          "lineNumber": 202
+        },
+        {
+          "caller": "slotRow",
+          "callee": "setPerformer",
+          "lineNumber": 204
+        },
+        {
+          "caller": "slotRow",
+          "callee": "cn",
+          "lineNumber": 209
+        },
+        {
+          "caller": "PartyCorner",
+          "callee": "setRosterOpen",
+          "lineNumber": 231
+        },
+        {
+          "caller": "PartyCorner",
+          "callee": "slotRow",
+          "lineNumber": 240
+        },
+        {
+          "caller": "PartyCorner",
+          "callee": "slotRow",
+          "lineNumber": 241
+        },
+        {
+          "caller": "PartyCorner",
+          "callee": "cn",
+          "lineNumber": 244
+        },
+        {
+          "caller": "PartyCorner",
+          "callee": "dropProps",
+          "lineNumber": 248
+        },
+        {
+          "caller": "PartyCorner",
+          "callee": "[0, 1, 2].map",
+          "lineNumber": 254
+        },
+        {
+          "caller": "PartyCorner",
+          "callee": "byId.get",
+          "lineNumber": 256
+        },
+        {
+          "caller": "PartyCorner",
+          "callee": "setPerformer",
+          "lineNumber": 265
+        },
+        {
+          "caller": "PartyCorner",
+          "callee": "cn",
+          "lineNumber": 269
+        },
+        {
+          "caller": "PartyCorner",
+          "callee": "cn",
+          "lineNumber": 283
+        },
+        {
+          "caller": "PartyCorner",
+          "callee": "dropProps",
+          "lineNumber": 287
+        },
+        {
+          "caller": "PartyCorner",
+          "callee": "deck.map",
+          "lineNumber": 293
+        },
+        {
+          "caller": "PartyCorner",
+          "callee": "byId.get",
+          "lineNumber": 294
+        },
+        {
+          "caller": "PartyCorner",
+          "callee": "byId.get",
+          "lineNumber": 297
+        },
+        {
+          "caller": "PartyCorner",
+          "callee": "setPerformer",
+          "lineNumber": 300
+        },
+        {
+          "caller": "PartyCorner",
+          "callee": "setRosterOpen",
+          "lineNumber": 306
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 1,
+        "functionCount": 2,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "src/components/PhaseStrip.tsx",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 84,
+      "nonEmptyLines": 77,
+      "functions": [
+        {
+          "name": "PhaseStrip",
+          "startLine": 7,
+          "endLine": 84,
+          "params": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "PhaseStrip",
+          "line": 7,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "PhaseStrip",
+          "callee": "useSessionStore",
+          "lineNumber": 8
+        },
+        {
+          "caller": "PhaseStrip",
+          "callee": "useSessionStore",
+          "lineNumber": 9
+        },
+        {
+          "caller": "PhaseStrip",
+          "callee": "useSessionStore",
+          "lineNumber": 10
+        },
+        {
+          "caller": "PhaseStrip",
+          "callee": "useSessionStore",
+          "lineNumber": 11
+        },
+        {
+          "caller": "PhaseStrip",
+          "callee": "Math.floor",
+          "lineNumber": 15
+        },
+        {
+          "caller": "PhaseStrip",
+          "callee": "scoreProgression",
+          "lineNumber": 18
+        },
+        {
+          "caller": "PhaseStrip",
+          "callee": "chordEffectFor",
+          "lineNumber": 19
+        },
+        {
+          "caller": "PhaseStrip",
+          "callee": "cn",
+          "lineNumber": 26
+        },
+        {
+          "caller": "PhaseStrip",
+          "callee": "arrangement.chords.map",
+          "lineNumber": 38
+        },
+        {
+          "caller": "PhaseStrip",
+          "callee": "cn",
+          "lineNumber": 43
+        },
+        {
+          "caller": "PhaseStrip",
+          "callee": "cn",
+          "lineNumber": 65
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 1,
+        "functionCount": 1,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "src/components/PresetBar.test.tsx",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 31,
+      "nonEmptyLines": 28,
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "src/components/PresetBar.tsx",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 102,
+      "nonEmptyLines": 96,
+      "functions": [
+        {
+          "name": "PresetBar",
+          "startLine": 11,
+          "endLine": 102,
+          "params": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "PresetBar",
+          "line": 11,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "PresetBar",
+          "callee": "useSessionStore",
+          "lineNumber": 12
+        },
+        {
+          "caller": "PresetBar",
+          "callee": "useSessionStore",
+          "lineNumber": 13
+        },
+        {
+          "caller": "PresetBar",
+          "callee": "useSessionStore",
+          "lineNumber": 14
+        },
+        {
+          "caller": "PresetBar",
+          "callee": "useSessionStore",
+          "lineNumber": 15
+        },
+        {
+          "caller": "PresetBar",
+          "callee": "useSessionStore",
+          "lineNumber": 16
+        },
+        {
+          "caller": "PresetBar",
+          "callee": "useSessionStore",
+          "lineNumber": 17
+        },
+        {
+          "caller": "PresetBar",
+          "callee": "useState",
+          "lineNumber": 18
+        },
+        {
+          "caller": "PresetBar",
+          "callee": "useRef",
+          "lineNumber": 19
+        },
+        {
+          "caller": "PresetBar",
+          "callee": "Object.values(presets).filter",
+          "lineNumber": 21
+        },
+        {
+          "caller": "PresetBar",
+          "callee": "Object.values",
+          "lineNumber": 21
+        },
+        {
+          "caller": "PresetBar",
+          "callee": "Object.values(fight.potency).filter",
+          "lineNumber": 22
+        },
+        {
+          "caller": "PresetBar",
+          "callee": "Object.values",
+          "lineNumber": 22
+        },
+        {
+          "caller": "PresetBar",
+          "callee": "name.trim",
+          "lineNumber": 24
+        },
+        {
+          "caller": "PresetBar",
+          "callee": "countOnsets",
+          "lineNumber": 24
+        },
+        {
+          "caller": "bottle",
+          "callee": "saveMelodyPreset",
+          "lineNumber": 27
+        },
+        {
+          "caller": "bottle",
+          "callee": "setName",
+          "lineNumber": 28
+        },
+        {
+          "caller": "bottle",
+          "callee": "inputRef.current?.blur",
+          "lineNumber": 30
+        },
+        {
+          "caller": "PresetBar",
+          "callee": "setName",
+          "lineNumber": 42
+        },
+        {
+          "caller": "PresetBar",
+          "callee": "bottle",
+          "lineNumber": 44
+        },
+        {
+          "caller": "PresetBar",
+          "callee": "setName",
+          "lineNumber": 46
+        },
+        {
+          "caller": "PresetBar",
+          "callee": "inputRef.current?.blur",
+          "lineNumber": 47
+        },
+        {
+          "caller": "PresetBar",
+          "callee": "entries.map",
+          "lineNumber": 72
+        },
+        {
+          "caller": "PresetBar",
+          "callee": "recallMelodyPreset",
+          "lineNumber": 83
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 1,
+        "functionCount": 1,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "src/components/QtePanel.tsx",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 488,
+      "nonEmptyLines": 460,
+      "functions": [
+        {
+          "name": "ratingMeta",
+          "startLine": 105,
+          "endLine": 116,
+          "params": [
+            "rating"
+          ]
+        },
+        {
+          "name": "ActiveHighway",
+          "startLine": 119,
+          "endLine": 205,
+          "params": [
+            "{ qte, tick, bpm, lanes }"
+          ]
+        },
+        {
+          "name": "StandbyHighway",
+          "startLine": 207,
+          "endLine": 234,
+          "params": [
+            "{ threat }"
+          ]
+        },
+        {
+          "name": "QtePanel",
+          "startLine": 349,
+          "endLine": 488,
+          "params": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "QtePanel",
+          "line": 349,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "ActiveHighway",
+          "callee": "useQtePlayhead",
+          "lineNumber": 120
+        },
+        {
+          "caller": "ActiveHighway",
+          "callee": "Math.max",
+          "lineNumber": 121
+        },
+        {
+          "caller": "ActiveHighway",
+          "callee": "Math.min",
+          "lineNumber": 122
+        },
+        {
+          "caller": "ActiveHighway",
+          "callee": "Math.max",
+          "lineNumber": 122
+        },
+        {
+          "caller": "ActiveHighway",
+          "callee": "Math.max",
+          "lineNumber": 124
+        },
+        {
+          "caller": "ActiveHighway",
+          "callee": "Math.ceil",
+          "lineNumber": 124
+        },
+        {
+          "caller": "ActiveHighway",
+          "callee": "stepMs",
+          "lineNumber": 124
+        },
+        {
+          "caller": "ActiveHighway",
+          "callee": "Math.max",
+          "lineNumber": 126
+        },
+        {
+          "caller": "ActiveHighway",
+          "callee": "stepsToMs",
+          "lineNumber": 126
+        },
+        {
+          "caller": "ActiveHighway",
+          "callee": "cn",
+          "lineNumber": 133
+        },
+        {
+          "caller": "ActiveHighway",
+          "callee": "secsLeft.toFixed",
+          "lineNumber": 139
+        },
+        {
+          "caller": "ActiveHighway",
+          "callee": "lanes.map",
+          "lineNumber": 147
+        },
+        {
+          "caller": "ActiveHighway",
+          "callee": "qte.notes\n              .filter((n) => n.note.key === lane.key)\n              .map",
+          "lineNumber": 149
+        },
+        {
+          "caller": "ActiveHighway",
+          "callee": "qte.notes\n              .filter",
+          "lineNumber": 149
+        },
+        {
+          "caller": "ActiveHighway",
+          "callee": "Math.abs",
+          "lineNumber": 158
+        },
+        {
+          "caller": "ActiveHighway",
+          "callee": "cn",
+          "lineNumber": 165
+        },
+        {
+          "caller": "ActiveHighway",
+          "callee": "cn",
+          "lineNumber": 176
+        },
+        {
+          "caller": "StandbyHighway",
+          "callee": "LANES.map",
+          "lineNumber": 217
+        },
+        {
+          "caller": "down",
+          "callee": "e.key.toLowerCase",
+          "lineNumber": 258
+        },
+        {
+          "caller": "down",
+          "callee": "keys.has",
+          "lineNumber": 259
+        },
+        {
+          "caller": "down",
+          "callee": "setPressed",
+          "lineNumber": 260
+        },
+        {
+          "caller": "up",
+          "callee": "e.key.toLowerCase",
+          "lineNumber": 263
+        },
+        {
+          "caller": "up",
+          "callee": "keys.has",
+          "lineNumber": 264
+        },
+        {
+          "caller": "up",
+          "callee": "setPressed",
+          "lineNumber": 265
+        },
+        {
+          "caller": "flash",
+          "callee": "setPressed",
+          "lineNumber": 283
+        },
+        {
+          "caller": "flash",
+          "callee": "window.clearTimeout",
+          "lineNumber": 285
+        },
+        {
+          "caller": "flash",
+          "callee": "window.setTimeout",
+          "lineNumber": 286
+        },
+        {
+          "caller": "flash",
+          "callee": "setPressed",
+          "lineNumber": 287
+        },
+        {
+          "caller": "QtePanel",
+          "callee": "useSessionStore",
+          "lineNumber": 350
+        },
+        {
+          "caller": "QtePanel",
+          "callee": "useSessionStore",
+          "lineNumber": 351
+        },
+        {
+          "caller": "QtePanel",
+          "callee": "useSessionStore",
+          "lineNumber": 352
+        },
+        {
+          "caller": "QtePanel",
+          "callee": "useRef",
+          "lineNumber": 355
+        },
+        {
+          "caller": "QtePanel",
+          "callee": "useEffect",
+          "lineNumber": 358
+        },
+        {
+          "caller": "QtePanel",
+          "callee": "playQteMiss",
+          "lineNumber": 365
+        },
+        {
+          "caller": "QtePanel",
+          "callee": "useEffect",
+          "lineNumber": 373
+        },
+        {
+          "caller": "QtePanel",
+          "callee": "useSessionStore.getState",
+          "lineNumber": 375
+        },
+        {
+          "caller": "QtePanel",
+          "callee": "live.enemies.find",
+          "lineNumber": 376
+        },
+        {
+          "caller": "QtePanel",
+          "callee": "playEnemyTelegraph",
+          "lineNumber": 378
+        },
+        {
+          "caller": "press",
+          "callee": "useSessionStore.getState().performDown",
+          "lineNumber": 382
+        },
+        {
+          "caller": "press",
+          "callee": "useSessionStore.getState",
+          "lineNumber": 382
+        },
+        {
+          "caller": "release",
+          "callee": "useSessionStore.getState().performUp",
+          "lineNumber": 386
+        },
+        {
+          "caller": "release",
+          "callee": "useSessionStore.getState",
+          "lineNumber": 386
+        },
+        {
+          "caller": "QtePanel",
+          "callee": "qte.payload.foeId?.toUpperCase",
+          "lineNumber": 396
+        },
+        {
+          "caller": "QtePanel",
+          "callee": "fight.enemies.forEach",
+          "lineNumber": 401
+        },
+        {
+          "caller": "QtePanel",
+          "callee": "Math.round",
+          "lineNumber": 413
+        },
+        {
+          "caller": "QtePanel",
+          "callee": "Math.round",
+          "lineNumber": 418
+        },
+        {
+          "caller": "QtePanel",
+          "callee": "qteSuccessRate",
+          "lineNumber": 418
+        },
+        {
+          "caller": "QtePanel",
+          "callee": "cn",
+          "lineNumber": 423
+        },
+        {
+          "caller": "QtePanel",
+          "callee": "cn",
+          "lineNumber": 440
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 1,
+        "functionCount": 4,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "src/components/RosterSelectModal.test.tsx",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 56,
+      "nonEmptyLines": 43,
+      "metrics": {
+        "importCount": 1,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "src/components/RosterSelectModal.tsx",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 241,
+      "nonEmptyLines": 220,
+      "functions": [
+        {
+          "name": "RosterSelectModal",
+          "startLine": 18,
+          "endLine": 240,
+          "params": [
+            "{ isOpen, onClose }"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "RosterSelectModal",
+          "line": 18,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "RosterSelectModal",
+          "callee": "useSessionStore",
+          "lineNumber": 19
+        },
+        {
+          "caller": "RosterSelectModal",
+          "callee": "useSessionStore",
+          "lineNumber": 20
+        },
+        {
+          "caller": "RosterSelectModal",
+          "callee": "useState",
+          "lineNumber": 22
+        },
+        {
+          "caller": "RosterSelectModal",
+          "callee": "useState",
+          "lineNumber": 23
+        },
+        {
+          "caller": "RosterSelectModal",
+          "callee": "useState",
+          "lineNumber": 24
+        },
+        {
+          "caller": "handleSelectCharacter",
+          "callee": "next.indexOf",
+          "lineNumber": 31
+        },
+        {
+          "caller": "handleSelectCharacter",
+          "callee": "setStagedParty",
+          "lineNumber": 36
+        },
+        {
+          "caller": "handleSelectCharacter",
+          "callee": "setActiveSlot",
+          "lineNumber": 38
+        },
+        {
+          "caller": "handleConfirm",
+          "callee": "setSelectedParty",
+          "lineNumber": 42
+        },
+        {
+          "caller": "handleConfirm",
+          "callee": "onClose",
+          "lineNumber": 43
+        },
+        {
+          "caller": "RosterSelectModal",
+          "callee": "ROSTER.filter",
+          "lineNumber": 48
+        },
+        {
+          "caller": "RosterSelectModal",
+          "callee": "stagedParty.map",
+          "lineNumber": 83
+        },
+        {
+          "caller": "RosterSelectModal",
+          "callee": "ROSTER.find",
+          "lineNumber": 84
+        },
+        {
+          "caller": "RosterSelectModal",
+          "callee": "setActiveSlot",
+          "lineNumber": 91
+        },
+        {
+          "caller": "RosterSelectModal",
+          "callee": "cn",
+          "lineNumber": 92
+        },
+        {
+          "caller": "RosterSelectModal",
+          "callee": "[\"all\", \"strings\", \"piano\", \"brass\"].map",
+          "lineNumber": 125
+        },
+        {
+          "caller": "RosterSelectModal",
+          "callee": "setFilterInstrument",
+          "lineNumber": 130
+        },
+        {
+          "caller": "RosterSelectModal",
+          "callee": "filteredRoster.map",
+          "lineNumber": 140
+        },
+        {
+          "caller": "RosterSelectModal",
+          "callee": "stagedParty.includes",
+          "lineNumber": 141
+        },
+        {
+          "caller": "RosterSelectModal",
+          "callee": "handleSelectCharacter",
+          "lineNumber": 148
+        },
+        {
+          "caller": "RosterSelectModal",
+          "callee": "cn",
+          "lineNumber": 149
+        },
+        {
+          "caller": "RosterSelectModal",
+          "callee": "cn",
+          "lineNumber": 178
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 1,
+        "functionCount": 1,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "src/components/StepGrid.tsx",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 318,
+      "nonEmptyLines": 298,
+      "functions": [
+        {
+          "name": "coverage",
+          "startLine": 19,
+          "endLine": 26,
+          "params": [
+            "row"
+          ]
+        },
+        {
+          "name": "StepGrid",
+          "startLine": 28,
+          "endLine": 318,
+          "params": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "StepGrid",
+          "line": 28,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "coverage",
+          "callee": "Array(row.length).fill",
+          "lineNumber": 20
+        },
+        {
+          "caller": "coverage",
+          "callee": "Array",
+          "lineNumber": 20
+        },
+        {
+          "caller": "coverage",
+          "callee": "row.forEach",
+          "lineNumber": 21
+        },
+        {
+          "caller": "StepGrid",
+          "callee": "useSessionStore",
+          "lineNumber": 29
+        },
+        {
+          "caller": "StepGrid",
+          "callee": "useSessionStore",
+          "lineNumber": 30
+        },
+        {
+          "caller": "StepGrid",
+          "callee": "useSessionStore",
+          "lineNumber": 31
+        },
+        {
+          "caller": "StepGrid",
+          "callee": "useSessionStore",
+          "lineNumber": 32
+        },
+        {
+          "caller": "StepGrid",
+          "callee": "useSessionStore",
+          "lineNumber": 33
+        },
+        {
+          "caller": "StepGrid",
+          "callee": "useSessionStore",
+          "lineNumber": 34
+        },
+        {
+          "caller": "StepGrid",
+          "callee": "useSessionStore",
+          "lineNumber": 35
+        },
+        {
+          "caller": "StepGrid",
+          "callee": "useSessionStore",
+          "lineNumber": 36
+        },
+        {
+          "caller": "StepGrid",
+          "callee": "useSessionStore",
+          "lineNumber": 37
+        },
+        {
+          "caller": "StepGrid",
+          "callee": "useState",
+          "lineNumber": 38
+        },
+        {
+          "caller": "StepGrid",
+          "callee": "useState",
+          "lineNumber": 39
+        },
+        {
+          "caller": "StepGrid",
+          "callee": "useState",
+          "lineNumber": 40
+        },
+        {
+          "caller": "StepGrid",
+          "callee": "fight.party.map",
+          "lineNumber": 43
+        },
+        {
+          "caller": "StepGrid",
+          "callee": "performSlot",
+          "lineNumber": 44
+        },
+        {
+          "caller": "StepGrid",
+          "callee": "Math.min",
+          "lineNumber": 45
+        },
+        {
+          "caller": "StepGrid",
+          "callee": "Math.max",
+          "lineNumber": 45
+        },
+        {
+          "caller": "StepGrid",
+          "callee": "front.map",
+          "lineNumber": 58
+        },
+        {
+          "caller": "StepGrid",
+          "callee": "byId.get",
+          "lineNumber": 59
+        },
+        {
+          "caller": "StepGrid",
+          "callee": "setSlot",
+          "lineNumber": 67
+        },
+        {
+          "caller": "StepGrid",
+          "callee": "selectPerformerByIndex",
+          "lineNumber": 68
+        },
+        {
+          "caller": "StepGrid",
+          "callee": "cn",
+          "lineNumber": 71
+        },
+        {
+          "caller": "StepGrid",
+          "callee": "DEGREES.map",
+          "lineNumber": 90
+        },
+        {
+          "caller": "StepGrid",
+          "callee": "setDegree",
+          "lineNumber": 94
+        },
+        {
+          "caller": "StepGrid",
+          "callee": "LENGTHS.map",
+          "lineNumber": 112
+        },
+        {
+          "caller": "StepGrid",
+          "callee": "setLen",
+          "lineNumber": 116
+        },
+        {
+          "caller": "StepGrid",
+          "callee": "front.map",
+          "lineNumber": 140
+        },
+        {
+          "caller": "StepGrid",
+          "callee": "byId.get",
+          "lineNumber": 141
+        },
+        {
+          "caller": "StepGrid",
+          "callee": "cn",
+          "lineNumber": 148
+        },
+        {
+          "caller": "StepGrid",
+          "callee": "cn",
+          "lineNumber": 160
+        },
+        {
+          "caller": "StepGrid",
+          "callee": "track.map",
+          "lineNumber": 178
+        },
+        {
+          "caller": "StepGrid",
+          "callee": "coverage",
+          "lineNumber": 179
+        },
+        {
+          "caller": "StepGrid",
+          "callee": "row.map",
+          "lineNumber": 187
+        },
+        {
+          "caller": "StepGrid",
+          "callee": "onsetKey",
+          "lineNumber": 195
+        },
+        {
+          "caller": "StepGrid",
+          "callee": "toggleNote",
+          "lineNumber": 206
+        },
+        {
+          "caller": "StepGrid",
+          "callee": "cn",
+          "lineNumber": 211
+        },
+        {
+          "caller": "StepGrid",
+          "callee": "arrangement.chords.map",
+          "lineNumber": 244
+        },
+        {
+          "caller": "StepGrid",
+          "callee": "ROMANS.map",
+          "lineNumber": 248
+        },
+        {
+          "caller": "StepGrid",
+          "callee": "setChord",
+          "lineNumber": 252
+        },
+        {
+          "caller": "StepGrid",
+          "callee": "DRUM_ROWS.map",
+          "lineNumber": 280
+        },
+        {
+          "caller": "StepGrid",
+          "callee": "Array.from",
+          "lineNumber": 286
+        },
+        {
+          "caller": "StepGrid",
+          "callee": "Math.floor",
+          "lineNumber": 288
+        },
+        {
+          "caller": "StepGrid",
+          "callee": "toggleDrum",
+          "lineNumber": 297
+        },
+        {
+          "caller": "StepGrid",
+          "callee": "cn",
+          "lineNumber": 299
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 1,
+        "functionCount": 2,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "src/components/TransportBar.tsx",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 77,
+      "nonEmptyLines": 73,
+      "functions": [
+        {
+          "name": "TransportBar",
+          "startLine": 5,
+          "endLine": 77,
+          "params": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "TransportBar",
+          "line": 5,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "TransportBar",
+          "callee": "useSessionStore",
+          "lineNumber": 6
+        },
+        {
+          "caller": "TransportBar",
+          "callee": "useSessionStore",
+          "lineNumber": 7
+        },
+        {
+          "caller": "TransportBar",
+          "callee": "useSessionStore",
+          "lineNumber": 8
+        },
+        {
+          "caller": "TransportBar",
+          "callee": "useSessionStore",
+          "lineNumber": 9
+        },
+        {
+          "caller": "TransportBar",
+          "callee": "useSessionStore",
+          "lineNumber": 10
+        },
+        {
+          "caller": "TransportBar",
+          "callee": "useSessionStore",
+          "lineNumber": 11
+        },
+        {
+          "caller": "TransportBar",
+          "callee": "useSessionStore",
+          "lineNumber": 12
+        },
+        {
+          "caller": "TransportBar",
+          "callee": "useSessionStore",
+          "lineNumber": 13
+        },
+        {
+          "caller": "TransportBar",
+          "callee": "useSessionStore",
+          "lineNumber": 14
+        },
+        {
+          "caller": "TransportBar",
+          "callee": "useSessionStore",
+          "lineNumber": 15
+        },
+        {
+          "caller": "TransportBar",
+          "callee": "useSessionStore",
+          "lineNumber": 16
+        },
+        {
+          "caller": "TransportBar",
+          "callee": "togglePlay",
+          "lineNumber": 20
+        },
+        {
+          "caller": "TransportBar",
+          "callee": "reset",
+          "lineNumber": 23
+        },
+        {
+          "caller": "TransportBar",
+          "callee": "setBpm",
+          "lineNumber": 33
+        },
+        {
+          "caller": "TransportBar",
+          "callee": "Number",
+          "lineNumber": 33
+        },
+        {
+          "caller": "TransportBar",
+          "callee": "FIGHT_KEYS.map",
+          "lineNumber": 48
+        },
+        {
+          "caller": "TransportBar",
+          "callee": "keyEquals",
+          "lineNumber": 52
+        },
+        {
+          "caller": "TransportBar",
+          "callee": "setKey",
+          "lineNumber": 59
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 1,
+        "functionCount": 1,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "src/components/TutorialModal.test.tsx",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 47,
+      "nonEmptyLines": 36,
+      "metrics": {
+        "importCount": 1,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "src/components/TutorialModal.tsx",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 193,
+      "nonEmptyLines": 178,
+      "functions": [
+        {
+          "name": "TutorialModal",
+          "startLine": 70,
+          "endLine": 192,
+          "params": [
+            "{ isOpen, onClose }"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "TutorialModal",
+          "line": 70,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "TutorialModal",
+          "callee": "useState",
+          "lineNumber": 71
+        },
+        {
+          "caller": "TutorialModal",
+          "callee": "STEPS.map",
+          "lineNumber": 118
+        },
+        {
+          "caller": "TutorialModal",
+          "callee": "setCurrentStep",
+          "lineNumber": 122
+        },
+        {
+          "caller": "TutorialModal",
+          "callee": "cn",
+          "lineNumber": 123
+        },
+        {
+          "caller": "TutorialModal",
+          "callee": "step.bullets.map",
+          "lineNumber": 139
+        },
+        {
+          "caller": "TutorialModal",
+          "callee": "setCurrentStep",
+          "lineNumber": 164
+        },
+        {
+          "caller": "TutorialModal",
+          "callee": "Math.max",
+          "lineNumber": 164
+        },
+        {
+          "caller": "TutorialModal",
+          "callee": "setCurrentStep",
+          "lineNumber": 182
+        },
+        {
+          "caller": "TutorialModal",
+          "callee": "Math.min",
+          "lineNumber": 182
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 1,
+        "functionCount": 1,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "src/components/VoiceBar.test.tsx",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 31,
+      "nonEmptyLines": 27,
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "src/components/VoiceBar.tsx",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 74,
+      "nonEmptyLines": 69,
+      "functions": [
+        {
+          "name": "useTypingFocus",
+          "startLine": 7,
+          "endLine": 27,
+          "params": []
+        },
+        {
+          "name": "VoiceBar",
+          "startLine": 33,
+          "endLine": 74,
+          "params": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "VoiceBar",
+          "line": 33,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "useTypingFocus",
+          "callee": "useState",
+          "lineNumber": 8
+        },
+        {
+          "caller": "useTypingFocus",
+          "callee": "useEffect",
+          "lineNumber": 14
+        },
+        {
+          "caller": "sync",
+          "callee": "setTyping",
+          "lineNumber": 17
+        },
+        {
+          "caller": "useTypingFocus",
+          "callee": "window.addEventListener",
+          "lineNumber": 19
+        },
+        {
+          "caller": "useTypingFocus",
+          "callee": "window.addEventListener",
+          "lineNumber": 20
+        },
+        {
+          "caller": "useTypingFocus",
+          "callee": "window.removeEventListener",
+          "lineNumber": 22
+        },
+        {
+          "caller": "useTypingFocus",
+          "callee": "window.removeEventListener",
+          "lineNumber": 23
+        },
+        {
+          "caller": "VoiceBar",
+          "callee": "useSessionStore",
+          "lineNumber": 34
+        },
+        {
+          "caller": "VoiceBar",
+          "callee": "useSessionStore",
+          "lineNumber": 35
+        },
+        {
+          "caller": "VoiceBar",
+          "callee": "useSessionStore",
+          "lineNumber": 36
+        },
+        {
+          "caller": "VoiceBar",
+          "callee": "useSessionStore",
+          "lineNumber": 37
+        },
+        {
+          "caller": "VoiceBar",
+          "callee": "useTypingFocus",
+          "lineNumber": 38
+        },
+        {
+          "caller": "VoiceBar",
+          "callee": "countOnsets",
+          "lineNumber": 40
+        },
+        {
+          "caller": "VoiceBar",
+          "callee": "Object.values(fight.potency).filter",
+          "lineNumber": 41
+        },
+        {
+          "caller": "VoiceBar",
+          "callee": "Object.values",
+          "lineNumber": 41
+        },
+        {
+          "caller": "VoiceBar",
+          "callee": "hasLiveAttacker",
+          "lineNumber": 54
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 1,
+        "functionCount": 2,
+        "classCount": 0
+      }
+    }
+  ]
+}

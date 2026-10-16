@@ -1,0 +1,2856 @@
+{
+  "scriptCompleted": true,
+  "filesAnalyzed": 8,
+  "filesSkipped": [],
+  "filesUnreadable": [],
+  "analysisOutcomes": {
+    "structure": {
+      "succeeded": 8,
+      "failed": 0
+    },
+    "callGraph": {
+      "succeeded": 8,
+      "failed": 0,
+      "skipped": 0
+    }
+  },
+  "results": [
+    {
+      "path": "src/game/combat.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 817,
+      "nonEmptyLines": 772,
+      "functions": [
+        {
+          "name": "refreshPotency",
+          "startLine": 110,
+          "endLine": 114,
+          "params": [
+            "arr"
+          ]
+        },
+        {
+          "name": "reconcilePotency",
+          "startLine": 120,
+          "endLine": 128,
+          "params": [
+            "potency",
+            "arr"
+          ]
+        },
+        {
+          "name": "createFight",
+          "startLine": 136,
+          "endLine": 229,
+          "params": [
+            "opts"
+          ]
+        },
+        {
+          "name": "pushLog",
+          "startLine": 231,
+          "endLine": 234,
+          "params": [
+            "state",
+            "text"
+          ]
+        },
+        {
+          "name": "aliveParty",
+          "startLine": 236,
+          "endLine": 238,
+          "params": [
+            "state"
+          ]
+        },
+        {
+          "name": "aliveEnemies",
+          "startLine": 240,
+          "endLine": 242,
+          "params": [
+            "state"
+          ]
+        },
+        {
+          "name": "moveFighter",
+          "startLine": 245,
+          "endLine": 250,
+          "params": [
+            "state",
+            "fighterId",
+            "slot"
+          ]
+        },
+        {
+          "name": "qteLocked",
+          "startLine": 253,
+          "endLine": 255,
+          "params": [
+            "state"
+          ]
+        },
+        {
+          "name": "requestChordQte",
+          "startLine": 258,
+          "endLine": 280,
+          "params": [
+            "state",
+            "romans",
+            "rng"
+          ]
+        },
+        {
+          "name": "requestPresetQte",
+          "startLine": 283,
+          "endLine": 313,
+          "params": [
+            "state",
+            "snap",
+            "rng"
+          ]
+        },
+        {
+          "name": "pressQteKey",
+          "startLine": 316,
+          "endLine": 321,
+          "params": [
+            "state",
+            "key",
+            "tick"
+          ]
+        },
+        {
+          "name": "releaseQteKey",
+          "startLine": 324,
+          "endLine": 329,
+          "params": [
+            "state",
+            "key",
+            "tick"
+          ]
+        },
+        {
+          "name": "cancelQte",
+          "startLine": 332,
+          "endLine": 335,
+          "params": [
+            "state",
+            "reason"
+          ]
+        },
+        {
+          "name": "keeperInstrument",
+          "startLine": 341,
+          "endLine": 346,
+          "params": [
+            "state"
+          ]
+        },
+        {
+          "name": "hasLiveAttacker",
+          "startLine": 349,
+          "endLine": 354,
+          "params": [
+            "state"
+          ]
+        },
+        {
+          "name": "beatInstrument",
+          "startLine": 360,
+          "endLine": 365,
+          "params": [
+            "state"
+          ]
+        },
+        {
+          "name": "defaultPerformerId",
+          "startLine": 371,
+          "endLine": 373,
+          "params": [
+            "state"
+          ]
+        },
+        {
+          "name": "laneAttacker",
+          "startLine": 380,
+          "endLine": 389,
+          "params": [
+            "state",
+            "fighters",
+            "slot"
+          ]
+        },
+        {
+          "name": "performSlot",
+          "startLine": 395,
+          "endLine": 399,
+          "params": [
+            "state",
+            "performerId"
+          ]
+        },
+        {
+          "name": "pickRandom",
+          "startLine": 401,
+          "endLine": 403,
+          "params": [
+            "rng",
+            "items"
+          ]
+        },
+        {
+          "name": "evadeChance",
+          "startLine": 415,
+          "endLine": 420,
+          "params": [
+            "archetype",
+            "len"
+          ]
+        },
+        {
+          "name": "computeNoteDamage",
+          "startLine": 426,
+          "endLine": 450,
+          "params": [
+            "note",
+            "enemy",
+            "profile",
+            "rng"
+          ]
+        },
+        {
+          "name": "resolveMelodyVoice",
+          "startLine": 458,
+          "endLine": 525,
+          "params": [
+            "state",
+            "withKey",
+            "bar",
+            "step",
+            "voice",
+            "foes",
+            "rng"
+          ]
+        },
+        {
+          "name": "advanceTick",
+          "startLine": 539,
+          "endLine": 817,
+          "params": [
+            "state",
+            "arrangement",
+            "rng"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "refreshPotency",
+          "line": 110,
+          "isDefault": false
+        },
+        {
+          "name": "reconcilePotency",
+          "line": 120,
+          "isDefault": false
+        },
+        {
+          "name": "createFight",
+          "line": 136,
+          "isDefault": false
+        },
+        {
+          "name": "aliveParty",
+          "line": 236,
+          "isDefault": false
+        },
+        {
+          "name": "aliveEnemies",
+          "line": 240,
+          "isDefault": false
+        },
+        {
+          "name": "moveFighter",
+          "line": 245,
+          "isDefault": false
+        },
+        {
+          "name": "qteLocked",
+          "line": 253,
+          "isDefault": false
+        },
+        {
+          "name": "requestChordQte",
+          "line": 258,
+          "isDefault": false
+        },
+        {
+          "name": "requestPresetQte",
+          "line": 283,
+          "isDefault": false
+        },
+        {
+          "name": "pressQteKey",
+          "line": 316,
+          "isDefault": false
+        },
+        {
+          "name": "releaseQteKey",
+          "line": 324,
+          "isDefault": false
+        },
+        {
+          "name": "cancelQte",
+          "line": 332,
+          "isDefault": false
+        },
+        {
+          "name": "keeperInstrument",
+          "line": 341,
+          "isDefault": false
+        },
+        {
+          "name": "hasLiveAttacker",
+          "line": 349,
+          "isDefault": false
+        },
+        {
+          "name": "beatInstrument",
+          "line": 360,
+          "isDefault": false
+        },
+        {
+          "name": "defaultPerformerId",
+          "line": 371,
+          "isDefault": false
+        },
+        {
+          "name": "laneAttacker",
+          "line": 380,
+          "isDefault": false
+        },
+        {
+          "name": "performSlot",
+          "line": 395,
+          "isDefault": false
+        },
+        {
+          "name": "computeNoteDamage",
+          "line": 426,
+          "isDefault": false
+        },
+        {
+          "name": "advanceTick",
+          "line": 539,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "refreshPotency",
+          "callee": "allOnsetKeys",
+          "lineNumber": 112
+        },
+        {
+          "caller": "reconcilePotency",
+          "callee": "allOnsetKeys",
+          "lineNumber": 124
+        },
+        {
+          "caller": "createFight",
+          "callee": "enemyIds.forEach",
+          "lineNumber": 148
+        },
+        {
+          "caller": "createFight",
+          "callee": "makeFighter",
+          "lineNumber": 151
+        },
+        {
+          "caller": "createFight",
+          "callee": "enemies.push",
+          "lineNumber": 158
+        },
+        {
+          "caller": "createFight",
+          "callee": "characterIds.map",
+          "lineNumber": 163
+        },
+        {
+          "caller": "createFight",
+          "callee": "getCharacter",
+          "lineNumber": 164
+        },
+        {
+          "caller": "createFight",
+          "callee": "makeFighter",
+          "lineNumber": 167
+        },
+        {
+          "caller": "createFight",
+          "callee": "makeFighter",
+          "lineNumber": 183
+        },
+        {
+          "caller": "createFight",
+          "callee": "(opts.partyInstruments ?? DEFAULT_PARTY.map((p) => p.instrument)).map",
+          "lineNumber": 194
+        },
+        {
+          "caller": "createFight",
+          "callee": "DEFAULT_PARTY.map",
+          "lineNumber": 194
+        },
+        {
+          "caller": "createFight",
+          "callee": "makeFighter",
+          "lineNumber": 196
+        },
+        {
+          "caller": "createFight",
+          "callee": "party.map",
+          "lineNumber": 208
+        },
+        {
+          "caller": "createFight",
+          "callee": "resolveFightKey",
+          "lineNumber": 209
+        },
+        {
+          "caller": "createFight",
+          "callee": "enemies.map",
+          "lineNumber": 216
+        },
+        {
+          "caller": "createFight",
+          "callee": "enemies.map",
+          "lineNumber": 217
+        },
+        {
+          "caller": "createFight",
+          "callee": "defaultSlots",
+          "lineNumber": 220
+        },
+        {
+          "caller": "pushLog",
+          "callee": "next.slice",
+          "lineNumber": 233
+        },
+        {
+          "caller": "aliveParty",
+          "callee": "state.party.filter",
+          "lineNumber": 237
+        },
+        {
+          "caller": "aliveParty",
+          "callee": "isDown",
+          "lineNumber": 237
+        },
+        {
+          "caller": "aliveEnemies",
+          "callee": "state.enemies.filter",
+          "lineNumber": 241
+        },
+        {
+          "caller": "aliveEnemies",
+          "callee": "isDown",
+          "lineNumber": 241
+        },
+        {
+          "caller": "moveFighter",
+          "callee": "state.party.find",
+          "lineNumber": 246
+        },
+        {
+          "caller": "moveFighter",
+          "callee": "removeToDeck",
+          "lineNumber": 248
+        },
+        {
+          "caller": "moveFighter",
+          "callee": "assignToSlot",
+          "lineNumber": 248
+        },
+        {
+          "caller": "moveFighter",
+          "callee": "pushLog",
+          "lineNumber": 249
+        },
+        {
+          "caller": "requestChordQte",
+          "callee": "harmonicChart",
+          "lineNumber": 262
+        },
+        {
+          "caller": "requestChordQte",
+          "callee": "createQte",
+          "lineNumber": 265
+        },
+        {
+          "caller": "requestChordQte",
+          "callee": "createQte",
+          "lineNumber": 272
+        },
+        {
+          "caller": "requestChordQte",
+          "callee": "randomChart",
+          "lineNumber": 274
+        },
+        {
+          "caller": "requestChordQte",
+          "callee": "pushLog",
+          "lineNumber": 279
+        },
+        {
+          "caller": "requestPresetQte",
+          "callee": "chartFromMelody",
+          "lineNumber": 290
+        },
+        {
+          "caller": "requestPresetQte",
+          "callee": "snap.tracks.map",
+          "lineNumber": 293
+        },
+        {
+          "caller": "requestPresetQte",
+          "callee": "tr.map",
+          "lineNumber": 293
+        },
+        {
+          "caller": "requestPresetQte",
+          "callee": "row.map",
+          "lineNumber": 293
+        },
+        {
+          "caller": "requestPresetQte",
+          "callee": "createQte",
+          "lineNumber": 298
+        },
+        {
+          "caller": "requestPresetQte",
+          "callee": "createQte",
+          "lineNumber": 305
+        },
+        {
+          "caller": "requestPresetQte",
+          "callee": "randomChart",
+          "lineNumber": 307
+        },
+        {
+          "caller": "requestPresetQte",
+          "callee": "pushLog",
+          "lineNumber": 312
+        },
+        {
+          "caller": "pressQteKey",
+          "callee": "pressQte",
+          "lineNumber": 318
+        },
+        {
+          "caller": "releaseQteKey",
+          "callee": "releaseQte",
+          "lineNumber": 326
+        },
+        {
+          "caller": "cancelQte",
+          "callee": "pushLog",
+          "lineNumber": 334
+        },
+        {
+          "caller": "keeperInstrument",
+          "callee": "state.party.find",
+          "lineNumber": 343
+        },
+        {
+          "caller": "keeperInstrument",
+          "callee": "isDown",
+          "lineNumber": 344
+        },
+        {
+          "caller": "hasLiveAttacker",
+          "callee": "state.slots.front.some",
+          "lineNumber": 350
+        },
+        {
+          "caller": "hasLiveAttacker",
+          "callee": "state.party.find",
+          "lineNumber": 351
+        },
+        {
+          "caller": "hasLiveAttacker",
+          "callee": "isDown",
+          "lineNumber": 352
+        },
+        {
+          "caller": "beatInstrument",
+          "callee": "state.party.find",
+          "lineNumber": 362
+        },
+        {
+          "caller": "beatInstrument",
+          "callee": "isDown",
+          "lineNumber": 363
+        },
+        {
+          "caller": "laneAttacker",
+          "callee": "fighters.find",
+          "lineNumber": 387
+        },
+        {
+          "caller": "laneAttacker",
+          "callee": "isDown",
+          "lineNumber": 388
+        },
+        {
+          "caller": "performSlot",
+          "callee": "state.party.map",
+          "lineNumber": 396
+        },
+        {
+          "caller": "performSlot",
+          "callee": "front.indexOf",
+          "lineNumber": 397
+        },
+        {
+          "caller": "pickRandom",
+          "callee": "Math.floor",
+          "lineNumber": 402
+        },
+        {
+          "caller": "pickRandom",
+          "callee": "rng",
+          "lineNumber": 402
+        },
+        {
+          "caller": "computeNoteDamage",
+          "callee": "rng",
+          "lineNumber": 432
+        },
+        {
+          "caller": "computeNoteDamage",
+          "callee": "evadeChance",
+          "lineNumber": 432
+        },
+        {
+          "caller": "computeNoteDamage",
+          "callee": "rng",
+          "lineNumber": 436
+        },
+        {
+          "caller": "computeNoteDamage",
+          "callee": "Math.min",
+          "lineNumber": 437
+        },
+        {
+          "caller": "computeNoteDamage",
+          "callee": "profile.weaknesses.instruments.includes",
+          "lineNumber": 438
+        },
+        {
+          "caller": "computeNoteDamage",
+          "callee": "profile.weaknesses.elements.includes",
+          "lineNumber": 439
+        },
+        {
+          "caller": "computeNoteDamage",
+          "callee": "profile.resists.instruments.includes",
+          "lineNumber": 440
+        },
+        {
+          "caller": "computeNoteDamage",
+          "callee": "profile.resists.elements.includes",
+          "lineNumber": 441
+        },
+        {
+          "caller": "computeNoteDamage",
+          "callee": "buffDamageTaken",
+          "lineNumber": 442
+        },
+        {
+          "caller": "computeNoteDamage",
+          "callee": "Math.max",
+          "lineNumber": 444
+        },
+        {
+          "caller": "computeNoteDamage",
+          "callee": "Math.round",
+          "lineNumber": 444
+        },
+        {
+          "caller": "computeNoteDamage",
+          "callee": "Math.round",
+          "lineNumber": 449
+        },
+        {
+          "caller": "resolveMelodyVoice",
+          "callee": "pickRandom",
+          "lineNumber": 471
+        },
+        {
+          "caller": "resolveMelodyVoice",
+          "callee": "laneAttacker",
+          "lineNumber": 475
+        },
+        {
+          "caller": "resolveMelodyVoice",
+          "callee": "computeNoteDamage",
+          "lineNumber": 478
+        },
+        {
+          "caller": "resolveMelodyVoice",
+          "callee": "lines.push",
+          "lineNumber": 490
+        },
+        {
+          "caller": "resolveMelodyVoice",
+          "callee": "onsetKey",
+          "lineNumber": 494
+        },
+        {
+          "caller": "resolveMelodyVoice",
+          "callee": "chordEffectFor",
+          "lineNumber": 495
+        },
+        {
+          "caller": "resolveMelodyVoice",
+          "callee": "Math.max",
+          "lineNumber": 496
+        },
+        {
+          "caller": "resolveMelodyVoice",
+          "callee": "Math.round",
+          "lineNumber": 496
+        },
+        {
+          "caller": "resolveMelodyVoice",
+          "callee": "damageThroughShield",
+          "lineNumber": 497
+        },
+        {
+          "caller": "resolveMelodyVoice",
+          "callee": "enemies.map",
+          "lineNumber": 498
+        },
+        {
+          "caller": "resolveMelodyVoice",
+          "callee": "isDown",
+          "lineNumber": 500
+        },
+        {
+          "caller": "resolveMelodyVoice",
+          "callee": "lines.push",
+          "lineNumber": 501
+        },
+        {
+          "caller": "resolveMelodyVoice",
+          "callee": "isDown",
+          "lineNumber": 503
+        },
+        {
+          "caller": "resolveMelodyVoice",
+          "callee": "enemies.map",
+          "lineNumber": 504
+        },
+        {
+          "caller": "resolveMelodyVoice",
+          "callee": "applyBuff",
+          "lineNumber": 506
+        },
+        {
+          "caller": "resolveMelodyVoice",
+          "callee": "damageThroughShield",
+          "lineNumber": 512
+        },
+        {
+          "caller": "resolveMelodyVoice",
+          "callee": "party.map",
+          "lineNumber": 513
+        },
+        {
+          "caller": "resolveMelodyVoice",
+          "callee": "lines.push",
+          "lineNumber": 516
+        },
+        {
+          "caller": "resolveMelodyVoice",
+          "callee": "enemies.every",
+          "lineNumber": 517
+        },
+        {
+          "caller": "resolveMelodyVoice",
+          "callee": "lines.push",
+          "lineNumber": 519
+        },
+        {
+          "caller": "resolveMelodyVoice",
+          "callee": "party.every",
+          "lineNumber": 520
+        },
+        {
+          "caller": "resolveMelodyVoice",
+          "callee": "lines.push",
+          "lineNumber": 522
+        },
+        {
+          "caller": "advanceTick",
+          "callee": "locateStep",
+          "lineNumber": 547
+        },
+        {
+          "caller": "advanceTick",
+          "callee": "snapshotStep",
+          "lineNumber": 548
+        },
+        {
+          "caller": "advanceTick",
+          "callee": "tensionOf",
+          "lineNumber": 552
+        },
+        {
+          "caller": "advanceTick",
+          "callee": "snap.melodies.map",
+          "lineNumber": 553
+        },
+        {
+          "caller": "advanceTick",
+          "callee": "reconcilePotency",
+          "lineNumber": 560
+        },
+        {
+          "caller": "advanceTick",
+          "callee": "state.cooldownLeft.map",
+          "lineNumber": 563
+        },
+        {
+          "caller": "advanceTick",
+          "callee": "Math.max",
+          "lineNumber": 563
+        },
+        {
+          "caller": "advanceTick",
+          "callee": "loopLength",
+          "lineNumber": 565
+        },
+        {
+          "caller": "advanceTick",
+          "callee": "state.gauges.map",
+          "lineNumber": 569
+        },
+        {
+          "caller": "advanceTick",
+          "callee": "isDown",
+          "lineNumber": 572
+        },
+        {
+          "caller": "advanceTick",
+          "callee": "Math.max",
+          "lineNumber": 575
+        },
+        {
+          "caller": "advanceTick",
+          "callee": "Math.max",
+          "lineNumber": 576
+        },
+        {
+          "caller": "advanceTick",
+          "callee": "Math.min",
+          "lineNumber": 577
+        },
+        {
+          "caller": "advanceTick",
+          "callee": "missOverdueNotes",
+          "lineNumber": 587
+        },
+        {
+          "caller": "advanceTick",
+          "callee": "isQteComplete",
+          "lineNumber": 602
+        },
+        {
+          "caller": "advanceTick",
+          "callee": "Array.from",
+          "lineNumber": 605
+        },
+        {
+          "caller": "advanceTick",
+          "callee": "reconcilePotency",
+          "lineNumber": 607
+        },
+        {
+          "caller": "advanceTick",
+          "callee": "pushLog",
+          "lineNumber": 608
+        },
+        {
+          "caller": "advanceTick",
+          "callee": "s",
+          "lineNumber": 608
+        },
+        {
+          "caller": "advanceTick",
+          "callee": "allOnsetKeys",
+          "lineNumber": 615
+        },
+        {
+          "caller": "advanceTick",
+          "callee": "pushLog",
+          "lineNumber": 617
+        },
+        {
+          "caller": "advanceTick",
+          "callee": "s",
+          "lineNumber": 617
+        },
+        {
+          "caller": "advanceTick",
+          "callee": "pushLog",
+          "lineNumber": 619
+        },
+        {
+          "caller": "advanceTick",
+          "callee": "s",
+          "lineNumber": 619
+        },
+        {
+          "caller": "advanceTick",
+          "callee": "pushLog",
+          "lineNumber": 624
+        },
+        {
+          "caller": "advanceTick",
+          "callee": "s",
+          "lineNumber": 625
+        },
+        {
+          "caller": "advanceTick",
+          "callee": "pushLog",
+          "lineNumber": 632
+        },
+        {
+          "caller": "advanceTick",
+          "callee": "s",
+          "lineNumber": 632
+        },
+        {
+          "caller": "advanceTick",
+          "callee": "state.enemies.filter",
+          "lineNumber": 642
+        },
+        {
+          "caller": "advanceTick",
+          "callee": "isDown",
+          "lineNumber": 643
+        },
+        {
+          "caller": "advanceTick",
+          "callee": "Math.max",
+          "lineNumber": 645
+        },
+        {
+          "caller": "advanceTick",
+          "callee": "eligible.sort",
+          "lineNumber": 651
+        },
+        {
+          "caller": "advanceTick",
+          "callee": "secondsToSteps",
+          "lineNumber": 654
+        },
+        {
+          "caller": "advanceTick",
+          "callee": "Math.min",
+          "lineNumber": 655
+        },
+        {
+          "caller": "advanceTick",
+          "callee": "Math.max",
+          "lineNumber": 655
+        },
+        {
+          "caller": "advanceTick",
+          "callee": "Math.ceil",
+          "lineNumber": 655
+        },
+        {
+          "caller": "advanceTick",
+          "callee": "generateParryChart",
+          "lineNumber": 657
+        },
+        {
+          "caller": "advanceTick",
+          "callee": "parryParamsFor",
+          "lineNumber": 658
+        },
+        {
+          "caller": "advanceTick",
+          "callee": "createQte",
+          "lineNumber": 663
+        },
+        {
+          "caller": "advanceTick",
+          "callee": "pushLog",
+          "lineNumber": 672
+        },
+        {
+          "caller": "advanceTick",
+          "callee": "s",
+          "lineNumber": 672
+        },
+        {
+          "caller": "advanceTick",
+          "callee": "loopLength",
+          "lineNumber": 677
+        },
+        {
+          "caller": "advanceTick",
+          "callee": "pushLog",
+          "lineNumber": 682
+        },
+        {
+          "caller": "advanceTick",
+          "callee": "s",
+          "lineNumber": 682
+        },
+        {
+          "caller": "advanceTick",
+          "callee": "Object.keys",
+          "lineNumber": 687
+        },
+        {
+          "caller": "advanceTick",
+          "callee": "Math.max",
+          "lineNumber": 688
+        },
+        {
+          "caller": "advanceTick",
+          "callee": "Math.round",
+          "lineNumber": 688
+        },
+        {
+          "caller": "advanceTick",
+          "callee": "lines.push",
+          "lineNumber": 694
+        },
+        {
+          "caller": "advanceTick",
+          "callee": "chordEffectFor",
+          "lineNumber": 695
+        },
+        {
+          "caller": "advanceTick",
+          "callee": "party.map",
+          "lineNumber": 697
+        },
+        {
+          "caller": "advanceTick",
+          "callee": "isDown",
+          "lineNumber": 698
+        },
+        {
+          "caller": "advanceTick",
+          "callee": "healFighter",
+          "lineNumber": 699
+        },
+        {
+          "caller": "advanceTick",
+          "callee": "addShield",
+          "lineNumber": 700
+        },
+        {
+          "caller": "advanceTick",
+          "callee": "lines.push",
+          "lineNumber": 702
+        },
+        {
+          "caller": "advanceTick",
+          "callee": "party.find",
+          "lineNumber": 708
+        },
+        {
+          "caller": "advanceTick",
+          "callee": "isDown",
+          "lineNumber": 709
+        },
+        {
+          "caller": "advanceTick",
+          "callee": "party.map",
+          "lineNumber": 710
+        },
+        {
+          "caller": "advanceTick",
+          "callee": "isDown",
+          "lineNumber": 710
+        },
+        {
+          "caller": "advanceTick",
+          "callee": "addShield",
+          "lineNumber": 710
+        },
+        {
+          "caller": "advanceTick",
+          "callee": "lines.push",
+          "lineNumber": 711
+        },
+        {
+          "caller": "advanceTick",
+          "callee": "party.map",
+          "lineNumber": 713
+        },
+        {
+          "caller": "advanceTick",
+          "callee": "tickBuffs",
+          "lineNumber": 714
+        },
+        {
+          "caller": "advanceTick",
+          "callee": "lines.push",
+          "lineNumber": 715
+        },
+        {
+          "caller": "advanceTick",
+          "callee": "enemies.map",
+          "lineNumber": 718
+        },
+        {
+          "caller": "advanceTick",
+          "callee": "tickBuffs",
+          "lineNumber": 719
+        },
+        {
+          "caller": "advanceTick",
+          "callee": "lines.push",
+          "lineNumber": 720
+        },
+        {
+          "caller": "advanceTick",
+          "callee": "pushLog",
+          "lineNumber": 723
+        },
+        {
+          "caller": "advanceTick",
+          "callee": "s",
+          "lineNumber": 723
+        },
+        {
+          "caller": "advanceTick",
+          "callee": "enemies.filter",
+          "lineNumber": 730
+        },
+        {
+          "caller": "advanceTick",
+          "callee": "isDown",
+          "lineNumber": 730
+        },
+        {
+          "caller": "advanceTick",
+          "callee": "resolveMelodyVoice",
+          "lineNumber": 732
+        },
+        {
+          "caller": "advanceTick",
+          "callee": "s",
+          "lineNumber": 733
+        },
+        {
+          "caller": "advanceTick",
+          "callee": "pushLog",
+          "lineNumber": 743
+        },
+        {
+          "caller": "advanceTick",
+          "callee": "s",
+          "lineNumber": 743
+        },
+        {
+          "caller": "advanceTick",
+          "callee": "state.enemies.forEach",
+          "lineNumber": 747
+        },
+        {
+          "caller": "advanceTick",
+          "callee": "isDown",
+          "lineNumber": 751
+        },
+        {
+          "caller": "advanceTick",
+          "callee": "gauges.map",
+          "lineNumber": 754
+        },
+        {
+          "caller": "advanceTick",
+          "callee": "Math.max",
+          "lineNumber": 758
+        },
+        {
+          "caller": "advanceTick",
+          "callee": "Math.floor",
+          "lineNumber": 758
+        },
+        {
+          "caller": "advanceTick",
+          "callee": "loopLength",
+          "lineNumber": 760
+        },
+        {
+          "caller": "advanceTick",
+          "callee": "cooldownLeft.map",
+          "lineNumber": 761
+        },
+        {
+          "caller": "advanceTick",
+          "callee": "pushLog",
+          "lineNumber": 763
+        },
+        {
+          "caller": "advanceTick",
+          "callee": "s",
+          "lineNumber": 763
+        },
+        {
+          "caller": "advanceTick",
+          "callee": "clearTracks",
+          "lineNumber": 766
+        },
+        {
+          "caller": "advanceTick",
+          "callee": "pushLog",
+          "lineNumber": 767
+        },
+        {
+          "caller": "advanceTick",
+          "callee": "s",
+          "lineNumber": 767
+        },
+        {
+          "caller": "advanceTick",
+          "callee": "aliveParty",
+          "lineNumber": 769
+        },
+        {
+          "caller": "advanceTick",
+          "callee": "pickRandom",
+          "lineNumber": 771
+        },
+        {
+          "caller": "advanceTick",
+          "callee": "Math.round",
+          "lineNumber": 773
+        },
+        {
+          "caller": "advanceTick",
+          "callee": "parryDamage",
+          "lineNumber": 777
+        },
+        {
+          "caller": "advanceTick",
+          "callee": "Math.round",
+          "lineNumber": 778
+        },
+        {
+          "caller": "advanceTick",
+          "callee": "qteSuccessRate",
+          "lineNumber": 779
+        },
+        {
+          "caller": "advanceTick",
+          "callee": "damageThroughShield",
+          "lineNumber": 780
+        },
+        {
+          "caller": "advanceTick",
+          "callee": "party.map",
+          "lineNumber": 781
+        },
+        {
+          "caller": "advanceTick",
+          "callee": "pushLog",
+          "lineNumber": 784
+        },
+        {
+          "caller": "advanceTick",
+          "callee": "s",
+          "lineNumber": 785
+        },
+        {
+          "caller": "advanceTick",
+          "callee": "pushLog",
+          "lineNumber": 793
+        },
+        {
+          "caller": "advanceTick",
+          "callee": "s",
+          "lineNumber": 794
+        },
+        {
+          "caller": "advanceTick",
+          "callee": "party.every",
+          "lineNumber": 800
+        },
+        {
+          "caller": "advanceTick",
+          "callee": "pushLog",
+          "lineNumber": 802
+        },
+        {
+          "caller": "advanceTick",
+          "callee": "s",
+          "lineNumber": 802
+        },
+        {
+          "caller": "advanceTick",
+          "callee": "enemies.every",
+          "lineNumber": 807
+        },
+        {
+          "caller": "advanceTick",
+          "callee": "pushLog",
+          "lineNumber": 809
+        },
+        {
+          "caller": "advanceTick",
+          "callee": "s",
+          "lineNumber": 809
+        },
+        {
+          "caller": "advanceTick",
+          "callee": "party.every",
+          "lineNumber": 810
+        },
+        {
+          "caller": "advanceTick",
+          "callee": "pushLog",
+          "lineNumber": 812
+        },
+        {
+          "caller": "advanceTick",
+          "callee": "s",
+          "lineNumber": 812
+        },
+        {
+          "caller": "advanceTick",
+          "callee": "s",
+          "lineNumber": 816
+        }
+      ],
+      "metrics": {
+        "importCount": 11,
+        "exportCount": 20,
+        "functionCount": 24,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "src/game/parryChart.test.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 80,
+      "nonEmptyLines": 74,
+      "functions": [
+        {
+          "name": "seq",
+          "startLine": 10,
+          "endLine": 13,
+          "params": [
+            "vals"
+          ]
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "at",
+          "callee": "generateParryChart",
+          "lineNumber": 67
+        },
+        {
+          "caller": "at",
+          "callee": "parryParamsFor",
+          "lineNumber": 67
+        },
+        {
+          "caller": "at",
+          "callee": "seq",
+          "lineNumber": 67
+        }
+      ],
+      "metrics": {
+        "importCount": 2,
+        "exportCount": 0,
+        "functionCount": 1,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "src/game/parryChart.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 203,
+      "nonEmptyLines": 195,
+      "functions": [
+        {
+          "name": "parryParamsFor",
+          "startLine": 75,
+          "endLine": 83,
+          "params": [
+            "pattern",
+            "override"
+          ]
+        },
+        {
+          "name": "degreeToParryLane",
+          "startLine": 86,
+          "endLine": 93,
+          "params": [
+            "degree"
+          ]
+        },
+        {
+          "name": "generateParryChart",
+          "startLine": 111,
+          "endLine": 203,
+          "params": [
+            "opts"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "PARRY_LANES",
+          "line": 12,
+          "isDefault": false
+        },
+        {
+          "name": "DEFAULT_PARRY_PARAMS",
+          "line": 35,
+          "isDefault": false
+        },
+        {
+          "name": "PARRY_MOTIFS",
+          "line": 46,
+          "isDefault": false
+        },
+        {
+          "name": "parryParamsFor",
+          "line": 75,
+          "isDefault": false
+        },
+        {
+          "name": "degreeToParryLane",
+          "line": 86,
+          "isDefault": false
+        },
+        {
+          "name": "generateParryChart",
+          "line": 111,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "generateParryChart",
+          "callee": "Math.max",
+          "lineNumber": 114
+        },
+        {
+          "caller": "generateParryChart",
+          "callee": "Math.round",
+          "lineNumber": 114
+        },
+        {
+          "caller": "generateParryChart",
+          "callee": "Math.floor",
+          "lineNumber": 116
+        },
+        {
+          "caller": "generateParryChart",
+          "callee": "rng",
+          "lineNumber": 116
+        },
+        {
+          "caller": "generateParryChart",
+          "callee": "stepMs",
+          "lineNumber": 119
+        },
+        {
+          "caller": "generateParryChart",
+          "callee": "Math.max",
+          "lineNumber": 120
+        },
+        {
+          "caller": "generateParryChart",
+          "callee": "Math.ceil",
+          "lineNumber": 120
+        },
+        {
+          "caller": "generateParryChart",
+          "callee": "Math.min",
+          "lineNumber": 121
+        },
+        {
+          "caller": "generateParryChart",
+          "callee": "Math.max",
+          "lineNumber": 121
+        },
+        {
+          "caller": "generateParryChart",
+          "callee": "Math.floor",
+          "lineNumber": 121
+        },
+        {
+          "caller": "generateParryChart",
+          "callee": "heads.push",
+          "lineNumber": 129
+        },
+        {
+          "caller": "generateParryChart",
+          "callee": "Math.floor",
+          "lineNumber": 130
+        },
+        {
+          "caller": "generateParryChart",
+          "callee": "rng",
+          "lineNumber": 130
+        },
+        {
+          "caller": "generateParryChart",
+          "callee": "Math.max",
+          "lineNumber": 133
+        },
+        {
+          "caller": "generateParryChart",
+          "callee": "Math.round",
+          "lineNumber": 133
+        },
+        {
+          "caller": "generateParryChart",
+          "callee": "Math.floor",
+          "lineNumber": 135
+        },
+        {
+          "caller": "generateParryChart",
+          "callee": "rng",
+          "lineNumber": 135
+        },
+        {
+          "caller": "generateParryChart",
+          "callee": "heads.splice",
+          "lineNumber": 136
+        },
+        {
+          "caller": "generateParryChart",
+          "callee": "rng",
+          "lineNumber": 145
+        },
+        {
+          "caller": "generateParryChart",
+          "callee": "Math.min",
+          "lineNumber": 161
+        },
+        {
+          "caller": "generateParryChart",
+          "callee": "Math.max",
+          "lineNumber": 161
+        },
+        {
+          "caller": "generateParryChart",
+          "callee": "rng",
+          "lineNumber": 161
+        },
+        {
+          "caller": "generateParryChart",
+          "callee": "rng",
+          "lineNumber": 161
+        },
+        {
+          "caller": "generateParryChart",
+          "callee": "degreeToParryLane",
+          "lineNumber": 162
+        },
+        {
+          "caller": "generateParryChart",
+          "callee": "rng",
+          "lineNumber": 165
+        },
+        {
+          "caller": "generateParryChart",
+          "callee": "Math.floor",
+          "lineNumber": 166
+        },
+        {
+          "caller": "generateParryChart",
+          "callee": "rng",
+          "lineNumber": 166
+        },
+        {
+          "caller": "generateParryChart",
+          "callee": "PARRY_LANES.filter",
+          "lineNumber": 171
+        },
+        {
+          "caller": "generateParryChart",
+          "callee": "Math.floor",
+          "lineNumber": 171
+        },
+        {
+          "caller": "generateParryChart",
+          "callee": "rng",
+          "lineNumber": 171
+        },
+        {
+          "caller": "generateParryChart",
+          "callee": "lanes.push",
+          "lineNumber": 175
+        },
+        {
+          "caller": "generateParryChart",
+          "callee": "degrees.push",
+          "lineNumber": 176
+        },
+        {
+          "caller": "generateParryChart",
+          "callee": "Math.round",
+          "lineNumber": 179
+        },
+        {
+          "caller": "generateParryChart",
+          "callee": "Math.min",
+          "lineNumber": 179
+        },
+        {
+          "caller": "generateParryChart",
+          "callee": "Math.max",
+          "lineNumber": 179
+        },
+        {
+          "caller": "generateParryChart",
+          "callee": "heads.map((_, i) => i).filter",
+          "lineNumber": 180
+        },
+        {
+          "caller": "generateParryChart",
+          "callee": "heads.map",
+          "lineNumber": 180
+        },
+        {
+          "caller": "generateParryChart",
+          "callee": "Math.floor",
+          "lineNumber": 182
+        },
+        {
+          "caller": "generateParryChart",
+          "callee": "rng",
+          "lineNumber": 182
+        },
+        {
+          "caller": "generateParryChart",
+          "callee": "new Array<number>(heads.length).fill",
+          "lineNumber": 185
+        },
+        {
+          "caller": "generateParryChart",
+          "callee": "Math.min",
+          "lineNumber": 187
+        },
+        {
+          "caller": "generateParryChart",
+          "callee": "Math.floor",
+          "lineNumber": 191
+        },
+        {
+          "caller": "generateParryChart",
+          "callee": "rng",
+          "lineNumber": 191
+        },
+        {
+          "caller": "generateParryChart",
+          "callee": "Math.max",
+          "lineNumber": 192
+        },
+        {
+          "caller": "generateParryChart",
+          "callee": "Math.min",
+          "lineNumber": 192
+        },
+        {
+          "caller": "generateParryChart",
+          "callee": "heads.map",
+          "lineNumber": 194
+        }
+      ],
+      "metrics": {
+        "importCount": 2,
+        "exportCount": 6,
+        "functionCount": 3,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "src/game/perform.test.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 51,
+      "nonEmptyLines": 45,
+      "metrics": {
+        "importCount": 1,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "src/game/perform.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 82,
+      "nonEmptyLines": 70,
+      "functions": [
+        {
+          "name": "isParryKey",
+          "startLine": 17,
+          "endLine": 19,
+          "params": [
+            "key"
+          ]
+        },
+        {
+          "name": "moveCursor",
+          "startLine": 35,
+          "endLine": 50,
+          "params": [
+            "c",
+            "key"
+          ]
+        },
+        {
+          "name": "cursorDegree",
+          "startLine": 53,
+          "endLine": 55,
+          "params": [
+            "c"
+          ]
+        },
+        {
+          "name": "pressToLen",
+          "startLine": 58,
+          "endLine": 64,
+          "params": [
+            "pressMs",
+            "stepMs"
+          ]
+        },
+        {
+          "name": "stepMs",
+          "startLine": 67,
+          "endLine": 69,
+          "params": [
+            "bpm"
+          ]
+        },
+        {
+          "name": "secondsToSteps",
+          "startLine": 75,
+          "endLine": 77,
+          "params": [
+            "seconds",
+            "bpm"
+          ]
+        },
+        {
+          "name": "stepsToMs",
+          "startLine": 80,
+          "endLine": 82,
+          "params": [
+            "steps",
+            "bpm"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "PARRY_KEYS",
+          "line": 15,
+          "isDefault": false
+        },
+        {
+          "name": "isParryKey",
+          "line": 17,
+          "isDefault": false
+        },
+        {
+          "name": "HOME_CURSOR",
+          "line": 28,
+          "isDefault": false
+        },
+        {
+          "name": "MIN_DEGREE",
+          "line": 29,
+          "isDefault": false
+        },
+        {
+          "name": "MAX_DEGREE",
+          "line": 30,
+          "isDefault": false
+        },
+        {
+          "name": "MIN_OCTAVE",
+          "line": 31,
+          "isDefault": false
+        },
+        {
+          "name": "MAX_OCTAVE",
+          "line": 32,
+          "isDefault": false
+        },
+        {
+          "name": "moveCursor",
+          "line": 35,
+          "isDefault": false
+        },
+        {
+          "name": "cursorDegree",
+          "line": 53,
+          "isDefault": false
+        },
+        {
+          "name": "pressToLen",
+          "line": 58,
+          "isDefault": false
+        },
+        {
+          "name": "stepMs",
+          "line": 67,
+          "isDefault": false
+        },
+        {
+          "name": "secondsToSteps",
+          "line": 75,
+          "isDefault": false
+        },
+        {
+          "name": "stepsToMs",
+          "line": 80,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "moveCursor",
+          "callee": "Math.min",
+          "lineNumber": 46
+        },
+        {
+          "caller": "moveCursor",
+          "callee": "Math.max",
+          "lineNumber": 48
+        },
+        {
+          "caller": "pressToLen",
+          "callee": "Math.max",
+          "lineNumber": 59
+        },
+        {
+          "caller": "pressToLen",
+          "callee": "Math.round",
+          "lineNumber": 59
+        },
+        {
+          "caller": "pressToLen",
+          "callee": "Math.max",
+          "lineNumber": 59
+        },
+        {
+          "caller": "stepMs",
+          "callee": "Math.min",
+          "lineNumber": 68
+        },
+        {
+          "caller": "stepMs",
+          "callee": "Math.max",
+          "lineNumber": 68
+        },
+        {
+          "caller": "secondsToSteps",
+          "callee": "Math.max",
+          "lineNumber": 76
+        },
+        {
+          "caller": "secondsToSteps",
+          "callee": "Math.round",
+          "lineNumber": 76
+        },
+        {
+          "caller": "secondsToSteps",
+          "callee": "stepMs",
+          "lineNumber": 76
+        },
+        {
+          "caller": "stepsToMs",
+          "callee": "stepMs",
+          "lineNumber": 81
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 13,
+        "functionCount": 7,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "src/game/qte.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 665,
+      "nonEmptyLines": 633,
+      "functions": [
+        {
+          "name": "degreeToPerformKey",
+          "startLine": 98,
+          "endLine": 104,
+          "params": [
+            "degree"
+          ]
+        },
+        {
+          "name": "keyToDegree",
+          "startLine": 107,
+          "endLine": 118,
+          "params": [
+            "key"
+          ]
+        },
+        {
+          "name": "qteKeyToDegree",
+          "startLine": 125,
+          "endLine": 140,
+          "params": [
+            "key"
+          ]
+        },
+        {
+          "name": "ratingWeight",
+          "startLine": 143,
+          "endLine": 154,
+          "params": [
+            "r"
+          ]
+        },
+        {
+          "name": "noteId",
+          "startLine": 156,
+          "endLine": 158,
+          "params": [
+            "key",
+            "stepOffset",
+            "i"
+          ]
+        },
+        {
+          "name": "chartFromMelody",
+          "startLine": 166,
+          "endLine": 193,
+          "params": [
+            "tracks",
+            "maxNotes"
+          ]
+        },
+        {
+          "name": "harmonicChart",
+          "startLine": 203,
+          "endLine": 233,
+          "params": [
+            "romans",
+            "stepsPerBar"
+          ]
+        },
+        {
+          "name": "patternMotif",
+          "startLine": 287,
+          "endLine": 304,
+          "params": [
+            "pattern"
+          ]
+        },
+        {
+          "name": "fitChartToWindow",
+          "startLine": 311,
+          "endLine": 328,
+          "params": [
+            "chart",
+            "ticksAvailable"
+          ]
+        },
+        {
+          "name": "chartKeys",
+          "startLine": 331,
+          "endLine": 333,
+          "params": [
+            "chart"
+          ]
+        },
+        {
+          "name": "chartFromPattern",
+          "startLine": 336,
+          "endLine": 356,
+          "params": [
+            "pattern",
+            "length",
+            "_rng"
+          ]
+        },
+        {
+          "name": "randomChart",
+          "startLine": 359,
+          "endLine": 361,
+          "params": [
+            "length",
+            "rng"
+          ]
+        },
+        {
+          "name": "synthChartFromSequence",
+          "startLine": 363,
+          "endLine": 374,
+          "params": [
+            "sequence",
+            "startedTick",
+            "deadlineTick"
+          ]
+        },
+        {
+          "name": "createQte",
+          "startLine": 376,
+          "endLine": 409,
+          "params": [
+            "opts"
+          ]
+        },
+        {
+          "name": "rateForDelta",
+          "startLine": 411,
+          "endLine": 415,
+          "params": [
+            "absDelta"
+          ]
+        },
+        {
+          "name": "pressQte",
+          "startLine": 426,
+          "endLine": 519,
+          "params": [
+            "qte",
+            "key",
+            "currentTick"
+          ]
+        },
+        {
+          "name": "releaseQte",
+          "startLine": 527,
+          "endLine": 571,
+          "params": [
+            "qte",
+            "key",
+            "currentTick"
+          ]
+        },
+        {
+          "name": "missOverdueNotes",
+          "startLine": 578,
+          "endLine": 614,
+          "params": [
+            "qte",
+            "tick"
+          ]
+        },
+        {
+          "name": "isQteComplete",
+          "startLine": 616,
+          "endLine": 619,
+          "params": [
+            "qte"
+          ]
+        },
+        {
+          "name": "isQteExpired",
+          "startLine": 621,
+          "endLine": 623,
+          "params": [
+            "qte",
+            "tick"
+          ]
+        },
+        {
+          "name": "qteSuccessRate",
+          "startLine": 626,
+          "endLine": 636,
+          "params": [
+            "qte"
+          ]
+        },
+        {
+          "name": "parryDamage",
+          "startLine": 642,
+          "endLine": 648,
+          "params": [
+            "base",
+            "chip",
+            "qte"
+          ]
+        },
+        {
+          "name": "beatDegreeFor",
+          "startLine": 656,
+          "endLine": 665,
+          "params": [
+            "key",
+            "chordMidi",
+            "pressCount"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "degreeToPerformKey",
+          "line": 98,
+          "isDefault": false
+        },
+        {
+          "name": "keyToDegree",
+          "line": 107,
+          "isDefault": false
+        },
+        {
+          "name": "qteKeyToDegree",
+          "line": 125,
+          "isDefault": false
+        },
+        {
+          "name": "ratingWeight",
+          "line": 143,
+          "isDefault": false
+        },
+        {
+          "name": "chartFromMelody",
+          "line": 166,
+          "isDefault": false
+        },
+        {
+          "name": "harmonicChart",
+          "line": 203,
+          "isDefault": false
+        },
+        {
+          "name": "PATTERN_MOTIFS",
+          "line": 236,
+          "isDefault": false
+        },
+        {
+          "name": "patternMotif",
+          "line": 287,
+          "isDefault": false
+        },
+        {
+          "name": "fitChartToWindow",
+          "line": 311,
+          "isDefault": false
+        },
+        {
+          "name": "chartKeys",
+          "line": 331,
+          "isDefault": false
+        },
+        {
+          "name": "chartFromPattern",
+          "line": 336,
+          "isDefault": false
+        },
+        {
+          "name": "randomChart",
+          "line": 359,
+          "isDefault": false
+        },
+        {
+          "name": "createQte",
+          "line": 376,
+          "isDefault": false
+        },
+        {
+          "name": "pressQte",
+          "line": 426,
+          "isDefault": false
+        },
+        {
+          "name": "releaseQte",
+          "line": 527,
+          "isDefault": false
+        },
+        {
+          "name": "missOverdueNotes",
+          "line": 578,
+          "isDefault": false
+        },
+        {
+          "name": "isQteComplete",
+          "line": 616,
+          "isDefault": false
+        },
+        {
+          "name": "isQteExpired",
+          "line": 621,
+          "isDefault": false
+        },
+        {
+          "name": "qteSuccessRate",
+          "line": 626,
+          "isDefault": false
+        },
+        {
+          "name": "parryDamage",
+          "line": 642,
+          "isDefault": false
+        },
+        {
+          "name": "beatDegreeFor",
+          "line": 656,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "chartFromMelody",
+          "callee": "onsets.push",
+          "lineNumber": 177
+        },
+        {
+          "caller": "chartFromMelody",
+          "callee": "onsets.slice",
+          "lineNumber": 181
+        },
+        {
+          "caller": "chartFromMelody",
+          "callee": "taken.map",
+          "lineNumber": 183
+        },
+        {
+          "caller": "chartFromMelody",
+          "callee": "noteId",
+          "lineNumber": 184
+        },
+        {
+          "caller": "chartFromMelody",
+          "callee": "degreeToPerformKey",
+          "lineNumber": 184
+        },
+        {
+          "caller": "chartFromMelody",
+          "callee": "degreeToPerformKey",
+          "lineNumber": 185
+        },
+        {
+          "caller": "romanRoot",
+          "callee": "r.replace(/[^ivxIVX]/g, \"\").toUpperCase",
+          "lineNumber": 206
+        },
+        {
+          "caller": "romanRoot",
+          "callee": "r.replace",
+          "lineNumber": 206
+        },
+        {
+          "caller": "harmonicChart",
+          "callee": "romanRoot",
+          "lineNumber": 214
+        },
+        {
+          "caller": "harmonicChart",
+          "callee": "romanRoot",
+          "lineNumber": 215
+        },
+        {
+          "caller": "harmonicChart",
+          "callee": "romanRoot",
+          "lineNumber": 215
+        },
+        {
+          "caller": "harmonicChart",
+          "callee": "notes.push",
+          "lineNumber": 223
+        },
+        {
+          "caller": "harmonicChart",
+          "callee": "noteId",
+          "lineNumber": 224
+        },
+        {
+          "caller": "patternMotif",
+          "callee": "found.notes.map",
+          "lineNumber": 292
+        },
+        {
+          "caller": "fitChartToWindow",
+          "callee": "Math.max",
+          "lineNumber": 313
+        },
+        {
+          "caller": "fitChartToWindow",
+          "callee": "Math.max",
+          "lineNumber": 314
+        },
+        {
+          "caller": "fitChartToWindow",
+          "callee": "noteId",
+          "lineNumber": 318
+        },
+        {
+          "caller": "fitChartToWindow",
+          "callee": "chart.notes.map",
+          "lineNumber": 322
+        },
+        {
+          "caller": "fitChartToWindow",
+          "callee": "noteId",
+          "lineNumber": 324
+        },
+        {
+          "caller": "fitChartToWindow",
+          "callee": "Math.round",
+          "lineNumber": 324
+        },
+        {
+          "caller": "fitChartToWindow",
+          "callee": "Math.round",
+          "lineNumber": 325
+        },
+        {
+          "caller": "chartKeys",
+          "callee": "chart.notes.map",
+          "lineNumber": 332
+        },
+        {
+          "caller": "chartFromPattern",
+          "callee": "motif.notes.map",
+          "lineNumber": 339
+        },
+        {
+          "caller": "chartFromPattern",
+          "callee": "keys.slice",
+          "lineNumber": 341
+        },
+        {
+          "caller": "chartFromPattern",
+          "callee": "out.push",
+          "lineNumber": 344
+        },
+        {
+          "caller": "chartFromPattern",
+          "callee": "c.charCodeAt",
+          "lineNumber": 350
+        },
+        {
+          "caller": "chartFromPattern",
+          "callee": "out.push",
+          "lineNumber": 353
+        },
+        {
+          "caller": "randomChart",
+          "callee": "Array.from",
+          "lineNumber": 360
+        },
+        {
+          "caller": "randomChart",
+          "callee": "Math.floor",
+          "lineNumber": 360
+        },
+        {
+          "caller": "randomChart",
+          "callee": "rng",
+          "lineNumber": 360
+        },
+        {
+          "caller": "synthChartFromSequence",
+          "callee": "Math.max",
+          "lineNumber": 368
+        },
+        {
+          "caller": "synthChartFromSequence",
+          "callee": "sequence.map",
+          "lineNumber": 369
+        },
+        {
+          "caller": "synthChartFromSequence",
+          "callee": "Math.round",
+          "lineNumber": 370
+        },
+        {
+          "caller": "synthChartFromSequence",
+          "callee": "noteId",
+          "lineNumber": 371
+        },
+        {
+          "caller": "synthChartFromSequence",
+          "callee": "qteKeyToDegree",
+          "lineNumber": 371
+        },
+        {
+          "caller": "createQte",
+          "callee": "opts.chart.notes.map",
+          "lineNumber": 388
+        },
+        {
+          "caller": "createQte",
+          "callee": "synthChartFromSequence",
+          "lineNumber": 391
+        },
+        {
+          "caller": "createQte",
+          "callee": "chartKeys",
+          "lineNumber": 397
+        },
+        {
+          "caller": "createQte",
+          "callee": "chart.notes.map",
+          "lineNumber": 400
+        },
+        {
+          "caller": "pressQte",
+          "callee": "qte.notes.some",
+          "lineNumber": 427
+        },
+        {
+          "caller": "pressQte",
+          "callee": "qte.notes.findIndex",
+          "lineNumber": 430
+        },
+        {
+          "caller": "pressQte",
+          "callee": "qte.notes.map",
+          "lineNumber": 435
+        },
+        {
+          "caller": "pressQte",
+          "callee": "Math.max",
+          "lineNumber": 447
+        },
+        {
+          "caller": "pressQte",
+          "callee": "qte.notes.forEach",
+          "lineNumber": 461
+        },
+        {
+          "caller": "pressQte",
+          "callee": "Math.abs",
+          "lineNumber": 464
+        },
+        {
+          "caller": "pressQte",
+          "callee": "rateForDelta",
+          "lineNumber": 472
+        },
+        {
+          "caller": "pressQte",
+          "callee": "qte.notes.map",
+          "lineNumber": 477
+        },
+        {
+          "caller": "pressQte",
+          "callee": "qte.notes.map",
+          "lineNumber": 488
+        },
+        {
+          "caller": "pressQte",
+          "callee": "Math.max",
+          "lineNumber": 500
+        },
+        {
+          "caller": "pressQte",
+          "callee": "qte.notes.some",
+          "lineNumber": 508
+        },
+        {
+          "caller": "pressQte",
+          "callee": "Math.abs",
+          "lineNumber": 510
+        },
+        {
+          "caller": "releaseQte",
+          "callee": "qte.notes.forEach",
+          "lineNumber": 530
+        },
+        {
+          "caller": "releaseQte",
+          "callee": "qte.notes.map",
+          "lineNumber": 543
+        },
+        {
+          "caller": "releaseQte",
+          "callee": "Math.max",
+          "lineNumber": 553
+        },
+        {
+          "caller": "releaseQte",
+          "callee": "qte.notes.map",
+          "lineNumber": 558
+        },
+        {
+          "caller": "missOverdueNotes",
+          "callee": "qte.notes.map",
+          "lineNumber": 586
+        },
+        {
+          "caller": "missOverdueNotes",
+          "callee": "Math.max",
+          "lineNumber": 594
+        },
+        {
+          "caller": "isQteComplete",
+          "callee": "qte.notes.every",
+          "lineNumber": 617
+        },
+        {
+          "caller": "isQteExpired",
+          "callee": "isQteComplete",
+          "lineNumber": 622
+        },
+        {
+          "caller": "qteSuccessRate",
+          "callee": "ratingWeight",
+          "lineNumber": 633
+        },
+        {
+          "caller": "parryDamage",
+          "callee": "Math.max",
+          "lineNumber": 644
+        },
+        {
+          "caller": "parryDamage",
+          "callee": "Math.round",
+          "lineNumber": 644
+        },
+        {
+          "caller": "parryDamage",
+          "callee": "qteSuccessRate",
+          "lineNumber": 645
+        },
+        {
+          "caller": "parryDamage",
+          "callee": "Math.max",
+          "lineNumber": 647
+        },
+        {
+          "caller": "parryDamage",
+          "callee": "Math.round",
+          "lineNumber": 647
+        },
+        {
+          "caller": "beatDegreeFor",
+          "callee": "chordMidi.map",
+          "lineNumber": 657
+        },
+        {
+          "caller": "beatDegreeFor",
+          "callee": "degreeToMidi",
+          "lineNumber": 660
+        },
+        {
+          "caller": "beatDegreeFor",
+          "callee": "pcs.has",
+          "lineNumber": 661
+        },
+        {
+          "caller": "beatDegreeFor",
+          "callee": "fitting.push",
+          "lineNumber": 661
+        }
+      ],
+      "metrics": {
+        "importCount": 3,
+        "exportCount": 21,
+        "functionCount": 23,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "src/game/units.test.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 98,
+      "nonEmptyLines": 88,
+      "metrics": {
+        "importCount": 1,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "src/game/units.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 156,
+      "nonEmptyLines": 145,
+      "functions": [
+        {
+          "name": "makeFighter",
+          "startLine": 30,
+          "endLine": 60,
+          "params": [
+            "init"
+          ]
+        },
+        {
+          "name": "isDown",
+          "startLine": 62,
+          "endLine": 64,
+          "params": [
+            "f"
+          ]
+        },
+        {
+          "name": "damageThroughShield",
+          "startLine": 70,
+          "endLine": 82,
+          "params": [
+            "f",
+            "amount"
+          ]
+        },
+        {
+          "name": "healFighter",
+          "startLine": 84,
+          "endLine": 87,
+          "params": [
+            "f",
+            "amount"
+          ]
+        },
+        {
+          "name": "addShield",
+          "startLine": 89,
+          "endLine": 91,
+          "params": [
+            "f",
+            "amount"
+          ]
+        },
+        {
+          "name": "applyBuff",
+          "startLine": 97,
+          "endLine": 114,
+          "params": [
+            "f",
+            "buff"
+          ]
+        },
+        {
+          "name": "tickBuffs",
+          "startLine": 121,
+          "endLine": 139,
+          "params": [
+            "f"
+          ]
+        },
+        {
+          "name": "buffGlyphs",
+          "startLine": 142,
+          "endLine": 146,
+          "params": [
+            "f"
+          ]
+        },
+        {
+          "name": "buffDamageTaken",
+          "startLine": 149,
+          "endLine": 156,
+          "params": [
+            "f"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "makeFighter",
+          "line": 30,
+          "isDefault": false
+        },
+        {
+          "name": "isDown",
+          "line": 62,
+          "isDefault": false
+        },
+        {
+          "name": "damageThroughShield",
+          "line": 70,
+          "isDefault": false
+        },
+        {
+          "name": "healFighter",
+          "line": 84,
+          "isDefault": false
+        },
+        {
+          "name": "addShield",
+          "line": 89,
+          "isDefault": false
+        },
+        {
+          "name": "applyBuff",
+          "line": 97,
+          "isDefault": false
+        },
+        {
+          "name": "tickBuffs",
+          "line": 121,
+          "isDefault": false
+        },
+        {
+          "name": "buffGlyphs",
+          "line": 142,
+          "isDefault": false
+        },
+        {
+          "name": "buffDamageTaken",
+          "line": 149,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "makeFighter",
+          "callee": "Math.max",
+          "lineNumber": 51
+        },
+        {
+          "caller": "damageThroughShield",
+          "callee": "Math.max",
+          "lineNumber": 74
+        },
+        {
+          "caller": "damageThroughShield",
+          "callee": "Math.round",
+          "lineNumber": 74
+        },
+        {
+          "caller": "damageThroughShield",
+          "callee": "Math.min",
+          "lineNumber": 75
+        },
+        {
+          "caller": "damageThroughShield",
+          "callee": "Math.max",
+          "lineNumber": 78
+        },
+        {
+          "caller": "healFighter",
+          "callee": "isDown",
+          "lineNumber": 85
+        },
+        {
+          "caller": "healFighter",
+          "callee": "Math.min",
+          "lineNumber": 86
+        },
+        {
+          "caller": "healFighter",
+          "callee": "Math.max",
+          "lineNumber": 86
+        },
+        {
+          "caller": "healFighter",
+          "callee": "Math.round",
+          "lineNumber": 86
+        },
+        {
+          "caller": "addShield",
+          "callee": "Math.min",
+          "lineNumber": 90
+        },
+        {
+          "caller": "addShield",
+          "callee": "Math.max",
+          "lineNumber": 90
+        },
+        {
+          "caller": "addShield",
+          "callee": "Math.round",
+          "lineNumber": 90
+        },
+        {
+          "caller": "applyBuff",
+          "callee": "f.buffs.filter",
+          "lineNumber": 99
+        },
+        {
+          "caller": "applyBuff",
+          "callee": "f.buffs.filter",
+          "lineNumber": 101
+        },
+        {
+          "caller": "applyBuff",
+          "callee": "f.buffs.find",
+          "lineNumber": 102
+        },
+        {
+          "caller": "applyBuff",
+          "callee": "Math.max",
+          "lineNumber": 109
+        },
+        {
+          "caller": "applyBuff",
+          "callee": "Math.max",
+          "lineNumber": 110
+        },
+        {
+          "caller": "tickBuffs",
+          "callee": "Math.max",
+          "lineNumber": 126
+        },
+        {
+          "caller": "tickBuffs",
+          "callee": "events.push",
+          "lineNumber": 127
+        },
+        {
+          "caller": "tickBuffs",
+          "callee": "healFighter",
+          "lineNumber": 130
+        },
+        {
+          "caller": "tickBuffs",
+          "callee": "events.push",
+          "lineNumber": 131
+        },
+        {
+          "caller": "tickBuffs",
+          "callee": "cur.buffs\n    .map((b) => ({ ...b, ticksLeft: b.ticksLeft - 1 }))\n    .filter",
+          "lineNumber": 134
+        },
+        {
+          "caller": "tickBuffs",
+          "callee": "cur.buffs\n    .map",
+          "lineNumber": 134
+        },
+        {
+          "caller": "buffGlyphs",
+          "callee": "f.buffs\n    .map((b) => (b.id === \"poison\" ? \"☠\" : b.id === \"regen\" ? \"+\" : b.id === \"exposed\" ? \"!\" : \"◈\"))\n    .join",
+          "lineNumber": 143
+        },
+        {
+          "caller": "buffGlyphs",
+          "callee": "f.buffs\n    .map",
+          "lineNumber": 143
+        },
+        {
+          "caller": "buffDamageTaken",
+          "callee": "Math.max",
+          "lineNumber": 153
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 9,
+        "functionCount": 9,
+        "classCount": 0
+      }
+    }
+  ]
+}

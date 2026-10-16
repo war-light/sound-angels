@@ -1,0 +1,1000 @@
+{
+  "scriptCompleted": true,
+  "filesAnalyzed": 5,
+  "filesSkipped": [],
+  "filesUnreadable": [],
+  "analysisOutcomes": {
+    "structure": {
+      "succeeded": 5,
+      "failed": 0
+    },
+    "callGraph": {
+      "succeeded": 5,
+      "failed": 0,
+      "skipped": 0
+    }
+  },
+  "results": [
+    {
+      "path": "src/audio/context.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 23,
+      "nonEmptyLines": 20,
+      "functions": [
+        {
+          "name": "ensureAudio",
+          "startLine": 9,
+          "endLine": 17,
+          "params": []
+        },
+        {
+          "name": "getMaster",
+          "startLine": 20,
+          "endLine": 23,
+          "params": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "ensureAudio",
+          "line": 9,
+          "isDefault": false
+        },
+        {
+          "name": "getMaster",
+          "line": 20,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "ensureAudio",
+          "callee": "Tone.start",
+          "lineNumber": 11
+        },
+        {
+          "caller": "ensureAudio",
+          "callee": "master.chain",
+          "lineNumber": 14
+        },
+        {
+          "caller": "ensureAudio",
+          "callee": "Tone.getDestination",
+          "lineNumber": 14
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 2,
+        "functionCount": 2,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "src/audio/perform.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 32,
+      "nonEmptyLines": 29,
+      "functions": [
+        {
+          "name": "auditionStart",
+          "startLine": 7,
+          "endLine": 10,
+          "params": [
+            "midi",
+            "instrument"
+          ]
+        },
+        {
+          "name": "auditionBlip",
+          "startLine": 13,
+          "endLine": 20,
+          "params": [
+            "midi",
+            "instrument",
+            "duration"
+          ]
+        },
+        {
+          "name": "auditionEnd",
+          "startLine": 22,
+          "endLine": 32,
+          "params": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "auditionStart",
+          "line": 7,
+          "isDefault": false
+        },
+        {
+          "name": "auditionBlip",
+          "line": 13,
+          "isDefault": false
+        },
+        {
+          "name": "auditionEnd",
+          "line": 22,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "auditionStart",
+          "callee": "hasVoices",
+          "lineNumber": 8
+        },
+        {
+          "caller": "auditionStart",
+          "callee": "instrumentVoices(instrument ?? null).lead.triggerAttack",
+          "lineNumber": 9
+        },
+        {
+          "caller": "auditionStart",
+          "callee": "instrumentVoices",
+          "lineNumber": 9
+        },
+        {
+          "caller": "auditionStart",
+          "callee": "midiToNote",
+          "lineNumber": 9
+        },
+        {
+          "caller": "auditionBlip",
+          "callee": "hasVoices",
+          "lineNumber": 14
+        },
+        {
+          "caller": "auditionBlip",
+          "callee": "instrumentVoices(instrument ?? null).lead.triggerAttackRelease",
+          "lineNumber": 16
+        },
+        {
+          "caller": "auditionBlip",
+          "callee": "instrumentVoices",
+          "lineNumber": 16
+        },
+        {
+          "caller": "auditionBlip",
+          "callee": "midiToNote",
+          "lineNumber": 16
+        },
+        {
+          "caller": "auditionEnd",
+          "callee": "hasVoices",
+          "lineNumber": 23
+        },
+        {
+          "caller": "auditionEnd",
+          "callee": "Object.keys",
+          "lineNumber": 25
+        },
+        {
+          "caller": "auditionEnd",
+          "callee": "getVoices",
+          "lineNumber": 25
+        },
+        {
+          "caller": "auditionEnd",
+          "callee": "instrumentVoices(id).lead.releaseAll",
+          "lineNumber": 27
+        },
+        {
+          "caller": "auditionEnd",
+          "callee": "instrumentVoices",
+          "lineNumber": 27
+        }
+      ],
+      "metrics": {
+        "importCount": 1,
+        "exportCount": 3,
+        "functionCount": 3,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "src/audio/player.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 113,
+      "nonEmptyLines": 106,
+      "functions": [
+        {
+          "name": "provider",
+          "startLine": 17,
+          "endLine": 17,
+          "params": []
+        },
+        {
+          "name": "chordVoice",
+          "startLine": 18,
+          "endLine": 18,
+          "params": []
+        },
+        {
+          "name": "melodyVoice",
+          "startLine": 20,
+          "endLine": 20,
+          "params": []
+        },
+        {
+          "name": "beatVoice",
+          "startLine": 22,
+          "endLine": 22,
+          "params": []
+        },
+        {
+          "name": "configurePlayer",
+          "startLine": 29,
+          "endLine": 41,
+          "params": [
+            "cfg"
+          ]
+        },
+        {
+          "name": "setBpm",
+          "startLine": 43,
+          "endLine": 45,
+          "params": [
+            "bpm"
+          ]
+        },
+        {
+          "name": "triggerAt",
+          "startLine": 47,
+          "endLine": 79,
+          "params": [
+            "time",
+            "snap",
+            "bpm"
+          ]
+        },
+        {
+          "name": "start",
+          "startLine": 81,
+          "endLine": 106,
+          "params": []
+        },
+        {
+          "name": "stop",
+          "startLine": 108,
+          "endLine": 113,
+          "params": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "configurePlayer",
+          "line": 29,
+          "isDefault": false
+        },
+        {
+          "name": "setBpm",
+          "line": 43,
+          "isDefault": false
+        },
+        {
+          "name": "start",
+          "line": 81,
+          "isDefault": false
+        },
+        {
+          "name": "stop",
+          "line": 108,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "setBpm",
+          "callee": "Tone.getTransport",
+          "lineNumber": 44
+        },
+        {
+          "caller": "setBpm",
+          "callee": "Math.min",
+          "lineNumber": 44
+        },
+        {
+          "caller": "setBpm",
+          "callee": "Math.max",
+          "lineNumber": 44
+        },
+        {
+          "caller": "setBpm",
+          "callee": "Math.round",
+          "lineNumber": 44
+        },
+        {
+          "caller": "triggerAt",
+          "callee": "getVoices",
+          "lineNumber": 48
+        },
+        {
+          "caller": "triggerAt",
+          "callee": "Math.max",
+          "lineNumber": 49
+        },
+        {
+          "caller": "triggerAt",
+          "callee": "beatVoice",
+          "lineNumber": 51
+        },
+        {
+          "caller": "triggerAt",
+          "callee": "applyKit",
+          "lineNumber": 52
+        },
+        {
+          "caller": "triggerAt",
+          "callee": "instrumentVoices",
+          "lineNumber": 53
+        },
+        {
+          "caller": "triggerAt",
+          "callee": "v.kick.triggerAttackRelease",
+          "lineNumber": 54
+        },
+        {
+          "caller": "triggerAt",
+          "callee": "v.snare.triggerAttackRelease",
+          "lineNumber": 55
+        },
+        {
+          "caller": "triggerAt",
+          "callee": "v.hat.triggerAttackRelease",
+          "lineNumber": 56
+        },
+        {
+          "caller": "triggerAt",
+          "callee": "bassVoice.triggerAttackRelease",
+          "lineNumber": 58
+        },
+        {
+          "caller": "triggerAt",
+          "callee": "midiToNote",
+          "lineNumber": 58
+        },
+        {
+          "caller": "triggerAt",
+          "callee": "snap.melodies.forEach",
+          "lineNumber": 62
+        },
+        {
+          "caller": "triggerAt",
+          "callee": "melodyVoice",
+          "lineNumber": 63
+        },
+        {
+          "caller": "triggerAt",
+          "callee": "instrumentVoices(inst).lead.triggerAttackRelease",
+          "lineNumber": 66
+        },
+        {
+          "caller": "triggerAt",
+          "callee": "instrumentVoices",
+          "lineNumber": 66
+        },
+        {
+          "caller": "triggerAt",
+          "callee": "midiToNote",
+          "lineNumber": 67
+        },
+        {
+          "caller": "triggerAt",
+          "callee": "Math.max",
+          "lineNumber": 67
+        },
+        {
+          "caller": "triggerAt",
+          "callee": "chordVoice",
+          "lineNumber": 72
+        },
+        {
+          "caller": "triggerAt",
+          "callee": "instrumentVoices(keeper).pad.triggerAttackRelease",
+          "lineNumber": 74
+        },
+        {
+          "caller": "triggerAt",
+          "callee": "instrumentVoices",
+          "lineNumber": 74
+        },
+        {
+          "caller": "triggerAt",
+          "callee": "snap.chord.map",
+          "lineNumber": 75
+        },
+        {
+          "caller": "triggerAt",
+          "callee": "midiToNote",
+          "lineNumber": 75
+        },
+        {
+          "caller": "start",
+          "callee": "ensureAudio",
+          "lineNumber": 83
+        },
+        {
+          "caller": "start",
+          "callee": "initVoices",
+          "lineNumber": 84
+        },
+        {
+          "caller": "start",
+          "callee": "provider",
+          "lineNumber": 85
+        },
+        {
+          "caller": "start",
+          "callee": "setBpm",
+          "lineNumber": 86
+        },
+        {
+          "caller": "start",
+          "callee": "Tone.getTransport",
+          "lineNumber": 87
+        },
+        {
+          "caller": "start",
+          "callee": "transport.scheduleRepeat",
+          "lineNumber": 90
+        },
+        {
+          "caller": "start",
+          "callee": "provider",
+          "lineNumber": 91
+        },
+        {
+          "caller": "start",
+          "callee": "locateStep",
+          "lineNumber": 94
+        },
+        {
+          "caller": "start",
+          "callee": "snapshotStep",
+          "lineNumber": 95
+        },
+        {
+          "caller": "start",
+          "callee": "triggerAt",
+          "lineNumber": 98
+        },
+        {
+          "caller": "start",
+          "callee": "Tone.getDraw().schedule",
+          "lineNumber": 100
+        },
+        {
+          "caller": "start",
+          "callee": "Tone.getDraw",
+          "lineNumber": 100
+        },
+        {
+          "caller": "start",
+          "callee": "h",
+          "lineNumber": 100
+        },
+        {
+          "caller": "start",
+          "callee": "transport.start",
+          "lineNumber": 104
+        },
+        {
+          "caller": "stop",
+          "callee": "Tone.getTransport().stop",
+          "lineNumber": 110
+        },
+        {
+          "caller": "stop",
+          "callee": "Tone.getTransport",
+          "lineNumber": 110
+        }
+      ],
+      "metrics": {
+        "importCount": 2,
+        "exportCount": 4,
+        "functionCount": 9,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "src/audio/sfx.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 106,
+      "nonEmptyLines": 97,
+      "functions": [
+        {
+          "name": "safeTrigger",
+          "startLine": 7,
+          "endLine": 14,
+          "params": [
+            "fn"
+          ]
+        },
+        {
+          "name": "playVictoryJingle",
+          "startLine": 17,
+          "endLine": 28,
+          "params": []
+        },
+        {
+          "name": "playDefeatSting",
+          "startLine": 31,
+          "endLine": 39,
+          "params": []
+        },
+        {
+          "name": "playQteHit",
+          "startLine": 42,
+          "endLine": 55,
+          "params": [
+            "rating"
+          ]
+        },
+        {
+          "name": "playQteMiss",
+          "startLine": 58,
+          "endLine": 64,
+          "params": []
+        },
+        {
+          "name": "playChordChange",
+          "startLine": 67,
+          "endLine": 74,
+          "params": []
+        },
+        {
+          "name": "playUiClick",
+          "startLine": 77,
+          "endLine": 83,
+          "params": []
+        },
+        {
+          "name": "playEnemyTelegraph",
+          "startLine": 86,
+          "endLine": 105,
+          "params": [
+            "pattern"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "playVictoryJingle",
+          "line": 17,
+          "isDefault": false
+        },
+        {
+          "name": "playDefeatSting",
+          "line": 31,
+          "isDefault": false
+        },
+        {
+          "name": "playQteHit",
+          "line": 42,
+          "isDefault": false
+        },
+        {
+          "name": "playQteMiss",
+          "line": 58,
+          "isDefault": false
+        },
+        {
+          "name": "playChordChange",
+          "line": 67,
+          "isDefault": false
+        },
+        {
+          "name": "playUiClick",
+          "line": 77,
+          "isDefault": false
+        },
+        {
+          "name": "playEnemyTelegraph",
+          "line": 86,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "safeTrigger",
+          "callee": "hasVoices",
+          "lineNumber": 9
+        },
+        {
+          "caller": "safeTrigger",
+          "callee": "fn",
+          "lineNumber": 10
+        },
+        {
+          "caller": "playVictoryJingle",
+          "callee": "safeTrigger",
+          "lineNumber": 18
+        },
+        {
+          "caller": "playVictoryJingle",
+          "callee": "getVoices",
+          "lineNumber": 19
+        },
+        {
+          "caller": "playVictoryJingle",
+          "callee": "Tone.now",
+          "lineNumber": 20
+        },
+        {
+          "caller": "playVictoryJingle",
+          "callee": "notes.forEach",
+          "lineNumber": 24
+        },
+        {
+          "caller": "playVictoryJingle",
+          "callee": "lead.triggerAttackRelease",
+          "lineNumber": 25
+        },
+        {
+          "caller": "playDefeatSting",
+          "callee": "safeTrigger",
+          "lineNumber": 32
+        },
+        {
+          "caller": "playDefeatSting",
+          "callee": "getVoices",
+          "lineNumber": 33
+        },
+        {
+          "caller": "playDefeatSting",
+          "callee": "Tone.now",
+          "lineNumber": 34
+        },
+        {
+          "caller": "playDefeatSting",
+          "callee": "pad.triggerAttackRelease",
+          "lineNumber": 36
+        },
+        {
+          "caller": "playDefeatSting",
+          "callee": "v.kick.triggerAttackRelease",
+          "lineNumber": 37
+        },
+        {
+          "caller": "playQteHit",
+          "callee": "safeTrigger",
+          "lineNumber": 43
+        },
+        {
+          "caller": "playQteHit",
+          "callee": "getVoices",
+          "lineNumber": 44
+        },
+        {
+          "caller": "playQteHit",
+          "callee": "Tone.now",
+          "lineNumber": 45
+        },
+        {
+          "caller": "playQteHit",
+          "callee": "v.instruments.piano.lead.triggerAttackRelease",
+          "lineNumber": 47
+        },
+        {
+          "caller": "playQteHit",
+          "callee": "v.instruments.strings.lead.triggerAttackRelease",
+          "lineNumber": 48
+        },
+        {
+          "caller": "playQteHit",
+          "callee": "v.instruments.piano.lead.triggerAttackRelease",
+          "lineNumber": 50
+        },
+        {
+          "caller": "playQteHit",
+          "callee": "v.instruments.piano.lead.triggerAttackRelease",
+          "lineNumber": 52
+        },
+        {
+          "caller": "playQteMiss",
+          "callee": "safeTrigger",
+          "lineNumber": 59
+        },
+        {
+          "caller": "playQteMiss",
+          "callee": "getVoices",
+          "lineNumber": 60
+        },
+        {
+          "caller": "playQteMiss",
+          "callee": "Tone.now",
+          "lineNumber": 61
+        },
+        {
+          "caller": "playQteMiss",
+          "callee": "v.snare.triggerAttackRelease",
+          "lineNumber": 62
+        },
+        {
+          "caller": "playChordChange",
+          "callee": "safeTrigger",
+          "lineNumber": 68
+        },
+        {
+          "caller": "playChordChange",
+          "callee": "getVoices",
+          "lineNumber": 69
+        },
+        {
+          "caller": "playChordChange",
+          "callee": "Tone.now",
+          "lineNumber": 70
+        },
+        {
+          "caller": "playChordChange",
+          "callee": "pad.triggerAttackRelease",
+          "lineNumber": 72
+        },
+        {
+          "caller": "playUiClick",
+          "callee": "safeTrigger",
+          "lineNumber": 78
+        },
+        {
+          "caller": "playUiClick",
+          "callee": "getVoices",
+          "lineNumber": 79
+        },
+        {
+          "caller": "playUiClick",
+          "callee": "Tone.now",
+          "lineNumber": 80
+        },
+        {
+          "caller": "playUiClick",
+          "callee": "v.hat.triggerAttackRelease",
+          "lineNumber": 81
+        },
+        {
+          "caller": "playEnemyTelegraph",
+          "callee": "safeTrigger",
+          "lineNumber": 87
+        },
+        {
+          "caller": "playEnemyTelegraph",
+          "callee": "getVoices",
+          "lineNumber": 88
+        },
+        {
+          "caller": "playEnemyTelegraph",
+          "callee": "Tone.now",
+          "lineNumber": 89
+        },
+        {
+          "caller": "playEnemyTelegraph",
+          "callee": "v.instruments.brass.bass.triggerAttackRelease",
+          "lineNumber": 91
+        },
+        {
+          "caller": "playEnemyTelegraph",
+          "callee": "v.kick.triggerAttackRelease",
+          "lineNumber": 92
+        },
+        {
+          "caller": "playEnemyTelegraph",
+          "callee": "v.hat.triggerAttackRelease",
+          "lineNumber": 94
+        },
+        {
+          "caller": "playEnemyTelegraph",
+          "callee": "v.hat.triggerAttackRelease",
+          "lineNumber": 95
+        },
+        {
+          "caller": "playEnemyTelegraph",
+          "callee": "v.instruments.strings.lead.triggerAttackRelease",
+          "lineNumber": 96
+        },
+        {
+          "caller": "playEnemyTelegraph",
+          "callee": "v.instruments.strings.pad.triggerAttackRelease",
+          "lineNumber": 98
+        },
+        {
+          "caller": "playEnemyTelegraph",
+          "callee": "v.snare.triggerAttackRelease",
+          "lineNumber": 100
+        },
+        {
+          "caller": "playEnemyTelegraph",
+          "callee": "v.instruments.piano.lead.triggerAttackRelease",
+          "lineNumber": 102
+        }
+      ],
+      "metrics": {
+        "importCount": 1,
+        "exportCount": 7,
+        "functionCount": 8,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "src/audio/synths.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 136,
+      "nonEmptyLines": 120,
+      "functions": [
+        {
+          "name": "makeLead",
+          "startLine": 29,
+          "endLine": 40,
+          "params": [
+            "recipe",
+            "verbGain",
+            "master"
+          ]
+        },
+        {
+          "name": "makeBass",
+          "startLine": 42,
+          "endLine": 55,
+          "params": [
+            "recipe",
+            "master"
+          ]
+        },
+        {
+          "name": "initVoices",
+          "startLine": 57,
+          "endLine": 100,
+          "params": []
+        },
+        {
+          "name": "getVoices",
+          "startLine": 102,
+          "endLine": 105,
+          "params": []
+        },
+        {
+          "name": "instrumentVoices",
+          "startLine": 108,
+          "endLine": 112,
+          "params": [
+            "id"
+          ]
+        },
+        {
+          "name": "applyKit",
+          "startLine": 118,
+          "endLine": 131,
+          "params": [
+            "kit"
+          ]
+        },
+        {
+          "name": "hasVoices",
+          "startLine": 134,
+          "endLine": 136,
+          "params": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "initVoices",
+          "line": 57,
+          "isDefault": false
+        },
+        {
+          "name": "getVoices",
+          "line": 102,
+          "isDefault": false
+        },
+        {
+          "name": "instrumentVoices",
+          "line": 108,
+          "isDefault": false
+        },
+        {
+          "name": "applyKit",
+          "line": 118,
+          "isDefault": false
+        },
+        {
+          "name": "hasVoices",
+          "line": 134,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "makeLead",
+          "callee": "synth.connect",
+          "lineNumber": 35
+        },
+        {
+          "caller": "makeLead",
+          "callee": "synth.connect",
+          "lineNumber": 37
+        },
+        {
+          "caller": "makeLead",
+          "callee": "send.connect",
+          "lineNumber": 38
+        },
+        {
+          "caller": "makeBass",
+          "callee": "bass.connect",
+          "lineNumber": 53
+        },
+        {
+          "caller": "initVoices",
+          "callee": "ensureAudio",
+          "lineNumber": 59
+        },
+        {
+          "caller": "initVoices",
+          "callee": "getMaster",
+          "lineNumber": 60
+        },
+        {
+          "caller": "initVoices",
+          "callee": "verbGain.chain",
+          "lineNumber": 64
+        },
+        {
+          "caller": "initVoices",
+          "callee": "Object.values",
+          "lineNumber": 67
+        },
+        {
+          "caller": "initVoices",
+          "callee": "makeLead",
+          "lineNumber": 69
+        },
+        {
+          "caller": "initVoices",
+          "callee": "makeLead",
+          "lineNumber": 70
+        },
+        {
+          "caller": "initVoices",
+          "callee": "makeBass",
+          "lineNumber": 71
+        },
+        {
+          "caller": "initVoices",
+          "callee": "kick.connect",
+          "lineNumber": 81
+        },
+        {
+          "caller": "initVoices",
+          "callee": "snare.connect",
+          "lineNumber": 88
+        },
+        {
+          "caller": "initVoices",
+          "callee": "hat.connect",
+          "lineNumber": 95
+        },
+        {
+          "caller": "instrumentVoices",
+          "callee": "getVoices",
+          "lineNumber": 109
+        },
+        {
+          "caller": "applyKit",
+          "callee": "getVoices",
+          "lineNumber": 122
+        }
+      ],
+      "metrics": {
+        "importCount": 1,
+        "exportCount": 5,
+        "functionCount": 7,
+        "classCount": 0
+      }
+    }
+  ]
+}

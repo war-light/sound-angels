@@ -3,6 +3,16 @@
 // chords are Roman numerals. Absolute MIDI is resolved only via
 // snapshotStep() at the audio boundary.
 import { DEFAULT_KEY, degreeToMidi, type Key, romanToChord } from "./theory"
+import {
+  cloneGroove,
+  defaultGroove,
+  grooveHit,
+  swingDelaySteps,
+  tweakGroove,
+  toggleCellStep,
+  type Groove,
+  type GrooveVoice,
+} from "./groove"
 
 export const STEPS_PER_BAR = 16
 export const DEFAULT_BARS = 2
@@ -27,12 +37,8 @@ export interface Arrangement {
   tracks: (NoteEvent | null)[][][]
   /** [bar][step] bass degrees (1-based) or null rest. */
   bass: (number | null)[][]
-  /** Per-voice drum grids: [bar][step] hits. */
-  drums: {
-    kick: boolean[][]
-    snare: boolean[][]
-    hat: boolean[][]
-  }
+  /** The equipped groove. Owns the drum pattern; read-only during a fight. */
+  groove: Groove
 }
 
 function grid<T>(bars: number, steps: number, fill: T): T[][] {
@@ -62,16 +68,6 @@ export function createDefaultArrangement(): Arrangement {
   for (let b = 0; b < bars; b++) {
     for (const s of [0, 4, 8, 12]) bass[b][s] = 1
   }
-  const kick = grid(bars, steps, false)
-  const snare = grid(bars, steps, false)
-  const hat = grid(bars, steps, false)
-  for (let b = 0; b < bars; b++) {
-    for (let s = 0; s < steps; s++) {
-      if (s % 4 === 0) kick[b][s] = true
-      if (s === 4 || s === 12) snare[b][s] = true
-      if (s % 2 === 0) hat[b][s] = true
-    }
-  }
   return {
     bpm: 90,
     bars,
@@ -80,7 +76,7 @@ export function createDefaultArrangement(): Arrangement {
     chords: ["i", "VI"],
     tracks,
     bass,
-    drums: { kick, snare, hat },
+    groove: defaultGroove(),
   }
 }
 
@@ -133,17 +129,59 @@ export function countOnsets(arr: Arrangement): number {
   return n
 }
 
-export function toggleDrumStep(
+/** Equip a groove (card pick or bottle recall). Stores a copy. */
+export function setGroove(arr: Arrangement, groove: Groove): Arrangement {
+  return { ...arr, groove: cloneGroove(groove) }
+}
+
+/**
+ * Tweak one step of the equipped groove. Edits happen in the Studio (outside
+ * combat) and mark the groove custom — it no longer matches any card.
+ */
+export function toggleGrooveStep(
   arr: Arrangement,
-  voice: keyof Arrangement["drums"],
-  bar: number,
+  voice: GrooveVoice,
   step: number,
 ): Arrangement {
-  checkPos(arr, bar, step)
-  const voiceGrid = arr.drums[voice].map((row, b) =>
-    b === bar ? row.map((v, s) => (s === step ? !v : v)) : [...row],
-  )
-  return { ...arr, drums: { ...arr.drums, [voice]: voiceGrid } }
+  const edited = toggleCellStep(arr.groove, voice, step)
+  return {
+    ...arr,
+    groove: { ...edited, source: "custom", blurb: "Hand-built in the Studio." },
+  }
+}
+
+/** Swap in a melody card's tracks + chords (defensive copy). */
+export function withMelody(
+  arr: Arrangement,
+  tracks: (NoteEvent | null)[][][],
+  chords: string[],
+): Arrangement {
+  return {
+    ...arr,
+    tracks: tracks.map((tr) => tr.map((row) => row.map((e) => (e ? { ...e } : null)))),
+    chords: [...chords],
+  }
+}
+
+/**
+ * Drum-only view for auditioning a groove card: nobody sings, only the kit
+ * (plus the bar-start chord stab so the audition has a tonal center).
+ */
+export function drumOnly(arr: Arrangement, groove: Groove): Arrangement {
+  return {
+    ...arr,
+    groove: cloneGroove(groove),
+    tracks: arr.tracks.map((tr) => tr.map((row) => row.map(() => null))),
+    bass: arr.bass.map((row) => row.map(() => null)),
+  }
+}
+
+/** Swing / density knobs on the equipped groove. */
+export function tweakGrooveKnobs(
+  arr: Arrangement,
+  knobs: { swing?: number; density?: number },
+): Arrangement {
+  return { ...arr, groove: tweakGroove(arr.groove, knobs) }
 }
 
 export function setBarChord(arr: Arrangement, bar: number, roman: string): Arrangement {
@@ -187,6 +225,11 @@ export interface StepSnapshot {
   kick: boolean
   snare: boolean
   hat: boolean
+  /**
+   * Swing lag for the drum voices on this step, in 16th steps. The audio
+   * layer multiplies it by the step duration, so the feel holds at any bpm.
+   */
+  swingDelay: number
 }
 
 /** Resolve a single step to absolute MIDI. The only place degrees become pitches. */
@@ -215,9 +258,10 @@ export function snapshotStep(arr: Arrangement, bar: number, step: number): StepS
     chord,
     melodies,
     bass: bassDeg == null ? null : degreeToMidi(key, bassDeg, 2),
-    kick: arr.drums.kick[bar][step] ?? false,
-    snare: arr.drums.snare[bar][step] ?? false,
-    hat: arr.drums.hat[bar][step] ?? false,
+    kick: grooveHit(arr.groove, "kick", step),
+    snare: grooveHit(arr.groove, "snare", step),
+    hat: grooveHit(arr.groove, "hat", step),
+    swingDelay: swingDelaySteps(step, arr.groove.swing),
   }
 }
 

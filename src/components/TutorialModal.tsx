@@ -47,11 +47,11 @@ const STEPS: TutorialStep[] = [
     icon: "⚔",
     summary: "Enemies attack rhythmically on musical periods. Time your defenses to turn the tide.",
     bullets: [
-      { label: "Glow Warning", text: "When an enemy's ATB gauge reaches 75%, it glows amber and shakes as it prepares to strike." },
-      { label: "Arrow Highway", text: "A 4-lane DDR/FNF highway opens. Match the scrolling arrows (A = Left, W = Up, S = Down, D = Right)." },
+      { label: "Parry Alert", text: "At each loop's end a foe may gather: a ~5s ZXCV highway opens with taps and long holds. Block with Z/X/C/V — WASD keeps singing." },
+      { label: "Hold Notes", text: "Press at the head, keep holding to the tail. Letting go early scores a bad; unreleased holds complete themselves." },
       { label: "Parry Damage Negation", text: "Scoring Perfect hits completely parries enemy damage down to chip scratches." },
     ],
-    tip: "You cannot record new loop melodies while resolving an open chart, so focus on the defense!",
+    tip: "Song charts (chord swaps, bottled loops) still lock WASD — but parries never interrupt them; the strike waits a loop.",
   },
   {
     title: "Party Roles & Roster",

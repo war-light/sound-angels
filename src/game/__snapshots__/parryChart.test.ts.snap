@@ -1,0 +1,242 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`generateParryChart (grid-locked, song-derived) > locks golden cells per pattern (regression snapshots) > erasure 1`] = `
+[
+  [
+    0,
+    1,
+    "z",
+    4,
+  ],
+  [
+    6,
+    15,
+    "v",
+    0,
+  ],
+  [
+    10,
+    5,
+    "x",
+    0,
+  ],
+  [
+    16,
+    6,
+    "x",
+    0,
+  ],
+  [
+    22,
+    1,
+    "z",
+    0,
+  ],
+  [
+    26,
+    15,
+    "v",
+    0,
+  ],
+]
+`;
+
+exports[`generateParryChart (grid-locked, song-derived) > locks golden cells per pattern (regression snapshots) > inversion 1`] = `
+[
+  [
+    0,
+    1,
+    "z",
+    0,
+  ],
+  [
+    4,
+    10,
+    "c",
+    0,
+  ],
+  [
+    8,
+    15,
+    "v",
+    0,
+  ],
+  [
+    12,
+    5,
+    "x",
+    0,
+  ],
+  [
+    16,
+    15,
+    "v",
+    0,
+  ],
+  [
+    20,
+    6,
+    "x",
+    0,
+  ],
+  [
+    24,
+    1,
+    "z",
+    0,
+  ],
+  [
+    28,
+    15,
+    "v",
+    0,
+  ],
+]
+`;
+
+exports[`generateParryChart (grid-locked, song-derived) > locks golden cells per pattern (regression snapshots) > ostinato 1`] = `
+[
+  [
+    0,
+    15,
+    "v",
+    0,
+  ],
+  [
+    4,
+    10,
+    "c",
+    0,
+  ],
+  [
+    8,
+    5,
+    "x",
+    0,
+  ],
+  [
+    12,
+    5,
+    "x",
+    0,
+  ],
+  [
+    16,
+    15,
+    "v",
+    0,
+  ],
+  [
+    20,
+    10,
+    "c",
+    0,
+  ],
+  [
+    24,
+    6,
+    "x",
+    0,
+  ],
+  [
+    28,
+    15,
+    "v",
+    0,
+  ],
+]
+`;
+
+exports[`generateParryChart (grid-locked, song-derived) > locks golden cells per pattern (regression snapshots) > retrograde 1`] = `
+[
+  [
+    0,
+    1,
+    "z",
+    4,
+  ],
+  [
+    6,
+    5,
+    "x",
+    0,
+  ],
+  [
+    12,
+    5,
+    "x",
+    0,
+  ],
+  [
+    16,
+    6,
+    "x",
+    4,
+  ],
+  [
+    22,
+    6,
+    "x",
+    0,
+  ],
+  [
+    28,
+    1,
+    "z",
+    0,
+  ],
+]
+`;
+
+exports[`generateParryChart (grid-locked, song-derived) > locks golden cells per pattern (regression snapshots) > swarm 1`] = `
+[
+  [
+    0,
+    1,
+    "z",
+    0,
+  ],
+  [
+    2,
+    15,
+    "v",
+    0,
+  ],
+  [
+    8,
+    1,
+    "z",
+    0,
+  ],
+  [
+    10,
+    5,
+    "x",
+    0,
+  ],
+  [
+    16,
+    6,
+    "x",
+    0,
+  ],
+  [
+    18,
+    1,
+    "z",
+    0,
+  ],
+  [
+    24,
+    6,
+    "x",
+    0,
+  ],
+  [
+    26,
+    15,
+    "v",
+    0,
+  ],
+]
+`;

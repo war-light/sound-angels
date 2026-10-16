@@ -1,0 +1,25 @@
+{
+  "projectRoot": "/home/david/Personal Projects/sound-angels",
+  "batchFiles": [
+    {"path": ".oxlintrc.json", "language": "json", "sizeLines": 8, "fileCategory": "config"},
+    {"path": "AGENTS.md", "language": "markdown", "sizeLines": 32, "fileCategory": "docs"},
+    {"path": "README.md", "language": "markdown", "sizeLines": 44, "fileCategory": "docs"},
+    {"path": "components.json", "language": "json", "sizeLines": 21, "fileCategory": "config"},
+    {"path": "index.html", "language": "html", "sizeLines": 13, "fileCategory": "markup"},
+    {"path": "package.json", "language": "json", "sizeLines": 38, "fileCategory": "config"},
+    {"path": "tsconfig.app.json", "language": "json", "sizeLines": 31, "fileCategory": "config"},
+    {"path": "tsconfig.json", "language": "json", "sizeLines": 7, "fileCategory": "config"},
+    {"path": "tsconfig.node.json", "language": "json", "sizeLines": 23, "fileCategory": "config"}
+  ],
+  "batchImportData": {
+    ".oxlintrc.json": [],
+    "AGENTS.md": [],
+    "README.md": [],
+    "components.json": [],
+    "index.html": [],
+    "package.json": [],
+    "tsconfig.app.json": [],
+    "tsconfig.json": [],
+    "tsconfig.node.json": []
+  }
+}

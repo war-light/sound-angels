@@ -39,13 +39,15 @@ export function playDefeatSting(): void {
 }
 
 /** Crisp percussive or chime feedback on QTE hit. */
-export function playQteHit(rating: "perfect" | "good" = "good"): void {
+export function playQteHit(rating: "perfect" | "good" | "sick" | "bad" = "good"): void {
   safeTrigger(() => {
     const v = getVoices()
     const now = Tone.now()
-    if (rating === "perfect") {
+    if (rating === "perfect" || rating === "sick") {
       v.instruments.piano.lead.triggerAttackRelease("E6", "32n", now, 0.8)
       v.instruments.strings.lead.triggerAttackRelease("B5", "32n", now + 0.03, 0.6)
+    } else if (rating === "bad") {
+      v.instruments.piano.lead.triggerAttackRelease("A5", "32n", now, 0.5)
     } else {
       v.instruments.piano.lead.triggerAttackRelease("C6", "32n", now, 0.6)
     }
@@ -77,6 +79,39 @@ export function playUiClick(): void {
     const v = getVoices()
     const now = Tone.now()
     v.hat.triggerAttackRelease("64n", now, 0.25)
+  })
+}
+
+/** Audition one drum voice (Studio step toggles). */
+export function playDrumHit(voice: "kick" | "snare" | "hat"): void {
+  safeTrigger(() => {
+    const v = getVoices()
+    const now = Tone.now()
+    if (voice === "kick") v.kick.triggerAttackRelease("C1", "16n", now, 0.8)
+    else if (voice === "snare") v.snare.triggerAttackRelease("16n", now, 0.6)
+    else v.hat.triggerAttackRelease("32n", now, 0.4)
+  })
+}
+
+/** Audio telegraph motif played when an enemy gathers an attack (Phase D.4). */
+export function playEnemyTelegraph(pattern: string): void {
+  safeTrigger(() => {
+    const v = getVoices()
+    const now = Tone.now()
+    if (pattern === "ostinato") {
+      v.instruments.brass.bass.triggerAttackRelease("C2", "8n", now, 0.7)
+      v.kick.triggerAttackRelease("C1", "16n", now + 0.1, 0.7)
+    } else if (pattern === "swarm") {
+      v.hat.triggerAttackRelease("32n", now, 0.5)
+      v.hat.triggerAttackRelease("32n", now + 0.05, 0.5)
+      v.instruments.strings.lead.triggerAttackRelease("G6", "32n", now + 0.1, 0.4)
+    } else if (pattern === "inversion") {
+      v.instruments.strings.pad.triggerAttackRelease(["E4", "D4", "C4"], "16n", now, 0.5)
+    } else if (pattern === "erasure") {
+      v.snare.triggerAttackRelease("16n", now, 0.6)
+    } else {
+      v.instruments.piano.lead.triggerAttackRelease("A3", "16n", now, 0.6)
+    }
   })
 }
 

@@ -1,0 +1,153 @@
+[
+ {
+  "id": "layer:game-engine",
+  "name": "Game Engine",
+  "description": "Pure framework-free combat and music model in src/game \u2014 ATB tick loop, arrangement grids, music theory, QTE charts, and the session singleton.",
+  "nodeIds": [
+   "file:src/game/arrangement.ts",
+   "file:src/game/combat.ts",
+   "file:src/game/keys.ts",
+   "file:src/game/melodyBank.ts",
+   "file:src/game/parryChart.ts",
+   "file:src/game/perform.ts",
+   "file:src/game/phase.ts",
+   "file:src/game/positions.ts",
+   "file:src/game/presets.ts",
+   "file:src/game/qte.ts",
+   "file:src/game/session.ts",
+   "file:src/game/theory.ts",
+   "file:src/game/units.ts"
+  ]
+ },
+ {
+  "id": "layer:audio",
+  "name": "Audio Renderer",
+  "description": "Browser-only Tone.js renderer in src/audio that turns engine snapshots into pooled synth voices, Transport playback, live audition, and SFX.",
+  "nodeIds": [
+   "file:src/audio/context.ts",
+   "file:src/audio/perform.ts",
+   "file:src/audio/player.ts",
+   "file:src/audio/sfx.ts",
+   "file:src/audio/synths.ts"
+  ]
+ },
+ {
+  "id": "layer:ui",
+  "name": "UI Layer",
+  "description": "React presentation for the Dark Room-style flow \u2014 screens, combat widgets, step sequencer, hooks, app entry, styles, and HTML shell.",
+  "nodeIds": [
+   "file:index.html",
+   "file:src/App.tsx",
+   "file:src/components/ChordPicker.tsx",
+   "file:src/components/ChordWheel.tsx",
+   "file:src/components/CombatFeedback.tsx",
+   "file:src/components/CombatLog.tsx",
+   "file:src/components/CustomChordBuilder.tsx",
+   "file:src/components/EncounterBanner.tsx",
+   "file:src/components/FoePanel.tsx",
+   "file:src/components/MelodyBankBar.tsx",
+   "file:src/components/Meter.tsx",
+   "file:src/components/PartyCorner.tsx",
+   "file:src/components/PhaseStrip.tsx",
+   "file:src/components/PresetBar.tsx",
+   "file:src/components/QtePanel.tsx",
+   "file:src/components/RosterSelectModal.tsx",
+   "file:src/components/StepGrid.tsx",
+   "file:src/components/TransportBar.tsx",
+   "file:src/components/TutorialModal.tsx",
+   "file:src/components/VoiceBar.tsx",
+   "file:src/components/screens/CombatScreen.tsx",
+   "file:src/components/screens/MenuScreen.tsx",
+   "file:src/components/screens/PrepScreen.tsx",
+   "file:src/components/screens/ResultOverlay.tsx",
+   "file:src/components/ui/button.tsx",
+   "file:src/hooks/useQtePlayhead.ts",
+   "file:src/hooks/useWasd.ts",
+   "file:src/index.css",
+   "file:src/lib/utils.ts",
+   "file:src/main.tsx"
+  ]
+ },
+ {
+  "id": "layer:state",
+  "name": "State Bridge",
+  "description": "Zustand mirror of the engine session plus guarded localStorage persistence wiring gameplay state to React and across reloads.",
+  "nodeIds": [
+   "file:src/state/useSessionStore.ts",
+   "file:src/persistence/storage.ts"
+  ]
+ },
+ {
+  "id": "layer:data",
+  "name": "Game Data",
+  "description": "Static balance and content definitions \u2014 enemies, encounters, chord presets, and the playable character roster.",
+  "nodeIds": [
+   "file:src/data/chords.ts",
+   "file:src/data/encounters.ts",
+   "file:src/data/enemies.ts",
+   "file:src/data/roster.ts"
+  ]
+ },
+ {
+  "id": "layer:test",
+  "name": "Test Suite",
+  "description": "Vitest coverage across the engine, data, persistence, state bridge, and component/integration screens using seeded RNG.",
+  "nodeIds": [
+   "file:src/components/CustomChordBuilder.test.tsx",
+   "file:src/components/PartyCorner.test.tsx",
+   "file:src/components/PresetBar.test.tsx",
+   "file:src/components/RosterSelectModal.test.tsx",
+   "file:src/components/TutorialModal.test.tsx",
+   "file:src/components/VoiceBar.test.tsx",
+   "file:src/components/screens/screens.test.tsx",
+   "file:src/data/encounters.test.ts",
+   "file:src/data/roster.test.ts",
+   "file:src/game/arrangement.test.ts",
+   "file:src/game/combatAtb.test.ts",
+   "file:src/game/combatQte.test.ts",
+   "file:src/game/effects.test.ts",
+   "file:src/game/keys.test.ts",
+   "file:src/game/melodyBank.test.ts",
+   "file:src/game/parryChart.test.ts",
+   "file:src/game/perform.test.ts",
+   "file:src/game/positions.test.ts",
+   "file:src/game/presets.test.ts",
+   "file:src/game/qte.test.ts",
+   "file:src/game/scoring.test.ts",
+   "file:src/game/sessionPhase.test.ts",
+   "file:src/game/theory.test.ts",
+   "file:src/game/timbre.test.ts",
+   "file:src/game/units.test.ts",
+   "file:src/persistence/storage.test.ts",
+   "file:src/state/useSessionStore.test.ts",
+   "file:src/test/setup.ts"
+  ]
+ },
+ {
+  "id": "layer:config",
+  "name": "Build Configuration",
+  "description": "Vite, TypeScript, oxlint, shadcn, and package-manifest settings that compile, lint, and test the project.",
+  "nodeIds": [
+   "config:.oxlintrc.json",
+   "config:components.json",
+   "config:package.json",
+   "config:tsconfig.app.json",
+   "config:tsconfig.json",
+   "config:tsconfig.node.json",
+   "file:vite.config.ts"
+  ]
+ },
+ {
+  "id": "layer:documentation",
+  "name": "Documentation",
+  "description": "Contributor guide, project overview, and combat/QTE design docs describing mechanics and roadmaps.",
+  "nodeIds": [
+   "document:AGENTS.md",
+   "document:README.md",
+   "document:docs/combat-pacing-plan.md",
+   "document:docs/mechanics.md",
+   "document:docs/qte-redesign.md",
+   "document:docs/v1-plan.md"
+  ]
+ }
+]

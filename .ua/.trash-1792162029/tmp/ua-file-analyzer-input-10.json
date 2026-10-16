@@ -1,0 +1,31 @@
+{
+  "projectRoot": "/home/david/Personal Projects/sound-angels",
+  "batchFiles": [
+    {"path": "src/components/ui/button.tsx", "language": "typescript", "sizeLines": 35, "fileCategory": "code"},
+    {"path": "src/hooks/useQtePlayhead.ts", "language": "typescript", "sizeLines": 45, "fileCategory": "code"},
+    {"path": "src/hooks/useWasd.ts", "language": "typescript", "sizeLines": 58, "fileCategory": "code"},
+    {"path": "src/index.css", "language": "css", "sizeLines": 170, "fileCategory": "markup"},
+    {"path": "src/lib/utils.ts", "language": "typescript", "sizeLines": 6, "fileCategory": "code"},
+    {"path": "src/main.tsx", "language": "typescript", "sizeLines": 10, "fileCategory": "code"},
+    {"path": "src/persistence/storage.test.ts", "language": "typescript", "sizeLines": 58, "fileCategory": "code"},
+    {"path": "src/persistence/storage.ts", "language": "typescript", "sizeLines": 111, "fileCategory": "code"},
+    {"path": "src/state/useSessionStore.test.ts", "language": "typescript", "sizeLines": 91, "fileCategory": "code"},
+    {"path": "src/state/useSessionStore.ts", "language": "typescript", "sizeLines": 530, "fileCategory": "code"},
+    {"path": "src/test/setup.ts", "language": "typescript", "sizeLines": 7, "fileCategory": "code"},
+    {"path": "vite.config.ts", "language": "typescript", "sizeLines": 19, "fileCategory": "code"}
+  ],
+  "batchImportData": {
+    "src/components/ui/button.tsx": [],
+    "src/hooks/useQtePlayhead.ts": [],
+    "src/hooks/useWasd.ts": [],
+    "src/index.css": [],
+    "src/lib/utils.ts": [],
+    "src/main.tsx": ["src/App.tsx", "src/index.css"],
+    "src/persistence/storage.test.ts": ["src/persistence/storage.ts"],
+    "src/persistence/storage.ts": [],
+    "src/state/useSessionStore.test.ts": ["src/state/useSessionStore.ts"],
+    "src/state/useSessionStore.ts": [],
+    "src/test/setup.ts": [],
+    "vite.config.ts": []
+  }
+}

@@ -1,0 +1,2126 @@
+{
+ "fileNodes": [
+  {
+   "id": "file:src/game/arrangement.test.ts",
+   "type": "file",
+   "name": "arrangement.test.ts",
+   "filePath": "src/game/arrangement.test.ts",
+   "summary": "Vitest suite covering arrangement grid edits, chord setters, and onset hashing.",
+   "tags": [
+    "test",
+    "arrangement",
+    "vitest"
+   ]
+  },
+  {
+   "id": "file:src/game/arrangement.ts",
+   "type": "file",
+   "name": "arrangement.ts",
+   "filePath": "src/game/arrangement.ts",
+   "summary": "Core loop arrangement model: melody tracks, drum grids, Roman-numeral chords, and step snapshots for the audio boundary.",
+   "tags": [
+    "music-model",
+    "arrangement",
+    "step-sequencer",
+    "tested"
+   ]
+  },
+  {
+   "id": "file:src/game/melodyBank.test.ts",
+   "type": "file",
+   "name": "melodyBank.test.ts",
+   "filePath": "src/game/melodyBank.test.ts",
+   "summary": "Vitest suite for melody bank template creation, saving, and deletion.",
+   "tags": [
+    "test",
+    "melody-bank",
+    "vitest"
+   ]
+  },
+  {
+   "id": "file:src/game/melodyBank.ts",
+   "type": "file",
+   "name": "melodyBank.ts",
+   "filePath": "src/game/melodyBank.ts",
+   "summary": "Pre-fight melody template bank with three factory presets plus save, delete, and lookup operations.",
+   "tags": [
+    "melody-bank",
+    "presets",
+    "factory",
+    "tested"
+   ]
+  },
+  {
+   "id": "file:src/game/phase.ts",
+   "type": "file",
+   "name": "phase.ts",
+   "filePath": "src/game/phase.ts",
+   "summary": "Game phase state machine (menu, prep, combat, victory, defeat) with transition validation.",
+   "tags": [
+    "state-machine",
+    "game-phase",
+    "type-definition"
+   ]
+  },
+  {
+   "id": "file:src/game/positions.test.ts",
+   "type": "file",
+   "name": "positions.test.ts",
+   "filePath": "src/game/positions.test.ts",
+   "summary": "Vitest suite for deck and slot assignment helpers.",
+   "tags": [
+    "test",
+    "positions",
+    "vitest"
+   ]
+  },
+  {
+   "id": "file:src/game/positions.ts",
+   "type": "file",
+   "name": "positions.ts",
+   "filePath": "src/game/positions.ts",
+   "summary": "Deck and slot assignment model mapping party members to chord, beat, and front slots.",
+   "tags": [
+    "slots",
+    "party",
+    "positions",
+    "tested"
+   ]
+  },
+  {
+   "id": "file:src/game/presets.test.ts",
+   "type": "file",
+   "name": "presets.test.ts",
+   "filePath": "src/game/presets.test.ts",
+   "summary": "Vitest suite for melody preset saving, cooldowns, and recall.",
+   "tags": [
+    "test",
+    "presets",
+    "vitest"
+   ]
+  },
+  {
+   "id": "file:src/game/presets.ts",
+   "type": "file",
+   "name": "presets.ts",
+   "filePath": "src/game/presets.ts",
+   "summary": "Melody-set presets with content-hash dedupe, tombstoned deletes, and tick-based cooldowns.",
+   "tags": [
+    "presets",
+    "cooldown",
+    "melody-set",
+    "tested"
+   ]
+  },
+  {
+   "id": "file:src/game/session.ts",
+   "type": "file",
+   "name": "session.ts",
+   "filePath": "src/game/session.ts",
+   "summary": "Engine session singleton holding arrangement and fight state outside React with a subscribe mirror for the UI.",
+   "tags": [
+    "session",
+    "singleton",
+    "state-management",
+    "tested"
+   ]
+  },
+  {
+   "id": "file:src/game/sessionPhase.test.ts",
+   "type": "file",
+   "name": "sessionPhase.test.ts",
+   "filePath": "src/game/sessionPhase.test.ts",
+   "summary": "Vitest suite for game phase transitions driven through the session singleton.",
+   "tags": [
+    "test",
+    "game-phase",
+    "session"
+   ]
+  },
+  {
+   "id": "file:src/data/chords.ts",
+   "type": "file",
+   "name": "chords.ts",
+   "filePath": "src/data/chords.ts",
+   "summary": "Static chord-progression presets plus tier-gated combat blessings derived from progression scores.",
+   "tags": [
+    "data-model",
+    "combat",
+    "chord-progression",
+    "presets",
+    "effects",
+    "tested"
+   ]
+  },
+  {
+   "id": "file:src/game/combatQte.test.ts",
+   "type": "file",
+   "name": "combatQte.test.ts",
+   "filePath": "src/game/combatQte.test.ts",
+   "summary": "Exercises chord, preset, and parry QTE flows through the combat tick loop with seeded RNG.",
+   "tags": [
+    "test",
+    "qte",
+    "combat",
+    "tick-loop",
+    "seeded-rng"
+   ]
+  },
+  {
+   "id": "file:src/game/effects.test.ts",
+   "type": "file",
+   "name": "effects.test.ts",
+   "filePath": "src/game/effects.test.ts",
+   "summary": "Verifies chord blessings, melody potency fade, and preset recall inside combat.",
+   "tags": [
+    "test",
+    "combat",
+    "chord-effects",
+    "presets",
+    "melody-fade"
+   ]
+  },
+  {
+   "id": "file:src/game/keys.test.ts",
+   "type": "file",
+   "name": "keys.test.ts",
+   "filePath": "src/game/keys.test.ts",
+   "summary": "Checks the fight-key pool contents, deterministic random rolls, overrides, and key equality.",
+   "tags": [
+    "test",
+    "keys",
+    "combat-setup",
+    "deterministic"
+   ]
+  },
+  {
+   "id": "file:src/game/keys.ts",
+   "type": "file",
+   "name": "keys.ts",
+   "filePath": "src/game/keys.ts",
+   "summary": "Defines the playable combat-key pool with random selection and scripted-override resolution.",
+   "tags": [
+    "combat",
+    "key-management",
+    "configuration",
+    "deterministic",
+    "utility",
+    "tested"
+   ]
+  },
+  {
+   "id": "file:src/game/qte.test.ts",
+   "type": "file",
+   "name": "qte.test.ts",
+   "filePath": "src/game/qte.test.ts",
+   "summary": "Covers QTE chart generation, hit and miss scoring, expiry, and parry damage math.",
+   "tags": [
+    "test",
+    "qte",
+    "chart-generation",
+    "scoring",
+    "parry"
+   ]
+  },
+  {
+   "id": "file:src/game/scoring.test.ts",
+   "type": "file",
+   "name": "scoring.test.ts",
+   "filePath": "src/game/scoring.test.ts",
+   "summary": "Validates progression scoring tiers, the 40/30/30 weighting, and transposition invariance.",
+   "tags": [
+    "test",
+    "music-theory",
+    "scoring",
+    "progression"
+   ]
+  },
+  {
+   "id": "file:src/game/theory.test.ts",
+   "type": "file",
+   "name": "theory.test.ts",
+   "filePath": "src/game/theory.test.ts",
+   "summary": "Tests degree-to-MIDI mapping, Roman chord voicings, and melodic tension measurement.",
+   "tags": [
+    "test",
+    "music-theory",
+    "chords",
+    "midi"
+   ]
+  },
+  {
+   "id": "file:src/game/theory.ts",
+   "type": "file",
+   "name": "theory.ts",
+   "filePath": "src/game/theory.ts",
+   "summary": "Vendored zero-dependency music-theory core: scale degrees, Roman chord voicings, and progression scoring.",
+   "tags": [
+    "music-theory",
+    "utility",
+    "chords",
+    "scoring",
+    "zero-dependency",
+    "tested"
+   ]
+  },
+  {
+   "id": "file:src/game/combat.ts",
+   "type": "file",
+   "name": "combat.ts",
+   "filePath": "src/game/combat.ts",
+   "summary": "Core ATB combat engine advancing one 16th-step tick at a time, resolving melody damage, chord effects, enemy gauges, and parry/QTE charts.",
+   "tags": [
+    "combat",
+    "atb",
+    "tick-engine",
+    "damage",
+    "qte",
+    "tested"
+   ]
+  },
+  {
+   "id": "file:src/game/parryChart.test.ts",
+   "type": "file",
+   "name": "parryChart.test.ts",
+   "filePath": "src/game/parryChart.test.ts",
+   "summary": "Vitest coverage for parry chart generation, verifying motif params and deterministic seeded chart output.",
+   "tags": [
+    "test",
+    "parry",
+    "qte",
+    "deterministic",
+    "coverage"
+   ]
+  },
+  {
+   "id": "file:src/game/parryChart.ts",
+   "type": "file",
+   "name": "parryChart.ts",
+   "filePath": "src/game/parryChart.ts",
+   "summary": "Generative ZXCV parry chart builder producing seeded tap-and-hold motifs shaped by per-enemy pattern params.",
+   "tags": [
+    "parry",
+    "qte",
+    "chart-generator",
+    "seeded-rng",
+    "gameplay",
+    "tested"
+   ]
+  },
+  {
+   "id": "file:src/game/perform.test.ts",
+   "type": "file",
+   "name": "perform.test.ts",
+   "filePath": "src/game/perform.test.ts",
+   "summary": "Vitest coverage for the WASD performance cursor movement and tempo conversion helpers.",
+   "tags": [
+    "test",
+    "performance",
+    "cursor",
+    "tempo",
+    "coverage"
+   ]
+  },
+  {
+   "id": "file:src/game/perform.ts",
+   "type": "file",
+   "name": "perform.ts",
+   "filePath": "src/game/perform.ts",
+   "summary": "WASD relative-motion performance model with the ZXCV parry key set and step/ms tempo conversion helpers.",
+   "tags": [
+    "performance",
+    "cursor",
+    "input-model",
+    "tempo",
+    "utility",
+    "tested"
+   ]
+  },
+  {
+   "id": "file:src/game/qte.ts",
+   "type": "file",
+   "name": "qte.ts",
+   "filePath": "src/game/qte.ts",
+   "summary": "Pure QTE chart model with tap/hold notes, melody and harmonic chart builders, press/release scoring, and parry damage scaling.",
+   "tags": [
+    "qte",
+    "chart-model",
+    "scoring",
+    "rhythm-input",
+    "gameplay",
+    "tested"
+   ]
+  },
+  {
+   "id": "file:src/game/units.test.ts",
+   "type": "file",
+   "name": "units.test.ts",
+   "filePath": "src/game/units.test.ts",
+   "summary": "Vitest coverage for fighter health, shield-first damage absorption, healing, and buff lifecycle helpers.",
+   "tags": [
+    "test",
+    "fighter",
+    "buffs",
+    "shield",
+    "coverage"
+   ]
+  },
+  {
+   "id": "file:src/game/units.ts",
+   "type": "file",
+   "name": "units.ts",
+   "filePath": "src/game/units.ts",
+   "summary": "Shared fighter model for party and foes with shield-first damage, healing, and tick-based buff helpers.",
+   "tags": [
+    "data-model",
+    "fighter",
+    "buffs",
+    "shield",
+    "combat",
+    "tested"
+   ]
+  },
+  {
+   "id": "file:src/data/encounters.test.ts",
+   "type": "file",
+   "name": "encounters.test.ts",
+   "filePath": "src/data/encounters.test.ts",
+   "summary": "Vitest suite validating encounter definitions, default selection, multi-enemy compositions, and linear unlock progression.",
+   "tags": [
+    "test",
+    "data-model",
+    "encounters",
+    "validation"
+   ]
+  },
+  {
+   "id": "file:src/data/encounters.ts",
+   "type": "file",
+   "name": "encounters.ts",
+   "filePath": "src/data/encounters.ts",
+   "summary": "Curated multi-enemy encounter templates of escalating difficulty with lookup, validation, linear unlock, and next-encounter helpers.",
+   "tags": [
+    "data-model",
+    "encounters",
+    "progression",
+    "lookup",
+    "tested"
+   ]
+  },
+  {
+   "id": "file:src/data/enemies.ts",
+   "type": "file",
+   "name": "enemies.ts",
+   "filePath": "src/data/enemies.ts",
+   "summary": "Static enemy profiles and instrument definitions with stats, weaknesses, and serializable timbre recipes consumed by combat and audio.",
+   "tags": [
+    "data-model",
+    "balance",
+    "enemies",
+    "instruments",
+    "timbre",
+    "tested"
+   ]
+  },
+  {
+   "id": "file:src/data/roster.test.ts",
+   "type": "file",
+   "name": "roster.test.ts",
+   "filePath": "src/data/roster.test.ts",
+   "summary": "Vitest suite checking roster size, instrument coverage, character lookup, and default party composition.",
+   "tags": [
+    "test",
+    "data-model",
+    "roster",
+    "validation"
+   ]
+  },
+  {
+   "id": "file:src/data/roster.ts",
+   "type": "file",
+   "name": "roster.ts",
+   "filePath": "src/data/roster.ts",
+   "summary": "Named playable character roster with stats, instruments, roles, default party lineup, and id-based lookup.",
+   "tags": [
+    "data-model",
+    "roster",
+    "characters",
+    "party",
+    "tested"
+   ]
+  },
+  {
+   "id": "file:src/game/combatAtb.test.ts",
+   "type": "file",
+   "name": "combatAtb.test.ts",
+   "filePath": "src/game/combatAtb.test.ts",
+   "summary": "Extensive combat engine tests covering fight creation, tick advancement, ATB gauges, locked fight key, and JSON serializability.",
+   "tags": [
+    "test",
+    "combat",
+    "atb",
+    "tick-loop"
+   ]
+  },
+  {
+   "id": "file:src/game/timbre.test.ts",
+   "type": "file",
+   "name": "timbre.test.ts",
+   "filePath": "src/game/timbre.test.ts",
+   "summary": "Tests validating instrument timbre recipe completeness, distinct lead voices, neutral kit sanity, and beat-seat instrument resolution.",
+   "tags": [
+    "test",
+    "timbre",
+    "instruments",
+    "audio-data"
+   ]
+  },
+  {
+   "id": "file:src/audio/context.ts",
+   "type": "file",
+   "name": "context.ts",
+   "filePath": "src/audio/context.ts",
+   "summary": "Owns Tone.js AudioContext startup and the shared master gain/limiter bus, started only on explicit user gesture via ensureAudio.",
+   "tags": [
+    "audio",
+    "tone-js",
+    "lifecycle",
+    "singleton",
+    "master-bus"
+   ]
+  },
+  {
+   "id": "file:src/audio/perform.ts",
+   "type": "file",
+   "name": "perform.ts",
+   "filePath": "src/audio/perform.ts",
+   "summary": "Plays live WASD audition notes through the active performer's pooled lead voice; makes sound only, never records into the loop.",
+   "tags": [
+    "audio",
+    "audition",
+    "live-preview",
+    "tone-js",
+    "sound"
+   ]
+  },
+  {
+   "id": "file:src/audio/player.ts",
+   "type": "file",
+   "name": "player.ts",
+   "filePath": "src/audio/player.ts",
+   "summary": "Tone.Transport bridge that renders engine arrangement snapshots into drum, bass, melody-lane, and chord-pad voices on every 16th step.",
+   "tags": [
+    "audio",
+    "scheduler",
+    "transport",
+    "tone-js",
+    "playback"
+   ]
+  },
+  {
+   "id": "file:src/audio/sfx.ts",
+   "type": "file",
+   "name": "sfx.ts",
+   "filePath": "src/audio/sfx.ts",
+   "summary": "One-shot UI and combat sound effects (victory, defeat, QTE hits, chord changes, enemy telegraphs) guarded for headless use.",
+   "tags": [
+    "audio",
+    "sound-effects",
+    "tone-js",
+    "qte-feedback",
+    "ui-feedback"
+   ]
+  },
+  {
+   "id": "file:src/audio/synths.ts",
+   "type": "file",
+   "name": "synths.ts",
+   "filePath": "src/audio/synths.ts",
+   "summary": "Allocates the pooled Tone.js voice bank once (per-instrument lead/pad/bass plus shared drums) and serves it to all audio callers.",
+   "tags": [
+    "audio",
+    "tone-js",
+    "voice-pool",
+    "singleton",
+    "synthesizer"
+   ]
+  },
+  {
+   "id": "file:src/components/screens/CombatScreen.tsx",
+   "type": "file",
+   "name": "CombatScreen.tsx",
+   "filePath": "src/components/screens/CombatScreen.tsx",
+   "summary": "Combat arena layout composing foe panel, step grid, QTE panel, party cards, and combat log with a halt/retreat control.",
+   "tags": [
+    "component",
+    "combat",
+    "layout",
+    "tested"
+   ]
+  },
+  {
+   "id": "file:src/components/screens/MenuScreen.tsx",
+   "type": "file",
+   "name": "MenuScreen.tsx",
+   "filePath": "src/components/screens/MenuScreen.tsx",
+   "summary": "Title screen with audio wake-up, scale-degree audition pads, encounter selector, and entry into preparation.",
+   "tags": [
+    "component",
+    "entry-point",
+    "audio-preview",
+    "tested"
+   ]
+  },
+  {
+   "id": "file:src/components/screens/PrepScreen.tsx",
+   "type": "file",
+   "name": "PrepScreen.tsx",
+   "filePath": "src/components/screens/PrepScreen.tsx",
+   "summary": "Battle preparation workstation for key and tempo tuning, chord progression, melody bank, loop sequencer, and party formation.",
+   "tags": [
+    "component",
+    "composition",
+    "preparation",
+    "tested"
+   ]
+  },
+  {
+   "id": "file:src/components/screens/ResultOverlay.tsx",
+   "type": "file",
+   "name": "ResultOverlay.tsx",
+   "filePath": "src/components/screens/ResultOverlay.tsx",
+   "summary": "Victory/defeat modal showing combat duration, progression tier and blessing, with retry and next-encounter actions.",
+   "tags": [
+    "component",
+    "overlay",
+    "results",
+    "tested"
+   ]
+  },
+  {
+   "id": "file:src/components/screens/screens.test.tsx",
+   "type": "file",
+   "name": "screens.test.tsx",
+   "filePath": "src/components/screens/screens.test.tsx",
+   "summary": "Integration tests covering menu, prep, combat, and result screens plus App-level phase routing.",
+   "tags": [
+    "test",
+    "component",
+    "integration"
+   ]
+  },
+  {
+   "id": "config:.oxlintrc.json",
+   "type": "config",
+   "name": ".oxlintrc.json",
+   "filePath": ".oxlintrc.json",
+   "summary": "Oxlint configuration enabling React, TypeScript and oxc plugins with strict hooks rules for the project.",
+   "tags": [
+    "configuration",
+    "linting",
+    "build-system"
+   ]
+  },
+  {
+   "id": "document:AGENTS.md",
+   "type": "document",
+   "name": "AGENTS.md",
+   "filePath": "AGENTS.md",
+   "summary": "Contributor guide defining build commands, the game/audio/state architecture split, and hard coding rules for agents.",
+   "tags": [
+    "documentation",
+    "development",
+    "architecture"
+   ]
+  },
+  {
+   "id": "document:README.md",
+   "type": "document",
+   "name": "README.md",
+   "filePath": "README.md",
+   "summary": "Project overview describing the music-is-combat game concept, technology stack, scripts, layout, and save format.",
+   "tags": [
+    "documentation",
+    "entry-point",
+    "overview"
+   ]
+  },
+  {
+   "id": "config:components.json",
+   "type": "config",
+   "name": "components.json",
+   "filePath": "components.json",
+   "summary": "shadcn CLI configuration pinning new-york style with neutral base color and @/* path aliases for components and utils.",
+   "tags": [
+    "configuration",
+    "ui-components",
+    "build-system"
+   ]
+  },
+  {
+   "id": "file:index.html",
+   "type": "file",
+   "name": "index.html",
+   "filePath": "index.html",
+   "summary": "Vite HTML entry mounting the React app at #root and loading the src/main.tsx module script.",
+   "tags": [
+    "entry-point",
+    "markup",
+    "build-system"
+   ]
+  },
+  {
+   "id": "config:package.json",
+   "type": "config",
+   "name": "package.json",
+   "filePath": "package.json",
+   "summary": "npm package manifest declaring dev/build/test/lint scripts and runtime dependencies including React, Tone.js and Zustand.",
+   "tags": [
+    "configuration",
+    "build-system",
+    "dependencies"
+   ]
+  },
+  {
+   "id": "config:tsconfig.app.json",
+   "type": "config",
+   "name": "tsconfig.app.json",
+   "filePath": "tsconfig.app.json",
+   "summary": "TypeScript app configuration with strict linting flags, bundler module resolution, react-jsx, and the @/* to src/* path alias.",
+   "tags": [
+    "configuration",
+    "typescript",
+    "build-system"
+   ]
+  },
+  {
+   "id": "config:tsconfig.json",
+   "type": "config",
+   "name": "tsconfig.json",
+   "filePath": "tsconfig.json",
+   "summary": "Solution-style TypeScript root that references the app and node configurations for composite builds.",
+   "tags": [
+    "configuration",
+    "typescript",
+    "build-system"
+   ]
+  },
+  {
+   "id": "config:tsconfig.node.json",
+   "type": "config",
+   "name": "tsconfig.node.json",
+   "filePath": "tsconfig.node.json",
+   "summary": "TypeScript configuration for Node-side tooling covering vite.config.ts with nodenext resolution and strict linting flags.",
+   "tags": [
+    "configuration",
+    "typescript",
+    "build-system"
+   ]
+  },
+  {
+   "id": "document:docs/combat-pacing-plan.md",
+   "type": "document",
+   "name": "combat-pacing-plan.md",
+   "filePath": "docs/combat-pacing-plan.md",
+   "summary": "Combat pacing redesign plan targeting 4-5 minute fights via enemy attack cooldowns, intro grace period, HP rebalance, rhythm-aware QTE charts, and encounter pacing phases.",
+   "tags": [
+    "documentation",
+    "game-design",
+    "combat-balance"
+   ]
+  },
+  {
+   "id": "document:docs/mechanics.md",
+   "type": "document",
+   "name": "mechanics.md",
+   "filePath": "docs/mechanics.md",
+   "summary": "Core game design document describing the ATB battle system, chord progressions, loop-station melody recording, party positions, and enemy variants.",
+   "tags": [
+    "documentation",
+    "game-design",
+    "mechanics"
+   ]
+  },
+  {
+   "id": "document:docs/qte-redesign.md",
+   "type": "document",
+   "name": "qte-redesign.md",
+   "filePath": "docs/qte-redesign.md",
+   "summary": "QTE panel rebuild plan replacing the laggy per-frame React panel with an always-visible bottom-receptor highway driven by an audio-clock-anchored playhead hook.",
+   "tags": [
+    "documentation",
+    "game-design",
+    "qte-ui"
+   ]
+  },
+  {
+   "id": "document:docs/v1-plan.md",
+   "type": "document",
+   "name": "v1-plan.md",
+   "filePath": "docs/v1-plan.md",
+   "summary": "V1 audit comparing the mechanics doc against the codebase plus a phased roadmap covering engine fixes, screen flow, combat UI redesign, and missing mechanics.",
+   "tags": [
+    "documentation",
+    "roadmap",
+    "audit"
+   ]
+  },
+  {
+   "id": "file:src/App.tsx",
+   "type": "file",
+   "name": "App.tsx",
+   "filePath": "src/App.tsx",
+   "summary": "Root App component wiring global keyboard input, session-store phase state, and overlay routing for the game.",
+   "tags": "component,entry-point,state-management"
+  },
+  {
+   "id": "file:src/components/ChordPicker.tsx",
+   "type": "file",
+   "name": "ChordPicker.tsx",
+   "filePath": "src/components/ChordPicker.tsx",
+   "summary": "Chord progression picker with tabbed presets and custom chords showing per-chord combat effects.",
+   "tags": "component,chord-selection,ui"
+  },
+  {
+   "id": "file:src/components/ChordWheel.tsx",
+   "type": "file",
+   "name": "ChordWheel.tsx",
+   "filePath": "src/components/ChordWheel.tsx",
+   "summary": "Circular chord preset selector laying presets around a wheel with effect tooltips and apply action.",
+   "tags": "component,chord-selection,ui"
+  },
+  {
+   "id": "file:src/components/CombatFeedback.tsx",
+   "type": "file",
+   "name": "CombatFeedback.tsx",
+   "filePath": "src/components/CombatFeedback.tsx",
+   "summary": "Transient floating combat-effect tags parsed from the latest log line with auto-expiry timers.",
+   "tags": "component,combat-feedback,ui"
+  },
+  {
+   "id": "file:src/components/CombatLog.tsx",
+   "type": "file",
+   "name": "CombatLog.tsx",
+   "filePath": "src/components/CombatLog.tsx",
+   "summary": "Auto-scrolling combat log list mirroring fight events from the session store.",
+   "tags": "component,combat-log,ui"
+  },
+  {
+   "id": "file:src/components/CustomChordBuilder.test.tsx",
+   "type": "file",
+   "name": "CustomChordBuilder.test.tsx",
+   "filePath": "src/components/CustomChordBuilder.test.tsx",
+   "summary": "Component tests for the custom chord builder covering bar editing and preset saving.",
+   "tags": "component,test,chord-builder"
+  },
+  {
+   "id": "file:src/components/CustomChordBuilder.tsx",
+   "type": "file",
+   "name": "CustomChordBuilder.tsx",
+   "filePath": "src/components/CustomChordBuilder.tsx",
+   "summary": "Full custom chord-progression editor with per-bar Roman-numeral palette, theory scoring, audio preview, and preset saving.",
+   "tags": [
+    "tested"
+   ]
+  },
+  {
+   "id": "file:src/components/EncounterBanner.tsx",
+   "type": "file",
+   "name": "EncounterBanner.tsx",
+   "filePath": "src/components/EncounterBanner.tsx",
+   "summary": "Encounter selector banner with prev/next navigation, unlock gating, and enemy weakness preview.",
+   "tags": "component,encounter-selection,ui"
+  },
+  {
+   "id": "file:src/components/FoePanel.tsx",
+   "type": "file",
+   "name": "FoePanel.tsx",
+   "filePath": "src/components/FoePanel.tsx",
+   "summary": "Enemy party panel showing HP/shield bars, intent, weaknesses, resists, and active buffs.",
+   "tags": "component,enemy-display,combat-ui"
+  },
+  {
+   "id": "file:src/components/MelodyBankBar.tsx",
+   "type": "file",
+   "name": "MelodyBankBar.tsx",
+   "filePath": "src/components/MelodyBankBar.tsx",
+   "summary": "Melody template bank bar for saving the current arrangement and loading or deleting stored templates.",
+   "tags": "component,melody-bank,preset-management"
+  },
+  {
+   "id": "file:src/components/Meter.tsx",
+   "type": "file",
+   "name": "Meter.tsx",
+   "filePath": "src/components/Meter.tsx",
+   "summary": "Generic labeled progress-bar meter used for HP, shield, and potency displays.",
+   "tags": "component,ui-primitive,progress-bar"
+  },
+  {
+   "id": "file:src/components/PartyCorner.test.tsx",
+   "type": "file",
+   "name": "PartyCorner.test.tsx",
+   "filePath": "src/components/PartyCorner.test.tsx",
+   "summary": "Component tests for party drag-and-drop placement using a mocked drop helper.",
+   "tags": "component,test,drag-and-drop"
+  },
+  {
+   "id": "file:src/components/PartyCorner.tsx",
+   "type": "file",
+   "name": "PartyCorner.tsx",
+   "filePath": "src/components/PartyCorner.tsx",
+   "summary": "Party management panel with draggable fighter cards, front-row slots, performer selection, and bench.",
+   "tags": [
+    "tested"
+   ]
+  },
+  {
+   "id": "file:src/components/PhaseStrip.tsx",
+   "type": "file",
+   "name": "PhaseStrip.tsx",
+   "filePath": "src/components/PhaseStrip.tsx",
+   "summary": "Phase and chord-progression strip showing current stage plus theory score and chord effects.",
+   "tags": "component,phase-display,progression"
+  },
+  {
+   "id": "file:src/components/PresetBar.test.tsx",
+   "type": "file",
+   "name": "PresetBar.test.tsx",
+   "filePath": "src/components/PresetBar.test.tsx",
+   "summary": "Component tests for the melody preset bar.",
+   "tags": "component,test,preset-management"
+  },
+  {
+   "id": "file:src/components/PresetBar.tsx",
+   "type": "file",
+   "name": "PresetBar.tsx",
+   "filePath": "src/components/PresetBar.tsx",
+   "summary": "Melody preset bar for bottling the current arrangement into named presets and recalling them.",
+   "tags": [
+    "tested"
+   ]
+  },
+  {
+   "id": "file:src/components/QtePanel.tsx",
+   "type": "file",
+   "name": "QtePanel.tsx",
+   "filePath": "src/components/QtePanel.tsx",
+   "summary": "Rhythm QTE highway panel with active/standby lanes, keyboard input handling, telegraph audio, and success-rate readout.",
+   "tags": "component,qte,rhythm-game"
+  },
+  {
+   "id": "file:src/components/RosterSelectModal.test.tsx",
+   "type": "file",
+   "name": "RosterSelectModal.test.tsx",
+   "filePath": "src/components/RosterSelectModal.test.tsx",
+   "summary": "Component tests for the roster selection modal.",
+   "tags": "component,test,roster"
+  },
+  {
+   "id": "file:src/components/RosterSelectModal.tsx",
+   "type": "file",
+   "name": "RosterSelectModal.tsx",
+   "filePath": "src/components/RosterSelectModal.tsx",
+   "summary": "Roster draft modal with instrument filtering and staged party selection before confirming.",
+   "tags": [
+    "tested"
+   ]
+  },
+  {
+   "id": "file:src/components/StepGrid.tsx",
+   "type": "file",
+   "name": "StepGrid.tsx",
+   "filePath": "src/components/StepGrid.tsx",
+   "summary": "Main step-sequencer grid editor for melody lanes, per-bar chords, performer slots, and drum rows.",
+   "tags": "component,step-sequencer,arrangement-editor"
+  },
+  {
+   "id": "file:src/components/TransportBar.tsx",
+   "type": "file",
+   "name": "TransportBar.tsx",
+   "filePath": "src/components/TransportBar.tsx",
+   "summary": "Transport controls with play/stop, reset, BPM input, and fight-key selection.",
+   "tags": "component,transport-controls,playback"
+  },
+  {
+   "id": "file:src/components/TutorialModal.test.tsx",
+   "type": "file",
+   "name": "TutorialModal.test.tsx",
+   "filePath": "src/components/TutorialModal.test.tsx",
+   "summary": "Component tests for the multi-step tutorial modal.",
+   "tags": "component,test,tutorial"
+  },
+  {
+   "id": "file:src/components/TutorialModal.tsx",
+   "type": "file",
+   "name": "TutorialModal.tsx",
+   "filePath": "src/components/TutorialModal.tsx",
+   "summary": "Multi-step tutorial modal walking new players through arranging, chords, and combat.",
+   "tags": [
+    "tested"
+   ]
+  },
+  {
+   "id": "file:src/components/VoiceBar.test.tsx",
+   "type": "file",
+   "name": "VoiceBar.test.tsx",
+   "filePath": "src/components/VoiceBar.test.tsx",
+   "summary": "Component tests for the voice status bar.",
+   "tags": "component,test,voice-status"
+  },
+  {
+   "id": "file:src/components/VoiceBar.tsx",
+   "type": "file",
+   "name": "VoiceBar.tsx",
+   "filePath": "src/components/VoiceBar.tsx",
+   "summary": "Voice status bar showing onset counts, active potency lanes, and attacker readiness with typing-focus guard.",
+   "tags": [
+    "tested"
+   ]
+  },
+  {
+   "id": "file:src/components/ui/button.tsx",
+   "type": "file",
+   "name": "button.tsx",
+   "filePath": "src/components/ui/button.tsx",
+   "summary": "Reusable Button component with variant and size maps built on the shared cn class merger.",
+   "tags": [
+    "component",
+    "utility",
+    "styling"
+   ]
+  },
+  {
+   "id": "file:src/hooks/useQtePlayhead.ts",
+   "type": "file",
+   "name": "useQtePlayhead.ts",
+   "filePath": "src/hooks/useQtePlayhead.ts",
+   "summary": "React hook providing a smooth 60fps interpolated playhead for the QTE highway between engine ticks.",
+   "tags": [
+    "hook",
+    "qte",
+    "animation"
+   ]
+  },
+  {
+   "id": "file:src/hooks/useWasd.ts",
+   "type": "file",
+   "name": "useWasd.ts",
+   "filePath": "src/hooks/useWasd.ts",
+   "summary": "Global keyboard hook wiring WASD performance, ZXCV parry lanes, and Tab/number performer selection to the session store.",
+   "tags": [
+    "hook",
+    "event-handler",
+    "input"
+   ]
+  },
+  {
+   "id": "file:src/index.css",
+   "type": "file",
+   "name": "index.css",
+   "filePath": "src/index.css",
+   "summary": "Tailwind v4 theme tokens plus combat animation keyframes for enemy shake, hit flash, and float-up feedback.",
+   "tags": [
+    "styling",
+    "theming",
+    "animation"
+   ]
+  },
+  {
+   "id": "file:src/lib/utils.ts",
+   "type": "file",
+   "name": "utils.ts",
+   "filePath": "src/lib/utils.ts",
+   "summary": "Shared class-name merger combining clsx with tailwind-merge for conditional styling.",
+   "tags": [
+    "utility",
+    "styling",
+    "helper"
+   ]
+  },
+  {
+   "id": "file:src/main.tsx",
+   "type": "file",
+   "name": "main.tsx",
+   "filePath": "src/main.tsx",
+   "summary": "React application entry point mounting the App component inside StrictMode.",
+   "tags": [
+    "entry-point",
+    "bootstrap",
+    "react"
+   ]
+  },
+  {
+   "id": "file:src/persistence/storage.test.ts",
+   "type": "file",
+   "name": "storage.test.ts",
+   "filePath": "src/persistence/storage.test.ts",
+   "summary": "Vitest suite covering localStorage round-trips for encounters, party, custom chords, and tutorial flag.",
+   "tags": [
+    "test",
+    "persistence",
+    "storage"
+   ]
+  },
+  {
+   "id": "file:src/persistence/storage.ts",
+   "type": "file",
+   "name": "storage.ts",
+   "filePath": "src/persistence/storage.ts",
+   "summary": "Guarded localStorage helpers persisting cleared encounters, selected party, custom chords, and tutorial state.",
+   "tags": [
+    "persistence",
+    "storage",
+    "utility",
+    "tested"
+   ]
+  },
+  {
+   "id": "file:src/state/useSessionStore.test.ts",
+   "type": "file",
+   "name": "useSessionStore.test.ts",
+   "filePath": "src/state/useSessionStore.test.ts",
+   "summary": "Vitest suite for WASD record-at-keypress behavior, QTE routing, and performer selection in the session store.",
+   "tags": [
+    "test",
+    "state",
+    "input"
+   ]
+  },
+  {
+   "id": "file:src/state/useSessionStore.ts",
+   "type": "file",
+   "name": "useSessionStore.ts",
+   "filePath": "src/state/useSessionStore.ts",
+   "summary": "Zustand mirror of the engine session wiring arrangement, combat, audio player, and WASD performance actions.",
+   "tags": [
+    "state",
+    "singleton",
+    "service",
+    "tested"
+   ]
+  },
+  {
+   "id": "file:src/test/setup.ts",
+   "type": "file",
+   "name": "setup.ts",
+   "filePath": "src/test/setup.ts",
+   "summary": "Vitest global setup registering jest-dom matchers and React cleanup after each test.",
+   "tags": [
+    "test",
+    "configuration",
+    "setup"
+   ]
+  },
+  {
+   "id": "file:vite.config.ts",
+   "type": "file",
+   "name": "vite.config.ts",
+   "filePath": "vite.config.ts",
+   "summary": "Vite plus Vitest configuration with React and Tailwind plugins, @ alias, and jsdom test setup.",
+   "tags": [
+    "configuration",
+    "build-system",
+    "test"
+   ]
+  }
+ ],
+ "importEdges": [
+  {
+   "source": "file:src/game/arrangement.test.ts",
+   "target": "file:src/game/arrangement.ts",
+   "type": "imports"
+  },
+  {
+   "source": "file:src/game/arrangement.ts",
+   "target": "file:src/game/theory.ts",
+   "type": "imports"
+  },
+  {
+   "source": "file:src/game/melodyBank.test.ts",
+   "target": "file:src/game/arrangement.ts",
+   "type": "imports"
+  },
+  {
+   "source": "file:src/game/melodyBank.test.ts",
+   "target": "file:src/game/melodyBank.ts",
+   "type": "imports"
+  },
+  {
+   "source": "file:src/game/melodyBank.ts",
+   "target": "file:src/game/arrangement.ts",
+   "type": "imports"
+  },
+  {
+   "source": "file:src/game/positions.test.ts",
+   "target": "file:src/game/positions.ts",
+   "type": "imports"
+  },
+  {
+   "source": "file:src/game/positions.ts",
+   "target": "file:src/game/arrangement.ts",
+   "type": "imports"
+  },
+  {
+   "source": "file:src/game/presets.test.ts",
+   "target": "file:src/game/arrangement.ts",
+   "type": "imports"
+  },
+  {
+   "source": "file:src/game/presets.test.ts",
+   "target": "file:src/game/presets.ts",
+   "type": "imports"
+  },
+  {
+   "source": "file:src/game/presets.ts",
+   "target": "file:src/game/arrangement.ts",
+   "type": "imports"
+  },
+  {
+   "source": "file:src/game/session.ts",
+   "target": "file:src/game/arrangement.ts",
+   "type": "imports"
+  },
+  {
+   "source": "file:src/game/session.ts",
+   "target": "file:src/game/combat.ts",
+   "type": "imports"
+  },
+  {
+   "source": "file:src/game/session.ts",
+   "target": "file:src/game/melodyBank.ts",
+   "type": "imports"
+  },
+  {
+   "source": "file:src/game/session.ts",
+   "target": "file:src/game/phase.ts",
+   "type": "imports"
+  },
+  {
+   "source": "file:src/game/session.ts",
+   "target": "file:src/game/positions.ts",
+   "type": "imports"
+  },
+  {
+   "source": "file:src/game/session.ts",
+   "target": "file:src/game/presets.ts",
+   "type": "imports"
+  },
+  {
+   "source": "file:src/game/session.ts",
+   "target": "file:src/game/theory.ts",
+   "type": "imports"
+  },
+  {
+   "source": "file:src/game/sessionPhase.test.ts",
+   "target": "file:src/game/session.ts",
+   "type": "imports"
+  },
+  {
+   "source": "file:src/data/chords.ts",
+   "target": "file:src/game/theory.ts",
+   "type": "imports"
+  },
+  {
+   "source": "file:src/game/combatQte.test.ts",
+   "target": "file:src/game/arrangement.ts",
+   "type": "imports"
+  },
+  {
+   "source": "file:src/game/combatQte.test.ts",
+   "target": "file:src/game/combat.ts",
+   "type": "imports"
+  },
+  {
+   "source": "file:src/game/combatQte.test.ts",
+   "target": "file:src/game/theory.ts",
+   "type": "imports"
+  },
+  {
+   "source": "file:src/game/effects.test.ts",
+   "target": "file:src/data/chords.ts",
+   "type": "imports"
+  },
+  {
+   "source": "file:src/game/effects.test.ts",
+   "target": "file:src/data/enemies.ts",
+   "type": "imports"
+  },
+  {
+   "source": "file:src/game/effects.test.ts",
+   "target": "file:src/game/arrangement.ts",
+   "type": "imports"
+  },
+  {
+   "source": "file:src/game/effects.test.ts",
+   "target": "file:src/game/combat.ts",
+   "type": "imports"
+  },
+  {
+   "source": "file:src/game/effects.test.ts",
+   "target": "file:src/game/presets.ts",
+   "type": "imports"
+  },
+  {
+   "source": "file:src/game/effects.test.ts",
+   "target": "file:src/game/theory.ts",
+   "type": "imports"
+  },
+  {
+   "source": "file:src/game/keys.test.ts",
+   "target": "file:src/game/keys.ts",
+   "type": "imports"
+  },
+  {
+   "source": "file:src/game/keys.ts",
+   "target": "file:src/game/theory.ts",
+   "type": "imports"
+  },
+  {
+   "source": "file:src/game/qte.test.ts",
+   "target": "file:src/game/arrangement.ts",
+   "type": "imports"
+  },
+  {
+   "source": "file:src/game/qte.test.ts",
+   "target": "file:src/game/qte.ts",
+   "type": "imports"
+  },
+  {
+   "source": "file:src/game/qte.test.ts",
+   "target": "file:src/game/theory.ts",
+   "type": "imports"
+  },
+  {
+   "source": "file:src/game/scoring.test.ts",
+   "target": "file:src/game/theory.ts",
+   "type": "imports"
+  },
+  {
+   "source": "file:src/game/theory.test.ts",
+   "target": "file:src/game/theory.ts",
+   "type": "imports"
+  },
+  {
+   "source": "file:src/game/combat.ts",
+   "target": "file:src/data/chords.ts",
+   "type": "imports"
+  },
+  {
+   "source": "file:src/game/combat.ts",
+   "target": "file:src/data/enemies.ts",
+   "type": "imports"
+  },
+  {
+   "source": "file:src/game/combat.ts",
+   "target": "file:src/data/roster.ts",
+   "type": "imports"
+  },
+  {
+   "source": "file:src/game/combat.ts",
+   "target": "file:src/game/arrangement.ts",
+   "type": "imports"
+  },
+  {
+   "source": "file:src/game/combat.ts",
+   "target": "file:src/game/keys.ts",
+   "type": "imports"
+  },
+  {
+   "source": "file:src/game/combat.ts",
+   "target": "file:src/game/parryChart.ts",
+   "type": "imports"
+  },
+  {
+   "source": "file:src/game/combat.ts",
+   "target": "file:src/game/perform.ts",
+   "type": "imports"
+  },
+  {
+   "source": "file:src/game/combat.ts",
+   "target": "file:src/game/positions.ts",
+   "type": "imports"
+  },
+  {
+   "source": "file:src/game/combat.ts",
+   "target": "file:src/game/qte.ts",
+   "type": "imports"
+  },
+  {
+   "source": "file:src/game/combat.ts",
+   "target": "file:src/game/theory.ts",
+   "type": "imports"
+  },
+  {
+   "source": "file:src/game/combat.ts",
+   "target": "file:src/game/units.ts",
+   "type": "imports"
+  },
+  {
+   "source": "file:src/game/parryChart.test.ts",
+   "target": "file:src/game/parryChart.ts",
+   "type": "imports"
+  },
+  {
+   "source": "file:src/game/parryChart.test.ts",
+   "target": "file:src/game/perform.ts",
+   "type": "imports"
+  },
+  {
+   "source": "file:src/game/parryChart.ts",
+   "target": "file:src/game/perform.ts",
+   "type": "imports"
+  },
+  {
+   "source": "file:src/game/parryChart.ts",
+   "target": "file:src/game/qte.ts",
+   "type": "imports"
+  },
+  {
+   "source": "file:src/game/perform.test.ts",
+   "target": "file:src/game/perform.ts",
+   "type": "imports"
+  },
+  {
+   "source": "file:src/game/qte.ts",
+   "target": "file:src/game/arrangement.ts",
+   "type": "imports"
+  },
+  {
+   "source": "file:src/game/qte.ts",
+   "target": "file:src/game/perform.ts",
+   "type": "imports"
+  },
+  {
+   "source": "file:src/game/qte.ts",
+   "target": "file:src/game/theory.ts",
+   "type": "imports"
+  },
+  {
+   "source": "file:src/game/units.test.ts",
+   "target": "file:src/game/units.ts",
+   "type": "imports"
+  },
+  {
+   "source": "file:src/data/encounters.test.ts",
+   "target": "file:src/data/encounters.ts",
+   "type": "imports"
+  },
+  {
+   "source": "file:src/data/encounters.test.ts",
+   "target": "file:src/data/enemies.ts",
+   "type": "imports"
+  },
+  {
+   "source": "file:src/data/encounters.ts",
+   "target": "file:src/data/enemies.ts",
+   "type": "imports"
+  },
+  {
+   "source": "file:src/data/enemies.ts",
+   "target": "file:src/game/parryChart.ts",
+   "type": "imports"
+  },
+  {
+   "source": "file:src/data/roster.test.ts",
+   "target": "file:src/data/enemies.ts",
+   "type": "imports"
+  },
+  {
+   "source": "file:src/data/roster.test.ts",
+   "target": "file:src/data/roster.ts",
+   "type": "imports"
+  },
+  {
+   "source": "file:src/game/combatAtb.test.ts",
+   "target": "file:src/data/enemies.ts",
+   "type": "imports"
+  },
+  {
+   "source": "file:src/game/combatAtb.test.ts",
+   "target": "file:src/game/arrangement.ts",
+   "type": "imports"
+  },
+  {
+   "source": "file:src/game/combatAtb.test.ts",
+   "target": "file:src/game/combat.ts",
+   "type": "imports"
+  },
+  {
+   "source": "file:src/game/combatAtb.test.ts",
+   "target": "file:src/game/theory.ts",
+   "type": "imports"
+  },
+  {
+   "source": "file:src/game/timbre.test.ts",
+   "target": "file:src/data/enemies.ts",
+   "type": "imports"
+  },
+  {
+   "source": "file:src/game/timbre.test.ts",
+   "target": "file:src/game/combat.ts",
+   "type": "imports"
+  },
+  {
+   "source": "file:src/game/timbre.test.ts",
+   "target": "file:src/game/theory.ts",
+   "type": "imports"
+  },
+  {
+   "source": "file:src/audio/perform.ts",
+   "target": "file:src/audio/synths.ts",
+   "type": "imports"
+  },
+  {
+   "source": "file:src/audio/player.ts",
+   "target": "file:src/audio/context.ts",
+   "type": "imports"
+  },
+  {
+   "source": "file:src/audio/player.ts",
+   "target": "file:src/audio/synths.ts",
+   "type": "imports"
+  },
+  {
+   "source": "file:src/audio/sfx.ts",
+   "target": "file:src/audio/synths.ts",
+   "type": "imports"
+  },
+  {
+   "source": "file:src/audio/synths.ts",
+   "target": "file:src/audio/context.ts",
+   "type": "imports"
+  },
+  {
+   "source": "file:src/components/screens/screens.test.tsx",
+   "target": "file:src/components/screens/CombatScreen.tsx",
+   "type": "imports"
+  },
+  {
+   "source": "file:src/components/screens/screens.test.tsx",
+   "target": "file:src/components/screens/MenuScreen.tsx",
+   "type": "imports"
+  },
+  {
+   "source": "file:src/components/screens/screens.test.tsx",
+   "target": "file:src/components/screens/PrepScreen.tsx",
+   "type": "imports"
+  },
+  {
+   "source": "file:src/components/screens/screens.test.tsx",
+   "target": "file:src/components/screens/ResultOverlay.tsx",
+   "type": "imports"
+  },
+  {
+   "source": "file:src/components/CustomChordBuilder.test.tsx",
+   "target": "file:src/components/CustomChordBuilder.tsx",
+   "type": "imports"
+  },
+  {
+   "source": "file:src/components/RosterSelectModal.test.tsx",
+   "target": "file:src/components/RosterSelectModal.tsx",
+   "type": "imports"
+  },
+  {
+   "source": "file:src/components/TutorialModal.test.tsx",
+   "target": "file:src/components/TutorialModal.tsx",
+   "type": "imports"
+  },
+  {
+   "source": "file:src/main.tsx",
+   "target": "file:src/App.tsx",
+   "type": "imports"
+  },
+  {
+   "source": "file:src/main.tsx",
+   "target": "file:src/index.css",
+   "type": "imports"
+  },
+  {
+   "source": "file:src/persistence/storage.test.ts",
+   "target": "file:src/persistence/storage.ts",
+   "type": "imports"
+  },
+  {
+   "source": "file:src/state/useSessionStore.test.ts",
+   "target": "file:src/state/useSessionStore.ts",
+   "type": "imports"
+  }
+ ],
+ "allEdges": [
+  {
+   "source": "file:src/game/arrangement.test.ts",
+   "target": "file:src/game/arrangement.ts",
+   "type": "imports"
+  },
+  {
+   "source": "file:src/game/arrangement.ts",
+   "target": "file:src/game/theory.ts",
+   "type": "imports"
+  },
+  {
+   "source": "file:src/game/melodyBank.test.ts",
+   "target": "file:src/game/arrangement.ts",
+   "type": "imports"
+  },
+  {
+   "source": "file:src/game/melodyBank.test.ts",
+   "target": "file:src/game/melodyBank.ts",
+   "type": "imports"
+  },
+  {
+   "source": "file:src/game/melodyBank.ts",
+   "target": "file:src/game/arrangement.ts",
+   "type": "imports"
+  },
+  {
+   "source": "file:src/game/positions.test.ts",
+   "target": "file:src/game/positions.ts",
+   "type": "imports"
+  },
+  {
+   "source": "file:src/game/arrangement.ts",
+   "target": "file:src/game/arrangement.test.ts",
+   "type": "tested_by"
+  },
+  {
+   "source": "file:src/game/melodyBank.ts",
+   "target": "file:src/game/melodyBank.test.ts",
+   "type": "tested_by"
+  },
+  {
+   "source": "file:src/game/positions.ts",
+   "target": "file:src/game/arrangement.ts",
+   "type": "imports"
+  },
+  {
+   "source": "file:src/game/presets.test.ts",
+   "target": "file:src/game/arrangement.ts",
+   "type": "imports"
+  },
+  {
+   "source": "file:src/game/presets.test.ts",
+   "target": "file:src/game/presets.ts",
+   "type": "imports"
+  },
+  {
+   "source": "file:src/game/presets.ts",
+   "target": "file:src/game/arrangement.ts",
+   "type": "imports"
+  },
+  {
+   "source": "file:src/game/session.ts",
+   "target": "file:src/game/arrangement.ts",
+   "type": "imports"
+  },
+  {
+   "source": "file:src/game/session.ts",
+   "target": "file:src/game/combat.ts",
+   "type": "imports"
+  },
+  {
+   "source": "file:src/game/session.ts",
+   "target": "file:src/game/melodyBank.ts",
+   "type": "imports"
+  },
+  {
+   "source": "file:src/game/session.ts",
+   "target": "file:src/game/phase.ts",
+   "type": "imports"
+  },
+  {
+   "source": "file:src/game/session.ts",
+   "target": "file:src/game/positions.ts",
+   "type": "imports"
+  },
+  {
+   "source": "file:src/game/session.ts",
+   "target": "file:src/game/presets.ts",
+   "type": "imports"
+  },
+  {
+   "source": "file:src/game/session.ts",
+   "target": "file:src/game/theory.ts",
+   "type": "imports"
+  },
+  {
+   "source": "file:src/game/sessionPhase.test.ts",
+   "target": "file:src/game/session.ts",
+   "type": "imports"
+  },
+  {
+   "source": "file:src/game/positions.ts",
+   "target": "file:src/game/positions.test.ts",
+   "type": "tested_by"
+  },
+  {
+   "source": "file:src/game/session.ts",
+   "target": "file:src/game/sessionPhase.test.ts",
+   "type": "tested_by"
+  },
+  {
+   "source": "file:src/data/chords.ts",
+   "target": "file:src/game/theory.ts",
+   "type": "imports"
+  },
+  {
+   "source": "file:src/game/combatQte.test.ts",
+   "target": "file:src/game/arrangement.ts",
+   "type": "imports"
+  },
+  {
+   "source": "file:src/game/combatQte.test.ts",
+   "target": "file:src/game/combat.ts",
+   "type": "imports"
+  },
+  {
+   "source": "file:src/game/combatQte.test.ts",
+   "target": "file:src/game/theory.ts",
+   "type": "imports"
+  },
+  {
+   "source": "file:src/game/effects.test.ts",
+   "target": "file:src/data/chords.ts",
+   "type": "imports"
+  },
+  {
+   "source": "file:src/game/effects.test.ts",
+   "target": "file:src/data/enemies.ts",
+   "type": "imports"
+  },
+  {
+   "source": "file:src/game/effects.test.ts",
+   "target": "file:src/game/arrangement.ts",
+   "type": "imports"
+  },
+  {
+   "source": "file:src/game/effects.test.ts",
+   "target": "file:src/game/combat.ts",
+   "type": "imports"
+  },
+  {
+   "source": "file:src/game/effects.test.ts",
+   "target": "file:src/game/presets.ts",
+   "type": "imports"
+  },
+  {
+   "source": "file:src/game/effects.test.ts",
+   "target": "file:src/game/theory.ts",
+   "type": "imports"
+  },
+  {
+   "source": "file:src/game/keys.test.ts",
+   "target": "file:src/game/keys.ts",
+   "type": "imports"
+  },
+  {
+   "source": "file:src/game/keys.ts",
+   "target": "file:src/game/theory.ts",
+   "type": "imports"
+  },
+  {
+   "source": "file:src/game/qte.test.ts",
+   "target": "file:src/game/arrangement.ts",
+   "type": "imports"
+  },
+  {
+   "source": "file:src/game/qte.test.ts",
+   "target": "file:src/game/qte.ts",
+   "type": "imports"
+  },
+  {
+   "source": "file:src/game/qte.test.ts",
+   "target": "file:src/game/theory.ts",
+   "type": "imports"
+  },
+  {
+   "source": "file:src/game/scoring.test.ts",
+   "target": "file:src/game/theory.ts",
+   "type": "imports"
+  },
+  {
+   "source": "file:src/game/theory.test.ts",
+   "target": "file:src/game/theory.ts",
+   "type": "imports"
+  },
+  {
+   "source": "file:src/game/theory.ts",
+   "target": "file:src/game/theory.test.ts",
+   "type": "tested_by"
+  },
+  {
+   "source": "file:src/game/theory.ts",
+   "target": "file:src/game/scoring.test.ts",
+   "type": "tested_by"
+  },
+  {
+   "source": "file:src/game/keys.ts",
+   "target": "file:src/game/keys.test.ts",
+   "type": "tested_by"
+  },
+  {
+   "source": "file:src/data/chords.ts",
+   "target": "file:src/game/effects.test.ts",
+   "type": "tested_by"
+  },
+  {
+   "source": "file:src/game/combat.ts",
+   "target": "file:src/data/chords.ts",
+   "type": "imports"
+  },
+  {
+   "source": "file:src/game/combat.ts",
+   "target": "file:src/data/enemies.ts",
+   "type": "imports"
+  },
+  {
+   "source": "file:src/game/combat.ts",
+   "target": "file:src/data/roster.ts",
+   "type": "imports"
+  },
+  {
+   "source": "file:src/game/combat.ts",
+   "target": "file:src/game/arrangement.ts",
+   "type": "imports"
+  },
+  {
+   "source": "file:src/game/combat.ts",
+   "target": "file:src/game/keys.ts",
+   "type": "imports"
+  },
+  {
+   "source": "file:src/game/combat.ts",
+   "target": "file:src/game/parryChart.ts",
+   "type": "imports"
+  },
+  {
+   "source": "file:src/game/combat.ts",
+   "target": "file:src/game/perform.ts",
+   "type": "imports"
+  },
+  {
+   "source": "file:src/game/combat.ts",
+   "target": "file:src/game/positions.ts",
+   "type": "imports"
+  },
+  {
+   "source": "file:src/game/combat.ts",
+   "target": "file:src/game/qte.ts",
+   "type": "imports"
+  },
+  {
+   "source": "file:src/game/combat.ts",
+   "target": "file:src/game/theory.ts",
+   "type": "imports"
+  },
+  {
+   "source": "file:src/game/combat.ts",
+   "target": "file:src/game/units.ts",
+   "type": "imports"
+  },
+  {
+   "source": "file:src/game/parryChart.test.ts",
+   "target": "file:src/game/parryChart.ts",
+   "type": "imports"
+  },
+  {
+   "source": "file:src/game/parryChart.test.ts",
+   "target": "file:src/game/perform.ts",
+   "type": "imports"
+  },
+  {
+   "source": "file:src/game/parryChart.ts",
+   "target": "file:src/game/perform.ts",
+   "type": "imports"
+  },
+  {
+   "source": "file:src/game/parryChart.ts",
+   "target": "file:src/game/qte.ts",
+   "type": "imports"
+  },
+  {
+   "source": "file:src/game/perform.test.ts",
+   "target": "file:src/game/perform.ts",
+   "type": "imports"
+  },
+  {
+   "source": "file:src/game/parryChart.ts",
+   "target": "file:src/game/parryChart.test.ts",
+   "type": "tested_by"
+  },
+  {
+   "source": "file:src/game/qte.ts",
+   "target": "file:src/game/arrangement.ts",
+   "type": "imports"
+  },
+  {
+   "source": "file:src/game/qte.ts",
+   "target": "file:src/game/perform.ts",
+   "type": "imports"
+  },
+  {
+   "source": "file:src/game/qte.ts",
+   "target": "file:src/game/theory.ts",
+   "type": "imports"
+  },
+  {
+   "source": "file:src/game/units.test.ts",
+   "target": "file:src/game/units.ts",
+   "type": "imports"
+  },
+  {
+   "source": "file:src/game/perform.ts",
+   "target": "file:src/game/perform.test.ts",
+   "type": "tested_by"
+  },
+  {
+   "source": "file:src/game/units.ts",
+   "target": "file:src/game/units.test.ts",
+   "type": "tested_by"
+  },
+  {
+   "source": "file:src/data/encounters.test.ts",
+   "target": "file:src/data/encounters.ts",
+   "type": "imports"
+  },
+  {
+   "source": "file:src/data/encounters.test.ts",
+   "target": "file:src/data/enemies.ts",
+   "type": "imports"
+  },
+  {
+   "source": "file:src/data/encounters.ts",
+   "target": "file:src/data/enemies.ts",
+   "type": "imports"
+  },
+  {
+   "source": "file:src/data/enemies.ts",
+   "target": "file:src/game/parryChart.ts",
+   "type": "imports"
+  },
+  {
+   "source": "file:src/data/roster.test.ts",
+   "target": "file:src/data/enemies.ts",
+   "type": "imports"
+  },
+  {
+   "source": "file:src/data/roster.test.ts",
+   "target": "file:src/data/roster.ts",
+   "type": "imports"
+  },
+  {
+   "source": "file:src/game/combatAtb.test.ts",
+   "target": "file:src/data/enemies.ts",
+   "type": "imports"
+  },
+  {
+   "source": "file:src/game/combatAtb.test.ts",
+   "target": "file:src/game/arrangement.ts",
+   "type": "imports"
+  },
+  {
+   "source": "file:src/game/combatAtb.test.ts",
+   "target": "file:src/game/combat.ts",
+   "type": "imports"
+  },
+  {
+   "source": "file:src/game/combatAtb.test.ts",
+   "target": "file:src/game/theory.ts",
+   "type": "imports"
+  },
+  {
+   "source": "file:src/game/timbre.test.ts",
+   "target": "file:src/data/enemies.ts",
+   "type": "imports"
+  },
+  {
+   "source": "file:src/game/timbre.test.ts",
+   "target": "file:src/game/combat.ts",
+   "type": "imports"
+  },
+  {
+   "source": "file:src/game/timbre.test.ts",
+   "target": "file:src/game/theory.ts",
+   "type": "imports"
+  },
+  {
+   "source": "file:src/data/encounters.ts",
+   "target": "file:src/data/encounters.test.ts",
+   "type": "tested_by"
+  },
+  {
+   "source": "file:src/data/roster.ts",
+   "target": "file:src/data/roster.test.ts",
+   "type": "tested_by"
+  },
+  {
+   "source": "file:src/game/combat.ts",
+   "target": "file:src/game/combatAtb.test.ts",
+   "type": "tested_by"
+  },
+  {
+   "source": "file:src/data/enemies.ts",
+   "target": "file:src/game/timbre.test.ts",
+   "type": "tested_by"
+  },
+  {
+   "source": "file:src/audio/perform.ts",
+   "target": "file:src/audio/synths.ts",
+   "type": "imports"
+  },
+  {
+   "source": "file:src/audio/player.ts",
+   "target": "file:src/audio/context.ts",
+   "type": "imports"
+  },
+  {
+   "source": "file:src/audio/player.ts",
+   "target": "file:src/audio/synths.ts",
+   "type": "imports"
+  },
+  {
+   "source": "file:src/audio/sfx.ts",
+   "target": "file:src/audio/synths.ts",
+   "type": "imports"
+  },
+  {
+   "source": "file:src/audio/synths.ts",
+   "target": "file:src/audio/context.ts",
+   "type": "imports"
+  },
+  {
+   "source": "file:src/components/screens/screens.test.tsx",
+   "target": "file:src/components/screens/CombatScreen.tsx",
+   "type": "imports"
+  },
+  {
+   "source": "file:src/components/screens/screens.test.tsx",
+   "target": "file:src/components/screens/MenuScreen.tsx",
+   "type": "imports"
+  },
+  {
+   "source": "file:src/components/screens/screens.test.tsx",
+   "target": "file:src/components/screens/PrepScreen.tsx",
+   "type": "imports"
+  },
+  {
+   "source": "file:src/components/screens/screens.test.tsx",
+   "target": "file:src/components/screens/ResultOverlay.tsx",
+   "type": "imports"
+  },
+  {
+   "source": "file:src/components/screens/CombatScreen.tsx",
+   "target": "file:src/components/screens/screens.test.tsx",
+   "type": "tested_by"
+  },
+  {
+   "source": "file:src/components/screens/MenuScreen.tsx",
+   "target": "file:src/components/screens/screens.test.tsx",
+   "type": "tested_by"
+  },
+  {
+   "source": "file:src/components/screens/PrepScreen.tsx",
+   "target": "file:src/components/screens/screens.test.tsx",
+   "type": "tested_by"
+  },
+  {
+   "source": "file:src/components/screens/ResultOverlay.tsx",
+   "target": "file:src/components/screens/screens.test.tsx",
+   "type": "tested_by"
+  },
+  {
+   "source": "config:tsconfig.json",
+   "target": "config:tsconfig.app.json",
+   "type": "depends_on"
+  },
+  {
+   "source": "config:tsconfig.json",
+   "target": "config:tsconfig.node.json",
+   "type": "depends_on"
+  },
+  {
+   "source": "file:src/components/CustomChordBuilder.test.tsx",
+   "target": "file:src/components/CustomChordBuilder.tsx",
+   "type": "imports"
+  },
+  {
+   "source": "file:src/components/RosterSelectModal.test.tsx",
+   "target": "file:src/components/RosterSelectModal.tsx",
+   "type": "imports"
+  },
+  {
+   "source": "file:src/components/TutorialModal.test.tsx",
+   "target": "file:src/components/TutorialModal.tsx",
+   "type": "imports"
+  },
+  {
+   "source": "file:src/components/CustomChordBuilder.tsx",
+   "target": "file:src/components/CustomChordBuilder.test.tsx",
+   "type": "tested_by"
+  },
+  {
+   "source": "file:src/components/RosterSelectModal.tsx",
+   "target": "file:src/components/RosterSelectModal.test.tsx",
+   "type": "tested_by"
+  },
+  {
+   "source": "file:src/components/TutorialModal.tsx",
+   "target": "file:src/components/TutorialModal.test.tsx",
+   "type": "tested_by"
+  },
+  {
+   "source": "file:src/main.tsx",
+   "target": "file:src/App.tsx",
+   "type": "imports"
+  },
+  {
+   "source": "file:src/main.tsx",
+   "target": "file:src/index.css",
+   "type": "imports"
+  },
+  {
+   "source": "file:src/persistence/storage.test.ts",
+   "target": "file:src/persistence/storage.ts",
+   "type": "imports"
+  },
+  {
+   "source": "file:src/state/useSessionStore.test.ts",
+   "target": "file:src/state/useSessionStore.ts",
+   "type": "imports"
+  },
+  {
+   "source": "file:src/persistence/storage.ts",
+   "target": "file:src/persistence/storage.test.ts",
+   "type": "tested_by"
+  },
+  {
+   "source": "file:src/state/useSessionStore.ts",
+   "target": "file:src/state/useSessionStore.test.ts",
+   "type": "tested_by"
+  },
+  {
+   "source": "file:src/game/presets.ts",
+   "target": "file:src/game/presets.test.ts",
+   "type": "tested_by"
+  },
+  {
+   "source": "file:src/game/qte.ts",
+   "target": "file:src/game/qte.test.ts",
+   "type": "tested_by"
+  },
+  {
+   "source": "file:src/components/PartyCorner.tsx",
+   "target": "file:src/components/PartyCorner.test.tsx",
+   "type": "tested_by"
+  },
+  {
+   "source": "file:src/components/PresetBar.tsx",
+   "target": "file:src/components/PresetBar.test.tsx",
+   "type": "tested_by"
+  },
+  {
+   "source": "file:src/components/VoiceBar.tsx",
+   "target": "file:src/components/VoiceBar.test.tsx",
+   "type": "tested_by"
+  }
+ ]
+}

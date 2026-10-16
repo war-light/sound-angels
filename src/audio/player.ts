@@ -51,9 +51,11 @@ function triggerAt(time: number, snap: StepSnapshot, bpm: number): void {
   const beat = beatVoice()
   applyKit(beat && INSTRUMENTS[beat] ? INSTRUMENTS[beat].timbre.kit : null)
   const bassVoice = instrumentVoices(beat).bass
-  if (snap.kick) v.kick.triggerAttackRelease("C1", "8n", time)
-  if (snap.snare) v.snare.triggerAttackRelease("16n", time)
-  if (snap.hat) v.hat.triggerAttackRelease("32n", time + 0.001)
+  // The groove's swing knob lags the off-beat drums (never the melody).
+  const drumAt = time + snap.swingDelay * stepDur
+  if (snap.kick) v.kick.triggerAttackRelease("C1", "8n", drumAt)
+  if (snap.snare) v.snare.triggerAttackRelease("16n", drumAt)
+  if (snap.hat) v.hat.triggerAttackRelease("32n", drumAt + 0.001)
   if (snap.bass != null) {
     bassVoice.triggerAttackRelease(midiToNote(snap.bass), "8n", time)
   }

@@ -1,0 +1,17 @@
+{
+  "projectRoot": "/home/david/Personal Projects/sound-angels",
+  "batchFiles": [
+    {"path": "src/audio/context.ts", "language": "typescript", "sizeLines": 23, "fileCategory": "code"},
+    {"path": "src/audio/perform.ts", "language": "typescript", "sizeLines": 32, "fileCategory": "code"},
+    {"path": "src/audio/player.ts", "language": "typescript", "sizeLines": 113, "fileCategory": "code"},
+    {"path": "src/audio/sfx.ts", "language": "typescript", "sizeLines": 106, "fileCategory": "code"},
+    {"path": "src/audio/synths.ts", "language": "typescript", "sizeLines": 136, "fileCategory": "code"}
+  ],
+  "batchImportData": {
+    "src/audio/context.ts": [],
+    "src/audio/perform.ts": ["src/audio/synths.ts"],
+    "src/audio/player.ts": ["src/audio/context.ts", "src/audio/synths.ts"],
+    "src/audio/sfx.ts": ["src/audio/synths.ts"],
+    "src/audio/synths.ts": ["src/audio/context.ts"]
+  }
+}

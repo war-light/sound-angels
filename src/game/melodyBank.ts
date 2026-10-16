@@ -1,13 +1,18 @@
-// Pre-fight melody bank: save, load, and manage melody templates outside combat.
-// Templates persist across encounters, can be loaded into the grid during PREP,
-// and can be cast mid-combat as QTE charts.
+// Melody cards: the attackers' saved loops. A card bundles [slot][bar][step]
+// tracks with a chord progression. Cards are picked into the loadout, loaded
+// into the grid during PREP, and swapped mid-combat at the loop boundary.
+// Pure game model — serializable, no audio, no React.
 import type { NoteEvent } from "./arrangement"
 import { ATTACK_SLOTS, DEFAULT_BARS, STEPS_PER_BAR } from "./arrangement"
+
+export type MelodyCardSource = "preset" | "custom"
 
 export interface MelodyTemplate {
   id: string
   name: string
   description?: string
+  /** Preset cards ship with the game; custom cards are authored by the player. */
+  source: MelodyCardSource
   /** [slot][bar][step] */
   tracks: (NoteEvent | null)[][][]
   /** One Roman numeral per bar */
@@ -17,8 +22,35 @@ export interface MelodyTemplate {
 
 export type MelodyBank = Record<string, MelodyTemplate>
 
+/** The starter melody cards every save begins with. */
+export const PRESET_MELODY_CARD_IDS = [
+  "dawn-anthem",
+  "staccato-flight",
+  "solemn-ground",
+] as const
+
+export const DEFAULT_MELODY_CARD_ID: string = PRESET_MELODY_CARD_IDS[0]
+
+export function isPresetMelodyCard(id: string): boolean {
+  return (PRESET_MELODY_CARD_IDS as readonly string[]).includes(id)
+}
+
 export function cloneTracks(tracks: (NoteEvent | null)[][][]): (NoteEvent | null)[][][] {
   return tracks.map((tr) => tr.map((row) => row.map((e) => (e ? { ...e } : null))))
+}
+
+export function cloneTemplate(tpl: MelodyTemplate): MelodyTemplate {
+  return {
+    ...tpl,
+    tracks: cloneTracks(tpl.tracks),
+    chords: [...tpl.chords],
+    tags: tpl.tags ? [...tpl.tags] : undefined,
+  }
+}
+
+/** Every card, presets first then custom, each a defensive copy. */
+export function listMelodyCards(bank: MelodyBank): MelodyTemplate[] {
+  return Object.values(bank).map(cloneTemplate)
 }
 
 function emptyTracks(slots = ATTACK_SLOTS, bars = DEFAULT_BARS, steps = STEPS_PER_BAR): (NoteEvent | null)[][][] {
@@ -50,6 +82,7 @@ function createDawnAnthem(): MelodyTemplate {
     id: "dawn-anthem",
     name: "Dawn Anthem",
     description: "A balanced diatonic motif blending strings and piano over a steady i–VI progression.",
+    source: "preset",
     tracks,
     chords: ["i", "VI"],
     tags: ["balanced", "starter"],
@@ -73,6 +106,7 @@ function createStaccatoFlight(): MelodyTemplate {
     id: "staccato-flight",
     name: "Staccato Flight",
     description: "Rapid short notes designed to overwhelm evasive horde enemies like Mites.",
+    source: "preset",
     tracks,
     chords: ["i", "iv"],
     tags: ["burst", "anti-horde"],
@@ -97,6 +131,7 @@ function createSolemnGround(): MelodyTemplate {
     id: "solemn-ground",
     name: "Solemn Ground",
     description: "Extended sustained notes that crush high-armor tank enemies like Carapace.",
+    source: "preset",
     tracks,
     chords: ["i", "V"],
     tags: ["sustained", "tank-buster"],
@@ -114,6 +149,10 @@ export function createDefaultMelodyBank(): MelodyBank {
   }
 }
 
+/**
+ * Snapshot tracks + chords as a card. Cards saved by the player are `custom`;
+ * the preset builders above are the only `preset` authors.
+ */
 export function saveTemplate(
   bank: MelodyBank,
   input: {
@@ -126,12 +165,13 @@ export function saveTemplate(
   },
 ): { bank: MelodyBank; template: MelodyTemplate } {
   const cleanName = input.name.trim()
-  if (!cleanName) throw new Error("Template name cannot be empty")
-  const id = input.id ?? `tpl-${Date.now()}-${Math.random().toString(36).slice(2, 6)}`
+  if (!cleanName) throw new Error("Card name cannot be empty")
+  const id = input.id ?? `card-${Date.now()}-${Math.random().toString(36).slice(2, 6)}`
   const template: MelodyTemplate = {
     id,
     name: cleanName,
     description: input.description,
+    source: isPresetMelodyCard(id) ? "preset" : "custom",
     tracks: cloneTracks(input.tracks),
     chords: [...input.chords],
     tags: input.tags ? [...input.tags] : undefined,
@@ -139,6 +179,20 @@ export function saveTemplate(
   return {
     bank: { ...bank, [id]: template },
     template,
+  }
+}
+
+/** Overwrite a custom card's content in place (no-op for unknown ids). */
+export function updateTemplate(
+  bank: MelodyBank,
+  id: string,
+  patch: { tracks: (NoteEvent | null)[][][]; chords: string[] },
+): MelodyBank {
+  const tpl = bank[id]
+  if (!tpl) return bank
+  return {
+    ...bank,
+    [id]: { ...tpl, tracks: cloneTracks(patch.tracks), chords: [...patch.chords] },
   }
 }
 
@@ -152,4 +206,3 @@ export function deleteTemplate(bank: MelodyBank, id: string): MelodyBank {
 export function getTemplate(bank: MelodyBank, id: string): MelodyTemplate | undefined {
   return bank[id]
 }
-

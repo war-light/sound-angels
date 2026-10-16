@@ -1,0 +1,27 @@
+{
+	"$schema": "https://opencode.ai/config.json",
+	"plugin": ["opencode-lightpanda"],
+	"model": "opencode/muse-spark-1.3-contributor-free",
+	"agents": {
+		"coder": {
+			"model": "opencode/muse-spark-1.3-contributor-free",
+			"description": "Deep reasoning builder for multi-step implementations",
+			"mode": "primary",
+			"system": "You are an expert engineer. Focus strictly on files relevant to the user task. Do not exhaustively crawl the workspace unless explicitly required.",
+			"steps": 15
+		},
+		"plan": {
+			"model": "opencode/muse-spark-1.3-contributor-free",
+			"description": "Architect agent that maps out multi-file dependencies",
+			"system": "Analyze existing architecture and create actionable steps. Do not edit files.",
+			"steps": 8
+		},
+		"reviewer": {
+			"model": "opencode/mimo-v2.6-flash-free",
+			"description": "Ultra-fast reviewer for formatting, git diffs, and linting",
+			"mode": "subagent",
+			"system": "You are a code reviewer. Review git diffs for regressions, style inconsistencies, edge cases, and missing tests.",
+			"steps": 5
+		}
+	}
+}

@@ -1,0 +1,1007 @@
+{
+  "scriptCompleted": true,
+  "filesAnalyzed": 9,
+  "filesSkipped": [],
+  "filesUnreadable": [],
+  "analysisOutcomes": {
+    "structure": {
+      "succeeded": 9,
+      "failed": 0
+    },
+    "callGraph": {
+      "succeeded": 9,
+      "failed": 0,
+      "skipped": 0
+    }
+  },
+  "results": [
+    {
+      "path": "src/data/chords.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 58,
+      "nonEmptyLines": 54,
+      "functions": [
+        {
+          "name": "chordEffectFor",
+          "startLine": 40,
+          "endLine": 58,
+          "params": [
+            "key",
+            "romans"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "CHORD_PRESETS",
+          "line": 14,
+          "isDefault": false
+        },
+        {
+          "name": "chordEffectFor",
+          "line": 40,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "chordEffectFor",
+          "callee": "scoreProgression",
+          "lineNumber": 41
+        }
+      ],
+      "metrics": {
+        "importCount": 1,
+        "exportCount": 2,
+        "functionCount": 1,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "src/game/combatQte.test.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 164,
+      "nonEmptyLines": 154,
+      "functions": [
+        {
+          "name": "seq",
+          "startLine": 18,
+          "endLine": 21,
+          "params": [
+            "vals"
+          ]
+        },
+        {
+          "name": "hitAllOnTime",
+          "startLine": 24,
+          "endLine": 31,
+          "params": [
+            "s"
+          ]
+        },
+        {
+          "name": "playAllOnTime",
+          "startLine": 34,
+          "endLine": 51,
+          "params": [
+            "s",
+            "a",
+            "rng"
+          ]
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "hitAllOnTime",
+          "callee": "[...qte.chart.notes].sort",
+          "lineNumber": 27
+        },
+        {
+          "caller": "hitAllOnTime",
+          "callee": "pressQteKey",
+          "lineNumber": 28
+        },
+        {
+          "caller": "playAllOnTime",
+          "callee": "[...qte.chart.notes].sort",
+          "lineNumber": 41
+        },
+        {
+          "caller": "playAllOnTime",
+          "callee": "advanceTick",
+          "lineNumber": 44
+        },
+        {
+          "caller": "playAllOnTime",
+          "callee": "pressQteKey",
+          "lineNumber": 48
+        }
+      ],
+      "metrics": {
+        "importCount": 3,
+        "exportCount": 0,
+        "functionCount": 3,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "src/game/effects.test.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 145,
+      "nonEmptyLines": 134,
+      "functions": [
+        {
+          "name": "seq",
+          "startLine": 22,
+          "endLine": 25,
+          "params": [
+            "vals"
+          ]
+        },
+        {
+          "name": "arr",
+          "startLine": 27,
+          "endLine": 27,
+          "params": []
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "arr",
+          "callee": "createDefaultArrangement",
+          "lineNumber": 27
+        },
+        {
+          "caller": "fresh",
+          "callee": "createFight",
+          "lineNumber": 71
+        },
+        {
+          "caller": "fresh",
+          "callee": "s.enemies.map",
+          "lineNumber": 72
+        },
+        {
+          "caller": "fresh",
+          "callee": "setChords",
+          "lineNumber": 73
+        },
+        {
+          "caller": "fresh",
+          "callee": "arr",
+          "lineNumber": 73
+        },
+        {
+          "caller": "fresh",
+          "callee": "advanceTick",
+          "lineNumber": 75
+        },
+        {
+          "caller": "fresh",
+          "callee": "seq",
+          "lineNumber": 75
+        },
+        {
+          "caller": "hitOnce",
+          "callee": "createFight",
+          "lineNumber": 94
+        },
+        {
+          "caller": "hitOnce",
+          "callee": "advanceTick",
+          "lineNumber": 95
+        },
+        {
+          "caller": "hitOnce",
+          "callee": "seq",
+          "lineNumber": 95
+        }
+      ],
+      "metrics": {
+        "importCount": 6,
+        "exportCount": 0,
+        "functionCount": 2,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "src/game/keys.test.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 28,
+      "nonEmptyLines": 24,
+      "metrics": {
+        "importCount": 1,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "src/game/keys.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 38,
+      "nonEmptyLines": 32,
+      "functions": [
+        {
+          "name": "keyEquals",
+          "startLine": 14,
+          "endLine": 16,
+          "params": [
+            "a",
+            "b"
+          ]
+        },
+        {
+          "name": "keyLabel",
+          "startLine": 18,
+          "endLine": 20,
+          "params": [
+            "key"
+          ]
+        },
+        {
+          "name": "randomFightKey",
+          "startLine": 23,
+          "endLine": 26,
+          "params": [
+            "rng"
+          ]
+        },
+        {
+          "name": "resolveFightKey",
+          "startLine": 35,
+          "endLine": 38,
+          "params": [
+            "opts"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "FIGHT_KEYS",
+          "line": 7,
+          "isDefault": false
+        },
+        {
+          "name": "keyEquals",
+          "line": 14,
+          "isDefault": false
+        },
+        {
+          "name": "keyLabel",
+          "line": 18,
+          "isDefault": false
+        },
+        {
+          "name": "randomFightKey",
+          "line": 23,
+          "isDefault": false
+        },
+        {
+          "name": "resolveFightKey",
+          "line": 35,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "keyEquals",
+          "callee": "a.scale.toLowerCase",
+          "lineNumber": 15
+        },
+        {
+          "caller": "keyEquals",
+          "callee": "b.scale.toLowerCase",
+          "lineNumber": 15
+        },
+        {
+          "caller": "randomFightKey",
+          "callee": "Math.floor",
+          "lineNumber": 24
+        },
+        {
+          "caller": "randomFightKey",
+          "callee": "rng",
+          "lineNumber": 24
+        },
+        {
+          "caller": "resolveFightKey",
+          "callee": "randomFightKey",
+          "lineNumber": 37
+        }
+      ],
+      "metrics": {
+        "importCount": 1,
+        "exportCount": 5,
+        "functionCount": 4,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "src/game/qte.test.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 278,
+      "nonEmptyLines": 252,
+      "functions": [
+        {
+          "name": "seq",
+          "startLine": 25,
+          "endLine": 28,
+          "params": [
+            "vals"
+          ]
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "mk",
+          "callee": "createQte",
+          "lineNumber": 160
+        },
+        {
+          "caller": "holdChart",
+          "callee": "createQte",
+          "lineNumber": 222
+        }
+      ],
+      "metrics": {
+        "importCount": 3,
+        "exportCount": 0,
+        "functionCount": 1,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "src/game/scoring.test.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 84,
+      "nonEmptyLines": 74,
+      "metrics": {
+        "importCount": 1,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "src/game/theory.test.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 55,
+      "nonEmptyLines": 49,
+      "callGraph": [
+        {
+          "caller": "pcs",
+          "callee": "romanToChord(DEFAULT_KEY, r).map",
+          "lineNumber": 26
+        },
+        {
+          "caller": "pcs",
+          "callee": "romanToChord",
+          "lineNumber": 26
+        }
+      ],
+      "metrics": {
+        "importCount": 1,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "src/game/theory.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 273,
+      "nonEmptyLines": 246,
+      "functions": [
+        {
+          "name": "refOctave",
+          "startLine": 41,
+          "endLine": 43,
+          "params": [
+            "key"
+          ]
+        },
+        {
+          "name": "normalizePitchClass",
+          "startLine": 46,
+          "endLine": 57,
+          "params": [
+            "pc"
+          ]
+        },
+        {
+          "name": "scaleSteps",
+          "startLine": 59,
+          "endLine": 63,
+          "params": [
+            "scale"
+          ]
+        },
+        {
+          "name": "tonicMidi",
+          "startLine": 65,
+          "endLine": 69,
+          "params": [
+            "key",
+            "octave"
+          ]
+        },
+        {
+          "name": "pitchClassOfMidi",
+          "startLine": 72,
+          "endLine": 74,
+          "params": [
+            "midi"
+          ]
+        },
+        {
+          "name": "midiToNote",
+          "startLine": 77,
+          "endLine": 79,
+          "params": [
+            "midi"
+          ]
+        },
+        {
+          "name": "degreeToMidi",
+          "startLine": 85,
+          "endLine": 93,
+          "params": [
+            "key",
+            "degree",
+            "octave"
+          ]
+        },
+        {
+          "name": "parseRoman",
+          "startLine": 99,
+          "endLine": 107,
+          "params": [
+            "roman"
+          ]
+        },
+        {
+          "name": "isMinorScale",
+          "startLine": 109,
+          "endLine": 111,
+          "params": [
+            "scale"
+          ]
+        },
+        {
+          "name": "romanToChord",
+          "startLine": 118,
+          "endLine": 134,
+          "params": [
+            "key",
+            "roman"
+          ]
+        },
+        {
+          "name": "scalePitchClasses",
+          "startLine": 137,
+          "endLine": 141,
+          "params": [
+            "key"
+          ]
+        },
+        {
+          "name": "romanFunction",
+          "startLine": 146,
+          "endLine": 156,
+          "params": [
+            "key",
+            "roman"
+          ]
+        },
+        {
+          "name": "pcDistance",
+          "startLine": 168,
+          "endLine": 171,
+          "params": [
+            "a",
+            "b"
+          ]
+        },
+        {
+          "name": "voiceLeadingScore",
+          "startLine": 178,
+          "endLine": 192,
+          "params": [
+            "chords"
+          ]
+        },
+        {
+          "name": "diatonicFitScore",
+          "startLine": 198,
+          "endLine": 218,
+          "params": [
+            "key",
+            "chords"
+          ]
+        },
+        {
+          "name": "syntaxScore",
+          "startLine": 229,
+          "endLine": 241,
+          "params": [
+            "key",
+            "romans"
+          ]
+        },
+        {
+          "name": "scoreProgression",
+          "startLine": 244,
+          "endLine": 252,
+          "params": [
+            "key",
+            "romans"
+          ]
+        },
+        {
+          "name": "tensionOf",
+          "startLine": 257,
+          "endLine": 273,
+          "params": [
+            "melodyMidi",
+            "chordMidi"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "DEFAULT_KEY",
+          "line": 20,
+          "isDefault": false
+        },
+        {
+          "name": "pitchClassOfMidi",
+          "line": 72,
+          "isDefault": false
+        },
+        {
+          "name": "midiToNote",
+          "line": 77,
+          "isDefault": false
+        },
+        {
+          "name": "degreeToMidi",
+          "line": 85,
+          "isDefault": false
+        },
+        {
+          "name": "romanToChord",
+          "line": 118,
+          "isDefault": false
+        },
+        {
+          "name": "romanFunction",
+          "line": 146,
+          "isDefault": false
+        },
+        {
+          "name": "voiceLeadingScore",
+          "line": 178,
+          "isDefault": false
+        },
+        {
+          "name": "diatonicFitScore",
+          "line": 198,
+          "isDefault": false
+        },
+        {
+          "name": "syntaxScore",
+          "line": 229,
+          "isDefault": false
+        },
+        {
+          "name": "scoreProgression",
+          "line": 244,
+          "isDefault": false
+        },
+        {
+          "name": "tensionOf",
+          "line": 257,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "normalizePitchClass",
+          "callee": "pc.trim().replace(/s$/, \"#\").replace",
+          "lineNumber": 47
+        },
+        {
+          "caller": "normalizePitchClass",
+          "callee": "pc.trim().replace",
+          "lineNumber": 47
+        },
+        {
+          "caller": "normalizePitchClass",
+          "callee": "pc.trim",
+          "lineNumber": 47
+        },
+        {
+          "caller": "normalizePitchClass",
+          "callee": "SHARPS.includes",
+          "lineNumber": 48
+        },
+        {
+          "caller": "normalizePitchClass",
+          "callee": "clean.charAt(0).toUpperCase",
+          "lineNumber": 52
+        },
+        {
+          "caller": "normalizePitchClass",
+          "callee": "clean.charAt",
+          "lineNumber": 52
+        },
+        {
+          "caller": "normalizePitchClass",
+          "callee": "clean.slice",
+          "lineNumber": 52
+        },
+        {
+          "caller": "normalizePitchClass",
+          "callee": "SHARPS.includes",
+          "lineNumber": 53
+        },
+        {
+          "caller": "scaleSteps",
+          "callee": "scale.trim().toLowerCase",
+          "lineNumber": 60
+        },
+        {
+          "caller": "scaleSteps",
+          "callee": "scale.trim",
+          "lineNumber": 60
+        },
+        {
+          "caller": "tonicMidi",
+          "callee": "normalizePitchClass",
+          "lineNumber": 66
+        },
+        {
+          "caller": "tonicMidi",
+          "callee": "SHARPS.indexOf",
+          "lineNumber": 67
+        },
+        {
+          "caller": "tonicMidi",
+          "callee": "refOctave",
+          "lineNumber": 68
+        },
+        {
+          "caller": "midiToNote",
+          "callee": "pitchClassOfMidi",
+          "lineNumber": 78
+        },
+        {
+          "caller": "midiToNote",
+          "callee": "Math.floor",
+          "lineNumber": 78
+        },
+        {
+          "caller": "degreeToMidi",
+          "callee": "scaleSteps",
+          "lineNumber": 86
+        },
+        {
+          "caller": "degreeToMidi",
+          "callee": "tonicMidi",
+          "lineNumber": 87
+        },
+        {
+          "caller": "degreeToMidi",
+          "callee": "Math.floor",
+          "lineNumber": 90
+        },
+        {
+          "caller": "parseRoman",
+          "callee": "roman.trim().replace",
+          "lineNumber": 100
+        },
+        {
+          "caller": "parseRoman",
+          "callee": "roman.trim",
+          "lineNumber": 100
+        },
+        {
+          "caller": "parseRoman",
+          "callee": "clean.toUpperCase",
+          "lineNumber": 101
+        },
+        {
+          "caller": "parseRoman",
+          "callee": "/7$/.test",
+          "lineNumber": 102
+        },
+        {
+          "caller": "parseRoman",
+          "callee": "upper.replace",
+          "lineNumber": 103
+        },
+        {
+          "caller": "isMinorScale",
+          "callee": "/minor|aeolian|dorian|phrygian/i.test",
+          "lineNumber": 110
+        },
+        {
+          "caller": "romanToChord",
+          "callee": "parseRoman",
+          "lineNumber": 119
+        },
+        {
+          "caller": "romanToChord",
+          "callee": "isMinorScale",
+          "lineNumber": 120
+        },
+        {
+          "caller": "romanToChord",
+          "callee": "degreeToMidi",
+          "lineNumber": 121
+        },
+        {
+          "caller": "romanToChord",
+          "callee": "degreeToMidi",
+          "lineNumber": 122
+        },
+        {
+          "caller": "romanToChord",
+          "callee": "degreeToMidi",
+          "lineNumber": 123
+        },
+        {
+          "caller": "romanToChord",
+          "callee": "chord.push",
+          "lineNumber": 131
+        },
+        {
+          "caller": "romanToChord",
+          "callee": "degreeToMidi",
+          "lineNumber": 131
+        },
+        {
+          "caller": "scalePitchClasses",
+          "callee": "scaleSteps",
+          "lineNumber": 138
+        },
+        {
+          "caller": "scalePitchClasses",
+          "callee": "SHARPS.indexOf",
+          "lineNumber": 139
+        },
+        {
+          "caller": "scalePitchClasses",
+          "callee": "normalizePitchClass",
+          "lineNumber": 139
+        },
+        {
+          "caller": "scalePitchClasses",
+          "callee": "steps.map",
+          "lineNumber": 140
+        },
+        {
+          "caller": "romanFunction",
+          "callee": "parseRoman",
+          "lineNumber": 147
+        },
+        {
+          "caller": "romanFunction",
+          "callee": "isMinorScale",
+          "lineNumber": 148
+        },
+        {
+          "caller": "pcDistance",
+          "callee": "Math.abs",
+          "lineNumber": 169
+        },
+        {
+          "caller": "pcDistance",
+          "callee": "Math.min",
+          "lineNumber": 170
+        },
+        {
+          "caller": "voiceLeadingScore",
+          "callee": "chords[i - 1].map",
+          "lineNumber": 183
+        },
+        {
+          "caller": "voiceLeadingScore",
+          "callee": "Math.min",
+          "lineNumber": 186
+        },
+        {
+          "caller": "voiceLeadingScore",
+          "callee": "prev.map",
+          "lineNumber": 186
+        },
+        {
+          "caller": "voiceLeadingScore",
+          "callee": "pcDistance",
+          "lineNumber": 186
+        },
+        {
+          "caller": "voiceLeadingScore",
+          "callee": "Math.max",
+          "lineNumber": 190
+        },
+        {
+          "caller": "voiceLeadingScore",
+          "callee": "Math.max",
+          "lineNumber": 191
+        },
+        {
+          "caller": "voiceLeadingScore",
+          "callee": "Math.round",
+          "lineNumber": 191
+        },
+        {
+          "caller": "diatonicFitScore",
+          "callee": "scalePitchClasses",
+          "lineNumber": 200
+        },
+        {
+          "caller": "inScale",
+          "callee": "scale.has",
+          "lineNumber": 201
+        },
+        {
+          "caller": "diatonicFitScore",
+          "callee": "chords.reduce",
+          "lineNumber": 203
+        },
+        {
+          "caller": "diatonicFitScore",
+          "callee": "ch.reduce",
+          "lineNumber": 203
+        },
+        {
+          "caller": "diatonicFitScore",
+          "callee": "inScale",
+          "lineNumber": 203
+        },
+        {
+          "caller": "diatonicFitScore",
+          "callee": "Math.max",
+          "lineNumber": 203
+        },
+        {
+          "caller": "diatonicFitScore",
+          "callee": "chords.flat().map",
+          "lineNumber": 205
+        },
+        {
+          "caller": "diatonicFitScore",
+          "callee": "chords.flat",
+          "lineNumber": 205
+        },
+        {
+          "caller": "diatonicFitScore",
+          "callee": "scalePitchClasses",
+          "lineNumber": 209
+        },
+        {
+          "caller": "diatonicFitScore",
+          "callee": "all.filter",
+          "lineNumber": 210
+        },
+        {
+          "caller": "diatonicFitScore",
+          "callee": "pcs.has",
+          "lineNumber": 210
+        },
+        {
+          "caller": "diatonicFitScore",
+          "callee": "Math.max",
+          "lineNumber": 210
+        },
+        {
+          "caller": "diatonicFitScore",
+          "callee": "Math.max",
+          "lineNumber": 217
+        },
+        {
+          "caller": "diatonicFitScore",
+          "callee": "Math.round",
+          "lineNumber": 217
+        },
+        {
+          "caller": "syntaxScore",
+          "callee": "romans.map",
+          "lineNumber": 231
+        },
+        {
+          "caller": "syntaxScore",
+          "callee": "romanFunction",
+          "lineNumber": 231
+        },
+        {
+          "caller": "syntaxScore",
+          "callee": "Math.max",
+          "lineNumber": 238
+        },
+        {
+          "caller": "syntaxScore",
+          "callee": "Math.max",
+          "lineNumber": 240
+        },
+        {
+          "caller": "syntaxScore",
+          "callee": "Math.min",
+          "lineNumber": 240
+        },
+        {
+          "caller": "syntaxScore",
+          "callee": "Math.round",
+          "lineNumber": 240
+        },
+        {
+          "caller": "scoreProgression",
+          "callee": "romans.map",
+          "lineNumber": 245
+        },
+        {
+          "caller": "scoreProgression",
+          "callee": "romanToChord",
+          "lineNumber": 245
+        },
+        {
+          "caller": "scoreProgression",
+          "callee": "voiceLeadingScore",
+          "lineNumber": 246
+        },
+        {
+          "caller": "scoreProgression",
+          "callee": "diatonicFitScore",
+          "lineNumber": 247
+        },
+        {
+          "caller": "scoreProgression",
+          "callee": "syntaxScore",
+          "lineNumber": 248
+        },
+        {
+          "caller": "scoreProgression",
+          "callee": "Math.round",
+          "lineNumber": 249
+        },
+        {
+          "caller": "tensionOf",
+          "callee": "chordMidi.map",
+          "lineNumber": 259
+        },
+        {
+          "caller": "tensionOf",
+          "callee": "chordPcs.has",
+          "lineNumber": 263
+        },
+        {
+          "caller": "tensionOf",
+          "callee": "Math.abs",
+          "lineNumber": 265
+        },
+        {
+          "caller": "tensionOf",
+          "callee": "Math.min",
+          "lineNumber": 272
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 11,
+        "functionCount": 18,
+        "classCount": 0
+      }
+    }
+  ]
+}

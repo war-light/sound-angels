@@ -1,0 +1,37 @@
+{
+  "issues": [],
+  "warnings": [
+    "Node 'config:.oxlintrc.json' has no edges (orphan)",
+    "Node 'document:AGENTS.md' has no edges (orphan)",
+    "Node 'document:README.md' has no edges (orphan)",
+    "Node 'config:components.json' has no edges (orphan)",
+    "Node 'file:index.html' has no edges (orphan)",
+    "Node 'config:package.json' has no edges (orphan)",
+    "Node 'document:docs/combat-pacing-plan.md' has no edges (orphan)",
+    "Node 'document:docs/mechanics.md' has no edges (orphan)",
+    "Node 'document:docs/qte-redesign.md' has no edges (orphan)",
+    "Node 'document:docs/v1-plan.md' has no edges (orphan)",
+    "Node 'file:src/test/setup.ts' has no edges (orphan)",
+    "Node 'file:vite.config.ts' has no edges (orphan)"
+  ],
+  "stats": {
+    "totalNodes": 324,
+    "totalEdges": 560,
+    "totalLayers": 8,
+    "tourSteps": 12,
+    "nodeTypes": {
+      "file": 83,
+      "function": 229,
+      "config": 6,
+      "document": 6
+    },
+    "edgeTypes": {
+      "imports": 84,
+      "contains": 229,
+      "exports": 151,
+      "calls": 65,
+      "tested_by": 29,
+      "depends_on": 2
+    }
+  }
+}

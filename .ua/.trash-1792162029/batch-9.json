@@ -1,0 +1,906 @@
+{
+  "nodes": [
+    {
+      "id": "file:src/App.tsx",
+      "type": "file",
+      "name": "App.tsx",
+      "filePath": "src/App.tsx",
+      "summary": "Root App component wiring global keyboard input, session-store phase state, and overlay routing for the game.",
+      "tags": "component,entry-point,state-management",
+      "complexity": "simple"
+    },
+    {
+      "id": "file:src/components/ChordPicker.tsx",
+      "type": "file",
+      "name": "ChordPicker.tsx",
+      "filePath": "src/components/ChordPicker.tsx",
+      "summary": "Chord progression picker with tabbed presets and custom chords showing per-chord combat effects.",
+      "tags": "component,chord-selection,ui",
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:src/components/ChordWheel.tsx",
+      "type": "file",
+      "name": "ChordWheel.tsx",
+      "filePath": "src/components/ChordWheel.tsx",
+      "summary": "Circular chord preset selector laying presets around a wheel with effect tooltips and apply action.",
+      "tags": "component,chord-selection,ui",
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:src/components/CombatFeedback.tsx",
+      "type": "file",
+      "name": "CombatFeedback.tsx",
+      "filePath": "src/components/CombatFeedback.tsx",
+      "summary": "Transient floating combat-effect tags parsed from the latest log line with auto-expiry timers.",
+      "tags": "component,combat-feedback,ui",
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:src/components/CombatLog.tsx",
+      "type": "file",
+      "name": "CombatLog.tsx",
+      "filePath": "src/components/CombatLog.tsx",
+      "summary": "Auto-scrolling combat log list mirroring fight events from the session store.",
+      "tags": "component,combat-log,ui",
+      "complexity": "simple"
+    },
+    {
+      "id": "file:src/components/CustomChordBuilder.test.tsx",
+      "type": "file",
+      "name": "CustomChordBuilder.test.tsx",
+      "filePath": "src/components/CustomChordBuilder.test.tsx",
+      "summary": "Component tests for the custom chord builder covering bar editing and preset saving.",
+      "tags": "component,test,chord-builder",
+      "complexity": "simple"
+    },
+    {
+      "id": "file:src/components/CustomChordBuilder.tsx",
+      "type": "file",
+      "name": "CustomChordBuilder.tsx",
+      "filePath": "src/components/CustomChordBuilder.tsx",
+      "summary": "Full custom chord-progression editor with per-bar Roman-numeral palette, theory scoring, audio preview, and preset saving.",
+      "tags": "component,chord-builder,progression-editor",
+      "complexity": "complex"
+    },
+    {
+      "id": "file:src/components/EncounterBanner.tsx",
+      "type": "file",
+      "name": "EncounterBanner.tsx",
+      "filePath": "src/components/EncounterBanner.tsx",
+      "summary": "Encounter selector banner with prev/next navigation, unlock gating, and enemy weakness preview.",
+      "tags": "component,encounter-selection,ui",
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:src/components/FoePanel.tsx",
+      "type": "file",
+      "name": "FoePanel.tsx",
+      "filePath": "src/components/FoePanel.tsx",
+      "summary": "Enemy party panel showing HP/shield bars, intent, weaknesses, resists, and active buffs.",
+      "tags": "component,enemy-display,combat-ui",
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:src/components/MelodyBankBar.tsx",
+      "type": "file",
+      "name": "MelodyBankBar.tsx",
+      "filePath": "src/components/MelodyBankBar.tsx",
+      "summary": "Melody template bank bar for saving the current arrangement and loading or deleting stored templates.",
+      "tags": "component,melody-bank,preset-management",
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:src/components/Meter.tsx",
+      "type": "file",
+      "name": "Meter.tsx",
+      "filePath": "src/components/Meter.tsx",
+      "summary": "Generic labeled progress-bar meter used for HP, shield, and potency displays.",
+      "tags": "component,ui-primitive,progress-bar",
+      "complexity": "simple"
+    },
+    {
+      "id": "file:src/components/PartyCorner.test.tsx",
+      "type": "file",
+      "name": "PartyCorner.test.tsx",
+      "filePath": "src/components/PartyCorner.test.tsx",
+      "summary": "Component tests for party drag-and-drop placement using a mocked drop helper.",
+      "tags": "component,test,drag-and-drop",
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:src/components/PartyCorner.tsx",
+      "type": "file",
+      "name": "PartyCorner.tsx",
+      "filePath": "src/components/PartyCorner.tsx",
+      "summary": "Party management panel with draggable fighter cards, front-row slots, performer selection, and bench.",
+      "tags": "component,party-management,drag-and-drop",
+      "complexity": "complex"
+    },
+    {
+      "id": "file:src/components/PhaseStrip.tsx",
+      "type": "file",
+      "name": "PhaseStrip.tsx",
+      "filePath": "src/components/PhaseStrip.tsx",
+      "summary": "Phase and chord-progression strip showing current stage plus theory score and chord effects.",
+      "tags": "component,phase-display,progression",
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:src/components/PresetBar.test.tsx",
+      "type": "file",
+      "name": "PresetBar.test.tsx",
+      "filePath": "src/components/PresetBar.test.tsx",
+      "summary": "Component tests for the melody preset bar.",
+      "tags": "component,test,preset-management",
+      "complexity": "simple"
+    },
+    {
+      "id": "file:src/components/PresetBar.tsx",
+      "type": "file",
+      "name": "PresetBar.tsx",
+      "filePath": "src/components/PresetBar.tsx",
+      "summary": "Melody preset bar for bottling the current arrangement into named presets and recalling them.",
+      "tags": "component,preset-management,melody",
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:src/components/QtePanel.tsx",
+      "type": "file",
+      "name": "QtePanel.tsx",
+      "filePath": "src/components/QtePanel.tsx",
+      "summary": "Rhythm QTE highway panel with active/standby lanes, keyboard input handling, telegraph audio, and success-rate readout.",
+      "tags": "component,qte,rhythm-game",
+      "complexity": "complex"
+    },
+    {
+      "id": "file:src/components/RosterSelectModal.test.tsx",
+      "type": "file",
+      "name": "RosterSelectModal.test.tsx",
+      "filePath": "src/components/RosterSelectModal.test.tsx",
+      "summary": "Component tests for the roster selection modal.",
+      "tags": "component,test,roster",
+      "complexity": "simple"
+    },
+    {
+      "id": "file:src/components/RosterSelectModal.tsx",
+      "type": "file",
+      "name": "RosterSelectModal.tsx",
+      "filePath": "src/components/RosterSelectModal.tsx",
+      "summary": "Roster draft modal with instrument filtering and staged party selection before confirming.",
+      "tags": "component,roster-selection,modal",
+      "complexity": "complex"
+    },
+    {
+      "id": "file:src/components/StepGrid.tsx",
+      "type": "file",
+      "name": "StepGrid.tsx",
+      "filePath": "src/components/StepGrid.tsx",
+      "summary": "Main step-sequencer grid editor for melody lanes, per-bar chords, performer slots, and drum rows.",
+      "tags": "component,step-sequencer,arrangement-editor",
+      "complexity": "complex"
+    },
+    {
+      "id": "file:src/components/TransportBar.tsx",
+      "type": "file",
+      "name": "TransportBar.tsx",
+      "filePath": "src/components/TransportBar.tsx",
+      "summary": "Transport controls with play/stop, reset, BPM input, and fight-key selection.",
+      "tags": "component,transport-controls,playback",
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:src/components/TutorialModal.test.tsx",
+      "type": "file",
+      "name": "TutorialModal.test.tsx",
+      "filePath": "src/components/TutorialModal.test.tsx",
+      "summary": "Component tests for the multi-step tutorial modal.",
+      "tags": "component,test,tutorial",
+      "complexity": "simple"
+    },
+    {
+      "id": "file:src/components/TutorialModal.tsx",
+      "type": "file",
+      "name": "TutorialModal.tsx",
+      "filePath": "src/components/TutorialModal.tsx",
+      "summary": "Multi-step tutorial modal walking new players through arranging, chords, and combat.",
+      "tags": "component,tutorial,modal",
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:src/components/VoiceBar.test.tsx",
+      "type": "file",
+      "name": "VoiceBar.test.tsx",
+      "filePath": "src/components/VoiceBar.test.tsx",
+      "summary": "Component tests for the voice status bar.",
+      "tags": "component,test,voice-status",
+      "complexity": "simple"
+    },
+    {
+      "id": "file:src/components/VoiceBar.tsx",
+      "type": "file",
+      "name": "VoiceBar.tsx",
+      "filePath": "src/components/VoiceBar.tsx",
+      "summary": "Voice status bar showing onset counts, active potency lanes, and attacker readiness with typing-focus guard.",
+      "tags": "component,voice-status,combat-ui",
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:src/App.tsx:App",
+      "type": "function",
+      "name": "App",
+      "filePath": "src/App.tsx",
+      "lineRange": [
+        8,
+        24
+      ],
+      "summary": "Root component binding keyboard shortcuts and phase state to screen and overlay rendering.",
+      "tags": "component,entry-point,state-management",
+      "complexity": "simple"
+    },
+    {
+      "id": "function:src/components/ChordPicker.tsx:ChordPicker",
+      "type": "function",
+      "name": "ChordPicker",
+      "filePath": "src/components/ChordPicker.tsx",
+      "lineRange": [
+        13,
+        64
+      ],
+      "summary": "Tabbed chord preset and custom-chord picker displaying combat effects per option.",
+      "tags": "component,chord-selection,ui",
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:src/components/ChordWheel.tsx:ChordWheel",
+      "type": "function",
+      "name": "ChordWheel",
+      "filePath": "src/components/ChordWheel.tsx",
+      "lineRange": [
+        10,
+        67
+      ],
+      "summary": "Radial chord preset layout computing wheel positions and applying the chosen progression.",
+      "tags": "component,chord-selection,radial-menu",
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:src/components/CombatFeedback.tsx:CombatFeedback",
+      "type": "function",
+      "name": "CombatFeedback",
+      "filePath": "src/components/CombatFeedback.tsx",
+      "lineRange": [
+        10,
+        94
+      ],
+      "summary": "Parses the latest combat log line into floating effect tags with timed dismissal.",
+      "tags": "component,combat-feedback,effect-tags",
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:src/components/CombatLog.tsx:CombatLog",
+      "type": "function",
+      "name": "CombatLog",
+      "filePath": "src/components/CombatLog.tsx",
+      "lineRange": [
+        4,
+        29
+      ],
+      "summary": "Renders the session combat log with auto-scroll to the newest entry.",
+      "tags": "component,combat-log,auto-scroll",
+      "complexity": "simple"
+    },
+    {
+      "id": "function:src/components/CustomChordBuilder.tsx:CustomChordBuilder",
+      "type": "function",
+      "name": "CustomChordBuilder",
+      "filePath": "src/components/CustomChordBuilder.tsx",
+      "lineRange": [
+        12,
+        279
+      ],
+      "summary": "Edits per-bar Roman numerals with theory scoring, note preview, QTE-gated apply, and custom preset saving.",
+      "tags": "component,chord-builder,progression-editor",
+      "complexity": "complex"
+    },
+    {
+      "id": "function:src/components/EncounterBanner.tsx:EncounterBanner",
+      "type": "function",
+      "name": "EncounterBanner",
+      "filePath": "src/components/EncounterBanner.tsx",
+      "lineRange": [
+        7,
+        175
+      ],
+      "summary": "Browses encounters with unlock checks and shows foe lineup plus instrument weaknesses.",
+      "tags": "component,encounter-selection,navigation",
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:src/components/FoePanel.tsx:FoePanel",
+      "type": "function",
+      "name": "FoePanel",
+      "filePath": "src/components/FoePanel.tsx",
+      "lineRange": [
+        21,
+        186
+      ],
+      "summary": "Displays live enemies with health, shield, intent, resistances, and buff indicators.",
+      "tags": "component,enemy-display,combat-ui",
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:src/components/MelodyBankBar.tsx:MelodyBankBar",
+      "type": "function",
+      "name": "MelodyBankBar",
+      "filePath": "src/components/MelodyBankBar.tsx",
+      "lineRange": [
+        5,
+        122
+      ],
+      "summary": "Saves current tracks to the melody bank and loads or deletes stored templates.",
+      "tags": "component,melody-bank,template-management",
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:src/components/Meter.tsx:Meter",
+      "type": "function",
+      "name": "Meter",
+      "filePath": "src/components/Meter.tsx",
+      "lineRange": [
+        5,
+        22
+      ],
+      "summary": "Renders a labeled fill bar scaled by value for HP and potency readouts.",
+      "tags": "component,ui-primitive,progress-bar",
+      "complexity": "simple"
+    },
+    {
+      "id": "function:src/components/PartyCorner.test.tsx:mockDrop",
+      "type": "function",
+      "name": "mockDrop",
+      "filePath": "src/components/PartyCorner.test.tsx",
+      "lineRange": [
+        6,
+        17
+      ],
+      "summary": "Test helper firing a mocked drag-and-drop event onto a fighter card label.",
+      "tags": "test,helper,drag-and-drop",
+      "complexity": "simple"
+    },
+    {
+      "id": "function:src/components/PartyCorner.tsx:Card",
+      "type": "function",
+      "name": "Card",
+      "filePath": "src/components/PartyCorner.tsx",
+      "lineRange": [
+        27,
+        148
+      ],
+      "summary": "Draggable fighter card showing instrument, HP, buffs, and performer state.",
+      "tags": "component,fighter-card,drag-and-drop",
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:src/components/PartyCorner.tsx:PartyCorner",
+      "type": "function",
+      "name": "PartyCorner",
+      "filePath": "src/components/PartyCorner.tsx",
+      "lineRange": [
+        154,
+        309
+      ],
+      "summary": "Manages front-row and bench slots with drag-and-drop moves and performer assignment.",
+      "tags": "component,party-management,slot-assignment",
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:src/components/PhaseStrip.tsx:PhaseStrip",
+      "type": "function",
+      "name": "PhaseStrip",
+      "filePath": "src/components/PhaseStrip.tsx",
+      "lineRange": [
+        7,
+        84
+      ],
+      "summary": "Shows game phase, bar position, progression score, and active chord effects.",
+      "tags": "component,phase-display,progression",
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:src/components/PresetBar.tsx:PresetBar",
+      "type": "function",
+      "name": "PresetBar",
+      "filePath": "src/components/PresetBar.tsx",
+      "lineRange": [
+        11,
+        102
+      ],
+      "summary": "Bottles arrangements into named melody presets and recalls them with cooldown awareness.",
+      "tags": "component,preset-management,melody",
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:src/components/QtePanel.tsx:ratingMeta",
+      "type": "function",
+      "name": "ratingMeta",
+      "filePath": "src/components/QtePanel.tsx",
+      "lineRange": [
+        105,
+        116
+      ],
+      "summary": "Maps a QTE hit rating to its display label and styling.",
+      "tags": "utility,rating-display,qte",
+      "complexity": "simple"
+    },
+    {
+      "id": "function:src/components/QtePanel.tsx:ActiveHighway",
+      "type": "function",
+      "name": "ActiveHighway",
+      "filePath": "src/components/QtePanel.tsx",
+      "lineRange": [
+        119,
+        205
+      ],
+      "summary": "Renders live QTE note lanes with playhead progress and per-note hit states.",
+      "tags": "component,qte-highway,rhythm-game",
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:src/components/QtePanel.tsx:StandbyHighway",
+      "type": "function",
+      "name": "StandbyHighway",
+      "filePath": "src/components/QtePanel.tsx",
+      "lineRange": [
+        207,
+        234
+      ],
+      "summary": "Renders the idle threat-preview highway shown when no QTE is active.",
+      "tags": "component,qte-highway,idle-state",
+      "complexity": "simple"
+    },
+    {
+      "id": "function:src/components/QtePanel.tsx:QtePanel",
+      "type": "function",
+      "name": "QtePanel",
+      "filePath": "src/components/QtePanel.tsx",
+      "lineRange": [
+        349,
+        488
+      ],
+      "summary": "Orchestrates QTE input, telegraph audio, foe intent, and success-rate summary display.",
+      "tags": "component,qte,input-handling",
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:src/components/RosterSelectModal.tsx:RosterSelectModal",
+      "type": "function",
+      "name": "RosterSelectModal",
+      "filePath": "src/components/RosterSelectModal.tsx",
+      "lineRange": [
+        18,
+        240
+      ],
+      "summary": "Drafts a party from the filtered roster with staged slots before confirming selection.",
+      "tags": "component,roster-selection,modal",
+      "complexity": "complex"
+    },
+    {
+      "id": "function:src/components/StepGrid.tsx:StepGrid",
+      "type": "function",
+      "name": "StepGrid",
+      "filePath": "src/components/StepGrid.tsx",
+      "lineRange": [
+        28,
+        318
+      ],
+      "summary": "Edits melody note onsets, per-bar chords, performer lanes, and drum patterns in one grid.",
+      "tags": "component,step-sequencer,arrangement-editor",
+      "complexity": "complex"
+    },
+    {
+      "id": "function:src/components/TransportBar.tsx:TransportBar",
+      "type": "function",
+      "name": "TransportBar",
+      "filePath": "src/components/TransportBar.tsx",
+      "lineRange": [
+        5,
+        77
+      ],
+      "summary": "Provides playback toggle, arrangement reset, tempo input, and fight-key switching.",
+      "tags": "component,transport-controls,playback",
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:src/components/TutorialModal.tsx:TutorialModal",
+      "type": "function",
+      "name": "TutorialModal",
+      "filePath": "src/components/TutorialModal.tsx",
+      "lineRange": [
+        70,
+        192
+      ],
+      "summary": "Steps through tutorial pages with bullet points and prev/next navigation.",
+      "tags": "component,tutorial,onboarding",
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:src/components/VoiceBar.tsx:useTypingFocus",
+      "type": "function",
+      "name": "useTypingFocus",
+      "filePath": "src/components/VoiceBar.tsx",
+      "lineRange": [
+        7,
+        27
+      ],
+      "summary": "Tracks whether the user is typing in an input to suppress musical key handling.",
+      "tags": "hook,focus-tracking,typing-guard",
+      "complexity": "simple"
+    },
+    {
+      "id": "function:src/components/VoiceBar.tsx:VoiceBar",
+      "type": "function",
+      "name": "VoiceBar",
+      "filePath": "src/components/VoiceBar.tsx",
+      "lineRange": [
+        33,
+        74
+      ],
+      "summary": "Summarizes voice readiness from onset counts, potency lanes, and live attacker state.",
+      "tags": "component,voice-status,combat-ui",
+      "complexity": "simple"
+    }
+  ],
+  "edges": [
+    {
+      "source": "file:src/App.tsx",
+      "target": "function:src/App.tsx:App",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:src/components/ChordPicker.tsx",
+      "target": "function:src/components/ChordPicker.tsx:ChordPicker",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:src/components/ChordWheel.tsx",
+      "target": "function:src/components/ChordWheel.tsx:ChordWheel",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:src/components/CombatFeedback.tsx",
+      "target": "function:src/components/CombatFeedback.tsx:CombatFeedback",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:src/components/CombatLog.tsx",
+      "target": "function:src/components/CombatLog.tsx:CombatLog",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:src/components/CustomChordBuilder.tsx",
+      "target": "function:src/components/CustomChordBuilder.tsx:CustomChordBuilder",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:src/components/EncounterBanner.tsx",
+      "target": "function:src/components/EncounterBanner.tsx:EncounterBanner",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:src/components/FoePanel.tsx",
+      "target": "function:src/components/FoePanel.tsx:FoePanel",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:src/components/MelodyBankBar.tsx",
+      "target": "function:src/components/MelodyBankBar.tsx:MelodyBankBar",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:src/components/Meter.tsx",
+      "target": "function:src/components/Meter.tsx:Meter",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:src/components/PartyCorner.test.tsx",
+      "target": "function:src/components/PartyCorner.test.tsx:mockDrop",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:src/components/PartyCorner.tsx",
+      "target": "function:src/components/PartyCorner.tsx:Card",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:src/components/PartyCorner.tsx",
+      "target": "function:src/components/PartyCorner.tsx:PartyCorner",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:src/components/PhaseStrip.tsx",
+      "target": "function:src/components/PhaseStrip.tsx:PhaseStrip",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:src/components/PresetBar.tsx",
+      "target": "function:src/components/PresetBar.tsx:PresetBar",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:src/components/QtePanel.tsx",
+      "target": "function:src/components/QtePanel.tsx:ratingMeta",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:src/components/QtePanel.tsx",
+      "target": "function:src/components/QtePanel.tsx:ActiveHighway",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:src/components/QtePanel.tsx",
+      "target": "function:src/components/QtePanel.tsx:StandbyHighway",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:src/components/QtePanel.tsx",
+      "target": "function:src/components/QtePanel.tsx:QtePanel",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:src/components/RosterSelectModal.tsx",
+      "target": "function:src/components/RosterSelectModal.tsx:RosterSelectModal",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:src/components/StepGrid.tsx",
+      "target": "function:src/components/StepGrid.tsx:StepGrid",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:src/components/TransportBar.tsx",
+      "target": "function:src/components/TransportBar.tsx:TransportBar",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:src/components/TutorialModal.tsx",
+      "target": "function:src/components/TutorialModal.tsx:TutorialModal",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:src/components/VoiceBar.tsx",
+      "target": "function:src/components/VoiceBar.tsx:useTypingFocus",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:src/components/VoiceBar.tsx",
+      "target": "function:src/components/VoiceBar.tsx:VoiceBar",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:src/App.tsx",
+      "target": "function:src/App.tsx:App",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/components/ChordPicker.tsx",
+      "target": "function:src/components/ChordPicker.tsx:ChordPicker",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/components/ChordWheel.tsx",
+      "target": "function:src/components/ChordWheel.tsx:ChordWheel",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/components/CombatFeedback.tsx",
+      "target": "function:src/components/CombatFeedback.tsx:CombatFeedback",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/components/CombatLog.tsx",
+      "target": "function:src/components/CombatLog.tsx:CombatLog",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/components/CustomChordBuilder.tsx",
+      "target": "function:src/components/CustomChordBuilder.tsx:CustomChordBuilder",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/components/EncounterBanner.tsx",
+      "target": "function:src/components/EncounterBanner.tsx:EncounterBanner",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/components/FoePanel.tsx",
+      "target": "function:src/components/FoePanel.tsx:FoePanel",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/components/MelodyBankBar.tsx",
+      "target": "function:src/components/MelodyBankBar.tsx:MelodyBankBar",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/components/Meter.tsx",
+      "target": "function:src/components/Meter.tsx:Meter",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/components/PartyCorner.tsx",
+      "target": "function:src/components/PartyCorner.tsx:PartyCorner",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/components/PhaseStrip.tsx",
+      "target": "function:src/components/PhaseStrip.tsx:PhaseStrip",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/components/PresetBar.tsx",
+      "target": "function:src/components/PresetBar.tsx:PresetBar",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/components/QtePanel.tsx",
+      "target": "function:src/components/QtePanel.tsx:QtePanel",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/components/RosterSelectModal.tsx",
+      "target": "function:src/components/RosterSelectModal.tsx:RosterSelectModal",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/components/StepGrid.tsx",
+      "target": "function:src/components/StepGrid.tsx:StepGrid",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/components/TransportBar.tsx",
+      "target": "function:src/components/TransportBar.tsx:TransportBar",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/components/TutorialModal.tsx",
+      "target": "function:src/components/TutorialModal.tsx:TutorialModal",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/components/VoiceBar.tsx",
+      "target": "function:src/components/VoiceBar.tsx:VoiceBar",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/components/CustomChordBuilder.test.tsx",
+      "target": "file:src/components/CustomChordBuilder.tsx",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/components/RosterSelectModal.test.tsx",
+      "target": "file:src/components/RosterSelectModal.tsx",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/components/TutorialModal.test.tsx",
+      "target": "file:src/components/TutorialModal.tsx",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/components/CustomChordBuilder.tsx",
+      "target": "file:src/components/CustomChordBuilder.test.tsx",
+      "type": "tested_by",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "file:src/components/RosterSelectModal.tsx",
+      "target": "file:src/components/RosterSelectModal.test.tsx",
+      "type": "tested_by",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "file:src/components/TutorialModal.tsx",
+      "target": "file:src/components/TutorialModal.test.tsx",
+      "type": "tested_by",
+      "direction": "forward",
+      "weight": 0.5
+    }
+  ]
+}

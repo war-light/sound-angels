@@ -7,6 +7,9 @@ import {
   createFight,
   advanceTick,
   defaultPerformerId,
+  fillCharge,
+  fillReady,
+  fireFill,
   hasLiveAttacker,
   keeperInstrument,
   laneAttacker,
@@ -85,46 +88,73 @@ describe("advanceTick", () => {
     expect(s.key).toEqual({ tonic: "E", scale: "minor", octave: 4 })
   })
 
-  it("fires the echo counter after a full loop", () => {
+  it("strikes on the loop-boundary schedule (echo every 3 loops)", () => {
     let s = createFight({ key: KEY })
-    s = { ...s, enemies: s.enemies.map((e) => ({ ...e, hp: 9999 })) }
+    // Bypass intro grace period so scheduling starts at the first boundary.
+    s = { ...s, enemies: s.enemies.map((e) => ({ ...e, hp: 9999 })), introLoopsLeft: 0 }
+    const hpBefore = s.party.reduce((n, f) => n + f.hp + f.shield, 0)
     let a = arr()
+    // No chart before the first loop end.
+    for (let i = 0; i < 31; i++) {
+      const r = advanceTick(s, a, seq([0.5]))
+      s = r.state
+      a = r.arrangement
+    }
+    expect(s.activeQte).toBeNull()
+    // Loop end: parry chart opens, strike scheduled one loop out.
+    const r32 = advanceTick(s, a, seq([0.5]))
+    s = r32.state
+    a = r32.arrangement
+    expect(s.activeQte?.kind).toBe("parry")
+    expect(s.parrySchedule?.strikeTick).toBe(64)
+    // Ride to the strike without playing: the unblocked blow lands.
     for (let i = 0; i < 32; i++) {
       const r = advanceTick(s, a, seq([0.5]))
       s = r.state
       a = r.arrangement
     }
     const total = s.party.reduce((n, f) => n + f.hp, 0)
-    // The default i–VI loop scores gold, so its blessing wards +1: the
-    // echo's 3 lands through the ward for 2.
-    expect(total).toBe(60 - ENEMIES.echo.baseAttack + 1)
+    expect(total).toBeLessThan(hpBefore)
+    expect(s.log.some((l) => l.text.includes("strikes"))).toBe(true)
     expect(s.gauges[0]).toBe(0)
+    expect(s.parrySchedule).toBeNull()
   })
 
-  it("drives multiple enemies on their own periods", () => {
+  it("drives multiple enemies on their own cadences", () => {
     let s = createFight({ key: KEY, enemyIds: ["echo", "mite"] })
-    s = { ...s, enemies: s.enemies.map((e) => ({ ...e, hp: 9999 })) }
+    // Bypass intro grace period so scheduling starts at the first boundary.
+    s = { ...s, enemies: s.enemies.map((e) => ({ ...e, hp: 9999 })), introLoopsLeft: 0 }
     let a = arr()
-    for (let i = 0; i < 24; i++) {
+    for (let i = 0; i < 32; i++) {
       const r = advanceTick(s, a, seq([0.1]))
       s = r.state
       a = r.arrangement
     }
-    // Mite (period 24) acted; echo (period 32) has not.
-    // Tick 24 lands on dissonant degree 2, so the mite also earns the +2
-    // dissonance bonus: 60 - (2 + 2) = 56.
-    const total = s.party.reduce((n, f) => n + f.hp, 0)
-    expect(total).toBe(56)
-    expect(s.gauges[1]).toBe(0)
-    expect(s.gauges[0]).toBeGreaterThan(0)
+    // First boundary: echo opens the chart (stable order on the cadence tie).
+    expect(s.activeQte?.kind).toBe("parry")
+    expect(s.parrySchedule?.foeId).toBe("echo-0")
+    expect(s.parrySchedule?.strikeTick).toBe(64)
+    // Ride through the echo strike to the next boundary: mite is due
+    // (every 2 loops) while echo recharges (every 3).
+    for (let i = 0; i < 64; i++) {
+      const r = advanceTick(s, a, seq([0.1]))
+      s = r.state
+      a = r.arrangement
+    }
+    expect(s.tick).toBe(96)
+    expect(s.activeQte?.kind).toBe("parry")
+    expect(s.parrySchedule?.foeId).toBe("mite-1")
+    expect(s.parrySchedule?.strikeTick).toBe(128)
+    expect(s.log.some((l) => l.text.includes("Echo") && l.text.includes("strikes"))).toBe(true)
   })
 
   it("track-wipe enemies erase all melody tracks", () => {
     let s = createFight({ key: KEY, enemyIds: ["moth"] })
-    s = { ...s, enemies: s.enemies.map((e) => ({ ...e, hp: 9999 })) }
+    // Bypass intro; the moth (every 3 loops) charts at 32, strikes at 64.
+    s = { ...s, enemies: s.enemies.map((e) => ({ ...e, hp: 9999 })), introLoopsLeft: 0 }
     let a = arr()
     expect(countOnsets(a)).toBeGreaterThan(0)
-    for (let i = 0; i < 40; i++) {
+    for (let i = 0; i < 70; i++) {
       const r = advanceTick(s, a, seq([0.5]))
       s = r.state
       a = r.arrangement
@@ -375,5 +405,117 @@ describe("loop damage", () => {
     }
     expect(seen.size).toBe(2)
     expect(aliveParty(s).length).toBe(3)
+  })
+
+  it("freezes enemy gauges during the intro grace period (Phase A.2)", () => {
+    let s = createFight({ key: KEY })
+    expect(s.introLoopsLeft).toBe(2)
+    let a = arr()
+    // Run for 1 full loop (32 steps) — still in intro phase
+    for (let i = 0; i < 32; i++) {
+      const r = advanceTick(s, a, seq([0.99, 0.99, 0.99]))
+      s = r.state
+      a = r.arrangement
+    }
+    expect(s.introLoopsLeft).toBe(1)
+    expect(s.gauges[0]).toBe(0)
+
+    // Run for second loop (32 steps) — transitions out of intro
+    for (let i = 0; i < 32; i++) {
+      const r = advanceTick(s, a, seq([0.99, 0.99, 0.99]))
+      s = r.state
+      a = r.arrangement
+    }
+    expect(s.introLoopsLeft).toBe(0)
+    expect(s.log.some((l) => l.text.includes("silence breaks"))).toBe(true)
+
+    // On subsequent ticks, gauges now fill
+    const r = advanceTick(s, a, seq([0.99, 0.99, 0.99]))
+    expect(r.state.gauges[0]).toBeGreaterThan(0)
+  })
+
+  it("enforces attackCooldownLoops after a scheduled strike (Phase A.1)", () => {
+    let s = createFight({ key: KEY, enemyIds: ["echo"] })
+    s = {
+      ...s,
+      introLoopsLeft: 0,
+      parrySchedule: { foeId: "echo-0", strikeTick: 1 },
+    }
+    let a = arr()
+    const r = advanceTick(s, a, seq([0.5]))
+    // Echo cooldown is 1 loop: 1 * 32 = 32 steps of frozen gauge.
+    expect(r.state.cooldownLeft[0]).toBe(32)
+    expect(r.state.gauges[0]).toBe(0)
+    expect(r.state.parrySchedule).toBeNull()
+
+    // Next tick decrements cooldown while keeping gauge at 0
+    const r2 = advanceTick(r.state, r.arrangement, seq([0.5]))
+    expect(r2.state.cooldownLeft[0]).toBe(31)
+    expect(r2.state.gauges[0]).toBe(0)
+  })
+
+  it("triggers enrage and halves cooldown when enemy HP drops below 25% (Phase D.1)", () => {
+    let s = createFight({ key: KEY, enemyIds: ["carapace"] })
+    // Carapace (1250 hp) just below 25%: enraged.
+    s = {
+      ...s,
+      introLoopsLeft: 0,
+      parrySchedule: { foeId: "carapace-0", strikeTick: 1 },
+      enemies: [{ ...s.enemies[0], hp: 100 }],
+    }
+    let a = arr()
+    const r = advanceTick(s, a, seq([0.5]))
+    // Normal cooldown = 2 loops * 32 = 64. Enraged halves to 1 loop = 32.
+    expect(r.state.cooldownLeft[0]).toBe(32)
+  })
+})
+
+describe("fill (the kit slam)", () => {
+  it("hits every living foe flat and starts the loop-based cooldown", () => {
+    const s = createFight({ key: KEY, enemyIds: ["echo", "mite"] })
+    const before = s.enemies.map((e) => e.hp)
+    const after = fireFill(s, arr())
+    expect(after.enemies.map((e) => e.hp)).toEqual(before.map((hp) => hp - 6))
+    // 2 loops * 32 steps.
+    expect(after.fillCooldownLeft).toBe(64)
+    expect(fillReady(s)).toBe(true)
+    expect(fillReady(after)).toBe(false)
+  })
+
+  it("is a no-op while cooling, with no living foes, or once the fight is over", () => {
+    const s = createFight({ key: KEY, enemyIds: ["echo"] })
+    const cooling = { ...s, fillCooldownLeft: 5 }
+    expect(fireFill(cooling, arr())).toBe(cooling)
+    const dead = { ...s, enemies: s.enemies.map((e) => ({ ...e, hp: 0 })) }
+    expect(fireFill(dead, arr())).toBe(dead)
+    const over = { ...s, over: "player" as const }
+    expect(fireFill(over, arr())).toBe(over)
+  })
+
+  it("wins the fight when the burst finishes the pack", () => {
+    const s = createFight({ key: KEY, enemyIds: ["echo"] })
+    const nearly = { ...s, enemies: [{ ...s.enemies[0], hp: 3 }] }
+    const after = fireFill(nearly, arr())
+    expect(after.over).toBe("player")
+    expect(aliveEnemies(after).length).toBe(0)
+  })
+
+  it("widens an already-open parry chart and reports full drain", () => {
+    let s = createFight({ key: KEY, enemyIds: ["echo"] })
+    s = { ...s, enemies: s.enemies.map((e) => ({ ...e, hp: 9999 })), introLoopsLeft: 0 }
+    let a = arr()
+    for (let i = 0; i < 32; i++) {
+      const r = advanceTick(s, a, seq([0.5]))
+      s = r.state
+      a = r.arrangement
+    }
+    expect(s.activeQte?.kind).toBe("parry")
+    const before = s.activeQte!.notes.map((n) => n.note.window)
+    const after = fireFill(s, a)
+    expect(after.activeQte!.notes.map((n) => n.note.window)).toEqual(
+      before.map((w) => w + 2),
+    )
+    // Just fired: the meter reads empty.
+    expect(fillCharge(after, a)).toBe(0)
   })
 })

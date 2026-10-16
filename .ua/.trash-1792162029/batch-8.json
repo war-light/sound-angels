@@ -1,0 +1,41 @@
+{
+  "nodes": [
+    {
+      "id": "document:docs/combat-pacing-plan.md",
+      "type": "document",
+      "name": "combat-pacing-plan.md",
+      "filePath": "docs/combat-pacing-plan.md",
+      "summary": "Combat pacing redesign plan targeting 4-5 minute fights via enemy attack cooldowns, intro grace period, HP rebalance, rhythm-aware QTE charts, and encounter pacing phases.",
+      "tags": ["documentation", "game-design", "combat-balance"],
+      "complexity": "complex"
+    },
+    {
+      "id": "document:docs/mechanics.md",
+      "type": "document",
+      "name": "mechanics.md",
+      "filePath": "docs/mechanics.md",
+      "summary": "Core game design document describing the ATB battle system, chord progressions, loop-station melody recording, party positions, and enemy variants.",
+      "tags": ["documentation", "game-design", "mechanics"],
+      "complexity": "simple"
+    },
+    {
+      "id": "document:docs/qte-redesign.md",
+      "type": "document",
+      "name": "qte-redesign.md",
+      "filePath": "docs/qte-redesign.md",
+      "summary": "QTE panel rebuild plan replacing the laggy per-frame React panel with an always-visible bottom-receptor highway driven by an audio-clock-anchored playhead hook.",
+      "tags": ["documentation", "game-design", "qte-ui"],
+      "complexity": "simple"
+    },
+    {
+      "id": "document:docs/v1-plan.md",
+      "type": "document",
+      "name": "v1-plan.md",
+      "filePath": "docs/v1-plan.md",
+      "summary": "V1 audit comparing the mechanics doc against the codebase plus a phased roadmap covering engine fixes, screen flow, combat UI redesign, and missing mechanics.",
+      "tags": ["documentation", "roadmap", "audit"],
+      "complexity": "moderate"
+    }
+  ],
+  "edges": []
+}

@@ -1,4 +1,6 @@
 // Static enemy + instrument balance data. Pure data, no logic.
+import type { ParryMotifParams } from "../game/parryChart"
+
 export type Archetype = "horde" | "tank" | "balanced"
 export type ReflectMode = "nonchord" | "long" | "short"
 
@@ -9,6 +11,18 @@ export interface EnemyProfile {
   shield?: number
   /** Steps per full gauge (32 = one 2-bar loop). */
   gaugePeriod: number
+  /**
+   * Loops of silence after an attack before the gauge starts refilling.
+   * 0 = legacy "every loop" behaviour. 2–3 = balanced, 1 = horde, 3–4 = tank.
+   */
+  attackCooldownLoops: number
+  /**
+   * Parry cadence: a loop-boundary strike every N loops (post-intro).
+   * Horde presses often, tanks rarely — all customizable per enemy.
+   */
+  parryEveryLoops: number
+  /** Per-enemy motif tuning layered over the pattern base (density, holds…). */
+  parry?: Partial<ParryMotifParams>
   baseAttack: number
   archetype: Archetype
   weaknesses: { instruments: string[]; elements: string[] }
@@ -27,8 +41,11 @@ export const ENEMIES: Record<string, EnemyProfile> = {
   echo: {
     id: "echo",
     name: "Echo",
-    hp: 260,
+    hp: 700,
     gaugePeriod: 32,
+    attackCooldownLoops: 1,
+    parryEveryLoops: 3,
+    parry: { density: 5, holdRatio: 0.3 },
     baseAttack: 3,
     archetype: "balanced",
     weaknesses: { instruments: ["piano"], elements: [] },
@@ -39,8 +56,11 @@ export const ENEMIES: Record<string, EnemyProfile> = {
   mite: {
     id: "mite",
     name: "Mite",
-    hp: 130,
+    hp: 480,
     gaugePeriod: 24,
+    attackCooldownLoops: 1,
+    parryEveryLoops: 2,
+    parry: { density: 7, minGapMs: 450 },
     baseAttack: 2,
     archetype: "horde",
     weaknesses: { instruments: [], elements: ["bright"] },
@@ -51,9 +71,12 @@ export const ENEMIES: Record<string, EnemyProfile> = {
   carapace: {
     id: "carapace",
     name: "Carapace",
-    hp: 260,
-    shield: 60,
+    hp: 1250,
+    shield: 350,
     gaugePeriod: 48,
+    attackCooldownLoops: 2,
+    parryEveryLoops: 4,
+    parry: { density: 4, holdRatio: 0.35, holdLenBeats: [2, 3] },
     baseAttack: 5,
     archetype: "tank",
     weaknesses: { instruments: ["brass"], elements: [] },
@@ -64,8 +87,11 @@ export const ENEMIES: Record<string, EnemyProfile> = {
   mirror: {
     id: "mirror",
     name: "Mirror",
-    hp: 160,
+    hp: 950,
+    shield: 200,
     gaugePeriod: 32,
+    attackCooldownLoops: 1,
+    parryEveryLoops: 3,
     baseAttack: 3,
     archetype: "balanced",
     weaknesses: { instruments: [], elements: [] },
@@ -77,8 +103,12 @@ export const ENEMIES: Record<string, EnemyProfile> = {
   moth: {
     id: "moth",
     name: "Dust Moth",
-    hp: 180,
+    hp: 1100,
+    shield: 250,
     gaugePeriod: 40,
+    attackCooldownLoops: 1,
+    parryEveryLoops: 3,
+    parry: { density: 6, bursts: true },
     baseAttack: 4,
     archetype: "balanced",
     weaknesses: { instruments: ["strings"], elements: [] },

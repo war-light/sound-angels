@@ -1,0 +1,15 @@
+{
+  "projectRoot": "/home/david/Personal Projects/sound-angels",
+  "batchFiles": [
+    {"path": "docs/combat-pacing-plan.md", "language": "markdown", "sizeLines": 338, "fileCategory": "docs"},
+    {"path": "docs/mechanics.md", "language": "markdown", "sizeLines": 35, "fileCategory": "docs"},
+    {"path": "docs/qte-redesign.md", "language": "markdown", "sizeLines": 45, "fileCategory": "docs"},
+    {"path": "docs/v1-plan.md", "language": "markdown", "sizeLines": 156, "fileCategory": "docs"}
+  ],
+  "batchImportData": {
+    "docs/combat-pacing-plan.md": [],
+    "docs/mechanics.md": [],
+    "docs/qte-redesign.md": [],
+    "docs/v1-plan.md": []
+  }
+}

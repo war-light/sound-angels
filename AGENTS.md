@@ -25,3 +25,13 @@ Vite + React 19 + TS + Tailwind v4 + shadcn (`new-york/neutral`) + Zustand + Ton
 - Melody lanes are front-row positions (`front[i]` = lane `i`): benching a fighter mutes its lane but keeps notes; potency fades `x0.75` per loop wrap, floor `0.25` (`combat.ts`).
 - Tests: Vitest + jsdom, `globals: true`, setup `src/test/setup.ts`. Combat tests use seeded `rng` — never import Tone.js in `src/game/`.
 - TS is strict: `noUnusedLocals/Parameters`, `verbatimModuleSyntax` (use `import type`), `erasableSyntaxOnly` (no enums/namespaces/parameter properties).
+
+## Hard Rules
+
+- Never use in line styles. Use Tailwind classes or `cn()` for conditional classes. 
+- If an element can be done as a Shadcn component, use Shadcn instead of raw HTML with tw classes.
+- Never use `any` in TS unless strictly necessary.
+
+## Graphify
+
+- Check the graph before answering codebase questions and rebuild after code changes

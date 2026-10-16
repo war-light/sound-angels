@@ -1,0 +1,6036 @@
+{
+  "version": "1.0.0",
+  "gitCommitHash": "3db69da98c1a9d4d2397c510a81ecab701592df6",
+  "generatedAt": "2026-10-16T14:47:06.518Z",
+  "files": {
+    ".oxlintrc.json": {
+      "filePath": ".oxlintrc.json",
+      "contentHash": "b4d344818a1e1bf43997e4744a9153c8eef770c98b58229cd86363dabb85ded4",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 9,
+      "hasStructuralAnalysis": false
+    },
+    "AGENTS.md": {
+      "filePath": "AGENTS.md",
+      "contentHash": "78a62b0f233e5b84efc812c888638cad97f04405fc51e80312eaed18007fd453",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 33,
+      "hasStructuralAnalysis": false
+    },
+    "README.md": {
+      "filePath": "README.md",
+      "contentHash": "67bf981c9ceaee29ef0f144a96e5469586eb92e41538402d0105d5b1ca29a18a",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 45,
+      "hasStructuralAnalysis": false
+    },
+    "components.json": {
+      "filePath": "components.json",
+      "contentHash": "6e94b7742765792c58b51aed1d98e78988ef468a8906f7bb723417f98f2b29e3",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 22,
+      "hasStructuralAnalysis": false
+    },
+    "docs/combat-pacing-plan.md": {
+      "filePath": "docs/combat-pacing-plan.md",
+      "contentHash": "e83522baf28170bbaac4d6e32ee4f24bcd59e9385d671e61bf78cfcf3c3bb387",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 339,
+      "hasStructuralAnalysis": false
+    },
+    "docs/mechanics.md": {
+      "filePath": "docs/mechanics.md",
+      "contentHash": "118159b1ef5f963c040e4a37560c80cf01e2fda764615f8249701d07c6da3f79",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 36,
+      "hasStructuralAnalysis": false
+    },
+    "docs/qte-redesign.md": {
+      "filePath": "docs/qte-redesign.md",
+      "contentHash": "60e63c6078095df3ed5c24beaa4ec314894d593a34b572208cf87c70a94aa857",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 46,
+      "hasStructuralAnalysis": false
+    },
+    "docs/v1-plan.md": {
+      "filePath": "docs/v1-plan.md",
+      "contentHash": "bd7494b89890cda87fac1baf960c0de91329995dbda87a109c502868723b84a8",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 157,
+      "hasStructuralAnalysis": false
+    },
+    "index.html": {
+      "filePath": "index.html",
+      "contentHash": "0282f17a72888b0c005ca74be781d8f599f2cd80804b2387483f9063a50350aa",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 14,
+      "hasStructuralAnalysis": false
+    },
+    "package.json": {
+      "filePath": "package.json",
+      "contentHash": "debaa7a4324087ae32d662caefce179ecc472bcda3942a41542f37356a87cbf5",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 39,
+      "hasStructuralAnalysis": false
+    },
+    "src/App.tsx": {
+      "filePath": "src/App.tsx",
+      "contentHash": "83acfcf2c53428cd3d21451e549aede663058b388989159f5a78ef53a71cefb3",
+      "functions": [
+        {
+          "name": "App",
+          "params": [],
+          "exported": true,
+          "lineCount": 17
+        },
+        {
+          "name": "phaseForOverlay",
+          "params": [
+            "phase"
+          ],
+          "returnType": "\"victory\" | \"defeat\"",
+          "exported": false,
+          "lineCount": 3
+        }
+      ],
+      "classes": [],
+      "imports": [
+        {
+          "source": "@/hooks/useWasd",
+          "specifiers": [
+            "useWasd"
+          ]
+        },
+        {
+          "source": "@/state/useSessionStore",
+          "specifiers": [
+            "useSessionStore"
+          ]
+        },
+        {
+          "source": "@/components/screens/MenuScreen",
+          "specifiers": [
+            "MenuScreen"
+          ]
+        },
+        {
+          "source": "@/components/screens/PrepScreen",
+          "specifiers": [
+            "PrepScreen"
+          ]
+        },
+        {
+          "source": "@/components/screens/CombatScreen",
+          "specifiers": [
+            "CombatScreen"
+          ]
+        },
+        {
+          "source": "@/components/screens/ResultOverlay",
+          "specifiers": [
+            "ResultOverlay"
+          ]
+        }
+      ],
+      "exports": [
+        "App"
+      ],
+      "totalLines": 29,
+      "hasStructuralAnalysis": true
+    },
+    "src/audio/context.ts": {
+      "filePath": "src/audio/context.ts",
+      "contentHash": "915e23ea375ccd412b233a37b9797d18bcce4de5523284df8f0392eed80cee40",
+      "functions": [
+        {
+          "name": "ensureAudio",
+          "params": [],
+          "returnType": "Promise<void>",
+          "exported": true,
+          "lineCount": 9
+        },
+        {
+          "name": "getMaster",
+          "params": [],
+          "returnType": "Tone.Gain",
+          "exported": true,
+          "lineCount": 4
+        }
+      ],
+      "classes": [],
+      "imports": [
+        {
+          "source": "tone",
+          "specifiers": [
+            "* as Tone"
+          ]
+        }
+      ],
+      "exports": [
+        "ensureAudio",
+        "getMaster"
+      ],
+      "totalLines": 24,
+      "hasStructuralAnalysis": true
+    },
+    "src/audio/perform.ts": {
+      "filePath": "src/audio/perform.ts",
+      "contentHash": "af04492e5cca81f96c28802cc89b879617ec2dbaeb568c916b308ba305982232",
+      "functions": [
+        {
+          "name": "auditionStart",
+          "params": [
+            "midi",
+            "instrument"
+          ],
+          "returnType": "void",
+          "exported": true,
+          "lineCount": 4
+        },
+        {
+          "name": "auditionBlip",
+          "params": [
+            "midi",
+            "instrument",
+            "duration"
+          ],
+          "returnType": "void",
+          "exported": true,
+          "lineCount": 8
+        },
+        {
+          "name": "auditionEnd",
+          "params": [],
+          "returnType": "void",
+          "exported": true,
+          "lineCount": 11
+        }
+      ],
+      "classes": [],
+      "imports": [
+        {
+          "source": "@/game/theory",
+          "specifiers": [
+            "midiToNote"
+          ]
+        },
+        {
+          "source": "./synths",
+          "specifiers": [
+            "getVoices",
+            "hasVoices",
+            "instrumentVoices"
+          ]
+        }
+      ],
+      "exports": [
+        "auditionStart",
+        "auditionBlip",
+        "auditionEnd"
+      ],
+      "totalLines": 33,
+      "hasStructuralAnalysis": true
+    },
+    "src/audio/player.ts": {
+      "filePath": "src/audio/player.ts",
+      "contentHash": "254d6084a462cff0981edd0eb1232c79e2c5f4c4df11d6dc67026469de4322f6",
+      "functions": [
+        {
+          "name": "provider",
+          "params": [],
+          "exported": false,
+          "lineCount": 1
+        },
+        {
+          "name": "chordVoice",
+          "params": [],
+          "exported": false,
+          "lineCount": 1
+        },
+        {
+          "name": "melodyVoice",
+          "params": [],
+          "exported": false,
+          "lineCount": 1
+        },
+        {
+          "name": "beatVoice",
+          "params": [],
+          "exported": false,
+          "lineCount": 1
+        },
+        {
+          "name": "configurePlayer",
+          "params": [
+            "cfg"
+          ],
+          "returnType": "void",
+          "exported": true,
+          "lineCount": 13
+        },
+        {
+          "name": "setBpm",
+          "params": [
+            "bpm"
+          ],
+          "returnType": "void",
+          "exported": true,
+          "lineCount": 3
+        },
+        {
+          "name": "triggerAt",
+          "params": [
+            "time",
+            "snap",
+            "bpm"
+          ],
+          "returnType": "void",
+          "exported": false,
+          "lineCount": 33
+        },
+        {
+          "name": "start",
+          "params": [],
+          "returnType": "Promise<void>",
+          "exported": true,
+          "lineCount": 26
+        },
+        {
+          "name": "stop",
+          "params": [],
+          "returnType": "void",
+          "exported": true,
+          "lineCount": 6
+        }
+      ],
+      "classes": [],
+      "imports": [
+        {
+          "source": "tone",
+          "specifiers": [
+            "* as Tone"
+          ]
+        },
+        {
+          "source": "@/game/arrangement",
+          "specifiers": [
+            "locateStep",
+            "snapshotStep",
+            "Arrangement",
+            "StepSnapshot"
+          ]
+        },
+        {
+          "source": "@/game/theory",
+          "specifiers": [
+            "midiToNote"
+          ]
+        },
+        {
+          "source": "@/data/enemies",
+          "specifiers": [
+            "INSTRUMENTS"
+          ]
+        },
+        {
+          "source": "./context",
+          "specifiers": [
+            "ensureAudio"
+          ]
+        },
+        {
+          "source": "./synths",
+          "specifiers": [
+            "applyKit",
+            "getVoices",
+            "initVoices",
+            "instrumentVoices"
+          ]
+        }
+      ],
+      "exports": [
+        "configurePlayer",
+        "setBpm",
+        "start",
+        "stop"
+      ],
+      "totalLines": 114,
+      "hasStructuralAnalysis": true
+    },
+    "src/audio/sfx.ts": {
+      "filePath": "src/audio/sfx.ts",
+      "contentHash": "0a4828dafe1e99a34ca288cfbf8f151e621b01d5e0f71f62709f6fff129b9982",
+      "functions": [
+        {
+          "name": "safeTrigger",
+          "params": [
+            "fn"
+          ],
+          "returnType": "void",
+          "exported": false,
+          "lineCount": 8
+        },
+        {
+          "name": "playVictoryJingle",
+          "params": [],
+          "returnType": "void",
+          "exported": true,
+          "lineCount": 12
+        },
+        {
+          "name": "playDefeatSting",
+          "params": [],
+          "returnType": "void",
+          "exported": true,
+          "lineCount": 9
+        },
+        {
+          "name": "playQteHit",
+          "params": [
+            "rating"
+          ],
+          "returnType": "void",
+          "exported": true,
+          "lineCount": 14
+        },
+        {
+          "name": "playQteMiss",
+          "params": [],
+          "returnType": "void",
+          "exported": true,
+          "lineCount": 7
+        },
+        {
+          "name": "playChordChange",
+          "params": [],
+          "returnType": "void",
+          "exported": true,
+          "lineCount": 8
+        },
+        {
+          "name": "playUiClick",
+          "params": [],
+          "returnType": "void",
+          "exported": true,
+          "lineCount": 7
+        },
+        {
+          "name": "playEnemyTelegraph",
+          "params": [
+            "pattern"
+          ],
+          "returnType": "void",
+          "exported": true,
+          "lineCount": 20
+        }
+      ],
+      "classes": [],
+      "imports": [
+        {
+          "source": "tone",
+          "specifiers": [
+            "* as Tone"
+          ]
+        },
+        {
+          "source": "./synths",
+          "specifiers": [
+            "getVoices",
+            "hasVoices"
+          ]
+        }
+      ],
+      "exports": [
+        "playVictoryJingle",
+        "playDefeatSting",
+        "playQteHit",
+        "playQteMiss",
+        "playChordChange",
+        "playUiClick",
+        "playEnemyTelegraph"
+      ],
+      "totalLines": 107,
+      "hasStructuralAnalysis": true
+    },
+    "src/audio/synths.ts": {
+      "filePath": "src/audio/synths.ts",
+      "contentHash": "007fb44b7d69d394d8f63460da9e308373aff81d111855fc5557a4be12ba8268",
+      "functions": [
+        {
+          "name": "makeLead",
+          "params": [
+            "recipe",
+            "verbGain",
+            "master"
+          ],
+          "returnType": "Tone.PolySynth",
+          "exported": false,
+          "lineCount": 12
+        },
+        {
+          "name": "makeBass",
+          "params": [
+            "recipe",
+            "master"
+          ],
+          "returnType": "Tone.MonoSynth",
+          "exported": false,
+          "lineCount": 14
+        },
+        {
+          "name": "initVoices",
+          "params": [],
+          "returnType": "Promise<Voices>",
+          "exported": true,
+          "lineCount": 44
+        },
+        {
+          "name": "getVoices",
+          "params": [],
+          "returnType": "Voices",
+          "exported": true,
+          "lineCount": 4
+        },
+        {
+          "name": "instrumentVoices",
+          "params": [
+            "id"
+          ],
+          "returnType": "InstrumentVoices",
+          "exported": true,
+          "lineCount": 5
+        },
+        {
+          "name": "applyKit",
+          "params": [
+            "kit"
+          ],
+          "returnType": "void",
+          "exported": true,
+          "lineCount": 14
+        },
+        {
+          "name": "hasVoices",
+          "params": [],
+          "returnType": "boolean",
+          "exported": true,
+          "lineCount": 3
+        }
+      ],
+      "classes": [],
+      "imports": [
+        {
+          "source": "tone",
+          "specifiers": [
+            "* as Tone"
+          ]
+        },
+        {
+          "source": "@/data/enemies",
+          "specifiers": [
+            "INSTRUMENTS",
+            "NEUTRAL_KIT",
+            "BassRecipe",
+            "KitRecipe",
+            "VoiceRecipe"
+          ]
+        },
+        {
+          "source": "./context",
+          "specifiers": [
+            "ensureAudio",
+            "getMaster"
+          ]
+        }
+      ],
+      "exports": [
+        "initVoices",
+        "getVoices",
+        "instrumentVoices",
+        "applyKit",
+        "hasVoices"
+      ],
+      "totalLines": 137,
+      "hasStructuralAnalysis": true
+    },
+    "src/components/ChordPicker.tsx": {
+      "filePath": "src/components/ChordPicker.tsx",
+      "contentHash": "ea80e143c6c8f32f3225553ba183a15a16da7b0e8d2677c2b8a1e1ec8b3f4295",
+      "functions": [
+        {
+          "name": "ChordPicker",
+          "params": [],
+          "exported": true,
+          "lineCount": 52
+        }
+      ],
+      "classes": [],
+      "imports": [
+        {
+          "source": "react",
+          "specifiers": [
+            "useState"
+          ]
+        },
+        {
+          "source": "@/data/chords",
+          "specifiers": [
+            "chordEffectFor"
+          ]
+        },
+        {
+          "source": "@/state/useSessionStore",
+          "specifiers": [
+            "useSessionStore"
+          ]
+        },
+        {
+          "source": "@/components/ChordWheel",
+          "specifiers": [
+            "ChordWheel"
+          ]
+        },
+        {
+          "source": "@/components/CustomChordBuilder",
+          "specifiers": [
+            "CustomChordBuilder"
+          ]
+        },
+        {
+          "source": "@/components/ui/button",
+          "specifiers": [
+            "Button"
+          ]
+        }
+      ],
+      "exports": [
+        "ChordPicker"
+      ],
+      "totalLines": 65,
+      "hasStructuralAnalysis": true
+    },
+    "src/components/ChordWheel.tsx": {
+      "filePath": "src/components/ChordWheel.tsx",
+      "contentHash": "fee8e1d537c467f7231490ed0d15684525dccfe9b1be8734ecb6c414d8865c20",
+      "functions": [
+        {
+          "name": "ChordWheel",
+          "params": [],
+          "exported": true,
+          "lineCount": 58
+        }
+      ],
+      "classes": [],
+      "imports": [
+        {
+          "source": "@/components/ui/button",
+          "specifiers": [
+            "Button"
+          ]
+        },
+        {
+          "source": "@/data/chords",
+          "specifiers": [
+            "CHORD_PRESETS",
+            "chordEffectFor"
+          ]
+        },
+        {
+          "source": "@/state/useSessionStore",
+          "specifiers": [
+            "useSessionStore"
+          ]
+        }
+      ],
+      "exports": [
+        "ChordWheel"
+      ],
+      "totalLines": 68,
+      "hasStructuralAnalysis": true
+    },
+    "src/components/CombatFeedback.tsx": {
+      "filePath": "src/components/CombatFeedback.tsx",
+      "contentHash": "d56d207bc978182cc2294eddd0c5736ff006c697b7074fad5cbf18e2f9666e84",
+      "functions": [
+        {
+          "name": "CombatFeedback",
+          "params": [],
+          "exported": true,
+          "lineCount": 85
+        }
+      ],
+      "classes": [],
+      "imports": [
+        {
+          "source": "react",
+          "specifiers": [
+            "useEffect",
+            "useState"
+          ]
+        },
+        {
+          "source": "@/state/useSessionStore",
+          "specifiers": [
+            "useSessionStore"
+          ]
+        }
+      ],
+      "exports": [
+        "CombatFeedback"
+      ],
+      "totalLines": 95,
+      "hasStructuralAnalysis": true
+    },
+    "src/components/CombatLog.tsx": {
+      "filePath": "src/components/CombatLog.tsx",
+      "contentHash": "9a03a65cf5158a3690c792d0828b57522e5975aaf368674ff2b69a201ea09825",
+      "functions": [
+        {
+          "name": "CombatLog",
+          "params": [],
+          "exported": true,
+          "lineCount": 26
+        }
+      ],
+      "classes": [],
+      "imports": [
+        {
+          "source": "react",
+          "specifiers": [
+            "useEffect",
+            "useRef"
+          ]
+        },
+        {
+          "source": "@/state/useSessionStore",
+          "specifiers": [
+            "useSessionStore"
+          ]
+        }
+      ],
+      "exports": [
+        "CombatLog"
+      ],
+      "totalLines": 30,
+      "hasStructuralAnalysis": true
+    },
+    "src/components/CustomChordBuilder.test.tsx": {
+      "filePath": "src/components/CustomChordBuilder.test.tsx",
+      "contentHash": "4c592ed64221be76efa4cb755489437fcc2aaed2aedae0ef7d0f0e9b483a8be0",
+      "functions": [],
+      "classes": [],
+      "imports": [
+        {
+          "source": "vitest",
+          "specifiers": [
+            "describe",
+            "it",
+            "expect",
+            "beforeEach"
+          ]
+        },
+        {
+          "source": "@testing-library/react",
+          "specifiers": [
+            "render",
+            "screen",
+            "fireEvent"
+          ]
+        },
+        {
+          "source": "./CustomChordBuilder",
+          "specifiers": [
+            "CustomChordBuilder"
+          ]
+        },
+        {
+          "source": "@/state/useSessionStore",
+          "specifiers": [
+            "useSessionStore"
+          ]
+        }
+      ],
+      "exports": [],
+      "totalLines": 49,
+      "hasStructuralAnalysis": true
+    },
+    "src/components/CustomChordBuilder.tsx": {
+      "filePath": "src/components/CustomChordBuilder.tsx",
+      "contentHash": "1d7da51e824b3132e0f98e62e827cfc75809877f38030b0dba5784d33fe8c911",
+      "functions": [
+        {
+          "name": "CustomChordBuilder",
+          "params": [],
+          "exported": true,
+          "lineCount": 268
+        }
+      ],
+      "classes": [],
+      "imports": [
+        {
+          "source": "react",
+          "specifiers": [
+            "useState",
+            "useId"
+          ]
+        },
+        {
+          "source": "@/state/useSessionStore",
+          "specifiers": [
+            "useSessionStore"
+          ]
+        },
+        {
+          "source": "@/game/theory",
+          "specifiers": [
+            "scoreProgression",
+            "pitchClassOfMidi",
+            "romanToChord",
+            "Key"
+          ]
+        },
+        {
+          "source": "@/data/chords",
+          "specifiers": [
+            "chordEffectFor",
+            "CHORD_PRESETS"
+          ]
+        },
+        {
+          "source": "@/components/ui/button",
+          "specifiers": [
+            "Button"
+          ]
+        },
+        {
+          "source": "@/lib/utils",
+          "specifiers": [
+            "cn"
+          ]
+        },
+        {
+          "source": "@/audio/sfx",
+          "specifiers": [
+            "playChordChange"
+          ]
+        }
+      ],
+      "exports": [
+        "CustomChordBuilder"
+      ],
+      "totalLines": 281,
+      "hasStructuralAnalysis": true
+    },
+    "src/components/EncounterBanner.tsx": {
+      "filePath": "src/components/EncounterBanner.tsx",
+      "contentHash": "c7bfcdd0cb0b90c5ba6842fa60591d50371686d9d8797e6b0e2719a9fb404877",
+      "functions": [
+        {
+          "name": "EncounterBanner",
+          "params": [],
+          "exported": true,
+          "lineCount": 169
+        }
+      ],
+      "classes": [],
+      "imports": [
+        {
+          "source": "@/state/useSessionStore",
+          "specifiers": [
+            "useSessionStore"
+          ]
+        },
+        {
+          "source": "@/data/enemies",
+          "specifiers": [
+            "ENEMIES"
+          ]
+        },
+        {
+          "source": "@/data/encounters",
+          "specifiers": [
+            "isEncounterUnlocked"
+          ]
+        },
+        {
+          "source": "@/components/ui/button",
+          "specifiers": [
+            "Button"
+          ]
+        },
+        {
+          "source": "@/lib/utils",
+          "specifiers": [
+            "cn"
+          ]
+        }
+      ],
+      "exports": [
+        "EncounterBanner"
+      ],
+      "totalLines": 176,
+      "hasStructuralAnalysis": true
+    },
+    "src/components/FoePanel.tsx": {
+      "filePath": "src/components/FoePanel.tsx",
+      "contentHash": "5cb8ba97b2e94e0ce25bc7f64a63fd0641b5008c0b692920a46af77318eb6eee",
+      "functions": [
+        {
+          "name": "FoePanel",
+          "params": [],
+          "exported": true,
+          "lineCount": 166
+        }
+      ],
+      "classes": [],
+      "imports": [
+        {
+          "source": "@/components/Meter",
+          "specifiers": [
+            "Meter"
+          ]
+        },
+        {
+          "source": "@/game/units",
+          "specifiers": [
+            "isDown"
+          ]
+        },
+        {
+          "source": "@/state/useSessionStore",
+          "specifiers": [
+            "useSessionStore"
+          ]
+        }
+      ],
+      "exports": [
+        "FoePanel"
+      ],
+      "totalLines": 187,
+      "hasStructuralAnalysis": true
+    },
+    "src/components/MelodyBankBar.tsx": {
+      "filePath": "src/components/MelodyBankBar.tsx",
+      "contentHash": "e55b02e2f4e920a01c9ab24d5fff6ad8559ae740e323d21a45e02ff07d2de337",
+      "functions": [
+        {
+          "name": "MelodyBankBar",
+          "params": [],
+          "exported": true,
+          "lineCount": 118
+        }
+      ],
+      "classes": [],
+      "imports": [
+        {
+          "source": "react",
+          "specifiers": [
+            "useState"
+          ]
+        },
+        {
+          "source": "@/state/useSessionStore",
+          "specifiers": [
+            "useSessionStore"
+          ]
+        },
+        {
+          "source": "@/components/ui/button",
+          "specifiers": [
+            "Button"
+          ]
+        }
+      ],
+      "exports": [
+        "MelodyBankBar"
+      ],
+      "totalLines": 124,
+      "hasStructuralAnalysis": true
+    },
+    "src/components/Meter.tsx": {
+      "filePath": "src/components/Meter.tsx",
+      "contentHash": "6c6df15a632c98a4f842ab2182996b872c49d9f357c7ca56da01293fe5e42f1d",
+      "functions": [
+        {
+          "name": "Meter",
+          "params": [
+            "{\n  value,\n  barClass,\n  className,\n  children,\n}"
+          ],
+          "exported": true,
+          "lineCount": 18
+        }
+      ],
+      "classes": [],
+      "imports": [
+        {
+          "source": "react",
+          "specifiers": [
+            "ReactNode"
+          ]
+        },
+        {
+          "source": "@/lib/utils",
+          "specifiers": [
+            "cn"
+          ]
+        }
+      ],
+      "exports": [
+        "Meter"
+      ],
+      "totalLines": 23,
+      "hasStructuralAnalysis": true
+    },
+    "src/components/PartyCorner.test.tsx": {
+      "filePath": "src/components/PartyCorner.test.tsx",
+      "contentHash": "5562cf4648e78dd4ebe2eb46bd62556a2f8371b071f3feca4f0566d17b58a121",
+      "functions": [
+        {
+          "name": "mockDrop",
+          "params": [
+            "labelText",
+            "fighterId"
+          ],
+          "returnType": "void",
+          "exported": false,
+          "lineCount": 12
+        }
+      ],
+      "classes": [],
+      "imports": [
+        {
+          "source": "vitest",
+          "specifiers": [
+            "beforeEach",
+            "describe",
+            "expect",
+            "it"
+          ]
+        },
+        {
+          "source": "@testing-library/react",
+          "specifiers": [
+            "fireEvent",
+            "render",
+            "screen"
+          ]
+        },
+        {
+          "source": "@/components/PartyCorner",
+          "specifiers": [
+            "PartyCorner"
+          ]
+        },
+        {
+          "source": "@/state/useSessionStore",
+          "specifiers": [
+            "useSessionStore"
+          ]
+        }
+      ],
+      "exports": [],
+      "totalLines": 63,
+      "hasStructuralAnalysis": true
+    },
+    "src/components/PartyCorner.tsx": {
+      "filePath": "src/components/PartyCorner.tsx",
+      "contentHash": "8c1cfb7800068eea765963896a40427cae117a97032b3d7dfcd0b3f39e78cc3f",
+      "functions": [
+        {
+          "name": "Card",
+          "params": [
+            "{\n  f,\n  role,\n  performing,\n  onLead,\n  numberBadge,\n}"
+          ],
+          "exported": false,
+          "lineCount": 122
+        },
+        {
+          "name": "PartyCorner",
+          "params": [],
+          "exported": true,
+          "lineCount": 156
+        }
+      ],
+      "classes": [],
+      "imports": [
+        {
+          "source": "react",
+          "specifiers": [
+            "useState",
+            "ReactDragEvent"
+          ]
+        },
+        {
+          "source": "@/components/ui/button",
+          "specifiers": [
+            "Button"
+          ]
+        },
+        {
+          "source": "@/lib/utils",
+          "specifiers": [
+            "cn"
+          ]
+        },
+        {
+          "source": "@/components/Meter",
+          "specifiers": [
+            "Meter"
+          ]
+        },
+        {
+          "source": "@/game/positions",
+          "specifiers": [
+            "deckIds",
+            "slotOf"
+          ]
+        },
+        {
+          "source": "@/game/positions",
+          "specifiers": [
+            "SlotId"
+          ]
+        },
+        {
+          "source": "@/game/units",
+          "specifiers": [
+            "isDown",
+            "Fighter"
+          ]
+        },
+        {
+          "source": "@/state/useSessionStore",
+          "specifiers": [
+            "useSessionStore"
+          ]
+        },
+        {
+          "source": "@/components/RosterSelectModal",
+          "specifiers": [
+            "RosterSelectModal"
+          ]
+        }
+      ],
+      "exports": [
+        "PartyCorner"
+      ],
+      "totalLines": 310,
+      "hasStructuralAnalysis": true
+    },
+    "src/components/PhaseStrip.tsx": {
+      "filePath": "src/components/PhaseStrip.tsx",
+      "contentHash": "736e3e85254a9d1577a51a55e650966f5dc1e78389442204dc7de3249a32591e",
+      "functions": [
+        {
+          "name": "PhaseStrip",
+          "params": [],
+          "exported": true,
+          "lineCount": 78
+        }
+      ],
+      "classes": [],
+      "imports": [
+        {
+          "source": "@/lib/utils",
+          "specifiers": [
+            "cn"
+          ]
+        },
+        {
+          "source": "@/game/theory",
+          "specifiers": [
+            "scoreProgression"
+          ]
+        },
+        {
+          "source": "@/data/chords",
+          "specifiers": [
+            "chordEffectFor"
+          ]
+        },
+        {
+          "source": "@/state/useSessionStore",
+          "specifiers": [
+            "useSessionStore"
+          ]
+        }
+      ],
+      "exports": [
+        "PhaseStrip"
+      ],
+      "totalLines": 85,
+      "hasStructuralAnalysis": true
+    },
+    "src/components/PresetBar.test.tsx": {
+      "filePath": "src/components/PresetBar.test.tsx",
+      "contentHash": "9c357a7b69aab5a36b20d1298eb178c85eb1c96836a9580c6bf5e11d83ebf561",
+      "functions": [],
+      "classes": [],
+      "imports": [
+        {
+          "source": "vitest",
+          "specifiers": [
+            "beforeEach",
+            "describe",
+            "expect",
+            "it"
+          ]
+        },
+        {
+          "source": "@testing-library/react",
+          "specifiers": [
+            "fireEvent",
+            "render",
+            "screen"
+          ]
+        },
+        {
+          "source": "@/components/PresetBar",
+          "specifiers": [
+            "PresetBar"
+          ]
+        },
+        {
+          "source": "@/state/useSessionStore",
+          "specifiers": [
+            "useSessionStore"
+          ]
+        }
+      ],
+      "exports": [],
+      "totalLines": 32,
+      "hasStructuralAnalysis": true
+    },
+    "src/components/PresetBar.tsx": {
+      "filePath": "src/components/PresetBar.tsx",
+      "contentHash": "8f25156b2cb7a8b17c6ab1e986e8b9eba7d244025cffa6bb05bc70f14374b6a4",
+      "functions": [
+        {
+          "name": "PresetBar",
+          "params": [],
+          "exported": true,
+          "lineCount": 92
+        }
+      ],
+      "classes": [],
+      "imports": [
+        {
+          "source": "react",
+          "specifiers": [
+            "useRef",
+            "useState"
+          ]
+        },
+        {
+          "source": "@/components/ui/button",
+          "specifiers": [
+            "Button"
+          ]
+        },
+        {
+          "source": "@/game/arrangement",
+          "specifiers": [
+            "countOnsets"
+          ]
+        },
+        {
+          "source": "@/state/useSessionStore",
+          "specifiers": [
+            "useSessionStore"
+          ]
+        }
+      ],
+      "exports": [
+        "PresetBar"
+      ],
+      "totalLines": 103,
+      "hasStructuralAnalysis": true
+    },
+    "src/components/QtePanel.tsx": {
+      "filePath": "src/components/QtePanel.tsx",
+      "contentHash": "26f0ebd7ff14afa0f376bd5812e64c674a0cc868f56c5b6e30163b1e04ed3d79",
+      "functions": [
+        {
+          "name": "ratingMeta",
+          "params": [
+            "rating"
+          ],
+          "returnType": "{ text: string; className: string }",
+          "exported": false,
+          "lineCount": 12
+        },
+        {
+          "name": "ActiveHighway",
+          "params": [
+            "{ qte, tick, bpm, lanes }"
+          ],
+          "exported": false,
+          "lineCount": 87
+        },
+        {
+          "name": "StandbyHighway",
+          "params": [
+            "{ threat }"
+          ],
+          "exported": false,
+          "lineCount": 28
+        },
+        {
+          "name": "QtePanel",
+          "params": [],
+          "exported": true,
+          "lineCount": 140
+        }
+      ],
+      "classes": [],
+      "imports": [
+        {
+          "source": "react",
+          "specifiers": [
+            "memo",
+            "useEffect",
+            "useRef",
+            "useState"
+          ]
+        },
+        {
+          "source": "@/state/useSessionStore",
+          "specifiers": [
+            "useSessionStore"
+          ]
+        },
+        {
+          "source": "@/game/perform",
+          "specifiers": [
+            "stepMs",
+            "stepsToMs",
+            "QteKey"
+          ]
+        },
+        {
+          "source": "@/game/qte",
+          "specifiers": [
+            "qteSuccessRate",
+            "QteState"
+          ]
+        },
+        {
+          "source": "@/audio/sfx",
+          "specifiers": [
+            "playEnemyTelegraph",
+            "playQteMiss"
+          ]
+        },
+        {
+          "source": "@/lib/utils",
+          "specifiers": [
+            "cn"
+          ]
+        },
+        {
+          "source": "@/components/ui/button",
+          "specifiers": [
+            "Button"
+          ]
+        },
+        {
+          "source": "@/hooks/useQtePlayhead",
+          "specifiers": [
+            "useQtePlayhead"
+          ]
+        }
+      ],
+      "exports": [
+        "QtePanel"
+      ],
+      "totalLines": 489,
+      "hasStructuralAnalysis": true
+    },
+    "src/components/RosterSelectModal.test.tsx": {
+      "filePath": "src/components/RosterSelectModal.test.tsx",
+      "contentHash": "92400f7996dec3e296075f607a88bc59ae18616efd7f28bc39073efb98f60ab1",
+      "functions": [],
+      "classes": [],
+      "imports": [
+        {
+          "source": "vitest",
+          "specifiers": [
+            "describe",
+            "it",
+            "expect",
+            "vi",
+            "beforeEach"
+          ]
+        },
+        {
+          "source": "@testing-library/react",
+          "specifiers": [
+            "render",
+            "screen",
+            "fireEvent"
+          ]
+        },
+        {
+          "source": "./RosterSelectModal",
+          "specifiers": [
+            "RosterSelectModal"
+          ]
+        },
+        {
+          "source": "@/state/useSessionStore",
+          "specifiers": [
+            "useSessionStore"
+          ]
+        }
+      ],
+      "exports": [],
+      "totalLines": 57,
+      "hasStructuralAnalysis": true
+    },
+    "src/components/RosterSelectModal.tsx": {
+      "filePath": "src/components/RosterSelectModal.tsx",
+      "contentHash": "61e2287ac87414572fc9907f05324e256b7774ce1a3493530085d48ece30544f",
+      "functions": [
+        {
+          "name": "RosterSelectModal",
+          "params": [
+            "{ isOpen, onClose }"
+          ],
+          "exported": true,
+          "lineCount": 223
+        }
+      ],
+      "classes": [],
+      "imports": [
+        {
+          "source": "react",
+          "specifiers": [
+            "useState"
+          ]
+        },
+        {
+          "source": "@/state/useSessionStore",
+          "specifiers": [
+            "useSessionStore"
+          ]
+        },
+        {
+          "source": "@/data/roster",
+          "specifiers": [
+            "ROSTER",
+            "CharacterDef"
+          ]
+        },
+        {
+          "source": "@/components/ui/button",
+          "specifiers": [
+            "Button"
+          ]
+        },
+        {
+          "source": "@/lib/utils",
+          "specifiers": [
+            "cn"
+          ]
+        }
+      ],
+      "exports": [
+        "RosterSelectModal"
+      ],
+      "totalLines": 242,
+      "hasStructuralAnalysis": true
+    },
+    "src/components/StepGrid.tsx": {
+      "filePath": "src/components/StepGrid.tsx",
+      "contentHash": "864f4b8a8820e495ef3c42cc16289400265ca08a01be959c43b7390a69c90d00",
+      "functions": [
+        {
+          "name": "coverage",
+          "params": [
+            "row"
+          ],
+          "returnType": "boolean[]",
+          "exported": false,
+          "lineCount": 8
+        },
+        {
+          "name": "StepGrid",
+          "params": [],
+          "exported": true,
+          "lineCount": 291
+        }
+      ],
+      "classes": [],
+      "imports": [
+        {
+          "source": "react",
+          "specifiers": [
+            "useState"
+          ]
+        },
+        {
+          "source": "@/components/ui/button",
+          "specifiers": [
+            "Button"
+          ]
+        },
+        {
+          "source": "@/lib/utils",
+          "specifiers": [
+            "cn"
+          ]
+        },
+        {
+          "source": "@/game/arrangement",
+          "specifiers": [
+            "STEPS_PER_BAR",
+            "onsetKey",
+            "NoteEvent"
+          ]
+        },
+        {
+          "source": "@/game/combat",
+          "specifiers": [
+            "performSlot"
+          ]
+        },
+        {
+          "source": "@/state/useSessionStore",
+          "specifiers": [
+            "useSessionStore"
+          ]
+        }
+      ],
+      "exports": [
+        "StepGrid"
+      ],
+      "totalLines": 319,
+      "hasStructuralAnalysis": true
+    },
+    "src/components/TransportBar.tsx": {
+      "filePath": "src/components/TransportBar.tsx",
+      "contentHash": "fc46661325ab309a1668ac0bf36a3730f3005bea0c9622ebff5e731d3600ca16",
+      "functions": [
+        {
+          "name": "TransportBar",
+          "params": [],
+          "exported": true,
+          "lineCount": 73
+        }
+      ],
+      "classes": [],
+      "imports": [
+        {
+          "source": "@/components/ui/button",
+          "specifiers": [
+            "Button"
+          ]
+        },
+        {
+          "source": "@/game/keys",
+          "specifiers": [
+            "FIGHT_KEYS",
+            "keyEquals"
+          ]
+        },
+        {
+          "source": "@/state/useSessionStore",
+          "specifiers": [
+            "useSessionStore"
+          ]
+        }
+      ],
+      "exports": [
+        "TransportBar"
+      ],
+      "totalLines": 78,
+      "hasStructuralAnalysis": true
+    },
+    "src/components/TutorialModal.test.tsx": {
+      "filePath": "src/components/TutorialModal.test.tsx",
+      "contentHash": "c7e6493088cdc13e2779877a0edd27018e33d0de9ce8be218a5a64df5ebb8f11",
+      "functions": [],
+      "classes": [],
+      "imports": [
+        {
+          "source": "vitest",
+          "specifiers": [
+            "describe",
+            "it",
+            "expect",
+            "vi"
+          ]
+        },
+        {
+          "source": "@testing-library/react",
+          "specifiers": [
+            "render",
+            "screen",
+            "fireEvent"
+          ]
+        },
+        {
+          "source": "./TutorialModal",
+          "specifiers": [
+            "TutorialModal"
+          ]
+        }
+      ],
+      "exports": [],
+      "totalLines": 48,
+      "hasStructuralAnalysis": true
+    },
+    "src/components/TutorialModal.tsx": {
+      "filePath": "src/components/TutorialModal.tsx",
+      "contentHash": "92ec98bfa48f379ff8854548778fc79be371d295f13374dc5c78f65bb4b15737",
+      "functions": [
+        {
+          "name": "TutorialModal",
+          "params": [
+            "{ isOpen, onClose }"
+          ],
+          "exported": true,
+          "lineCount": 123
+        }
+      ],
+      "classes": [],
+      "imports": [
+        {
+          "source": "react",
+          "specifiers": [
+            "useState"
+          ]
+        },
+        {
+          "source": "@/components/ui/button",
+          "specifiers": [
+            "Button"
+          ]
+        },
+        {
+          "source": "@/lib/utils",
+          "specifiers": [
+            "cn"
+          ]
+        }
+      ],
+      "exports": [
+        "TutorialModal"
+      ],
+      "totalLines": 194,
+      "hasStructuralAnalysis": true
+    },
+    "src/components/VoiceBar.test.tsx": {
+      "filePath": "src/components/VoiceBar.test.tsx",
+      "contentHash": "5a4ef2dba92675d213c5e5c7ed9275023b326ed2dcc9d35ccd9af90cd8cedc24",
+      "functions": [],
+      "classes": [],
+      "imports": [
+        {
+          "source": "vitest",
+          "specifiers": [
+            "beforeEach",
+            "describe",
+            "expect",
+            "it"
+          ]
+        },
+        {
+          "source": "@testing-library/react",
+          "specifiers": [
+            "render",
+            "screen"
+          ]
+        },
+        {
+          "source": "@/components/VoiceBar",
+          "specifiers": [
+            "VoiceBar"
+          ]
+        },
+        {
+          "source": "@/state/useSessionStore",
+          "specifiers": [
+            "useSessionStore"
+          ]
+        }
+      ],
+      "exports": [],
+      "totalLines": 32,
+      "hasStructuralAnalysis": true
+    },
+    "src/components/VoiceBar.tsx": {
+      "filePath": "src/components/VoiceBar.tsx",
+      "contentHash": "7defc640e9e1a1d8fb2b6fbd74a34210b6b01428bef5e1ab487b67a325e97b08",
+      "functions": [
+        {
+          "name": "useTypingFocus",
+          "params": [],
+          "returnType": "boolean",
+          "exported": false,
+          "lineCount": 21
+        },
+        {
+          "name": "VoiceBar",
+          "params": [],
+          "exported": true,
+          "lineCount": 42
+        }
+      ],
+      "classes": [],
+      "imports": [
+        {
+          "source": "react",
+          "specifiers": [
+            "useEffect",
+            "useState"
+          ]
+        },
+        {
+          "source": "@/game/arrangement",
+          "specifiers": [
+            "countOnsets"
+          ]
+        },
+        {
+          "source": "@/game/combat",
+          "specifiers": [
+            "hasLiveAttacker"
+          ]
+        },
+        {
+          "source": "@/state/useSessionStore",
+          "specifiers": [
+            "useSessionStore"
+          ]
+        }
+      ],
+      "exports": [
+        "VoiceBar"
+      ],
+      "totalLines": 75,
+      "hasStructuralAnalysis": true
+    },
+    "src/components/screens/CombatScreen.tsx": {
+      "filePath": "src/components/screens/CombatScreen.tsx",
+      "contentHash": "8e210dbb57cdbd5b9caad7803ddcc7c817f6a521c3a18d6148c28af4b49fde18",
+      "functions": [
+        {
+          "name": "CombatScreen",
+          "params": [],
+          "exported": true,
+          "lineCount": 65
+        }
+      ],
+      "classes": [],
+      "imports": [
+        {
+          "source": "@/state/useSessionStore",
+          "specifiers": [
+            "useSessionStore"
+          ]
+        },
+        {
+          "source": "@/components/FoePanel",
+          "specifiers": [
+            "FoePanel"
+          ]
+        },
+        {
+          "source": "@/components/PartyCorner",
+          "specifiers": [
+            "PartyCorner"
+          ]
+        },
+        {
+          "source": "@/components/PhaseStrip",
+          "specifiers": [
+            "PhaseStrip"
+          ]
+        },
+        {
+          "source": "@/components/PresetBar",
+          "specifiers": [
+            "PresetBar"
+          ]
+        },
+        {
+          "source": "@/components/QtePanel",
+          "specifiers": [
+            "QtePanel"
+          ]
+        },
+        {
+          "source": "@/components/StepGrid",
+          "specifiers": [
+            "StepGrid"
+          ]
+        },
+        {
+          "source": "@/components/VoiceBar",
+          "specifiers": [
+            "VoiceBar"
+          ]
+        },
+        {
+          "source": "@/components/CombatLog",
+          "specifiers": [
+            "CombatLog"
+          ]
+        },
+        {
+          "source": "@/components/CombatFeedback",
+          "specifiers": [
+            "CombatFeedback"
+          ]
+        },
+        {
+          "source": "@/components/ui/button",
+          "specifiers": [
+            "Button"
+          ]
+        }
+      ],
+      "exports": [
+        "CombatScreen"
+      ],
+      "totalLines": 79,
+      "hasStructuralAnalysis": true
+    },
+    "src/components/screens/MenuScreen.tsx": {
+      "filePath": "src/components/screens/MenuScreen.tsx",
+      "contentHash": "74e93d4bbca4e82e6c5d14cdc239bc88657dd7d55ff0f4b5811262cbdd0de673",
+      "functions": [
+        {
+          "name": "MenuScreen",
+          "params": [],
+          "exported": true,
+          "lineCount": 139
+        }
+      ],
+      "classes": [],
+      "imports": [
+        {
+          "source": "react",
+          "specifiers": [
+            "useState"
+          ]
+        },
+        {
+          "source": "@/state/useSessionStore",
+          "specifiers": [
+            "useSessionStore"
+          ]
+        },
+        {
+          "source": "@/audio/synths",
+          "specifiers": [
+            "initVoices"
+          ]
+        },
+        {
+          "source": "@/audio/perform",
+          "specifiers": [
+            "auditionEnd",
+            "auditionStart"
+          ]
+        },
+        {
+          "source": "@/game/theory",
+          "specifiers": [
+            "degreeToMidi"
+          ]
+        },
+        {
+          "source": "@/components/ui/button",
+          "specifiers": [
+            "Button"
+          ]
+        },
+        {
+          "source": "@/components/TutorialModal",
+          "specifiers": [
+            "TutorialModal"
+          ]
+        },
+        {
+          "source": "@/data/encounters",
+          "specifiers": [
+            "isEncounterUnlocked"
+          ]
+        }
+      ],
+      "exports": [
+        "MenuScreen"
+      ],
+      "totalLines": 149,
+      "hasStructuralAnalysis": true
+    },
+    "src/components/screens/PrepScreen.tsx": {
+      "filePath": "src/components/screens/PrepScreen.tsx",
+      "contentHash": "7c970154e4fafb2f279c9e2b2503f408ba54f1569b13a190607de4ade8901b88",
+      "functions": [
+        {
+          "name": "PrepScreen",
+          "params": [],
+          "exported": true,
+          "lineCount": 150
+        }
+      ],
+      "classes": [],
+      "imports": [
+        {
+          "source": "react",
+          "specifiers": [
+            "useState"
+          ]
+        },
+        {
+          "source": "@/state/useSessionStore",
+          "specifiers": [
+            "useSessionStore"
+          ]
+        },
+        {
+          "source": "@/components/EncounterBanner",
+          "specifiers": [
+            "EncounterBanner"
+          ]
+        },
+        {
+          "source": "@/components/MelodyBankBar",
+          "specifiers": [
+            "MelodyBankBar"
+          ]
+        },
+        {
+          "source": "@/components/PhaseStrip",
+          "specifiers": [
+            "PhaseStrip"
+          ]
+        },
+        {
+          "source": "@/components/ChordPicker",
+          "specifiers": [
+            "ChordPicker"
+          ]
+        },
+        {
+          "source": "@/components/StepGrid",
+          "specifiers": [
+            "StepGrid"
+          ]
+        },
+        {
+          "source": "@/components/PartyCorner",
+          "specifiers": [
+            "PartyCorner"
+          ]
+        },
+        {
+          "source": "@/game/keys",
+          "specifiers": [
+            "FIGHT_KEYS",
+            "keyEquals"
+          ]
+        },
+        {
+          "source": "@/components/ui/button",
+          "specifiers": [
+            "Button"
+          ]
+        },
+        {
+          "source": "@/components/TutorialModal",
+          "specifiers": [
+            "TutorialModal"
+          ]
+        },
+        {
+          "source": "@/persistence/storage",
+          "specifiers": [
+            "loadTutorialSeen",
+            "saveTutorialSeen"
+          ]
+        }
+      ],
+      "exports": [
+        "PrepScreen"
+      ],
+      "totalLines": 165,
+      "hasStructuralAnalysis": true
+    },
+    "src/components/screens/ResultOverlay.tsx": {
+      "filePath": "src/components/screens/ResultOverlay.tsx",
+      "contentHash": "1539a30b4ec16623b6761f374dc18a0d22671f6dccb4f762424e92cca649b984",
+      "functions": [
+        {
+          "name": "ResultOverlay",
+          "params": [
+            "{ phase }"
+          ],
+          "exported": true,
+          "lineCount": 138
+        }
+      ],
+      "classes": [],
+      "imports": [
+        {
+          "source": "react",
+          "specifiers": [
+            "useEffect"
+          ]
+        },
+        {
+          "source": "@/state/useSessionStore",
+          "specifiers": [
+            "useSessionStore"
+          ]
+        },
+        {
+          "source": "@/game/theory",
+          "specifiers": [
+            "scoreProgression"
+          ]
+        },
+        {
+          "source": "@/data/chords",
+          "specifiers": [
+            "chordEffectFor"
+          ]
+        },
+        {
+          "source": "@/components/ui/button",
+          "specifiers": [
+            "Button"
+          ]
+        },
+        {
+          "source": "@/audio/sfx",
+          "specifiers": [
+            "playVictoryJingle",
+            "playDefeatSting"
+          ]
+        }
+      ],
+      "exports": [
+        "ResultOverlay"
+      ],
+      "totalLines": 151,
+      "hasStructuralAnalysis": true
+    },
+    "src/components/screens/screens.test.tsx": {
+      "filePath": "src/components/screens/screens.test.tsx",
+      "contentHash": "dcc8b4b90e3d2606f96ffc92d1c7a1814ff6d7e695207c2046ed6eae69e99bce",
+      "functions": [],
+      "classes": [],
+      "imports": [
+        {
+          "source": "vitest",
+          "specifiers": [
+            "beforeEach",
+            "describe",
+            "expect",
+            "it"
+          ]
+        },
+        {
+          "source": "@testing-library/react",
+          "specifiers": [
+            "render",
+            "screen",
+            "fireEvent"
+          ]
+        },
+        {
+          "source": "@/state/useSessionStore",
+          "specifiers": [
+            "useSessionStore"
+          ]
+        },
+        {
+          "source": "@/App",
+          "specifiers": [
+            "App"
+          ]
+        },
+        {
+          "source": "./MenuScreen",
+          "specifiers": [
+            "MenuScreen"
+          ]
+        },
+        {
+          "source": "./PrepScreen",
+          "specifiers": [
+            "PrepScreen"
+          ]
+        },
+        {
+          "source": "./CombatScreen",
+          "specifiers": [
+            "CombatScreen"
+          ]
+        },
+        {
+          "source": "./ResultOverlay",
+          "specifiers": [
+            "ResultOverlay"
+          ]
+        }
+      ],
+      "exports": [],
+      "totalLines": 98,
+      "hasStructuralAnalysis": true
+    },
+    "src/components/ui/button.tsx": {
+      "filePath": "src/components/ui/button.tsx",
+      "contentHash": "95289663c18804aab765c9d0330be43e54ae4b6fad792e28a7bb9445ae1370e1",
+      "functions": [
+        {
+          "name": "Button",
+          "params": [
+            "{\n  className,\n  variant = \"default\",\n  size = \"default\",\n  ...props\n}"
+          ],
+          "exported": true,
+          "lineCount": 11
+        }
+      ],
+      "classes": [],
+      "imports": [
+        {
+          "source": "react",
+          "specifiers": [
+            "* as React"
+          ]
+        },
+        {
+          "source": "@/lib/utils",
+          "specifiers": [
+            "cn"
+          ]
+        }
+      ],
+      "exports": [
+        "Button"
+      ],
+      "totalLines": 36,
+      "hasStructuralAnalysis": true
+    },
+    "src/data/chords.ts": {
+      "filePath": "src/data/chords.ts",
+      "contentHash": "cd2f7c2b48f18bf2a17c537d8de771403170a12bb4105d5737f811fd6cab84ce",
+      "functions": [
+        {
+          "name": "chordEffectFor",
+          "params": [
+            "key",
+            "romans"
+          ],
+          "returnType": "ChordEffect",
+          "exported": true,
+          "lineCount": 19
+        }
+      ],
+      "classes": [],
+      "imports": [
+        {
+          "source": "../game/theory",
+          "specifiers": [
+            "scoreProgression",
+            "Key"
+          ]
+        }
+      ],
+      "exports": [
+        "CHORD_PRESETS",
+        "chordEffectFor"
+      ],
+      "totalLines": 59,
+      "hasStructuralAnalysis": true
+    },
+    "src/data/encounters.test.ts": {
+      "filePath": "src/data/encounters.test.ts",
+      "contentHash": "1086123a7d0924a63bc02e528a3fac2f722e0d3ba7679a0bc5a3866fdd798a90",
+      "functions": [],
+      "classes": [],
+      "imports": [
+        {
+          "source": "vitest",
+          "specifiers": [
+            "describe",
+            "expect",
+            "it"
+          ]
+        },
+        {
+          "source": "./encounters",
+          "specifiers": [
+            "ENCOUNTERS",
+            "getEncounter",
+            "validateEncounters",
+            "DEFAULT_ENCOUNTER_ID",
+            "isEncounterUnlocked",
+            "getNextEncounterId"
+          ]
+        },
+        {
+          "source": "./enemies",
+          "specifiers": [
+            "ENEMIES"
+          ]
+        }
+      ],
+      "exports": [],
+      "totalLines": 58,
+      "hasStructuralAnalysis": true
+    },
+    "src/data/encounters.ts": {
+      "filePath": "src/data/encounters.ts",
+      "contentHash": "8e83d4c42623d33b7736277a3873df1ce0a4a7b881e9628185f51c2b0d9e1273",
+      "functions": [
+        {
+          "name": "getEncounter",
+          "params": [
+            "id"
+          ],
+          "returnType": "EncounterDef | undefined",
+          "exported": true,
+          "lineCount": 3
+        },
+        {
+          "name": "validateEncounters",
+          "params": [],
+          "returnType": "boolean",
+          "exported": true,
+          "lineCount": 9
+        },
+        {
+          "name": "isEncounterUnlocked",
+          "params": [
+            "clearedIds",
+            "encounterId"
+          ],
+          "returnType": "boolean",
+          "exported": true,
+          "lineCount": 6
+        },
+        {
+          "name": "getNextEncounterId",
+          "params": [
+            "encounterId"
+          ],
+          "returnType": "string | null",
+          "exported": true,
+          "lineCount": 7
+        }
+      ],
+      "classes": [],
+      "imports": [
+        {
+          "source": "./enemies",
+          "specifiers": [
+            "ENEMIES"
+          ]
+        }
+      ],
+      "exports": [
+        "ENCOUNTERS",
+        "DEFAULT_ENCOUNTER_ID",
+        "getEncounter",
+        "validateEncounters",
+        "isEncounterUnlocked",
+        "getNextEncounterId"
+      ],
+      "totalLines": 91,
+      "hasStructuralAnalysis": true
+    },
+    "src/data/enemies.ts": {
+      "filePath": "src/data/enemies.ts",
+      "contentHash": "796de3908d902bd87f40ffa20365873c8a5122f3755981751974c6dd1ed63a18",
+      "functions": [],
+      "classes": [],
+      "imports": [
+        {
+          "source": "../game/parryChart",
+          "specifiers": [
+            "ParryMotifParams"
+          ]
+        }
+      ],
+      "exports": [
+        "ENEMIES",
+        "NEUTRAL_KIT",
+        "INSTRUMENTS"
+      ],
+      "totalLines": 268,
+      "hasStructuralAnalysis": true
+    },
+    "src/data/roster.test.ts": {
+      "filePath": "src/data/roster.test.ts",
+      "contentHash": "0fb2da30aff7e295220470544a6a5ac389600aa241a0a40a7f98e1e9e8a2488c",
+      "functions": [],
+      "classes": [],
+      "imports": [
+        {
+          "source": "vitest",
+          "specifiers": [
+            "describe",
+            "it",
+            "expect"
+          ]
+        },
+        {
+          "source": "./roster",
+          "specifiers": [
+            "ROSTER",
+            "DEFAULT_PARTY_ROSTER",
+            "getCharacter"
+          ]
+        },
+        {
+          "source": "./enemies",
+          "specifiers": [
+            "INSTRUMENTS"
+          ]
+        }
+      ],
+      "exports": [],
+      "totalLines": 46,
+      "hasStructuralAnalysis": true
+    },
+    "src/data/roster.ts": {
+      "filePath": "src/data/roster.ts",
+      "contentHash": "8eb88873a82b746915a1fac9de1b3b06f9489e621ad2ad9c067d4429c073c1f1",
+      "functions": [
+        {
+          "name": "getCharacter",
+          "params": [
+            "id"
+          ],
+          "returnType": "CharacterDef | undefined",
+          "exported": true,
+          "lineCount": 3
+        }
+      ],
+      "classes": [],
+      "imports": [],
+      "exports": [
+        "ROSTER",
+        "DEFAULT_PARTY_ROSTER",
+        "getCharacter"
+      ],
+      "totalLines": 117,
+      "hasStructuralAnalysis": true
+    },
+    "src/game/arrangement.test.ts": {
+      "filePath": "src/game/arrangement.test.ts",
+      "contentHash": "c62451b751f1ed4ed44e95ce15c5d1a7c3f1590653edc964d86194f47b74e8dd",
+      "functions": [],
+      "classes": [],
+      "imports": [
+        {
+          "source": "vitest",
+          "specifiers": [
+            "describe",
+            "expect",
+            "it"
+          ]
+        },
+        {
+          "source": "./arrangement",
+          "specifiers": [
+            "ATTACK_SLOTS",
+            "clearTracks",
+            "countOnsets",
+            "createDefaultArrangement",
+            "hashMelodySet",
+            "locateStep",
+            "loopLength",
+            "setBarChord",
+            "setBpm",
+            "snapshotStep",
+            "toggleDrumStep",
+            "toggleNoteEvent"
+          ]
+        }
+      ],
+      "exports": [],
+      "totalLines": 127,
+      "hasStructuralAnalysis": true
+    },
+    "src/game/arrangement.ts": {
+      "filePath": "src/game/arrangement.ts",
+      "contentHash": "d45bfb259ea6ef88b910cd2dc214a8abef9e846426674cebc3915c21ff5512df",
+      "functions": [
+        {
+          "name": "grid",
+          "params": [
+            "bars",
+            "steps",
+            "fill"
+          ],
+          "returnType": "T[][]",
+          "exported": false,
+          "lineCount": 3
+        },
+        {
+          "name": "emptyTracks",
+          "params": [
+            "bars",
+            "steps"
+          ],
+          "returnType": "(NoteEvent | null)[][][]",
+          "exported": false,
+          "lineCount": 3
+        },
+        {
+          "name": "createDefaultArrangement",
+          "params": [],
+          "returnType": "Arrangement",
+          "exported": true,
+          "lineCount": 39
+        },
+        {
+          "name": "checkSlot",
+          "params": [
+            "slot"
+          ],
+          "returnType": "void",
+          "exported": false,
+          "lineCount": 3
+        },
+        {
+          "name": "checkPos",
+          "params": [
+            "arr",
+            "bar",
+            "step"
+          ],
+          "returnType": "void",
+          "exported": false,
+          "lineCount": 4
+        },
+        {
+          "name": "toggleNoteEvent",
+          "params": [
+            "arr",
+            "slot",
+            "bar",
+            "step",
+            "event"
+          ],
+          "returnType": "Arrangement",
+          "exported": true,
+          "lineCount": 22
+        },
+        {
+          "name": "clearTracks",
+          "params": [
+            "arr"
+          ],
+          "returnType": "Arrangement",
+          "exported": true,
+          "lineCount": 3
+        },
+        {
+          "name": "countOnsets",
+          "params": [
+            "arr"
+          ],
+          "returnType": "number",
+          "exported": true,
+          "lineCount": 9
+        },
+        {
+          "name": "toggleDrumStep",
+          "params": [
+            "arr",
+            "voice",
+            "bar",
+            "step"
+          ],
+          "returnType": "Arrangement",
+          "exported": true,
+          "lineCount": 12
+        },
+        {
+          "name": "setBarChord",
+          "params": [
+            "arr",
+            "bar",
+            "roman"
+          ],
+          "returnType": "Arrangement",
+          "exported": true,
+          "lineCount": 5
+        },
+        {
+          "name": "setChords",
+          "params": [
+            "arr",
+            "romans"
+          ],
+          "returnType": "Arrangement",
+          "exported": true,
+          "lineCount": 5
+        },
+        {
+          "name": "setBpm",
+          "params": [
+            "arr",
+            "bpm"
+          ],
+          "returnType": "Arrangement",
+          "exported": true,
+          "lineCount": 4
+        },
+        {
+          "name": "setKey",
+          "params": [
+            "arr",
+            "key"
+          ],
+          "returnType": "Arrangement",
+          "exported": true,
+          "lineCount": 3
+        },
+        {
+          "name": "snapshotStep",
+          "params": [
+            "arr",
+            "bar",
+            "step"
+          ],
+          "returnType": "StepSnapshot",
+          "exported": true,
+          "lineCount": 30
+        },
+        {
+          "name": "loopLength",
+          "params": [
+            "arr"
+          ],
+          "returnType": "number",
+          "exported": true,
+          "lineCount": 3
+        },
+        {
+          "name": "locateStep",
+          "params": [
+            "arr",
+            "global"
+          ],
+          "returnType": "{ bar: number; step: number }",
+          "exported": true,
+          "lineCount": 5
+        },
+        {
+          "name": "hashMelodySet",
+          "params": [
+            "tracks",
+            "chords"
+          ],
+          "returnType": "string",
+          "exported": true,
+          "lineCount": 14
+        },
+        {
+          "name": "onsetKey",
+          "params": [
+            "slot",
+            "bar",
+            "step",
+            "e"
+          ],
+          "returnType": "string",
+          "exported": true,
+          "lineCount": 3
+        },
+        {
+          "name": "onsetKeysOf",
+          "params": [
+            "tracks"
+          ],
+          "returnType": "string[]",
+          "exported": false,
+          "lineCount": 11
+        },
+        {
+          "name": "allOnsetKeys",
+          "params": [
+            "arr"
+          ],
+          "returnType": "string[]",
+          "exported": true,
+          "lineCount": 3
+        }
+      ],
+      "classes": [],
+      "imports": [
+        {
+          "source": "./theory",
+          "specifiers": [
+            "DEFAULT_KEY",
+            "degreeToMidi",
+            "Key",
+            "romanToChord"
+          ]
+        }
+      ],
+      "exports": [
+        "STEPS_PER_BAR",
+        "DEFAULT_BARS",
+        "ATTACK_SLOTS",
+        "createDefaultArrangement",
+        "toggleNoteEvent",
+        "clearTracks",
+        "countOnsets",
+        "toggleDrumStep",
+        "setBarChord",
+        "setChords",
+        "setBpm",
+        "setKey",
+        "snapshotStep",
+        "loopLength",
+        "locateStep",
+        "hashMelodySet",
+        "onsetKey",
+        "allOnsetKeys"
+      ],
+      "totalLines": 281,
+      "hasStructuralAnalysis": true
+    },
+    "src/game/combat.ts": {
+      "filePath": "src/game/combat.ts",
+      "contentHash": "deacb205e698bc95e810a950a9b3c55383c799ca1341b4ab2bb80bd1dfaaa5c3",
+      "functions": [
+        {
+          "name": "refreshPotency",
+          "params": [
+            "arr"
+          ],
+          "returnType": "Record<string, number>",
+          "exported": true,
+          "lineCount": 5
+        },
+        {
+          "name": "reconcilePotency",
+          "params": [
+            "potency",
+            "arr"
+          ],
+          "returnType": "Record<string, number>",
+          "exported": true,
+          "lineCount": 9
+        },
+        {
+          "name": "createFight",
+          "params": [
+            "opts"
+          ],
+          "returnType": "AtbState",
+          "exported": true,
+          "lineCount": 94
+        },
+        {
+          "name": "pushLog",
+          "params": [
+            "state",
+            "text"
+          ],
+          "returnType": "LogEntry[]",
+          "exported": false,
+          "lineCount": 4
+        },
+        {
+          "name": "aliveParty",
+          "params": [
+            "state"
+          ],
+          "returnType": "Fighter[]",
+          "exported": true,
+          "lineCount": 3
+        },
+        {
+          "name": "aliveEnemies",
+          "params": [
+            "state"
+          ],
+          "returnType": "Fighter[]",
+          "exported": true,
+          "lineCount": 3
+        },
+        {
+          "name": "moveFighter",
+          "params": [
+            "state",
+            "fighterId",
+            "slot"
+          ],
+          "returnType": "AtbState",
+          "exported": true,
+          "lineCount": 6
+        },
+        {
+          "name": "qteLocked",
+          "params": [
+            "state"
+          ],
+          "returnType": "boolean",
+          "exported": true,
+          "lineCount": 3
+        },
+        {
+          "name": "requestChordQte",
+          "params": [
+            "state",
+            "romans",
+            "rng"
+          ],
+          "returnType": "AtbState",
+          "exported": true,
+          "lineCount": 23
+        },
+        {
+          "name": "requestPresetQte",
+          "params": [
+            "state",
+            "snap",
+            "rng"
+          ],
+          "returnType": "AtbState",
+          "exported": true,
+          "lineCount": 31
+        },
+        {
+          "name": "pressQteKey",
+          "params": [
+            "state",
+            "key",
+            "tick"
+          ],
+          "returnType": "AtbState",
+          "exported": true,
+          "lineCount": 6
+        },
+        {
+          "name": "releaseQteKey",
+          "params": [
+            "state",
+            "key",
+            "tick"
+          ],
+          "returnType": "AtbState",
+          "exported": true,
+          "lineCount": 6
+        },
+        {
+          "name": "cancelQte",
+          "params": [
+            "state",
+            "reason"
+          ],
+          "returnType": "AtbState",
+          "exported": true,
+          "lineCount": 4
+        },
+        {
+          "name": "keeperInstrument",
+          "params": [
+            "state"
+          ],
+          "returnType": "string | null",
+          "exported": true,
+          "lineCount": 6
+        },
+        {
+          "name": "hasLiveAttacker",
+          "params": [
+            "state"
+          ],
+          "returnType": "boolean",
+          "exported": true,
+          "lineCount": 6
+        },
+        {
+          "name": "beatInstrument",
+          "params": [
+            "state"
+          ],
+          "returnType": "string | null",
+          "exported": true,
+          "lineCount": 6
+        },
+        {
+          "name": "defaultPerformerId",
+          "params": [
+            "state"
+          ],
+          "returnType": "string | null",
+          "exported": true,
+          "lineCount": 3
+        },
+        {
+          "name": "laneAttacker",
+          "params": [
+            "state",
+            "fighters",
+            "slot"
+          ],
+          "returnType": "Fighter | undefined",
+          "exported": true,
+          "lineCount": 10
+        },
+        {
+          "name": "performSlot",
+          "params": [
+            "state",
+            "performerId"
+          ],
+          "returnType": "number",
+          "exported": true,
+          "lineCount": 5
+        },
+        {
+          "name": "pickRandom",
+          "params": [
+            "rng",
+            "items"
+          ],
+          "returnType": "T",
+          "exported": false,
+          "lineCount": 3
+        },
+        {
+          "name": "evadeChance",
+          "params": [
+            "archetype",
+            "len"
+          ],
+          "returnType": "number",
+          "exported": false,
+          "lineCount": 6
+        },
+        {
+          "name": "computeNoteDamage",
+          "params": [
+            "note",
+            "enemy",
+            "profile",
+            "rng"
+          ],
+          "returnType": "NoteHit",
+          "exported": true,
+          "lineCount": 25
+        },
+        {
+          "name": "resolveMelodyVoice",
+          "params": [
+            "state",
+            "withKey",
+            "bar",
+            "step",
+            "voice",
+            "foes",
+            "rng"
+          ],
+          "returnType": "{ party: Fighter[]; enemies: Fighter[]; lines: string[]; over: AtbState[\"over\"] }",
+          "exported": false,
+          "lineCount": 68
+        },
+        {
+          "name": "advanceTick",
+          "params": [
+            "state",
+            "arrangement",
+            "rng"
+          ],
+          "returnType": "TickResult",
+          "exported": true,
+          "lineCount": 283
+        }
+      ],
+      "classes": [],
+      "imports": [
+        {
+          "source": "../data/enemies",
+          "specifiers": [
+            "ENEMIES",
+            "INSTRUMENTS",
+            "EnemyProfile"
+          ]
+        },
+        {
+          "source": "../data/chords",
+          "specifiers": [
+            "chordEffectFor"
+          ]
+        },
+        {
+          "source": "../data/roster",
+          "specifiers": [
+            "DEFAULT_PARTY_ROSTER",
+            "getCharacter"
+          ]
+        },
+        {
+          "source": "./arrangement",
+          "specifiers": [
+            "allOnsetKeys",
+            "ATTACK_SLOTS",
+            "clearTracks",
+            "locateStep",
+            "loopLength",
+            "onsetKey",
+            "snapshotStep",
+            "Arrangement",
+            "NoteEvent"
+          ]
+        },
+        {
+          "source": "./theory",
+          "specifiers": [
+            "tensionOf",
+            "Key"
+          ]
+        },
+        {
+          "source": "./keys",
+          "specifiers": [
+            "resolveFightKey"
+          ]
+        },
+        {
+          "source": "./qte",
+          "specifiers": [
+            "chartFromMelody",
+            "createQte",
+            "harmonicChart",
+            "isQteComplete",
+            "missOverdueNotes",
+            "parryDamage",
+            "pressQte",
+            "qteSuccessRate",
+            "randomChart",
+            "releaseQte",
+            "QteState"
+          ]
+        },
+        {
+          "source": "./parryChart",
+          "specifiers": [
+            "generateParryChart",
+            "parryParamsFor"
+          ]
+        },
+        {
+          "source": "./perform",
+          "specifiers": [
+            "QteKey"
+          ]
+        },
+        {
+          "source": "./perform",
+          "specifiers": [
+            "secondsToSteps"
+          ]
+        },
+        {
+          "source": "./positions",
+          "specifiers": [
+            "assignToSlot",
+            "defaultSlots",
+            "removeToDeck",
+            "SlotId",
+            "Slots"
+          ]
+        },
+        {
+          "source": "./units",
+          "specifiers": [
+            "addShield",
+            "applyBuff",
+            "buffDamageTaken",
+            "damageThroughShield",
+            "healFighter",
+            "isDown",
+            "makeFighter",
+            "tickBuffs",
+            "Fighter"
+          ]
+        }
+      ],
+      "exports": [
+        "refreshPotency",
+        "reconcilePotency",
+        "createFight",
+        "aliveParty",
+        "aliveEnemies",
+        "moveFighter",
+        "qteLocked",
+        "requestChordQte",
+        "requestPresetQte",
+        "pressQteKey",
+        "releaseQteKey",
+        "cancelQte",
+        "keeperInstrument",
+        "hasLiveAttacker",
+        "beatInstrument",
+        "defaultPerformerId",
+        "laneAttacker",
+        "performSlot",
+        "computeNoteDamage",
+        "advanceTick"
+      ],
+      "totalLines": 822,
+      "hasStructuralAnalysis": true
+    },
+    "src/game/combatAtb.test.ts": {
+      "filePath": "src/game/combatAtb.test.ts",
+      "contentHash": "b809da8b158716eac2154831b2235f619159285e3835e44dd8948e3fb0e12527",
+      "functions": [
+        {
+          "name": "seq",
+          "params": [
+            "vals"
+          ],
+          "returnType": "Rng",
+          "exported": false,
+          "lineCount": 4
+        },
+        {
+          "name": "arr",
+          "params": [],
+          "exported": false,
+          "lineCount": 1
+        }
+      ],
+      "classes": [],
+      "imports": [
+        {
+          "source": "vitest",
+          "specifiers": [
+            "describe",
+            "expect",
+            "it"
+          ]
+        },
+        {
+          "source": "./arrangement",
+          "specifiers": [
+            "createDefaultArrangement",
+            "clearTracks",
+            "countOnsets",
+            "setKey",
+            "toggleNoteEvent"
+          ]
+        },
+        {
+          "source": "./combat",
+          "specifiers": [
+            "aliveEnemies",
+            "aliveParty",
+            "computeNoteDamage",
+            "createFight",
+            "advanceTick",
+            "defaultPerformerId",
+            "hasLiveAttacker",
+            "keeperInstrument",
+            "laneAttacker",
+            "moveFighter",
+            "performSlot",
+            "Rng"
+          ]
+        },
+        {
+          "source": "../data/enemies",
+          "specifiers": [
+            "ENEMIES"
+          ]
+        },
+        {
+          "source": "./theory",
+          "specifiers": [
+            "Key"
+          ]
+        }
+      ],
+      "exports": [],
+      "totalLines": 469,
+      "hasStructuralAnalysis": true
+    },
+    "src/game/combatQte.test.ts": {
+      "filePath": "src/game/combatQte.test.ts",
+      "contentHash": "9adb313580d85dad77187418258940ca856e8d6c46d4c7d579a39a768be07aa0",
+      "functions": [
+        {
+          "name": "seq",
+          "params": [
+            "vals"
+          ],
+          "returnType": "Rng",
+          "exported": false,
+          "lineCount": 4
+        },
+        {
+          "name": "hitAllOnTime",
+          "params": [
+            "s"
+          ],
+          "returnType": "AtbState",
+          "exported": false,
+          "lineCount": 8
+        },
+        {
+          "name": "playAllOnTime",
+          "params": [
+            "s",
+            "a",
+            "rng"
+          ],
+          "returnType": "{ s: AtbState; a: Arrangement }",
+          "exported": false,
+          "lineCount": 18
+        }
+      ],
+      "classes": [],
+      "imports": [
+        {
+          "source": "vitest",
+          "specifiers": [
+            "describe",
+            "expect",
+            "it"
+          ]
+        },
+        {
+          "source": "./arrangement",
+          "specifiers": [
+            "createDefaultArrangement"
+          ]
+        },
+        {
+          "source": "./combat",
+          "specifiers": [
+            "advanceTick",
+            "createFight",
+            "pressQteKey",
+            "qteLocked",
+            "requestChordQte",
+            "requestPresetQte",
+            "AtbState",
+            "Rng"
+          ]
+        },
+        {
+          "source": "./arrangement",
+          "specifiers": [
+            "Arrangement"
+          ]
+        },
+        {
+          "source": "./theory",
+          "specifiers": [
+            "Key"
+          ]
+        }
+      ],
+      "exports": [],
+      "totalLines": 165,
+      "hasStructuralAnalysis": true
+    },
+    "src/game/effects.test.ts": {
+      "filePath": "src/game/effects.test.ts",
+      "contentHash": "76e023fce86a49be7db87e086f8ffa09b9b02c028dcaed9a5553733546e23d4b",
+      "functions": [
+        {
+          "name": "seq",
+          "params": [
+            "vals"
+          ],
+          "returnType": "Rng",
+          "exported": false,
+          "lineCount": 4
+        },
+        {
+          "name": "arr",
+          "params": [],
+          "exported": false,
+          "lineCount": 1
+        }
+      ],
+      "classes": [],
+      "imports": [
+        {
+          "source": "vitest",
+          "specifiers": [
+            "describe",
+            "expect",
+            "it"
+          ]
+        },
+        {
+          "source": "../data/chords",
+          "specifiers": [
+            "chordEffectFor"
+          ]
+        },
+        {
+          "source": "./arrangement",
+          "specifiers": [
+            "createDefaultArrangement",
+            "clearTracks",
+            "setChords",
+            "toggleNoteEvent"
+          ]
+        },
+        {
+          "source": "./combat",
+          "specifiers": [
+            "advanceTick",
+            "createFight",
+            "Rng"
+          ]
+        },
+        {
+          "source": "./presets",
+          "specifiers": [
+            "recallPreset",
+            "savePreset"
+          ]
+        },
+        {
+          "source": "./theory",
+          "specifiers": [
+            "Key"
+          ]
+        },
+        {
+          "source": "../data/enemies",
+          "specifiers": [
+            "ENEMIES"
+          ]
+        }
+      ],
+      "exports": [],
+      "totalLines": 146,
+      "hasStructuralAnalysis": true
+    },
+    "src/game/keys.test.ts": {
+      "filePath": "src/game/keys.test.ts",
+      "contentHash": "421ba0fcce43c5f614b7ef11e9affc6753bd40a9b0200b6c4b670862994aebdc",
+      "functions": [],
+      "classes": [],
+      "imports": [
+        {
+          "source": "vitest",
+          "specifiers": [
+            "describe",
+            "expect",
+            "it"
+          ]
+        },
+        {
+          "source": "./keys",
+          "specifiers": [
+            "FIGHT_KEYS",
+            "keyEquals",
+            "randomFightKey",
+            "resolveFightKey"
+          ]
+        }
+      ],
+      "exports": [],
+      "totalLines": 29,
+      "hasStructuralAnalysis": true
+    },
+    "src/game/keys.ts": {
+      "filePath": "src/game/keys.ts",
+      "contentHash": "832fc5ad1d02d0142deaa4e4ef82324f7c859f4b24cbcfb815b00d4c3f352aae",
+      "functions": [
+        {
+          "name": "keyEquals",
+          "params": [
+            "a",
+            "b"
+          ],
+          "returnType": "boolean",
+          "exported": true,
+          "lineCount": 3
+        },
+        {
+          "name": "keyLabel",
+          "params": [
+            "key"
+          ],
+          "returnType": "string",
+          "exported": true,
+          "lineCount": 3
+        },
+        {
+          "name": "randomFightKey",
+          "params": [
+            "rng"
+          ],
+          "returnType": "Key",
+          "exported": true,
+          "lineCount": 4
+        },
+        {
+          "name": "resolveFightKey",
+          "params": [
+            "opts"
+          ],
+          "returnType": "Key",
+          "exported": true,
+          "lineCount": 4
+        }
+      ],
+      "classes": [],
+      "imports": [
+        {
+          "source": "./theory",
+          "specifiers": [
+            "Key"
+          ]
+        }
+      ],
+      "exports": [
+        "FIGHT_KEYS",
+        "keyEquals",
+        "keyLabel",
+        "randomFightKey",
+        "resolveFightKey"
+      ],
+      "totalLines": 39,
+      "hasStructuralAnalysis": true
+    },
+    "src/game/melodyBank.test.ts": {
+      "filePath": "src/game/melodyBank.test.ts",
+      "contentHash": "18120141df0c3be7c8ba062d2086810febac2824d3d6e98d8e72ac2f13e5f782",
+      "functions": [],
+      "classes": [],
+      "imports": [
+        {
+          "source": "vitest",
+          "specifiers": [
+            "describe",
+            "expect",
+            "it"
+          ]
+        },
+        {
+          "source": "./melodyBank",
+          "specifiers": [
+            "createDefaultMelodyBank",
+            "deleteTemplate",
+            "getTemplate",
+            "saveTemplate"
+          ]
+        },
+        {
+          "source": "./arrangement",
+          "specifiers": [
+            "createDefaultArrangement"
+          ]
+        }
+      ],
+      "exports": [],
+      "totalLines": 57,
+      "hasStructuralAnalysis": true
+    },
+    "src/game/melodyBank.ts": {
+      "filePath": "src/game/melodyBank.ts",
+      "contentHash": "17010fea53e1af688b6f9223e43a34271ff78c40cf9ad6e2c05d21a0c6864c2b",
+      "functions": [
+        {
+          "name": "cloneTracks",
+          "params": [
+            "tracks"
+          ],
+          "returnType": "(NoteEvent | null)[][][]",
+          "exported": true,
+          "lineCount": 3
+        },
+        {
+          "name": "emptyTracks",
+          "params": [
+            "slots",
+            "bars",
+            "steps"
+          ],
+          "returnType": "(NoteEvent | null)[][][]",
+          "exported": false,
+          "lineCount": 5
+        },
+        {
+          "name": "createDawnAnthem",
+          "params": [],
+          "returnType": "MelodyTemplate",
+          "exported": false,
+          "lineCount": 28
+        },
+        {
+          "name": "createStaccatoFlight",
+          "params": [],
+          "returnType": "MelodyTemplate",
+          "exported": false,
+          "lineCount": 22
+        },
+        {
+          "name": "createSolemnGround",
+          "params": [],
+          "returnType": "MelodyTemplate",
+          "exported": false,
+          "lineCount": 23
+        },
+        {
+          "name": "createDefaultMelodyBank",
+          "params": [],
+          "returnType": "MelodyBank",
+          "exported": true,
+          "lineCount": 10
+        },
+        {
+          "name": "saveTemplate",
+          "params": [
+            "bank",
+            "input"
+          ],
+          "returnType": "{ bank: MelodyBank; template: MelodyTemplate }",
+          "exported": true,
+          "lineCount": 27
+        },
+        {
+          "name": "deleteTemplate",
+          "params": [
+            "bank",
+            "id"
+          ],
+          "returnType": "MelodyBank",
+          "exported": true,
+          "lineCount": 6
+        },
+        {
+          "name": "getTemplate",
+          "params": [
+            "bank",
+            "id"
+          ],
+          "returnType": "MelodyTemplate | undefined",
+          "exported": true,
+          "lineCount": 3
+        }
+      ],
+      "classes": [],
+      "imports": [
+        {
+          "source": "./arrangement",
+          "specifiers": [
+            "NoteEvent"
+          ]
+        },
+        {
+          "source": "./arrangement",
+          "specifiers": [
+            "ATTACK_SLOTS",
+            "DEFAULT_BARS",
+            "STEPS_PER_BAR"
+          ]
+        }
+      ],
+      "exports": [
+        "cloneTracks",
+        "createDefaultMelodyBank",
+        "saveTemplate",
+        "deleteTemplate",
+        "getTemplate"
+      ],
+      "totalLines": 156,
+      "hasStructuralAnalysis": true
+    },
+    "src/game/parryChart.test.ts": {
+      "filePath": "src/game/parryChart.test.ts",
+      "contentHash": "cb9417ce34b74a00eac50a17eb29ca5c782223ce22cee2f76165349c88b1f33f",
+      "functions": [
+        {
+          "name": "seq",
+          "params": [
+            "vals"
+          ],
+          "returnType": "() => number",
+          "exported": false,
+          "lineCount": 4
+        },
+        {
+          "name": "romanRoot",
+          "params": [
+            "roman"
+          ],
+          "returnType": "number",
+          "exported": false,
+          "lineCount": 7
+        },
+        {
+          "name": "chordPcs",
+          "params": [
+            "roman"
+          ],
+          "returnType": "Set<number>",
+          "exported": false,
+          "lineCount": 3
+        }
+      ],
+      "classes": [],
+      "imports": [
+        {
+          "source": "vitest",
+          "specifiers": [
+            "describe",
+            "expect",
+            "it"
+          ]
+        },
+        {
+          "source": "./parryChart",
+          "specifiers": [
+            "degreeToParryLane",
+            "generateParryChart",
+            "PARRY_MOTIFS",
+            "PARRY_SLOT_TEMPLATES",
+            "parryParamsFor"
+          ]
+        },
+        {
+          "source": "./theory",
+          "specifiers": [
+            "degreeToMidi",
+            "romanToChord",
+            "DEFAULT_KEY"
+          ]
+        },
+        {
+          "source": "./perform",
+          "specifiers": [
+            "stepMs"
+          ]
+        }
+      ],
+      "exports": [],
+      "totalLines": 234,
+      "hasStructuralAnalysis": true
+    },
+    "src/game/parryChart.ts": {
+      "filePath": "src/game/parryChart.ts",
+      "contentHash": "85b756315332a537e4f9fab96d221636a1e6c820b2066235adcf8c59028be35d",
+      "functions": [
+        {
+          "name": "parryParamsFor",
+          "params": [
+            "pattern",
+            "override"
+          ],
+          "returnType": "ParryMotifParams",
+          "exported": true,
+          "lineCount": 9
+        },
+        {
+          "name": "degreeToParryLane",
+          "params": [
+            "degree"
+          ],
+          "returnType": "ParryKey",
+          "exported": true,
+          "lineCount": 8
+        },
+        {
+          "name": "romanRoot",
+          "params": [
+            "roman"
+          ],
+          "returnType": "number",
+          "exported": false,
+          "lineCount": 7
+        },
+        {
+          "name": "chordPool",
+          "params": [
+            "key",
+            "roman"
+          ],
+          "returnType": "number[]",
+          "exported": false,
+          "lineCount": 14
+        },
+        {
+          "name": "slotStrength",
+          "params": [
+            "slot"
+          ],
+          "returnType": "number",
+          "exported": false,
+          "lineCount": 5
+        },
+        {
+          "name": "strengthOrder",
+          "params": [
+            "slots"
+          ],
+          "returnType": "number[]",
+          "exported": false,
+          "lineCount": 5
+        },
+        {
+          "name": "developCell",
+          "params": [
+            "base",
+            "bar",
+            "pattern",
+            "poolLen"
+          ],
+          "returnType": "number[]",
+          "exported": false,
+          "lineCount": 16
+        },
+        {
+          "name": "generateParryChart",
+          "params": [
+            "opts"
+          ],
+          "returnType": "QteChart",
+          "exported": true,
+          "lineCount": 175
+        }
+      ],
+      "classes": [],
+      "imports": [
+        {
+          "source": "./perform",
+          "specifiers": [
+            "stepMs",
+            "ParryKey"
+          ]
+        },
+        {
+          "source": "./theory",
+          "specifiers": [
+            "DEFAULT_KEY",
+            "degreeToMidi",
+            "romanToChord",
+            "Key"
+          ]
+        },
+        {
+          "source": "./qte",
+          "specifiers": [
+            "QteChart",
+            "QteNote"
+          ]
+        }
+      ],
+      "exports": [
+        "PARRY_LANES",
+        "DEFAULT_PARRY_PARAMS",
+        "PARRY_MOTIFS",
+        "parryParamsFor",
+        "degreeToParryLane",
+        "PARRY_SLOT_TEMPLATES",
+        "generateParryChart"
+      ],
+      "totalLines": 389,
+      "hasStructuralAnalysis": true
+    },
+    "src/game/perform.test.ts": {
+      "filePath": "src/game/perform.test.ts",
+      "contentHash": "09303703caa2ffd63f2cec160e7a9fab40420a56a214a228911d4829f417b783",
+      "functions": [],
+      "classes": [],
+      "imports": [
+        {
+          "source": "vitest",
+          "specifiers": [
+            "describe",
+            "expect",
+            "it"
+          ]
+        },
+        {
+          "source": "./perform",
+          "specifiers": [
+            "cursorDegree",
+            "HOME_CURSOR",
+            "moveCursor",
+            "pressToLen",
+            "stepMs"
+          ]
+        }
+      ],
+      "exports": [],
+      "totalLines": 52,
+      "hasStructuralAnalysis": true
+    },
+    "src/game/perform.ts": {
+      "filePath": "src/game/perform.ts",
+      "contentHash": "3826d6c53e8dd18804182536d1b33302f6cc8557b746f36ee009e35ed9ef94fc",
+      "functions": [
+        {
+          "name": "isParryKey",
+          "params": [
+            "key"
+          ],
+          "exported": true,
+          "lineCount": 3
+        },
+        {
+          "name": "moveCursor",
+          "params": [
+            "c",
+            "key"
+          ],
+          "returnType": "PerformCursor",
+          "exported": true,
+          "lineCount": 16
+        },
+        {
+          "name": "cursorDegree",
+          "params": [
+            "c"
+          ],
+          "returnType": "number",
+          "exported": true,
+          "lineCount": 3
+        },
+        {
+          "name": "pressToLen",
+          "params": [
+            "pressMs",
+            "stepMs"
+          ],
+          "returnType": "number",
+          "exported": true,
+          "lineCount": 7
+        },
+        {
+          "name": "stepMs",
+          "params": [
+            "bpm"
+          ],
+          "returnType": "number",
+          "exported": true,
+          "lineCount": 3
+        },
+        {
+          "name": "secondsToSteps",
+          "params": [
+            "seconds",
+            "bpm"
+          ],
+          "returnType": "number",
+          "exported": true,
+          "lineCount": 3
+        },
+        {
+          "name": "stepsToMs",
+          "params": [
+            "steps",
+            "bpm"
+          ],
+          "returnType": "number",
+          "exported": true,
+          "lineCount": 3
+        }
+      ],
+      "classes": [],
+      "imports": [],
+      "exports": [
+        "PARRY_KEYS",
+        "isParryKey",
+        "HOME_CURSOR",
+        "MIN_DEGREE",
+        "MAX_DEGREE",
+        "MIN_OCTAVE",
+        "MAX_OCTAVE",
+        "moveCursor",
+        "cursorDegree",
+        "pressToLen",
+        "stepMs",
+        "secondsToSteps",
+        "stepsToMs"
+      ],
+      "totalLines": 83,
+      "hasStructuralAnalysis": true
+    },
+    "src/game/phase.ts": {
+      "filePath": "src/game/phase.ts",
+      "contentHash": "ebdfd743588077635d5081907aa5d2283c4ac70988c3a3dd9ea5b11f3772463b",
+      "functions": [
+        {
+          "name": "isGamePhase",
+          "params": [
+            "val"
+          ],
+          "exported": true,
+          "lineCount": 3
+        },
+        {
+          "name": "isCombatActive",
+          "params": [
+            "phase"
+          ],
+          "returnType": "boolean",
+          "exported": true,
+          "lineCount": 3
+        },
+        {
+          "name": "canFreelyEditArrangement",
+          "params": [
+            "phase"
+          ],
+          "returnType": "boolean",
+          "exported": true,
+          "lineCount": 3
+        },
+        {
+          "name": "isValidTransition",
+          "params": [
+            "from",
+            "to"
+          ],
+          "returnType": "boolean",
+          "exported": true,
+          "lineCount": 3
+        }
+      ],
+      "classes": [],
+      "imports": [],
+      "exports": [
+        "ALL_GAME_PHASES",
+        "isGamePhase",
+        "isCombatActive",
+        "canFreelyEditArrangement",
+        "isValidTransition"
+      ],
+      "totalLines": 38,
+      "hasStructuralAnalysis": true
+    },
+    "src/game/positions.test.ts": {
+      "filePath": "src/game/positions.test.ts",
+      "contentHash": "9bbb0555bd1ea57319dc26119eadce29ddd71644d08f1383ec50299cb3081225",
+      "functions": [],
+      "classes": [],
+      "imports": [
+        {
+          "source": "vitest",
+          "specifiers": [
+            "describe",
+            "expect",
+            "it"
+          ]
+        },
+        {
+          "source": "./positions",
+          "specifiers": [
+            "assignToSlot",
+            "deckIds",
+            "defaultSlots",
+            "removeToDeck",
+            "slotOf"
+          ]
+        }
+      ],
+      "exports": [],
+      "totalLines": 59,
+      "hasStructuralAnalysis": true
+    },
+    "src/game/positions.ts": {
+      "filePath": "src/game/positions.ts",
+      "contentHash": "096d3016d67c33941908d94b2f7cde99554dd9a3d849d8eac60e60a5a90f318a",
+      "functions": [
+        {
+          "name": "defaultSlots",
+          "params": [
+            "partyIds"
+          ],
+          "returnType": "Slots",
+          "exported": true,
+          "lineCount": 7
+        },
+        {
+          "name": "deckIds",
+          "params": [
+            "partyIds",
+            "slots"
+          ],
+          "returnType": "string[]",
+          "exported": true,
+          "lineCount": 4
+        },
+        {
+          "name": "without",
+          "params": [
+            "slots",
+            "id"
+          ],
+          "returnType": "Slots",
+          "exported": false,
+          "lineCount": 7
+        },
+        {
+          "name": "assignToSlot",
+          "params": [
+            "slots",
+            "fighterId",
+            "slot"
+          ],
+          "returnType": "Slots",
+          "exported": true,
+          "lineCount": 7
+        },
+        {
+          "name": "removeToDeck",
+          "params": [
+            "slots",
+            "fighterId"
+          ],
+          "returnType": "Slots",
+          "exported": true,
+          "lineCount": 3
+        },
+        {
+          "name": "slotOf",
+          "params": [
+            "slots",
+            "fighterId"
+          ],
+          "returnType": "SlotId | null",
+          "exported": true,
+          "lineCount": 6
+        }
+      ],
+      "classes": [],
+      "imports": [
+        {
+          "source": "./arrangement",
+          "specifiers": [
+            "ATTACK_SLOTS"
+          ]
+        }
+      ],
+      "exports": [
+        "MAX_FRONT",
+        "defaultSlots",
+        "deckIds",
+        "assignToSlot",
+        "removeToDeck",
+        "slotOf"
+      ],
+      "totalLines": 59,
+      "hasStructuralAnalysis": true
+    },
+    "src/game/presets.test.ts": {
+      "filePath": "src/game/presets.test.ts",
+      "contentHash": "1660a56d75169aa88c7e40ae9e60fc8cff5e4995740f4ca59cb0e73c52bb0b1f",
+      "functions": [],
+      "classes": [],
+      "imports": [
+        {
+          "source": "vitest",
+          "specifiers": [
+            "describe",
+            "expect",
+            "it"
+          ]
+        },
+        {
+          "source": "./arrangement",
+          "specifiers": [
+            "createDefaultArrangement",
+            "toggleNoteEvent"
+          ]
+        },
+        {
+          "source": "./presets",
+          "specifiers": [
+            "deletePreset",
+            "isOnCooldown",
+            "readyPresets",
+            "savePreset",
+            "PresetStore"
+          ]
+        }
+      ],
+      "exports": [],
+      "totalLines": 60,
+      "hasStructuralAnalysis": true
+    },
+    "src/game/presets.ts": {
+      "filePath": "src/game/presets.ts",
+      "contentHash": "debfa4961e9ce80147ec8410bf489fcff62faecf939e36ef185ce4dc62dd5303",
+      "functions": [
+        {
+          "name": "cooldownFor",
+          "params": [
+            "arr"
+          ],
+          "returnType": "number",
+          "exported": true,
+          "lineCount": 4
+        },
+        {
+          "name": "cloneTracks",
+          "params": [
+            "tracks"
+          ],
+          "returnType": "(NoteEvent | null)[][][]",
+          "exported": false,
+          "lineCount": 3
+        },
+        {
+          "name": "savePreset",
+          "params": [
+            "store",
+            "name",
+            "arr",
+            "nowTick"
+          ],
+          "returnType": "{ store: PresetStore; entry: PresetEntry; fresh: boolean }",
+          "exported": true,
+          "lineCount": 22
+        },
+        {
+          "name": "deletePreset",
+          "params": [
+            "store",
+            "name"
+          ],
+          "returnType": "PresetStore",
+          "exported": true,
+          "lineCount": 7
+        },
+        {
+          "name": "readyPresets",
+          "params": [
+            "store",
+            "nowTick"
+          ],
+          "returnType": "PresetEntry[]",
+          "exported": true,
+          "lineCount": 3
+        },
+        {
+          "name": "isOnCooldown",
+          "params": [
+            "store",
+            "arr",
+            "nowTick"
+          ],
+          "returnType": "boolean",
+          "exported": true,
+          "lineCount": 4
+        },
+        {
+          "name": "recallPreset",
+          "params": [
+            "store",
+            "hash",
+            "nowTick"
+          ],
+          "returnType": "PresetRecall | null",
+          "exported": true,
+          "lineCount": 9
+        },
+        {
+          "name": "resetPresetCooldowns",
+          "params": [
+            "store"
+          ],
+          "returnType": "PresetStore",
+          "exported": true,
+          "lineCount": 7
+        }
+      ],
+      "classes": [],
+      "imports": [
+        {
+          "source": "./arrangement",
+          "specifiers": [
+            "Arrangement",
+            "NoteEvent"
+          ]
+        },
+        {
+          "source": "./arrangement",
+          "specifiers": [
+            "countOnsets",
+            "hashMelodySet"
+          ]
+        }
+      ],
+      "exports": [
+        "cooldownFor",
+        "savePreset",
+        "deletePreset",
+        "readyPresets",
+        "isOnCooldown",
+        "recallPreset",
+        "resetPresetCooldowns"
+      ],
+      "totalLines": 105,
+      "hasStructuralAnalysis": true
+    },
+    "src/game/qte.test.ts": {
+      "filePath": "src/game/qte.test.ts",
+      "contentHash": "5b50016b0318239fb068e2531d851f3d8ebbf14a5ccdd4a1f8fba490c5f32c91",
+      "functions": [
+        {
+          "name": "seq",
+          "params": [
+            "vals"
+          ],
+          "returnType": "() => number",
+          "exported": false,
+          "lineCount": 4
+        }
+      ],
+      "classes": [],
+      "imports": [
+        {
+          "source": "vitest",
+          "specifiers": [
+            "describe",
+            "expect",
+            "it"
+          ]
+        },
+        {
+          "source": "./qte",
+          "specifiers": [
+            "beatDegreeFor",
+            "chartFromMelody",
+            "chartFromPattern",
+            "chartKeys",
+            "createQte",
+            "degreeToPerformKey",
+            "fitChartToWindow",
+            "harmonicChart",
+            "isQteComplete",
+            "isQteExpired",
+            "missOverdueNotes",
+            "parryDamage",
+            "patternMotif",
+            "pressQte",
+            "qteSuccessRate",
+            "releaseQte"
+          ]
+        },
+        {
+          "source": "./theory",
+          "specifiers": [
+            "degreeToMidi",
+            "romanToChord",
+            "Key"
+          ]
+        },
+        {
+          "source": "./arrangement",
+          "specifiers": [
+            "NoteEvent"
+          ]
+        }
+      ],
+      "exports": [],
+      "totalLines": 279,
+      "hasStructuralAnalysis": true
+    },
+    "src/game/qte.ts": {
+      "filePath": "src/game/qte.ts",
+      "contentHash": "9c8f750ed96bb70130cfa3e8cee8dbb74a4736e07b1683e43c8bfb16762a4402",
+      "functions": [
+        {
+          "name": "degreeToPerformKey",
+          "params": [
+            "degree"
+          ],
+          "returnType": "PerformKey",
+          "exported": true,
+          "lineCount": 7
+        },
+        {
+          "name": "keyToDegree",
+          "params": [
+            "key"
+          ],
+          "returnType": "number",
+          "exported": true,
+          "lineCount": 12
+        },
+        {
+          "name": "qteKeyToDegree",
+          "params": [
+            "key"
+          ],
+          "returnType": "number",
+          "exported": true,
+          "lineCount": 16
+        },
+        {
+          "name": "ratingWeight",
+          "params": [
+            "r"
+          ],
+          "returnType": "number",
+          "exported": true,
+          "lineCount": 12
+        },
+        {
+          "name": "noteId",
+          "params": [
+            "key",
+            "stepOffset",
+            "i"
+          ],
+          "returnType": "string",
+          "exported": false,
+          "lineCount": 3
+        },
+        {
+          "name": "chartFromMelody",
+          "params": [
+            "tracks",
+            "maxNotes"
+          ],
+          "returnType": "QteChart",
+          "exported": true,
+          "lineCount": 28
+        },
+        {
+          "name": "harmonicChart",
+          "params": [
+            "romans",
+            "stepsPerBar"
+          ],
+          "returnType": "QteChart",
+          "exported": true,
+          "lineCount": 31
+        },
+        {
+          "name": "patternMotif",
+          "params": [
+            "pattern"
+          ],
+          "returnType": "QteChart",
+          "exported": true,
+          "lineCount": 18
+        },
+        {
+          "name": "fitChartToWindow",
+          "params": [
+            "chart",
+            "ticksAvailable"
+          ],
+          "returnType": "QteChart",
+          "exported": true,
+          "lineCount": 18
+        },
+        {
+          "name": "chartKeys",
+          "params": [
+            "chart"
+          ],
+          "returnType": "QteKey[]",
+          "exported": true,
+          "lineCount": 3
+        },
+        {
+          "name": "chartFromPattern",
+          "params": [
+            "pattern",
+            "length",
+            "_rng"
+          ],
+          "returnType": "QteKey[]",
+          "exported": true,
+          "lineCount": 21
+        },
+        {
+          "name": "randomChart",
+          "params": [
+            "length",
+            "rng"
+          ],
+          "returnType": "PerformKey[]",
+          "exported": true,
+          "lineCount": 3
+        },
+        {
+          "name": "synthChartFromSequence",
+          "params": [
+            "sequence",
+            "startedTick",
+            "deadlineTick"
+          ],
+          "returnType": "QteChart",
+          "exported": false,
+          "lineCount": 12
+        },
+        {
+          "name": "createQte",
+          "params": [
+            "opts"
+          ],
+          "returnType": "QteState",
+          "exported": true,
+          "lineCount": 34
+        },
+        {
+          "name": "rateForDelta",
+          "params": [
+            "absDelta"
+          ],
+          "returnType": "QteRating",
+          "exported": false,
+          "lineCount": 5
+        },
+        {
+          "name": "pressQte",
+          "params": [
+            "qte",
+            "key",
+            "currentTick"
+          ],
+          "returnType": "QteState",
+          "exported": true,
+          "lineCount": 94
+        },
+        {
+          "name": "releaseQte",
+          "params": [
+            "qte",
+            "key",
+            "currentTick"
+          ],
+          "returnType": "QteState",
+          "exported": true,
+          "lineCount": 45
+        },
+        {
+          "name": "missOverdueNotes",
+          "params": [
+            "qte",
+            "tick"
+          ],
+          "returnType": "QteState",
+          "exported": true,
+          "lineCount": 37
+        },
+        {
+          "name": "isQteComplete",
+          "params": [
+            "qte"
+          ],
+          "returnType": "boolean",
+          "exported": true,
+          "lineCount": 4
+        },
+        {
+          "name": "isQteExpired",
+          "params": [
+            "qte",
+            "tick"
+          ],
+          "returnType": "boolean",
+          "exported": true,
+          "lineCount": 3
+        },
+        {
+          "name": "qteSuccessRate",
+          "params": [
+            "qte"
+          ],
+          "returnType": "number",
+          "exported": true,
+          "lineCount": 11
+        },
+        {
+          "name": "parryDamage",
+          "params": [
+            "base",
+            "chip",
+            "qte"
+          ],
+          "returnType": "number",
+          "exported": true,
+          "lineCount": 7
+        },
+        {
+          "name": "beatDegreeFor",
+          "params": [
+            "key",
+            "chordMidi",
+            "pressCount"
+          ],
+          "returnType": "number",
+          "exported": true,
+          "lineCount": 10
+        }
+      ],
+      "classes": [],
+      "imports": [
+        {
+          "source": "./theory",
+          "specifiers": [
+            "degreeToMidi",
+            "Key"
+          ]
+        },
+        {
+          "source": "./arrangement",
+          "specifiers": [
+            "NoteEvent"
+          ]
+        },
+        {
+          "source": "./perform",
+          "specifiers": [
+            "PerformKey",
+            "QteKey"
+          ]
+        }
+      ],
+      "exports": [
+        "degreeToPerformKey",
+        "keyToDegree",
+        "qteKeyToDegree",
+        "ratingWeight",
+        "chartFromMelody",
+        "harmonicChart",
+        "PATTERN_MOTIFS",
+        "patternMotif",
+        "fitChartToWindow",
+        "chartKeys",
+        "chartFromPattern",
+        "randomChart",
+        "createQte",
+        "pressQte",
+        "releaseQte",
+        "missOverdueNotes",
+        "isQteComplete",
+        "isQteExpired",
+        "qteSuccessRate",
+        "parryDamage",
+        "beatDegreeFor"
+      ],
+      "totalLines": 666,
+      "hasStructuralAnalysis": true
+    },
+    "src/game/scoring.test.ts": {
+      "filePath": "src/game/scoring.test.ts",
+      "contentHash": "f8ef02f6eba458a195bbd19d034071d566cfc70489728c267204eaa0c4dcc578",
+      "functions": [],
+      "classes": [],
+      "imports": [
+        {
+          "source": "vitest",
+          "specifiers": [
+            "describe",
+            "expect",
+            "it"
+          ]
+        },
+        {
+          "source": "./theory",
+          "specifiers": [
+            "diatonicFitScore",
+            "romanFunction",
+            "scoreProgression",
+            "syntaxScore",
+            "voiceLeadingScore",
+            "Key"
+          ]
+        }
+      ],
+      "exports": [],
+      "totalLines": 85,
+      "hasStructuralAnalysis": true
+    },
+    "src/game/session.ts": {
+      "filePath": "src/game/session.ts",
+      "contentHash": "8a2b15e70f566442b149c42f95e39c1207ff2c1f1a16753a0dd8b318aa639ef9",
+      "functions": [
+        {
+          "name": "emit",
+          "params": [],
+          "returnType": "void",
+          "exported": false,
+          "lineCount": 3
+        },
+        {
+          "name": "getArrangement",
+          "params": [],
+          "returnType": "Arrangement",
+          "exported": true,
+          "lineCount": 3
+        },
+        {
+          "name": "getFight",
+          "params": [],
+          "returnType": "AtbState",
+          "exported": true,
+          "lineCount": 3
+        },
+        {
+          "name": "getPresets",
+          "params": [],
+          "returnType": "PresetStore",
+          "exported": true,
+          "lineCount": 3
+        },
+        {
+          "name": "getMelodyBank",
+          "params": [],
+          "returnType": "MelodyBank",
+          "exported": true,
+          "lineCount": 3
+        },
+        {
+          "name": "getGamePhase",
+          "params": [],
+          "returnType": "GamePhase",
+          "exported": true,
+          "lineCount": 3
+        },
+        {
+          "name": "setGamePhase",
+          "params": [
+            "phase"
+          ],
+          "returnType": "void",
+          "exported": true,
+          "lineCount": 5
+        },
+        {
+          "name": "toMenu",
+          "params": [],
+          "returnType": "void",
+          "exported": true,
+          "lineCount": 3
+        },
+        {
+          "name": "toPrep",
+          "params": [],
+          "returnType": "void",
+          "exported": true,
+          "lineCount": 3
+        },
+        {
+          "name": "getEncounterId",
+          "params": [],
+          "returnType": "string",
+          "exported": true,
+          "lineCount": 3
+        },
+        {
+          "name": "setEncounterId",
+          "params": [
+            "id",
+            "force"
+          ],
+          "returnType": "boolean",
+          "exported": true,
+          "lineCount": 14
+        },
+        {
+          "name": "getClearedEncounters",
+          "params": [],
+          "returnType": "string[]",
+          "exported": true,
+          "lineCount": 3
+        },
+        {
+          "name": "isCurrentEncounterUnlocked",
+          "params": [
+            "id"
+          ],
+          "returnType": "boolean",
+          "exported": true,
+          "lineCount": 3
+        },
+        {
+          "name": "unlockAllEncounters",
+          "params": [],
+          "returnType": "void",
+          "exported": true,
+          "lineCount": 5
+        },
+        {
+          "name": "resetEncounterProgression",
+          "params": [],
+          "returnType": "void",
+          "exported": true,
+          "lineCount": 6
+        },
+        {
+          "name": "getSelectedParty",
+          "params": [],
+          "returnType": "string[]",
+          "exported": true,
+          "lineCount": 3
+        },
+        {
+          "name": "setSelectedParty",
+          "params": [
+            "characterIds"
+          ],
+          "returnType": "void",
+          "exported": true,
+          "lineCount": 13
+        },
+        {
+          "name": "getCustomChordPresets",
+          "params": [],
+          "returnType": "ChordPreset[]",
+          "exported": true,
+          "lineCount": 3
+        },
+        {
+          "name": "saveCustomChordPreset",
+          "params": [
+            "name",
+            "romans"
+          ],
+          "returnType": "ChordPreset",
+          "exported": true,
+          "lineCount": 12
+        },
+        {
+          "name": "mutateArrangement",
+          "params": [
+            "fn"
+          ],
+          "returnType": "void",
+          "exported": true,
+          "lineCount": 4
+        },
+        {
+          "name": "handleStep",
+          "params": [],
+          "returnType": "void",
+          "exported": true,
+          "lineCount": 16
+        },
+        {
+          "name": "moveFighter",
+          "params": [
+            "fighterId",
+            "slot"
+          ],
+          "returnType": "void",
+          "exported": true,
+          "lineCount": 7
+        },
+        {
+          "name": "beginFight",
+          "params": [
+            "opts"
+          ],
+          "returnType": "void",
+          "exported": false,
+          "lineCount": 23
+        },
+        {
+          "name": "startFight",
+          "params": [
+            "opts"
+          ],
+          "returnType": "void",
+          "exported": true,
+          "lineCount": 3
+        },
+        {
+          "name": "resetFight",
+          "params": [
+            "opts"
+          ],
+          "returnType": "void",
+          "exported": true,
+          "lineCount": 3
+        },
+        {
+          "name": "getFrontPerformerId",
+          "params": [
+            "index"
+          ],
+          "returnType": "string | null",
+          "exported": true,
+          "lineCount": 3
+        },
+        {
+          "name": "saveMelodyPreset",
+          "params": [
+            "name"
+          ],
+          "returnType": "void",
+          "exported": true,
+          "lineCount": 6
+        },
+        {
+          "name": "recallMelodyPreset",
+          "params": [
+            "hash"
+          ],
+          "returnType": "boolean",
+          "exported": true,
+          "lineCount": 9
+        },
+        {
+          "name": "saveToMelodyBank",
+          "params": [
+            "name",
+            "description"
+          ],
+          "returnType": "MelodyTemplate",
+          "exported": true,
+          "lineCount": 11
+        },
+        {
+          "name": "deleteFromMelodyBank",
+          "params": [
+            "id"
+          ],
+          "returnType": "void",
+          "exported": true,
+          "lineCount": 4
+        },
+        {
+          "name": "loadMelodyTemplate",
+          "params": [
+            "id"
+          ],
+          "returnType": "boolean",
+          "exported": true,
+          "lineCount": 13
+        },
+        {
+          "name": "requestTemplateChart",
+          "params": [
+            "id"
+          ],
+          "returnType": "boolean",
+          "exported": true,
+          "lineCount": 14
+        },
+        {
+          "name": "requestChordChart",
+          "params": [
+            "romans"
+          ],
+          "returnType": "boolean",
+          "exported": true,
+          "lineCount": 7
+        },
+        {
+          "name": "requestPresetChart",
+          "params": [
+            "hash"
+          ],
+          "returnType": "boolean",
+          "exported": true,
+          "lineCount": 13
+        },
+        {
+          "name": "pressChartKey",
+          "params": [
+            "key"
+          ],
+          "returnType": "{ rating: string; degree?: number } | null",
+          "exported": true,
+          "lineCount": 4
+        },
+        {
+          "name": "pressParryKey",
+          "params": [
+            "key"
+          ],
+          "returnType": "{ rating: string; degree?: number } | null",
+          "exported": true,
+          "lineCount": 4
+        },
+        {
+          "name": "releaseParryKey",
+          "params": [
+            "key"
+          ],
+          "returnType": "{ rating: string; degree?: number } | null",
+          "exported": true,
+          "lineCount": 14
+        },
+        {
+          "name": "scoreQtePress",
+          "params": [
+            "next"
+          ],
+          "returnType": "{ rating: string; degree?: number } | null",
+          "exported": false,
+          "lineCount": 12
+        },
+        {
+          "name": "cancelChart",
+          "params": [
+            "reason"
+          ],
+          "returnType": "void",
+          "exported": true,
+          "lineCount": 7
+        },
+        {
+          "name": "resetAll",
+          "params": [],
+          "returnType": "void",
+          "exported": true,
+          "lineCount": 12
+        },
+        {
+          "name": "subscribe",
+          "params": [
+            "fn"
+          ],
+          "returnType": "() => void",
+          "exported": true,
+          "lineCount": 6
+        }
+      ],
+      "classes": [],
+      "imports": [
+        {
+          "source": "./arrangement",
+          "specifiers": [
+            "createDefaultArrangement",
+            "Arrangement"
+          ]
+        },
+        {
+          "source": "./combat",
+          "specifiers": [
+            "advanceTick",
+            "cancelQte",
+            "createFight",
+            "moveFighterInFight",
+            "pressQteInFight",
+            "releaseQteInFight",
+            "reconcilePotency",
+            "refreshPotency",
+            "requestChordInFight",
+            "requestPresetInFight",
+            "AtbState"
+          ]
+        },
+        {
+          "source": "./presets",
+          "specifiers": [
+            "recallPreset",
+            "resetPresetCooldowns",
+            "savePreset",
+            "PresetStore"
+          ]
+        },
+        {
+          "source": "./theory",
+          "specifiers": [
+            "Key"
+          ]
+        },
+        {
+          "source": "./positions",
+          "specifiers": [
+            "SlotId"
+          ]
+        },
+        {
+          "source": "@/data/encounters",
+          "specifiers": [
+            "DEFAULT_ENCOUNTER_ID",
+            "ENCOUNTERS",
+            "getEncounter",
+            "isEncounterUnlocked"
+          ]
+        },
+        {
+          "source": "@/data/roster",
+          "specifiers": [
+            "DEFAULT_PARTY_ROSTER"
+          ]
+        },
+        {
+          "source": "@/data/chords",
+          "specifiers": [
+            "ChordPreset"
+          ]
+        },
+        {
+          "source": "./phase",
+          "specifiers": [
+            "GamePhase"
+          ]
+        },
+        {
+          "source": "./melodyBank",
+          "specifiers": [
+            "createDefaultMelodyBank",
+            "deleteTemplate",
+            "getTemplate",
+            "saveTemplate",
+            "MelodyBank",
+            "MelodyTemplate"
+          ]
+        },
+        {
+          "source": "@/persistence/storage",
+          "specifiers": [
+            "clearAllPersistedData",
+            "loadClearedEncounters",
+            "loadCustomChords",
+            "loadSelectedParty",
+            "saveClearedEncounters",
+            "saveCustomChords",
+            "saveSelectedParty"
+          ]
+        }
+      ],
+      "exports": [
+        "getArrangement",
+        "getFight",
+        "getPresets",
+        "getMelodyBank",
+        "getGamePhase",
+        "setGamePhase",
+        "toMenu",
+        "toPrep",
+        "getEncounterId",
+        "setEncounterId",
+        "getClearedEncounters",
+        "isCurrentEncounterUnlocked",
+        "unlockAllEncounters",
+        "resetEncounterProgression",
+        "getSelectedParty",
+        "setSelectedParty",
+        "getCustomChordPresets",
+        "saveCustomChordPreset",
+        "mutateArrangement",
+        "handleStep",
+        "moveFighter",
+        "startFight",
+        "resetFight",
+        "getFrontPerformerId",
+        "saveMelodyPreset",
+        "recallMelodyPreset",
+        "saveToMelodyBank",
+        "deleteFromMelodyBank",
+        "loadMelodyTemplate",
+        "requestTemplateChart",
+        "requestChordChart",
+        "requestPresetChart",
+        "pressChartKey",
+        "pressParryKey",
+        "releaseParryKey",
+        "cancelChart",
+        "resetAll",
+        "subscribe"
+      ],
+      "totalLines": 455,
+      "hasStructuralAnalysis": true
+    },
+    "src/game/sessionPhase.test.ts": {
+      "filePath": "src/game/sessionPhase.test.ts",
+      "contentHash": "d1e19d2ec4c5cea025cde41f42cb0ba20a0aba331ce4d5416464e8814bf7fbf9",
+      "functions": [],
+      "classes": [],
+      "imports": [
+        {
+          "source": "vitest",
+          "specifiers": [
+            "describe",
+            "expect",
+            "it",
+            "beforeEach"
+          ]
+        },
+        {
+          "source": "./session",
+          "specifiers": [
+            "getArrangement",
+            "getEncounterId",
+            "getFight",
+            "getGamePhase",
+            "getMelodyBank",
+            "handleStep",
+            "loadMelodyTemplate",
+            "requestTemplateChart",
+            "resetAll",
+            "resetFight",
+            "saveToMelodyBank",
+            "setEncounterId",
+            "setGamePhase",
+            "startFight",
+            "toMenu",
+            "toPrep"
+          ]
+        }
+      ],
+      "exports": [],
+      "totalLines": 138,
+      "hasStructuralAnalysis": true
+    },
+    "src/game/theory.test.ts": {
+      "filePath": "src/game/theory.test.ts",
+      "contentHash": "acca914ae731cb67917b09ce656e7517c1be424d78fe72b78751d1a9a3b5a2cf",
+      "functions": [],
+      "classes": [],
+      "imports": [
+        {
+          "source": "vitest",
+          "specifiers": [
+            "describe",
+            "expect",
+            "it"
+          ]
+        },
+        {
+          "source": "./theory",
+          "specifiers": [
+            "DEFAULT_KEY",
+            "degreeToMidi",
+            "midiToNote",
+            "pitchClassOfMidi",
+            "romanToChord",
+            "tensionOf"
+          ]
+        }
+      ],
+      "exports": [],
+      "totalLines": 56,
+      "hasStructuralAnalysis": true
+    },
+    "src/game/theory.ts": {
+      "filePath": "src/game/theory.ts",
+      "contentHash": "2f003a76e824b28adaf50e26eac1a0c50f125b78a70048d82404959913c44bf7",
+      "functions": [
+        {
+          "name": "refOctave",
+          "params": [
+            "key"
+          ],
+          "returnType": "number",
+          "exported": false,
+          "lineCount": 3
+        },
+        {
+          "name": "normalizePitchClass",
+          "params": [
+            "pc"
+          ],
+          "returnType": "string",
+          "exported": false,
+          "lineCount": 12
+        },
+        {
+          "name": "scaleSteps",
+          "params": [
+            "scale"
+          ],
+          "returnType": "number[]",
+          "exported": false,
+          "lineCount": 5
+        },
+        {
+          "name": "tonicMidi",
+          "params": [
+            "key",
+            "octave"
+          ],
+          "returnType": "number",
+          "exported": false,
+          "lineCount": 5
+        },
+        {
+          "name": "pitchClassOfMidi",
+          "params": [
+            "midi"
+          ],
+          "returnType": "string",
+          "exported": true,
+          "lineCount": 3
+        },
+        {
+          "name": "midiToNote",
+          "params": [
+            "midi"
+          ],
+          "returnType": "string",
+          "exported": true,
+          "lineCount": 3
+        },
+        {
+          "name": "degreeToMidi",
+          "params": [
+            "key",
+            "degree",
+            "octave"
+          ],
+          "returnType": "number",
+          "exported": true,
+          "lineCount": 9
+        },
+        {
+          "name": "parseRoman",
+          "params": [
+            "roman"
+          ],
+          "returnType": "{ degree: number; seven: boolean }",
+          "exported": false,
+          "lineCount": 9
+        },
+        {
+          "name": "isMinorScale",
+          "params": [
+            "scale"
+          ],
+          "returnType": "boolean",
+          "exported": false,
+          "lineCount": 3
+        },
+        {
+          "name": "romanToChord",
+          "params": [
+            "key",
+            "roman"
+          ],
+          "returnType": "number[]",
+          "exported": true,
+          "lineCount": 17
+        },
+        {
+          "name": "scalePitchClasses",
+          "params": [
+            "key"
+          ],
+          "returnType": "Set<number>",
+          "exported": false,
+          "lineCount": 5
+        },
+        {
+          "name": "romanFunction",
+          "params": [
+            "key",
+            "roman"
+          ],
+          "returnType": "HarmonicFunction",
+          "exported": true,
+          "lineCount": 11
+        },
+        {
+          "name": "pcDistance",
+          "params": [
+            "a",
+            "b"
+          ],
+          "returnType": "number",
+          "exported": false,
+          "lineCount": 4
+        },
+        {
+          "name": "voiceLeadingScore",
+          "params": [
+            "chords"
+          ],
+          "returnType": "number",
+          "exported": true,
+          "lineCount": 15
+        },
+        {
+          "name": "diatonicFitScore",
+          "params": [
+            "key",
+            "chords"
+          ],
+          "returnType": "number",
+          "exported": true,
+          "lineCount": 21
+        },
+        {
+          "name": "syntaxScore",
+          "params": [
+            "key",
+            "romans"
+          ],
+          "returnType": "number",
+          "exported": true,
+          "lineCount": 13
+        },
+        {
+          "name": "scoreProgression",
+          "params": [
+            "key",
+            "romans"
+          ],
+          "returnType": "ProgressionScore",
+          "exported": true,
+          "lineCount": 9
+        },
+        {
+          "name": "tensionOf",
+          "params": [
+            "melodyMidi",
+            "chordMidi"
+          ],
+          "returnType": "number",
+          "exported": true,
+          "lineCount": 17
+        }
+      ],
+      "classes": [],
+      "imports": [],
+      "exports": [
+        "DEFAULT_KEY",
+        "pitchClassOfMidi",
+        "midiToNote",
+        "degreeToMidi",
+        "romanToChord",
+        "romanFunction",
+        "voiceLeadingScore",
+        "diatonicFitScore",
+        "syntaxScore",
+        "scoreProgression",
+        "tensionOf"
+      ],
+      "totalLines": 274,
+      "hasStructuralAnalysis": true
+    },
+    "src/game/timbre.test.ts": {
+      "filePath": "src/game/timbre.test.ts",
+      "contentHash": "5ed27fa3e4a84536c6acc153c9dea25ab035570fdd88a6fd5276f2098c8d1010",
+      "functions": [],
+      "classes": [],
+      "imports": [
+        {
+          "source": "vitest",
+          "specifiers": [
+            "describe",
+            "expect",
+            "it"
+          ]
+        },
+        {
+          "source": "../data/enemies",
+          "specifiers": [
+            "INSTRUMENTS",
+            "NEUTRAL_KIT"
+          ]
+        },
+        {
+          "source": "./combat",
+          "specifiers": [
+            "beatInstrument",
+            "createFight",
+            "moveFighter"
+          ]
+        },
+        {
+          "source": "./theory",
+          "specifiers": [
+            "Key"
+          ]
+        }
+      ],
+      "exports": [],
+      "totalLines": 64,
+      "hasStructuralAnalysis": true
+    },
+    "src/game/units.test.ts": {
+      "filePath": "src/game/units.test.ts",
+      "contentHash": "ddbc64255114c179e608d10264f578b09bf697662792181421174a3b9dbe7b4b",
+      "functions": [],
+      "classes": [],
+      "imports": [
+        {
+          "source": "vitest",
+          "specifiers": [
+            "describe",
+            "expect",
+            "it"
+          ]
+        },
+        {
+          "source": "./units",
+          "specifiers": [
+            "addShield",
+            "applyBuff",
+            "buffDamageTaken",
+            "damageThroughShield",
+            "healFighter",
+            "isDown",
+            "makeFighter",
+            "tickBuffs"
+          ]
+        }
+      ],
+      "exports": [],
+      "totalLines": 99,
+      "hasStructuralAnalysis": true
+    },
+    "src/game/units.ts": {
+      "filePath": "src/game/units.ts",
+      "contentHash": "7b1af22a113bd78b0a02e4eb5875f037477584a614ef62753f41262e8ca805bb",
+      "functions": [
+        {
+          "name": "makeFighter",
+          "params": [
+            "init"
+          ],
+          "returnType": "Fighter",
+          "exported": true,
+          "lineCount": 31
+        },
+        {
+          "name": "isDown",
+          "params": [
+            "f"
+          ],
+          "returnType": "boolean",
+          "exported": true,
+          "lineCount": 3
+        },
+        {
+          "name": "damageThroughShield",
+          "params": [
+            "f",
+            "amount"
+          ],
+          "returnType": "{ fighter: Fighter; shielded: number; toHp: number }",
+          "exported": true,
+          "lineCount": 13
+        },
+        {
+          "name": "healFighter",
+          "params": [
+            "f",
+            "amount"
+          ],
+          "returnType": "Fighter",
+          "exported": true,
+          "lineCount": 4
+        },
+        {
+          "name": "addShield",
+          "params": [
+            "f",
+            "amount"
+          ],
+          "returnType": "Fighter",
+          "exported": true,
+          "lineCount": 3
+        },
+        {
+          "name": "applyBuff",
+          "params": [
+            "f",
+            "buff"
+          ],
+          "returnType": "Fighter",
+          "exported": true,
+          "lineCount": 18
+        },
+        {
+          "name": "tickBuffs",
+          "params": [
+            "f"
+          ],
+          "returnType": "{ fighter: Fighter; events: string[] }",
+          "exported": true,
+          "lineCount": 19
+        },
+        {
+          "name": "buffGlyphs",
+          "params": [
+            "f"
+          ],
+          "returnType": "string",
+          "exported": true,
+          "lineCount": 5
+        },
+        {
+          "name": "buffDamageTaken",
+          "params": [
+            "f"
+          ],
+          "returnType": "number",
+          "exported": true,
+          "lineCount": 8
+        }
+      ],
+      "classes": [],
+      "imports": [],
+      "exports": [
+        "makeFighter",
+        "isDown",
+        "damageThroughShield",
+        "healFighter",
+        "addShield",
+        "applyBuff",
+        "tickBuffs",
+        "buffGlyphs",
+        "buffDamageTaken"
+      ],
+      "totalLines": 157,
+      "hasStructuralAnalysis": true
+    },
+    "src/hooks/useQtePlayhead.ts": {
+      "filePath": "src/hooks/useQtePlayhead.ts",
+      "contentHash": "72f0599fba32b1b8993efebd7add97d96678d775444cd488c44ce9d50fadc3a0",
+      "functions": [
+        {
+          "name": "useQtePlayhead",
+          "params": [
+            "startedTick",
+            "tick",
+            "bpm"
+          ],
+          "returnType": "number",
+          "exported": true,
+          "lineCount": 37
+        }
+      ],
+      "classes": [],
+      "imports": [
+        {
+          "source": "react",
+          "specifiers": [
+            "useEffect",
+            "useRef",
+            "useState"
+          ]
+        },
+        {
+          "source": "@/game/perform",
+          "specifiers": [
+            "stepMs"
+          ]
+        }
+      ],
+      "exports": [
+        "useQtePlayhead"
+      ],
+      "totalLines": 46,
+      "hasStructuralAnalysis": true
+    },
+    "src/hooks/useWasd.ts": {
+      "filePath": "src/hooks/useWasd.ts",
+      "contentHash": "274b77f68ff7cfc96c8ac4ff9801c3efa128685cf8508b832dd4639422efb417",
+      "functions": [
+        {
+          "name": "useWasd",
+          "params": [],
+          "returnType": "void",
+          "exported": true,
+          "lineCount": 42
+        }
+      ],
+      "classes": [],
+      "imports": [
+        {
+          "source": "react",
+          "specifiers": [
+            "useEffect"
+          ]
+        },
+        {
+          "source": "@/state/useSessionStore",
+          "specifiers": [
+            "useSessionStore"
+          ]
+        },
+        {
+          "source": "@/game/perform",
+          "specifiers": [
+            "QteKey"
+          ]
+        }
+      ],
+      "exports": [
+        "useWasd"
+      ],
+      "totalLines": 59,
+      "hasStructuralAnalysis": true
+    },
+    "src/index.css": {
+      "filePath": "src/index.css",
+      "contentHash": "b1a76a02628451414ff8d1322040957ecb894c24e334b7c75d4f9741878ae7f0",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 171,
+      "hasStructuralAnalysis": false
+    },
+    "src/lib/utils.ts": {
+      "filePath": "src/lib/utils.ts",
+      "contentHash": "7c8c3dfc0cdd370d44932828eb067ef771c8fe7996693221d5d4b90af6d54f2d",
+      "functions": [
+        {
+          "name": "cn",
+          "params": [
+            "...inputs"
+          ],
+          "exported": true,
+          "lineCount": 3
+        }
+      ],
+      "classes": [],
+      "imports": [
+        {
+          "source": "clsx",
+          "specifiers": [
+            "clsx",
+            "ClassValue"
+          ]
+        },
+        {
+          "source": "tailwind-merge",
+          "specifiers": [
+            "twMerge"
+          ]
+        }
+      ],
+      "exports": [
+        "cn"
+      ],
+      "totalLines": 7,
+      "hasStructuralAnalysis": true
+    },
+    "src/main.tsx": {
+      "filePath": "src/main.tsx",
+      "contentHash": "6e9e5807fcbd48b75a96db5cbef36c996262196be42e6d4760dc86babbe61ad2",
+      "functions": [],
+      "classes": [],
+      "imports": [
+        {
+          "source": "react",
+          "specifiers": [
+            "StrictMode"
+          ]
+        },
+        {
+          "source": "react-dom/client",
+          "specifiers": [
+            "createRoot"
+          ]
+        },
+        {
+          "source": "./index.css",
+          "specifiers": []
+        },
+        {
+          "source": "./App.tsx",
+          "specifiers": [
+            "App"
+          ]
+        }
+      ],
+      "exports": [],
+      "totalLines": 11,
+      "hasStructuralAnalysis": true
+    },
+    "src/persistence/storage.test.ts": {
+      "filePath": "src/persistence/storage.test.ts",
+      "contentHash": "ac3adb3777704e58b122ee19ac94ab83f6be684be5569fb50beed7f9da74ef7d",
+      "functions": [],
+      "classes": [],
+      "imports": [
+        {
+          "source": "vitest",
+          "specifiers": [
+            "describe",
+            "it",
+            "expect",
+            "beforeEach"
+          ]
+        },
+        {
+          "source": "./storage",
+          "specifiers": [
+            "clearAllPersistedData",
+            "loadClearedEncounters",
+            "loadCustomChords",
+            "loadSelectedParty",
+            "loadTutorialSeen",
+            "saveClearedEncounters",
+            "saveCustomChords",
+            "saveSelectedParty",
+            "saveTutorialSeen"
+          ]
+        }
+      ],
+      "exports": [],
+      "totalLines": 59,
+      "hasStructuralAnalysis": true
+    },
+    "src/persistence/storage.ts": {
+      "filePath": "src/persistence/storage.ts",
+      "contentHash": "aa04bfcaef2933cefe3b46e741485e0a7bafcaf30128cb72b07ba2be35d98645",
+      "functions": [
+        {
+          "name": "isStorageAvailable",
+          "params": [],
+          "returnType": "boolean",
+          "exported": false,
+          "lineCount": 7
+        },
+        {
+          "name": "loadClearedEncounters",
+          "params": [],
+          "returnType": "string[] | null",
+          "exported": true,
+          "lineCount": 11
+        },
+        {
+          "name": "saveClearedEncounters",
+          "params": [
+            "ids"
+          ],
+          "returnType": "void",
+          "exported": true,
+          "lineCount": 8
+        },
+        {
+          "name": "loadSelectedParty",
+          "params": [],
+          "returnType": "string[] | null",
+          "exported": true,
+          "lineCount": 11
+        },
+        {
+          "name": "saveSelectedParty",
+          "params": [
+            "ids"
+          ],
+          "returnType": "void",
+          "exported": true,
+          "lineCount": 8
+        },
+        {
+          "name": "loadCustomChords",
+          "params": [],
+          "returnType": "ChordPreset[] | null",
+          "exported": true,
+          "lineCount": 11
+        },
+        {
+          "name": "saveCustomChords",
+          "params": [
+            "presets"
+          ],
+          "returnType": "void",
+          "exported": true,
+          "lineCount": 8
+        },
+        {
+          "name": "loadTutorialSeen",
+          "params": [],
+          "returnType": "boolean",
+          "exported": true,
+          "lineCount": 8
+        },
+        {
+          "name": "saveTutorialSeen",
+          "params": [
+            "seen"
+          ],
+          "returnType": "void",
+          "exported": true,
+          "lineCount": 8
+        },
+        {
+          "name": "clearAllPersistedData",
+          "params": [],
+          "returnType": "void",
+          "exported": true,
+          "lineCount": 10
+        }
+      ],
+      "classes": [],
+      "imports": [
+        {
+          "source": "@/data/chords",
+          "specifiers": [
+            "ChordPreset"
+          ]
+        }
+      ],
+      "exports": [
+        "loadClearedEncounters",
+        "saveClearedEncounters",
+        "loadSelectedParty",
+        "saveSelectedParty",
+        "loadCustomChords",
+        "saveCustomChords",
+        "loadTutorialSeen",
+        "saveTutorialSeen",
+        "clearAllPersistedData"
+      ],
+      "totalLines": 112,
+      "hasStructuralAnalysis": true
+    },
+    "src/state/useSessionStore.test.ts": {
+      "filePath": "src/state/useSessionStore.test.ts",
+      "contentHash": "b4caceef7258e469eefd61f868ef3275706d9b8acc6b6e7a94f034a2e4782f6d",
+      "functions": [],
+      "classes": [],
+      "imports": [
+        {
+          "source": "vitest",
+          "specifiers": [
+            "afterEach",
+            "beforeEach",
+            "describe",
+            "expect",
+            "it",
+            "vi"
+          ]
+        },
+        {
+          "source": "./useSessionStore",
+          "specifiers": [
+            "useSessionStore"
+          ]
+        }
+      ],
+      "exports": [],
+      "totalLines": 92,
+      "hasStructuralAnalysis": true
+    },
+    "src/state/useSessionStore.ts": {
+      "filePath": "src/state/useSessionStore.ts",
+      "contentHash": "925d677b206f8ff2ba925f4f80716d41caba8df0f59a9166f04baf53b3e3e32d",
+      "functions": [
+        {
+          "name": "clearHeldKeys",
+          "params": [],
+          "returnType": "void",
+          "exported": false,
+          "lineCount": 6
+        }
+      ],
+      "classes": [],
+      "imports": [
+        {
+          "source": "zustand",
+          "specifiers": [
+            "create"
+          ]
+        },
+        {
+          "source": "@/audio/perform",
+          "specifiers": [
+            "auditionBlip",
+            "auditionEnd",
+            "auditionStart"
+          ]
+        },
+        {
+          "source": "@/audio/sfx",
+          "specifiers": [
+            "playQteHit"
+          ]
+        },
+        {
+          "source": "@/audio/player",
+          "specifiers": [
+            "configurePlayer",
+            "playerSetBpm",
+            "playerStart",
+            "playerStop"
+          ]
+        },
+        {
+          "source": "@/game/arrangement",
+          "specifiers": [
+            "locateStep",
+            "loopLength",
+            "setBarChord",
+            "setBpm",
+            "setChords",
+            "setKey",
+            "toggleDrumStep",
+            "toggleNoteEvent",
+            "Arrangement",
+            "NoteEvent"
+          ]
+        },
+        {
+          "source": "@/game/session",
+          "specifiers": [
+            "getArrangement",
+            "getClearedEncounters",
+            "getCustomChordPresets",
+            "getEncounterId",
+            "getFight",
+            "getFrontPerformerId",
+            "getGamePhase",
+            "getMelodyBank",
+            "getPresets",
+            "getSelectedParty",
+            "handleStep",
+            "loadMelodyTemplate",
+            "moveFighter",
+            "mutateArrangement",
+            "pressChartKey",
+            "recallMelodyPreset",
+            "requestChordChart",
+            "requestPresetChart",
+            "requestTemplateChart",
+            "pressParryKey",
+            "releaseParryKey",
+            "cancelChart",
+            "resetEncounterProgression",
+            "resetFight",
+            "saveCustomChordPreset",
+            "saveMelodyPreset",
+            "saveToMelodyBank",
+            "deleteFromMelodyBank",
+            "setEncounterId",
+            "setGamePhase",
+            "setSelectedParty",
+            "startFight",
+            "toMenu",
+            "toPrep",
+            "StartFightOpts",
+            "subscribe",
+            "unlockAllEncounters"
+          ]
+        },
+        {
+          "source": "@/game/qte",
+          "specifiers": [
+            "beatDegreeFor"
+          ]
+        },
+        {
+          "source": "@/game/combat",
+          "specifiers": [
+            "beatInstrument",
+            "defaultPerformerId",
+            "hasLiveAttacker",
+            "keeperInstrument",
+            "laneAttacker",
+            "performSlot"
+          ]
+        },
+        {
+          "source": "@/game/perform",
+          "specifiers": [
+            "cursorDegree",
+            "HOME_CURSOR",
+            "isParryKey",
+            "moveCursor",
+            "pressToLen",
+            "stepMs",
+            "PerformCursor",
+            "PerformKey",
+            "QteKey"
+          ]
+        },
+        {
+          "source": "@/game/positions",
+          "specifiers": [
+            "SlotId"
+          ]
+        },
+        {
+          "source": "@/game/theory",
+          "specifiers": [
+            "degreeToMidi",
+            "romanToChord"
+          ]
+        },
+        {
+          "source": "@/game/presets",
+          "specifiers": [
+            "PresetStore"
+          ]
+        },
+        {
+          "source": "@/game/combat",
+          "specifiers": [
+            "AtbState"
+          ]
+        },
+        {
+          "source": "@/game/theory",
+          "specifiers": [
+            "Key"
+          ]
+        },
+        {
+          "source": "@/game/phase",
+          "specifiers": [
+            "GamePhase"
+          ]
+        },
+        {
+          "source": "@/data/encounters",
+          "specifiers": [
+            "ENCOUNTERS",
+            "EncounterDef"
+          ]
+        },
+        {
+          "source": "@/game/melodyBank",
+          "specifiers": [
+            "MelodyBank",
+            "MelodyTemplate"
+          ]
+        },
+        {
+          "source": "@/data/roster",
+          "specifiers": [
+            "ROSTER",
+            "CharacterDef"
+          ]
+        },
+        {
+          "source": "@/data/chords",
+          "specifiers": [
+            "ChordPreset"
+          ]
+        }
+      ],
+      "exports": [
+        "useSessionStore"
+      ],
+      "totalLines": 531,
+      "hasStructuralAnalysis": true
+    },
+    "src/test/setup.ts": {
+      "filePath": "src/test/setup.ts",
+      "contentHash": "89292bb2956e2eff4f263600b61fc6393469ef30990bcda7ffd7fc5f6da40418",
+      "functions": [],
+      "classes": [],
+      "imports": [
+        {
+          "source": "@testing-library/jest-dom/vitest",
+          "specifiers": []
+        },
+        {
+          "source": "@testing-library/react",
+          "specifiers": [
+            "cleanup"
+          ]
+        },
+        {
+          "source": "vitest",
+          "specifiers": [
+            "afterEach"
+          ]
+        }
+      ],
+      "exports": [],
+      "totalLines": 8,
+      "hasStructuralAnalysis": true
+    },
+    "tsconfig.app.json": {
+      "filePath": "tsconfig.app.json",
+      "contentHash": "f8af104ff9f4a24f3f9bb9003f84cf96b1951bd08cdedc5374e24b2f2d2d36d8",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 32,
+      "hasStructuralAnalysis": false
+    },
+    "tsconfig.json": {
+      "filePath": "tsconfig.json",
+      "contentHash": "770b4140bbb581e2dfd9ea9946ffc9c75a1d86ba7d2db5f77c83e37cbdf9d808",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 8,
+      "hasStructuralAnalysis": false
+    },
+    "tsconfig.node.json": {
+      "filePath": "tsconfig.node.json",
+      "contentHash": "d366cc0827139db39c61815f22491bbfda56c654354a42ad7795143d314e45e8",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 24,
+      "hasStructuralAnalysis": false
+    },
+    "vite.config.ts": {
+      "filePath": "vite.config.ts",
+      "contentHash": "6cd3437e6d9837ff84e5e802bd73676fc0217ab919b1a296b23b7e64786c3dba",
+      "functions": [],
+      "classes": [],
+      "imports": [
+        {
+          "source": "@tailwindcss/vite",
+          "specifiers": [
+            "tailwindcss"
+          ]
+        },
+        {
+          "source": "@vitejs/plugin-react",
+          "specifiers": [
+            "react"
+          ]
+        },
+        {
+          "source": "node:path",
+          "specifiers": [
+            "path"
+          ]
+        },
+        {
+          "source": "vitest/config",
+          "specifiers": [
+            "defineConfig"
+          ]
+        }
+      ],
+      "exports": [],
+      "totalLines": 20,
+      "hasStructuralAnalysis": true
+    }
+  }
+}

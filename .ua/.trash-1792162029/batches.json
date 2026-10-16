@@ -1,0 +1,2212 @@
+{
+  "schemaVersion": 1,
+  "algorithm": "louvain",
+  "totalFiles": 95,
+  "totalBatches": 10,
+  "exportsByPath": {
+    "src/App.tsx": [
+      "App"
+    ],
+    "src/audio/context.ts": [
+      "ensureAudio",
+      "getMaster"
+    ],
+    "src/audio/perform.ts": [
+      "auditionStart",
+      "auditionBlip",
+      "auditionEnd"
+    ],
+    "src/audio/player.ts": [
+      "configurePlayer",
+      "setBpm",
+      "start",
+      "stop"
+    ],
+    "src/audio/sfx.ts": [
+      "playVictoryJingle",
+      "playDefeatSting",
+      "playQteHit",
+      "playQteMiss",
+      "playChordChange",
+      "playUiClick",
+      "playEnemyTelegraph"
+    ],
+    "src/audio/synths.ts": [
+      "initVoices",
+      "getVoices",
+      "instrumentVoices",
+      "applyKit",
+      "hasVoices"
+    ],
+    "src/components/ChordPicker.tsx": [
+      "ChordPicker"
+    ],
+    "src/components/ChordWheel.tsx": [
+      "ChordWheel"
+    ],
+    "src/components/CombatFeedback.tsx": [
+      "CombatFeedback"
+    ],
+    "src/components/CombatLog.tsx": [
+      "CombatLog"
+    ],
+    "src/components/CustomChordBuilder.test.tsx": [],
+    "src/components/CustomChordBuilder.tsx": [
+      "CustomChordBuilder"
+    ],
+    "src/components/EncounterBanner.tsx": [
+      "EncounterBanner"
+    ],
+    "src/components/FoePanel.tsx": [
+      "FoePanel"
+    ],
+    "src/components/MelodyBankBar.tsx": [
+      "MelodyBankBar"
+    ],
+    "src/components/Meter.tsx": [
+      "Meter"
+    ],
+    "src/components/PartyCorner.test.tsx": [],
+    "src/components/PartyCorner.tsx": [
+      "PartyCorner"
+    ],
+    "src/components/PhaseStrip.tsx": [
+      "PhaseStrip"
+    ],
+    "src/components/PresetBar.test.tsx": [],
+    "src/components/PresetBar.tsx": [
+      "PresetBar"
+    ],
+    "src/components/QtePanel.tsx": [
+      "QtePanel"
+    ],
+    "src/components/RosterSelectModal.test.tsx": [],
+    "src/components/RosterSelectModal.tsx": [
+      "RosterSelectModal"
+    ],
+    "src/components/StepGrid.tsx": [
+      "StepGrid"
+    ],
+    "src/components/TransportBar.tsx": [
+      "TransportBar"
+    ],
+    "src/components/TutorialModal.test.tsx": [],
+    "src/components/TutorialModal.tsx": [
+      "TutorialModal"
+    ],
+    "src/components/VoiceBar.test.tsx": [],
+    "src/components/VoiceBar.tsx": [
+      "VoiceBar"
+    ],
+    "src/components/screens/CombatScreen.tsx": [
+      "CombatScreen"
+    ],
+    "src/components/screens/MenuScreen.tsx": [
+      "MenuScreen"
+    ],
+    "src/components/screens/PrepScreen.tsx": [
+      "PrepScreen"
+    ],
+    "src/components/screens/ResultOverlay.tsx": [
+      "ResultOverlay"
+    ],
+    "src/components/screens/screens.test.tsx": [],
+    "src/components/ui/button.tsx": [
+      "Button"
+    ],
+    "src/data/chords.ts": [
+      "CHORD_PRESETS",
+      "chordEffectFor"
+    ],
+    "src/data/encounters.test.ts": [],
+    "src/data/encounters.ts": [
+      "ENCOUNTERS",
+      "DEFAULT_ENCOUNTER_ID",
+      "getEncounter",
+      "validateEncounters",
+      "isEncounterUnlocked",
+      "getNextEncounterId"
+    ],
+    "src/data/enemies.ts": [
+      "ENEMIES",
+      "NEUTRAL_KIT",
+      "INSTRUMENTS"
+    ],
+    "src/data/roster.test.ts": [],
+    "src/data/roster.ts": [
+      "ROSTER",
+      "DEFAULT_PARTY_ROSTER",
+      "getCharacter"
+    ],
+    "src/game/arrangement.test.ts": [],
+    "src/game/arrangement.ts": [
+      "STEPS_PER_BAR",
+      "DEFAULT_BARS",
+      "ATTACK_SLOTS",
+      "createDefaultArrangement",
+      "toggleNoteEvent",
+      "clearTracks",
+      "countOnsets",
+      "toggleDrumStep",
+      "setBarChord",
+      "setChords",
+      "setBpm",
+      "setKey",
+      "snapshotStep",
+      "loopLength",
+      "locateStep",
+      "hashMelodySet",
+      "onsetKey",
+      "allOnsetKeys"
+    ],
+    "src/game/combat.ts": [
+      "refreshPotency",
+      "reconcilePotency",
+      "createFight",
+      "aliveParty",
+      "aliveEnemies",
+      "moveFighter",
+      "qteLocked",
+      "requestChordQte",
+      "requestPresetQte",
+      "pressQteKey",
+      "releaseQteKey",
+      "cancelQte",
+      "keeperInstrument",
+      "hasLiveAttacker",
+      "beatInstrument",
+      "defaultPerformerId",
+      "laneAttacker",
+      "performSlot",
+      "computeNoteDamage",
+      "advanceTick"
+    ],
+    "src/game/combatAtb.test.ts": [],
+    "src/game/combatQte.test.ts": [],
+    "src/game/effects.test.ts": [],
+    "src/game/keys.test.ts": [],
+    "src/game/keys.ts": [
+      "FIGHT_KEYS",
+      "keyEquals",
+      "keyLabel",
+      "randomFightKey",
+      "resolveFightKey"
+    ],
+    "src/game/melodyBank.test.ts": [],
+    "src/game/melodyBank.ts": [
+      "cloneTracks",
+      "createDefaultMelodyBank",
+      "saveTemplate",
+      "deleteTemplate",
+      "getTemplate"
+    ],
+    "src/game/parryChart.test.ts": [],
+    "src/game/parryChart.ts": [
+      "PARRY_LANES",
+      "DEFAULT_PARRY_PARAMS",
+      "PARRY_MOTIFS",
+      "parryParamsFor",
+      "degreeToParryLane",
+      "generateParryChart"
+    ],
+    "src/game/perform.test.ts": [],
+    "src/game/perform.ts": [
+      "PARRY_KEYS",
+      "isParryKey",
+      "HOME_CURSOR",
+      "MIN_DEGREE",
+      "MAX_DEGREE",
+      "MIN_OCTAVE",
+      "MAX_OCTAVE",
+      "moveCursor",
+      "cursorDegree",
+      "pressToLen",
+      "stepMs",
+      "secondsToSteps",
+      "stepsToMs"
+    ],
+    "src/game/phase.ts": [
+      "ALL_GAME_PHASES",
+      "isGamePhase",
+      "isCombatActive",
+      "canFreelyEditArrangement",
+      "isValidTransition"
+    ],
+    "src/game/positions.test.ts": [],
+    "src/game/positions.ts": [
+      "MAX_FRONT",
+      "defaultSlots",
+      "deckIds",
+      "assignToSlot",
+      "removeToDeck",
+      "slotOf"
+    ],
+    "src/game/presets.test.ts": [],
+    "src/game/presets.ts": [
+      "cooldownFor",
+      "savePreset",
+      "deletePreset",
+      "readyPresets",
+      "isOnCooldown",
+      "recallPreset",
+      "resetPresetCooldowns"
+    ],
+    "src/game/qte.test.ts": [],
+    "src/game/qte.ts": [
+      "degreeToPerformKey",
+      "keyToDegree",
+      "qteKeyToDegree",
+      "ratingWeight",
+      "chartFromMelody",
+      "harmonicChart",
+      "PATTERN_MOTIFS",
+      "patternMotif",
+      "fitChartToWindow",
+      "chartKeys",
+      "chartFromPattern",
+      "randomChart",
+      "createQte",
+      "pressQte",
+      "releaseQte",
+      "missOverdueNotes",
+      "isQteComplete",
+      "isQteExpired",
+      "qteSuccessRate",
+      "parryDamage",
+      "beatDegreeFor"
+    ],
+    "src/game/scoring.test.ts": [],
+    "src/game/session.ts": [
+      "getArrangement",
+      "getFight",
+      "getPresets",
+      "getMelodyBank",
+      "getGamePhase",
+      "setGamePhase",
+      "toMenu",
+      "toPrep",
+      "getEncounterId",
+      "setEncounterId",
+      "getClearedEncounters",
+      "isCurrentEncounterUnlocked",
+      "unlockAllEncounters",
+      "resetEncounterProgression",
+      "getSelectedParty",
+      "setSelectedParty",
+      "getCustomChordPresets",
+      "saveCustomChordPreset",
+      "mutateArrangement",
+      "handleStep",
+      "moveFighter",
+      "startFight",
+      "resetFight",
+      "getFrontPerformerId",
+      "saveMelodyPreset",
+      "recallMelodyPreset",
+      "saveToMelodyBank",
+      "deleteFromMelodyBank",
+      "loadMelodyTemplate",
+      "requestTemplateChart",
+      "requestChordChart",
+      "requestPresetChart",
+      "pressChartKey",
+      "pressParryKey",
+      "releaseParryKey",
+      "cancelChart",
+      "resetAll",
+      "subscribe"
+    ],
+    "src/game/sessionPhase.test.ts": [],
+    "src/game/theory.test.ts": [],
+    "src/game/theory.ts": [
+      "DEFAULT_KEY",
+      "pitchClassOfMidi",
+      "midiToNote",
+      "degreeToMidi",
+      "romanToChord",
+      "romanFunction",
+      "voiceLeadingScore",
+      "diatonicFitScore",
+      "syntaxScore",
+      "scoreProgression",
+      "tensionOf"
+    ],
+    "src/game/timbre.test.ts": [],
+    "src/game/units.test.ts": [],
+    "src/game/units.ts": [
+      "makeFighter",
+      "isDown",
+      "damageThroughShield",
+      "healFighter",
+      "addShield",
+      "applyBuff",
+      "tickBuffs",
+      "buffGlyphs",
+      "buffDamageTaken"
+    ],
+    "src/hooks/useQtePlayhead.ts": [
+      "useQtePlayhead"
+    ],
+    "src/hooks/useWasd.ts": [
+      "useWasd"
+    ],
+    "src/lib/utils.ts": [
+      "cn"
+    ],
+    "src/main.tsx": [],
+    "src/persistence/storage.test.ts": [],
+    "src/persistence/storage.ts": [
+      "loadClearedEncounters",
+      "saveClearedEncounters",
+      "loadSelectedParty",
+      "saveSelectedParty",
+      "loadCustomChords",
+      "saveCustomChords",
+      "loadTutorialSeen",
+      "saveTutorialSeen",
+      "clearAllPersistedData"
+    ],
+    "src/state/useSessionStore.test.ts": [],
+    "src/state/useSessionStore.ts": [
+      "useSessionStore"
+    ],
+    "src/test/setup.ts": [],
+    "vite.config.ts": []
+  },
+  "batches": [
+    {
+      "batchIndex": 1,
+      "files": [
+        {
+          "path": "src/game/arrangement.test.ts",
+          "language": "typescript",
+          "sizeLines": 126,
+          "fileCategory": "code"
+        },
+        {
+          "path": "src/game/arrangement.ts",
+          "language": "typescript",
+          "sizeLines": 280,
+          "fileCategory": "code"
+        },
+        {
+          "path": "src/game/melodyBank.test.ts",
+          "language": "typescript",
+          "sizeLines": 56,
+          "fileCategory": "code"
+        },
+        {
+          "path": "src/game/melodyBank.ts",
+          "language": "typescript",
+          "sizeLines": 155,
+          "fileCategory": "code"
+        },
+        {
+          "path": "src/game/phase.ts",
+          "language": "typescript",
+          "sizeLines": 37,
+          "fileCategory": "code"
+        },
+        {
+          "path": "src/game/positions.test.ts",
+          "language": "typescript",
+          "sizeLines": 58,
+          "fileCategory": "code"
+        },
+        {
+          "path": "src/game/positions.ts",
+          "language": "typescript",
+          "sizeLines": 58,
+          "fileCategory": "code"
+        },
+        {
+          "path": "src/game/presets.test.ts",
+          "language": "typescript",
+          "sizeLines": 59,
+          "fileCategory": "code"
+        },
+        {
+          "path": "src/game/presets.ts",
+          "language": "typescript",
+          "sizeLines": 104,
+          "fileCategory": "code"
+        },
+        {
+          "path": "src/game/session.ts",
+          "language": "typescript",
+          "sizeLines": 454,
+          "fileCategory": "code"
+        },
+        {
+          "path": "src/game/sessionPhase.test.ts",
+          "language": "typescript",
+          "sizeLines": 137,
+          "fileCategory": "code"
+        }
+      ],
+      "batchImportData": {
+        "src/game/arrangement.test.ts": [
+          "src/game/arrangement.ts"
+        ],
+        "src/game/arrangement.ts": [
+          "src/game/theory.ts"
+        ],
+        "src/game/melodyBank.test.ts": [
+          "src/game/arrangement.ts",
+          "src/game/melodyBank.ts"
+        ],
+        "src/game/melodyBank.ts": [
+          "src/game/arrangement.ts"
+        ],
+        "src/game/phase.ts": [],
+        "src/game/positions.test.ts": [
+          "src/game/positions.ts"
+        ],
+        "src/game/positions.ts": [
+          "src/game/arrangement.ts"
+        ],
+        "src/game/presets.test.ts": [
+          "src/game/arrangement.ts",
+          "src/game/presets.ts"
+        ],
+        "src/game/presets.ts": [
+          "src/game/arrangement.ts"
+        ],
+        "src/game/session.ts": [
+          "src/game/arrangement.ts",
+          "src/game/combat.ts",
+          "src/game/melodyBank.ts",
+          "src/game/phase.ts",
+          "src/game/positions.ts",
+          "src/game/presets.ts",
+          "src/game/theory.ts"
+        ],
+        "src/game/sessionPhase.test.ts": [
+          "src/game/session.ts"
+        ]
+      },
+      "neighborMap": {
+        "src/game/arrangement.ts": [
+          {
+            "path": "src/game/theory.ts",
+            "batchIndex": 2,
+            "symbols": [
+              "DEFAULT_KEY",
+              "pitchClassOfMidi",
+              "midiToNote",
+              "degreeToMidi",
+              "romanToChord",
+              "romanFunction",
+              "voiceLeadingScore",
+              "diatonicFitScore",
+              "syntaxScore",
+              "scoreProgression",
+              "tensionOf"
+            ]
+          },
+          {
+            "path": "src/game/combat.ts",
+            "batchIndex": 3,
+            "symbols": [
+              "refreshPotency",
+              "reconcilePotency",
+              "createFight",
+              "aliveParty",
+              "aliveEnemies",
+              "moveFighter",
+              "qteLocked",
+              "requestChordQte",
+              "requestPresetQte",
+              "pressQteKey",
+              "releaseQteKey",
+              "cancelQte",
+              "keeperInstrument",
+              "hasLiveAttacker",
+              "beatInstrument",
+              "defaultPerformerId",
+              "laneAttacker",
+              "performSlot",
+              "computeNoteDamage",
+              "advanceTick"
+            ]
+          },
+          {
+            "path": "src/game/combatAtb.test.ts",
+            "batchIndex": 4,
+            "symbols": []
+          },
+          {
+            "path": "src/game/combatQte.test.ts",
+            "batchIndex": 2,
+            "symbols": []
+          },
+          {
+            "path": "src/game/effects.test.ts",
+            "batchIndex": 2,
+            "symbols": []
+          },
+          {
+            "path": "src/game/qte.test.ts",
+            "batchIndex": 2,
+            "symbols": []
+          },
+          {
+            "path": "src/game/qte.ts",
+            "batchIndex": 3,
+            "symbols": [
+              "degreeToPerformKey",
+              "keyToDegree",
+              "qteKeyToDegree",
+              "ratingWeight",
+              "chartFromMelody",
+              "harmonicChart",
+              "PATTERN_MOTIFS",
+              "patternMotif",
+              "fitChartToWindow",
+              "chartKeys",
+              "chartFromPattern",
+              "randomChart",
+              "createQte",
+              "pressQte",
+              "releaseQte",
+              "missOverdueNotes",
+              "isQteComplete",
+              "isQteExpired",
+              "qteSuccessRate",
+              "parryDamage",
+              "beatDegreeFor"
+            ]
+          }
+        ],
+        "src/game/positions.ts": [
+          {
+            "path": "src/game/combat.ts",
+            "batchIndex": 3,
+            "symbols": [
+              "refreshPotency",
+              "reconcilePotency",
+              "createFight",
+              "aliveParty",
+              "aliveEnemies",
+              "moveFighter",
+              "qteLocked",
+              "requestChordQte",
+              "requestPresetQte",
+              "pressQteKey",
+              "releaseQteKey",
+              "cancelQte",
+              "keeperInstrument",
+              "hasLiveAttacker",
+              "beatInstrument",
+              "defaultPerformerId",
+              "laneAttacker",
+              "performSlot",
+              "computeNoteDamage",
+              "advanceTick"
+            ]
+          }
+        ],
+        "src/game/presets.ts": [
+          {
+            "path": "src/game/effects.test.ts",
+            "batchIndex": 2,
+            "symbols": []
+          }
+        ],
+        "src/game/session.ts": [
+          {
+            "path": "src/game/combat.ts",
+            "batchIndex": 3,
+            "symbols": [
+              "refreshPotency",
+              "reconcilePotency",
+              "createFight",
+              "aliveParty",
+              "aliveEnemies",
+              "moveFighter",
+              "qteLocked",
+              "requestChordQte",
+              "requestPresetQte",
+              "pressQteKey",
+              "releaseQteKey",
+              "cancelQte",
+              "keeperInstrument",
+              "hasLiveAttacker",
+              "beatInstrument",
+              "defaultPerformerId",
+              "laneAttacker",
+              "performSlot",
+              "computeNoteDamage",
+              "advanceTick"
+            ]
+          },
+          {
+            "path": "src/game/theory.ts",
+            "batchIndex": 2,
+            "symbols": [
+              "DEFAULT_KEY",
+              "pitchClassOfMidi",
+              "midiToNote",
+              "degreeToMidi",
+              "romanToChord",
+              "romanFunction",
+              "voiceLeadingScore",
+              "diatonicFitScore",
+              "syntaxScore",
+              "scoreProgression",
+              "tensionOf"
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "batchIndex": 2,
+      "files": [
+        {
+          "path": "src/data/chords.ts",
+          "language": "typescript",
+          "sizeLines": 58,
+          "fileCategory": "code"
+        },
+        {
+          "path": "src/game/combatQte.test.ts",
+          "language": "typescript",
+          "sizeLines": 164,
+          "fileCategory": "code"
+        },
+        {
+          "path": "src/game/effects.test.ts",
+          "language": "typescript",
+          "sizeLines": 145,
+          "fileCategory": "code"
+        },
+        {
+          "path": "src/game/keys.test.ts",
+          "language": "typescript",
+          "sizeLines": 28,
+          "fileCategory": "code"
+        },
+        {
+          "path": "src/game/keys.ts",
+          "language": "typescript",
+          "sizeLines": 38,
+          "fileCategory": "code"
+        },
+        {
+          "path": "src/game/qte.test.ts",
+          "language": "typescript",
+          "sizeLines": 278,
+          "fileCategory": "code"
+        },
+        {
+          "path": "src/game/scoring.test.ts",
+          "language": "typescript",
+          "sizeLines": 84,
+          "fileCategory": "code"
+        },
+        {
+          "path": "src/game/theory.test.ts",
+          "language": "typescript",
+          "sizeLines": 55,
+          "fileCategory": "code"
+        },
+        {
+          "path": "src/game/theory.ts",
+          "language": "typescript",
+          "sizeLines": 273,
+          "fileCategory": "code"
+        }
+      ],
+      "batchImportData": {
+        "src/data/chords.ts": [
+          "src/game/theory.ts"
+        ],
+        "src/game/combatQte.test.ts": [
+          "src/game/arrangement.ts",
+          "src/game/combat.ts",
+          "src/game/theory.ts"
+        ],
+        "src/game/effects.test.ts": [
+          "src/data/chords.ts",
+          "src/data/enemies.ts",
+          "src/game/arrangement.ts",
+          "src/game/combat.ts",
+          "src/game/presets.ts",
+          "src/game/theory.ts"
+        ],
+        "src/game/keys.test.ts": [
+          "src/game/keys.ts"
+        ],
+        "src/game/keys.ts": [
+          "src/game/theory.ts"
+        ],
+        "src/game/qte.test.ts": [
+          "src/game/arrangement.ts",
+          "src/game/qte.ts",
+          "src/game/theory.ts"
+        ],
+        "src/game/scoring.test.ts": [
+          "src/game/theory.ts"
+        ],
+        "src/game/theory.test.ts": [
+          "src/game/theory.ts"
+        ],
+        "src/game/theory.ts": []
+      },
+      "neighborMap": {
+        "src/data/chords.ts": [
+          {
+            "path": "src/game/combat.ts",
+            "batchIndex": 3,
+            "symbols": [
+              "refreshPotency",
+              "reconcilePotency",
+              "createFight",
+              "aliveParty",
+              "aliveEnemies",
+              "moveFighter",
+              "qteLocked",
+              "requestChordQte",
+              "requestPresetQte",
+              "pressQteKey",
+              "releaseQteKey",
+              "cancelQte",
+              "keeperInstrument",
+              "hasLiveAttacker",
+              "beatInstrument",
+              "defaultPerformerId",
+              "laneAttacker",
+              "performSlot",
+              "computeNoteDamage",
+              "advanceTick"
+            ]
+          }
+        ],
+        "src/game/combatQte.test.ts": [
+          {
+            "path": "src/game/arrangement.ts",
+            "batchIndex": 1,
+            "symbols": [
+              "STEPS_PER_BAR",
+              "DEFAULT_BARS",
+              "ATTACK_SLOTS",
+              "createDefaultArrangement",
+              "toggleNoteEvent",
+              "clearTracks",
+              "countOnsets",
+              "toggleDrumStep",
+              "setBarChord",
+              "setChords",
+              "setBpm",
+              "setKey",
+              "snapshotStep",
+              "loopLength",
+              "locateStep",
+              "hashMelodySet",
+              "onsetKey",
+              "allOnsetKeys"
+            ]
+          },
+          {
+            "path": "src/game/combat.ts",
+            "batchIndex": 3,
+            "symbols": [
+              "refreshPotency",
+              "reconcilePotency",
+              "createFight",
+              "aliveParty",
+              "aliveEnemies",
+              "moveFighter",
+              "qteLocked",
+              "requestChordQte",
+              "requestPresetQte",
+              "pressQteKey",
+              "releaseQteKey",
+              "cancelQte",
+              "keeperInstrument",
+              "hasLiveAttacker",
+              "beatInstrument",
+              "defaultPerformerId",
+              "laneAttacker",
+              "performSlot",
+              "computeNoteDamage",
+              "advanceTick"
+            ]
+          }
+        ],
+        "src/game/effects.test.ts": [
+          {
+            "path": "src/data/enemies.ts",
+            "batchIndex": 4,
+            "symbols": [
+              "ENEMIES",
+              "NEUTRAL_KIT",
+              "INSTRUMENTS"
+            ]
+          },
+          {
+            "path": "src/game/arrangement.ts",
+            "batchIndex": 1,
+            "symbols": [
+              "STEPS_PER_BAR",
+              "DEFAULT_BARS",
+              "ATTACK_SLOTS",
+              "createDefaultArrangement",
+              "toggleNoteEvent",
+              "clearTracks",
+              "countOnsets",
+              "toggleDrumStep",
+              "setBarChord",
+              "setChords",
+              "setBpm",
+              "setKey",
+              "snapshotStep",
+              "loopLength",
+              "locateStep",
+              "hashMelodySet",
+              "onsetKey",
+              "allOnsetKeys"
+            ]
+          },
+          {
+            "path": "src/game/combat.ts",
+            "batchIndex": 3,
+            "symbols": [
+              "refreshPotency",
+              "reconcilePotency",
+              "createFight",
+              "aliveParty",
+              "aliveEnemies",
+              "moveFighter",
+              "qteLocked",
+              "requestChordQte",
+              "requestPresetQte",
+              "pressQteKey",
+              "releaseQteKey",
+              "cancelQte",
+              "keeperInstrument",
+              "hasLiveAttacker",
+              "beatInstrument",
+              "defaultPerformerId",
+              "laneAttacker",
+              "performSlot",
+              "computeNoteDamage",
+              "advanceTick"
+            ]
+          },
+          {
+            "path": "src/game/presets.ts",
+            "batchIndex": 1,
+            "symbols": [
+              "cooldownFor",
+              "savePreset",
+              "deletePreset",
+              "readyPresets",
+              "isOnCooldown",
+              "recallPreset",
+              "resetPresetCooldowns"
+            ]
+          }
+        ],
+        "src/game/keys.ts": [
+          {
+            "path": "src/game/combat.ts",
+            "batchIndex": 3,
+            "symbols": [
+              "refreshPotency",
+              "reconcilePotency",
+              "createFight",
+              "aliveParty",
+              "aliveEnemies",
+              "moveFighter",
+              "qteLocked",
+              "requestChordQte",
+              "requestPresetQte",
+              "pressQteKey",
+              "releaseQteKey",
+              "cancelQte",
+              "keeperInstrument",
+              "hasLiveAttacker",
+              "beatInstrument",
+              "defaultPerformerId",
+              "laneAttacker",
+              "performSlot",
+              "computeNoteDamage",
+              "advanceTick"
+            ]
+          }
+        ],
+        "src/game/qte.test.ts": [
+          {
+            "path": "src/game/arrangement.ts",
+            "batchIndex": 1,
+            "symbols": [
+              "STEPS_PER_BAR",
+              "DEFAULT_BARS",
+              "ATTACK_SLOTS",
+              "createDefaultArrangement",
+              "toggleNoteEvent",
+              "clearTracks",
+              "countOnsets",
+              "toggleDrumStep",
+              "setBarChord",
+              "setChords",
+              "setBpm",
+              "setKey",
+              "snapshotStep",
+              "loopLength",
+              "locateStep",
+              "hashMelodySet",
+              "onsetKey",
+              "allOnsetKeys"
+            ]
+          },
+          {
+            "path": "src/game/qte.ts",
+            "batchIndex": 3,
+            "symbols": [
+              "degreeToPerformKey",
+              "keyToDegree",
+              "qteKeyToDegree",
+              "ratingWeight",
+              "chartFromMelody",
+              "harmonicChart",
+              "PATTERN_MOTIFS",
+              "patternMotif",
+              "fitChartToWindow",
+              "chartKeys",
+              "chartFromPattern",
+              "randomChart",
+              "createQte",
+              "pressQte",
+              "releaseQte",
+              "missOverdueNotes",
+              "isQteComplete",
+              "isQteExpired",
+              "qteSuccessRate",
+              "parryDamage",
+              "beatDegreeFor"
+            ]
+          }
+        ],
+        "src/game/theory.ts": [
+          {
+            "path": "src/game/arrangement.ts",
+            "batchIndex": 1,
+            "symbols": [
+              "STEPS_PER_BAR",
+              "DEFAULT_BARS",
+              "ATTACK_SLOTS",
+              "createDefaultArrangement",
+              "toggleNoteEvent",
+              "clearTracks",
+              "countOnsets",
+              "toggleDrumStep",
+              "setBarChord",
+              "setChords",
+              "setBpm",
+              "setKey",
+              "snapshotStep",
+              "loopLength",
+              "locateStep",
+              "hashMelodySet",
+              "onsetKey",
+              "allOnsetKeys"
+            ]
+          },
+          {
+            "path": "src/game/combat.ts",
+            "batchIndex": 3,
+            "symbols": [
+              "refreshPotency",
+              "reconcilePotency",
+              "createFight",
+              "aliveParty",
+              "aliveEnemies",
+              "moveFighter",
+              "qteLocked",
+              "requestChordQte",
+              "requestPresetQte",
+              "pressQteKey",
+              "releaseQteKey",
+              "cancelQte",
+              "keeperInstrument",
+              "hasLiveAttacker",
+              "beatInstrument",
+              "defaultPerformerId",
+              "laneAttacker",
+              "performSlot",
+              "computeNoteDamage",
+              "advanceTick"
+            ]
+          },
+          {
+            "path": "src/game/combatAtb.test.ts",
+            "batchIndex": 4,
+            "symbols": []
+          },
+          {
+            "path": "src/game/qte.ts",
+            "batchIndex": 3,
+            "symbols": [
+              "degreeToPerformKey",
+              "keyToDegree",
+              "qteKeyToDegree",
+              "ratingWeight",
+              "chartFromMelody",
+              "harmonicChart",
+              "PATTERN_MOTIFS",
+              "patternMotif",
+              "fitChartToWindow",
+              "chartKeys",
+              "chartFromPattern",
+              "randomChart",
+              "createQte",
+              "pressQte",
+              "releaseQte",
+              "missOverdueNotes",
+              "isQteComplete",
+              "isQteExpired",
+              "qteSuccessRate",
+              "parryDamage",
+              "beatDegreeFor"
+            ]
+          },
+          {
+            "path": "src/game/session.ts",
+            "batchIndex": 1,
+            "symbols": [
+              "getArrangement",
+              "getFight",
+              "getPresets",
+              "getMelodyBank",
+              "getGamePhase",
+              "setGamePhase",
+              "toMenu",
+              "toPrep",
+              "getEncounterId",
+              "setEncounterId",
+              "getClearedEncounters",
+              "isCurrentEncounterUnlocked",
+              "unlockAllEncounters",
+              "resetEncounterProgression",
+              "getSelectedParty",
+              "setSelectedParty",
+              "getCustomChordPresets",
+              "saveCustomChordPreset",
+              "mutateArrangement",
+              "handleStep",
+              "moveFighter",
+              "startFight",
+              "resetFight",
+              "getFrontPerformerId",
+              "saveMelodyPreset",
+              "recallMelodyPreset",
+              "saveToMelodyBank",
+              "deleteFromMelodyBank",
+              "loadMelodyTemplate",
+              "requestTemplateChart",
+              "requestChordChart",
+              "requestPresetChart",
+              "pressChartKey",
+              "pressParryKey",
+              "releaseParryKey",
+              "cancelChart",
+              "resetAll",
+              "subscribe"
+            ]
+          },
+          {
+            "path": "src/game/timbre.test.ts",
+            "batchIndex": 4,
+            "symbols": []
+          }
+        ]
+      }
+    },
+    {
+      "batchIndex": 3,
+      "files": [
+        {
+          "path": "src/game/combat.ts",
+          "language": "typescript",
+          "sizeLines": 817,
+          "fileCategory": "code"
+        },
+        {
+          "path": "src/game/parryChart.test.ts",
+          "language": "typescript",
+          "sizeLines": 80,
+          "fileCategory": "code"
+        },
+        {
+          "path": "src/game/parryChart.ts",
+          "language": "typescript",
+          "sizeLines": 202,
+          "fileCategory": "code"
+        },
+        {
+          "path": "src/game/perform.test.ts",
+          "language": "typescript",
+          "sizeLines": 51,
+          "fileCategory": "code"
+        },
+        {
+          "path": "src/game/perform.ts",
+          "language": "typescript",
+          "sizeLines": 82,
+          "fileCategory": "code"
+        },
+        {
+          "path": "src/game/qte.ts",
+          "language": "typescript",
+          "sizeLines": 665,
+          "fileCategory": "code"
+        },
+        {
+          "path": "src/game/units.test.ts",
+          "language": "typescript",
+          "sizeLines": 98,
+          "fileCategory": "code"
+        },
+        {
+          "path": "src/game/units.ts",
+          "language": "typescript",
+          "sizeLines": 156,
+          "fileCategory": "code"
+        }
+      ],
+      "batchImportData": {
+        "src/game/combat.ts": [
+          "src/data/chords.ts",
+          "src/data/enemies.ts",
+          "src/data/roster.ts",
+          "src/game/arrangement.ts",
+          "src/game/keys.ts",
+          "src/game/parryChart.ts",
+          "src/game/perform.ts",
+          "src/game/positions.ts",
+          "src/game/qte.ts",
+          "src/game/theory.ts",
+          "src/game/units.ts"
+        ],
+        "src/game/parryChart.test.ts": [
+          "src/game/parryChart.ts",
+          "src/game/perform.ts"
+        ],
+        "src/game/parryChart.ts": [
+          "src/game/perform.ts",
+          "src/game/qte.ts"
+        ],
+        "src/game/perform.test.ts": [
+          "src/game/perform.ts"
+        ],
+        "src/game/perform.ts": [],
+        "src/game/qte.ts": [
+          "src/game/arrangement.ts",
+          "src/game/perform.ts",
+          "src/game/theory.ts"
+        ],
+        "src/game/units.test.ts": [
+          "src/game/units.ts"
+        ],
+        "src/game/units.ts": []
+      },
+      "neighborMap": {
+        "src/game/combat.ts": [
+          {
+            "path": "src/data/chords.ts",
+            "batchIndex": 2,
+            "symbols": [
+              "CHORD_PRESETS",
+              "chordEffectFor"
+            ]
+          },
+          {
+            "path": "src/data/enemies.ts",
+            "batchIndex": 4,
+            "symbols": [
+              "ENEMIES",
+              "NEUTRAL_KIT",
+              "INSTRUMENTS"
+            ]
+          },
+          {
+            "path": "src/data/roster.ts",
+            "batchIndex": 4,
+            "symbols": [
+              "ROSTER",
+              "DEFAULT_PARTY_ROSTER",
+              "getCharacter"
+            ]
+          },
+          {
+            "path": "src/game/arrangement.ts",
+            "batchIndex": 1,
+            "symbols": [
+              "STEPS_PER_BAR",
+              "DEFAULT_BARS",
+              "ATTACK_SLOTS",
+              "createDefaultArrangement",
+              "toggleNoteEvent",
+              "clearTracks",
+              "countOnsets",
+              "toggleDrumStep",
+              "setBarChord",
+              "setChords",
+              "setBpm",
+              "setKey",
+              "snapshotStep",
+              "loopLength",
+              "locateStep",
+              "hashMelodySet",
+              "onsetKey",
+              "allOnsetKeys"
+            ]
+          },
+          {
+            "path": "src/game/keys.ts",
+            "batchIndex": 2,
+            "symbols": [
+              "FIGHT_KEYS",
+              "keyEquals",
+              "keyLabel",
+              "randomFightKey",
+              "resolveFightKey"
+            ]
+          },
+          {
+            "path": "src/game/positions.ts",
+            "batchIndex": 1,
+            "symbols": [
+              "MAX_FRONT",
+              "defaultSlots",
+              "deckIds",
+              "assignToSlot",
+              "removeToDeck",
+              "slotOf"
+            ]
+          },
+          {
+            "path": "src/game/theory.ts",
+            "batchIndex": 2,
+            "symbols": [
+              "DEFAULT_KEY",
+              "pitchClassOfMidi",
+              "midiToNote",
+              "degreeToMidi",
+              "romanToChord",
+              "romanFunction",
+              "voiceLeadingScore",
+              "diatonicFitScore",
+              "syntaxScore",
+              "scoreProgression",
+              "tensionOf"
+            ]
+          },
+          {
+            "path": "src/game/combatAtb.test.ts",
+            "batchIndex": 4,
+            "symbols": []
+          },
+          {
+            "path": "src/game/combatQte.test.ts",
+            "batchIndex": 2,
+            "symbols": []
+          },
+          {
+            "path": "src/game/effects.test.ts",
+            "batchIndex": 2,
+            "symbols": []
+          },
+          {
+            "path": "src/game/session.ts",
+            "batchIndex": 1,
+            "symbols": [
+              "getArrangement",
+              "getFight",
+              "getPresets",
+              "getMelodyBank",
+              "getGamePhase",
+              "setGamePhase",
+              "toMenu",
+              "toPrep",
+              "getEncounterId",
+              "setEncounterId",
+              "getClearedEncounters",
+              "isCurrentEncounterUnlocked",
+              "unlockAllEncounters",
+              "resetEncounterProgression",
+              "getSelectedParty",
+              "setSelectedParty",
+              "getCustomChordPresets",
+              "saveCustomChordPreset",
+              "mutateArrangement",
+              "handleStep",
+              "moveFighter",
+              "startFight",
+              "resetFight",
+              "getFrontPerformerId",
+              "saveMelodyPreset",
+              "recallMelodyPreset",
+              "saveToMelodyBank",
+              "deleteFromMelodyBank",
+              "loadMelodyTemplate",
+              "requestTemplateChart",
+              "requestChordChart",
+              "requestPresetChart",
+              "pressChartKey",
+              "pressParryKey",
+              "releaseParryKey",
+              "cancelChart",
+              "resetAll",
+              "subscribe"
+            ]
+          },
+          {
+            "path": "src/game/timbre.test.ts",
+            "batchIndex": 4,
+            "symbols": []
+          }
+        ],
+        "src/game/parryChart.ts": [
+          {
+            "path": "src/data/enemies.ts",
+            "batchIndex": 4,
+            "symbols": [
+              "ENEMIES",
+              "NEUTRAL_KIT",
+              "INSTRUMENTS"
+            ]
+          }
+        ],
+        "src/game/qte.ts": [
+          {
+            "path": "src/game/arrangement.ts",
+            "batchIndex": 1,
+            "symbols": [
+              "STEPS_PER_BAR",
+              "DEFAULT_BARS",
+              "ATTACK_SLOTS",
+              "createDefaultArrangement",
+              "toggleNoteEvent",
+              "clearTracks",
+              "countOnsets",
+              "toggleDrumStep",
+              "setBarChord",
+              "setChords",
+              "setBpm",
+              "setKey",
+              "snapshotStep",
+              "loopLength",
+              "locateStep",
+              "hashMelodySet",
+              "onsetKey",
+              "allOnsetKeys"
+            ]
+          },
+          {
+            "path": "src/game/theory.ts",
+            "batchIndex": 2,
+            "symbols": [
+              "DEFAULT_KEY",
+              "pitchClassOfMidi",
+              "midiToNote",
+              "degreeToMidi",
+              "romanToChord",
+              "romanFunction",
+              "voiceLeadingScore",
+              "diatonicFitScore",
+              "syntaxScore",
+              "scoreProgression",
+              "tensionOf"
+            ]
+          },
+          {
+            "path": "src/game/qte.test.ts",
+            "batchIndex": 2,
+            "symbols": []
+          }
+        ]
+      }
+    },
+    {
+      "batchIndex": 4,
+      "files": [
+        {
+          "path": "src/data/encounters.test.ts",
+          "language": "typescript",
+          "sizeLines": 57,
+          "fileCategory": "code"
+        },
+        {
+          "path": "src/data/encounters.ts",
+          "language": "typescript",
+          "sizeLines": 90,
+          "fileCategory": "code"
+        },
+        {
+          "path": "src/data/enemies.ts",
+          "language": "typescript",
+          "sizeLines": 267,
+          "fileCategory": "code"
+        },
+        {
+          "path": "src/data/roster.test.ts",
+          "language": "typescript",
+          "sizeLines": 45,
+          "fileCategory": "code"
+        },
+        {
+          "path": "src/data/roster.ts",
+          "language": "typescript",
+          "sizeLines": 116,
+          "fileCategory": "code"
+        },
+        {
+          "path": "src/game/combatAtb.test.ts",
+          "language": "typescript",
+          "sizeLines": 468,
+          "fileCategory": "code"
+        },
+        {
+          "path": "src/game/timbre.test.ts",
+          "language": "typescript",
+          "sizeLines": 63,
+          "fileCategory": "code"
+        }
+      ],
+      "batchImportData": {
+        "src/data/encounters.test.ts": [
+          "src/data/encounters.ts",
+          "src/data/enemies.ts"
+        ],
+        "src/data/encounters.ts": [
+          "src/data/enemies.ts"
+        ],
+        "src/data/enemies.ts": [
+          "src/game/parryChart.ts"
+        ],
+        "src/data/roster.test.ts": [
+          "src/data/enemies.ts",
+          "src/data/roster.ts"
+        ],
+        "src/data/roster.ts": [],
+        "src/game/combatAtb.test.ts": [
+          "src/data/enemies.ts",
+          "src/game/arrangement.ts",
+          "src/game/combat.ts",
+          "src/game/theory.ts"
+        ],
+        "src/game/timbre.test.ts": [
+          "src/data/enemies.ts",
+          "src/game/combat.ts",
+          "src/game/theory.ts"
+        ]
+      },
+      "neighborMap": {
+        "src/data/enemies.ts": [
+          {
+            "path": "src/game/parryChart.ts",
+            "batchIndex": 3,
+            "symbols": [
+              "PARRY_LANES",
+              "DEFAULT_PARRY_PARAMS",
+              "PARRY_MOTIFS",
+              "parryParamsFor",
+              "degreeToParryLane",
+              "generateParryChart"
+            ]
+          },
+          {
+            "path": "src/game/combat.ts",
+            "batchIndex": 3,
+            "symbols": [
+              "refreshPotency",
+              "reconcilePotency",
+              "createFight",
+              "aliveParty",
+              "aliveEnemies",
+              "moveFighter",
+              "qteLocked",
+              "requestChordQte",
+              "requestPresetQte",
+              "pressQteKey",
+              "releaseQteKey",
+              "cancelQte",
+              "keeperInstrument",
+              "hasLiveAttacker",
+              "beatInstrument",
+              "defaultPerformerId",
+              "laneAttacker",
+              "performSlot",
+              "computeNoteDamage",
+              "advanceTick"
+            ]
+          },
+          {
+            "path": "src/game/effects.test.ts",
+            "batchIndex": 2,
+            "symbols": []
+          }
+        ],
+        "src/data/roster.ts": [
+          {
+            "path": "src/game/combat.ts",
+            "batchIndex": 3,
+            "symbols": [
+              "refreshPotency",
+              "reconcilePotency",
+              "createFight",
+              "aliveParty",
+              "aliveEnemies",
+              "moveFighter",
+              "qteLocked",
+              "requestChordQte",
+              "requestPresetQte",
+              "pressQteKey",
+              "releaseQteKey",
+              "cancelQte",
+              "keeperInstrument",
+              "hasLiveAttacker",
+              "beatInstrument",
+              "defaultPerformerId",
+              "laneAttacker",
+              "performSlot",
+              "computeNoteDamage",
+              "advanceTick"
+            ]
+          }
+        ],
+        "src/game/combatAtb.test.ts": [
+          {
+            "path": "src/game/arrangement.ts",
+            "batchIndex": 1,
+            "symbols": [
+              "STEPS_PER_BAR",
+              "DEFAULT_BARS",
+              "ATTACK_SLOTS",
+              "createDefaultArrangement",
+              "toggleNoteEvent",
+              "clearTracks",
+              "countOnsets",
+              "toggleDrumStep",
+              "setBarChord",
+              "setChords",
+              "setBpm",
+              "setKey",
+              "snapshotStep",
+              "loopLength",
+              "locateStep",
+              "hashMelodySet",
+              "onsetKey",
+              "allOnsetKeys"
+            ]
+          },
+          {
+            "path": "src/game/combat.ts",
+            "batchIndex": 3,
+            "symbols": [
+              "refreshPotency",
+              "reconcilePotency",
+              "createFight",
+              "aliveParty",
+              "aliveEnemies",
+              "moveFighter",
+              "qteLocked",
+              "requestChordQte",
+              "requestPresetQte",
+              "pressQteKey",
+              "releaseQteKey",
+              "cancelQte",
+              "keeperInstrument",
+              "hasLiveAttacker",
+              "beatInstrument",
+              "defaultPerformerId",
+              "laneAttacker",
+              "performSlot",
+              "computeNoteDamage",
+              "advanceTick"
+            ]
+          },
+          {
+            "path": "src/game/theory.ts",
+            "batchIndex": 2,
+            "symbols": [
+              "DEFAULT_KEY",
+              "pitchClassOfMidi",
+              "midiToNote",
+              "degreeToMidi",
+              "romanToChord",
+              "romanFunction",
+              "voiceLeadingScore",
+              "diatonicFitScore",
+              "syntaxScore",
+              "scoreProgression",
+              "tensionOf"
+            ]
+          }
+        ],
+        "src/game/timbre.test.ts": [
+          {
+            "path": "src/game/combat.ts",
+            "batchIndex": 3,
+            "symbols": [
+              "refreshPotency",
+              "reconcilePotency",
+              "createFight",
+              "aliveParty",
+              "aliveEnemies",
+              "moveFighter",
+              "qteLocked",
+              "requestChordQte",
+              "requestPresetQte",
+              "pressQteKey",
+              "releaseQteKey",
+              "cancelQte",
+              "keeperInstrument",
+              "hasLiveAttacker",
+              "beatInstrument",
+              "defaultPerformerId",
+              "laneAttacker",
+              "performSlot",
+              "computeNoteDamage",
+              "advanceTick"
+            ]
+          },
+          {
+            "path": "src/game/theory.ts",
+            "batchIndex": 2,
+            "symbols": [
+              "DEFAULT_KEY",
+              "pitchClassOfMidi",
+              "midiToNote",
+              "degreeToMidi",
+              "romanToChord",
+              "romanFunction",
+              "voiceLeadingScore",
+              "diatonicFitScore",
+              "syntaxScore",
+              "scoreProgression",
+              "tensionOf"
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "batchIndex": 5,
+      "files": [
+        {
+          "path": "src/audio/context.ts",
+          "language": "typescript",
+          "sizeLines": 23,
+          "fileCategory": "code"
+        },
+        {
+          "path": "src/audio/perform.ts",
+          "language": "typescript",
+          "sizeLines": 32,
+          "fileCategory": "code"
+        },
+        {
+          "path": "src/audio/player.ts",
+          "language": "typescript",
+          "sizeLines": 113,
+          "fileCategory": "code"
+        },
+        {
+          "path": "src/audio/sfx.ts",
+          "language": "typescript",
+          "sizeLines": 106,
+          "fileCategory": "code"
+        },
+        {
+          "path": "src/audio/synths.ts",
+          "language": "typescript",
+          "sizeLines": 136,
+          "fileCategory": "code"
+        }
+      ],
+      "batchImportData": {
+        "src/audio/context.ts": [],
+        "src/audio/perform.ts": [
+          "src/audio/synths.ts"
+        ],
+        "src/audio/player.ts": [
+          "src/audio/context.ts",
+          "src/audio/synths.ts"
+        ],
+        "src/audio/sfx.ts": [
+          "src/audio/synths.ts"
+        ],
+        "src/audio/synths.ts": [
+          "src/audio/context.ts"
+        ]
+      },
+      "neighborMap": {}
+    },
+    {
+      "batchIndex": 6,
+      "files": [
+        {
+          "path": "src/components/screens/CombatScreen.tsx",
+          "language": "typescript",
+          "sizeLines": 78,
+          "fileCategory": "code"
+        },
+        {
+          "path": "src/components/screens/MenuScreen.tsx",
+          "language": "typescript",
+          "sizeLines": 148,
+          "fileCategory": "code"
+        },
+        {
+          "path": "src/components/screens/PrepScreen.tsx",
+          "language": "typescript",
+          "sizeLines": 164,
+          "fileCategory": "code"
+        },
+        {
+          "path": "src/components/screens/ResultOverlay.tsx",
+          "language": "typescript",
+          "sizeLines": 150,
+          "fileCategory": "code"
+        },
+        {
+          "path": "src/components/screens/screens.test.tsx",
+          "language": "typescript",
+          "sizeLines": 97,
+          "fileCategory": "code"
+        }
+      ],
+      "batchImportData": {
+        "src/components/screens/CombatScreen.tsx": [],
+        "src/components/screens/MenuScreen.tsx": [],
+        "src/components/screens/PrepScreen.tsx": [],
+        "src/components/screens/ResultOverlay.tsx": [],
+        "src/components/screens/screens.test.tsx": [
+          "src/components/screens/CombatScreen.tsx",
+          "src/components/screens/MenuScreen.tsx",
+          "src/components/screens/PrepScreen.tsx",
+          "src/components/screens/ResultOverlay.tsx"
+        ]
+      },
+      "neighborMap": {}
+    },
+    {
+      "batchIndex": 7,
+      "files": [
+        {
+          "path": ".oxlintrc.json",
+          "language": "json",
+          "sizeLines": 8,
+          "fileCategory": "config"
+        },
+        {
+          "path": "AGENTS.md",
+          "language": "markdown",
+          "sizeLines": 32,
+          "fileCategory": "docs"
+        },
+        {
+          "path": "README.md",
+          "language": "markdown",
+          "sizeLines": 44,
+          "fileCategory": "docs"
+        },
+        {
+          "path": "components.json",
+          "language": "json",
+          "sizeLines": 21,
+          "fileCategory": "config"
+        },
+        {
+          "path": "index.html",
+          "language": "html",
+          "sizeLines": 13,
+          "fileCategory": "markup"
+        },
+        {
+          "path": "package.json",
+          "language": "json",
+          "sizeLines": 38,
+          "fileCategory": "config"
+        },
+        {
+          "path": "tsconfig.app.json",
+          "language": "json",
+          "sizeLines": 31,
+          "fileCategory": "config"
+        },
+        {
+          "path": "tsconfig.json",
+          "language": "json",
+          "sizeLines": 7,
+          "fileCategory": "config"
+        },
+        {
+          "path": "tsconfig.node.json",
+          "language": "json",
+          "sizeLines": 23,
+          "fileCategory": "config"
+        }
+      ],
+      "batchImportData": {
+        ".oxlintrc.json": [],
+        "AGENTS.md": [],
+        "README.md": [],
+        "components.json": [],
+        "index.html": [],
+        "package.json": [],
+        "tsconfig.app.json": [],
+        "tsconfig.json": [],
+        "tsconfig.node.json": []
+      },
+      "neighborMap": {}
+    },
+    {
+      "batchIndex": 8,
+      "files": [
+        {
+          "path": "docs/combat-pacing-plan.md",
+          "language": "markdown",
+          "sizeLines": 338,
+          "fileCategory": "docs"
+        },
+        {
+          "path": "docs/mechanics.md",
+          "language": "markdown",
+          "sizeLines": 35,
+          "fileCategory": "docs"
+        },
+        {
+          "path": "docs/qte-redesign.md",
+          "language": "markdown",
+          "sizeLines": 45,
+          "fileCategory": "docs"
+        },
+        {
+          "path": "docs/v1-plan.md",
+          "language": "markdown",
+          "sizeLines": 156,
+          "fileCategory": "docs"
+        }
+      ],
+      "batchImportData": {
+        "docs/combat-pacing-plan.md": [],
+        "docs/mechanics.md": [],
+        "docs/qte-redesign.md": [],
+        "docs/v1-plan.md": []
+      },
+      "neighborMap": {}
+    },
+    {
+      "batchIndex": 9,
+      "files": [
+        {
+          "path": "src/App.tsx",
+          "language": "typescript",
+          "sizeLines": 28,
+          "fileCategory": "code"
+        },
+        {
+          "path": "src/components/ChordPicker.tsx",
+          "language": "typescript",
+          "sizeLines": 64,
+          "fileCategory": "code"
+        },
+        {
+          "path": "src/components/ChordWheel.tsx",
+          "language": "typescript",
+          "sizeLines": 67,
+          "fileCategory": "code"
+        },
+        {
+          "path": "src/components/CombatFeedback.tsx",
+          "language": "typescript",
+          "sizeLines": 94,
+          "fileCategory": "code"
+        },
+        {
+          "path": "src/components/CombatLog.tsx",
+          "language": "typescript",
+          "sizeLines": 29,
+          "fileCategory": "code"
+        },
+        {
+          "path": "src/components/CustomChordBuilder.test.tsx",
+          "language": "typescript",
+          "sizeLines": 48,
+          "fileCategory": "code"
+        },
+        {
+          "path": "src/components/CustomChordBuilder.tsx",
+          "language": "typescript",
+          "sizeLines": 280,
+          "fileCategory": "code"
+        },
+        {
+          "path": "src/components/EncounterBanner.tsx",
+          "language": "typescript",
+          "sizeLines": 175,
+          "fileCategory": "code"
+        },
+        {
+          "path": "src/components/FoePanel.tsx",
+          "language": "typescript",
+          "sizeLines": 186,
+          "fileCategory": "code"
+        },
+        {
+          "path": "src/components/MelodyBankBar.tsx",
+          "language": "typescript",
+          "sizeLines": 123,
+          "fileCategory": "code"
+        },
+        {
+          "path": "src/components/Meter.tsx",
+          "language": "typescript",
+          "sizeLines": 22,
+          "fileCategory": "code"
+        },
+        {
+          "path": "src/components/PartyCorner.test.tsx",
+          "language": "typescript",
+          "sizeLines": 62,
+          "fileCategory": "code"
+        },
+        {
+          "path": "src/components/PartyCorner.tsx",
+          "language": "typescript",
+          "sizeLines": 309,
+          "fileCategory": "code"
+        },
+        {
+          "path": "src/components/PhaseStrip.tsx",
+          "language": "typescript",
+          "sizeLines": 84,
+          "fileCategory": "code"
+        },
+        {
+          "path": "src/components/PresetBar.test.tsx",
+          "language": "typescript",
+          "sizeLines": 31,
+          "fileCategory": "code"
+        },
+        {
+          "path": "src/components/PresetBar.tsx",
+          "language": "typescript",
+          "sizeLines": 102,
+          "fileCategory": "code"
+        },
+        {
+          "path": "src/components/QtePanel.tsx",
+          "language": "typescript",
+          "sizeLines": 488,
+          "fileCategory": "code"
+        },
+        {
+          "path": "src/components/RosterSelectModal.test.tsx",
+          "language": "typescript",
+          "sizeLines": 56,
+          "fileCategory": "code"
+        },
+        {
+          "path": "src/components/RosterSelectModal.tsx",
+          "language": "typescript",
+          "sizeLines": 241,
+          "fileCategory": "code"
+        },
+        {
+          "path": "src/components/StepGrid.tsx",
+          "language": "typescript",
+          "sizeLines": 318,
+          "fileCategory": "code"
+        },
+        {
+          "path": "src/components/TransportBar.tsx",
+          "language": "typescript",
+          "sizeLines": 77,
+          "fileCategory": "code"
+        },
+        {
+          "path": "src/components/TutorialModal.test.tsx",
+          "language": "typescript",
+          "sizeLines": 47,
+          "fileCategory": "code"
+        },
+        {
+          "path": "src/components/TutorialModal.tsx",
+          "language": "typescript",
+          "sizeLines": 193,
+          "fileCategory": "code"
+        },
+        {
+          "path": "src/components/VoiceBar.test.tsx",
+          "language": "typescript",
+          "sizeLines": 31,
+          "fileCategory": "code"
+        },
+        {
+          "path": "src/components/VoiceBar.tsx",
+          "language": "typescript",
+          "sizeLines": 74,
+          "fileCategory": "code"
+        }
+      ],
+      "batchImportData": {
+        "src/App.tsx": [],
+        "src/components/ChordPicker.tsx": [],
+        "src/components/ChordWheel.tsx": [],
+        "src/components/CombatFeedback.tsx": [],
+        "src/components/CombatLog.tsx": [],
+        "src/components/CustomChordBuilder.test.tsx": [
+          "src/components/CustomChordBuilder.tsx"
+        ],
+        "src/components/CustomChordBuilder.tsx": [],
+        "src/components/EncounterBanner.tsx": [],
+        "src/components/FoePanel.tsx": [],
+        "src/components/MelodyBankBar.tsx": [],
+        "src/components/Meter.tsx": [],
+        "src/components/PartyCorner.test.tsx": [],
+        "src/components/PartyCorner.tsx": [],
+        "src/components/PhaseStrip.tsx": [],
+        "src/components/PresetBar.test.tsx": [],
+        "src/components/PresetBar.tsx": [],
+        "src/components/QtePanel.tsx": [],
+        "src/components/RosterSelectModal.test.tsx": [
+          "src/components/RosterSelectModal.tsx"
+        ],
+        "src/components/RosterSelectModal.tsx": [],
+        "src/components/StepGrid.tsx": [],
+        "src/components/TransportBar.tsx": [],
+        "src/components/TutorialModal.test.tsx": [
+          "src/components/TutorialModal.tsx"
+        ],
+        "src/components/TutorialModal.tsx": [],
+        "src/components/VoiceBar.test.tsx": [],
+        "src/components/VoiceBar.tsx": []
+      },
+      "neighborMap": {
+        "src/App.tsx": [
+          {
+            "path": "src/main.tsx",
+            "batchIndex": 10,
+            "symbols": []
+          }
+        ]
+      }
+    },
+    {
+      "batchIndex": 10,
+      "files": [
+        {
+          "path": "src/components/ui/button.tsx",
+          "language": "typescript",
+          "sizeLines": 35,
+          "fileCategory": "code"
+        },
+        {
+          "path": "src/hooks/useQtePlayhead.ts",
+          "language": "typescript",
+          "sizeLines": 45,
+          "fileCategory": "code"
+        },
+        {
+          "path": "src/hooks/useWasd.ts",
+          "language": "typescript",
+          "sizeLines": 58,
+          "fileCategory": "code"
+        },
+        {
+          "path": "src/index.css",
+          "language": "css",
+          "sizeLines": 170,
+          "fileCategory": "markup"
+        },
+        {
+          "path": "src/lib/utils.ts",
+          "language": "typescript",
+          "sizeLines": 6,
+          "fileCategory": "code"
+        },
+        {
+          "path": "src/main.tsx",
+          "language": "typescript",
+          "sizeLines": 10,
+          "fileCategory": "code"
+        },
+        {
+          "path": "src/persistence/storage.test.ts",
+          "language": "typescript",
+          "sizeLines": 58,
+          "fileCategory": "code"
+        },
+        {
+          "path": "src/persistence/storage.ts",
+          "language": "typescript",
+          "sizeLines": 111,
+          "fileCategory": "code"
+        },
+        {
+          "path": "src/state/useSessionStore.test.ts",
+          "language": "typescript",
+          "sizeLines": 91,
+          "fileCategory": "code"
+        },
+        {
+          "path": "src/state/useSessionStore.ts",
+          "language": "typescript",
+          "sizeLines": 530,
+          "fileCategory": "code"
+        },
+        {
+          "path": "src/test/setup.ts",
+          "language": "typescript",
+          "sizeLines": 7,
+          "fileCategory": "code"
+        },
+        {
+          "path": "vite.config.ts",
+          "language": "typescript",
+          "sizeLines": 19,
+          "fileCategory": "code"
+        }
+      ],
+      "batchImportData": {
+        "src/components/ui/button.tsx": [],
+        "src/hooks/useQtePlayhead.ts": [],
+        "src/hooks/useWasd.ts": [],
+        "src/index.css": [],
+        "src/lib/utils.ts": [],
+        "src/main.tsx": [
+          "src/App.tsx",
+          "src/index.css"
+        ],
+        "src/persistence/storage.test.ts": [
+          "src/persistence/storage.ts"
+        ],
+        "src/persistence/storage.ts": [],
+        "src/state/useSessionStore.test.ts": [
+          "src/state/useSessionStore.ts"
+        ],
+        "src/state/useSessionStore.ts": [],
+        "src/test/setup.ts": [],
+        "vite.config.ts": []
+      },
+      "neighborMap": {
+        "src/main.tsx": [
+          {
+            "path": "src/App.tsx",
+            "batchIndex": 9,
+            "symbols": [
+              "App"
+            ]
+          }
+        ]
+      }
+    }
+  ]
+}

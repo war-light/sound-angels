@@ -1,7 +1,15 @@
-import { useState } from "react"
+import { useEffect, useState } from "react"
 import { useSessionStore } from "@/state/useSessionStore"
 import { ROSTER, type CharacterDef } from "@/data/roster"
 import { Button } from "@/components/ui/button"
+import {
+  Dialog,
+  DialogContent,
+  DialogDescription,
+  DialogFooter,
+  DialogHeader,
+  DialogTitle,
+} from "@/components/ui/dialog"
 import { cn } from "@/lib/utils"
 
 interface RosterSelectModalProps {
@@ -23,7 +31,12 @@ export function RosterSelectModal({ isOpen, onClose }: RosterSelectModalProps) {
   const [stagedParty, setStagedParty] = useState<string[]>([...selectedPartyIds])
   const [filterInstrument, setFilterInstrument] = useState<string>("all")
 
-  if (!isOpen) return null
+  useEffect(() => {
+    if (isOpen) {
+      setStagedParty([...selectedPartyIds])
+      setActiveSlot(0)
+    }
+  }, [isOpen, selectedPartyIds])
 
   const handleSelectCharacter = (char: CharacterDef) => {
     const next = [...stagedParty]
@@ -48,31 +61,22 @@ export function RosterSelectModal({ isOpen, onClose }: RosterSelectModalProps) {
     : ROSTER.filter((c) => c.instrument === filterInstrument)
 
   return (
-    <div
-      className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-background/80 backdrop-blur-md animate-in fade-in duration-200"
-      role="dialog"
-      aria-modal="true"
-      aria-label="Character Roster Selection"
-    >
-      <div className="w-full max-w-4xl max-h-[90vh] flex flex-col rounded-xl border border-border/80 bg-card shadow-2xl text-foreground overflow-hidden">
-        {/* Header */}
-        <div className="flex items-center justify-between border-b border-border/60 p-4">
-          <div>
-            <h2 className="text-lg font-bold tracking-tight flex items-center gap-2">
-              <span>Assemble Your Voices</span>
-              <span className="text-xs font-mono px-2 py-0.5 rounded bg-primary/20 text-primary">
-                3 Members
-              </span>
-            </h2>
-            <p className="text-xs text-muted-foreground">
-              Select 3 singers for your active battle ensemble. Each voice carries unique instruments, elements, and passives.
-            </p>
-          </div>
-
-          <Button variant="ghost" size="sm" onClick={onClose} className="h-8 w-8 p-0 text-muted-foreground hover:text-foreground">
-            ✕
-          </Button>
-        </div>
+    <Dialog open={isOpen} onOpenChange={(open) => { if (!open) onClose() }}>
+      <DialogContent
+        aria-label="Character Roster Selection"
+        className="max-w-4xl max-h-[90vh] flex flex-col p-0 gap-0 overflow-hidden"
+      >
+        <DialogHeader className="border-b border-border/60 p-4 pr-12 text-left">
+          <DialogTitle className="text-lg font-bold tracking-tight flex items-center gap-2">
+            <span>Assemble Your Voices</span>
+            <span className="text-xs font-mono px-2 py-0.5 rounded bg-primary/20 text-primary">
+              3 Members
+            </span>
+          </DialogTitle>
+          <DialogDescription className="text-xs">
+            Select 3 singers for your active battle ensemble. Each voice carries unique instruments, elements, and passives.
+          </DialogDescription>
+        </DialogHeader>
 
         {/* Active 3 Party Formation Tray */}
         <div className="bg-muted/30 border-b border-border/40 p-4 space-y-2">
@@ -221,8 +225,7 @@ export function RosterSelectModal({ isOpen, onClose }: RosterSelectModalProps) {
           })}
         </div>
 
-        {/* Footer */}
-        <div className="flex items-center justify-between border-t border-border/60 p-4 bg-muted/20">
+        <DialogFooter className="border-t border-border/60 p-4 bg-muted/20 sm:justify-between flex-row items-center justify-between">
           <Button variant="ghost" size="sm" onClick={onClose} className="text-xs">
             Cancel
           </Button>
@@ -233,9 +236,8 @@ export function RosterSelectModal({ isOpen, onClose }: RosterSelectModalProps) {
           >
             Confirm Formation ⚔
           </Button>
-        </div>
-      </div>
-    </div>
+        </DialogFooter>
+      </DialogContent>
+    </Dialog>
   )
 }
-

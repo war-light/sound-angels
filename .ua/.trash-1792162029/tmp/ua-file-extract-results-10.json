@@ -1,0 +1,791 @@
+{
+  "scriptCompleted": true,
+  "filesAnalyzed": 11,
+  "filesSkipped": [
+    "src/index.css"
+  ],
+  "filesUnreadable": [],
+  "analysisOutcomes": {
+    "structure": {
+      "succeeded": 11,
+      "failed": 0
+    },
+    "callGraph": {
+      "succeeded": 11,
+      "failed": 0,
+      "skipped": 0
+    }
+  },
+  "results": [
+    {
+      "path": "src/components/ui/button.tsx",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 35,
+      "nonEmptyLines": 29,
+      "functions": [
+        {
+          "name": "Button",
+          "startLine": 23,
+          "endLine": 33,
+          "params": [
+            "{\n  className,\n  variant = \"default\",\n  size = \"default\",\n  ...props\n}"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "Button",
+          "line": 35,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "Button",
+          "callee": "cn",
+          "lineNumber": 32
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 1,
+        "functionCount": 1,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "src/hooks/useQtePlayhead.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 45,
+      "nonEmptyLines": 41,
+      "functions": [
+        {
+          "name": "useQtePlayhead",
+          "startLine": 9,
+          "endLine": 45,
+          "params": [
+            "startedTick",
+            "tick",
+            "bpm"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "useQtePlayhead",
+          "line": 9,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "useQtePlayhead",
+          "callee": "useState",
+          "lineNumber": 10
+        },
+        {
+          "caller": "useQtePlayhead",
+          "callee": "useRef",
+          "lineNumber": 11
+        },
+        {
+          "caller": "useQtePlayhead",
+          "callee": "useRef",
+          "lineNumber": 12
+        },
+        {
+          "caller": "useQtePlayhead",
+          "callee": "useRef",
+          "lineNumber": 13
+        },
+        {
+          "caller": "useQtePlayhead",
+          "callee": "useRef",
+          "lineNumber": 14
+        },
+        {
+          "caller": "useQtePlayhead",
+          "callee": "useEffect",
+          "lineNumber": 17
+        },
+        {
+          "caller": "useQtePlayhead",
+          "callee": "performance.now",
+          "lineNumber": 20
+        },
+        {
+          "caller": "useQtePlayhead",
+          "callee": "useEffect",
+          "lineNumber": 23
+        },
+        {
+          "caller": "useQtePlayhead",
+          "callee": "useEffect",
+          "lineNumber": 26
+        },
+        {
+          "caller": "useQtePlayhead",
+          "callee": "useEffect",
+          "lineNumber": 30
+        },
+        {
+          "caller": "useQtePlayhead",
+          "callee": "performance.now",
+          "lineNumber": 31
+        },
+        {
+          "caller": "loop",
+          "callee": "stepMs",
+          "lineNumber": 34
+        },
+        {
+          "caller": "loop",
+          "callee": "Math.min",
+          "lineNumber": 35
+        },
+        {
+          "caller": "loop",
+          "callee": "Math.max",
+          "lineNumber": 35
+        },
+        {
+          "caller": "loop",
+          "callee": "Math.max",
+          "lineNumber": 35
+        },
+        {
+          "caller": "loop",
+          "callee": "setPlayhead",
+          "lineNumber": 36
+        },
+        {
+          "caller": "loop",
+          "callee": "requestAnimationFrame",
+          "lineNumber": 37
+        },
+        {
+          "caller": "useQtePlayhead",
+          "callee": "requestAnimationFrame",
+          "lineNumber": 39
+        },
+        {
+          "caller": "useQtePlayhead",
+          "callee": "cancelAnimationFrame",
+          "lineNumber": 40
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 1,
+        "functionCount": 1,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "src/hooks/useWasd.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 58,
+      "nonEmptyLines": 56,
+      "functions": [
+        {
+          "name": "useWasd",
+          "startLine": 17,
+          "endLine": 58,
+          "params": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "useWasd",
+          "line": 17,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "useWasd",
+          "callee": "useEffect",
+          "lineNumber": 18
+        },
+        {
+          "caller": "down",
+          "callee": "isTyping",
+          "lineNumber": 24
+        },
+        {
+          "caller": "down",
+          "callee": "e.key.toLowerCase",
+          "lineNumber": 25
+        },
+        {
+          "caller": "down",
+          "callee": "e.preventDefault",
+          "lineNumber": 27
+        },
+        {
+          "caller": "down",
+          "callee": "useSessionStore.getState().cyclePerformer",
+          "lineNumber": 28
+        },
+        {
+          "caller": "down",
+          "callee": "useSessionStore.getState",
+          "lineNumber": 28
+        },
+        {
+          "caller": "down",
+          "callee": "NUM_KEYS.has",
+          "lineNumber": 32
+        },
+        {
+          "caller": "down",
+          "callee": "e.preventDefault",
+          "lineNumber": 33
+        },
+        {
+          "caller": "down",
+          "callee": "useSessionStore.getState().selectPerformerByIndex",
+          "lineNumber": 34
+        },
+        {
+          "caller": "down",
+          "callee": "useSessionStore.getState",
+          "lineNumber": 34
+        },
+        {
+          "caller": "down",
+          "callee": "parseInt",
+          "lineNumber": 34
+        },
+        {
+          "caller": "down",
+          "callee": "KEYS.has",
+          "lineNumber": 37
+        },
+        {
+          "caller": "down",
+          "callee": "PARRY_KEYS.has",
+          "lineNumber": 37
+        },
+        {
+          "caller": "down",
+          "callee": "e.preventDefault",
+          "lineNumber": 38
+        },
+        {
+          "caller": "down",
+          "callee": "useSessionStore.getState().performDown",
+          "lineNumber": 39
+        },
+        {
+          "caller": "down",
+          "callee": "useSessionStore.getState",
+          "lineNumber": 39
+        },
+        {
+          "caller": "up",
+          "callee": "e.key.toLowerCase",
+          "lineNumber": 42
+        },
+        {
+          "caller": "up",
+          "callee": "KEYS.has",
+          "lineNumber": 43
+        },
+        {
+          "caller": "up",
+          "callee": "PARRY_KEYS.has",
+          "lineNumber": 43
+        },
+        {
+          "caller": "up",
+          "callee": "useSessionStore.getState().performUp",
+          "lineNumber": 44
+        },
+        {
+          "caller": "up",
+          "callee": "useSessionStore.getState",
+          "lineNumber": 44
+        },
+        {
+          "caller": "blurred",
+          "callee": "useSessionStore.getState().releaseAllKeys",
+          "lineNumber": 47
+        },
+        {
+          "caller": "blurred",
+          "callee": "useSessionStore.getState",
+          "lineNumber": 47
+        },
+        {
+          "caller": "useWasd",
+          "callee": "window.addEventListener",
+          "lineNumber": 49
+        },
+        {
+          "caller": "useWasd",
+          "callee": "window.addEventListener",
+          "lineNumber": 50
+        },
+        {
+          "caller": "useWasd",
+          "callee": "window.addEventListener",
+          "lineNumber": 51
+        },
+        {
+          "caller": "useWasd",
+          "callee": "window.removeEventListener",
+          "lineNumber": 53
+        },
+        {
+          "caller": "useWasd",
+          "callee": "window.removeEventListener",
+          "lineNumber": 54
+        },
+        {
+          "caller": "useWasd",
+          "callee": "window.removeEventListener",
+          "lineNumber": 55
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 1,
+        "functionCount": 1,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "src/lib/utils.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 6,
+      "nonEmptyLines": 5,
+      "functions": [
+        {
+          "name": "cn",
+          "startLine": 4,
+          "endLine": 6,
+          "params": [
+            "...inputs"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "cn",
+          "line": 4,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "cn",
+          "callee": "twMerge",
+          "lineNumber": 5
+        },
+        {
+          "caller": "cn",
+          "callee": "clsx",
+          "lineNumber": 5
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 1,
+        "functionCount": 1,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "src/main.tsx",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 10,
+      "nonEmptyLines": 9,
+      "metrics": {
+        "importCount": 2,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "src/persistence/storage.test.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 58,
+      "nonEmptyLines": 50,
+      "metrics": {
+        "importCount": 1,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "src/persistence/storage.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 111,
+      "nonEmptyLines": 99,
+      "functions": [
+        {
+          "name": "isStorageAvailable",
+          "startLine": 12,
+          "endLine": 18,
+          "params": []
+        },
+        {
+          "name": "loadClearedEncounters",
+          "startLine": 20,
+          "endLine": 30,
+          "params": []
+        },
+        {
+          "name": "saveClearedEncounters",
+          "startLine": 32,
+          "endLine": 39,
+          "params": [
+            "ids"
+          ]
+        },
+        {
+          "name": "loadSelectedParty",
+          "startLine": 41,
+          "endLine": 51,
+          "params": []
+        },
+        {
+          "name": "saveSelectedParty",
+          "startLine": 53,
+          "endLine": 60,
+          "params": [
+            "ids"
+          ]
+        },
+        {
+          "name": "loadCustomChords",
+          "startLine": 62,
+          "endLine": 72,
+          "params": []
+        },
+        {
+          "name": "saveCustomChords",
+          "startLine": 74,
+          "endLine": 81,
+          "params": [
+            "presets"
+          ]
+        },
+        {
+          "name": "loadTutorialSeen",
+          "startLine": 83,
+          "endLine": 90,
+          "params": []
+        },
+        {
+          "name": "saveTutorialSeen",
+          "startLine": 92,
+          "endLine": 99,
+          "params": [
+            "seen"
+          ]
+        },
+        {
+          "name": "clearAllPersistedData",
+          "startLine": 101,
+          "endLine": 110,
+          "params": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "loadClearedEncounters",
+          "line": 20,
+          "isDefault": false
+        },
+        {
+          "name": "saveClearedEncounters",
+          "line": 32,
+          "isDefault": false
+        },
+        {
+          "name": "loadSelectedParty",
+          "line": 41,
+          "isDefault": false
+        },
+        {
+          "name": "saveSelectedParty",
+          "line": 53,
+          "isDefault": false
+        },
+        {
+          "name": "loadCustomChords",
+          "line": 62,
+          "isDefault": false
+        },
+        {
+          "name": "saveCustomChords",
+          "line": 74,
+          "isDefault": false
+        },
+        {
+          "name": "loadTutorialSeen",
+          "line": 83,
+          "isDefault": false
+        },
+        {
+          "name": "saveTutorialSeen",
+          "line": 92,
+          "isDefault": false
+        },
+        {
+          "name": "clearAllPersistedData",
+          "line": 101,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "loadClearedEncounters",
+          "callee": "isStorageAvailable",
+          "lineNumber": 21
+        },
+        {
+          "caller": "loadClearedEncounters",
+          "callee": "window.localStorage.getItem",
+          "lineNumber": 23
+        },
+        {
+          "caller": "loadClearedEncounters",
+          "callee": "JSON.parse",
+          "lineNumber": 25
+        },
+        {
+          "caller": "loadClearedEncounters",
+          "callee": "Array.isArray",
+          "lineNumber": 26
+        },
+        {
+          "caller": "saveClearedEncounters",
+          "callee": "isStorageAvailable",
+          "lineNumber": 33
+        },
+        {
+          "caller": "saveClearedEncounters",
+          "callee": "window.localStorage.setItem",
+          "lineNumber": 35
+        },
+        {
+          "caller": "saveClearedEncounters",
+          "callee": "JSON.stringify",
+          "lineNumber": 35
+        },
+        {
+          "caller": "loadSelectedParty",
+          "callee": "isStorageAvailable",
+          "lineNumber": 42
+        },
+        {
+          "caller": "loadSelectedParty",
+          "callee": "window.localStorage.getItem",
+          "lineNumber": 44
+        },
+        {
+          "caller": "loadSelectedParty",
+          "callee": "JSON.parse",
+          "lineNumber": 46
+        },
+        {
+          "caller": "loadSelectedParty",
+          "callee": "Array.isArray",
+          "lineNumber": 47
+        },
+        {
+          "caller": "saveSelectedParty",
+          "callee": "isStorageAvailable",
+          "lineNumber": 54
+        },
+        {
+          "caller": "saveSelectedParty",
+          "callee": "window.localStorage.setItem",
+          "lineNumber": 56
+        },
+        {
+          "caller": "saveSelectedParty",
+          "callee": "JSON.stringify",
+          "lineNumber": 56
+        },
+        {
+          "caller": "loadCustomChords",
+          "callee": "isStorageAvailable",
+          "lineNumber": 63
+        },
+        {
+          "caller": "loadCustomChords",
+          "callee": "window.localStorage.getItem",
+          "lineNumber": 65
+        },
+        {
+          "caller": "loadCustomChords",
+          "callee": "JSON.parse",
+          "lineNumber": 67
+        },
+        {
+          "caller": "loadCustomChords",
+          "callee": "Array.isArray",
+          "lineNumber": 68
+        },
+        {
+          "caller": "saveCustomChords",
+          "callee": "isStorageAvailable",
+          "lineNumber": 75
+        },
+        {
+          "caller": "saveCustomChords",
+          "callee": "window.localStorage.setItem",
+          "lineNumber": 77
+        },
+        {
+          "caller": "saveCustomChords",
+          "callee": "JSON.stringify",
+          "lineNumber": 77
+        },
+        {
+          "caller": "loadTutorialSeen",
+          "callee": "isStorageAvailable",
+          "lineNumber": 84
+        },
+        {
+          "caller": "loadTutorialSeen",
+          "callee": "window.localStorage.getItem",
+          "lineNumber": 86
+        },
+        {
+          "caller": "saveTutorialSeen",
+          "callee": "isStorageAvailable",
+          "lineNumber": 93
+        },
+        {
+          "caller": "saveTutorialSeen",
+          "callee": "window.localStorage.setItem",
+          "lineNumber": 95
+        },
+        {
+          "caller": "clearAllPersistedData",
+          "callee": "isStorageAvailable",
+          "lineNumber": 102
+        },
+        {
+          "caller": "clearAllPersistedData",
+          "callee": "Object.values",
+          "lineNumber": 104
+        },
+        {
+          "caller": "clearAllPersistedData",
+          "callee": "window.localStorage.removeItem",
+          "lineNumber": 105
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 9,
+        "functionCount": 10,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "src/state/useSessionStore.test.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 91,
+      "nonEmptyLines": 80,
+      "metrics": {
+        "importCount": 1,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "src/state/useSessionStore.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 530,
+      "nonEmptyLines": 491,
+      "functions": [
+        {
+          "name": "clearHeldKeys",
+          "startLine": 170,
+          "endLine": 175,
+          "params": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "useSessionStore",
+          "line": 177,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "clearHeldKeys",
+          "callee": "Object.keys",
+          "lineNumber": 171
+        },
+        {
+          "caller": "clearHeldKeys",
+          "callee": "Object.keys",
+          "lineNumber": 172
+        },
+        {
+          "caller": "clearHeldKeys",
+          "callee": "Object.keys",
+          "lineNumber": 173
+        },
+        {
+          "caller": "clearHeldKeys",
+          "callee": "auditionEnd",
+          "lineNumber": 174
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 1,
+        "functionCount": 1,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "src/test/setup.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 7,
+      "nonEmptyLines": 6,
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "vite.config.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 19,
+      "nonEmptyLines": 18,
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0
+      }
+    }
+  ]
+}

@@ -1,0 +1,22 @@
+{
+  "projectRoot": "/home/david/Personal Projects/sound-angels",
+  "batchFiles": [
+    {"path": "src/components/screens/CombatScreen.tsx", "language": "typescript", "sizeLines": 78, "fileCategory": "code"},
+    {"path": "src/components/screens/MenuScreen.tsx", "language": "typescript", "sizeLines": 148, "fileCategory": "code"},
+    {"path": "src/components/screens/PrepScreen.tsx", "language": "typescript", "sizeLines": 164, "fileCategory": "code"},
+    {"path": "src/components/screens/ResultOverlay.tsx", "language": "typescript", "sizeLines": 150, "fileCategory": "code"},
+    {"path": "src/components/screens/screens.test.tsx", "language": "typescript", "sizeLines": 97, "fileCategory": "code"}
+  ],
+  "batchImportData": {
+    "src/components/screens/CombatScreen.tsx": [],
+    "src/components/screens/MenuScreen.tsx": [],
+    "src/components/screens/PrepScreen.tsx": [],
+    "src/components/screens/ResultOverlay.tsx": [],
+    "src/components/screens/screens.test.tsx": [
+      "src/components/screens/CombatScreen.tsx",
+      "src/components/screens/MenuScreen.tsx",
+      "src/components/screens/PrepScreen.tsx",
+      "src/components/screens/ResultOverlay.tsx"
+    ]
+  }
+}

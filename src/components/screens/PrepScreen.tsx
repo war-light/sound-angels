@@ -1,9 +1,10 @@
 import { useState } from "react"
 import { useSessionStore } from "@/state/useSessionStore"
 import { EncounterBanner } from "@/components/EncounterBanner"
-import { MelodyBankBar } from "@/components/MelodyBankBar"
+import { MelodyCardBar } from "@/components/MelodyCardBar"
 import { PhaseStrip } from "@/components/PhaseStrip"
 import { ChordPicker } from "@/components/ChordPicker"
+import { GroovePicker } from "@/components/GroovePicker"
 import { StepGrid } from "@/components/StepGrid"
 import { PartyCorner } from "@/components/PartyCorner"
 import { FIGHT_KEYS, keyEquals } from "@/game/keys"
@@ -121,8 +122,11 @@ export function PrepScreen() {
             <ChordPicker />
           </div>
 
-          {/* Melody Templates Bank */}
-          <MelodyBankBar />
+          {/* Groove Card (Pick) + knobs (Tweak) */}
+          <GroovePicker />
+
+          {/* Melody Cards */}
+          <MelodyCardBar />
 
           {/* Loop Sequencer Grid */}
           <div className="space-y-2">

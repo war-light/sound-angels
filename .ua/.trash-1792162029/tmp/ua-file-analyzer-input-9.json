@@ -1,0 +1,187 @@
+{
+  "projectRoot": "/home/david/Personal Projects/sound-angels",
+  "batchFiles": [
+    {
+      "path": "src/App.tsx",
+      "language": "typescript",
+      "sizeLines": 28,
+      "fileCategory": "code"
+    },
+    {
+      "path": "src/components/ChordPicker.tsx",
+      "language": "typescript",
+      "sizeLines": 64,
+      "fileCategory": "code"
+    },
+    {
+      "path": "src/components/ChordWheel.tsx",
+      "language": "typescript",
+      "sizeLines": 67,
+      "fileCategory": "code"
+    },
+    {
+      "path": "src/components/CombatFeedback.tsx",
+      "language": "typescript",
+      "sizeLines": 94,
+      "fileCategory": "code"
+    },
+    {
+      "path": "src/components/CombatLog.tsx",
+      "language": "typescript",
+      "sizeLines": 29,
+      "fileCategory": "code"
+    },
+    {
+      "path": "src/components/CustomChordBuilder.test.tsx",
+      "language": "typescript",
+      "sizeLines": 48,
+      "fileCategory": "code"
+    },
+    {
+      "path": "src/components/CustomChordBuilder.tsx",
+      "language": "typescript",
+      "sizeLines": 280,
+      "fileCategory": "code"
+    },
+    {
+      "path": "src/components/EncounterBanner.tsx",
+      "language": "typescript",
+      "sizeLines": 175,
+      "fileCategory": "code"
+    },
+    {
+      "path": "src/components/FoePanel.tsx",
+      "language": "typescript",
+      "sizeLines": 186,
+      "fileCategory": "code"
+    },
+    {
+      "path": "src/components/MelodyBankBar.tsx",
+      "language": "typescript",
+      "sizeLines": 123,
+      "fileCategory": "code"
+    },
+    {
+      "path": "src/components/Meter.tsx",
+      "language": "typescript",
+      "sizeLines": 22,
+      "fileCategory": "code"
+    },
+    {
+      "path": "src/components/PartyCorner.test.tsx",
+      "language": "typescript",
+      "sizeLines": 62,
+      "fileCategory": "code"
+    },
+    {
+      "path": "src/components/PartyCorner.tsx",
+      "language": "typescript",
+      "sizeLines": 309,
+      "fileCategory": "code"
+    },
+    {
+      "path": "src/components/PhaseStrip.tsx",
+      "language": "typescript",
+      "sizeLines": 84,
+      "fileCategory": "code"
+    },
+    {
+      "path": "src/components/PresetBar.test.tsx",
+      "language": "typescript",
+      "sizeLines": 31,
+      "fileCategory": "code"
+    },
+    {
+      "path": "src/components/PresetBar.tsx",
+      "language": "typescript",
+      "sizeLines": 102,
+      "fileCategory": "code"
+    },
+    {
+      "path": "src/components/QtePanel.tsx",
+      "language": "typescript",
+      "sizeLines": 488,
+      "fileCategory": "code"
+    },
+    {
+      "path": "src/components/RosterSelectModal.test.tsx",
+      "language": "typescript",
+      "sizeLines": 56,
+      "fileCategory": "code"
+    },
+    {
+      "path": "src/components/RosterSelectModal.tsx",
+      "language": "typescript",
+      "sizeLines": 241,
+      "fileCategory": "code"
+    },
+    {
+      "path": "src/components/StepGrid.tsx",
+      "language": "typescript",
+      "sizeLines": 318,
+      "fileCategory": "code"
+    },
+    {
+      "path": "src/components/TransportBar.tsx",
+      "language": "typescript",
+      "sizeLines": 77,
+      "fileCategory": "code"
+    },
+    {
+      "path": "src/components/TutorialModal.test.tsx",
+      "language": "typescript",
+      "sizeLines": 47,
+      "fileCategory": "code"
+    },
+    {
+      "path": "src/components/TutorialModal.tsx",
+      "language": "typescript",
+      "sizeLines": 193,
+      "fileCategory": "code"
+    },
+    {
+      "path": "src/components/VoiceBar.test.tsx",
+      "language": "typescript",
+      "sizeLines": 31,
+      "fileCategory": "code"
+    },
+    {
+      "path": "src/components/VoiceBar.tsx",
+      "language": "typescript",
+      "sizeLines": 74,
+      "fileCategory": "code"
+    }
+  ],
+  "batchImportData": {
+    "src/App.tsx": [],
+    "src/components/ChordPicker.tsx": [],
+    "src/components/ChordWheel.tsx": [],
+    "src/components/CombatFeedback.tsx": [],
+    "src/components/CombatLog.tsx": [],
+    "src/components/CustomChordBuilder.test.tsx": [
+      "src/components/CustomChordBuilder.tsx"
+    ],
+    "src/components/CustomChordBuilder.tsx": [],
+    "src/components/EncounterBanner.tsx": [],
+    "src/components/FoePanel.tsx": [],
+    "src/components/MelodyBankBar.tsx": [],
+    "src/components/Meter.tsx": [],
+    "src/components/PartyCorner.test.tsx": [],
+    "src/components/PartyCorner.tsx": [],
+    "src/components/PresetBar.test.tsx": [],
+    "src/components/PresetBar.tsx": [],
+    "src/components/QtePanel.tsx": [],
+    "src/components/RosterSelectModal.test.tsx": [
+      "src/components/RosterSelectModal.tsx"
+    ],
+    "src/components/RosterSelectModal.tsx": [],
+    "src/components/StepGrid.tsx": [],
+    "src/components/TransportBar.tsx": [],
+    "src/components/TutorialModal.test.tsx": [
+      "src/components/TutorialModal.tsx"
+    ],
+    "src/components/TutorialModal.tsx": [],
+    "src/components/VoiceBar.test.tsx": [],
+    "src/components/VoiceBar.tsx": []
+  }
+}

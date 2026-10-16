@@ -1,0 +1,476 @@
+{
+  "nodes": [
+    {
+      "id": "file:src/components/ui/button.tsx",
+      "type": "file",
+      "name": "button.tsx",
+      "filePath": "src/components/ui/button.tsx",
+      "summary": "Reusable Button component with variant and size maps built on the shared cn class merger.",
+      "tags": ["component", "utility", "styling"],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:src/components/ui/button.tsx:Button",
+      "type": "function",
+      "name": "Button",
+      "filePath": "src/components/ui/button.tsx",
+      "lineRange": [23, 33],
+      "summary": "Renders a styled button element combining base, size, and variant classes.",
+      "tags": ["component", "ui", "styling"],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:src/hooks/useQtePlayhead.ts",
+      "type": "file",
+      "name": "useQtePlayhead.ts",
+      "filePath": "src/hooks/useQtePlayhead.ts",
+      "summary": "React hook providing a smooth 60fps interpolated playhead for the QTE highway between engine ticks.",
+      "tags": ["hook", "qte", "animation"],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:src/hooks/useQtePlayhead.ts:useQtePlayhead",
+      "type": "function",
+      "name": "useQtePlayhead",
+      "filePath": "src/hooks/useQtePlayhead.ts",
+      "lineRange": [9, 45],
+      "summary": "Runs a single requestAnimationFrame loop that interpolates step position from BPM and engine tick refs.",
+      "tags": ["hook", "qte", "animation"],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:src/hooks/useWasd.ts",
+      "type": "file",
+      "name": "useWasd.ts",
+      "filePath": "src/hooks/useWasd.ts",
+      "summary": "Global keyboard hook wiring WASD performance, ZXCV parry lanes, and Tab/number performer selection to the session store.",
+      "tags": ["hook", "event-handler", "input"],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:src/hooks/useWasd.ts:useWasd",
+      "type": "function",
+      "name": "useWasd",
+      "filePath": "src/hooks/useWasd.ts",
+      "lineRange": [17, 58],
+      "summary": "Attaches window keydown/keyup/blur listeners that dispatch performer and note actions to the session store.",
+      "tags": ["hook", "event-handler", "input"],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:src/index.css",
+      "type": "file",
+      "name": "index.css",
+      "filePath": "src/index.css",
+      "summary": "Tailwind v4 theme tokens plus combat animation keyframes for enemy shake, hit flash, and float-up feedback.",
+      "tags": ["styling", "theming", "animation"],
+      "complexity": "moderate",
+      "languageNotes": "Tailwind v4 CSS-first config with @theme inline tokens and oklch color variables."
+    },
+    {
+      "id": "file:src/lib/utils.ts",
+      "type": "file",
+      "name": "utils.ts",
+      "filePath": "src/lib/utils.ts",
+      "summary": "Shared class-name merger combining clsx with tailwind-merge for conditional styling.",
+      "tags": ["utility", "styling", "helper"],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:src/lib/utils.ts:cn",
+      "type": "function",
+      "name": "cn",
+      "filePath": "src/lib/utils.ts",
+      "lineRange": [4, 6],
+      "summary": "Merges conditional class values into a deduplicated Tailwind class string.",
+      "tags": ["utility", "styling", "helper"],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:src/main.tsx",
+      "type": "file",
+      "name": "main.tsx",
+      "filePath": "src/main.tsx",
+      "summary": "React application entry point mounting the App component inside StrictMode.",
+      "tags": ["entry-point", "bootstrap", "react"],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:src/persistence/storage.test.ts",
+      "type": "file",
+      "name": "storage.test.ts",
+      "filePath": "src/persistence/storage.test.ts",
+      "summary": "Vitest suite covering localStorage round-trips for encounters, party, custom chords, and tutorial flag.",
+      "tags": ["test", "persistence", "storage"],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:src/persistence/storage.ts",
+      "type": "file",
+      "name": "storage.ts",
+      "filePath": "src/persistence/storage.ts",
+      "summary": "Guarded localStorage helpers persisting cleared encounters, selected party, custom chords, and tutorial state.",
+      "tags": ["persistence", "storage", "utility"],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:src/persistence/storage.ts:loadClearedEncounters",
+      "type": "function",
+      "name": "loadClearedEncounters",
+      "filePath": "src/persistence/storage.ts",
+      "lineRange": [20, 30],
+      "summary": "Reads the cleared-encounter id list from localStorage, returning null when absent or invalid.",
+      "tags": ["persistence", "storage", "loader"],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:src/persistence/storage.ts:saveClearedEncounters",
+      "type": "function",
+      "name": "saveClearedEncounters",
+      "filePath": "src/persistence/storage.ts",
+      "lineRange": [32, 39],
+      "summary": "Writes the cleared-encounter id list to localStorage as JSON.",
+      "tags": ["persistence", "storage", "saver"],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:src/persistence/storage.ts:loadSelectedParty",
+      "type": "function",
+      "name": "loadSelectedParty",
+      "filePath": "src/persistence/storage.ts",
+      "lineRange": [41, 51],
+      "summary": "Reads the selected 3-character party from localStorage, rejecting wrong-length payloads.",
+      "tags": ["persistence", "storage", "loader"],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:src/persistence/storage.ts:saveSelectedParty",
+      "type": "function",
+      "name": "saveSelectedParty",
+      "filePath": "src/persistence/storage.ts",
+      "lineRange": [53, 60],
+      "summary": "Writes the selected party id list to localStorage as JSON.",
+      "tags": ["persistence", "storage", "saver"],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:src/persistence/storage.ts:loadCustomChords",
+      "type": "function",
+      "name": "loadCustomChords",
+      "filePath": "src/persistence/storage.ts",
+      "lineRange": [62, 72],
+      "summary": "Reads saved custom chord presets from localStorage, returning null when absent or invalid.",
+      "tags": ["persistence", "storage", "loader"],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:src/persistence/storage.ts:saveCustomChords",
+      "type": "function",
+      "name": "saveCustomChords",
+      "filePath": "src/persistence/storage.ts",
+      "lineRange": [74, 81],
+      "summary": "Writes custom chord presets to localStorage as JSON.",
+      "tags": ["persistence", "storage", "saver"],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:src/persistence/storage.ts:loadTutorialSeen",
+      "type": "function",
+      "name": "loadTutorialSeen",
+      "filePath": "src/persistence/storage.ts",
+      "lineRange": [83, 90],
+      "summary": "Reads the tutorial-seen boolean flag from localStorage.",
+      "tags": ["persistence", "storage", "loader"],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:src/persistence/storage.ts:saveTutorialSeen",
+      "type": "function",
+      "name": "saveTutorialSeen",
+      "filePath": "src/persistence/storage.ts",
+      "lineRange": [92, 99],
+      "summary": "Writes the tutorial-seen boolean flag to localStorage.",
+      "tags": ["persistence", "storage", "saver"],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:src/persistence/storage.ts:clearAllPersistedData",
+      "type": "function",
+      "name": "clearAllPersistedData",
+      "filePath": "src/persistence/storage.ts",
+      "lineRange": [101, 110],
+      "summary": "Removes all sound-angels keys from localStorage for a full persistence reset.",
+      "tags": ["persistence", "storage", "cleanup"],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:src/state/useSessionStore.test.ts",
+      "type": "file",
+      "name": "useSessionStore.test.ts",
+      "filePath": "src/state/useSessionStore.test.ts",
+      "summary": "Vitest suite for WASD record-at-keypress behavior, QTE routing, and performer selection in the session store.",
+      "tags": ["test", "state", "input"],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:src/state/useSessionStore.ts",
+      "type": "file",
+      "name": "useSessionStore.ts",
+      "filePath": "src/state/useSessionStore.ts",
+      "summary": "Zustand mirror of the engine session wiring arrangement, combat, audio player, and WASD performance actions.",
+      "tags": ["state", "singleton", "service"],
+      "complexity": "complex"
+    },
+    {
+      "id": "file:src/test/setup.ts",
+      "type": "file",
+      "name": "setup.ts",
+      "filePath": "src/test/setup.ts",
+      "summary": "Vitest global setup registering jest-dom matchers and React cleanup after each test.",
+      "tags": ["test", "configuration", "setup"],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:vite.config.ts",
+      "type": "file",
+      "name": "vite.config.ts",
+      "filePath": "vite.config.ts",
+      "summary": "Vite plus Vitest configuration with React and Tailwind plugins, @ alias, and jsdom test setup.",
+      "tags": ["configuration", "build-system", "test"],
+      "complexity": "simple"
+    }
+  ],
+  "edges": [
+    {
+      "source": "file:src/main.tsx",
+      "target": "file:src/App.tsx",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/main.tsx",
+      "target": "file:src/index.css",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/persistence/storage.test.ts",
+      "target": "file:src/persistence/storage.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/state/useSessionStore.test.ts",
+      "target": "file:src/state/useSessionStore.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/components/ui/button.tsx",
+      "target": "function:src/components/ui/button.tsx:Button",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:src/components/ui/button.tsx",
+      "target": "function:src/components/ui/button.tsx:Button",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/hooks/useQtePlayhead.ts",
+      "target": "function:src/hooks/useQtePlayhead.ts:useQtePlayhead",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:src/hooks/useQtePlayhead.ts",
+      "target": "function:src/hooks/useQtePlayhead.ts:useQtePlayhead",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/hooks/useWasd.ts",
+      "target": "function:src/hooks/useWasd.ts:useWasd",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:src/hooks/useWasd.ts",
+      "target": "function:src/hooks/useWasd.ts:useWasd",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/lib/utils.ts",
+      "target": "function:src/lib/utils.ts:cn",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:src/lib/utils.ts",
+      "target": "function:src/lib/utils.ts:cn",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/persistence/storage.ts",
+      "target": "function:src/persistence/storage.ts:loadClearedEncounters",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:src/persistence/storage.ts",
+      "target": "function:src/persistence/storage.ts:loadClearedEncounters",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/persistence/storage.ts",
+      "target": "function:src/persistence/storage.ts:saveClearedEncounters",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:src/persistence/storage.ts",
+      "target": "function:src/persistence/storage.ts:saveClearedEncounters",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/persistence/storage.ts",
+      "target": "function:src/persistence/storage.ts:loadSelectedParty",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:src/persistence/storage.ts",
+      "target": "function:src/persistence/storage.ts:loadSelectedParty",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/persistence/storage.ts",
+      "target": "function:src/persistence/storage.ts:saveSelectedParty",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:src/persistence/storage.ts",
+      "target": "function:src/persistence/storage.ts:saveSelectedParty",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/persistence/storage.ts",
+      "target": "function:src/persistence/storage.ts:loadCustomChords",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:src/persistence/storage.ts",
+      "target": "function:src/persistence/storage.ts:loadCustomChords",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/persistence/storage.ts",
+      "target": "function:src/persistence/storage.ts:saveCustomChords",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:src/persistence/storage.ts",
+      "target": "function:src/persistence/storage.ts:saveCustomChords",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/persistence/storage.ts",
+      "target": "function:src/persistence/storage.ts:loadTutorialSeen",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:src/persistence/storage.ts",
+      "target": "function:src/persistence/storage.ts:loadTutorialSeen",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/persistence/storage.ts",
+      "target": "function:src/persistence/storage.ts:saveTutorialSeen",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:src/persistence/storage.ts",
+      "target": "function:src/persistence/storage.ts:saveTutorialSeen",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/persistence/storage.ts",
+      "target": "function:src/persistence/storage.ts:clearAllPersistedData",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:src/persistence/storage.ts",
+      "target": "function:src/persistence/storage.ts:clearAllPersistedData",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:src/components/ui/button.tsx:Button",
+      "target": "function:src/lib/utils.ts:cn",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/persistence/storage.ts",
+      "target": "file:src/persistence/storage.test.ts",
+      "type": "tested_by",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "file:src/state/useSessionStore.ts",
+      "target": "file:src/state/useSessionStore.test.ts",
+      "type": "tested_by",
+      "direction": "forward",
+      "weight": 0.5
+    }
+  ]
+}

@@ -1,0 +1,269 @@
+{
+  "scriptCompleted": true,
+  "filesAnalyzed": 4,
+  "filesSkipped": [],
+  "filesUnreadable": [],
+  "analysisOutcomes": {
+    "structure": {
+      "succeeded": 4,
+      "failed": 0
+    },
+    "callGraph": {
+      "succeeded": 0,
+      "failed": 0,
+      "skipped": 4
+    }
+  },
+  "results": [
+    {
+      "path": "docs/combat-pacing-plan.md",
+      "language": "markdown",
+      "fileCategory": "docs",
+      "totalLines": 338,
+      "nonEmptyLines": 247,
+      "sections": [
+        {
+          "heading": "Combat Pacing Redesign Plan",
+          "level": 1,
+          "line": 1
+        },
+        {
+          "heading": "The Math Right Now (Why It's Broken)",
+          "level": 2,
+          "line": 8
+        },
+        {
+          "heading": "Phase A — Engine: Attack Cadence & Ramp-Up",
+          "level": 2,
+          "line": 22
+        },
+        {
+          "heading": "A.1 — Enemy Attack Cooldown (3–4 loops between strikes)",
+          "level": 3,
+          "line": 26
+        },
+        {
+          "heading": "A.2 — Combat Intro Phase (Grace Period)",
+          "level": 3,
+          "line": 51
+        },
+        {
+          "heading": "A.3 — HP Rebalance for 4–5 min Non-Weak Fights",
+          "level": 3,
+          "line": 68
+        },
+        {
+          "heading": "A.4 — Party HP Rebalance",
+          "level": 3,
+          "line": 82
+        },
+        {
+          "heading": "Phase B — Rhythm-Aware QTE Highway",
+          "level": 2,
+          "line": 97
+        },
+        {
+          "heading": "B.1 — Rhythmic QTE Charts (Not Random Spam)",
+          "level": 3,
+          "line": 101
+        },
+        {
+          "heading": "B.2 — Parry Charts from Enemy Patterns",
+          "level": 3,
+          "line": 129
+        },
+        {
+          "heading": "B.3 — Preset Recall QTE Matches the Phrase",
+          "level": 3,
+          "line": 155
+        },
+        {
+          "heading": "B.4 — Chord Swap QTE as Harmonic Gesture",
+          "level": 3,
+          "line": 190
+        },
+        {
+          "heading": "Phase C — Number Keys for Character Selection",
+          "level": 2,
+          "line": 205
+        },
+        {
+          "heading": "C.1 — 1/2/3 Maps to Front-Row Positions",
+          "level": 3,
+          "line": 207
+        },
+        {
+          "heading": "C.2 — Visual Lane Indicator",
+          "level": 3,
+          "line": 226
+        },
+        {
+          "heading": "Phase D — Additional Suggestions",
+          "level": 2,
+          "line": 232
+        },
+        {
+          "heading": "D.1 — Encounter-Level Pacing Phases",
+          "level": 3,
+          "line": 234
+        },
+        {
+          "heading": "D.2 — Stagger System (Momentum Reward)",
+          "level": 3,
+          "line": 248
+        },
+        {
+          "heading": "D.3 — Dynamic Loop Length",
+          "level": 3,
+          "line": 260
+        },
+        {
+          "heading": "D.4 — Enemy Telegraphing with Audio Cues",
+          "level": 3,
+          "line": 279
+        },
+        {
+          "heading": "D.5 — Melody Recall as \"Muscle Memory\"",
+          "level": 3,
+          "line": 291
+        },
+        {
+          "heading": "Implementation Order",
+          "level": 2,
+          "line": 299
+        },
+        {
+          "heading": "Expected Fight Duration After Changes",
+          "level": 2,
+          "line": 327
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0,
+        "sectionCount": 23
+      }
+    },
+    {
+      "path": "docs/mechanics.md",
+      "language": "markdown",
+      "fileCategory": "docs",
+      "totalLines": 36,
+      "nonEmptyLines": 33,
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0,
+        "sectionCount": 0
+      }
+    },
+    {
+      "path": "docs/qte-redesign.md",
+      "language": "markdown",
+      "fileCategory": "docs",
+      "totalLines": 46,
+      "nonEmptyLines": 46,
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0,
+        "sectionCount": 0
+      }
+    },
+    {
+      "path": "docs/v1-plan.md",
+      "language": "markdown",
+      "fileCategory": "docs",
+      "totalLines": 156,
+      "nonEmptyLines": 115,
+      "sections": [
+        {
+          "heading": "Sound Angels — V1 Audit & Plan",
+          "level": 1,
+          "line": 1
+        },
+        {
+          "heading": "Part 1: Mechanics Doc vs Reality",
+          "level": 2,
+          "line": 3
+        },
+        {
+          "heading": "✅ What matches",
+          "level": 3,
+          "line": 7
+        },
+        {
+          "heading": "⚠️ Partially implemented / Mismatched",
+          "level": 3,
+          "line": 36
+        },
+        {
+          "heading": "❌ Missing or broken",
+          "level": 3,
+          "line": 49
+        },
+        {
+          "heading": "Part 2: UI Problems",
+          "level": 2,
+          "line": 63
+        },
+        {
+          "heading": "Critical issues",
+          "level": 3,
+          "line": 67
+        },
+        {
+          "heading": "Part 3: V1 Roadmap",
+          "level": 2,
+          "line": 87
+        },
+        {
+          "heading": "Phase 0 — Foundation fixes (Engine)",
+          "level": 3,
+          "line": 92
+        },
+        {
+          "heading": "Phase 1 — Screen flow & game feel",
+          "level": 3,
+          "line": 99
+        },
+        {
+          "heading": "Phase 2 — Combat UI redesign",
+          "level": 3,
+          "line": 107
+        },
+        {
+          "heading": "Phase 3 — Missing mechanics",
+          "level": 3,
+          "line": 117
+        },
+        {
+          "heading": "Phase 4 — Polish",
+          "level": 3,
+          "line": 124
+        },
+        {
+          "heading": "Dependency graph",
+          "level": 2,
+          "line": 135
+        },
+        {
+          "heading": "Priority order for maximum impact",
+          "level": 2,
+          "line": 146
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0,
+        "sectionCount": 15
+      }
+    }
+  ]
+}

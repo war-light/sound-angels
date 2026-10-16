@@ -1,0 +1,2169 @@
+{
+  "scriptCompleted": true,
+  "filesAnalyzed": 11,
+  "filesSkipped": [],
+  "filesUnreadable": [],
+  "analysisOutcomes": {
+    "structure": {
+      "succeeded": 11,
+      "failed": 0
+    },
+    "callGraph": {
+      "succeeded": 11,
+      "failed": 0,
+      "skipped": 0
+    }
+  },
+  "results": [
+    {
+      "path": "src/game/arrangement.test.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 126,
+      "nonEmptyLines": 115,
+      "metrics": {
+        "importCount": 1,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "src/game/arrangement.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 280,
+      "nonEmptyLines": 255,
+      "functions": [
+        {
+          "name": "grid",
+          "startLine": 38,
+          "endLine": 40,
+          "params": [
+            "bars",
+            "steps",
+            "fill"
+          ]
+        },
+        {
+          "name": "emptyTracks",
+          "startLine": 42,
+          "endLine": 44,
+          "params": [
+            "bars",
+            "steps"
+          ]
+        },
+        {
+          "name": "createDefaultArrangement",
+          "startLine": 47,
+          "endLine": 85,
+          "params": []
+        },
+        {
+          "name": "checkSlot",
+          "startLine": 87,
+          "endLine": 89,
+          "params": [
+            "slot"
+          ]
+        },
+        {
+          "name": "checkPos",
+          "startLine": 91,
+          "endLine": 94,
+          "params": [
+            "arr",
+            "bar",
+            "step"
+          ]
+        },
+        {
+          "name": "toggleNoteEvent",
+          "startLine": 97,
+          "endLine": 118,
+          "params": [
+            "arr",
+            "slot",
+            "bar",
+            "step",
+            "event"
+          ]
+        },
+        {
+          "name": "clearTracks",
+          "startLine": 121,
+          "endLine": 123,
+          "params": [
+            "arr"
+          ]
+        },
+        {
+          "name": "countOnsets",
+          "startLine": 126,
+          "endLine": 134,
+          "params": [
+            "arr"
+          ]
+        },
+        {
+          "name": "toggleDrumStep",
+          "startLine": 136,
+          "endLine": 147,
+          "params": [
+            "arr",
+            "voice",
+            "bar",
+            "step"
+          ]
+        },
+        {
+          "name": "setBarChord",
+          "startLine": 149,
+          "endLine": 153,
+          "params": [
+            "arr",
+            "bar",
+            "roman"
+          ]
+        },
+        {
+          "name": "setChords",
+          "startLine": 156,
+          "endLine": 160,
+          "params": [
+            "arr",
+            "romans"
+          ]
+        },
+        {
+          "name": "setBpm",
+          "startLine": 162,
+          "endLine": 165,
+          "params": [
+            "arr",
+            "bpm"
+          ]
+        },
+        {
+          "name": "setKey",
+          "startLine": 167,
+          "endLine": 169,
+          "params": [
+            "arr",
+            "key"
+          ]
+        },
+        {
+          "name": "snapshotStep",
+          "startLine": 193,
+          "endLine": 222,
+          "params": [
+            "arr",
+            "bar",
+            "step"
+          ]
+        },
+        {
+          "name": "loopLength",
+          "startLine": 225,
+          "endLine": 227,
+          "params": [
+            "arr"
+          ]
+        },
+        {
+          "name": "locateStep",
+          "startLine": 230,
+          "endLine": 234,
+          "params": [
+            "arr",
+            "global"
+          ]
+        },
+        {
+          "name": "hashMelodySet",
+          "startLine": 241,
+          "endLine": 254,
+          "params": [
+            "tracks",
+            "chords"
+          ]
+        },
+        {
+          "name": "onsetKey",
+          "startLine": 261,
+          "endLine": 263,
+          "params": [
+            "slot",
+            "bar",
+            "step",
+            "e"
+          ]
+        },
+        {
+          "name": "onsetKeysOf",
+          "startLine": 265,
+          "endLine": 275,
+          "params": [
+            "tracks"
+          ]
+        },
+        {
+          "name": "allOnsetKeys",
+          "startLine": 278,
+          "endLine": 280,
+          "params": [
+            "arr"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "STEPS_PER_BAR",
+          "line": 7,
+          "isDefault": false
+        },
+        {
+          "name": "DEFAULT_BARS",
+          "line": 8,
+          "isDefault": false
+        },
+        {
+          "name": "ATTACK_SLOTS",
+          "line": 10,
+          "isDefault": false
+        },
+        {
+          "name": "createDefaultArrangement",
+          "line": 47,
+          "isDefault": false
+        },
+        {
+          "name": "toggleNoteEvent",
+          "line": 97,
+          "isDefault": false
+        },
+        {
+          "name": "clearTracks",
+          "line": 121,
+          "isDefault": false
+        },
+        {
+          "name": "countOnsets",
+          "line": 126,
+          "isDefault": false
+        },
+        {
+          "name": "toggleDrumStep",
+          "line": 136,
+          "isDefault": false
+        },
+        {
+          "name": "setBarChord",
+          "line": 149,
+          "isDefault": false
+        },
+        {
+          "name": "setChords",
+          "line": 156,
+          "isDefault": false
+        },
+        {
+          "name": "setBpm",
+          "line": 162,
+          "isDefault": false
+        },
+        {
+          "name": "setKey",
+          "line": 167,
+          "isDefault": false
+        },
+        {
+          "name": "snapshotStep",
+          "line": 193,
+          "isDefault": false
+        },
+        {
+          "name": "loopLength",
+          "line": 225,
+          "isDefault": false
+        },
+        {
+          "name": "locateStep",
+          "line": 230,
+          "isDefault": false
+        },
+        {
+          "name": "hashMelodySet",
+          "line": 241,
+          "isDefault": false
+        },
+        {
+          "name": "onsetKey",
+          "line": 261,
+          "isDefault": false
+        },
+        {
+          "name": "allOnsetKeys",
+          "line": 278,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "grid",
+          "callee": "Array.from",
+          "lineNumber": 39
+        },
+        {
+          "caller": "grid",
+          "callee": "Array(steps).fill",
+          "lineNumber": 39
+        },
+        {
+          "caller": "grid",
+          "callee": "Array",
+          "lineNumber": 39
+        },
+        {
+          "caller": "emptyTracks",
+          "callee": "Array.from",
+          "lineNumber": 43
+        },
+        {
+          "caller": "emptyTracks",
+          "callee": "grid",
+          "lineNumber": 43
+        },
+        {
+          "caller": "createDefaultArrangement",
+          "callee": "emptyTracks",
+          "lineNumber": 50
+        },
+        {
+          "caller": "createDefaultArrangement",
+          "callee": "seed.map",
+          "lineNumber": 59
+        },
+        {
+          "caller": "createDefaultArrangement",
+          "callee": "seed2.map",
+          "lineNumber": 60
+        },
+        {
+          "caller": "createDefaultArrangement",
+          "callee": "grid",
+          "lineNumber": 61
+        },
+        {
+          "caller": "createDefaultArrangement",
+          "callee": "grid",
+          "lineNumber": 65
+        },
+        {
+          "caller": "createDefaultArrangement",
+          "callee": "grid",
+          "lineNumber": 66
+        },
+        {
+          "caller": "createDefaultArrangement",
+          "callee": "grid",
+          "lineNumber": 67
+        },
+        {
+          "caller": "toggleNoteEvent",
+          "callee": "checkSlot",
+          "lineNumber": 104
+        },
+        {
+          "caller": "toggleNoteEvent",
+          "callee": "checkPos",
+          "lineNumber": 105
+        },
+        {
+          "caller": "toggleNoteEvent",
+          "callee": "Number.isInteger",
+          "lineNumber": 107
+        },
+        {
+          "caller": "toggleNoteEvent",
+          "callee": "Number.isInteger",
+          "lineNumber": 108
+        },
+        {
+          "caller": "toggleNoteEvent",
+          "callee": "arr.tracks.map",
+          "lineNumber": 112
+        },
+        {
+          "caller": "toggleNoteEvent",
+          "callee": "tr.map",
+          "lineNumber": 114
+        },
+        {
+          "caller": "toggleNoteEvent",
+          "callee": "row.map",
+          "lineNumber": 114
+        },
+        {
+          "caller": "toggleNoteEvent",
+          "callee": "tr.map",
+          "lineNumber": 115
+        },
+        {
+          "caller": "clearTracks",
+          "callee": "emptyTracks",
+          "lineNumber": 122
+        },
+        {
+          "caller": "toggleDrumStep",
+          "callee": "checkPos",
+          "lineNumber": 142
+        },
+        {
+          "caller": "toggleDrumStep",
+          "callee": "arr.drums[voice].map",
+          "lineNumber": 143
+        },
+        {
+          "caller": "toggleDrumStep",
+          "callee": "row.map",
+          "lineNumber": 144
+        },
+        {
+          "caller": "setBarChord",
+          "callee": "arr.chords.map",
+          "lineNumber": 151
+        },
+        {
+          "caller": "setChords",
+          "callee": "Array.from",
+          "lineNumber": 158
+        },
+        {
+          "caller": "setBpm",
+          "callee": "Math.min",
+          "lineNumber": 163
+        },
+        {
+          "caller": "setBpm",
+          "callee": "Math.max",
+          "lineNumber": 163
+        },
+        {
+          "caller": "setBpm",
+          "callee": "Math.round",
+          "lineNumber": 163
+        },
+        {
+          "caller": "snapshotStep",
+          "callee": "checkPos",
+          "lineNumber": 194
+        },
+        {
+          "caller": "snapshotStep",
+          "callee": "romanToChord",
+          "lineNumber": 197
+        },
+        {
+          "caller": "snapshotStep",
+          "callee": "chord.map",
+          "lineNumber": 198
+        },
+        {
+          "caller": "snapshotStep",
+          "callee": "arr.tracks.forEach",
+          "lineNumber": 200
+        },
+        {
+          "caller": "snapshotStep",
+          "callee": "degreeToMidi",
+          "lineNumber": 203
+        },
+        {
+          "caller": "snapshotStep",
+          "callee": "melodies.push",
+          "lineNumber": 204
+        },
+        {
+          "caller": "snapshotStep",
+          "callee": "chordPcs.has",
+          "lineNumber": 208
+        },
+        {
+          "caller": "snapshotStep",
+          "callee": "degreeToMidi",
+          "lineNumber": 217
+        },
+        {
+          "caller": "locateStep",
+          "callee": "loopLength",
+          "lineNumber": 231
+        },
+        {
+          "caller": "locateStep",
+          "callee": "Math.floor",
+          "lineNumber": 233
+        },
+        {
+          "caller": "hashMelodySet",
+          "callee": "onsetKeysOf",
+          "lineNumber": 245
+        },
+        {
+          "caller": "hashMelodySet",
+          "callee": "parts.sort",
+          "lineNumber": 246
+        },
+        {
+          "caller": "hashMelodySet",
+          "callee": "parts.push",
+          "lineNumber": 247
+        },
+        {
+          "caller": "hashMelodySet",
+          "callee": "chords.join",
+          "lineNumber": 247
+        },
+        {
+          "caller": "hashMelodySet",
+          "callee": "parts.join",
+          "lineNumber": 248
+        },
+        {
+          "caller": "hashMelodySet",
+          "callee": "s.charCodeAt",
+          "lineNumber": 251
+        },
+        {
+          "caller": "hashMelodySet",
+          "callee": "(h >>> 0).toString(16).padStart",
+          "lineNumber": 253
+        },
+        {
+          "caller": "hashMelodySet",
+          "callee": "(h >>> 0).toString",
+          "lineNumber": 253
+        },
+        {
+          "caller": "onsetKeysOf",
+          "callee": "tracks.forEach",
+          "lineNumber": 267
+        },
+        {
+          "caller": "onsetKeysOf",
+          "callee": "tr.forEach",
+          "lineNumber": 268
+        },
+        {
+          "caller": "onsetKeysOf",
+          "callee": "row.forEach",
+          "lineNumber": 269
+        },
+        {
+          "caller": "onsetKeysOf",
+          "callee": "keys.push",
+          "lineNumber": 270
+        },
+        {
+          "caller": "onsetKeysOf",
+          "callee": "onsetKey",
+          "lineNumber": 270
+        },
+        {
+          "caller": "allOnsetKeys",
+          "callee": "onsetKeysOf",
+          "lineNumber": 279
+        }
+      ],
+      "metrics": {
+        "importCount": 1,
+        "exportCount": 18,
+        "functionCount": 20,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "src/game/melodyBank.test.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 56,
+      "nonEmptyLines": 50,
+      "metrics": {
+        "importCount": 2,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "src/game/melodyBank.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 155,
+      "nonEmptyLines": 138,
+      "functions": [
+        {
+          "name": "cloneTracks",
+          "startLine": 20,
+          "endLine": 22,
+          "params": [
+            "tracks"
+          ]
+        },
+        {
+          "name": "emptyTracks",
+          "startLine": 24,
+          "endLine": 28,
+          "params": [
+            "slots",
+            "bars",
+            "steps"
+          ]
+        },
+        {
+          "name": "createDawnAnthem",
+          "startLine": 30,
+          "endLine": 57,
+          "params": []
+        },
+        {
+          "name": "createStaccatoFlight",
+          "startLine": 59,
+          "endLine": 80,
+          "params": []
+        },
+        {
+          "name": "createSolemnGround",
+          "startLine": 82,
+          "endLine": 104,
+          "params": []
+        },
+        {
+          "name": "createDefaultMelodyBank",
+          "startLine": 106,
+          "endLine": 115,
+          "params": []
+        },
+        {
+          "name": "saveTemplate",
+          "startLine": 117,
+          "endLine": 143,
+          "params": [
+            "bank",
+            "input"
+          ]
+        },
+        {
+          "name": "deleteTemplate",
+          "startLine": 145,
+          "endLine": 150,
+          "params": [
+            "bank",
+            "id"
+          ]
+        },
+        {
+          "name": "getTemplate",
+          "startLine": 152,
+          "endLine": 154,
+          "params": [
+            "bank",
+            "id"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "cloneTracks",
+          "line": 20,
+          "isDefault": false
+        },
+        {
+          "name": "createDefaultMelodyBank",
+          "line": 106,
+          "isDefault": false
+        },
+        {
+          "name": "saveTemplate",
+          "line": 117,
+          "isDefault": false
+        },
+        {
+          "name": "deleteTemplate",
+          "line": 145,
+          "isDefault": false
+        },
+        {
+          "name": "getTemplate",
+          "line": 152,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "cloneTracks",
+          "callee": "tracks.map",
+          "lineNumber": 21
+        },
+        {
+          "caller": "cloneTracks",
+          "callee": "tr.map",
+          "lineNumber": 21
+        },
+        {
+          "caller": "cloneTracks",
+          "callee": "row.map",
+          "lineNumber": 21
+        },
+        {
+          "caller": "emptyTracks",
+          "callee": "Array.from",
+          "lineNumber": 25
+        },
+        {
+          "caller": "emptyTracks",
+          "callee": "Array.from",
+          "lineNumber": 26
+        },
+        {
+          "caller": "emptyTracks",
+          "callee": "Array.from",
+          "lineNumber": 26
+        },
+        {
+          "caller": "createDawnAnthem",
+          "callee": "emptyTracks",
+          "lineNumber": 31
+        },
+        {
+          "caller": "createStaccatoFlight",
+          "callee": "emptyTracks",
+          "lineNumber": 60
+        },
+        {
+          "caller": "createSolemnGround",
+          "callee": "emptyTracks",
+          "lineNumber": 83
+        },
+        {
+          "caller": "createDefaultMelodyBank",
+          "callee": "createDawnAnthem",
+          "lineNumber": 107
+        },
+        {
+          "caller": "createDefaultMelodyBank",
+          "callee": "createStaccatoFlight",
+          "lineNumber": 108
+        },
+        {
+          "caller": "createDefaultMelodyBank",
+          "callee": "createSolemnGround",
+          "lineNumber": 109
+        },
+        {
+          "caller": "saveTemplate",
+          "callee": "input.name.trim",
+          "lineNumber": 128
+        },
+        {
+          "caller": "saveTemplate",
+          "callee": "Date.now",
+          "lineNumber": 130
+        },
+        {
+          "caller": "saveTemplate",
+          "callee": "Math.random().toString(36).slice",
+          "lineNumber": 130
+        },
+        {
+          "caller": "saveTemplate",
+          "callee": "Math.random().toString",
+          "lineNumber": 130
+        },
+        {
+          "caller": "saveTemplate",
+          "callee": "Math.random",
+          "lineNumber": 130
+        },
+        {
+          "caller": "saveTemplate",
+          "callee": "cloneTracks",
+          "lineNumber": 135
+        }
+      ],
+      "metrics": {
+        "importCount": 1,
+        "exportCount": 5,
+        "functionCount": 9,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "src/game/phase.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 37,
+      "nonEmptyLines": 29,
+      "functions": [
+        {
+          "name": "isGamePhase",
+          "startLine": 14,
+          "endLine": 16,
+          "params": [
+            "val"
+          ]
+        },
+        {
+          "name": "isCombatActive",
+          "startLine": 18,
+          "endLine": 20,
+          "params": [
+            "phase"
+          ]
+        },
+        {
+          "name": "canFreelyEditArrangement",
+          "startLine": 22,
+          "endLine": 24,
+          "params": [
+            "phase"
+          ]
+        },
+        {
+          "name": "isValidTransition",
+          "startLine": 34,
+          "endLine": 36,
+          "params": [
+            "from",
+            "to"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "ALL_GAME_PHASES",
+          "line": 6,
+          "isDefault": false
+        },
+        {
+          "name": "isGamePhase",
+          "line": 14,
+          "isDefault": false
+        },
+        {
+          "name": "isCombatActive",
+          "line": 18,
+          "isDefault": false
+        },
+        {
+          "name": "canFreelyEditArrangement",
+          "line": 22,
+          "isDefault": false
+        },
+        {
+          "name": "isValidTransition",
+          "line": 34,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "isGamePhase",
+          "callee": "ALL_GAME_PHASES.includes",
+          "lineNumber": 15
+        },
+        {
+          "caller": "isValidTransition",
+          "callee": "VALID_TRANSITIONS[from].includes",
+          "lineNumber": 35
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 5,
+        "functionCount": 4,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "src/game/positions.test.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 58,
+      "nonEmptyLines": 52,
+      "metrics": {
+        "importCount": 1,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "src/game/positions.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 58,
+      "nonEmptyLines": 49,
+      "functions": [
+        {
+          "name": "defaultSlots",
+          "startLine": 16,
+          "endLine": 22,
+          "params": [
+            "partyIds"
+          ]
+        },
+        {
+          "name": "deckIds",
+          "startLine": 25,
+          "endLine": 28,
+          "params": [
+            "partyIds",
+            "slots"
+          ]
+        },
+        {
+          "name": "without",
+          "startLine": 30,
+          "endLine": 36,
+          "params": [
+            "slots",
+            "id"
+          ]
+        },
+        {
+          "name": "assignToSlot",
+          "startLine": 39,
+          "endLine": 45,
+          "params": [
+            "slots",
+            "fighterId",
+            "slot"
+          ]
+        },
+        {
+          "name": "removeToDeck",
+          "startLine": 48,
+          "endLine": 50,
+          "params": [
+            "slots",
+            "fighterId"
+          ]
+        },
+        {
+          "name": "slotOf",
+          "startLine": 53,
+          "endLine": 58,
+          "params": [
+            "slots",
+            "fighterId"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "MAX_FRONT",
+          "line": 14,
+          "isDefault": false
+        },
+        {
+          "name": "defaultSlots",
+          "line": 16,
+          "isDefault": false
+        },
+        {
+          "name": "deckIds",
+          "line": 25,
+          "isDefault": false
+        },
+        {
+          "name": "assignToSlot",
+          "line": 39,
+          "isDefault": false
+        },
+        {
+          "name": "removeToDeck",
+          "line": 48,
+          "isDefault": false
+        },
+        {
+          "name": "slotOf",
+          "line": 53,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "defaultSlots",
+          "callee": "partyIds.slice",
+          "lineNumber": 20
+        },
+        {
+          "caller": "deckIds",
+          "callee": "partyIds.filter",
+          "lineNumber": 27
+        },
+        {
+          "caller": "deckIds",
+          "callee": "placed.has",
+          "lineNumber": 27
+        },
+        {
+          "caller": "without",
+          "callee": "slots.front.filter",
+          "lineNumber": 34
+        },
+        {
+          "caller": "assignToSlot",
+          "callee": "without",
+          "lineNumber": 40
+        },
+        {
+          "caller": "assignToSlot",
+          "callee": "cleared.front.slice",
+          "lineNumber": 42
+        },
+        {
+          "caller": "removeToDeck",
+          "callee": "without",
+          "lineNumber": 49
+        },
+        {
+          "caller": "slotOf",
+          "callee": "slots.front.includes",
+          "lineNumber": 56
+        }
+      ],
+      "metrics": {
+        "importCount": 1,
+        "exportCount": 6,
+        "functionCount": 6,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "src/game/presets.test.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 59,
+      "nonEmptyLines": 54,
+      "metrics": {
+        "importCount": 2,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "src/game/presets.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 104,
+      "nonEmptyLines": 93,
+      "functions": [
+        {
+          "name": "cooldownFor",
+          "startLine": 21,
+          "endLine": 24,
+          "params": [
+            "arr"
+          ]
+        },
+        {
+          "name": "cloneTracks",
+          "startLine": 26,
+          "endLine": 28,
+          "params": [
+            "tracks"
+          ]
+        },
+        {
+          "name": "savePreset",
+          "startLine": 34,
+          "endLine": 55,
+          "params": [
+            "store",
+            "name",
+            "arr",
+            "nowTick"
+          ]
+        },
+        {
+          "name": "deletePreset",
+          "startLine": 58,
+          "endLine": 64,
+          "params": [
+            "store",
+            "name"
+          ]
+        },
+        {
+          "name": "readyPresets",
+          "startLine": 67,
+          "endLine": 69,
+          "params": [
+            "store",
+            "nowTick"
+          ]
+        },
+        {
+          "name": "isOnCooldown",
+          "startLine": 71,
+          "endLine": 74,
+          "params": [
+            "store",
+            "arr",
+            "nowTick"
+          ]
+        },
+        {
+          "name": "recallPreset",
+          "startLine": 87,
+          "endLine": 95,
+          "params": [
+            "store",
+            "hash",
+            "nowTick"
+          ]
+        },
+        {
+          "name": "resetPresetCooldowns",
+          "startLine": 98,
+          "endLine": 104,
+          "params": [
+            "store"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "cooldownFor",
+          "line": 21,
+          "isDefault": false
+        },
+        {
+          "name": "savePreset",
+          "line": 34,
+          "isDefault": false
+        },
+        {
+          "name": "deletePreset",
+          "line": 58,
+          "isDefault": false
+        },
+        {
+          "name": "readyPresets",
+          "line": 67,
+          "isDefault": false
+        },
+        {
+          "name": "isOnCooldown",
+          "line": 71,
+          "isDefault": false
+        },
+        {
+          "name": "recallPreset",
+          "line": 87,
+          "isDefault": false
+        },
+        {
+          "name": "resetPresetCooldowns",
+          "line": 98,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "cooldownFor",
+          "callee": "Math.ceil",
+          "lineNumber": 23
+        },
+        {
+          "caller": "cooldownFor",
+          "callee": "countOnsets",
+          "lineNumber": 23
+        },
+        {
+          "caller": "cloneTracks",
+          "callee": "tracks.map",
+          "lineNumber": 27
+        },
+        {
+          "caller": "cloneTracks",
+          "callee": "tr.map",
+          "lineNumber": 27
+        },
+        {
+          "caller": "cloneTracks",
+          "callee": "row.map",
+          "lineNumber": 27
+        },
+        {
+          "caller": "savePreset",
+          "callee": "hashMelodySet",
+          "lineNumber": 40
+        },
+        {
+          "caller": "savePreset",
+          "callee": "cooldownFor",
+          "lineNumber": 49
+        },
+        {
+          "caller": "savePreset",
+          "callee": "cloneTracks",
+          "lineNumber": 51
+        },
+        {
+          "caller": "deletePreset",
+          "callee": "Object.entries",
+          "lineNumber": 60
+        },
+        {
+          "caller": "readyPresets",
+          "callee": "Object.values(store).filter",
+          "lineNumber": 68
+        },
+        {
+          "caller": "readyPresets",
+          "callee": "Object.values",
+          "lineNumber": 68
+        },
+        {
+          "caller": "isOnCooldown",
+          "callee": "hashMelodySet",
+          "lineNumber": 72
+        },
+        {
+          "caller": "recallPreset",
+          "callee": "cloneTracks",
+          "lineNumber": 94
+        },
+        {
+          "caller": "resetPresetCooldowns",
+          "callee": "Object.entries",
+          "lineNumber": 100
+        }
+      ],
+      "metrics": {
+        "importCount": 1,
+        "exportCount": 7,
+        "functionCount": 8,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "src/game/session.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 454,
+      "nonEmptyLines": 409,
+      "functions": [
+        {
+          "name": "emit",
+          "startLine": 75,
+          "endLine": 77,
+          "params": []
+        },
+        {
+          "name": "getArrangement",
+          "startLine": 79,
+          "endLine": 81,
+          "params": []
+        },
+        {
+          "name": "getFight",
+          "startLine": 83,
+          "endLine": 85,
+          "params": []
+        },
+        {
+          "name": "getPresets",
+          "startLine": 87,
+          "endLine": 89,
+          "params": []
+        },
+        {
+          "name": "getMelodyBank",
+          "startLine": 91,
+          "endLine": 93,
+          "params": []
+        },
+        {
+          "name": "getGamePhase",
+          "startLine": 95,
+          "endLine": 97,
+          "params": []
+        },
+        {
+          "name": "setGamePhase",
+          "startLine": 99,
+          "endLine": 103,
+          "params": [
+            "phase"
+          ]
+        },
+        {
+          "name": "toMenu",
+          "startLine": 105,
+          "endLine": 107,
+          "params": []
+        },
+        {
+          "name": "toPrep",
+          "startLine": 109,
+          "endLine": 111,
+          "params": []
+        },
+        {
+          "name": "getEncounterId",
+          "startLine": 113,
+          "endLine": 115,
+          "params": []
+        },
+        {
+          "name": "setEncounterId",
+          "startLine": 117,
+          "endLine": 130,
+          "params": [
+            "id",
+            "force"
+          ]
+        },
+        {
+          "name": "getClearedEncounters",
+          "startLine": 132,
+          "endLine": 134,
+          "params": []
+        },
+        {
+          "name": "isCurrentEncounterUnlocked",
+          "startLine": 136,
+          "endLine": 138,
+          "params": [
+            "id"
+          ]
+        },
+        {
+          "name": "unlockAllEncounters",
+          "startLine": 140,
+          "endLine": 144,
+          "params": []
+        },
+        {
+          "name": "resetEncounterProgression",
+          "startLine": 146,
+          "endLine": 151,
+          "params": []
+        },
+        {
+          "name": "getSelectedParty",
+          "startLine": 153,
+          "endLine": 155,
+          "params": []
+        },
+        {
+          "name": "setSelectedParty",
+          "startLine": 157,
+          "endLine": 169,
+          "params": [
+            "characterIds"
+          ]
+        },
+        {
+          "name": "getCustomChordPresets",
+          "startLine": 171,
+          "endLine": 173,
+          "params": []
+        },
+        {
+          "name": "saveCustomChordPreset",
+          "startLine": 175,
+          "endLine": 186,
+          "params": [
+            "name",
+            "romans"
+          ]
+        },
+        {
+          "name": "mutateArrangement",
+          "startLine": 188,
+          "endLine": 191,
+          "params": [
+            "fn"
+          ]
+        },
+        {
+          "name": "handleStep",
+          "startLine": 198,
+          "endLine": 213,
+          "params": []
+        },
+        {
+          "name": "moveFighter",
+          "startLine": 216,
+          "endLine": 222,
+          "params": [
+            "fighterId",
+            "slot"
+          ]
+        },
+        {
+          "name": "beginFight",
+          "startLine": 233,
+          "endLine": 255,
+          "params": [
+            "opts"
+          ]
+        },
+        {
+          "name": "startFight",
+          "startLine": 258,
+          "endLine": 260,
+          "params": [
+            "opts"
+          ]
+        },
+        {
+          "name": "resetFight",
+          "startLine": 262,
+          "endLine": 264,
+          "params": [
+            "opts"
+          ]
+        },
+        {
+          "name": "getFrontPerformerId",
+          "startLine": 271,
+          "endLine": 273,
+          "params": [
+            "index"
+          ]
+        },
+        {
+          "name": "saveMelodyPreset",
+          "startLine": 276,
+          "endLine": 281,
+          "params": [
+            "name"
+          ]
+        },
+        {
+          "name": "recallMelodyPreset",
+          "startLine": 288,
+          "endLine": 296,
+          "params": [
+            "hash"
+          ]
+        },
+        {
+          "name": "saveToMelodyBank",
+          "startLine": 299,
+          "endLine": 309,
+          "params": [
+            "name",
+            "description"
+          ]
+        },
+        {
+          "name": "deleteFromMelodyBank",
+          "startLine": 312,
+          "endLine": 315,
+          "params": [
+            "id"
+          ]
+        },
+        {
+          "name": "loadMelodyTemplate",
+          "startLine": 321,
+          "endLine": 333,
+          "params": [
+            "id"
+          ]
+        },
+        {
+          "name": "requestTemplateChart",
+          "startLine": 339,
+          "endLine": 352,
+          "params": [
+            "id"
+          ]
+        },
+        {
+          "name": "requestChordChart",
+          "startLine": 359,
+          "endLine": 365,
+          "params": [
+            "romans"
+          ]
+        },
+        {
+          "name": "requestPresetChart",
+          "startLine": 372,
+          "endLine": 384,
+          "params": [
+            "hash"
+          ]
+        },
+        {
+          "name": "pressChartKey",
+          "startLine": 387,
+          "endLine": 390,
+          "params": [
+            "key"
+          ]
+        },
+        {
+          "name": "pressParryKey",
+          "startLine": 393,
+          "endLine": 396,
+          "params": [
+            "key"
+          ]
+        },
+        {
+          "name": "releaseParryKey",
+          "startLine": 399,
+          "endLine": 412,
+          "params": [
+            "key"
+          ]
+        },
+        {
+          "name": "scoreQtePress",
+          "startLine": 414,
+          "endLine": 425,
+          "params": [
+            "next"
+          ]
+        },
+        {
+          "name": "cancelChart",
+          "startLine": 428,
+          "endLine": 434,
+          "params": [
+            "reason"
+          ]
+        },
+        {
+          "name": "resetAll",
+          "startLine": 436,
+          "endLine": 447,
+          "params": []
+        },
+        {
+          "name": "subscribe",
+          "startLine": 449,
+          "endLine": 454,
+          "params": [
+            "fn"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "getArrangement",
+          "line": 79,
+          "isDefault": false
+        },
+        {
+          "name": "getFight",
+          "line": 83,
+          "isDefault": false
+        },
+        {
+          "name": "getPresets",
+          "line": 87,
+          "isDefault": false
+        },
+        {
+          "name": "getMelodyBank",
+          "line": 91,
+          "isDefault": false
+        },
+        {
+          "name": "getGamePhase",
+          "line": 95,
+          "isDefault": false
+        },
+        {
+          "name": "setGamePhase",
+          "line": 99,
+          "isDefault": false
+        },
+        {
+          "name": "toMenu",
+          "line": 105,
+          "isDefault": false
+        },
+        {
+          "name": "toPrep",
+          "line": 109,
+          "isDefault": false
+        },
+        {
+          "name": "getEncounterId",
+          "line": 113,
+          "isDefault": false
+        },
+        {
+          "name": "setEncounterId",
+          "line": 117,
+          "isDefault": false
+        },
+        {
+          "name": "getClearedEncounters",
+          "line": 132,
+          "isDefault": false
+        },
+        {
+          "name": "isCurrentEncounterUnlocked",
+          "line": 136,
+          "isDefault": false
+        },
+        {
+          "name": "unlockAllEncounters",
+          "line": 140,
+          "isDefault": false
+        },
+        {
+          "name": "resetEncounterProgression",
+          "line": 146,
+          "isDefault": false
+        },
+        {
+          "name": "getSelectedParty",
+          "line": 153,
+          "isDefault": false
+        },
+        {
+          "name": "setSelectedParty",
+          "line": 157,
+          "isDefault": false
+        },
+        {
+          "name": "getCustomChordPresets",
+          "line": 171,
+          "isDefault": false
+        },
+        {
+          "name": "saveCustomChordPreset",
+          "line": 175,
+          "isDefault": false
+        },
+        {
+          "name": "mutateArrangement",
+          "line": 188,
+          "isDefault": false
+        },
+        {
+          "name": "handleStep",
+          "line": 198,
+          "isDefault": false
+        },
+        {
+          "name": "moveFighter",
+          "line": 216,
+          "isDefault": false
+        },
+        {
+          "name": "startFight",
+          "line": 258,
+          "isDefault": false
+        },
+        {
+          "name": "resetFight",
+          "line": 262,
+          "isDefault": false
+        },
+        {
+          "name": "getFrontPerformerId",
+          "line": 271,
+          "isDefault": false
+        },
+        {
+          "name": "saveMelodyPreset",
+          "line": 276,
+          "isDefault": false
+        },
+        {
+          "name": "recallMelodyPreset",
+          "line": 288,
+          "isDefault": false
+        },
+        {
+          "name": "saveToMelodyBank",
+          "line": 299,
+          "isDefault": false
+        },
+        {
+          "name": "deleteFromMelodyBank",
+          "line": 312,
+          "isDefault": false
+        },
+        {
+          "name": "loadMelodyTemplate",
+          "line": 321,
+          "isDefault": false
+        },
+        {
+          "name": "requestTemplateChart",
+          "line": 339,
+          "isDefault": false
+        },
+        {
+          "name": "requestChordChart",
+          "line": 359,
+          "isDefault": false
+        },
+        {
+          "name": "requestPresetChart",
+          "line": 372,
+          "isDefault": false
+        },
+        {
+          "name": "pressChartKey",
+          "line": 387,
+          "isDefault": false
+        },
+        {
+          "name": "pressParryKey",
+          "line": 393,
+          "isDefault": false
+        },
+        {
+          "name": "releaseParryKey",
+          "line": 399,
+          "isDefault": false
+        },
+        {
+          "name": "cancelChart",
+          "line": 428,
+          "isDefault": false
+        },
+        {
+          "name": "resetAll",
+          "line": 436,
+          "isDefault": false
+        },
+        {
+          "name": "subscribe",
+          "line": 449,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "emit",
+          "callee": "fn",
+          "lineNumber": 76
+        },
+        {
+          "caller": "setGamePhase",
+          "callee": "emit",
+          "lineNumber": 102
+        },
+        {
+          "caller": "toMenu",
+          "callee": "setGamePhase",
+          "lineNumber": 106
+        },
+        {
+          "caller": "toPrep",
+          "callee": "setGamePhase",
+          "lineNumber": 110
+        },
+        {
+          "caller": "setEncounterId",
+          "callee": "isEncounterUnlocked",
+          "lineNumber": 118
+        },
+        {
+          "caller": "setEncounterId",
+          "callee": "getEncounter",
+          "lineNumber": 121
+        },
+        {
+          "caller": "setEncounterId",
+          "callee": "createFight",
+          "lineNumber": 122
+        },
+        {
+          "caller": "setEncounterId",
+          "callee": "emit",
+          "lineNumber": 128
+        },
+        {
+          "caller": "isCurrentEncounterUnlocked",
+          "callee": "isEncounterUnlocked",
+          "lineNumber": 137
+        },
+        {
+          "caller": "unlockAllEncounters",
+          "callee": "ENCOUNTERS.map",
+          "lineNumber": 141
+        },
+        {
+          "caller": "unlockAllEncounters",
+          "callee": "saveClearedEncounters",
+          "lineNumber": 142
+        },
+        {
+          "caller": "unlockAllEncounters",
+          "callee": "emit",
+          "lineNumber": 143
+        },
+        {
+          "caller": "resetEncounterProgression",
+          "callee": "clearAllPersistedData",
+          "lineNumber": 149
+        },
+        {
+          "caller": "resetEncounterProgression",
+          "callee": "emit",
+          "lineNumber": 150
+        },
+        {
+          "caller": "setSelectedParty",
+          "callee": "saveSelectedParty",
+          "lineNumber": 159
+        },
+        {
+          "caller": "setSelectedParty",
+          "callee": "getEncounter",
+          "lineNumber": 161
+        },
+        {
+          "caller": "setSelectedParty",
+          "callee": "createFight",
+          "lineNumber": 162
+        },
+        {
+          "caller": "setSelectedParty",
+          "callee": "emit",
+          "lineNumber": 168
+        },
+        {
+          "caller": "saveCustomChordPreset",
+          "callee": "name.trim",
+          "lineNumber": 176
+        },
+        {
+          "caller": "saveCustomChordPreset",
+          "callee": "romans.join",
+          "lineNumber": 180
+        },
+        {
+          "caller": "saveCustomChordPreset",
+          "callee": "customChordPresets.filter",
+          "lineNumber": 182
+        },
+        {
+          "caller": "saveCustomChordPreset",
+          "callee": "saveCustomChords",
+          "lineNumber": 183
+        },
+        {
+          "caller": "saveCustomChordPreset",
+          "callee": "emit",
+          "lineNumber": 184
+        },
+        {
+          "caller": "mutateArrangement",
+          "callee": "fn",
+          "lineNumber": 189
+        },
+        {
+          "caller": "mutateArrangement",
+          "callee": "emit",
+          "lineNumber": 190
+        },
+        {
+          "caller": "handleStep",
+          "callee": "advanceTick",
+          "lineNumber": 200
+        },
+        {
+          "caller": "handleStep",
+          "callee": "clearedEncounterIds.includes",
+          "lineNumber": 204
+        },
+        {
+          "caller": "handleStep",
+          "callee": "saveClearedEncounters",
+          "lineNumber": 206
+        },
+        {
+          "caller": "handleStep",
+          "callee": "emit",
+          "lineNumber": 212
+        },
+        {
+          "caller": "moveFighter",
+          "callee": "moveFighterInFight",
+          "lineNumber": 217
+        },
+        {
+          "caller": "moveFighter",
+          "callee": "emit",
+          "lineNumber": 220
+        },
+        {
+          "caller": "beginFight",
+          "callee": "getEncounter",
+          "lineNumber": 240
+        },
+        {
+          "caller": "beginFight",
+          "callee": "createFight",
+          "lineNumber": 243
+        },
+        {
+          "caller": "beginFight",
+          "callee": "resetPresetCooldowns",
+          "lineNumber": 248
+        },
+        {
+          "caller": "beginFight",
+          "callee": "reconcilePotency",
+          "lineNumber": 252
+        },
+        {
+          "caller": "beginFight",
+          "callee": "emit",
+          "lineNumber": 254
+        },
+        {
+          "caller": "startFight",
+          "callee": "beginFight",
+          "lineNumber": 259
+        },
+        {
+          "caller": "resetFight",
+          "callee": "beginFight",
+          "lineNumber": 263
+        },
+        {
+          "caller": "saveMelodyPreset",
+          "callee": "name.trim",
+          "lineNumber": 277
+        },
+        {
+          "caller": "saveMelodyPreset",
+          "callee": "savePreset",
+          "lineNumber": 279
+        },
+        {
+          "caller": "saveMelodyPreset",
+          "callee": "emit",
+          "lineNumber": 280
+        },
+        {
+          "caller": "recallMelodyPreset",
+          "callee": "recallPreset",
+          "lineNumber": 289
+        },
+        {
+          "caller": "recallMelodyPreset",
+          "callee": "refreshPotency",
+          "lineNumber": 293
+        },
+        {
+          "caller": "recallMelodyPreset",
+          "callee": "emit",
+          "lineNumber": 294
+        },
+        {
+          "caller": "saveToMelodyBank",
+          "callee": "saveTemplate",
+          "lineNumber": 300
+        },
+        {
+          "caller": "saveToMelodyBank",
+          "callee": "emit",
+          "lineNumber": 307
+        },
+        {
+          "caller": "deleteFromMelodyBank",
+          "callee": "deleteTemplate",
+          "lineNumber": 313
+        },
+        {
+          "caller": "deleteFromMelodyBank",
+          "callee": "emit",
+          "lineNumber": 314
+        },
+        {
+          "caller": "loadMelodyTemplate",
+          "callee": "getTemplate",
+          "lineNumber": 322
+        },
+        {
+          "caller": "loadMelodyTemplate",
+          "callee": "tpl.tracks.map",
+          "lineNumber": 327
+        },
+        {
+          "caller": "loadMelodyTemplate",
+          "callee": "tr.map",
+          "lineNumber": 327
+        },
+        {
+          "caller": "loadMelodyTemplate",
+          "callee": "row.map",
+          "lineNumber": 327
+        },
+        {
+          "caller": "loadMelodyTemplate",
+          "callee": "reconcilePotency",
+          "lineNumber": 330
+        },
+        {
+          "caller": "loadMelodyTemplate",
+          "callee": "emit",
+          "lineNumber": 331
+        },
+        {
+          "caller": "requestTemplateChart",
+          "callee": "getTemplate",
+          "lineNumber": 340
+        },
+        {
+          "caller": "requestTemplateChart",
+          "callee": "requestPresetInFight",
+          "lineNumber": 343
+        },
+        {
+          "caller": "requestTemplateChart",
+          "callee": "emit",
+          "lineNumber": 350
+        },
+        {
+          "caller": "requestChordChart",
+          "callee": "requestChordInFight",
+          "lineNumber": 360
+        },
+        {
+          "caller": "requestChordChart",
+          "callee": "emit",
+          "lineNumber": 363
+        },
+        {
+          "caller": "requestPresetChart",
+          "callee": "recallPreset",
+          "lineNumber": 373
+        },
+        {
+          "caller": "requestPresetChart",
+          "callee": "requestPresetInFight",
+          "lineNumber": 376
+        },
+        {
+          "caller": "requestPresetChart",
+          "callee": "emit",
+          "lineNumber": 382
+        },
+        {
+          "caller": "pressChartKey",
+          "callee": "scoreQtePress",
+          "lineNumber": 389
+        },
+        {
+          "caller": "pressChartKey",
+          "callee": "pressQteInFight",
+          "lineNumber": 389
+        },
+        {
+          "caller": "pressParryKey",
+          "callee": "scoreQtePress",
+          "lineNumber": 395
+        },
+        {
+          "caller": "pressParryKey",
+          "callee": "pressQteInFight",
+          "lineNumber": 395
+        },
+        {
+          "caller": "releaseParryKey",
+          "callee": "releaseQteInFight",
+          "lineNumber": 402
+        },
+        {
+          "caller": "releaseParryKey",
+          "callee": "emit",
+          "lineNumber": 405
+        },
+        {
+          "caller": "scoreQtePress",
+          "callee": "emit",
+          "lineNumber": 418
+        },
+        {
+          "caller": "cancelChart",
+          "callee": "cancelQte",
+          "lineNumber": 429
+        },
+        {
+          "caller": "cancelChart",
+          "callee": "emit",
+          "lineNumber": 432
+        },
+        {
+          "caller": "resetAll",
+          "callee": "createDefaultArrangement",
+          "lineNumber": 437
+        },
+        {
+          "caller": "resetAll",
+          "callee": "createFight",
+          "lineNumber": 439
+        },
+        {
+          "caller": "resetAll",
+          "callee": "getEncounter",
+          "lineNumber": 441
+        },
+        {
+          "caller": "resetAll",
+          "callee": "createDefaultMelodyBank",
+          "lineNumber": 444
+        },
+        {
+          "caller": "resetAll",
+          "callee": "emit",
+          "lineNumber": 446
+        },
+        {
+          "caller": "subscribe",
+          "callee": "listeners.add",
+          "lineNumber": 450
+        },
+        {
+          "caller": "subscribe",
+          "callee": "listeners.delete",
+          "lineNumber": 452
+        }
+      ],
+      "metrics": {
+        "importCount": 7,
+        "exportCount": 38,
+        "functionCount": 41,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "src/game/sessionPhase.test.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 137,
+      "nonEmptyLines": 122,
+      "metrics": {
+        "importCount": 1,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0
+      }
+    }
+  ]
+}

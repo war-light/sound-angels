@@ -1,0 +1,203 @@
+{
+  "nodes": [
+    {
+      "id": "file:src/components/screens/CombatScreen.tsx",
+      "type": "file",
+      "name": "CombatScreen.tsx",
+      "filePath": "src/components/screens/CombatScreen.tsx",
+      "summary": "Combat arena layout composing foe panel, step grid, QTE panel, party cards, and combat log with a halt/retreat control.",
+      "tags": ["component", "combat", "layout"],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:src/components/screens/CombatScreen.tsx:CombatScreen",
+      "type": "function",
+      "name": "CombatScreen",
+      "filePath": "src/components/screens/CombatScreen.tsx",
+      "lineRange": [13, 77],
+      "summary": "Renders the three-column live combat stage wired to fight state, tempo, and encounter header.",
+      "tags": ["component", "combat", "render"],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:src/components/screens/MenuScreen.tsx",
+      "type": "file",
+      "name": "MenuScreen.tsx",
+      "filePath": "src/components/screens/MenuScreen.tsx",
+      "summary": "Title screen with audio wake-up, scale-degree audition pads, encounter selector, and entry into preparation.",
+      "tags": ["component", "entry-point", "audio-preview"],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:src/components/screens/MenuScreen.tsx:MenuScreen",
+      "type": "function",
+      "name": "MenuScreen",
+      "filePath": "src/components/screens/MenuScreen.tsx",
+      "lineRange": [10, 148],
+      "summary": "Presents the dark-room title, initializes voices on user gesture, and routes encounter selection into prep phase.",
+      "tags": ["component", "entry-point", "event-handler"],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:src/components/screens/PrepScreen.tsx",
+      "type": "file",
+      "name": "PrepScreen.tsx",
+      "filePath": "src/components/screens/PrepScreen.tsx",
+      "summary": "Battle preparation workstation for key and tempo tuning, chord progression, melody bank, loop sequencer, and party formation.",
+      "tags": ["component", "composition", "preparation"],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:src/components/screens/PrepScreen.tsx:PrepScreen",
+      "type": "function",
+      "name": "PrepScreen",
+      "filePath": "src/components/screens/PrepScreen.tsx",
+      "lineRange": [14, 163],
+      "summary": "Composes the pre-fight editor that sets fight key, tempo, chords, loop notes, and formation before engaging combat.",
+      "tags": ["component", "composition", "event-handler"],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:src/components/screens/ResultOverlay.tsx",
+      "type": "file",
+      "name": "ResultOverlay.tsx",
+      "filePath": "src/components/screens/ResultOverlay.tsx",
+      "summary": "Victory/defeat modal showing combat duration, progression tier and blessing, with retry and next-encounter actions.",
+      "tags": ["component", "overlay", "results"],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:src/components/screens/ResultOverlay.tsx:ResultOverlay",
+      "type": "function",
+      "name": "ResultOverlay",
+      "filePath": "src/components/screens/ResultOverlay.tsx",
+      "lineRange": [12, 149],
+      "summary": "Displays fight outcome stats and progression scoring with handlers for retry, next encounter, and return to prep.",
+      "tags": ["component", "overlay", "event-handler"],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:src/components/screens/screens.test.tsx",
+      "type": "file",
+      "name": "screens.test.tsx",
+      "filePath": "src/components/screens/screens.test.tsx",
+      "summary": "Integration tests covering menu, prep, combat, and result screens plus App-level phase routing.",
+      "tags": ["test", "component", "integration"],
+      "complexity": "moderate"
+    }
+  ],
+  "edges": [
+    {
+      "source": "file:src/components/screens/CombatScreen.tsx",
+      "target": "function:src/components/screens/CombatScreen.tsx:CombatScreen",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:src/components/screens/CombatScreen.tsx",
+      "target": "function:src/components/screens/CombatScreen.tsx:CombatScreen",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/components/screens/MenuScreen.tsx",
+      "target": "function:src/components/screens/MenuScreen.tsx:MenuScreen",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:src/components/screens/MenuScreen.tsx",
+      "target": "function:src/components/screens/MenuScreen.tsx:MenuScreen",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/components/screens/PrepScreen.tsx",
+      "target": "function:src/components/screens/PrepScreen.tsx:PrepScreen",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:src/components/screens/PrepScreen.tsx",
+      "target": "function:src/components/screens/PrepScreen.tsx:PrepScreen",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/components/screens/ResultOverlay.tsx",
+      "target": "function:src/components/screens/ResultOverlay.tsx:ResultOverlay",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:src/components/screens/ResultOverlay.tsx",
+      "target": "function:src/components/screens/ResultOverlay.tsx:ResultOverlay",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/components/screens/screens.test.tsx",
+      "target": "file:src/components/screens/CombatScreen.tsx",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/components/screens/screens.test.tsx",
+      "target": "file:src/components/screens/MenuScreen.tsx",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/components/screens/screens.test.tsx",
+      "target": "file:src/components/screens/PrepScreen.tsx",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/components/screens/screens.test.tsx",
+      "target": "file:src/components/screens/ResultOverlay.tsx",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/components/screens/CombatScreen.tsx",
+      "target": "file:src/components/screens/screens.test.tsx",
+      "type": "tested_by",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "file:src/components/screens/MenuScreen.tsx",
+      "target": "file:src/components/screens/screens.test.tsx",
+      "type": "tested_by",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "file:src/components/screens/PrepScreen.tsx",
+      "target": "file:src/components/screens/screens.test.tsx",
+      "type": "tested_by",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "file:src/components/screens/ResultOverlay.tsx",
+      "target": "file:src/components/screens/screens.test.tsx",
+      "type": "tested_by",
+      "direction": "forward",
+      "weight": 0.5
+    }
+  ]
+}

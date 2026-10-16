@@ -1,0 +1,102 @@
+{
+  "nodes": [
+    {
+      "id": "config:.oxlintrc.json",
+      "type": "config",
+      "name": ".oxlintrc.json",
+      "filePath": ".oxlintrc.json",
+      "summary": "Oxlint configuration enabling React, TypeScript and oxc plugins with strict hooks rules for the project.",
+      "tags": ["configuration", "linting", "build-system"],
+      "complexity": "simple"
+    },
+    {
+      "id": "document:AGENTS.md",
+      "type": "document",
+      "name": "AGENTS.md",
+      "filePath": "AGENTS.md",
+      "summary": "Contributor guide defining build commands, the game/audio/state architecture split, and hard coding rules for agents.",
+      "tags": ["documentation", "development", "architecture"],
+      "complexity": "simple"
+    },
+    {
+      "id": "document:README.md",
+      "type": "document",
+      "name": "README.md",
+      "filePath": "README.md",
+      "summary": "Project overview describing the music-is-combat game concept, technology stack, scripts, layout, and save format.",
+      "tags": ["documentation", "entry-point", "overview"],
+      "complexity": "simple"
+    },
+    {
+      "id": "config:components.json",
+      "type": "config",
+      "name": "components.json",
+      "filePath": "components.json",
+      "summary": "shadcn CLI configuration pinning new-york style with neutral base color and @/* path aliases for components and utils.",
+      "tags": ["configuration", "ui-components", "build-system"],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:index.html",
+      "type": "file",
+      "name": "index.html",
+      "filePath": "index.html",
+      "summary": "Vite HTML entry mounting the React app at #root and loading the src/main.tsx module script.",
+      "tags": ["entry-point", "markup", "build-system"],
+      "complexity": "simple"
+    },
+    {
+      "id": "config:package.json",
+      "type": "config",
+      "name": "package.json",
+      "filePath": "package.json",
+      "summary": "npm package manifest declaring dev/build/test/lint scripts and runtime dependencies including React, Tone.js and Zustand.",
+      "tags": ["configuration", "build-system", "dependencies"],
+      "complexity": "simple"
+    },
+    {
+      "id": "config:tsconfig.app.json",
+      "type": "config",
+      "name": "tsconfig.app.json",
+      "filePath": "tsconfig.app.json",
+      "summary": "TypeScript app configuration with strict linting flags, bundler module resolution, react-jsx, and the @/* to src/* path alias.",
+      "tags": ["configuration", "typescript", "build-system"],
+      "complexity": "simple",
+      "languageNotes": "Strict flags (noUnusedLocals, verbatimModuleSyntax, erasableSyntaxOnly) enforce the no-enum, type-only-import style used in src/game."
+    },
+    {
+      "id": "config:tsconfig.json",
+      "type": "config",
+      "name": "tsconfig.json",
+      "filePath": "tsconfig.json",
+      "summary": "Solution-style TypeScript root that references the app and node configurations for composite builds.",
+      "tags": ["configuration", "typescript", "build-system"],
+      "complexity": "simple"
+    },
+    {
+      "id": "config:tsconfig.node.json",
+      "type": "config",
+      "name": "tsconfig.node.json",
+      "filePath": "tsconfig.node.json",
+      "summary": "TypeScript configuration for Node-side tooling covering vite.config.ts with nodenext resolution and strict linting flags.",
+      "tags": ["configuration", "typescript", "build-system"],
+      "complexity": "simple"
+    }
+  ],
+  "edges": [
+    {
+      "source": "config:tsconfig.json",
+      "target": "config:tsconfig.app.json",
+      "type": "depends_on",
+      "direction": "forward",
+      "weight": 0.6
+    },
+    {
+      "source": "config:tsconfig.json",
+      "target": "config:tsconfig.node.json",
+      "type": "depends_on",
+      "direction": "forward",
+      "weight": 0.6
+    }
+  ]
+}

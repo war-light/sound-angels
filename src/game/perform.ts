@@ -3,6 +3,21 @@
 // the cursor is a degree, resolved through the fight key at record time.
 export type PerformKey = "w" | "a" | "s" | "d"
 
+/**
+ * Parry keys: a dedicated lane set so blocking never steals the singing
+ * keys. ZXCV sits under the left hand next to WASD without overlapping it.
+ */
+export type ParryKey = "z" | "x" | "c" | "v"
+
+/** Either input lane (WASD song charts, ZXCV parry charts). */
+export type QteKey = PerformKey | ParryKey
+
+export const PARRY_KEYS: ParryKey[] = ["z", "x", "c", "v"]
+
+export function isParryKey(key: QteKey): key is ParryKey {
+  return key === "z" || key === "x" || key === "c" || key === "v"
+}
+
 export interface PerformCursor {
   /** Scale degree 1..7 within the current octave. */
   degree: number
@@ -51,4 +66,17 @@ export function pressToLen(pressMs: number, stepMs: number): number {
 /** 16th-step length in ms at a tempo. */
 export function stepMs(bpm: number): number {
   return 60000 / Math.min(160, Math.max(50, bpm)) / 4
+}
+
+/**
+ * Wall-clock seconds expressed in 16th steps at a tempo. Parry alerts are
+ * specified in seconds so the warning feels identical at any bpm.
+ */
+export function secondsToSteps(seconds: number, bpm: number): number {
+  return Math.max(1, Math.round((seconds * 1000) / stepMs(bpm)))
+}
+
+/** 16th steps expressed in ms at a tempo (countdown displays). */
+export function stepsToMs(steps: number, bpm: number): number {
+  return steps * stepMs(bpm)
 }

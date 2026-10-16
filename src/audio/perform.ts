@@ -9,6 +9,16 @@ export function auditionStart(midi: number, instrument?: string | null): void {
   instrumentVoices(instrument ?? null).lead.triggerAttack(midiToNote(midi))
 }
 
+/** Short non-destructive blip (QTE hits): never cuts held audition notes. */
+export function auditionBlip(midi: number, instrument?: string | null, duration = "16n"): void {
+  if (typeof window === "undefined" || !hasVoices()) return
+  try {
+    instrumentVoices(instrument ?? null).lead.triggerAttackRelease(midiToNote(midi), duration)
+  } catch {
+    // Safe no-op before audio activation or in headless tests.
+  }
+}
+
 export function auditionEnd(): void {
   if (!hasVoices()) return
   // Release every lead: the performer may have switched mid-hold.

@@ -1,0 +1,866 @@
+{
+ "scriptCompleted": true,
+ "entryPointCandidates": [
+  {
+   "id": "document:README.md",
+   "score": 5,
+   "name": "README.md",
+   "summary": "Project overview describing the music-is-combat game concept, technology stack, scripts, layout, and save format."
+  },
+  {
+   "id": "file:src/main.tsx",
+   "score": 5,
+   "name": "main.tsx",
+   "summary": "React application entry point mounting the App component inside StrictMode."
+  },
+  {
+   "id": "file:src/App.tsx",
+   "score": 4,
+   "name": "App.tsx",
+   "summary": "Root App component wiring global keyboard input, session-store phase state, and overlay routing for the game."
+  },
+  {
+   "id": "document:AGENTS.md",
+   "score": 2,
+   "name": "AGENTS.md",
+   "summary": "Contributor guide defining build commands, the game/audio/state architecture split, and hard coding rules for agents."
+  },
+  {
+   "id": "file:index.html",
+   "score": 2,
+   "name": "index.html",
+   "summary": "Vite HTML entry mounting the React app at #root and loading the src/main.tsx module script."
+  }
+ ],
+ "fanInRanking": [
+  {
+   "id": "file:src/game/arrangement.ts",
+   "fanIn": 13,
+   "name": "arrangement.ts"
+  },
+  {
+   "id": "file:src/game/theory.ts",
+   "fanIn": 13,
+   "name": "theory.ts"
+  },
+  {
+   "id": "file:src/data/enemies.ts",
+   "fanIn": 7,
+   "name": "enemies.ts"
+  },
+  {
+   "id": "file:src/game/combat.ts",
+   "fanIn": 5,
+   "name": "combat.ts"
+  },
+  {
+   "id": "file:src/game/perform.ts",
+   "fanIn": 5,
+   "name": "perform.ts"
+  },
+  {
+   "id": "file:src/components/screens/screens.test.tsx",
+   "fanIn": 4,
+   "name": "screens.test.tsx"
+  },
+  {
+   "id": "file:src/game/positions.ts",
+   "fanIn": 3,
+   "name": "positions.ts"
+  },
+  {
+   "id": "file:src/game/presets.ts",
+   "fanIn": 3,
+   "name": "presets.ts"
+  },
+  {
+   "id": "file:src/game/parryChart.ts",
+   "fanIn": 3,
+   "name": "parryChart.ts"
+  },
+  {
+   "id": "file:src/game/qte.ts",
+   "fanIn": 3,
+   "name": "qte.ts"
+  },
+  {
+   "id": "file:src/audio/synths.ts",
+   "fanIn": 3,
+   "name": "synths.ts"
+  },
+  {
+   "id": "file:src/game/melodyBank.ts",
+   "fanIn": 2,
+   "name": "melodyBank.ts"
+  },
+  {
+   "id": "file:src/data/chords.ts",
+   "fanIn": 2,
+   "name": "chords.ts"
+  },
+  {
+   "id": "file:src/game/keys.ts",
+   "fanIn": 2,
+   "name": "keys.ts"
+  },
+  {
+   "id": "file:src/game/units.ts",
+   "fanIn": 2,
+   "name": "units.ts"
+  },
+  {
+   "id": "file:src/data/roster.ts",
+   "fanIn": 2,
+   "name": "roster.ts"
+  },
+  {
+   "id": "file:src/audio/context.ts",
+   "fanIn": 2,
+   "name": "context.ts"
+  },
+  {
+   "id": "file:src/game/arrangement.test.ts",
+   "fanIn": 1,
+   "name": "arrangement.test.ts"
+  },
+  {
+   "id": "file:src/game/melodyBank.test.ts",
+   "fanIn": 1,
+   "name": "melodyBank.test.ts"
+  },
+  {
+   "id": "file:src/game/phase.ts",
+   "fanIn": 1,
+   "name": "phase.ts"
+  }
+ ],
+ "fanOutRanking": [
+  {
+   "id": "file:src/game/combat.ts",
+   "fanOut": 12,
+   "name": "combat.ts"
+  },
+  {
+   "id": "file:src/game/session.ts",
+   "fanOut": 8,
+   "name": "session.ts"
+  },
+  {
+   "id": "file:src/game/effects.test.ts",
+   "fanOut": 6,
+   "name": "effects.test.ts"
+  },
+  {
+   "id": "file:src/game/qte.ts",
+   "fanOut": 4,
+   "name": "qte.ts"
+  },
+  {
+   "id": "file:src/game/combatAtb.test.ts",
+   "fanOut": 4,
+   "name": "combatAtb.test.ts"
+  },
+  {
+   "id": "file:src/components/screens/screens.test.tsx",
+   "fanOut": 4,
+   "name": "screens.test.tsx"
+  },
+  {
+   "id": "file:src/game/combatQte.test.ts",
+   "fanOut": 3,
+   "name": "combatQte.test.ts"
+  },
+  {
+   "id": "file:src/game/qte.test.ts",
+   "fanOut": 3,
+   "name": "qte.test.ts"
+  },
+  {
+   "id": "file:src/game/parryChart.ts",
+   "fanOut": 3,
+   "name": "parryChart.ts"
+  },
+  {
+   "id": "file:src/game/timbre.test.ts",
+   "fanOut": 3,
+   "name": "timbre.test.ts"
+  },
+  {
+   "id": "file:src/game/arrangement.ts",
+   "fanOut": 2,
+   "name": "arrangement.ts"
+  },
+  {
+   "id": "file:src/game/melodyBank.test.ts",
+   "fanOut": 2,
+   "name": "melodyBank.test.ts"
+  },
+  {
+   "id": "file:src/game/melodyBank.ts",
+   "fanOut": 2,
+   "name": "melodyBank.ts"
+  },
+  {
+   "id": "file:src/game/positions.ts",
+   "fanOut": 2,
+   "name": "positions.ts"
+  },
+  {
+   "id": "file:src/game/presets.test.ts",
+   "fanOut": 2,
+   "name": "presets.test.ts"
+  },
+  {
+   "id": "file:src/game/presets.ts",
+   "fanOut": 2,
+   "name": "presets.ts"
+  },
+  {
+   "id": "file:src/data/chords.ts",
+   "fanOut": 2,
+   "name": "chords.ts"
+  },
+  {
+   "id": "file:src/game/keys.ts",
+   "fanOut": 2,
+   "name": "keys.ts"
+  },
+  {
+   "id": "file:src/game/theory.ts",
+   "fanOut": 2,
+   "name": "theory.ts"
+  },
+  {
+   "id": "file:src/game/parryChart.test.ts",
+   "fanOut": 2,
+   "name": "parryChart.test.ts"
+  }
+ ],
+ "bfsTraversal": {
+  "startNode": "file:src/main.tsx",
+  "order": [
+   "file:src/main.tsx",
+   "file:src/App.tsx",
+   "file:src/index.css"
+  ],
+  "depthMap": {
+   "file:src/main.tsx": 0,
+   "file:src/App.tsx": 1,
+   "file:src/index.css": 1
+  },
+  "byDepth": {
+   "0": [
+    "file:src/main.tsx"
+   ],
+   "1": [
+    "file:src/App.tsx",
+    "file:src/index.css"
+   ]
+  }
+ },
+ "nonCodeFiles": {
+  "documentation": [
+   {
+    "id": "document:AGENTS.md",
+    "name": "AGENTS.md",
+    "type": "document",
+    "summary": "Contributor guide defining build commands, the game/audio/state architecture split, and hard coding rules for agents."
+   },
+   {
+    "id": "document:README.md",
+    "name": "README.md",
+    "type": "document",
+    "summary": "Project overview describing the music-is-combat game concept, technology stack, scripts, layout, and save format."
+   },
+   {
+    "id": "document:docs/combat-pacing-plan.md",
+    "name": "combat-pacing-plan.md",
+    "type": "document",
+    "summary": "Combat pacing redesign plan targeting 4-5 minute fights via enemy attack cooldowns, intro grace period, HP rebalance, rhythm-aware QTE charts, and encounter pacing phases."
+   },
+   {
+    "id": "document:docs/mechanics.md",
+    "name": "mechanics.md",
+    "type": "document",
+    "summary": "Core game design document describing the ATB battle system, chord progressions, loop-station melody recording, party positions, and enemy variants."
+   },
+   {
+    "id": "document:docs/qte-redesign.md",
+    "name": "qte-redesign.md",
+    "type": "document",
+    "summary": "QTE panel rebuild plan replacing the laggy per-frame React panel with an always-visible bottom-receptor highway driven by an audio-clock-anchored playhead hook."
+   },
+   {
+    "id": "document:docs/v1-plan.md",
+    "name": "v1-plan.md",
+    "type": "document",
+    "summary": "V1 audit comparing the mechanics doc against the codebase plus a phased roadmap covering engine fixes, screen flow, combat UI redesign, and missing mechanics."
+   }
+  ],
+  "infrastructure": [],
+  "data": [],
+  "config": [
+   {
+    "id": "config:.oxlintrc.json",
+    "name": ".oxlintrc.json",
+    "type": "config",
+    "summary": "Oxlint configuration enabling React, TypeScript and oxc plugins with strict hooks rules for the project."
+   },
+   {
+    "id": "config:components.json",
+    "name": "components.json",
+    "type": "config",
+    "summary": "shadcn CLI configuration pinning new-york style with neutral base color and @/* path aliases for components and utils."
+   },
+   {
+    "id": "config:package.json",
+    "name": "package.json",
+    "type": "config",
+    "summary": "npm package manifest declaring dev/build/test/lint scripts and runtime dependencies including React, Tone.js and Zustand."
+   },
+   {
+    "id": "config:tsconfig.app.json",
+    "name": "tsconfig.app.json",
+    "type": "config",
+    "summary": "TypeScript app configuration with strict linting flags, bundler module resolution, react-jsx, and the @/* to src/* path alias."
+   },
+   {
+    "id": "config:tsconfig.json",
+    "name": "tsconfig.json",
+    "type": "config",
+    "summary": "Solution-style TypeScript root that references the app and node configurations for composite builds."
+   },
+   {
+    "id": "config:tsconfig.node.json",
+    "name": "tsconfig.node.json",
+    "type": "config",
+    "summary": "TypeScript configuration for Node-side tooling covering vite.config.ts with nodenext resolution and strict linting flags."
+   }
+  ]
+ },
+ "clusters": [],
+ "layers": {
+  "count": 8,
+  "list": [
+   {
+    "id": "layer:game-engine",
+    "name": "Game Engine",
+    "description": "Pure framework-free combat and music model in src/game — ATB tick loop, arrangement grids, music theory, QTE charts, and the session singleton."
+   },
+   {
+    "id": "layer:audio",
+    "name": "Audio Renderer",
+    "description": "Browser-only Tone.js renderer in src/audio that turns engine snapshots into pooled synth voices, Transport playback, live audition, and SFX."
+   },
+   {
+    "id": "layer:ui",
+    "name": "UI Layer",
+    "description": "React presentation for the Dark Room-style flow — screens, combat widgets, step sequencer, hooks, app entry, styles, and HTML shell."
+   },
+   {
+    "id": "layer:state",
+    "name": "State Bridge",
+    "description": "Zustand mirror of the engine session plus guarded localStorage persistence wiring gameplay state to React and across reloads."
+   },
+   {
+    "id": "layer:data",
+    "name": "Game Data",
+    "description": "Static balance and content definitions — enemies, encounters, chord presets, and the playable character roster."
+   },
+   {
+    "id": "layer:test",
+    "name": "Test Suite",
+    "description": "Vitest coverage across the engine, data, persistence, state bridge, and component/integration screens using seeded RNG."
+   },
+   {
+    "id": "layer:config",
+    "name": "Build Configuration",
+    "description": "Vite, TypeScript, oxlint, shadcn, and package-manifest settings that compile, lint, and test the project."
+   },
+   {
+    "id": "layer:documentation",
+    "name": "Documentation",
+    "description": "Contributor guide, project overview, and combat/QTE design docs describing mechanics and roadmaps."
+   }
+  ]
+ },
+ "nodeSummaryIndex": {
+  "file:src/game/arrangement.test.ts": {
+   "name": "arrangement.test.ts",
+   "type": "file",
+   "summary": "Vitest suite covering arrangement grid edits, chord setters, and onset hashing."
+  },
+  "file:src/game/arrangement.ts": {
+   "name": "arrangement.ts",
+   "type": "file",
+   "summary": "Core loop arrangement model: melody tracks, drum grids, Roman-numeral chords, and step snapshots for the audio boundary."
+  },
+  "file:src/game/melodyBank.test.ts": {
+   "name": "melodyBank.test.ts",
+   "type": "file",
+   "summary": "Vitest suite for melody bank template creation, saving, and deletion."
+  },
+  "file:src/game/melodyBank.ts": {
+   "name": "melodyBank.ts",
+   "type": "file",
+   "summary": "Pre-fight melody template bank with three factory presets plus save, delete, and lookup operations."
+  },
+  "file:src/game/phase.ts": {
+   "name": "phase.ts",
+   "type": "file",
+   "summary": "Game phase state machine (menu, prep, combat, victory, defeat) with transition validation."
+  },
+  "file:src/game/positions.test.ts": {
+   "name": "positions.test.ts",
+   "type": "file",
+   "summary": "Vitest suite for deck and slot assignment helpers."
+  },
+  "file:src/game/positions.ts": {
+   "name": "positions.ts",
+   "type": "file",
+   "summary": "Deck and slot assignment model mapping party members to chord, beat, and front slots."
+  },
+  "file:src/game/presets.test.ts": {
+   "name": "presets.test.ts",
+   "type": "file",
+   "summary": "Vitest suite for melody preset saving, cooldowns, and recall."
+  },
+  "file:src/game/presets.ts": {
+   "name": "presets.ts",
+   "type": "file",
+   "summary": "Melody-set presets with content-hash dedupe, tombstoned deletes, and tick-based cooldowns."
+  },
+  "file:src/game/session.ts": {
+   "name": "session.ts",
+   "type": "file",
+   "summary": "Engine session singleton holding arrangement and fight state outside React with a subscribe mirror for the UI."
+  },
+  "file:src/game/sessionPhase.test.ts": {
+   "name": "sessionPhase.test.ts",
+   "type": "file",
+   "summary": "Vitest suite for game phase transitions driven through the session singleton."
+  },
+  "file:src/data/chords.ts": {
+   "name": "chords.ts",
+   "type": "file",
+   "summary": "Static chord-progression presets plus tier-gated combat blessings derived from progression scores."
+  },
+  "file:src/game/combatQte.test.ts": {
+   "name": "combatQte.test.ts",
+   "type": "file",
+   "summary": "Exercises chord, preset, and parry QTE flows through the combat tick loop with seeded RNG."
+  },
+  "file:src/game/effects.test.ts": {
+   "name": "effects.test.ts",
+   "type": "file",
+   "summary": "Verifies chord blessings, melody potency fade, and preset recall inside combat."
+  },
+  "file:src/game/keys.test.ts": {
+   "name": "keys.test.ts",
+   "type": "file",
+   "summary": "Checks the fight-key pool contents, deterministic random rolls, overrides, and key equality."
+  },
+  "file:src/game/keys.ts": {
+   "name": "keys.ts",
+   "type": "file",
+   "summary": "Defines the playable combat-key pool with random selection and scripted-override resolution."
+  },
+  "file:src/game/qte.test.ts": {
+   "name": "qte.test.ts",
+   "type": "file",
+   "summary": "Covers QTE chart generation, hit and miss scoring, expiry, and parry damage math."
+  },
+  "file:src/game/scoring.test.ts": {
+   "name": "scoring.test.ts",
+   "type": "file",
+   "summary": "Validates progression scoring tiers, the 40/30/30 weighting, and transposition invariance."
+  },
+  "file:src/game/theory.test.ts": {
+   "name": "theory.test.ts",
+   "type": "file",
+   "summary": "Tests degree-to-MIDI mapping, Roman chord voicings, and melodic tension measurement."
+  },
+  "file:src/game/theory.ts": {
+   "name": "theory.ts",
+   "type": "file",
+   "summary": "Vendored zero-dependency music-theory core: scale degrees, Roman chord voicings, and progression scoring."
+  },
+  "file:src/game/combat.ts": {
+   "name": "combat.ts",
+   "type": "file",
+   "summary": "Core ATB combat engine advancing one 16th-step tick at a time, resolving melody damage, chord effects, enemy gauges, and parry/QTE charts."
+  },
+  "file:src/game/parryChart.test.ts": {
+   "name": "parryChart.test.ts",
+   "type": "file",
+   "summary": "Vitest coverage for parry chart generation, verifying motif params and deterministic seeded chart output."
+  },
+  "file:src/game/parryChart.ts": {
+   "name": "parryChart.ts",
+   "type": "file",
+   "summary": "Generative ZXCV parry chart builder producing seeded tap-and-hold motifs shaped by per-enemy pattern params."
+  },
+  "file:src/game/perform.test.ts": {
+   "name": "perform.test.ts",
+   "type": "file",
+   "summary": "Vitest coverage for the WASD performance cursor movement and tempo conversion helpers."
+  },
+  "file:src/game/perform.ts": {
+   "name": "perform.ts",
+   "type": "file",
+   "summary": "WASD relative-motion performance model with the ZXCV parry key set and step/ms tempo conversion helpers."
+  },
+  "file:src/game/qte.ts": {
+   "name": "qte.ts",
+   "type": "file",
+   "summary": "Pure QTE chart model with tap/hold notes, melody and harmonic chart builders, press/release scoring, and parry damage scaling."
+  },
+  "file:src/game/units.test.ts": {
+   "name": "units.test.ts",
+   "type": "file",
+   "summary": "Vitest coverage for fighter health, shield-first damage absorption, healing, and buff lifecycle helpers."
+  },
+  "file:src/game/units.ts": {
+   "name": "units.ts",
+   "type": "file",
+   "summary": "Shared fighter model for party and foes with shield-first damage, healing, and tick-based buff helpers."
+  },
+  "file:src/data/encounters.test.ts": {
+   "name": "encounters.test.ts",
+   "type": "file",
+   "summary": "Vitest suite validating encounter definitions, default selection, multi-enemy compositions, and linear unlock progression."
+  },
+  "file:src/data/encounters.ts": {
+   "name": "encounters.ts",
+   "type": "file",
+   "summary": "Curated multi-enemy encounter templates of escalating difficulty with lookup, validation, linear unlock, and next-encounter helpers."
+  },
+  "file:src/data/enemies.ts": {
+   "name": "enemies.ts",
+   "type": "file",
+   "summary": "Static enemy profiles and instrument definitions with stats, weaknesses, and serializable timbre recipes consumed by combat and audio."
+  },
+  "file:src/data/roster.test.ts": {
+   "name": "roster.test.ts",
+   "type": "file",
+   "summary": "Vitest suite checking roster size, instrument coverage, character lookup, and default party composition."
+  },
+  "file:src/data/roster.ts": {
+   "name": "roster.ts",
+   "type": "file",
+   "summary": "Named playable character roster with stats, instruments, roles, default party lineup, and id-based lookup."
+  },
+  "file:src/game/combatAtb.test.ts": {
+   "name": "combatAtb.test.ts",
+   "type": "file",
+   "summary": "Extensive combat engine tests covering fight creation, tick advancement, ATB gauges, locked fight key, and JSON serializability."
+  },
+  "file:src/game/timbre.test.ts": {
+   "name": "timbre.test.ts",
+   "type": "file",
+   "summary": "Tests validating instrument timbre recipe completeness, distinct lead voices, neutral kit sanity, and beat-seat instrument resolution."
+  },
+  "file:src/audio/context.ts": {
+   "name": "context.ts",
+   "type": "file",
+   "summary": "Owns Tone.js AudioContext startup and the shared master gain/limiter bus, started only on explicit user gesture via ensureAudio."
+  },
+  "file:src/audio/perform.ts": {
+   "name": "perform.ts",
+   "type": "file",
+   "summary": "Plays live WASD audition notes through the active performer's pooled lead voice; makes sound only, never records into the loop."
+  },
+  "file:src/audio/player.ts": {
+   "name": "player.ts",
+   "type": "file",
+   "summary": "Tone.Transport bridge that renders engine arrangement snapshots into drum, bass, melody-lane, and chord-pad voices on every 16th step."
+  },
+  "file:src/audio/sfx.ts": {
+   "name": "sfx.ts",
+   "type": "file",
+   "summary": "One-shot UI and combat sound effects (victory, defeat, QTE hits, chord changes, enemy telegraphs) guarded for headless use."
+  },
+  "file:src/audio/synths.ts": {
+   "name": "synths.ts",
+   "type": "file",
+   "summary": "Allocates the pooled Tone.js voice bank once (per-instrument lead/pad/bass plus shared drums) and serves it to all audio callers."
+  },
+  "file:src/components/screens/CombatScreen.tsx": {
+   "name": "CombatScreen.tsx",
+   "type": "file",
+   "summary": "Combat arena layout composing foe panel, step grid, QTE panel, party cards, and combat log with a halt/retreat control."
+  },
+  "file:src/components/screens/MenuScreen.tsx": {
+   "name": "MenuScreen.tsx",
+   "type": "file",
+   "summary": "Title screen with audio wake-up, scale-degree audition pads, encounter selector, and entry into preparation."
+  },
+  "file:src/components/screens/PrepScreen.tsx": {
+   "name": "PrepScreen.tsx",
+   "type": "file",
+   "summary": "Battle preparation workstation for key and tempo tuning, chord progression, melody bank, loop sequencer, and party formation."
+  },
+  "file:src/components/screens/ResultOverlay.tsx": {
+   "name": "ResultOverlay.tsx",
+   "type": "file",
+   "summary": "Victory/defeat modal showing combat duration, progression tier and blessing, with retry and next-encounter actions."
+  },
+  "file:src/components/screens/screens.test.tsx": {
+   "name": "screens.test.tsx",
+   "type": "file",
+   "summary": "Integration tests covering menu, prep, combat, and result screens plus App-level phase routing."
+  },
+  "config:.oxlintrc.json": {
+   "name": ".oxlintrc.json",
+   "type": "config",
+   "summary": "Oxlint configuration enabling React, TypeScript and oxc plugins with strict hooks rules for the project."
+  },
+  "document:AGENTS.md": {
+   "name": "AGENTS.md",
+   "type": "document",
+   "summary": "Contributor guide defining build commands, the game/audio/state architecture split, and hard coding rules for agents."
+  },
+  "document:README.md": {
+   "name": "README.md",
+   "type": "document",
+   "summary": "Project overview describing the music-is-combat game concept, technology stack, scripts, layout, and save format."
+  },
+  "config:components.json": {
+   "name": "components.json",
+   "type": "config",
+   "summary": "shadcn CLI configuration pinning new-york style with neutral base color and @/* path aliases for components and utils."
+  },
+  "file:index.html": {
+   "name": "index.html",
+   "type": "file",
+   "summary": "Vite HTML entry mounting the React app at #root and loading the src/main.tsx module script."
+  },
+  "config:package.json": {
+   "name": "package.json",
+   "type": "config",
+   "summary": "npm package manifest declaring dev/build/test/lint scripts and runtime dependencies including React, Tone.js and Zustand."
+  },
+  "config:tsconfig.app.json": {
+   "name": "tsconfig.app.json",
+   "type": "config",
+   "summary": "TypeScript app configuration with strict linting flags, bundler module resolution, react-jsx, and the @/* to src/* path alias."
+  },
+  "config:tsconfig.json": {
+   "name": "tsconfig.json",
+   "type": "config",
+   "summary": "Solution-style TypeScript root that references the app and node configurations for composite builds."
+  },
+  "config:tsconfig.node.json": {
+   "name": "tsconfig.node.json",
+   "type": "config",
+   "summary": "TypeScript configuration for Node-side tooling covering vite.config.ts with nodenext resolution and strict linting flags."
+  },
+  "document:docs/combat-pacing-plan.md": {
+   "name": "combat-pacing-plan.md",
+   "type": "document",
+   "summary": "Combat pacing redesign plan targeting 4-5 minute fights via enemy attack cooldowns, intro grace period, HP rebalance, rhythm-aware QTE charts, and encounter pacing phases."
+  },
+  "document:docs/mechanics.md": {
+   "name": "mechanics.md",
+   "type": "document",
+   "summary": "Core game design document describing the ATB battle system, chord progressions, loop-station melody recording, party positions, and enemy variants."
+  },
+  "document:docs/qte-redesign.md": {
+   "name": "qte-redesign.md",
+   "type": "document",
+   "summary": "QTE panel rebuild plan replacing the laggy per-frame React panel with an always-visible bottom-receptor highway driven by an audio-clock-anchored playhead hook."
+  },
+  "document:docs/v1-plan.md": {
+   "name": "v1-plan.md",
+   "type": "document",
+   "summary": "V1 audit comparing the mechanics doc against the codebase plus a phased roadmap covering engine fixes, screen flow, combat UI redesign, and missing mechanics."
+  },
+  "file:src/App.tsx": {
+   "name": "App.tsx",
+   "type": "file",
+   "summary": "Root App component wiring global keyboard input, session-store phase state, and overlay routing for the game."
+  },
+  "file:src/components/ChordPicker.tsx": {
+   "name": "ChordPicker.tsx",
+   "type": "file",
+   "summary": "Chord progression picker with tabbed presets and custom chords showing per-chord combat effects."
+  },
+  "file:src/components/ChordWheel.tsx": {
+   "name": "ChordWheel.tsx",
+   "type": "file",
+   "summary": "Circular chord preset selector laying presets around a wheel with effect tooltips and apply action."
+  },
+  "file:src/components/CombatFeedback.tsx": {
+   "name": "CombatFeedback.tsx",
+   "type": "file",
+   "summary": "Transient floating combat-effect tags parsed from the latest log line with auto-expiry timers."
+  },
+  "file:src/components/CombatLog.tsx": {
+   "name": "CombatLog.tsx",
+   "type": "file",
+   "summary": "Auto-scrolling combat log list mirroring fight events from the session store."
+  },
+  "file:src/components/CustomChordBuilder.test.tsx": {
+   "name": "CustomChordBuilder.test.tsx",
+   "type": "file",
+   "summary": "Component tests for the custom chord builder covering bar editing and preset saving."
+  },
+  "file:src/components/CustomChordBuilder.tsx": {
+   "name": "CustomChordBuilder.tsx",
+   "type": "file",
+   "summary": "Full custom chord-progression editor with per-bar Roman-numeral palette, theory scoring, audio preview, and preset saving."
+  },
+  "file:src/components/EncounterBanner.tsx": {
+   "name": "EncounterBanner.tsx",
+   "type": "file",
+   "summary": "Encounter selector banner with prev/next navigation, unlock gating, and enemy weakness preview."
+  },
+  "file:src/components/FoePanel.tsx": {
+   "name": "FoePanel.tsx",
+   "type": "file",
+   "summary": "Enemy party panel showing HP/shield bars, intent, weaknesses, resists, and active buffs."
+  },
+  "file:src/components/MelodyBankBar.tsx": {
+   "name": "MelodyBankBar.tsx",
+   "type": "file",
+   "summary": "Melody template bank bar for saving the current arrangement and loading or deleting stored templates."
+  },
+  "file:src/components/Meter.tsx": {
+   "name": "Meter.tsx",
+   "type": "file",
+   "summary": "Generic labeled progress-bar meter used for HP, shield, and potency displays."
+  },
+  "file:src/components/PartyCorner.test.tsx": {
+   "name": "PartyCorner.test.tsx",
+   "type": "file",
+   "summary": "Component tests for party drag-and-drop placement using a mocked drop helper."
+  },
+  "file:src/components/PartyCorner.tsx": {
+   "name": "PartyCorner.tsx",
+   "type": "file",
+   "summary": "Party management panel with draggable fighter cards, front-row slots, performer selection, and bench."
+  },
+  "file:src/components/PhaseStrip.tsx": {
+   "name": "PhaseStrip.tsx",
+   "type": "file",
+   "summary": "Phase and chord-progression strip showing current stage plus theory score and chord effects."
+  },
+  "file:src/components/PresetBar.test.tsx": {
+   "name": "PresetBar.test.tsx",
+   "type": "file",
+   "summary": "Component tests for the melody preset bar."
+  },
+  "file:src/components/PresetBar.tsx": {
+   "name": "PresetBar.tsx",
+   "type": "file",
+   "summary": "Melody preset bar for bottling the current arrangement into named presets and recalling them."
+  },
+  "file:src/components/QtePanel.tsx": {
+   "name": "QtePanel.tsx",
+   "type": "file",
+   "summary": "Rhythm QTE highway panel with active/standby lanes, keyboard input handling, telegraph audio, and success-rate readout."
+  },
+  "file:src/components/RosterSelectModal.test.tsx": {
+   "name": "RosterSelectModal.test.tsx",
+   "type": "file",
+   "summary": "Component tests for the roster selection modal."
+  },
+  "file:src/components/RosterSelectModal.tsx": {
+   "name": "RosterSelectModal.tsx",
+   "type": "file",
+   "summary": "Roster draft modal with instrument filtering and staged party selection before confirming."
+  },
+  "file:src/components/StepGrid.tsx": {
+   "name": "StepGrid.tsx",
+   "type": "file",
+   "summary": "Main step-sequencer grid editor for melody lanes, per-bar chords, performer slots, and drum rows."
+  },
+  "file:src/components/TransportBar.tsx": {
+   "name": "TransportBar.tsx",
+   "type": "file",
+   "summary": "Transport controls with play/stop, reset, BPM input, and fight-key selection."
+  },
+  "file:src/components/TutorialModal.test.tsx": {
+   "name": "TutorialModal.test.tsx",
+   "type": "file",
+   "summary": "Component tests for the multi-step tutorial modal."
+  },
+  "file:src/components/TutorialModal.tsx": {
+   "name": "TutorialModal.tsx",
+   "type": "file",
+   "summary": "Multi-step tutorial modal walking new players through arranging, chords, and combat."
+  },
+  "file:src/components/VoiceBar.test.tsx": {
+   "name": "VoiceBar.test.tsx",
+   "type": "file",
+   "summary": "Component tests for the voice status bar."
+  },
+  "file:src/components/VoiceBar.tsx": {
+   "name": "VoiceBar.tsx",
+   "type": "file",
+   "summary": "Voice status bar showing onset counts, active potency lanes, and attacker readiness with typing-focus guard."
+  },
+  "file:src/components/ui/button.tsx": {
+   "name": "button.tsx",
+   "type": "file",
+   "summary": "Reusable Button component with variant and size maps built on the shared cn class merger."
+  },
+  "file:src/hooks/useQtePlayhead.ts": {
+   "name": "useQtePlayhead.ts",
+   "type": "file",
+   "summary": "React hook providing a smooth 60fps interpolated playhead for the QTE highway between engine ticks."
+  },
+  "file:src/hooks/useWasd.ts": {
+   "name": "useWasd.ts",
+   "type": "file",
+   "summary": "Global keyboard hook wiring WASD performance, ZXCV parry lanes, and Tab/number performer selection to the session store."
+  },
+  "file:src/index.css": {
+   "name": "index.css",
+   "type": "file",
+   "summary": "Tailwind v4 theme tokens plus combat animation keyframes for enemy shake, hit flash, and float-up feedback."
+  },
+  "file:src/lib/utils.ts": {
+   "name": "utils.ts",
+   "type": "file",
+   "summary": "Shared class-name merger combining clsx with tailwind-merge for conditional styling."
+  },
+  "file:src/main.tsx": {
+   "name": "main.tsx",
+   "type": "file",
+   "summary": "React application entry point mounting the App component inside StrictMode."
+  },
+  "file:src/persistence/storage.test.ts": {
+   "name": "storage.test.ts",
+   "type": "file",
+   "summary": "Vitest suite covering localStorage round-trips for encounters, party, custom chords, and tutorial flag."
+  },
+  "file:src/persistence/storage.ts": {
+   "name": "storage.ts",
+   "type": "file",
+   "summary": "Guarded localStorage helpers persisting cleared encounters, selected party, custom chords, and tutorial state."
+  },
+  "file:src/state/useSessionStore.test.ts": {
+   "name": "useSessionStore.test.ts",
+   "type": "file",
+   "summary": "Vitest suite for WASD record-at-keypress behavior, QTE routing, and performer selection in the session store."
+  },
+  "file:src/state/useSessionStore.ts": {
+   "name": "useSessionStore.ts",
+   "type": "file",
+   "summary": "Zustand mirror of the engine session wiring arrangement, combat, audio player, and WASD performance actions."
+  },
+  "file:src/test/setup.ts": {
+   "name": "setup.ts",
+   "type": "file",
+   "summary": "Vitest global setup registering jest-dom matchers and React cleanup after each test."
+  },
+  "file:vite.config.ts": {
+   "name": "vite.config.ts",
+   "type": "file",
+   "summary": "Vite plus Vitest configuration with React and Tailwind plugins, @ alias, and jsdom test setup."
+  }
+ },
+ "totalNodes": 95,
+ "totalEdges": 560
+}

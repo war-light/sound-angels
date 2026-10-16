@@ -1,0 +1,29 @@
+{
+  "projectRoot": "/home/david/Personal Projects/sound-angels",
+  "batchFiles": [
+    {"path": "src/game/arrangement.test.ts", "language": "typescript", "sizeLines": 126, "fileCategory": "code"},
+    {"path": "src/game/arrangement.ts", "language": "typescript", "sizeLines": 280, "fileCategory": "code"},
+    {"path": "src/game/melodyBank.test.ts", "language": "typescript", "sizeLines": 56, "fileCategory": "code"},
+    {"path": "src/game/melodyBank.ts", "language": "typescript", "sizeLines": 155, "fileCategory": "code"},
+    {"path": "src/game/phase.ts", "language": "typescript", "sizeLines": 37, "fileCategory": "code"},
+    {"path": "src/game/positions.test.ts", "language": "typescript", "sizeLines": 58, "fileCategory": "code"},
+    {"path": "src/game/positions.ts", "language": "typescript", "sizeLines": 58, "fileCategory": "code"},
+    {"path": "src/game/presets.test.ts", "language": "typescript", "sizeLines": 59, "fileCategory": "code"},
+    {"path": "src/game/presets.ts", "language": "typescript", "sizeLines": 104, "fileCategory": "code"},
+    {"path": "src/game/session.ts", "language": "typescript", "sizeLines": 454, "fileCategory": "code"},
+    {"path": "src/game/sessionPhase.test.ts", "language": "typescript", "sizeLines": 137, "fileCategory": "code"}
+  ],
+  "batchImportData": {
+    "src/game/arrangement.test.ts": ["src/game/arrangement.ts"],
+    "src/game/arrangement.ts": ["src/game/theory.ts"],
+    "src/game/melodyBank.test.ts": ["src/game/arrangement.ts", "src/game/melodyBank.ts"],
+    "src/game/melodyBank.ts": ["src/game/arrangement.ts"],
+    "src/game/phase.ts": [],
+    "src/game/positions.test.ts": ["src/game/positions.ts"],
+    "src/game/positions.ts": ["src/game/arrangement.ts"],
+    "src/game/presets.test.ts": ["src/game/arrangement.ts", "src/game/presets.ts"],
+    "src/game/presets.ts": ["src/game/arrangement.ts"],
+    "src/game/session.ts": ["src/game/arrangement.ts", "src/game/combat.ts", "src/game/melodyBank.ts", "src/game/phase.ts", "src/game/positions.ts", "src/game/presets.ts", "src/game/theory.ts"],
+    "src/game/sessionPhase.test.ts": ["src/game/session.ts"]
+  }
+}

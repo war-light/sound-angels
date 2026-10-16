@@ -1,0 +1,21 @@
+{
+  "projectRoot": "/home/david/Personal Projects/sound-angels",
+  "batchFiles": [
+    {"path": "src/data/encounters.test.ts", "language": "typescript", "sizeLines": 57, "fileCategory": "code"},
+    {"path": "src/data/encounters.ts", "language": "typescript", "sizeLines": 90, "fileCategory": "code"},
+    {"path": "src/data/enemies.ts", "language": "typescript", "sizeLines": 267, "fileCategory": "code"},
+    {"path": "src/data/roster.test.ts", "language": "typescript", "sizeLines": 45, "fileCategory": "code"},
+    {"path": "src/data/roster.ts", "language": "typescript", "sizeLines": 116, "fileCategory": "code"},
+    {"path": "src/game/combatAtb.test.ts", "language": "typescript", "sizeLines": 468, "fileCategory": "code"},
+    {"path": "src/game/timbre.test.ts", "language": "typescript", "sizeLines": 63, "fileCategory": "code"}
+  ],
+  "batchImportData": {
+    "src/data/encounters.test.ts": ["src/data/encounters.ts", "src/data/enemies.ts"],
+    "src/data/encounters.ts": ["src/data/enemies.ts"],
+    "src/data/enemies.ts": ["src/game/parryChart.ts"],
+    "src/data/roster.test.ts": ["src/data/enemies.ts", "src/data/roster.ts"],
+    "src/data/roster.ts": [],
+    "src/game/combatAtb.test.ts": ["src/data/enemies.ts", "src/game/arrangement.ts", "src/game/combat.ts", "src/game/theory.ts"],
+    "src/game/timbre.test.ts": ["src/data/enemies.ts", "src/game/combat.ts", "src/game/theory.ts"]
+  }
+}
