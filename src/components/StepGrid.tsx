@@ -1,6 +1,15 @@
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { cn } from "@/lib/utils";
 import { STEPS_PER_BAR, onsetKey, type NoteEvent } from "@/game/arrangement";
+import {
+	advanceSeqCursor,
+	clampSeqCursor,
+	digitToDegree,
+	HOME_SEQ_CURSOR,
+	moveSeqCursor,
+} from "@/game/sequencer";
+import { degreeToMidi } from "@/game/theory";
+import { auditionNote } from "@/audio/perform";
 import { performSlot } from "@/game/combat";
 import { CardPreviewButton } from "@/components/CardPreviewButton";
 import { useSessionStore } from "@/state/useSessionStore";
@@ -15,7 +24,13 @@ function coverage(row: (NoteEvent | null)[]): boolean[] {
 	return covered;
 }
 
-export function StepGrid() {
+/**
+ * Loop sequencer grid. On the prep screen (`editable`) the number row plays
+ * scale degrees 1..8 of the current key into the selected cell and steps on,
+ * Space skips a cell (silence), and the arrows scrub. In combat the grid is
+ * view-only so WASD/QTE keep the keyboard.
+ */
+export function StepGrid({ editable = false }: { editable?: boolean }) {
 	const arrangement = useSessionStore((s) => s.arrangement);
 	const fight = useSessionStore((s) => s.fight);
 	const performerId = useSessionStore((s) => s.performerId);
@@ -31,7 +46,73 @@ export function StepGrid() {
 	const recordingLane = performSlot(fight, performerId);
 	const activeLane = Math.min(slot, Math.max(0, front.length - 1));
 
-	const totalSteps = arrangement.bars * STEPS_PER_BAR;
+	const lanes = front.length;
+	const bars = arrangement.bars;
+
+	// Keyboard cursor: the cell the number row / Space act on. Kept in a ref so
+	// the bound handler always reads the latest position without re-registering.
+	const [rawCursor, setRawCursor] = useState(HOME_SEQ_CURSOR);
+	const cursorRef = useRef(rawCursor);
+	const placeCursor = (next: typeof rawCursor) => {
+		cursorRef.current = next;
+		setRawCursor(next);
+	};
+	const cursor = clampSeqCursor(rawCursor, lanes, bars);
+
+	useEffect(() => {
+		if (!editable) return;
+		const isTyping = (e: KeyboardEvent) => {
+			const t = e.target as HTMLElement | null;
+			return t != null && (t.tagName === "INPUT" || t.tagName === "TEXTAREA");
+		};
+		// A modal (e.g. the tutorial guide) owns the keyboard while open.
+		const inDialog = () =>
+			typeof document !== "undefined" &&
+			document.querySelector('[data-slot="dialog-content"]') != null;
+		const at = (e: KeyboardEvent) => {
+			if (e.metaKey || e.ctrlKey || e.altKey || isTyping(e) || inDialog()) return null;
+			const isArrow = e.key === "ArrowLeft" || e.key === "ArrowRight";
+			if (e.repeat && !isArrow) return null;
+			const st = useSessionStore.getState();
+			const lanesNow = st.fight.slots.front.length;
+			if (lanesNow === 0) return null;
+			const arr = st.arrangement;
+			const barsNow = arr.bars;
+			const cur = clampSeqCursor(cursorRef.current, lanesNow, barsNow);
+			return { st, arr, cur, lanesNow, barsNow };
+		};
+
+		const down = (e: KeyboardEvent) => {
+			const ctx = at(e);
+			if (!ctx) return;
+			const { st, arr, cur, lanesNow, barsNow } = ctx;
+
+			const deg = digitToDegree(e.key);
+			if (deg != null) {
+				e.preventDefault();
+				st.toggleNote(cur.lane, cur.bar, cur.step, { degree: deg, len: 1 });
+				const instrument = st.fight.party.find((f) => f.id === st.fight.slots.front[cur.lane])?.instrument;
+				auditionNote(degreeToMidi(arr.key, deg, 5), instrument);
+				placeCursor(advanceSeqCursor(cur, lanesNow, barsNow));
+				return;
+			}
+			if (e.key === " ") {
+				e.preventDefault();
+				st.toggleNote(cur.lane, cur.bar, cur.step, null);
+				placeCursor(advanceSeqCursor(cur, lanesNow, barsNow));
+				return;
+			}
+			if (e.key === "ArrowLeft" || e.key === "ArrowRight") {
+				e.preventDefault();
+				placeCursor(moveSeqCursor(cur, e.key === "ArrowRight" ? 1 : -1, lanesNow, barsNow));
+			}
+		};
+
+		window.addEventListener("keydown", down);
+		return () => window.removeEventListener("keydown", down);
+	}, [editable]);
+
+	const totalSteps = bars * STEPS_PER_BAR;
 	const activeGlobal = playing ? globalStep % totalSteps : -1;
 
 	return (
@@ -99,6 +180,8 @@ export function StepGrid() {
 											{row.map((v, step) => {
 												const g = bar * STEPS_PER_BAR + step;
 												const isPlayhead = g === activeGlobal;
+												const isCursor =
+													editable && cursor.lane === lane && cursor.bar === bar && cursor.step === step;
 												const isQuarter = step % 4 === 0;
 
 												// Potency calculation for note
@@ -114,9 +197,10 @@ export function StepGrid() {
 													<button
 														key={step}
 														type="button"
-														onClick={() =>
-															toggleNote(lane, bar, step, v == null ? { degree, len } : null)
-														}
+														onClick={() => {
+															if (editable) placeCursor({ lane, bar, step });
+															toggleNote(lane, bar, step, v == null ? { degree, len } : null);
+														}}
 														title={`${attacker.name} Bar ${bar + 1} Step ${step + 1}${
 															v != null ? `: Degree ${v.degree} (hold ${v.len}t)` : ""
 														}`}
@@ -129,6 +213,8 @@ export function StepGrid() {
 																	: isQuarter
 																		? "border-border bg-background/80 hover:bg-muted"
 																		: "border-border/40 bg-background/40 hover:bg-muted/50",
+															isCursor &&
+																"ring-2 ring-foreground ring-offset-2 ring-offset-background z-20",
 															isPlayhead &&
 																"ring-2 ring-primary ring-offset-1 ring-offset-background scale-105 z-10",
 															isPlayhead &&

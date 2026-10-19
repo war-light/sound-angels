@@ -141,10 +141,10 @@ export function PrepScreen() {
 								Battle Loop Sequencer
 							</span>
 							<span className="text-[11px] text-muted-foreground">
-								Click to place notes · WASD to sing live
+								Keys 1–8 place notes · Space skips · ←/→ scrub
 							</span>
 						</div>
-						<StepGrid />
+						<StepGrid editable />
 					</div>
 				</div>
 

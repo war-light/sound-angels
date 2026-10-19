@@ -2,7 +2,7 @@
 // until the transport has started (voices pooled). Recording into the loop
 // is handled by the session store; this module only makes sound.
 import { midiToNote } from "@/game/theory"
-import { getVoices, hasVoices, instrumentVoices } from "./synths"
+import { getVoices, hasVoices, initVoices, instrumentVoices } from "./synths"
 
 export function auditionStart(midi: number, instrument?: string | null): void {
   if (!hasVoices()) return
@@ -29,4 +29,18 @@ export function auditionEnd(): void {
       // Already released (overlapping key-ups); safe to ignore.
     }
   }
+}
+
+/**
+ * Sound one sequencer note on the lane's instrument. The first key press is
+ * itself a user gesture, so this may lazily start the audio graph; it no-ops
+ * silently before activation and in headless tests (jsdom).
+ */
+export function auditionNote(midi: number, instrument?: string | null): void {
+  if (typeof window === "undefined") return
+  initVoices()
+    .then(() => auditionBlip(midi, instrument))
+    .catch(() => {
+      // Audio unavailable: stay silent rather than break note entry.
+    })
 }

@@ -11,8 +11,9 @@ const NUM_KEYS = new Set(["1", "2", "3"])
  * cursor + auditions (WASD) or scores the parry chart (ZXCV); key up
  * records the held note into the loop (WASD) or scores a hold tail (ZXCV).
  * Tab cycles the active front performer. 1/2/3 directly select front-row
- * positions. Ignores repeats and text inputs. Half-held presses are dropped
- * when the window loses focus (lost keyups never trap a key).
+ * positions (except on the prep screen, where the loop sequencer owns the
+ * number row for note entry). Ignores repeats and text inputs. Half-held
+ * presses are dropped when the window loses focus (lost keyups never trap).
  */
 export function useWasd(): void {
   useEffect(() => {
@@ -32,7 +33,8 @@ export function useWasd(): void {
         return
       }
       // C.1: number keys 1/2/3 → direct front-row performer selection.
-      if (NUM_KEYS.has(k)) {
+      // The prep-screen sequencer reserves the number row, so skip it there.
+      if (NUM_KEYS.has(k) && useSessionStore.getState().gamePhase !== "prep") {
         e.preventDefault()
         useSessionStore.getState().selectPerformerByIndex(parseInt(k) - 1)
         return
