@@ -1,0 +1,2902 @@
+{
+  "nodes": [
+    {
+      "id": "file:src/game/presets.ts",
+      "type": "file",
+      "name": "presets.ts",
+      "filePath": "src/game/presets.ts",
+      "summary": "Melody-set presets keyed by content hash with tick cooldowns: entries are tombstoned on delete so recreating an identical set cannot bypass its cooldown, and snapshots let a cooled preset be run back.",
+      "tags": [
+        "data-model",
+        "presets",
+        "cooldown",
+        "deduplication"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:src/game/presets.ts:cooldownFor",
+      "type": "function",
+      "name": "cooldownFor",
+      "filePath": "src/game/presets.ts",
+      "lineRange": [
+        21,
+        24
+      ],
+      "summary": "Cooldown in ticks for a melody set: two loops plus one tick per eight onsets.",
+      "tags": [
+        "balance",
+        "cooldown",
+        "presets"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:src/game/presets.ts:savePreset",
+      "type": "function",
+      "name": "savePreset",
+      "filePath": "src/game/presets.ts",
+      "lineRange": [
+        34,
+        55
+      ],
+      "summary": "Saves the current melody set under its content hash; an identical set - even renamed or previously deleted - shares the existing cooldown entry.",
+      "tags": [
+        "immutable-update",
+        "presets",
+        "deduplication",
+        "cooldown"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:src/game/presets.ts:deletePreset",
+      "type": "function",
+      "name": "deletePreset",
+      "filePath": "src/game/presets.ts",
+      "lineRange": [
+        58,
+        64
+      ],
+      "summary": "Tombstones a preset by name so recreating the identical set still keeps its cooldown.",
+      "tags": [
+        "immutable-update",
+        "presets",
+        "tombstone"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:src/game/presets.ts:readyPresets",
+      "type": "function",
+      "name": "readyPresets",
+      "filePath": "src/game/presets.ts",
+      "lineRange": [
+        67,
+        69
+      ],
+      "summary": "Returns the live presets whose cooldown has elapsed.",
+      "tags": [
+        "read",
+        "presets",
+        "cooldown"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:src/game/presets.ts:isOnCooldown",
+      "type": "function",
+      "name": "isOnCooldown",
+      "filePath": "src/game/presets.ts",
+      "lineRange": [
+        71,
+        74
+      ],
+      "summary": "True when the arrangement's current melody set matches a preset that is still cooling down.",
+      "tags": [
+        "validation",
+        "presets",
+        "cooldown"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:src/game/presets.ts:recallPreset",
+      "type": "function",
+      "name": "recallPreset",
+      "filePath": "src/game/presets.ts",
+      "lineRange": [
+        87,
+        95
+      ],
+      "summary": "Runs back a cooled-down preset snapshot, returning null when the hash is unknown, deleted or still cooling down.",
+      "tags": [
+        "read",
+        "presets",
+        "cloning"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:src/game/presets.ts:resetPresetCooldowns",
+      "type": "function",
+      "name": "resetPresetCooldowns",
+      "filePath": "src/game/presets.ts",
+      "lineRange": [
+        98,
+        104
+      ],
+      "summary": "Zeroes every non-deleted preset's cooldown, called when a fresh fight starts.",
+      "tags": [
+        "immutable-update",
+        "presets",
+        "combat-support"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:src/game/session.ts",
+      "type": "file",
+      "name": "session.ts",
+      "filePath": "src/game/session.ts",
+      "summary": "Session singleton owning all engine state (arrangement, fight, banks, loadout, presets, phase) outside React, exposing getters, mutators and the subscribe() hook that the Zustand store mirrors.",
+      "tags": [
+        "singleton",
+        "session",
+        "entry-point",
+        "orchestration",
+        "core-engine"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "function:src/game/session.ts:getArrangement",
+      "type": "function",
+      "name": "getArrangement",
+      "filePath": "src/game/session.ts",
+      "lineRange": [
+        140,
+        142
+      ],
+      "summary": "Returns the live arrangement; engine-owned, not a copy.",
+      "tags": [
+        "read",
+        "session",
+        "arrangement"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:src/game/session.ts:getFight",
+      "type": "function",
+      "name": "getFight",
+      "filePath": "src/game/session.ts",
+      "lineRange": [
+        144,
+        146
+      ],
+      "summary": "Returns the current ATB fight state.",
+      "tags": [
+        "read",
+        "session",
+        "combat"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:src/game/session.ts:getMelodyMuted",
+      "type": "function",
+      "name": "getMelodyMuted",
+      "filePath": "src/game/session.ts",
+      "lineRange": [
+        149,
+        151
+      ],
+      "summary": "True while a chord swap mutes the soloist lanes; both the engine and the audio layer read it.",
+      "tags": [
+        "read",
+        "session",
+        "combat",
+        "audio"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:src/game/session.ts:getPresets",
+      "type": "function",
+      "name": "getPresets",
+      "filePath": "src/game/session.ts",
+      "lineRange": [
+        153,
+        155
+      ],
+      "summary": "Returns the hash-keyed preset store.",
+      "tags": [
+        "read",
+        "session",
+        "presets"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:src/game/session.ts:getMelodyBank",
+      "type": "function",
+      "name": "getMelodyBank",
+      "filePath": "src/game/session.ts",
+      "lineRange": [
+        157,
+        159
+      ],
+      "summary": "Returns the persistent melody card bank.",
+      "tags": [
+        "read",
+        "session",
+        "melody-card"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:src/game/session.ts:getGrooveChoices",
+      "type": "function",
+      "name": "getGrooveChoices",
+      "filePath": "src/game/session.ts",
+      "lineRange": [
+        162,
+        164
+      ],
+      "summary": "Every equippable rig: the curated presets followed by the bottled builds, all cloned.",
+      "tags": [
+        "read",
+        "session",
+        "drum-rig"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:src/game/session.ts:getGrooveBottles",
+      "type": "function",
+      "name": "getGrooveBottles",
+      "filePath": "src/game/session.ts",
+      "lineRange": [
+        166,
+        168
+      ],
+      "summary": "Returns the Studio-built bottled rigs as defensive copies.",
+      "tags": [
+        "read",
+        "session",
+        "drum-rig",
+        "bottling"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:src/game/session.ts:getGrooveById",
+      "type": "function",
+      "name": "getGrooveById",
+      "filePath": "src/game/session.ts",
+      "lineRange": [
+        171,
+        174
+      ],
+      "summary": "Resolves a rig id against the curated presets, then the bottled builds.",
+      "tags": [
+        "read",
+        "session",
+        "drum-rig",
+        "lookup"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:src/game/session.ts:getBanks",
+      "type": "function",
+      "name": "getBanks",
+      "filePath": "src/game/session.ts",
+      "lineRange": [
+        177,
+        179
+      ],
+      "summary": "Returns the rhythmic archetype banks the drum matrix pages through.",
+      "tags": [
+        "read",
+        "session",
+        "drum-rig"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:src/game/session.ts:getKits",
+      "type": "function",
+      "name": "getKits",
+      "filePath": "src/game/session.ts",
+      "lineRange": [
+        182,
+        184
+      ],
+      "summary": "Returns every drum kit, each a free choice like the swing knob.",
+      "tags": [
+        "read",
+        "session",
+        "kit"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:src/game/session.ts:getPendingGroove",
+      "type": "function",
+      "name": "getPendingGroove",
+      "filePath": "src/game/session.ts",
+      "lineRange": [
+        187,
+        189
+      ],
+      "summary": "Returns the rig queued for the next loop boundary, if any, as a clone.",
+      "tags": [
+        "read",
+        "session",
+        "drum-rig"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:src/game/session.ts:getLoadout",
+      "type": "function",
+      "name": "getLoadout",
+      "filePath": "src/game/session.ts",
+      "lineRange": [
+        192,
+        194
+      ],
+      "summary": "Returns the equipped card bag (1..4 grooves plus 1..6 melodies) as copies.",
+      "tags": [
+        "read",
+        "session",
+        "loadout"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:src/game/session.ts:getMelodyCards",
+      "type": "function",
+      "name": "getMelodyCards",
+      "filePath": "src/game/session.ts",
+      "lineRange": [
+        197,
+        199
+      ],
+      "summary": "Returns every melody card in the bank, presets first then custom.",
+      "tags": [
+        "read",
+        "session",
+        "melody-card"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:src/game/session.ts:getActiveMelodyCardId",
+      "type": "function",
+      "name": "getActiveMelodyCardId",
+      "filePath": "src/game/session.ts",
+      "lineRange": [
+        202,
+        204
+      ],
+      "summary": "The card currently loaded in the grid, or null for an unsaved loop.",
+      "tags": [
+        "read",
+        "session",
+        "melody-card"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:src/game/session.ts:getPendingGrooveId",
+      "type": "function",
+      "name": "getPendingGrooveId",
+      "filePath": "src/game/session.ts",
+      "lineRange": [
+        206,
+        208
+      ],
+      "summary": "Id of the rig queued for the next loop boundary.",
+      "tags": [
+        "read",
+        "session",
+        "drum-rig"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:src/game/session.ts:getPendingMelodyId",
+      "type": "function",
+      "name": "getPendingMelodyId",
+      "filePath": "src/game/session.ts",
+      "lineRange": [
+        210,
+        212
+      ],
+      "summary": "Id of the melody card queued for the next loop boundary.",
+      "tags": [
+        "read",
+        "session",
+        "melody-card"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:src/game/session.ts:toggleLoadoutGroove",
+      "type": "function",
+      "name": "toggleLoadoutGroove",
+      "filePath": "src/game/session.ts",
+      "lineRange": [
+        215,
+        219
+      ],
+      "summary": "PREP: adds or removes a groove card from the bag, persists the choice and notifies listeners.",
+      "tags": [
+        "mutation",
+        "loadout",
+        "persistence"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:src/game/session.ts:toggleLoadoutMelody",
+      "type": "function",
+      "name": "toggleLoadoutMelody",
+      "filePath": "src/game/session.ts",
+      "lineRange": [
+        222,
+        226
+      ],
+      "summary": "PREP: adds or removes a melody card from the bag, persists the choice and notifies listeners.",
+      "tags": [
+        "mutation",
+        "loadout",
+        "persistence"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:src/game/session.ts:equipGrooveNow",
+      "type": "function",
+      "name": "equipGrooveNow",
+      "filePath": "src/game/session.ts",
+      "lineRange": [
+        229,
+        233
+      ],
+      "summary": "Equips a groove immediately (PREP/STUDIO only) and persists the choice.",
+      "tags": [
+        "mutation",
+        "drum-rig",
+        "persistence"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:src/game/session.ts:queueOrEquip",
+      "type": "function",
+      "name": "queueOrEquip",
+      "filePath": "src/game/session.ts",
+      "lineRange": [
+        239,
+        247
+      ],
+      "summary": "Equips a rig at once outside combat, or queues it for the next loop boundary during combat so the pulse never breaks mid-phrase.",
+      "tags": [
+        "mutation",
+        "drum-rig",
+        "queueing"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:src/game/session.ts:selectGrooveCard",
+      "type": "function",
+      "name": "selectGrooveCard",
+      "filePath": "src/game/session.ts",
+      "lineRange": [
+        258,
+        263
+      ],
+      "summary": "Picks a whole rig (preset or bottle): PREP equips it at once, combat queues it for the loop boundary.",
+      "tags": [
+        "mutation",
+        "drum-rig",
+        "card-swap"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:src/game/session.ts:selectPad",
+      "type": "function",
+      "name": "selectPad",
+      "filePath": "src/game/session.ts",
+      "lineRange": [
+        266,
+        270
+      ],
+      "summary": "Swaps one drum voice's clip tier on the rig under edit, then equips or queues the result.",
+      "tags": [
+        "mutation",
+        "drum-rig",
+        "customization"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:src/game/session.ts:selectBank",
+      "type": "function",
+      "name": "selectBank",
+      "filePath": "src/game/session.ts",
+      "lineRange": [
+        273,
+        279
+      ],
+      "summary": "Switches the drum matrix to another bank page, adopting its default pads, feel and a matching kit.",
+      "tags": [
+        "mutation",
+        "drum-rig",
+        "bank"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:src/game/session.ts:selectKit",
+      "type": "function",
+      "name": "selectKit",
+      "filePath": "src/game/session.ts",
+      "lineRange": [
+        282,
+        287
+      ],
+      "summary": "Changes the drum kit, swapping timbre and the denormalized combat effect together.",
+      "tags": [
+        "mutation",
+        "kit",
+        "combat-effect"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:src/game/session.ts:tweakEquippedGroove",
+      "type": "function",
+      "name": "tweakEquippedGroove",
+      "filePath": "src/game/session.ts",
+      "lineRange": [
+        290,
+        300
+      ],
+      "summary": "Applies swing-knob edits: in combat it queues the tweaked rig for the next loop boundary, otherwise it edits and persists immediately.",
+      "tags": [
+        "mutation",
+        "drum-rig",
+        "tuning"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:src/game/session.ts:saveGrooveBottle",
+      "type": "function",
+      "name": "saveGrooveBottle",
+      "filePath": "src/game/session.ts",
+      "lineRange": [
+        303,
+        316
+      ],
+      "summary": "Compose-to-bottle: saves the equipped rig under a name, equips it, bags it in the loadout and persists both.",
+      "tags": [
+        "mutation",
+        "drum-rig",
+        "bottling",
+        "persistence"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:src/game/session.ts:deleteGrooveBottle",
+      "type": "function",
+      "name": "deleteGrooveBottle",
+      "filePath": "src/game/session.ts",
+      "lineRange": [
+        318,
+        330
+      ],
+      "summary": "Deletes a bottled rig, persists the bottle list and drops it from the bag unless it is the last groove card.",
+      "tags": [
+        "mutation",
+        "drum-rig",
+        "deletion"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:src/game/session.ts:getGamePhase",
+      "type": "function",
+      "name": "getGamePhase",
+      "filePath": "src/game/session.ts",
+      "lineRange": [
+        332,
+        334
+      ],
+      "summary": "Returns the current game phase.",
+      "tags": [
+        "read",
+        "session",
+        "state-machine"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:src/game/session.ts:setGamePhase",
+      "type": "function",
+      "name": "setGamePhase",
+      "filePath": "src/game/session.ts",
+      "lineRange": [
+        336,
+        340
+      ],
+      "summary": "Sets the game phase and notifies listeners, a no-op when unchanged.",
+      "tags": [
+        "mutation",
+        "state-machine",
+        "events"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:src/game/session.ts:toMenu",
+      "type": "function",
+      "name": "toMenu",
+      "filePath": "src/game/session.ts",
+      "lineRange": [
+        342,
+        344
+      ],
+      "summary": "Transitions the game to the menu phase.",
+      "tags": [
+        "mutation",
+        "state-machine",
+        "navigation"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:src/game/session.ts:toPrep",
+      "type": "function",
+      "name": "toPrep",
+      "filePath": "src/game/session.ts",
+      "lineRange": [
+        346,
+        348
+      ],
+      "summary": "Transitions the game to the prep phase.",
+      "tags": [
+        "mutation",
+        "state-machine",
+        "navigation"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:src/game/session.ts:toStudio",
+      "type": "function",
+      "name": "toStudio",
+      "filePath": "src/game/session.ts",
+      "lineRange": [
+        351,
+        353
+      ],
+      "summary": "Transitions to the Studio step sequencer, which lives outside combat.",
+      "tags": [
+        "mutation",
+        "state-machine",
+        "navigation"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:src/game/session.ts:getEncounterId",
+      "type": "function",
+      "name": "getEncounterId",
+      "filePath": "src/game/session.ts",
+      "lineRange": [
+        355,
+        357
+      ],
+      "summary": "Returns the current encounter id.",
+      "tags": [
+        "read",
+        "session",
+        "progression"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:src/game/session.ts:setEncounterId",
+      "type": "function",
+      "name": "setEncounterId",
+      "filePath": "src/game/session.ts",
+      "lineRange": [
+        359,
+        372
+      ],
+      "summary": "Selects an encounter, refusing locked ones unless forced, and rebuilds the fight when in prep or menu.",
+      "tags": [
+        "mutation",
+        "progression",
+        "combat"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:src/game/session.ts:getClearedEncounters",
+      "type": "function",
+      "name": "getClearedEncounters",
+      "filePath": "src/game/session.ts",
+      "lineRange": [
+        374,
+        376
+      ],
+      "summary": "Returns a copy of the cleared-encounter id list.",
+      "tags": [
+        "read",
+        "session",
+        "progression"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:src/game/session.ts:isCurrentEncounterUnlocked",
+      "type": "function",
+      "name": "isCurrentEncounterUnlocked",
+      "filePath": "src/game/session.ts",
+      "lineRange": [
+        378,
+        380
+      ],
+      "summary": "True when progression has unlocked the given encounter.",
+      "tags": [
+        "validation",
+        "session",
+        "progression"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:src/game/session.ts:unlockAllEncounters",
+      "type": "function",
+      "name": "unlockAllEncounters",
+      "filePath": "src/game/session.ts",
+      "lineRange": [
+        382,
+        386
+      ],
+      "summary": "Marks every encounter cleared and persists the progression.",
+      "tags": [
+        "mutation",
+        "progression",
+        "debug"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:src/game/session.ts:resetEncounterProgression",
+      "type": "function",
+      "name": "resetEncounterProgression",
+      "filePath": "src/game/session.ts",
+      "lineRange": [
+        388,
+        398
+      ],
+      "summary": "Wipes progression: clears encounters, bottles and loadout, restores the default rig and erases persisted data.",
+      "tags": [
+        "mutation",
+        "progression",
+        "reset",
+        "persistence"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:src/game/session.ts:getSelectedParty",
+      "type": "function",
+      "name": "getSelectedParty",
+      "filePath": "src/game/session.ts",
+      "lineRange": [
+        400,
+        402
+      ],
+      "summary": "Returns a copy of the selected party member ids.",
+      "tags": [
+        "read",
+        "session",
+        "party"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:src/game/session.ts:setSelectedParty",
+      "type": "function",
+      "name": "setSelectedParty",
+      "filePath": "src/game/session.ts",
+      "lineRange": [
+        404,
+        416
+      ],
+      "summary": "Sets the party line-up, persists it and rebuilds the fight when in prep or menu.",
+      "tags": [
+        "mutation",
+        "party",
+        "combat"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:src/game/session.ts:getCustomChordPresets",
+      "type": "function",
+      "name": "getCustomChordPresets",
+      "filePath": "src/game/session.ts",
+      "lineRange": [
+        418,
+        420
+      ],
+      "summary": "Returns the player's custom chord progressions.",
+      "tags": [
+        "read",
+        "session",
+        "harmony"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:src/game/session.ts:saveCustomChordPreset",
+      "type": "function",
+      "name": "saveCustomChordPreset",
+      "filePath": "src/game/session.ts",
+      "lineRange": [
+        422,
+        433
+      ],
+      "summary": "Saves a named chord progression (auto-naming blanks) and persists the custom chord list.",
+      "tags": [
+        "mutation",
+        "harmony",
+        "persistence"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:src/game/session.ts:mutateArrangement",
+      "type": "function",
+      "name": "mutateArrangement",
+      "filePath": "src/game/session.ts",
+      "lineRange": [
+        435,
+        438
+      ],
+      "summary": "Applies a caller-supplied arrangement transform and notifies listeners.",
+      "tags": [
+        "mutation",
+        "arrangement",
+        "events"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:src/game/session.ts:handleStep",
+      "type": "function",
+      "name": "handleStep",
+      "filePath": "src/game/session.ts",
+      "lineRange": [
+        445,
+        465
+      ],
+      "summary": "Per-clock-step driver: applies queued swaps at the loop boundary, advances the fight one tick, mirrors enemy track-wipes onto the arrangement and resolves victory or defeat.",
+      "tags": [
+        "combat",
+        "tick-loop",
+        "orchestration",
+        "critical-path"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:src/game/session.ts:moveFighter",
+      "type": "function",
+      "name": "moveFighter",
+      "filePath": "src/game/session.ts",
+      "lineRange": [
+        468,
+        474
+      ],
+      "summary": "Moves a fighter between deck and slots, notifying listeners only when the fight actually changed.",
+      "tags": [
+        "mutation",
+        "formation",
+        "combat"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:src/game/session.ts:beginFight",
+      "type": "function",
+      "name": "beginFight",
+      "filePath": "src/game/session.ts",
+      "lineRange": [
+        485,
+        510
+      ],
+      "summary": "Resets preset cooldowns, clears pending picks, locks the fight key onto the arrangement so grid and audio match, reconciles potency and enters combat.",
+      "tags": [
+        "combat",
+        "lifecycle",
+        "key-lock"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:src/game/session.ts:startFight",
+      "type": "function",
+      "name": "startFight",
+      "filePath": "src/game/session.ts",
+      "lineRange": [
+        513,
+        515
+      ],
+      "summary": "Starts or restarts a combat, rolling a random key unless one is supplied.",
+      "tags": [
+        "combat",
+        "lifecycle",
+        "entry-point"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:src/game/session.ts:resetFight",
+      "type": "function",
+      "name": "resetFight",
+      "filePath": "src/game/session.ts",
+      "lineRange": [
+        517,
+        519
+      ],
+      "summary": "Restarts the current combat with fresh options, sharing beginFight's path.",
+      "tags": [
+        "combat",
+        "lifecycle",
+        "reset"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:src/game/session.ts:getFrontPerformerId",
+      "type": "function",
+      "name": "getFrontPerformerId",
+      "filePath": "src/game/session.ts",
+      "lineRange": [
+        526,
+        528
+      ],
+      "summary": "Returns the fighter at front-row position index (the 1/2/3 performer keys), or null when the slot is empty.",
+      "tags": [
+        "read",
+        "session",
+        "formation"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:src/game/session.ts:saveMelodyPreset",
+      "type": "function",
+      "name": "saveMelodyPreset",
+      "filePath": "src/game/session.ts",
+      "lineRange": [
+        531,
+        536
+      ],
+      "summary": "Saves the live melody set as a named preset, sharing the cooldown of an identical set.",
+      "tags": [
+        "mutation",
+        "presets",
+        "persistence"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:src/game/session.ts:recallMelodyPreset",
+      "type": "function",
+      "name": "recallMelodyPreset",
+      "filePath": "src/game/session.ts",
+      "lineRange": [
+        543,
+        551
+      ],
+      "summary": "Runs back a cooled-down preset at full strength, restoring its tracks and chords.",
+      "tags": [
+        "mutation",
+        "presets",
+        "combat"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:src/game/session.ts:saveToMelodyBank",
+      "type": "function",
+      "name": "saveToMelodyBank",
+      "filePath": "src/game/session.ts",
+      "lineRange": [
+        554,
+        564
+      ],
+      "summary": "Saves the current arrangement into the persistent melody card bank.",
+      "tags": [
+        "mutation",
+        "melody-card",
+        "persistence"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:src/game/session.ts:deleteMelodyCard",
+      "type": "function",
+      "name": "deleteMelodyCard",
+      "filePath": "src/game/session.ts",
+      "lineRange": [
+        567,
+        577
+      ],
+      "summary": "Deletes a melody card, drops it from the bag (falling back to the first remaining card) and clears it as active.",
+      "tags": [
+        "mutation",
+        "melody-card",
+        "deletion"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:src/game/session.ts:saveCustomMelodyCard",
+      "type": "function",
+      "name": "saveCustomMelodyCard",
+      "filePath": "src/game/session.ts",
+      "lineRange": [
+        583,
+        602
+      ],
+      "summary": "Snapshots the live loop as a new custom card, bags it, makes it active and persists the loadout - how a loop sung mid-combat survives the fight.",
+      "tags": [
+        "mutation",
+        "melody-card",
+        "persistence"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:src/game/session.ts:syncActiveMelodyCard",
+      "type": "function",
+      "name": "syncActiveMelodyCard",
+      "filePath": "src/game/session.ts",
+      "lineRange": [
+        609,
+        638
+      ],
+      "summary": "Copy-on-write guard: forks a preset card into a custom (edit) card the moment the grid changes, else updates the custom card in place.",
+      "tags": [
+        "copy-on-write",
+        "melody-card",
+        "persistence"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:src/game/session.ts:mutateMelody",
+      "type": "function",
+      "name": "mutateMelody",
+      "filePath": "src/game/session.ts",
+      "lineRange": [
+        641,
+        645
+      ],
+      "summary": "Arrangement edit that also keeps the active melody card in sync outside combat.",
+      "tags": [
+        "mutation",
+        "melody-card",
+        "copy-on-write"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:src/game/session.ts:selectMelodyCard",
+      "type": "function",
+      "name": "selectMelodyCard",
+      "filePath": "src/game/session.ts",
+      "lineRange": [
+        651,
+        666
+      ],
+      "summary": "Loads a melody card into the grid: immediately in PREP, queued to the loop boundary in combat; rejects track-count mismatches.",
+      "tags": [
+        "mutation",
+        "melody-card",
+        "queueing"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:src/game/session.ts:loadMelodyTemplate",
+      "type": "function",
+      "name": "loadMelodyTemplate",
+      "filePath": "src/game/session.ts",
+      "lineRange": [
+        669,
+        671
+      ],
+      "summary": "Loads a template from the melody bank into the arrangement grid, delegating to selectMelodyCard.",
+      "tags": [
+        "mutation",
+        "melody-card",
+        "convenience"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:src/game/session.ts:applyPendingSwaps",
+      "type": "function",
+      "name": "applyPendingSwaps",
+      "filePath": "src/game/session.ts",
+      "lineRange": [
+        677,
+        692
+      ],
+      "summary": "Applies queued mid-combat groove and melody picks at the loop boundary so a swap always starts on a downbeat.",
+      "tags": [
+        "queueing",
+        "card-swap",
+        "combat"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:src/game/session.ts:requestTemplateChart",
+      "type": "function",
+      "name": "requestTemplateChart",
+      "filePath": "src/game/session.ts",
+      "lineRange": [
+        698,
+        711
+      ],
+      "summary": "Casts a melody-bank template mid-fight by opening a 16-tick QTE chart carrying its tracks and chords.",
+      "tags": [
+        "combat",
+        "qte",
+        "melody-card"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:src/game/session.ts:requestChordChart",
+      "type": "function",
+      "name": "requestChordChart",
+      "filePath": "src/game/session.ts",
+      "lineRange": [
+        718,
+        724
+      ],
+      "summary": "Opens a mid-fight 16-tick QTE chart carrying a new chord progression for a chord swap.",
+      "tags": [
+        "combat",
+        "qte",
+        "harmony"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:src/game/session.ts:requestPresetChart",
+      "type": "function",
+      "name": "requestPresetChart",
+      "filePath": "src/game/session.ts",
+      "lineRange": [
+        731,
+        743
+      ],
+      "summary": "Opens a mid-fight QTE chart carrying a cooled-down preset snapshot, refusing missing, deleted or cooling presets.",
+      "tags": [
+        "combat",
+        "qte",
+        "presets"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:src/game/session.ts:pressChartKey",
+      "type": "function",
+      "name": "pressChartKey",
+      "filePath": "src/game/session.ts",
+      "lineRange": [
+        746,
+        749
+      ],
+      "summary": "Scores a WASD press against an open song chart, ignoring parry charts.",
+      "tags": [
+        "combat",
+        "qte",
+        "input"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:src/game/session.ts:pressParryKey",
+      "type": "function",
+      "name": "pressParryKey",
+      "filePath": "src/game/session.ts",
+      "lineRange": [
+        752,
+        755
+      ],
+      "summary": "Scores a ZXCV press against an open parry chart, holds included.",
+      "tags": [
+        "combat",
+        "qte",
+        "input"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:src/game/session.ts:releaseParryKey",
+      "type": "function",
+      "name": "releaseParryKey",
+      "filePath": "src/game/session.ts",
+      "lineRange": [
+        758,
+        771
+      ],
+      "summary": "Scores a ZXCV release against open parry holds, where releasing early counts as a miss.",
+      "tags": [
+        "combat",
+        "qte",
+        "input"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:src/game/session.ts:scoreQtePress",
+      "type": "function",
+      "name": "scoreQtePress",
+      "filePath": "src/game/session.ts",
+      "lineRange": [
+        773,
+        784
+      ],
+      "summary": "Shared QTE scoring helper: commits the new fight state and reports the rating only when it changed and is not a miss.",
+      "tags": [
+        "combat",
+        "qte",
+        "scoring"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:src/game/session.ts:cancelChart",
+      "type": "function",
+      "name": "cancelChart",
+      "filePath": "src/game/session.ts",
+      "lineRange": [
+        787,
+        793
+      ],
+      "summary": "Abandons the open QTE chart.",
+      "tags": [
+        "combat",
+        "qte",
+        "cancel"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:src/game/session.ts:resetAll",
+      "type": "function",
+      "name": "resetAll",
+      "filePath": "src/game/session.ts",
+      "lineRange": [
+        795,
+        812
+      ],
+      "summary": "Full reset: default arrangement, empty bottles and presets, default melody bank and loadout, fresh fight, and the prep phase.",
+      "tags": [
+        "reset",
+        "lifecycle",
+        "orchestration"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:src/game/session.ts:subscribe",
+      "type": "function",
+      "name": "subscribe",
+      "filePath": "src/game/session.ts",
+      "lineRange": [
+        814,
+        819
+      ],
+      "summary": "Registers an external listener and returns its unsubscribe function; the hook the Zustand mirror subscribes through.",
+      "tags": [
+        "events",
+        "pub-sub",
+        "entry-point"
+      ],
+      "complexity": "simple"
+    }
+  ],
+  "edges": [
+    {
+      "source": "file:src/game/presets.ts",
+      "target": "file:src/game/arrangement.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/game/presets.ts",
+      "target": "function:src/game/presets.ts:cooldownFor",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/game/presets.ts",
+      "target": "function:src/game/presets.ts:cooldownFor",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/game/presets.ts",
+      "target": "function:src/game/presets.ts:savePreset",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/game/presets.ts",
+      "target": "function:src/game/presets.ts:savePreset",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/game/presets.ts",
+      "target": "function:src/game/presets.ts:deletePreset",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/game/presets.ts",
+      "target": "function:src/game/presets.ts:deletePreset",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/game/presets.ts",
+      "target": "function:src/game/presets.ts:readyPresets",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/game/presets.ts",
+      "target": "function:src/game/presets.ts:readyPresets",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/game/presets.ts",
+      "target": "function:src/game/presets.ts:isOnCooldown",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/game/presets.ts",
+      "target": "function:src/game/presets.ts:isOnCooldown",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/game/presets.ts",
+      "target": "function:src/game/presets.ts:recallPreset",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/game/presets.ts",
+      "target": "function:src/game/presets.ts:recallPreset",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/game/presets.ts",
+      "target": "function:src/game/presets.ts:resetPresetCooldowns",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/game/presets.ts",
+      "target": "function:src/game/presets.ts:resetPresetCooldowns",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/game/session.ts",
+      "target": "file:src/game/arrangement.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/game/session.ts",
+      "target": "file:src/game/combat.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/game/session.ts",
+      "target": "file:src/game/groove.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/game/session.ts",
+      "target": "file:src/game/loadout.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/game/session.ts",
+      "target": "file:src/game/melodyBank.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/game/session.ts",
+      "target": "file:src/game/phase.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/game/session.ts",
+      "target": "file:src/game/positions.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/game/session.ts",
+      "target": "file:src/game/presets.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/game/session.ts",
+      "target": "file:src/game/theory.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/game/session.ts",
+      "target": "function:src/game/session.ts:getArrangement",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/game/session.ts",
+      "target": "function:src/game/session.ts:getArrangement",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/game/session.ts",
+      "target": "function:src/game/session.ts:getFight",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/game/session.ts",
+      "target": "function:src/game/session.ts:getFight",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/game/session.ts",
+      "target": "function:src/game/session.ts:getMelodyMuted",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/game/session.ts",
+      "target": "function:src/game/session.ts:getMelodyMuted",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/game/session.ts",
+      "target": "function:src/game/session.ts:getPresets",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/game/session.ts",
+      "target": "function:src/game/session.ts:getPresets",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/game/session.ts",
+      "target": "function:src/game/session.ts:getMelodyBank",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/game/session.ts",
+      "target": "function:src/game/session.ts:getMelodyBank",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/game/session.ts",
+      "target": "function:src/game/session.ts:getGrooveChoices",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/game/session.ts",
+      "target": "function:src/game/session.ts:getGrooveChoices",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/game/session.ts",
+      "target": "function:src/game/session.ts:getGrooveBottles",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/game/session.ts",
+      "target": "function:src/game/session.ts:getGrooveBottles",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/game/session.ts",
+      "target": "function:src/game/session.ts:getGrooveById",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/game/session.ts",
+      "target": "function:src/game/session.ts:getGrooveById",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/game/session.ts",
+      "target": "function:src/game/session.ts:getBanks",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/game/session.ts",
+      "target": "function:src/game/session.ts:getBanks",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/game/session.ts",
+      "target": "function:src/game/session.ts:getKits",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/game/session.ts",
+      "target": "function:src/game/session.ts:getKits",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/game/session.ts",
+      "target": "function:src/game/session.ts:getPendingGroove",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/game/session.ts",
+      "target": "function:src/game/session.ts:getPendingGroove",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/game/session.ts",
+      "target": "function:src/game/session.ts:getLoadout",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/game/session.ts",
+      "target": "function:src/game/session.ts:getLoadout",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/game/session.ts",
+      "target": "function:src/game/session.ts:getMelodyCards",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/game/session.ts",
+      "target": "function:src/game/session.ts:getMelodyCards",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/game/session.ts",
+      "target": "function:src/game/session.ts:getActiveMelodyCardId",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/game/session.ts",
+      "target": "function:src/game/session.ts:getActiveMelodyCardId",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/game/session.ts",
+      "target": "function:src/game/session.ts:getPendingGrooveId",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/game/session.ts",
+      "target": "function:src/game/session.ts:getPendingGrooveId",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/game/session.ts",
+      "target": "function:src/game/session.ts:getPendingMelodyId",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/game/session.ts",
+      "target": "function:src/game/session.ts:getPendingMelodyId",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/game/session.ts",
+      "target": "function:src/game/session.ts:toggleLoadoutGroove",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/game/session.ts",
+      "target": "function:src/game/session.ts:toggleLoadoutGroove",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/game/session.ts",
+      "target": "function:src/game/session.ts:toggleLoadoutMelody",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/game/session.ts",
+      "target": "function:src/game/session.ts:toggleLoadoutMelody",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/game/session.ts",
+      "target": "function:src/game/session.ts:equipGrooveNow",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/game/session.ts",
+      "target": "function:src/game/session.ts:equipGrooveNow",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/game/session.ts",
+      "target": "function:src/game/session.ts:queueOrEquip",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/game/session.ts",
+      "target": "function:src/game/session.ts:selectGrooveCard",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/game/session.ts",
+      "target": "function:src/game/session.ts:selectGrooveCard",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/game/session.ts",
+      "target": "function:src/game/session.ts:selectPad",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/game/session.ts",
+      "target": "function:src/game/session.ts:selectPad",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/game/session.ts",
+      "target": "function:src/game/session.ts:selectBank",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/game/session.ts",
+      "target": "function:src/game/session.ts:selectBank",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/game/session.ts",
+      "target": "function:src/game/session.ts:selectKit",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/game/session.ts",
+      "target": "function:src/game/session.ts:selectKit",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/game/session.ts",
+      "target": "function:src/game/session.ts:tweakEquippedGroove",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/game/session.ts",
+      "target": "function:src/game/session.ts:tweakEquippedGroove",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/game/session.ts",
+      "target": "function:src/game/session.ts:saveGrooveBottle",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/game/session.ts",
+      "target": "function:src/game/session.ts:saveGrooveBottle",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/game/session.ts",
+      "target": "function:src/game/session.ts:deleteGrooveBottle",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/game/session.ts",
+      "target": "function:src/game/session.ts:deleteGrooveBottle",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/game/session.ts",
+      "target": "function:src/game/session.ts:getGamePhase",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/game/session.ts",
+      "target": "function:src/game/session.ts:getGamePhase",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/game/session.ts",
+      "target": "function:src/game/session.ts:setGamePhase",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/game/session.ts",
+      "target": "function:src/game/session.ts:setGamePhase",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/game/session.ts",
+      "target": "function:src/game/session.ts:toMenu",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/game/session.ts",
+      "target": "function:src/game/session.ts:toMenu",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/game/session.ts",
+      "target": "function:src/game/session.ts:toPrep",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/game/session.ts",
+      "target": "function:src/game/session.ts:toPrep",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/game/session.ts",
+      "target": "function:src/game/session.ts:toStudio",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/game/session.ts",
+      "target": "function:src/game/session.ts:toStudio",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/game/session.ts",
+      "target": "function:src/game/session.ts:getEncounterId",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/game/session.ts",
+      "target": "function:src/game/session.ts:getEncounterId",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/game/session.ts",
+      "target": "function:src/game/session.ts:setEncounterId",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/game/session.ts",
+      "target": "function:src/game/session.ts:setEncounterId",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/game/session.ts",
+      "target": "function:src/game/session.ts:getClearedEncounters",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/game/session.ts",
+      "target": "function:src/game/session.ts:getClearedEncounters",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/game/session.ts",
+      "target": "function:src/game/session.ts:isCurrentEncounterUnlocked",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/game/session.ts",
+      "target": "function:src/game/session.ts:isCurrentEncounterUnlocked",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/game/session.ts",
+      "target": "function:src/game/session.ts:unlockAllEncounters",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/game/session.ts",
+      "target": "function:src/game/session.ts:unlockAllEncounters",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/game/session.ts",
+      "target": "function:src/game/session.ts:resetEncounterProgression",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/game/session.ts",
+      "target": "function:src/game/session.ts:resetEncounterProgression",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/game/session.ts",
+      "target": "function:src/game/session.ts:getSelectedParty",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/game/session.ts",
+      "target": "function:src/game/session.ts:getSelectedParty",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/game/session.ts",
+      "target": "function:src/game/session.ts:setSelectedParty",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/game/session.ts",
+      "target": "function:src/game/session.ts:setSelectedParty",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/game/session.ts",
+      "target": "function:src/game/session.ts:getCustomChordPresets",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/game/session.ts",
+      "target": "function:src/game/session.ts:getCustomChordPresets",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/game/session.ts",
+      "target": "function:src/game/session.ts:saveCustomChordPreset",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/game/session.ts",
+      "target": "function:src/game/session.ts:saveCustomChordPreset",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/game/session.ts",
+      "target": "function:src/game/session.ts:mutateArrangement",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/game/session.ts",
+      "target": "function:src/game/session.ts:mutateArrangement",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/game/session.ts",
+      "target": "function:src/game/session.ts:handleStep",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/game/session.ts",
+      "target": "function:src/game/session.ts:handleStep",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/game/session.ts",
+      "target": "function:src/game/session.ts:moveFighter",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/game/session.ts",
+      "target": "function:src/game/session.ts:moveFighter",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/game/session.ts",
+      "target": "function:src/game/session.ts:beginFight",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/game/session.ts",
+      "target": "function:src/game/session.ts:startFight",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/game/session.ts",
+      "target": "function:src/game/session.ts:startFight",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/game/session.ts",
+      "target": "function:src/game/session.ts:resetFight",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/game/session.ts",
+      "target": "function:src/game/session.ts:resetFight",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/game/session.ts",
+      "target": "function:src/game/session.ts:getFrontPerformerId",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/game/session.ts",
+      "target": "function:src/game/session.ts:getFrontPerformerId",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/game/session.ts",
+      "target": "function:src/game/session.ts:saveMelodyPreset",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/game/session.ts",
+      "target": "function:src/game/session.ts:saveMelodyPreset",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/game/session.ts",
+      "target": "function:src/game/session.ts:recallMelodyPreset",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/game/session.ts",
+      "target": "function:src/game/session.ts:recallMelodyPreset",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/game/session.ts",
+      "target": "function:src/game/session.ts:saveToMelodyBank",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/game/session.ts",
+      "target": "function:src/game/session.ts:saveToMelodyBank",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/game/session.ts",
+      "target": "function:src/game/session.ts:deleteMelodyCard",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/game/session.ts",
+      "target": "function:src/game/session.ts:deleteMelodyCard",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/game/session.ts",
+      "target": "function:src/game/session.ts:saveCustomMelodyCard",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/game/session.ts",
+      "target": "function:src/game/session.ts:saveCustomMelodyCard",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/game/session.ts",
+      "target": "function:src/game/session.ts:syncActiveMelodyCard",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/game/session.ts",
+      "target": "function:src/game/session.ts:mutateMelody",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/game/session.ts",
+      "target": "function:src/game/session.ts:mutateMelody",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/game/session.ts",
+      "target": "function:src/game/session.ts:selectMelodyCard",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/game/session.ts",
+      "target": "function:src/game/session.ts:selectMelodyCard",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/game/session.ts",
+      "target": "function:src/game/session.ts:loadMelodyTemplate",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/game/session.ts",
+      "target": "function:src/game/session.ts:loadMelodyTemplate",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/game/session.ts",
+      "target": "function:src/game/session.ts:applyPendingSwaps",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/game/session.ts",
+      "target": "function:src/game/session.ts:requestTemplateChart",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/game/session.ts",
+      "target": "function:src/game/session.ts:requestTemplateChart",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/game/session.ts",
+      "target": "function:src/game/session.ts:requestChordChart",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/game/session.ts",
+      "target": "function:src/game/session.ts:requestChordChart",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/game/session.ts",
+      "target": "function:src/game/session.ts:requestPresetChart",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/game/session.ts",
+      "target": "function:src/game/session.ts:requestPresetChart",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/game/session.ts",
+      "target": "function:src/game/session.ts:pressChartKey",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/game/session.ts",
+      "target": "function:src/game/session.ts:pressChartKey",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/game/session.ts",
+      "target": "function:src/game/session.ts:pressParryKey",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/game/session.ts",
+      "target": "function:src/game/session.ts:pressParryKey",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/game/session.ts",
+      "target": "function:src/game/session.ts:releaseParryKey",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/game/session.ts",
+      "target": "function:src/game/session.ts:releaseParryKey",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/game/session.ts",
+      "target": "function:src/game/session.ts:scoreQtePress",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/game/session.ts",
+      "target": "function:src/game/session.ts:cancelChart",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/game/session.ts",
+      "target": "function:src/game/session.ts:cancelChart",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/game/session.ts",
+      "target": "function:src/game/session.ts:resetAll",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/game/session.ts",
+      "target": "function:src/game/session.ts:resetAll",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/game/session.ts",
+      "target": "function:src/game/session.ts:subscribe",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/game/session.ts",
+      "target": "function:src/game/session.ts:subscribe",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:src/game/presets.ts:cooldownFor",
+      "target": "function:src/game/arrangement.ts:countOnsets",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:src/game/presets.ts:savePreset",
+      "target": "function:src/game/arrangement.ts:hashMelodySet",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:src/game/presets.ts:savePreset",
+      "target": "function:src/game/presets.ts:cooldownFor",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:src/game/presets.ts:isOnCooldown",
+      "target": "function:src/game/arrangement.ts:hashMelodySet",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:src/game/session.ts:getMelodyMuted",
+      "target": "function:src/game/combat.ts:melodyMuted",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:src/game/session.ts:getGrooveChoices",
+      "target": "function:src/game/session.ts:getGrooveBottles",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:src/game/session.ts:getGrooveById",
+      "target": "function:src/game/groove.ts:cloneGroove",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:src/game/session.ts:getPendingGroove",
+      "target": "function:src/game/groove.ts:cloneGroove",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:src/game/session.ts:toggleLoadoutGroove",
+      "target": "function:src/game/loadout.ts:toggleLoadoutId",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:src/game/session.ts:toggleLoadoutMelody",
+      "target": "function:src/game/loadout.ts:toggleLoadoutId",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:src/game/session.ts:equipGrooveNow",
+      "target": "function:src/game/arrangement.ts:setGroove",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:src/game/session.ts:queueOrEquip",
+      "target": "function:src/game/session.ts:equipGrooveNow",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:src/game/session.ts:selectGrooveCard",
+      "target": "function:src/game/session.ts:getGrooveById",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:src/game/session.ts:selectPad",
+      "target": "function:src/game/groove.ts:withPick",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:src/game/session.ts:selectBank",
+      "target": "function:src/game/groove.ts:withBank",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:src/game/session.ts:selectKit",
+      "target": "function:src/game/groove.ts:applyKit",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:src/game/session.ts:tweakEquippedGroove",
+      "target": "function:src/game/groove.ts:tweakGroove",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:src/game/session.ts:tweakEquippedGroove",
+      "target": "function:src/game/arrangement.ts:tweakGrooveKnobs",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:src/game/session.ts:saveGrooveBottle",
+      "target": "function:src/game/groove.ts:bottleGroove",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:src/game/session.ts:saveGrooveBottle",
+      "target": "function:src/game/loadout.ts:selectLoadoutId",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:src/game/session.ts:setEncounterId",
+      "target": "function:src/game/combat.ts:createFight",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:src/game/session.ts:resetEncounterProgression",
+      "target": "function:src/game/loadout.ts:createDefaultLoadout",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:src/game/session.ts:setSelectedParty",
+      "target": "function:src/game/combat.ts:createFight",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:src/game/session.ts:handleStep",
+      "target": "function:src/game/arrangement.ts:loopLength",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:src/game/session.ts:handleStep",
+      "target": "function:src/game/session.ts:applyPendingSwaps",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:src/game/session.ts:handleStep",
+      "target": "function:src/game/combat.ts:advanceTick",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:src/game/session.ts:moveFighter",
+      "target": "function:src/game/combat.ts:moveFighter",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:src/game/session.ts:beginFight",
+      "target": "function:src/game/presets.ts:resetPresetCooldowns",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:src/game/session.ts:beginFight",
+      "target": "function:src/game/combat.ts:createFight",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:src/game/session.ts:beginFight",
+      "target": "function:src/game/combat.ts:reconcilePotency",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:src/game/session.ts:startFight",
+      "target": "function:src/game/session.ts:beginFight",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:src/game/session.ts:resetFight",
+      "target": "function:src/game/session.ts:beginFight",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:src/game/session.ts:saveMelodyPreset",
+      "target": "function:src/game/presets.ts:savePreset",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:src/game/session.ts:recallMelodyPreset",
+      "target": "function:src/game/presets.ts:recallPreset",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:src/game/session.ts:recallMelodyPreset",
+      "target": "function:src/game/combat.ts:refreshPotency",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:src/game/session.ts:saveToMelodyBank",
+      "target": "function:src/game/melodyBank.ts:saveTemplate",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:src/game/session.ts:deleteMelodyCard",
+      "target": "function:src/game/melodyBank.ts:deleteTemplate",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:src/game/session.ts:saveCustomMelodyCard",
+      "target": "function:src/game/melodyBank.ts:saveTemplate",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:src/game/session.ts:saveCustomMelodyCard",
+      "target": "function:src/game/loadout.ts:selectLoadoutId",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:src/game/session.ts:syncActiveMelodyCard",
+      "target": "function:src/game/melodyBank.ts:getTemplate",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:src/game/session.ts:syncActiveMelodyCard",
+      "target": "function:src/game/melodyBank.ts:isPresetMelodyCard",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:src/game/session.ts:syncActiveMelodyCard",
+      "target": "function:src/game/melodyBank.ts:saveTemplate",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:src/game/session.ts:syncActiveMelodyCard",
+      "target": "function:src/game/melodyBank.ts:updateTemplate",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:src/game/session.ts:syncActiveMelodyCard",
+      "target": "function:src/game/loadout.ts:selectLoadoutId",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:src/game/session.ts:mutateMelody",
+      "target": "function:src/game/session.ts:syncActiveMelodyCard",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:src/game/session.ts:selectMelodyCard",
+      "target": "function:src/game/melodyBank.ts:getTemplate",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:src/game/session.ts:selectMelodyCard",
+      "target": "function:src/game/arrangement.ts:withMelody",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:src/game/session.ts:selectMelodyCard",
+      "target": "function:src/game/combat.ts:reconcilePotency",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:src/game/session.ts:loadMelodyTemplate",
+      "target": "function:src/game/session.ts:selectMelodyCard",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:src/game/session.ts:applyPendingSwaps",
+      "target": "function:src/game/arrangement.ts:setGroove",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:src/game/session.ts:applyPendingSwaps",
+      "target": "function:src/game/melodyBank.ts:getTemplate",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:src/game/session.ts:applyPendingSwaps",
+      "target": "function:src/game/arrangement.ts:withMelody",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:src/game/session.ts:applyPendingSwaps",
+      "target": "function:src/game/combat.ts:refreshPotency",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:src/game/session.ts:requestTemplateChart",
+      "target": "function:src/game/melodyBank.ts:getTemplate",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:src/game/session.ts:requestTemplateChart",
+      "target": "function:src/game/combat.ts:requestPresetQte",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:src/game/session.ts:requestChordChart",
+      "target": "function:src/game/combat.ts:requestChordQte",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:src/game/session.ts:requestPresetChart",
+      "target": "function:src/game/presets.ts:recallPreset",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:src/game/session.ts:requestPresetChart",
+      "target": "function:src/game/combat.ts:requestPresetQte",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:src/game/session.ts:pressChartKey",
+      "target": "function:src/game/combat.ts:pressQteKey",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:src/game/session.ts:pressParryKey",
+      "target": "function:src/game/combat.ts:pressQteKey",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:src/game/session.ts:releaseParryKey",
+      "target": "function:src/game/combat.ts:releaseQteKey",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:src/game/session.ts:cancelChart",
+      "target": "function:src/game/combat.ts:cancelQte",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:src/game/session.ts:resetAll",
+      "target": "function:src/game/arrangement.ts:createDefaultArrangement",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:src/game/session.ts:resetAll",
+      "target": "function:src/game/melodyBank.ts:createDefaultMelodyBank",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:src/game/session.ts:resetAll",
+      "target": "function:src/game/loadout.ts:createDefaultLoadout",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:src/game/session.ts:resetAll",
+      "target": "function:src/game/combat.ts:createFight",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:src/game/session.ts:resetAll",
+      "target": "function:src/game/arrangement.ts:setGroove",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    }
+  ]
+}

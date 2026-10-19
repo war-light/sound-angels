@@ -1,0 +1,485 @@
+{
+  "projectRoot": "/home/david/Personal Projects/sound-angels",
+  "files": [
+    {
+      "path": ".gitattributes",
+      "language": "unknown",
+      "sizeLines": 1,
+      "fileCategory": "code"
+    },
+    {
+      "path": ".oxlintrc.json",
+      "language": "json",
+      "sizeLines": 8,
+      "fileCategory": "config"
+    },
+    {
+      "path": "@/components/ui/progress.tsx",
+      "language": "typescript",
+      "sizeLines": 28,
+      "fileCategory": "code"
+    },
+    {
+      "path": "AGENTS.md",
+      "language": "markdown",
+      "sizeLines": 38,
+      "fileCategory": "docs"
+    },
+    {
+      "path": "README.md",
+      "language": "markdown",
+      "sizeLines": 44,
+      "fileCategory": "docs"
+    },
+    {
+      "path": "components.json",
+      "language": "json",
+      "sizeLines": 21,
+      "fileCategory": "config"
+    },
+    {
+      "path": "docs/chord-remake.md",
+      "language": "markdown",
+      "sizeLines": 7,
+      "fileCategory": "docs"
+    },
+    {
+      "path": "docs/combat-pacing-plan.md",
+      "language": "markdown",
+      "sizeLines": 338,
+      "fileCategory": "docs"
+    },
+    {
+      "path": "docs/mechanics.md",
+      "language": "markdown",
+      "sizeLines": 238,
+      "fileCategory": "docs"
+    },
+    {
+      "path": "docs/qte-redesign.md",
+      "language": "markdown",
+      "sizeLines": 45,
+      "fileCategory": "docs"
+    },
+    {
+      "path": "docs/v1-plan.md",
+      "language": "markdown",
+      "sizeLines": 156,
+      "fileCategory": "docs"
+    },
+    {
+      "path": "index.html",
+      "language": "html",
+      "sizeLines": 13,
+      "fileCategory": "markup"
+    },
+    {
+      "path": "opencode.json",
+      "language": "json",
+      "sizeLines": 27,
+      "fileCategory": "config"
+    },
+    {
+      "path": "package.json",
+      "language": "json",
+      "sizeLines": 42,
+      "fileCategory": "config"
+    },
+    {
+      "path": "src/App.tsx",
+      "language": "typescript",
+      "sizeLines": 30,
+      "fileCategory": "code"
+    },
+    {
+      "path": "src/audio/context.ts",
+      "language": "typescript",
+      "sizeLines": 23,
+      "fileCategory": "code"
+    },
+    {
+      "path": "src/audio/perform.ts",
+      "language": "typescript",
+      "sizeLines": 32,
+      "fileCategory": "code"
+    },
+    {
+      "path": "src/audio/player.ts",
+      "language": "typescript",
+      "sizeLines": 120,
+      "fileCategory": "code"
+    },
+    {
+      "path": "src/audio/preview.ts",
+      "language": "typescript",
+      "sizeLines": 147,
+      "fileCategory": "code"
+    },
+    {
+      "path": "src/audio/sfx.ts",
+      "language": "typescript",
+      "sizeLines": 118,
+      "fileCategory": "code"
+    },
+    {
+      "path": "src/audio/synths.ts",
+      "language": "typescript",
+      "sizeLines": 180,
+      "fileCategory": "code"
+    },
+    {
+      "path": "src/components/CardPreviewButton.tsx",
+      "language": "typescript",
+      "sizeLines": 47,
+      "fileCategory": "code"
+    },
+    {
+      "path": "src/components/ChordPicker.tsx",
+      "language": "typescript",
+      "sizeLines": 161,
+      "fileCategory": "code"
+    },
+    {
+      "path": "src/components/CombatFeedback.tsx",
+      "language": "typescript",
+      "sizeLines": 94,
+      "fileCategory": "code"
+    },
+    {
+      "path": "src/components/CombatLog.tsx",
+      "language": "typescript",
+      "sizeLines": 29,
+      "fileCategory": "code"
+    },
+    {
+      "path": "src/components/CustomChordBuilder.tsx",
+      "language": "typescript",
+      "sizeLines": 266,
+      "fileCategory": "code"
+    },
+    {
+      "path": "src/components/EncounterBanner.tsx",
+      "language": "typescript",
+      "sizeLines": 175,
+      "fileCategory": "code"
+    },
+    {
+      "path": "src/components/FoePanel.tsx",
+      "language": "typescript",
+      "sizeLines": 193,
+      "fileCategory": "code"
+    },
+    {
+      "path": "src/components/GrooveMatrix.tsx",
+      "language": "typescript",
+      "sizeLines": 170,
+      "fileCategory": "code"
+    },
+    {
+      "path": "src/components/GroovePicker.tsx",
+      "language": "typescript",
+      "sizeLines": 124,
+      "fileCategory": "code"
+    },
+    {
+      "path": "src/components/LoadoutBar.tsx",
+      "language": "typescript",
+      "sizeLines": 160,
+      "fileCategory": "code"
+    },
+    {
+      "path": "src/components/MelodyCardBar.tsx",
+      "language": "typescript",
+      "sizeLines": 168,
+      "fileCategory": "code"
+    },
+    {
+      "path": "src/components/Meter.tsx",
+      "language": "typescript",
+      "sizeLines": 22,
+      "fileCategory": "code"
+    },
+    {
+      "path": "src/components/PartyCorner.tsx",
+      "language": "typescript",
+      "sizeLines": 318,
+      "fileCategory": "code"
+    },
+    {
+      "path": "src/components/PhaseStrip.tsx",
+      "language": "typescript",
+      "sizeLines": 84,
+      "fileCategory": "code"
+    },
+    {
+      "path": "src/components/QtePanel.tsx",
+      "language": "typescript",
+      "sizeLines": 488,
+      "fileCategory": "code"
+    },
+    {
+      "path": "src/components/RosterSelectModal.tsx",
+      "language": "typescript",
+      "sizeLines": 243,
+      "fileCategory": "code"
+    },
+    {
+      "path": "src/components/StepGrid.tsx",
+      "language": "typescript",
+      "sizeLines": 155,
+      "fileCategory": "code"
+    },
+    {
+      "path": "src/components/TransportBar.tsx",
+      "language": "typescript",
+      "sizeLines": 77,
+      "fileCategory": "code"
+    },
+    {
+      "path": "src/components/TutorialModal.tsx",
+      "language": "typescript",
+      "sizeLines": 192,
+      "fileCategory": "code"
+    },
+    {
+      "path": "src/components/VoiceBar.tsx",
+      "language": "typescript",
+      "sizeLines": 73,
+      "fileCategory": "code"
+    },
+    {
+      "path": "src/components/screens/CombatScreen.tsx",
+      "language": "typescript",
+      "sizeLines": 116,
+      "fileCategory": "code"
+    },
+    {
+      "path": "src/components/screens/MenuScreen.tsx",
+      "language": "typescript",
+      "sizeLines": 140,
+      "fileCategory": "code"
+    },
+    {
+      "path": "src/components/screens/PrepScreen.tsx",
+      "language": "typescript",
+      "sizeLines": 171,
+      "fileCategory": "code"
+    },
+    {
+      "path": "src/components/screens/ResultOverlay.tsx",
+      "language": "typescript",
+      "sizeLines": 150,
+      "fileCategory": "code"
+    },
+    {
+      "path": "src/components/screens/StudioScreen.tsx",
+      "language": "typescript",
+      "sizeLines": 128,
+      "fileCategory": "code"
+    },
+    {
+      "path": "src/components/ui/button.tsx",
+      "language": "typescript",
+      "sizeLines": 35,
+      "fileCategory": "code"
+    },
+    {
+      "path": "src/components/ui/dialog.tsx",
+      "language": "typescript",
+      "sizeLines": 116,
+      "fileCategory": "code"
+    },
+    {
+      "path": "src/data/beats.ts",
+      "language": "typescript",
+      "sizeLines": 209,
+      "fileCategory": "code"
+    },
+    {
+      "path": "src/data/chords.ts",
+      "language": "typescript",
+      "sizeLines": 63,
+      "fileCategory": "code"
+    },
+    {
+      "path": "src/data/encounters.ts",
+      "language": "typescript",
+      "sizeLines": 90,
+      "fileCategory": "code"
+    },
+    {
+      "path": "src/data/enemies.ts",
+      "language": "typescript",
+      "sizeLines": 227,
+      "fileCategory": "code"
+    },
+    {
+      "path": "src/data/kits.ts",
+      "language": "typescript",
+      "sizeLines": 88,
+      "fileCategory": "code"
+    },
+    {
+      "path": "src/data/roster.ts",
+      "language": "typescript",
+      "sizeLines": 116,
+      "fileCategory": "code"
+    },
+    {
+      "path": "src/game/arrangement.ts",
+      "language": "typescript",
+      "sizeLines": 326,
+      "fileCategory": "code"
+    },
+    {
+      "path": "src/game/combat.ts",
+      "language": "typescript",
+      "sizeLines": 858,
+      "fileCategory": "code"
+    },
+    {
+      "path": "src/game/groove.ts",
+      "language": "typescript",
+      "sizeLines": 449,
+      "fileCategory": "code"
+    },
+    {
+      "path": "src/game/keys.ts",
+      "language": "typescript",
+      "sizeLines": 38,
+      "fileCategory": "code"
+    },
+    {
+      "path": "src/game/loadout.ts",
+      "language": "typescript",
+      "sizeLines": 76,
+      "fileCategory": "code"
+    },
+    {
+      "path": "src/game/melodyBank.ts",
+      "language": "typescript",
+      "sizeLines": 233,
+      "fileCategory": "code"
+    },
+    {
+      "path": "src/game/parryChart.ts",
+      "language": "typescript",
+      "sizeLines": 583,
+      "fileCategory": "code"
+    },
+    {
+      "path": "src/game/perform.ts",
+      "language": "typescript",
+      "sizeLines": 82,
+      "fileCategory": "code"
+    },
+    {
+      "path": "src/game/phase.ts",
+      "language": "typescript",
+      "sizeLines": 39,
+      "fileCategory": "code"
+    },
+    {
+      "path": "src/game/positions.ts",
+      "language": "typescript",
+      "sizeLines": 54,
+      "fileCategory": "code"
+    },
+    {
+      "path": "src/game/presets.ts",
+      "language": "typescript",
+      "sizeLines": 104,
+      "fileCategory": "code"
+    },
+    {
+      "path": "src/game/qte.ts",
+      "language": "typescript",
+      "sizeLines": 647,
+      "fileCategory": "code"
+    },
+    {
+      "path": "src/game/session.ts",
+      "language": "typescript",
+      "sizeLines": 819,
+      "fileCategory": "code"
+    },
+    {
+      "path": "src/game/theory.ts",
+      "language": "typescript",
+      "sizeLines": 273,
+      "fileCategory": "code"
+    },
+    {
+      "path": "src/game/units.ts",
+      "language": "typescript",
+      "sizeLines": 156,
+      "fileCategory": "code"
+    },
+    {
+      "path": "src/hooks/useQtePlayhead.ts",
+      "language": "typescript",
+      "sizeLines": 45,
+      "fileCategory": "code"
+    },
+    {
+      "path": "src/hooks/useWasd.ts",
+      "language": "typescript",
+      "sizeLines": 61,
+      "fileCategory": "code"
+    },
+    {
+      "path": "src/index.css",
+      "language": "css",
+      "sizeLines": 170,
+      "fileCategory": "markup"
+    },
+    {
+      "path": "src/lib/utils.ts",
+      "language": "typescript",
+      "sizeLines": 6,
+      "fileCategory": "code"
+    },
+    {
+      "path": "src/main.tsx",
+      "language": "typescript",
+      "sizeLines": 10,
+      "fileCategory": "code"
+    },
+    {
+      "path": "src/persistence/storage.ts",
+      "language": "typescript",
+      "sizeLines": 178,
+      "fileCategory": "code"
+    },
+    {
+      "path": "src/state/useSessionStore.ts",
+      "language": "typescript",
+      "sizeLines": 700,
+      "fileCategory": "code"
+    },
+    {
+      "path": "tsconfig.app.json",
+      "language": "json",
+      "sizeLines": 31,
+      "fileCategory": "config"
+    },
+    {
+      "path": "tsconfig.json",
+      "language": "json",
+      "sizeLines": 7,
+      "fileCategory": "config"
+    },
+    {
+      "path": "tsconfig.node.json",
+      "language": "json",
+      "sizeLines": 23,
+      "fileCategory": "config"
+    },
+    {
+      "path": "vite.config.ts",
+      "language": "typescript",
+      "sizeLines": 19,
+      "fileCategory": "code"
+    }
+  ]
+}

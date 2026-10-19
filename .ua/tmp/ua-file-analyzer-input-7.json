@@ -1,0 +1,117 @@
+{
+  "projectRoot": "/home/david/Personal Projects/sound-angels",
+  "batchFiles": [
+    {
+      "path": "src/components/screens/PrepScreen.tsx",
+      "language": "typescript",
+      "sizeLines": 171,
+      "fileCategory": "code"
+    },
+    {
+      "path": "src/components/screens/ResultOverlay.tsx",
+      "language": "typescript",
+      "sizeLines": 150,
+      "fileCategory": "code"
+    },
+    {
+      "path": "src/components/screens/StudioScreen.tsx",
+      "language": "typescript",
+      "sizeLines": 128,
+      "fileCategory": "code"
+    },
+    {
+      "path": "src/components/ui/button.tsx",
+      "language": "typescript",
+      "sizeLines": 35,
+      "fileCategory": "code"
+    },
+    {
+      "path": "src/components/ui/dialog.tsx",
+      "language": "typescript",
+      "sizeLines": 116,
+      "fileCategory": "code"
+    },
+    {
+      "path": "src/data/beats.ts",
+      "language": "typescript",
+      "sizeLines": 209,
+      "fileCategory": "code"
+    },
+    {
+      "path": "src/data/kits.ts",
+      "language": "typescript",
+      "sizeLines": 88,
+      "fileCategory": "code"
+    },
+    {
+      "path": "src/hooks/useQtePlayhead.ts",
+      "language": "typescript",
+      "sizeLines": 45,
+      "fileCategory": "code"
+    },
+    {
+      "path": "src/hooks/useWasd.ts",
+      "language": "typescript",
+      "sizeLines": 61,
+      "fileCategory": "code"
+    },
+    {
+      "path": "src/index.css",
+      "language": "css",
+      "sizeLines": 170,
+      "fileCategory": "markup"
+    },
+    {
+      "path": "src/lib/utils.ts",
+      "language": "typescript",
+      "sizeLines": 6,
+      "fileCategory": "code"
+    },
+    {
+      "path": "src/main.tsx",
+      "language": "typescript",
+      "sizeLines": 10,
+      "fileCategory": "code"
+    },
+    {
+      "path": "src/persistence/storage.ts",
+      "language": "typescript",
+      "sizeLines": 178,
+      "fileCategory": "code"
+    },
+    {
+      "path": "src/state/useSessionStore.ts",
+      "language": "typescript",
+      "sizeLines": 700,
+      "fileCategory": "code"
+    },
+    {
+      "path": "vite.config.ts",
+      "language": "typescript",
+      "sizeLines": 19,
+      "fileCategory": "code"
+    }
+  ],
+  "batchImportData": {
+    "src/components/screens/PrepScreen.tsx": [],
+    "src/components/screens/ResultOverlay.tsx": [],
+    "src/components/screens/StudioScreen.tsx": [],
+    "src/components/ui/button.tsx": [],
+    "src/components/ui/dialog.tsx": [],
+    "src/data/beats.ts": [
+      "src/data/kits.ts"
+    ],
+    "src/data/kits.ts": [],
+    "src/hooks/useQtePlayhead.ts": [],
+    "src/hooks/useWasd.ts": [],
+    "src/index.css": [],
+    "src/lib/utils.ts": [],
+    "src/main.tsx": [
+      "src/App.tsx",
+      "src/index.css"
+    ],
+    "src/persistence/storage.ts": [],
+    "src/state/useSessionStore.ts": [],
+    "vite.config.ts": []
+  }
+}

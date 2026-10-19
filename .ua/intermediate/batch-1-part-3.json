@@ -1,0 +1,1381 @@
+{
+  "nodes": [
+    {
+      "id": "file:src/game/qte.ts",
+      "type": "file",
+      "name": "qte.ts",
+      "filePath": "src/game/qte.ts",
+      "summary": "Self-contained QTE model: key/degree mapping, chart builders (melody, harmonic, pattern, random), press/release judging with ratings, and parry damage maths.",
+      "tags": [
+        "qte",
+        "combat-engine",
+        "chart-generation",
+        "music-theory",
+        "judgement"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "file:src/game/theory.ts",
+      "type": "file",
+      "name": "theory.ts",
+      "filePath": "src/game/theory.ts",
+      "summary": "Vendored zero-dependency music-theory core: pitch-class/degree/MIDI conversion, Roman-numeral chord parsing, and progression scoring for voice leading, diatonic fit, and syntax.",
+      "tags": [
+        "music-theory",
+        "utility",
+        "scoring",
+        "zero-dependency"
+      ],
+      "complexity": "complex",
+      "languageNotes": "Vendored in place of Tonal.js because every published tonal release ships a broken main entry; absolute note names stay confined to this module (and the audio boundary)."
+    },
+    {
+      "id": "file:src/game/units.ts",
+      "type": "file",
+      "name": "units.ts",
+      "filePath": "src/game/units.ts",
+      "summary": "Fighter unit model: construction, shield-aware damage, healing, buff application and ticking, and buff display glyphs, all as pure state logic.",
+      "tags": [
+        "data-model",
+        "combat-engine",
+        "buffs",
+        "utility"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:src/game/qte.ts:degreeToPerformKey",
+      "type": "function",
+      "name": "degreeToPerformKey",
+      "filePath": "src/game/qte.ts",
+      "lineRange": [
+        97,
+        103
+      ],
+      "summary": "Maps a scale degree to the keyboard key that performs it.",
+      "tags": [
+        "mapping",
+        "keys",
+        "qte"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:src/game/qte.ts:keyToDegree",
+      "type": "function",
+      "name": "keyToDegree",
+      "filePath": "src/game/qte.ts",
+      "lineRange": [
+        106,
+        117
+      ],
+      "summary": "Maps a performance key back to its scale degree and octave.",
+      "tags": [
+        "mapping",
+        "keys",
+        "qte"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:src/game/qte.ts:qteKeyToDegree",
+      "type": "function",
+      "name": "qteKeyToDegree",
+      "filePath": "src/game/qte.ts",
+      "lineRange": [
+        124,
+        139
+      ],
+      "summary": "Resolves a QTE chart key label into a scale degree for note construction.",
+      "tags": [
+        "mapping",
+        "qte",
+        "music-theory"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:src/game/qte.ts:ratingWeight",
+      "type": "function",
+      "name": "ratingWeight",
+      "filePath": "src/game/qte.ts",
+      "lineRange": [
+        142,
+        153
+      ],
+      "summary": "Returns the numeric weight of a QTE judgement rating.",
+      "tags": [
+        "ratings",
+        "qte",
+        "utility"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:src/game/qte.ts:chartFromMelody",
+      "type": "function",
+      "name": "chartFromMelody",
+      "filePath": "src/game/qte.ts",
+      "lineRange": [
+        165,
+        192
+      ],
+      "summary": "Builds a QTE chart from the player's melody tracks, capped to a maximum note count.",
+      "tags": [
+        "chart-generation",
+        "melody",
+        "qte"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:src/game/qte.ts:harmonicChart",
+      "type": "function",
+      "name": "harmonicChart",
+      "filePath": "src/game/qte.ts",
+      "lineRange": [
+        202,
+        232
+      ],
+      "summary": "Builds a QTE chart from a progression of Roman numerals.",
+      "tags": [
+        "chart-generation",
+        "chords",
+        "music-theory"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:src/game/qte.ts:patternMotif",
+      "type": "function",
+      "name": "patternMotif",
+      "filePath": "src/game/qte.ts",
+      "lineRange": [
+        286,
+        303
+      ],
+      "summary": "Returns the note motif registered for a named enemy or preset pattern.",
+      "tags": [
+        "pattern",
+        "lookup",
+        "configuration"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:src/game/qte.ts:fitChartToWindow",
+      "type": "function",
+      "name": "fitChartToWindow",
+      "filePath": "src/game/qte.ts",
+      "lineRange": [
+        310,
+        327
+      ],
+      "summary": "Rescales and clamps a chart's note offsets so it fits the ticks available in the current window.",
+      "tags": [
+        "chart",
+        "timing",
+        "utility"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:src/game/qte.ts:chartKeys",
+      "type": "function",
+      "name": "chartKeys",
+      "filePath": "src/game/qte.ts",
+      "lineRange": [
+        330,
+        332
+      ],
+      "summary": "Lists the distinct keys a chart uses.",
+      "tags": [
+        "chart",
+        "query",
+        "utility"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:src/game/qte.ts:chartFromPattern",
+      "type": "function",
+      "name": "chartFromPattern",
+      "filePath": "src/game/qte.ts",
+      "lineRange": [
+        335,
+        355
+      ],
+      "summary": "Builds a QTE chart from a named pattern motif and a target length.",
+      "tags": [
+        "chart-generation",
+        "pattern",
+        "qte"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:src/game/qte.ts:randomChart",
+      "type": "function",
+      "name": "randomChart",
+      "filePath": "src/game/qte.ts",
+      "lineRange": [
+        358,
+        360
+      ],
+      "summary": "Generates a deterministic random chart of a given length from the injected rng.",
+      "tags": [
+        "chart-generation",
+        "rng",
+        "qte"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:src/game/qte.ts:synthChartFromSequence",
+      "type": "function",
+      "name": "synthChartFromSequence",
+      "filePath": "src/game/qte.ts",
+      "lineRange": [
+        362,
+        373
+      ],
+      "summary": "Synthesises a chart from a sequence of note onsets between start and deadline ticks.",
+      "tags": [
+        "chart",
+        "timing",
+        "transform"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:src/game/qte.ts:createQte",
+      "type": "function",
+      "name": "createQte",
+      "filePath": "src/game/qte.ts",
+      "lineRange": [
+        375,
+        408
+      ],
+      "summary": "Creates the QTE state object (notes, keys, deadlines, started tick) from a chart or note sequence.",
+      "tags": [
+        "factory",
+        "qte",
+        "state"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:src/game/qte.ts:pressQte",
+      "type": "function",
+      "name": "pressQte",
+      "filePath": "src/game/qte.ts",
+      "lineRange": [
+        425,
+        518
+      ],
+      "summary": "Judges a key press against pending QTE notes: hits, near-misses, early presses, and hold starts.",
+      "tags": [
+        "judgement",
+        "qte",
+        "combat-engine"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "function:src/game/qte.ts:releaseQte",
+      "type": "function",
+      "name": "releaseQte",
+      "filePath": "src/game/qte.ts",
+      "lineRange": [
+        526,
+        570
+      ],
+      "summary": "Judges a key release against active hold notes and closes each note with a rating.",
+      "tags": [
+        "judgement",
+        "qte",
+        "holds"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "function:src/game/qte.ts:missOverdueNotes",
+      "type": "function",
+      "name": "missOverdueNotes",
+      "filePath": "src/game/qte.ts",
+      "lineRange": [
+        577,
+        613
+      ],
+      "summary": "Marks notes whose timing window has passed as missed and updates the QTE score.",
+      "tags": [
+        "judgement",
+        "qte",
+        "timing"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "function:src/game/qte.ts:isQteComplete",
+      "type": "function",
+      "name": "isQteComplete",
+      "filePath": "src/game/qte.ts",
+      "lineRange": [
+        615,
+        618
+      ],
+      "summary": "Reports whether every note in a QTE has been resolved.",
+      "tags": [
+        "qte",
+        "query",
+        "state"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:src/game/qte.ts:isQteExpired",
+      "type": "function",
+      "name": "isQteExpired",
+      "filePath": "src/game/qte.ts",
+      "lineRange": [
+        620,
+        622
+      ],
+      "summary": "Reports whether a QTE is complete or past its deadline tick.",
+      "tags": [
+        "qte",
+        "query",
+        "timing"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:src/game/qte.ts:qteSuccessRate",
+      "type": "function",
+      "name": "qteSuccessRate",
+      "filePath": "src/game/qte.ts",
+      "lineRange": [
+        625,
+        635
+      ],
+      "summary": "Computes the weighted success rate of a completed QTE from its note ratings.",
+      "tags": [
+        "scoring",
+        "qte",
+        "utility"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:src/game/qte.ts:parryDamage",
+      "type": "function",
+      "name": "parryDamage",
+      "filePath": "src/game/qte.ts",
+      "lineRange": [
+        641,
+        647
+      ],
+      "summary": "Applies the QTE outcome to parry damage: full damage on success, chip fraction on failure.",
+      "tags": [
+        "damage",
+        "parry",
+        "qte"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:src/game/theory.ts:normalizePitchClass",
+      "type": "function",
+      "name": "normalizePitchClass",
+      "filePath": "src/game/theory.ts",
+      "lineRange": [
+        46,
+        57
+      ],
+      "summary": "Normalises a pitch-class string (accidentals, casing) to a canonical sharp name.",
+      "tags": [
+        "pitch-class",
+        "parsing",
+        "music-theory"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:src/game/theory.ts:pitchClassOfMidi",
+      "type": "function",
+      "name": "pitchClassOfMidi",
+      "filePath": "src/game/theory.ts",
+      "lineRange": [
+        72,
+        74
+      ],
+      "summary": "Returns the pitch class of a MIDI note number.",
+      "tags": [
+        "midi",
+        "pitch-class",
+        "utility"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:src/game/theory.ts:midiToNote",
+      "type": "function",
+      "name": "midiToNote",
+      "filePath": "src/game/theory.ts",
+      "lineRange": [
+        77,
+        79
+      ],
+      "summary": "Converts a MIDI note number to an audio-layer note name.",
+      "tags": [
+        "midi",
+        "note-names",
+        "conversion"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:src/game/theory.ts:degreeToMidi",
+      "type": "function",
+      "name": "degreeToMidi",
+      "filePath": "src/game/theory.ts",
+      "lineRange": [
+        85,
+        93
+      ],
+      "summary": "Converts a scale degree in a key and octave to a MIDI note number.",
+      "tags": [
+        "midi",
+        "degrees",
+        "music-theory"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:src/game/theory.ts:romanToChord",
+      "type": "function",
+      "name": "romanToChord",
+      "filePath": "src/game/theory.ts",
+      "lineRange": [
+        118,
+        134
+      ],
+      "summary": "Converts a Roman numeral to its chord's MIDI notes, raising the third of V in minor keys.",
+      "tags": [
+        "chords",
+        "roman-numerals",
+        "music-theory"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:src/game/theory.ts:romanFunction",
+      "type": "function",
+      "name": "romanFunction",
+      "filePath": "src/game/theory.ts",
+      "lineRange": [
+        146,
+        156
+      ],
+      "summary": "Classifies a Roman numeral as tonic, dominant, or predominant for syntax scoring.",
+      "tags": [
+        "roman-numerals",
+        "analysis",
+        "music-theory"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:src/game/theory.ts:voiceLeadingScore",
+      "type": "function",
+      "name": "voiceLeadingScore",
+      "filePath": "src/game/theory.ts",
+      "lineRange": [
+        178,
+        192
+      ],
+      "summary": "Scores a chord progression by how smoothly its voices move between chords.",
+      "tags": [
+        "scoring",
+        "voice-leading",
+        "music-theory"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:src/game/theory.ts:diatonicFitScore",
+      "type": "function",
+      "name": "diatonicFitScore",
+      "filePath": "src/game/theory.ts",
+      "lineRange": [
+        198,
+        218
+      ],
+      "summary": "Scores how well a progression's tones sit inside the key's scale.",
+      "tags": [
+        "scoring",
+        "harmony",
+        "music-theory"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:src/game/theory.ts:syntaxScore",
+      "type": "function",
+      "name": "syntaxScore",
+      "filePath": "src/game/theory.ts",
+      "lineRange": [
+        229,
+        241
+      ],
+      "summary": "Scores a Roman progression's functional syntax such as cadences, dominants, and resolutions.",
+      "tags": [
+        "scoring",
+        "syntax",
+        "music-theory"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:src/game/theory.ts:scoreProgression",
+      "type": "function",
+      "name": "scoreProgression",
+      "filePath": "src/game/theory.ts",
+      "lineRange": [
+        244,
+        252
+      ],
+      "summary": "Combines voice-leading, diatonic-fit, and syntax scores into a total with a gold/silver/bronze tier.",
+      "tags": [
+        "scoring",
+        "progression",
+        "music-theory"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:src/game/theory.ts:tensionOf",
+      "type": "function",
+      "name": "tensionOf",
+      "filePath": "src/game/theory.ts",
+      "lineRange": [
+        257,
+        273
+      ],
+      "summary": "Measures the dissonance between a melody note and the current chord.",
+      "tags": [
+        "harmony",
+        "tension",
+        "analysis"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:src/game/units.ts:makeFighter",
+      "type": "function",
+      "name": "makeFighter",
+      "filePath": "src/game/units.ts",
+      "lineRange": [
+        30,
+        60
+      ],
+      "summary": "Constructs a fighter unit from an init descriptor, deriving shields and combat stats.",
+      "tags": [
+        "factory",
+        "combat-engine",
+        "data-model"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:src/game/units.ts:isDown",
+      "type": "function",
+      "name": "isDown",
+      "filePath": "src/game/units.ts",
+      "lineRange": [
+        62,
+        64
+      ],
+      "summary": "Reports whether a fighter is downed at zero HP.",
+      "tags": [
+        "query",
+        "combat-engine",
+        "utility"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:src/game/units.ts:damageThroughShield",
+      "type": "function",
+      "name": "damageThroughShield",
+      "filePath": "src/game/units.ts",
+      "lineRange": [
+        70,
+        82
+      ],
+      "summary": "Applies damage to a fighter, consuming shield first and returning the damage outcome.",
+      "tags": [
+        "damage",
+        "shield",
+        "combat-engine"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:src/game/units.ts:healFighter",
+      "type": "function",
+      "name": "healFighter",
+      "filePath": "src/game/units.ts",
+      "lineRange": [
+        84,
+        87
+      ],
+      "summary": "Heals a fighter, clamped to max HP and reviving a downed fighter.",
+      "tags": [
+        "healing",
+        "combat-engine",
+        "utility"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:src/game/units.ts:addShield",
+      "type": "function",
+      "name": "addShield",
+      "filePath": "src/game/units.ts",
+      "lineRange": [
+        89,
+        91
+      ],
+      "summary": "Adds shield to a fighter, clamped to its maximum.",
+      "tags": [
+        "shield",
+        "combat-engine",
+        "utility"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:src/game/units.ts:applyBuff",
+      "type": "function",
+      "name": "applyBuff",
+      "filePath": "src/game/units.ts",
+      "lineRange": [
+        97,
+        114
+      ],
+      "summary": "Applies or refreshes a buff on a fighter, stacking duration where appropriate.",
+      "tags": [
+        "buffs",
+        "combat-engine",
+        "state"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:src/game/units.ts:tickBuffs",
+      "type": "function",
+      "name": "tickBuffs",
+      "filePath": "src/game/units.ts",
+      "lineRange": [
+        121,
+        139
+      ],
+      "summary": "Advances a fighter's buffs by one tick, emitting expiry and heal events and dropping expired buffs.",
+      "tags": [
+        "buffs",
+        "tick-loop",
+        "combat-engine"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:src/game/units.ts:buffGlyphs",
+      "type": "function",
+      "name": "buffGlyphs",
+      "filePath": "src/game/units.ts",
+      "lineRange": [
+        142,
+        146
+      ],
+      "summary": "Renders a compact glyph string for a fighter's active buffs.",
+      "tags": [
+        "ui-helper",
+        "buffs",
+        "formatting"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:src/game/units.ts:buffDamageTaken",
+      "type": "function",
+      "name": "buffDamageTaken",
+      "filePath": "src/game/units.ts",
+      "lineRange": [
+        149,
+        156
+      ],
+      "summary": "Returns the damage-taken multiplier contributed by a fighter's buffs.",
+      "tags": [
+        "damage",
+        "buffs",
+        "combat-engine"
+      ],
+      "complexity": "simple"
+    }
+  ],
+  "edges": [
+    {
+      "source": "file:src/game/qte.ts",
+      "target": "function:src/game/qte.ts:degreeToPerformKey",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/game/qte.ts",
+      "target": "function:src/game/qte.ts:degreeToPerformKey",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/game/qte.ts",
+      "target": "function:src/game/qte.ts:keyToDegree",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/game/qte.ts",
+      "target": "function:src/game/qte.ts:keyToDegree",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/game/qte.ts",
+      "target": "function:src/game/qte.ts:qteKeyToDegree",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/game/qte.ts",
+      "target": "function:src/game/qte.ts:qteKeyToDegree",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/game/qte.ts",
+      "target": "function:src/game/qte.ts:ratingWeight",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/game/qte.ts",
+      "target": "function:src/game/qte.ts:ratingWeight",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/game/qte.ts",
+      "target": "function:src/game/qte.ts:chartFromMelody",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/game/qte.ts",
+      "target": "function:src/game/qte.ts:chartFromMelody",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/game/qte.ts",
+      "target": "function:src/game/qte.ts:harmonicChart",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/game/qte.ts",
+      "target": "function:src/game/qte.ts:harmonicChart",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/game/qte.ts",
+      "target": "function:src/game/qte.ts:patternMotif",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/game/qte.ts",
+      "target": "function:src/game/qte.ts:patternMotif",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/game/qte.ts",
+      "target": "function:src/game/qte.ts:fitChartToWindow",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/game/qte.ts",
+      "target": "function:src/game/qte.ts:fitChartToWindow",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/game/qte.ts",
+      "target": "function:src/game/qte.ts:chartKeys",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/game/qte.ts",
+      "target": "function:src/game/qte.ts:chartKeys",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/game/qte.ts",
+      "target": "function:src/game/qte.ts:chartFromPattern",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/game/qte.ts",
+      "target": "function:src/game/qte.ts:chartFromPattern",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/game/qte.ts",
+      "target": "function:src/game/qte.ts:randomChart",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/game/qte.ts",
+      "target": "function:src/game/qte.ts:randomChart",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/game/qte.ts",
+      "target": "function:src/game/qte.ts:synthChartFromSequence",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/game/qte.ts",
+      "target": "function:src/game/qte.ts:createQte",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/game/qte.ts",
+      "target": "function:src/game/qte.ts:createQte",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/game/qte.ts",
+      "target": "function:src/game/qte.ts:pressQte",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/game/qte.ts",
+      "target": "function:src/game/qte.ts:pressQte",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/game/qte.ts",
+      "target": "function:src/game/qte.ts:releaseQte",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/game/qte.ts",
+      "target": "function:src/game/qte.ts:releaseQte",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/game/qte.ts",
+      "target": "function:src/game/qte.ts:missOverdueNotes",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/game/qte.ts",
+      "target": "function:src/game/qte.ts:missOverdueNotes",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/game/qte.ts",
+      "target": "function:src/game/qte.ts:isQteComplete",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/game/qte.ts",
+      "target": "function:src/game/qte.ts:isQteComplete",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/game/qte.ts",
+      "target": "function:src/game/qte.ts:isQteExpired",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/game/qte.ts",
+      "target": "function:src/game/qte.ts:isQteExpired",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/game/qte.ts",
+      "target": "function:src/game/qte.ts:qteSuccessRate",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/game/qte.ts",
+      "target": "function:src/game/qte.ts:qteSuccessRate",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/game/qte.ts",
+      "target": "function:src/game/qte.ts:parryDamage",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/game/qte.ts",
+      "target": "function:src/game/qte.ts:parryDamage",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/game/theory.ts",
+      "target": "function:src/game/theory.ts:normalizePitchClass",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/game/theory.ts",
+      "target": "function:src/game/theory.ts:pitchClassOfMidi",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/game/theory.ts",
+      "target": "function:src/game/theory.ts:pitchClassOfMidi",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/game/theory.ts",
+      "target": "function:src/game/theory.ts:midiToNote",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/game/theory.ts",
+      "target": "function:src/game/theory.ts:midiToNote",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/game/theory.ts",
+      "target": "function:src/game/theory.ts:degreeToMidi",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/game/theory.ts",
+      "target": "function:src/game/theory.ts:degreeToMidi",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/game/theory.ts",
+      "target": "function:src/game/theory.ts:romanToChord",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/game/theory.ts",
+      "target": "function:src/game/theory.ts:romanToChord",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/game/theory.ts",
+      "target": "function:src/game/theory.ts:romanFunction",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/game/theory.ts",
+      "target": "function:src/game/theory.ts:romanFunction",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/game/theory.ts",
+      "target": "function:src/game/theory.ts:voiceLeadingScore",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/game/theory.ts",
+      "target": "function:src/game/theory.ts:voiceLeadingScore",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/game/theory.ts",
+      "target": "function:src/game/theory.ts:diatonicFitScore",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/game/theory.ts",
+      "target": "function:src/game/theory.ts:diatonicFitScore",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/game/theory.ts",
+      "target": "function:src/game/theory.ts:syntaxScore",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/game/theory.ts",
+      "target": "function:src/game/theory.ts:syntaxScore",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/game/theory.ts",
+      "target": "function:src/game/theory.ts:scoreProgression",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/game/theory.ts",
+      "target": "function:src/game/theory.ts:scoreProgression",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/game/theory.ts",
+      "target": "function:src/game/theory.ts:tensionOf",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/game/theory.ts",
+      "target": "function:src/game/theory.ts:tensionOf",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/game/units.ts",
+      "target": "function:src/game/units.ts:makeFighter",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/game/units.ts",
+      "target": "function:src/game/units.ts:makeFighter",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/game/units.ts",
+      "target": "function:src/game/units.ts:isDown",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/game/units.ts",
+      "target": "function:src/game/units.ts:isDown",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/game/units.ts",
+      "target": "function:src/game/units.ts:damageThroughShield",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/game/units.ts",
+      "target": "function:src/game/units.ts:damageThroughShield",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/game/units.ts",
+      "target": "function:src/game/units.ts:healFighter",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/game/units.ts",
+      "target": "function:src/game/units.ts:healFighter",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/game/units.ts",
+      "target": "function:src/game/units.ts:addShield",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/game/units.ts",
+      "target": "function:src/game/units.ts:addShield",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/game/units.ts",
+      "target": "function:src/game/units.ts:applyBuff",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/game/units.ts",
+      "target": "function:src/game/units.ts:applyBuff",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/game/units.ts",
+      "target": "function:src/game/units.ts:tickBuffs",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/game/units.ts",
+      "target": "function:src/game/units.ts:tickBuffs",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/game/units.ts",
+      "target": "function:src/game/units.ts:buffGlyphs",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/game/units.ts",
+      "target": "function:src/game/units.ts:buffGlyphs",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/game/units.ts",
+      "target": "function:src/game/units.ts:buffDamageTaken",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/game/units.ts",
+      "target": "function:src/game/units.ts:buffDamageTaken",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/game/qte.ts",
+      "target": "file:src/game/arrangement.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/game/qte.ts",
+      "target": "file:src/game/perform.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "function:src/game/qte.ts:chartFromMelody",
+      "target": "function:src/game/qte.ts:degreeToPerformKey",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:src/game/qte.ts:createQte",
+      "target": "function:src/game/qte.ts:synthChartFromSequence",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:src/game/qte.ts:createQte",
+      "target": "function:src/game/qte.ts:chartKeys",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:src/game/qte.ts:qteSuccessRate",
+      "target": "function:src/game/qte.ts:ratingWeight",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:src/game/qte.ts:parryDamage",
+      "target": "function:src/game/qte.ts:qteSuccessRate",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:src/game/theory.ts:romanToChord",
+      "target": "function:src/game/theory.ts:degreeToMidi",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:src/game/theory.ts:syntaxScore",
+      "target": "function:src/game/theory.ts:romanFunction",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:src/game/theory.ts:scoreProgression",
+      "target": "function:src/game/theory.ts:romanToChord",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:src/game/theory.ts:scoreProgression",
+      "target": "function:src/game/theory.ts:voiceLeadingScore",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:src/game/theory.ts:scoreProgression",
+      "target": "function:src/game/theory.ts:diatonicFitScore",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:src/game/theory.ts:scoreProgression",
+      "target": "function:src/game/theory.ts:syntaxScore",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:src/game/units.ts:healFighter",
+      "target": "function:src/game/units.ts:isDown",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:src/game/units.ts:tickBuffs",
+      "target": "function:src/game/units.ts:healFighter",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    }
+  ]
+}

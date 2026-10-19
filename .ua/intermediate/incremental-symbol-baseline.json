@@ -1,0 +1,3638 @@
+{
+  "version": 1,
+  "baseCommit": "3db69da98c1a9d4d2397c510a81ecab701592df6",
+  "headCommit": "4cbf684a61aa5d1654f9a5037ab9ad0b729388c7",
+  "files": [
+    {
+      "filePath": ".gitattributes",
+      "nodes": [],
+      "edges": []
+    },
+    {
+      "filePath": "@/components/ui/progress.tsx",
+      "nodes": [],
+      "edges": []
+    },
+    {
+      "filePath": "AGENTS.md",
+      "nodes": [
+        {
+          "id": "document:AGENTS.md",
+          "type": "document",
+          "name": "AGENTS.md",
+          "filePath": "AGENTS.md",
+          "summary": "Contributor guide defining build commands, the game/audio/state architecture split, and hard coding rules for agents.",
+          "tags": [
+            "documentation",
+            "development",
+            "architecture"
+          ],
+          "complexity": "simple"
+        }
+      ],
+      "edges": []
+    },
+    {
+      "filePath": "docs/chord-remake.md",
+      "nodes": [],
+      "edges": []
+    },
+    {
+      "filePath": "docs/mechanics.md",
+      "nodes": [
+        {
+          "id": "document:docs/mechanics.md",
+          "type": "document",
+          "name": "mechanics.md",
+          "filePath": "docs/mechanics.md",
+          "summary": "Core game design document describing the ATB battle system, chord progressions, loop-station melody recording, party positions, and enemy variants.",
+          "tags": [
+            "documentation",
+            "game-design",
+            "mechanics"
+          ],
+          "complexity": "simple"
+        }
+      ],
+      "edges": []
+    },
+    {
+      "filePath": "graphify-out/.graphify_labels.json",
+      "nodes": [],
+      "edges": []
+    },
+    {
+      "filePath": "graphify-out/.graphify_labels.json.sig",
+      "nodes": [],
+      "edges": []
+    },
+    {
+      "filePath": "graphify-out/.graphify_python",
+      "nodes": [],
+      "edges": []
+    },
+    {
+      "filePath": "graphify-out/.graphify_root",
+      "nodes": [],
+      "edges": []
+    },
+    {
+      "filePath": "graphify-out/2026-10-16/.graphify_labels.json",
+      "nodes": [],
+      "edges": []
+    },
+    {
+      "filePath": "graphify-out/2026-10-16/GRAPH_REPORT.md",
+      "nodes": [],
+      "edges": []
+    },
+    {
+      "filePath": "graphify-out/2026-10-16/cost.json",
+      "nodes": [],
+      "edges": []
+    },
+    {
+      "filePath": "graphify-out/2026-10-16/graph.json",
+      "nodes": [],
+      "edges": []
+    },
+    {
+      "filePath": "graphify-out/2026-10-16/manifest.json",
+      "nodes": [],
+      "edges": []
+    },
+    {
+      "filePath": "graphify-out/2026-10-19/.graphify_labels.json",
+      "nodes": [],
+      "edges": []
+    },
+    {
+      "filePath": "graphify-out/2026-10-19/GRAPH_REPORT.md",
+      "nodes": [],
+      "edges": []
+    },
+    {
+      "filePath": "graphify-out/2026-10-19/cost.json",
+      "nodes": [],
+      "edges": []
+    },
+    {
+      "filePath": "graphify-out/2026-10-19/graph.json",
+      "nodes": [],
+      "edges": []
+    },
+    {
+      "filePath": "graphify-out/2026-10-19/manifest.json",
+      "nodes": [],
+      "edges": []
+    },
+    {
+      "filePath": "graphify-out/GRAPH_REPORT.md",
+      "nodes": [],
+      "edges": []
+    },
+    {
+      "filePath": "graphify-out/cache/ast/v0.9.76-s5/005a6aa36ddda5a5ff2f48a73f4a6f34ce4d7468360fc917fe1c9bb444a1e7bb.json",
+      "nodes": [],
+      "edges": []
+    },
+    {
+      "filePath": "graphify-out/cache/ast/v0.9.76-s5/05337179ffc4abb8e32a0186147224efd2261f00d05ed38a2c89aad558744da4.json",
+      "nodes": [],
+      "edges": []
+    },
+    {
+      "filePath": "graphify-out/cache/ast/v0.9.76-s5/1063b6d19ba8e9bdbf1390ad1449a770672600a270f6073fe04ade028b8587e9.json",
+      "nodes": [],
+      "edges": []
+    },
+    {
+      "filePath": "graphify-out/cache/ast/v0.9.76-s5/1244f45cb5bbdf026cf977b24a22f07ea168835fe9c7935a584a84863cf8a48d.json",
+      "nodes": [],
+      "edges": []
+    },
+    {
+      "filePath": "graphify-out/cache/ast/v0.9.76-s5/13981c9b46293981dba5bc2b8b839d3f03dc9af76fd2ad5d081e43d4bc8ab33e.json",
+      "nodes": [],
+      "edges": []
+    },
+    {
+      "filePath": "graphify-out/cache/ast/v0.9.76-s5/16f71f2a335c921dbb23fbf8485d2acd3baf5fd797a49b8735ee091b37defe59.json",
+      "nodes": [],
+      "edges": []
+    },
+    {
+      "filePath": "graphify-out/cache/ast/v0.9.76-s5/1fea3f8e8af0b22c67999ff619c9a27c26ace51d93da4761e8122129ae6680cf.json",
+      "nodes": [],
+      "edges": []
+    },
+    {
+      "filePath": "graphify-out/cache/ast/v0.9.76-s5/2347c8236b02dd7e2a5ad93d14017dfef62222bd84b2beeda8abfdb4450a2990.json",
+      "nodes": [],
+      "edges": []
+    },
+    {
+      "filePath": "graphify-out/cache/ast/v0.9.76-s5/237772469312c830591fc70b37e2bdb54a02b24faa13512c695d22352e984587.json",
+      "nodes": [],
+      "edges": []
+    },
+    {
+      "filePath": "graphify-out/cache/ast/v0.9.76-s5/27da3c1adcffe3e0e5a04d9bc63cd99db784aad5a05ddc82175b0c8bd355d994.json",
+      "nodes": [],
+      "edges": []
+    },
+    {
+      "filePath": "graphify-out/cache/ast/v0.9.76-s5/29a6ae4d8bb7e64a7769d4fb294dbf734d84c3861257dc84c81d31cadb4f462d.json",
+      "nodes": [],
+      "edges": []
+    },
+    {
+      "filePath": "graphify-out/cache/ast/v0.9.76-s5/29ee32adbb18b6b2e96539f626b7cf4f5e925f482dcfdac8ceca1570d5cb3bc6.json",
+      "nodes": [],
+      "edges": []
+    },
+    {
+      "filePath": "graphify-out/cache/ast/v0.9.76-s5/2a9db73591c1ac31fd0af45f57424234ab0378fb3c8738be178085d0cb0c801a.json",
+      "nodes": [],
+      "edges": []
+    },
+    {
+      "filePath": "graphify-out/cache/ast/v0.9.76-s5/2ad32a9ce15e1c9c8550fc39a3dbe772bcf7e5c4878d63eda742a7e55fccf9a5.json",
+      "nodes": [],
+      "edges": []
+    },
+    {
+      "filePath": "graphify-out/cache/ast/v0.9.76-s5/37d9f674e6254c38ee7dbdc2a1670e7aa696e5da7acb958eb7f98477cc73ea41.json",
+      "nodes": [],
+      "edges": []
+    },
+    {
+      "filePath": "graphify-out/cache/ast/v0.9.76-s5/39922859016982bf5e01a9fb84fc163926f9235dcdd975a06e6b63691eff35e4.json",
+      "nodes": [],
+      "edges": []
+    },
+    {
+      "filePath": "graphify-out/cache/ast/v0.9.76-s5/3e52ef270ba54c9a442001d1452c9af15bc1efff7aff86704b2b0b2b3e6bd3d8.json",
+      "nodes": [],
+      "edges": []
+    },
+    {
+      "filePath": "graphify-out/cache/ast/v0.9.76-s5/4133e528fd08543f47932b0ffb64a363ae0a7bf0776752c5767e790e4d3710f9.json",
+      "nodes": [],
+      "edges": []
+    },
+    {
+      "filePath": "graphify-out/cache/ast/v0.9.76-s5/43b222171b7c37b0eadee0bfc7c6d8a13ed39ee2c0dab5f5ba06f1eb7255761e.json",
+      "nodes": [],
+      "edges": []
+    },
+    {
+      "filePath": "graphify-out/cache/ast/v0.9.76-s5/45e757016e49e6e65562972ef20fe7c71916c88556f7a8dac4849843fd62e943.json",
+      "nodes": [],
+      "edges": []
+    },
+    {
+      "filePath": "graphify-out/cache/ast/v0.9.76-s5/496777120068168a278027aec6846e7a3595336de43139393fa4e2bd9779e120.json",
+      "nodes": [],
+      "edges": []
+    },
+    {
+      "filePath": "graphify-out/cache/ast/v0.9.76-s5/50902d951daf3a27f9c0648947d6ee926e573ddcbaac699d3a9958ddd193eaa6.json",
+      "nodes": [],
+      "edges": []
+    },
+    {
+      "filePath": "graphify-out/cache/ast/v0.9.76-s5/510b74fdd6e62a04deb3b84a68273179fd0333b82cadd993bbb34f092790770b.json",
+      "nodes": [],
+      "edges": []
+    },
+    {
+      "filePath": "graphify-out/cache/ast/v0.9.76-s5/574c83aa70a4ec1f3278748cd9d581aa23654da2fecbaf38a05602b02cf203f9.json",
+      "nodes": [],
+      "edges": []
+    },
+    {
+      "filePath": "graphify-out/cache/ast/v0.9.76-s5/5c4a87b32fbd925b900618d7cbc102f79687f34227dcea507fc8adf1019b5239.json",
+      "nodes": [],
+      "edges": []
+    },
+    {
+      "filePath": "graphify-out/cache/ast/v0.9.76-s5/5e15735ecd1ec1c7d1572decfafc68f4d4e31e9c9940733775561a6c3b5d362a.json",
+      "nodes": [],
+      "edges": []
+    },
+    {
+      "filePath": "graphify-out/cache/ast/v0.9.76-s5/600d39eaad03e092b9c4435495a8dd93eb721b87fb15270b3722773c1985b40d.json",
+      "nodes": [],
+      "edges": []
+    },
+    {
+      "filePath": "graphify-out/cache/ast/v0.9.76-s5/6442a2fdc2098adae9758072d05f44d45997372a7787327e594217126e921849.json",
+      "nodes": [],
+      "edges": []
+    },
+    {
+      "filePath": "graphify-out/cache/ast/v0.9.76-s5/669b82c4a2c0eaa00638f7563ca855d694115929cf486f9adc227c072db96f38.json",
+      "nodes": [],
+      "edges": []
+    },
+    {
+      "filePath": "graphify-out/cache/ast/v0.9.76-s5/70d98c9dced0a75e79652bace80ab1ff94d89c67817f6f0dabf341ae1b4b112c.json",
+      "nodes": [],
+      "edges": []
+    },
+    {
+      "filePath": "graphify-out/cache/ast/v0.9.76-s5/71e31439ee0ea180d60cd565c8289f3fe9ba589cb29365fa67a3bb2ff208ec78.json",
+      "nodes": [],
+      "edges": []
+    },
+    {
+      "filePath": "graphify-out/cache/ast/v0.9.76-s5/7400ad810c9676107ff88044457fbf3b0d70b9f12ef96b02c2554eafdd288228.json",
+      "nodes": [],
+      "edges": []
+    },
+    {
+      "filePath": "graphify-out/cache/ast/v0.9.76-s5/7a3f3e5147b781ee9d34bdd26933dcb59cd9f25c3d3e6d2d671cfbf57b7e8c11.json",
+      "nodes": [],
+      "edges": []
+    },
+    {
+      "filePath": "graphify-out/cache/ast/v0.9.76-s5/7b243799e6f7f4741f5acf2d3b5b5b8b9ef3dfe2e220bc8ccf6c6cf9c65f80b2.json",
+      "nodes": [],
+      "edges": []
+    },
+    {
+      "filePath": "graphify-out/cache/ast/v0.9.76-s5/7e73e4f2d7a625d2e1245f3436bd567e060d02fcaf5dcc15eb7a03a04ece8730.json",
+      "nodes": [],
+      "edges": []
+    },
+    {
+      "filePath": "graphify-out/cache/ast/v0.9.76-s5/80c11839280de4d8e1748aa78470af6ed30a095ac54c12feef7b0d6deacc1aa3.json",
+      "nodes": [],
+      "edges": []
+    },
+    {
+      "filePath": "graphify-out/cache/ast/v0.9.76-s5/8848fec4321c6d910627245f270f8ae42d1c789c29b0377115e8d1308d03b285.json",
+      "nodes": [],
+      "edges": []
+    },
+    {
+      "filePath": "graphify-out/cache/ast/v0.9.76-s5/88e4467b45a474876dd7b1269289199754c5dc18a7546c06e6cc0b61a37a8e9c.json",
+      "nodes": [],
+      "edges": []
+    },
+    {
+      "filePath": "graphify-out/cache/ast/v0.9.76-s5/953908e683c0d0d470f07e27aa721b98f18067e2453bf98c6a80969e6baebe5b.json",
+      "nodes": [],
+      "edges": []
+    },
+    {
+      "filePath": "graphify-out/cache/ast/v0.9.76-s5/9c42d7b83358f81fead13e2129eaa23ccedeb680f7de635d7c248c5fbb7589fd.json",
+      "nodes": [],
+      "edges": []
+    },
+    {
+      "filePath": "graphify-out/cache/ast/v0.9.76-s5/9fd24f774955743efa41d95e1231e3843dce4e814b1a8b7f10bd3eed09522855.json",
+      "nodes": [],
+      "edges": []
+    },
+    {
+      "filePath": "graphify-out/cache/ast/v0.9.76-s5/a01a5c5acd45c39bc7efe735f53508a20f5ce5e1d606cbf59c748a0d06d906bc.json",
+      "nodes": [],
+      "edges": []
+    },
+    {
+      "filePath": "graphify-out/cache/ast/v0.9.76-s5/a6f3d056a5d22595611c44f463973583a60b5f9fda650d57998344cc2abd9e1e.json",
+      "nodes": [],
+      "edges": []
+    },
+    {
+      "filePath": "graphify-out/cache/ast/v0.9.76-s5/a9cd3847d4440bcd2046178ace5c40b9360fab8b1da557ad7d1c354ee9c4b1d8.json",
+      "nodes": [],
+      "edges": []
+    },
+    {
+      "filePath": "graphify-out/cache/ast/v0.9.76-s5/b32adc36cd567cd520deead87d5655eba23aab6562d015b1c92d093acf57e9f8.json",
+      "nodes": [],
+      "edges": []
+    },
+    {
+      "filePath": "graphify-out/cache/ast/v0.9.76-s5/b4c6e2e00473a67ab13d5a336faa5a1d9e830796d0a89f1a943a25fbd7f5c8e2.json",
+      "nodes": [],
+      "edges": []
+    },
+    {
+      "filePath": "graphify-out/cache/ast/v0.9.76-s5/b822c81ed344f1c981d452bbc8ded240c2d04d33bbbe08c619657d7d6dc6f1d2.json",
+      "nodes": [],
+      "edges": []
+    },
+    {
+      "filePath": "graphify-out/cache/ast/v0.9.76-s5/bdf006aa49dd518b25c7275fc201c9c9f936d6174591e0c929717d3c6925deaf.json",
+      "nodes": [],
+      "edges": []
+    },
+    {
+      "filePath": "graphify-out/cache/ast/v0.9.76-s5/c81a0cfe42f185127018ae4f0dbf49d2579dbca05d9d6252009d2d1ba01dcb24.json",
+      "nodes": [],
+      "edges": []
+    },
+    {
+      "filePath": "graphify-out/cache/ast/v0.9.76-s5/cc8381e04e0bce539d038f53fd13567f90393bd2952b31a898f8d4d255a91a1f.json",
+      "nodes": [],
+      "edges": []
+    },
+    {
+      "filePath": "graphify-out/cache/ast/v0.9.76-s5/d34e893c39dfeaaf133e31e2d70f84abc3dd645a0a6ba66d372e76176a783399.json",
+      "nodes": [],
+      "edges": []
+    },
+    {
+      "filePath": "graphify-out/cache/ast/v0.9.76-s5/d7363710f5886fe04e7ec11507087a29aaa5ac7c9b3b63fa2ba80d2fa0157bd2.json",
+      "nodes": [],
+      "edges": []
+    },
+    {
+      "filePath": "graphify-out/cache/ast/v0.9.76-s5/d8dba4b91561949083816062df48f74e747995d013669b2df0622c5cd8faa15f.json",
+      "nodes": [],
+      "edges": []
+    },
+    {
+      "filePath": "graphify-out/cache/ast/v0.9.76-s5/d9375f9dc5d7e04e3c9f2171a795ca0ad26aea35dc65a212f954da61c7804fa0.json",
+      "nodes": [],
+      "edges": []
+    },
+    {
+      "filePath": "graphify-out/cache/ast/v0.9.76-s5/da9a30e1d097df127e84ac51f5fa556c28745f95db6f349c1aa8b45d2a79dbcf.json",
+      "nodes": [],
+      "edges": []
+    },
+    {
+      "filePath": "graphify-out/cache/ast/v0.9.76-s5/f0c692069d832e5b5bc59ef7aeff02220fe40ff401db7353cbd9f14579d4f449.json",
+      "nodes": [],
+      "edges": []
+    },
+    {
+      "filePath": "graphify-out/cache/ast/v0.9.76-s5/f117672fc6b776f58c4e74943d618cf1dbc176fb60f7716d6edb780cb31b91bc.json",
+      "nodes": [],
+      "edges": []
+    },
+    {
+      "filePath": "graphify-out/cache/ast/v0.9.76-s5/f75d108e70f1ce7a346a4ea0098ceb55d03509a7b024445a32f16a106ddf1d64.json",
+      "nodes": [],
+      "edges": []
+    },
+    {
+      "filePath": "graphify-out/cache/ast/v0.9.76-s5/f9c226c3766303c36dd7680e373937e1041997d225e6bfa6d821368c415654f7.json",
+      "nodes": [],
+      "edges": []
+    },
+    {
+      "filePath": "graphify-out/cache/ast/v0.9.76-s5/fc0020d86c50fb2122062337faeb7cc92d89843b4d3a92f6466272144ecb1097.json",
+      "nodes": [],
+      "edges": []
+    },
+    {
+      "filePath": "graphify-out/cache/semantic/pd5fd89c46bb5/0c310b9c433cbe5ab94100ecda27e1e7127fb83f868149987cc3ca33a76dc55f.json",
+      "nodes": [],
+      "edges": []
+    },
+    {
+      "filePath": "graphify-out/cache/semantic/pd5fd89c46bb5/3a55f30bbdf7752a5f23bfba2e646a49afdc617be7a5d85f5c4fbe4bd68643b2.json",
+      "nodes": [],
+      "edges": []
+    },
+    {
+      "filePath": "graphify-out/cache/semantic/pd5fd89c46bb5/476c37281bd520cbb72362fc1e534eacefc31e45582aca9822436e8cada2f837.json",
+      "nodes": [],
+      "edges": []
+    },
+    {
+      "filePath": "graphify-out/cache/semantic/pd5fd89c46bb5/6c97441ba7d781f7d31ccfd2bd5641962f91c833da8b8651974028bf243671cd.json",
+      "nodes": [],
+      "edges": []
+    },
+    {
+      "filePath": "graphify-out/cache/semantic/pd5fd89c46bb5/70ac63d7005534df9bda7994c0332144e7db16af54131dd8bc12d5361aeee45d.json",
+      "nodes": [],
+      "edges": []
+    },
+    {
+      "filePath": "graphify-out/cache/semantic/pd5fd89c46bb5/892990fa5e09648dab3c25af3670bec40a7f09601c3c5096959840060ebeac14.json",
+      "nodes": [],
+      "edges": []
+    },
+    {
+      "filePath": "graphify-out/cache/semantic/pd5fd89c46bb5/9946c14eddfed23100a0f37e4e57061655ca1cff73ad2a5b3df1b9443d1a29cb.json",
+      "nodes": [],
+      "edges": []
+    },
+    {
+      "filePath": "graphify-out/cache/semantic/pd5fd89c46bb5/99930dc3094531417ea0c0c6bbf4dc2d21ca2d1a22fbe708c5210d311301633f.json",
+      "nodes": [],
+      "edges": []
+    },
+    {
+      "filePath": "graphify-out/cache/semantic/pd5fd89c46bb5/a80b06a4d240b9cedc9b12146690c6d0cbf908116250b3115dade12e22d4474e.json",
+      "nodes": [],
+      "edges": []
+    },
+    {
+      "filePath": "graphify-out/cache/semantic/pd5fd89c46bb5/ac8eaac2afd2c54c1c7227a20fd98dd6032d26ac0bd60fbd4d3a2f818a3d7f5c.json",
+      "nodes": [],
+      "edges": []
+    },
+    {
+      "filePath": "graphify-out/cache/semantic/pd5fd89c46bb5/b387c02c6b89e00e196358fb912991ac7b576fc46ba7808f4d330de9659c8f91.json",
+      "nodes": [],
+      "edges": []
+    },
+    {
+      "filePath": "graphify-out/cache/semantic/pd5fd89c46bb5/c0357ddb21fe620febfa581095b6d1efcb998c53e8e8b401dcd41a306bc581ef.json",
+      "nodes": [],
+      "edges": []
+    },
+    {
+      "filePath": "graphify-out/cache/stat-index.json",
+      "nodes": [],
+      "edges": []
+    },
+    {
+      "filePath": "graphify-out/cost.json",
+      "nodes": [],
+      "edges": []
+    },
+    {
+      "filePath": "graphify-out/graph.html",
+      "nodes": [],
+      "edges": []
+    },
+    {
+      "filePath": "graphify-out/graph.json",
+      "nodes": [],
+      "edges": []
+    },
+    {
+      "filePath": "graphify-out/manifest.json",
+      "nodes": [],
+      "edges": []
+    },
+    {
+      "filePath": "opencode.json",
+      "nodes": [],
+      "edges": []
+    },
+    {
+      "filePath": "package.json",
+      "nodes": [
+        {
+          "id": "config:package.json",
+          "type": "config",
+          "name": "package.json",
+          "filePath": "package.json",
+          "summary": "npm package manifest declaring dev/build/test/lint scripts and runtime dependencies including React, Tone.js and Zustand.",
+          "tags": [
+            "configuration",
+            "build-system",
+            "dependencies"
+          ],
+          "complexity": "simple"
+        }
+      ],
+      "edges": []
+    },
+    {
+      "filePath": "src/App.tsx",
+      "nodes": [
+        {
+          "id": "file:src/App.tsx",
+          "type": "file",
+          "name": "App.tsx",
+          "filePath": "src/App.tsx",
+          "summary": "Root App component wiring global keyboard input, session-store phase state, and overlay routing for the game.",
+          "tags": "component,entry-point,state-management",
+          "complexity": "simple"
+        },
+        {
+          "id": "function:src/App.tsx:App",
+          "type": "function",
+          "name": "App",
+          "filePath": "src/App.tsx",
+          "lineRange": [
+            8,
+            24
+          ],
+          "summary": "Root component binding keyboard shortcuts and phase state to screen and overlay rendering.",
+          "tags": "component,entry-point,state-management",
+          "complexity": "simple"
+        }
+      ],
+      "edges": [
+        {
+          "source": "file:src/App.tsx",
+          "target": "function:src/App.tsx:App",
+          "type": "contains",
+          "direction": "forward",
+          "weight": 1
+        },
+        {
+          "source": "file:src/App.tsx",
+          "target": "function:src/App.tsx:App",
+          "type": "exports",
+          "direction": "forward",
+          "weight": 0.8
+        }
+      ]
+    },
+    {
+      "filePath": "src/audio/player.ts",
+      "nodes": [
+        {
+          "complexity": "moderate",
+          "filePath": "src/audio/player.ts",
+          "id": "file:src/audio/player.ts",
+          "name": "player.ts",
+          "summary": "Tone.Transport bridge that renders engine arrangement snapshots into drum, bass, melody-lane, and chord-pad voices on every 16th step.",
+          "tags": [
+            "audio",
+            "scheduler",
+            "transport",
+            "tone-js",
+            "playback"
+          ],
+          "type": "file"
+        }
+      ],
+      "edges": []
+    },
+    {
+      "filePath": "src/audio/preview.test.ts",
+      "nodes": [],
+      "edges": []
+    },
+    {
+      "filePath": "src/audio/preview.ts",
+      "nodes": [],
+      "edges": []
+    },
+    {
+      "filePath": "src/audio/sfx.ts",
+      "nodes": [
+        {
+          "complexity": "moderate",
+          "filePath": "src/audio/sfx.ts",
+          "id": "file:src/audio/sfx.ts",
+          "name": "sfx.ts",
+          "summary": "One-shot UI and combat sound effects (victory, defeat, QTE hits, chord changes, enemy telegraphs) guarded for headless use.",
+          "tags": [
+            "audio",
+            "sound-effects",
+            "tone-js",
+            "qte-feedback",
+            "ui-feedback"
+          ],
+          "type": "file"
+        }
+      ],
+      "edges": []
+    },
+    {
+      "filePath": "src/audio/synths.ts",
+      "nodes": [
+        {
+          "complexity": "moderate",
+          "filePath": "src/audio/synths.ts",
+          "id": "file:src/audio/synths.ts",
+          "name": "synths.ts",
+          "summary": "Allocates the pooled Tone.js voice bank once (per-instrument lead/pad/bass plus shared drums) and serves it to all audio callers.",
+          "tags": [
+            "audio",
+            "tone-js",
+            "voice-pool",
+            "singleton",
+            "synthesizer"
+          ],
+          "type": "file"
+        }
+      ],
+      "edges": []
+    },
+    {
+      "filePath": "src/components/CardPreviewButton.test.tsx",
+      "nodes": [],
+      "edges": []
+    },
+    {
+      "filePath": "src/components/CardPreviewButton.tsx",
+      "nodes": [],
+      "edges": []
+    },
+    {
+      "filePath": "src/components/ChordPicker.test.tsx",
+      "nodes": [],
+      "edges": []
+    },
+    {
+      "filePath": "src/components/ChordPicker.tsx",
+      "nodes": [
+        {
+          "id": "file:src/components/ChordPicker.tsx",
+          "type": "file",
+          "name": "ChordPicker.tsx",
+          "filePath": "src/components/ChordPicker.tsx",
+          "summary": "Chord progression picker with tabbed presets and custom chords showing per-chord combat effects.",
+          "tags": "component,chord-selection,ui",
+          "complexity": "moderate"
+        },
+        {
+          "id": "function:src/components/ChordPicker.tsx:ChordPicker",
+          "type": "function",
+          "name": "ChordPicker",
+          "filePath": "src/components/ChordPicker.tsx",
+          "lineRange": [
+            13,
+            64
+          ],
+          "summary": "Tabbed chord preset and custom-chord picker displaying combat effects per option.",
+          "tags": "component,chord-selection,ui",
+          "complexity": "moderate"
+        }
+      ],
+      "edges": [
+        {
+          "source": "file:src/components/ChordPicker.tsx",
+          "target": "function:src/components/ChordPicker.tsx:ChordPicker",
+          "type": "contains",
+          "direction": "forward",
+          "weight": 1
+        },
+        {
+          "source": "file:src/components/ChordPicker.tsx",
+          "target": "function:src/components/ChordPicker.tsx:ChordPicker",
+          "type": "exports",
+          "direction": "forward",
+          "weight": 0.8
+        }
+      ]
+    },
+    {
+      "filePath": "src/components/CustomChordBuilder.tsx",
+      "nodes": [
+        {
+          "id": "file:src/components/CustomChordBuilder.tsx",
+          "type": "file",
+          "name": "CustomChordBuilder.tsx",
+          "filePath": "src/components/CustomChordBuilder.tsx",
+          "summary": "Full custom chord-progression editor with per-bar Roman-numeral palette, theory scoring, audio preview, and preset saving.",
+          "tags": [
+            "tested"
+          ],
+          "complexity": "complex"
+        },
+        {
+          "id": "function:src/components/CustomChordBuilder.tsx:CustomChordBuilder",
+          "type": "function",
+          "name": "CustomChordBuilder",
+          "filePath": "src/components/CustomChordBuilder.tsx",
+          "lineRange": [
+            12,
+            279
+          ],
+          "summary": "Edits per-bar Roman numerals with theory scoring, note preview, QTE-gated apply, and custom preset saving.",
+          "tags": "component,chord-builder,progression-editor",
+          "complexity": "complex"
+        }
+      ],
+      "edges": [
+        {
+          "source": "file:src/components/CustomChordBuilder.tsx",
+          "target": "function:src/components/CustomChordBuilder.tsx:CustomChordBuilder",
+          "type": "contains",
+          "direction": "forward",
+          "weight": 1
+        },
+        {
+          "source": "file:src/components/CustomChordBuilder.tsx",
+          "target": "function:src/components/CustomChordBuilder.tsx:CustomChordBuilder",
+          "type": "exports",
+          "direction": "forward",
+          "weight": 0.8
+        }
+      ]
+    },
+    {
+      "filePath": "src/components/GrooveMatrix.tsx",
+      "nodes": [],
+      "edges": []
+    },
+    {
+      "filePath": "src/components/GroovePicker.tsx",
+      "nodes": [],
+      "edges": []
+    },
+    {
+      "filePath": "src/components/LoadoutBar.tsx",
+      "nodes": [],
+      "edges": []
+    },
+    {
+      "filePath": "src/components/MelodyCardBar.test.tsx",
+      "nodes": [],
+      "edges": []
+    },
+    {
+      "filePath": "src/components/MelodyCardBar.tsx",
+      "nodes": [],
+      "edges": []
+    },
+    {
+      "filePath": "src/components/PartyCorner.tsx",
+      "nodes": [
+        {
+          "id": "file:src/components/PartyCorner.tsx",
+          "type": "file",
+          "name": "PartyCorner.tsx",
+          "filePath": "src/components/PartyCorner.tsx",
+          "summary": "Party management panel with draggable fighter cards, front-row slots, performer selection, and bench.",
+          "tags": [
+            "tested"
+          ],
+          "complexity": "complex"
+        },
+        {
+          "id": "function:src/components/PartyCorner.tsx:Card",
+          "type": "function",
+          "name": "Card",
+          "filePath": "src/components/PartyCorner.tsx",
+          "lineRange": [
+            27,
+            148
+          ],
+          "summary": "Draggable fighter card showing instrument, HP, buffs, and performer state.",
+          "tags": "component,fighter-card,drag-and-drop",
+          "complexity": "moderate"
+        },
+        {
+          "id": "function:src/components/PartyCorner.tsx:PartyCorner",
+          "type": "function",
+          "name": "PartyCorner",
+          "filePath": "src/components/PartyCorner.tsx",
+          "lineRange": [
+            154,
+            309
+          ],
+          "summary": "Manages front-row and bench slots with drag-and-drop moves and performer assignment.",
+          "tags": "component,party-management,slot-assignment",
+          "complexity": "moderate"
+        }
+      ],
+      "edges": [
+        {
+          "source": "file:src/components/PartyCorner.tsx",
+          "target": "function:src/components/PartyCorner.tsx:Card",
+          "type": "contains",
+          "direction": "forward",
+          "weight": 1
+        },
+        {
+          "source": "file:src/components/PartyCorner.tsx",
+          "target": "function:src/components/PartyCorner.tsx:PartyCorner",
+          "type": "contains",
+          "direction": "forward",
+          "weight": 1
+        },
+        {
+          "source": "file:src/components/PartyCorner.tsx",
+          "target": "function:src/components/PartyCorner.tsx:PartyCorner",
+          "type": "exports",
+          "direction": "forward",
+          "weight": 0.8
+        }
+      ]
+    },
+    {
+      "filePath": "src/components/RosterSelectModal.tsx",
+      "nodes": [
+        {
+          "id": "file:src/components/RosterSelectModal.tsx",
+          "type": "file",
+          "name": "RosterSelectModal.tsx",
+          "filePath": "src/components/RosterSelectModal.tsx",
+          "summary": "Roster draft modal with instrument filtering and staged party selection before confirming.",
+          "tags": [
+            "tested"
+          ],
+          "complexity": "complex"
+        },
+        {
+          "id": "function:src/components/RosterSelectModal.tsx:RosterSelectModal",
+          "type": "function",
+          "name": "RosterSelectModal",
+          "filePath": "src/components/RosterSelectModal.tsx",
+          "lineRange": [
+            18,
+            240
+          ],
+          "summary": "Drafts a party from the filtered roster with staged slots before confirming selection.",
+          "tags": "component,roster-selection,modal",
+          "complexity": "complex"
+        }
+      ],
+      "edges": [
+        {
+          "source": "file:src/components/RosterSelectModal.tsx",
+          "target": "function:src/components/RosterSelectModal.tsx:RosterSelectModal",
+          "type": "contains",
+          "direction": "forward",
+          "weight": 1
+        },
+        {
+          "source": "file:src/components/RosterSelectModal.tsx",
+          "target": "function:src/components/RosterSelectModal.tsx:RosterSelectModal",
+          "type": "exports",
+          "direction": "forward",
+          "weight": 0.8
+        }
+      ]
+    },
+    {
+      "filePath": "src/components/StepGrid.tsx",
+      "nodes": [
+        {
+          "id": "file:src/components/StepGrid.tsx",
+          "type": "file",
+          "name": "StepGrid.tsx",
+          "filePath": "src/components/StepGrid.tsx",
+          "summary": "Main step-sequencer grid editor for melody lanes, per-bar chords, performer slots, and drum rows.",
+          "tags": "component,step-sequencer,arrangement-editor",
+          "complexity": "complex"
+        },
+        {
+          "id": "function:src/components/StepGrid.tsx:StepGrid",
+          "type": "function",
+          "name": "StepGrid",
+          "filePath": "src/components/StepGrid.tsx",
+          "lineRange": [
+            28,
+            318
+          ],
+          "summary": "Edits melody note onsets, per-bar chords, performer lanes, and drum patterns in one grid.",
+          "tags": "component,step-sequencer,arrangement-editor",
+          "complexity": "complex"
+        }
+      ],
+      "edges": [
+        {
+          "source": "file:src/components/StepGrid.tsx",
+          "target": "function:src/components/StepGrid.tsx:StepGrid",
+          "type": "contains",
+          "direction": "forward",
+          "weight": 1
+        },
+        {
+          "source": "file:src/components/StepGrid.tsx",
+          "target": "function:src/components/StepGrid.tsx:StepGrid",
+          "type": "exports",
+          "direction": "forward",
+          "weight": 0.8
+        }
+      ]
+    },
+    {
+      "filePath": "src/components/screens/CombatScreen.tsx",
+      "nodes": [
+        {
+          "id": "file:src/components/screens/CombatScreen.tsx",
+          "type": "file",
+          "name": "CombatScreen.tsx",
+          "filePath": "src/components/screens/CombatScreen.tsx",
+          "summary": "Combat arena layout composing foe panel, step grid, QTE panel, party cards, and combat log with a halt/retreat control.",
+          "tags": [
+            "component",
+            "combat",
+            "layout",
+            "tested"
+          ],
+          "complexity": "moderate"
+        },
+        {
+          "id": "function:src/components/screens/CombatScreen.tsx:CombatScreen",
+          "type": "function",
+          "name": "CombatScreen",
+          "filePath": "src/components/screens/CombatScreen.tsx",
+          "lineRange": [
+            13,
+            77
+          ],
+          "summary": "Renders the three-column live combat stage wired to fight state, tempo, and encounter header.",
+          "tags": [
+            "component",
+            "combat",
+            "render"
+          ],
+          "complexity": "moderate"
+        }
+      ],
+      "edges": [
+        {
+          "source": "file:src/components/screens/CombatScreen.tsx",
+          "target": "function:src/components/screens/CombatScreen.tsx:CombatScreen",
+          "type": "contains",
+          "direction": "forward",
+          "weight": 1
+        },
+        {
+          "source": "file:src/components/screens/CombatScreen.tsx",
+          "target": "function:src/components/screens/CombatScreen.tsx:CombatScreen",
+          "type": "exports",
+          "direction": "forward",
+          "weight": 0.8
+        }
+      ]
+    },
+    {
+      "filePath": "src/components/screens/PrepScreen.tsx",
+      "nodes": [
+        {
+          "id": "file:src/components/screens/PrepScreen.tsx",
+          "type": "file",
+          "name": "PrepScreen.tsx",
+          "filePath": "src/components/screens/PrepScreen.tsx",
+          "summary": "Battle preparation workstation for key and tempo tuning, chord progression, melody bank, loop sequencer, and party formation.",
+          "tags": [
+            "component",
+            "composition",
+            "preparation",
+            "tested"
+          ],
+          "complexity": "moderate"
+        },
+        {
+          "id": "function:src/components/screens/PrepScreen.tsx:PrepScreen",
+          "type": "function",
+          "name": "PrepScreen",
+          "filePath": "src/components/screens/PrepScreen.tsx",
+          "lineRange": [
+            14,
+            163
+          ],
+          "summary": "Composes the pre-fight editor that sets fight key, tempo, chords, loop notes, and formation before engaging combat.",
+          "tags": [
+            "component",
+            "composition",
+            "event-handler"
+          ],
+          "complexity": "moderate"
+        }
+      ],
+      "edges": [
+        {
+          "source": "file:src/components/screens/PrepScreen.tsx",
+          "target": "function:src/components/screens/PrepScreen.tsx:PrepScreen",
+          "type": "contains",
+          "direction": "forward",
+          "weight": 1
+        },
+        {
+          "source": "file:src/components/screens/PrepScreen.tsx",
+          "target": "function:src/components/screens/PrepScreen.tsx:PrepScreen",
+          "type": "exports",
+          "direction": "forward",
+          "weight": 0.8
+        }
+      ]
+    },
+    {
+      "filePath": "src/components/screens/StudioScreen.tsx",
+      "nodes": [],
+      "edges": []
+    },
+    {
+      "filePath": "src/components/ui/dialog.tsx",
+      "nodes": [],
+      "edges": []
+    },
+    {
+      "filePath": "src/data/beats.test.ts",
+      "nodes": [],
+      "edges": []
+    },
+    {
+      "filePath": "src/data/beats.ts",
+      "nodes": [],
+      "edges": []
+    },
+    {
+      "filePath": "src/data/enemies.ts",
+      "nodes": [
+        {
+          "complexity": "complex",
+          "filePath": "src/data/enemies.ts",
+          "id": "file:src/data/enemies.ts",
+          "name": "enemies.ts",
+          "summary": "Static enemy profiles and instrument definitions with stats, weaknesses, and serializable timbre recipes consumed by combat and audio.",
+          "tags": [
+            "data-model",
+            "balance",
+            "enemies",
+            "instruments",
+            "timbre",
+            "tested"
+          ],
+          "type": "file"
+        }
+      ],
+      "edges": []
+    },
+    {
+      "filePath": "src/data/kits.ts",
+      "nodes": [],
+      "edges": []
+    },
+    {
+      "filePath": "src/game/__snapshots__/parryChart.test.ts.snap",
+      "nodes": [],
+      "edges": []
+    },
+    {
+      "filePath": "src/game/arrangement.test.ts",
+      "nodes": [
+        {
+          "complexity": "simple",
+          "filePath": "src/game/arrangement.test.ts",
+          "id": "file:src/game/arrangement.test.ts",
+          "name": "arrangement.test.ts",
+          "summary": "Vitest suite covering arrangement grid edits, chord setters, and onset hashing.",
+          "tags": [
+            "test",
+            "arrangement",
+            "vitest"
+          ],
+          "type": "file"
+        }
+      ],
+      "edges": []
+    },
+    {
+      "filePath": "src/game/arrangement.ts",
+      "nodes": [
+        {
+          "complexity": "complex",
+          "filePath": "src/game/arrangement.ts",
+          "id": "file:src/game/arrangement.ts",
+          "name": "arrangement.ts",
+          "summary": "Core loop arrangement model: melody tracks, drum grids, Roman-numeral chords, and step snapshots for the audio boundary.",
+          "tags": [
+            "music-model",
+            "arrangement",
+            "step-sequencer",
+            "tested"
+          ],
+          "type": "file"
+        },
+        {
+          "complexity": "moderate",
+          "filePath": "src/game/arrangement.ts",
+          "id": "function:src/game/arrangement.ts:createDefaultArrangement",
+          "lineRange": [
+            47,
+            85
+          ],
+          "name": "createDefaultArrangement",
+          "summary": "Builds the default C-minor demo loop with seeded melodies on slot 0.",
+          "tags": [
+            "factory",
+            "default-state",
+            "melody-seed"
+          ],
+          "type": "function"
+        },
+        {
+          "complexity": "moderate",
+          "filePath": "src/game/arrangement.ts",
+          "id": "function:src/game/arrangement.ts:toggleNoteEvent",
+          "lineRange": [
+            97,
+            118
+          ],
+          "name": "toggleNoteEvent",
+          "summary": "Toggles a melody onset at slot, bar, and step, returning an updated arrangement.",
+          "tags": [
+            "melody-editing",
+            "grid-toggle",
+            "immutable-update"
+          ],
+          "type": "function"
+        },
+        {
+          "complexity": "simple",
+          "filePath": "src/game/arrangement.ts",
+          "id": "function:src/game/arrangement.ts:clearTracks",
+          "lineRange": [
+            121,
+            123
+          ],
+          "name": "clearTracks",
+          "summary": "Resets all melody tracks to empty while preserving chords and drums.",
+          "tags": [
+            "melody-editing",
+            "reset",
+            "immutable-update"
+          ],
+          "type": "function"
+        },
+        {
+          "complexity": "simple",
+          "filePath": "src/game/arrangement.ts",
+          "id": "function:src/game/arrangement.ts:countOnsets",
+          "lineRange": [
+            126,
+            134
+          ],
+          "name": "countOnsets",
+          "summary": "Counts total melody onsets across all slots for cooldown scaling.",
+          "tags": [
+            "metrics",
+            "onset-count",
+            "cooldown"
+          ],
+          "type": "function"
+        },
+        {
+          "complexity": "simple",
+          "filePath": "src/game/arrangement.ts",
+          "id": "function:src/game/arrangement.ts:toggleDrumStep",
+          "lineRange": [
+            136,
+            147
+          ],
+          "name": "toggleDrumStep",
+          "summary": "Toggles a kick, snare, or hat hit at a drum grid position.",
+          "tags": [
+            "drum-editing",
+            "grid-toggle",
+            "immutable-update"
+          ],
+          "type": "function"
+        },
+        {
+          "complexity": "simple",
+          "filePath": "src/game/arrangement.ts",
+          "id": "function:src/game/arrangement.ts:setBarChord",
+          "lineRange": [
+            149,
+            153
+          ],
+          "name": "setBarChord",
+          "summary": "Replaces the Roman-numeral chord for one bar.",
+          "tags": [
+            "chord-editing",
+            "harmony",
+            "immutable-update"
+          ],
+          "type": "function"
+        },
+        {
+          "complexity": "simple",
+          "filePath": "src/game/arrangement.ts",
+          "id": "function:src/game/arrangement.ts:setChords",
+          "lineRange": [
+            156,
+            160
+          ],
+          "name": "setChords",
+          "summary": "Replaces the full per-bar chord progression.",
+          "tags": [
+            "chord-editing",
+            "harmony",
+            "immutable-update"
+          ],
+          "type": "function"
+        },
+        {
+          "complexity": "simple",
+          "filePath": "src/game/arrangement.ts",
+          "id": "function:src/game/arrangement.ts:setBpm",
+          "lineRange": [
+            162,
+            165
+          ],
+          "name": "setBpm",
+          "summary": "Clamps and sets the arrangement tempo in BPM.",
+          "tags": [
+            "tempo",
+            "validation",
+            "immutable-update"
+          ],
+          "type": "function"
+        },
+        {
+          "complexity": "simple",
+          "filePath": "src/game/arrangement.ts",
+          "id": "function:src/game/arrangement.ts:setKey",
+          "lineRange": [
+            167,
+            169
+          ],
+          "name": "setKey",
+          "summary": "Sets the arrangement musical key.",
+          "tags": [
+            "key-signature",
+            "harmony",
+            "immutable-update"
+          ],
+          "type": "function"
+        },
+        {
+          "complexity": "moderate",
+          "filePath": "src/game/arrangement.ts",
+          "id": "function:src/game/arrangement.ts:snapshotStep",
+          "lineRange": [
+            193,
+            222
+          ],
+          "name": "snapshotStep",
+          "summary": "Resolves one step to absolute MIDI melodies plus chord pitch classes for audio and combat.",
+          "tags": [
+            "audio-boundary",
+            "midi-resolution",
+            "snapshot"
+          ],
+          "type": "function"
+        },
+        {
+          "complexity": "simple",
+          "filePath": "src/game/arrangement.ts",
+          "id": "function:src/game/arrangement.ts:loopLength",
+          "lineRange": [
+            225,
+            227
+          ],
+          "name": "loopLength",
+          "summary": "Returns total steps per loop from bars times steps per bar.",
+          "tags": [
+            "metrics",
+            "loop-length",
+            "sequencer"
+          ],
+          "type": "function"
+        },
+        {
+          "complexity": "simple",
+          "filePath": "src/game/arrangement.ts",
+          "id": "function:src/game/arrangement.ts:locateStep",
+          "lineRange": [
+            230,
+            234
+          ],
+          "name": "locateStep",
+          "summary": "Maps a global tick to bar and step coordinates within the loop.",
+          "tags": [
+            "metrics",
+            "sequencer",
+            "step-mapping"
+          ],
+          "type": "function"
+        },
+        {
+          "complexity": "simple",
+          "filePath": "src/game/arrangement.ts",
+          "id": "function:src/game/arrangement.ts:hashMelodySet",
+          "lineRange": [
+            241,
+            254
+          ],
+          "name": "hashMelodySet",
+          "summary": "Hashes melody tracks plus chords for preset duplicate detection.",
+          "tags": [
+            "hashing",
+            "duplicate-detection",
+            "presets"
+          ],
+          "type": "function"
+        },
+        {
+          "complexity": "simple",
+          "filePath": "src/game/arrangement.ts",
+          "id": "function:src/game/arrangement.ts:onsetKey",
+          "lineRange": [
+            261,
+            263
+          ],
+          "name": "onsetKey",
+          "summary": "Builds a stable string key identifying one melody onset.",
+          "tags": [
+            "hashing",
+            "onset-key",
+            "identity"
+          ],
+          "type": "function"
+        },
+        {
+          "complexity": "simple",
+          "filePath": "src/game/arrangement.ts",
+          "id": "function:src/game/arrangement.ts:onsetKeysOf",
+          "lineRange": [
+            265,
+            275
+          ],
+          "name": "onsetKeysOf",
+          "summary": "Collects onset keys for a track grid.",
+          "tags": [
+            "hashing",
+            "onset-key",
+            "helper"
+          ],
+          "type": "function"
+        },
+        {
+          "complexity": "simple",
+          "filePath": "src/game/arrangement.ts",
+          "id": "function:src/game/arrangement.ts:allOnsetKeys",
+          "lineRange": [
+            278,
+            280
+          ],
+          "name": "allOnsetKeys",
+          "summary": "Collects onset keys for the whole arrangement.",
+          "tags": [
+            "hashing",
+            "onset-key",
+            "helper"
+          ],
+          "type": "function"
+        }
+      ],
+      "edges": [
+        {
+          "direction": "forward",
+          "source": "file:src/game/arrangement.ts",
+          "target": "function:src/game/arrangement.ts:createDefaultArrangement",
+          "type": "contains",
+          "weight": 1
+        },
+        {
+          "direction": "forward",
+          "source": "file:src/game/arrangement.ts",
+          "target": "function:src/game/arrangement.ts:toggleNoteEvent",
+          "type": "contains",
+          "weight": 1
+        },
+        {
+          "direction": "forward",
+          "source": "file:src/game/arrangement.ts",
+          "target": "function:src/game/arrangement.ts:clearTracks",
+          "type": "contains",
+          "weight": 1
+        },
+        {
+          "direction": "forward",
+          "source": "file:src/game/arrangement.ts",
+          "target": "function:src/game/arrangement.ts:countOnsets",
+          "type": "contains",
+          "weight": 1
+        },
+        {
+          "direction": "forward",
+          "source": "file:src/game/arrangement.ts",
+          "target": "function:src/game/arrangement.ts:toggleDrumStep",
+          "type": "contains",
+          "weight": 1
+        },
+        {
+          "direction": "forward",
+          "source": "file:src/game/arrangement.ts",
+          "target": "function:src/game/arrangement.ts:setBarChord",
+          "type": "contains",
+          "weight": 1
+        },
+        {
+          "direction": "forward",
+          "source": "file:src/game/arrangement.ts",
+          "target": "function:src/game/arrangement.ts:setChords",
+          "type": "contains",
+          "weight": 1
+        },
+        {
+          "direction": "forward",
+          "source": "file:src/game/arrangement.ts",
+          "target": "function:src/game/arrangement.ts:setBpm",
+          "type": "contains",
+          "weight": 1
+        },
+        {
+          "direction": "forward",
+          "source": "file:src/game/arrangement.ts",
+          "target": "function:src/game/arrangement.ts:setKey",
+          "type": "contains",
+          "weight": 1
+        },
+        {
+          "direction": "forward",
+          "source": "file:src/game/arrangement.ts",
+          "target": "function:src/game/arrangement.ts:snapshotStep",
+          "type": "contains",
+          "weight": 1
+        },
+        {
+          "direction": "forward",
+          "source": "file:src/game/arrangement.ts",
+          "target": "function:src/game/arrangement.ts:loopLength",
+          "type": "contains",
+          "weight": 1
+        },
+        {
+          "direction": "forward",
+          "source": "file:src/game/arrangement.ts",
+          "target": "function:src/game/arrangement.ts:locateStep",
+          "type": "contains",
+          "weight": 1
+        },
+        {
+          "direction": "forward",
+          "source": "file:src/game/arrangement.ts",
+          "target": "function:src/game/arrangement.ts:hashMelodySet",
+          "type": "contains",
+          "weight": 1
+        },
+        {
+          "direction": "forward",
+          "source": "file:src/game/arrangement.ts",
+          "target": "function:src/game/arrangement.ts:onsetKey",
+          "type": "contains",
+          "weight": 1
+        },
+        {
+          "direction": "forward",
+          "source": "file:src/game/arrangement.ts",
+          "target": "function:src/game/arrangement.ts:onsetKeysOf",
+          "type": "contains",
+          "weight": 1
+        },
+        {
+          "direction": "forward",
+          "source": "file:src/game/arrangement.ts",
+          "target": "function:src/game/arrangement.ts:allOnsetKeys",
+          "type": "contains",
+          "weight": 1
+        },
+        {
+          "direction": "forward",
+          "source": "file:src/game/arrangement.ts",
+          "target": "function:src/game/arrangement.ts:createDefaultArrangement",
+          "type": "exports",
+          "weight": 0.8
+        },
+        {
+          "direction": "forward",
+          "source": "file:src/game/arrangement.ts",
+          "target": "function:src/game/arrangement.ts:toggleNoteEvent",
+          "type": "exports",
+          "weight": 0.8
+        },
+        {
+          "direction": "forward",
+          "source": "file:src/game/arrangement.ts",
+          "target": "function:src/game/arrangement.ts:clearTracks",
+          "type": "exports",
+          "weight": 0.8
+        },
+        {
+          "direction": "forward",
+          "source": "file:src/game/arrangement.ts",
+          "target": "function:src/game/arrangement.ts:countOnsets",
+          "type": "exports",
+          "weight": 0.8
+        },
+        {
+          "direction": "forward",
+          "source": "file:src/game/arrangement.ts",
+          "target": "function:src/game/arrangement.ts:toggleDrumStep",
+          "type": "exports",
+          "weight": 0.8
+        },
+        {
+          "direction": "forward",
+          "source": "file:src/game/arrangement.ts",
+          "target": "function:src/game/arrangement.ts:setBarChord",
+          "type": "exports",
+          "weight": 0.8
+        },
+        {
+          "direction": "forward",
+          "source": "file:src/game/arrangement.ts",
+          "target": "function:src/game/arrangement.ts:setChords",
+          "type": "exports",
+          "weight": 0.8
+        },
+        {
+          "direction": "forward",
+          "source": "file:src/game/arrangement.ts",
+          "target": "function:src/game/arrangement.ts:setBpm",
+          "type": "exports",
+          "weight": 0.8
+        },
+        {
+          "direction": "forward",
+          "source": "file:src/game/arrangement.ts",
+          "target": "function:src/game/arrangement.ts:setKey",
+          "type": "exports",
+          "weight": 0.8
+        },
+        {
+          "direction": "forward",
+          "source": "file:src/game/arrangement.ts",
+          "target": "function:src/game/arrangement.ts:snapshotStep",
+          "type": "exports",
+          "weight": 0.8
+        },
+        {
+          "direction": "forward",
+          "source": "file:src/game/arrangement.ts",
+          "target": "function:src/game/arrangement.ts:loopLength",
+          "type": "exports",
+          "weight": 0.8
+        },
+        {
+          "direction": "forward",
+          "source": "file:src/game/arrangement.ts",
+          "target": "function:src/game/arrangement.ts:locateStep",
+          "type": "exports",
+          "weight": 0.8
+        },
+        {
+          "direction": "forward",
+          "source": "file:src/game/arrangement.ts",
+          "target": "function:src/game/arrangement.ts:hashMelodySet",
+          "type": "exports",
+          "weight": 0.8
+        },
+        {
+          "direction": "forward",
+          "source": "file:src/game/arrangement.ts",
+          "target": "function:src/game/arrangement.ts:onsetKey",
+          "type": "exports",
+          "weight": 0.8
+        },
+        {
+          "direction": "forward",
+          "source": "file:src/game/arrangement.ts",
+          "target": "function:src/game/arrangement.ts:allOnsetKeys",
+          "type": "exports",
+          "weight": 0.8
+        }
+      ]
+    },
+    {
+      "filePath": "src/game/combat.ts",
+      "nodes": [
+        {
+          "id": "file:src/game/combat.ts",
+          "type": "file",
+          "name": "combat.ts",
+          "summary": "Core ATB combat engine advancing one 16th-step tick at a time, resolving melody damage, chord effects, enemy gauges, and parry/QTE charts.",
+          "tags": [
+            "combat",
+            "atb",
+            "tick-engine",
+            "damage",
+            "qte",
+            "tested"
+          ],
+          "complexity": "complex",
+          "filePath": "src/game/combat.ts",
+          "languageNotes": "Pure TypeScript engine with JSON-serializable state; no Tone.js, React, or DOM."
+        }
+      ],
+      "edges": []
+    },
+    {
+      "filePath": "src/game/combatQte.test.ts",
+      "nodes": [
+        {
+          "complexity": "moderate",
+          "filePath": "src/game/combatQte.test.ts",
+          "id": "file:src/game/combatQte.test.ts",
+          "name": "combatQte.test.ts",
+          "summary": "Exercises chord, preset, and parry QTE flows through the combat tick loop with seeded RNG.",
+          "tags": [
+            "test",
+            "qte",
+            "combat",
+            "tick-loop",
+            "seeded-rng"
+          ],
+          "type": "file"
+        },
+        {
+          "complexity": "simple",
+          "filePath": "src/game/combatQte.test.ts",
+          "id": "function:src/game/combatQte.test.ts:playAllOnTime",
+          "lineRange": [
+            34,
+            51
+          ],
+          "name": "playAllOnTime",
+          "summary": "Test helper that fast-forwards the combat tick loop and plays every chart note on time.",
+          "tags": [
+            "test",
+            "test-helper",
+            "qte",
+            "tick-loop"
+          ],
+          "type": "function"
+        }
+      ],
+      "edges": [
+        {
+          "direction": "forward",
+          "source": "file:src/game/combatQte.test.ts",
+          "target": "function:src/game/combatQte.test.ts:playAllOnTime",
+          "type": "contains",
+          "weight": 1
+        }
+      ]
+    },
+    {
+      "filePath": "src/game/groove.test.ts",
+      "nodes": [],
+      "edges": []
+    },
+    {
+      "filePath": "src/game/groove.ts",
+      "nodes": [],
+      "edges": []
+    },
+    {
+      "filePath": "src/game/loadout.ts",
+      "nodes": [],
+      "edges": []
+    },
+    {
+      "filePath": "src/game/melodyBank.ts",
+      "nodes": [
+        {
+          "complexity": "moderate",
+          "filePath": "src/game/melodyBank.ts",
+          "id": "file:src/game/melodyBank.ts",
+          "name": "melodyBank.ts",
+          "summary": "Pre-fight melody template bank with three factory presets plus save, delete, and lookup operations.",
+          "tags": [
+            "melody-bank",
+            "presets",
+            "factory",
+            "tested"
+          ],
+          "type": "file"
+        },
+        {
+          "complexity": "simple",
+          "filePath": "src/game/melodyBank.ts",
+          "id": "function:src/game/melodyBank.ts:cloneTracks",
+          "lineRange": [
+            20,
+            22
+          ],
+          "name": "cloneTracks",
+          "summary": "Deep-clones a melody track grid so templates stay immutable.",
+          "tags": [
+            "cloning",
+            "immutable-update",
+            "helper"
+          ],
+          "type": "function"
+        },
+        {
+          "complexity": "moderate",
+          "filePath": "src/game/melodyBank.ts",
+          "id": "function:src/game/melodyBank.ts:createDawnAnthem",
+          "lineRange": [
+            30,
+            57
+          ],
+          "name": "createDawnAnthem",
+          "summary": "Factory building the Dawn Anthem starter template with strings and piano parts.",
+          "tags": [
+            "factory",
+            "preset-content",
+            "melody-template"
+          ],
+          "type": "function"
+        },
+        {
+          "complexity": "moderate",
+          "filePath": "src/game/melodyBank.ts",
+          "id": "function:src/game/melodyBank.ts:createStaccatoFlight",
+          "lineRange": [
+            59,
+            80
+          ],
+          "name": "createStaccatoFlight",
+          "summary": "Factory building the Staccato Flight starter template.",
+          "tags": [
+            "factory",
+            "preset-content",
+            "melody-template"
+          ],
+          "type": "function"
+        },
+        {
+          "complexity": "moderate",
+          "filePath": "src/game/melodyBank.ts",
+          "id": "function:src/game/melodyBank.ts:createSolemnGround",
+          "lineRange": [
+            82,
+            104
+          ],
+          "name": "createSolemnGround",
+          "summary": "Factory building the Solemn Ground starter template.",
+          "tags": [
+            "factory",
+            "preset-content",
+            "melody-template"
+          ],
+          "type": "function"
+        },
+        {
+          "complexity": "simple",
+          "filePath": "src/game/melodyBank.ts",
+          "id": "function:src/game/melodyBank.ts:createDefaultMelodyBank",
+          "lineRange": [
+            106,
+            115
+          ],
+          "name": "createDefaultMelodyBank",
+          "summary": "Builds the default bank of three starter melody templates.",
+          "tags": [
+            "factory",
+            "default-state",
+            "melody-template"
+          ],
+          "type": "function"
+        },
+        {
+          "complexity": "moderate",
+          "filePath": "src/game/melodyBank.ts",
+          "id": "function:src/game/melodyBank.ts:saveTemplate",
+          "lineRange": [
+            117,
+            143
+          ],
+          "name": "saveTemplate",
+          "summary": "Saves a melody template, generating an id and cloning its tracks.",
+          "tags": [
+            "persistence",
+            "melody-template",
+            "create"
+          ],
+          "type": "function"
+        },
+        {
+          "complexity": "simple",
+          "filePath": "src/game/melodyBank.ts",
+          "id": "function:src/game/melodyBank.ts:deleteTemplate",
+          "lineRange": [
+            145,
+            150
+          ],
+          "name": "deleteTemplate",
+          "summary": "Removes a melody template by id.",
+          "tags": [
+            "persistence",
+            "melody-template",
+            "delete"
+          ],
+          "type": "function"
+        },
+        {
+          "complexity": "simple",
+          "filePath": "src/game/melodyBank.ts",
+          "id": "function:src/game/melodyBank.ts:getTemplate",
+          "lineRange": [
+            152,
+            154
+          ],
+          "name": "getTemplate",
+          "summary": "Looks up a melody template by id.",
+          "tags": [
+            "persistence",
+            "melody-template",
+            "lookup"
+          ],
+          "type": "function"
+        }
+      ],
+      "edges": [
+        {
+          "direction": "forward",
+          "source": "file:src/game/melodyBank.ts",
+          "target": "function:src/game/melodyBank.ts:cloneTracks",
+          "type": "contains",
+          "weight": 1
+        },
+        {
+          "direction": "forward",
+          "source": "file:src/game/melodyBank.ts",
+          "target": "function:src/game/melodyBank.ts:createDawnAnthem",
+          "type": "contains",
+          "weight": 1
+        },
+        {
+          "direction": "forward",
+          "source": "file:src/game/melodyBank.ts",
+          "target": "function:src/game/melodyBank.ts:createStaccatoFlight",
+          "type": "contains",
+          "weight": 1
+        },
+        {
+          "direction": "forward",
+          "source": "file:src/game/melodyBank.ts",
+          "target": "function:src/game/melodyBank.ts:createSolemnGround",
+          "type": "contains",
+          "weight": 1
+        },
+        {
+          "direction": "forward",
+          "source": "file:src/game/melodyBank.ts",
+          "target": "function:src/game/melodyBank.ts:createDefaultMelodyBank",
+          "type": "contains",
+          "weight": 1
+        },
+        {
+          "direction": "forward",
+          "source": "file:src/game/melodyBank.ts",
+          "target": "function:src/game/melodyBank.ts:saveTemplate",
+          "type": "contains",
+          "weight": 1
+        },
+        {
+          "direction": "forward",
+          "source": "file:src/game/melodyBank.ts",
+          "target": "function:src/game/melodyBank.ts:deleteTemplate",
+          "type": "contains",
+          "weight": 1
+        },
+        {
+          "direction": "forward",
+          "source": "file:src/game/melodyBank.ts",
+          "target": "function:src/game/melodyBank.ts:getTemplate",
+          "type": "contains",
+          "weight": 1
+        },
+        {
+          "direction": "forward",
+          "source": "file:src/game/melodyBank.ts",
+          "target": "function:src/game/melodyBank.ts:cloneTracks",
+          "type": "exports",
+          "weight": 0.8
+        },
+        {
+          "direction": "forward",
+          "source": "file:src/game/melodyBank.ts",
+          "target": "function:src/game/melodyBank.ts:createDefaultMelodyBank",
+          "type": "exports",
+          "weight": 0.8
+        },
+        {
+          "direction": "forward",
+          "source": "file:src/game/melodyBank.ts",
+          "target": "function:src/game/melodyBank.ts:saveTemplate",
+          "type": "exports",
+          "weight": 0.8
+        },
+        {
+          "direction": "forward",
+          "source": "file:src/game/melodyBank.ts",
+          "target": "function:src/game/melodyBank.ts:deleteTemplate",
+          "type": "exports",
+          "weight": 0.8
+        },
+        {
+          "direction": "forward",
+          "source": "file:src/game/melodyBank.ts",
+          "target": "function:src/game/melodyBank.ts:getTemplate",
+          "type": "exports",
+          "weight": 0.8
+        }
+      ]
+    },
+    {
+      "filePath": "src/game/parryChart.test.ts",
+      "nodes": [
+        {
+          "id": "file:src/game/parryChart.test.ts",
+          "type": "file",
+          "name": "parryChart.test.ts",
+          "summary": "Vitest coverage for parry chart generation, verifying motif params and deterministic seeded chart output.",
+          "tags": [
+            "test",
+            "parry",
+            "qte",
+            "deterministic",
+            "coverage"
+          ],
+          "complexity": "simple",
+          "filePath": "src/game/parryChart.test.ts"
+        }
+      ],
+      "edges": []
+    },
+    {
+      "filePath": "src/game/parryChart.ts",
+      "nodes": [
+        {
+          "id": "file:src/game/parryChart.ts",
+          "type": "file",
+          "name": "parryChart.ts",
+          "summary": "Generative ZXCV parry chart builder producing seeded tap-and-hold motifs shaped by per-enemy pattern params.",
+          "tags": [
+            "parry",
+            "qte",
+            "chart-generator",
+            "seeded-rng",
+            "gameplay",
+            "tested"
+          ],
+          "complexity": "moderate",
+          "filePath": "src/game/parryChart.ts"
+        }
+      ],
+      "edges": []
+    },
+    {
+      "filePath": "src/game/qte.test.ts",
+      "nodes": [
+        {
+          "complexity": "complex",
+          "filePath": "src/game/qte.test.ts",
+          "id": "file:src/game/qte.test.ts",
+          "name": "qte.test.ts",
+          "summary": "Covers QTE chart generation, hit and miss scoring, expiry, and parry damage math.",
+          "tags": [
+            "test",
+            "qte",
+            "chart-generation",
+            "scoring",
+            "parry"
+          ],
+          "type": "file"
+        }
+      ],
+      "edges": []
+    },
+    {
+      "filePath": "src/game/qte.ts",
+      "nodes": [
+        {
+          "id": "file:src/game/qte.ts",
+          "type": "file",
+          "name": "qte.ts",
+          "summary": "Pure QTE chart model with tap/hold notes, melody and harmonic chart builders, press/release scoring, and parry damage scaling.",
+          "tags": [
+            "qte",
+            "chart-model",
+            "scoring",
+            "rhythm-input",
+            "gameplay",
+            "tested"
+          ],
+          "complexity": "complex",
+          "filePath": "src/game/qte.ts",
+          "languageNotes": "State is JSON-serializable; charts use step offsets with per-note timing windows."
+        }
+      ],
+      "edges": []
+    },
+    {
+      "filePath": "src/game/session.ts",
+      "nodes": [
+        {
+          "complexity": "complex",
+          "filePath": "src/game/session.ts",
+          "id": "file:src/game/session.ts",
+          "name": "session.ts",
+          "summary": "Engine session singleton holding arrangement and fight state outside React with a subscribe mirror for the UI.",
+          "tags": [
+            "session",
+            "singleton",
+            "state-management",
+            "tested"
+          ],
+          "type": "file"
+        },
+        {
+          "complexity": "simple",
+          "filePath": "src/game/session.ts",
+          "id": "function:src/game/session.ts:getArrangement",
+          "lineRange": [
+            79,
+            81
+          ],
+          "name": "getArrangement",
+          "summary": "Returns the current loop arrangement.",
+          "tags": [
+            "session",
+            "accessor",
+            "arrangement"
+          ],
+          "type": "function"
+        },
+        {
+          "complexity": "simple",
+          "filePath": "src/game/session.ts",
+          "id": "function:src/game/session.ts:getFight",
+          "lineRange": [
+            83,
+            85
+          ],
+          "name": "getFight",
+          "summary": "Returns the current fight state.",
+          "tags": [
+            "session",
+            "accessor",
+            "combat"
+          ],
+          "type": "function"
+        },
+        {
+          "complexity": "simple",
+          "filePath": "src/game/session.ts",
+          "id": "function:src/game/session.ts:getPresets",
+          "lineRange": [
+            87,
+            89
+          ],
+          "name": "getPresets",
+          "summary": "Returns the melody preset store.",
+          "tags": [
+            "session",
+            "accessor",
+            "presets"
+          ],
+          "type": "function"
+        },
+        {
+          "complexity": "simple",
+          "filePath": "src/game/session.ts",
+          "id": "function:src/game/session.ts:getMelodyBank",
+          "lineRange": [
+            91,
+            93
+          ],
+          "name": "getMelodyBank",
+          "summary": "Returns the melody template bank.",
+          "tags": [
+            "session",
+            "accessor",
+            "melody-bank"
+          ],
+          "type": "function"
+        },
+        {
+          "complexity": "simple",
+          "filePath": "src/game/session.ts",
+          "id": "function:src/game/session.ts:getGamePhase",
+          "lineRange": [
+            95,
+            97
+          ],
+          "name": "getGamePhase",
+          "summary": "Returns the current game phase.",
+          "tags": [
+            "session",
+            "accessor",
+            "game-phase"
+          ],
+          "type": "function"
+        },
+        {
+          "complexity": "simple",
+          "filePath": "src/game/session.ts",
+          "id": "function:src/game/session.ts:setGamePhase",
+          "lineRange": [
+            99,
+            103
+          ],
+          "name": "setGamePhase",
+          "summary": "Sets the game phase and notifies subscribers.",
+          "tags": [
+            "session",
+            "game-phase",
+            "state-transition"
+          ],
+          "type": "function"
+        },
+        {
+          "complexity": "simple",
+          "filePath": "src/game/session.ts",
+          "id": "function:src/game/session.ts:toMenu",
+          "lineRange": [
+            105,
+            107
+          ],
+          "name": "toMenu",
+          "summary": "Transitions the session back to the menu phase.",
+          "tags": [
+            "session",
+            "game-phase",
+            "navigation"
+          ],
+          "type": "function"
+        },
+        {
+          "complexity": "simple",
+          "filePath": "src/game/session.ts",
+          "id": "function:src/game/session.ts:toPrep",
+          "lineRange": [
+            109,
+            111
+          ],
+          "name": "toPrep",
+          "summary": "Transitions the session back to the prep phase.",
+          "tags": [
+            "session",
+            "game-phase",
+            "navigation"
+          ],
+          "type": "function"
+        },
+        {
+          "complexity": "simple",
+          "filePath": "src/game/session.ts",
+          "id": "function:src/game/session.ts:getEncounterId",
+          "lineRange": [
+            113,
+            115
+          ],
+          "name": "getEncounterId",
+          "summary": "Returns the current encounter definition id.",
+          "tags": [
+            "session",
+            "accessor",
+            "encounter"
+          ],
+          "type": "function"
+        },
+        {
+          "complexity": "simple",
+          "filePath": "src/game/session.ts",
+          "id": "function:src/game/session.ts:setEncounterId",
+          "lineRange": [
+            117,
+            130
+          ],
+          "name": "setEncounterId",
+          "summary": "Selects an encounter if unlocked and rebuilds the fight for it.",
+          "tags": [
+            "session",
+            "encounter",
+            "progression"
+          ],
+          "type": "function"
+        },
+        {
+          "complexity": "simple",
+          "filePath": "src/game/session.ts",
+          "id": "function:src/game/session.ts:getClearedEncounters",
+          "lineRange": [
+            132,
+            134
+          ],
+          "name": "getClearedEncounters",
+          "summary": "Returns cleared encounter ids tracking linear progression.",
+          "tags": [
+            "session",
+            "accessor",
+            "progression"
+          ],
+          "type": "function"
+        },
+        {
+          "complexity": "simple",
+          "filePath": "src/game/session.ts",
+          "id": "function:src/game/session.ts:isCurrentEncounterUnlocked",
+          "lineRange": [
+            136,
+            138
+          ],
+          "name": "isCurrentEncounterUnlocked",
+          "summary": "Checks whether an encounter is unlocked for the current progress.",
+          "tags": [
+            "session",
+            "encounter",
+            "progression"
+          ],
+          "type": "function"
+        },
+        {
+          "complexity": "simple",
+          "filePath": "src/game/session.ts",
+          "id": "function:src/game/session.ts:unlockAllEncounters",
+          "lineRange": [
+            140,
+            144
+          ],
+          "name": "unlockAllEncounters",
+          "summary": "Marks every encounter cleared and persists the unlock.",
+          "tags": [
+            "session",
+            "encounter",
+            "progression"
+          ],
+          "type": "function"
+        },
+        {
+          "complexity": "simple",
+          "filePath": "src/game/session.ts",
+          "id": "function:src/game/session.ts:resetEncounterProgression",
+          "lineRange": [
+            146,
+            151
+          ],
+          "name": "resetEncounterProgression",
+          "summary": "Clears persisted progression data and resets encounter state.",
+          "tags": [
+            "session",
+            "encounter",
+            "reset"
+          ],
+          "type": "function"
+        },
+        {
+          "complexity": "simple",
+          "filePath": "src/game/session.ts",
+          "id": "function:src/game/session.ts:getSelectedParty",
+          "lineRange": [
+            153,
+            155
+          ],
+          "name": "getSelectedParty",
+          "summary": "Returns the selected three-member party character ids.",
+          "tags": [
+            "session",
+            "accessor",
+            "party"
+          ],
+          "type": "function"
+        },
+        {
+          "complexity": "simple",
+          "filePath": "src/game/session.ts",
+          "id": "function:src/game/session.ts:setSelectedParty",
+          "lineRange": [
+            157,
+            169
+          ],
+          "name": "setSelectedParty",
+          "summary": "Persists the selected party and rebuilds the fight around it.",
+          "tags": [
+            "session",
+            "party",
+            "encounter"
+          ],
+          "type": "function"
+        },
+        {
+          "complexity": "simple",
+          "filePath": "src/game/session.ts",
+          "id": "function:src/game/session.ts:getCustomChordPresets",
+          "lineRange": [
+            171,
+            173
+          ],
+          "name": "getCustomChordPresets",
+          "summary": "Returns user-crafted custom chord presets.",
+          "tags": [
+            "session",
+            "accessor",
+            "chords"
+          ],
+          "type": "function"
+        },
+        {
+          "complexity": "simple",
+          "filePath": "src/game/session.ts",
+          "id": "function:src/game/session.ts:saveCustomChordPreset",
+          "lineRange": [
+            175,
+            186
+          ],
+          "name": "saveCustomChordPreset",
+          "summary": "Saves a custom chord progression preset and persists it.",
+          "tags": [
+            "session",
+            "chords",
+            "persistence"
+          ],
+          "type": "function"
+        },
+        {
+          "complexity": "simple",
+          "filePath": "src/game/session.ts",
+          "id": "function:src/game/session.ts:mutateArrangement",
+          "lineRange": [
+            188,
+            191
+          ],
+          "name": "mutateArrangement",
+          "summary": "Applies an updater to the arrangement and notifies subscribers.",
+          "tags": [
+            "session",
+            "arrangement",
+            "mutation"
+          ],
+          "type": "function"
+        },
+        {
+          "complexity": "moderate",
+          "filePath": "src/game/session.ts",
+          "id": "function:src/game/session.ts:handleStep",
+          "lineRange": [
+            198,
+            213
+          ],
+          "name": "handleStep",
+          "summary": "Advances one engine tick, records encounter clears, and notifies subscribers.",
+          "tags": [
+            "session",
+            "tick",
+            "combat-loop"
+          ],
+          "type": "function"
+        },
+        {
+          "complexity": "simple",
+          "filePath": "src/game/session.ts",
+          "id": "function:src/game/session.ts:moveFighter",
+          "lineRange": [
+            216,
+            222
+          ],
+          "name": "moveFighter",
+          "summary": "Moves a fighter to a new slot within the current fight.",
+          "tags": [
+            "session",
+            "positions",
+            "combat"
+          ],
+          "type": "function"
+        },
+        {
+          "complexity": "moderate",
+          "filePath": "src/game/session.ts",
+          "id": "function:src/game/session.ts:beginFight",
+          "lineRange": [
+            233,
+            255
+          ],
+          "name": "beginFight",
+          "summary": "Creates a fight locked to the arrangement key and reconciles potency and cooldowns.",
+          "tags": [
+            "session",
+            "combat",
+            "fight-setup"
+          ],
+          "type": "function"
+        },
+        {
+          "complexity": "simple",
+          "filePath": "src/game/session.ts",
+          "id": "function:src/game/session.ts:startFight",
+          "lineRange": [
+            258,
+            260
+          ],
+          "name": "startFight",
+          "summary": "Starts a fight with the given options.",
+          "tags": [
+            "session",
+            "combat",
+            "fight-setup"
+          ],
+          "type": "function"
+        },
+        {
+          "complexity": "simple",
+          "filePath": "src/game/session.ts",
+          "id": "function:src/game/session.ts:resetFight",
+          "lineRange": [
+            262,
+            264
+          ],
+          "name": "resetFight",
+          "summary": "Resets the current fight with the given options.",
+          "tags": [
+            "session",
+            "combat",
+            "reset"
+          ],
+          "type": "function"
+        },
+        {
+          "complexity": "simple",
+          "filePath": "src/game/session.ts",
+          "id": "function:src/game/session.ts:getFrontPerformerId",
+          "lineRange": [
+            271,
+            273
+          ],
+          "name": "getFrontPerformerId",
+          "summary": "Returns the performer id for a front-row lane index.",
+          "tags": [
+            "session",
+            "accessor",
+            "performer"
+          ],
+          "type": "function"
+        },
+        {
+          "complexity": "simple",
+          "filePath": "src/game/session.ts",
+          "id": "function:src/game/session.ts:saveMelodyPreset",
+          "lineRange": [
+            276,
+            281
+          ],
+          "name": "saveMelodyPreset",
+          "summary": "Saves the current melody set as a named combat preset.",
+          "tags": [
+            "session",
+            "presets",
+            "melody-set"
+          ],
+          "type": "function"
+        },
+        {
+          "complexity": "simple",
+          "filePath": "src/game/session.ts",
+          "id": "function:src/game/session.ts:recallMelodyPreset",
+          "lineRange": [
+            288,
+            296
+          ],
+          "name": "recallMelodyPreset",
+          "summary": "Recalls a cooled-down melody preset and refreshes lane potency.",
+          "tags": [
+            "session",
+            "presets",
+            "recall"
+          ],
+          "type": "function"
+        },
+        {
+          "complexity": "simple",
+          "filePath": "src/game/session.ts",
+          "id": "function:src/game/session.ts:saveToMelodyBank",
+          "lineRange": [
+            299,
+            309
+          ],
+          "name": "saveToMelodyBank",
+          "summary": "Saves the current tracks as a named melody bank template.",
+          "tags": [
+            "session",
+            "melody-bank",
+            "persistence"
+          ],
+          "type": "function"
+        },
+        {
+          "complexity": "simple",
+          "filePath": "src/game/session.ts",
+          "id": "function:src/game/session.ts:deleteFromMelodyBank",
+          "lineRange": [
+            312,
+            315
+          ],
+          "name": "deleteFromMelodyBank",
+          "summary": "Deletes a melody bank template by id.",
+          "tags": [
+            "session",
+            "melody-bank",
+            "delete"
+          ],
+          "type": "function"
+        },
+        {
+          "complexity": "simple",
+          "filePath": "src/game/session.ts",
+          "id": "function:src/game/session.ts:loadMelodyTemplate",
+          "lineRange": [
+            321,
+            333
+          ],
+          "name": "loadMelodyTemplate",
+          "summary": "Loads a bank template into the arrangement and reconciles potency.",
+          "tags": [
+            "session",
+            "melody-bank",
+            "arrangement"
+          ],
+          "type": "function"
+        },
+        {
+          "complexity": "simple",
+          "filePath": "src/game/session.ts",
+          "id": "function:src/game/session.ts:requestTemplateChart",
+          "lineRange": [
+            339,
+            352
+          ],
+          "name": "requestTemplateChart",
+          "summary": "Requests a combat QTE chart from a melody bank template.",
+          "tags": [
+            "session",
+            "qte",
+            "melody-bank"
+          ],
+          "type": "function"
+        },
+        {
+          "complexity": "simple",
+          "filePath": "src/game/session.ts",
+          "id": "function:src/game/session.ts:requestChordChart",
+          "lineRange": [
+            359,
+            365
+          ],
+          "name": "requestChordChart",
+          "summary": "Requests a combat QTE chart for a chord progression.",
+          "tags": [
+            "session",
+            "qte",
+            "chords"
+          ],
+          "type": "function"
+        },
+        {
+          "complexity": "simple",
+          "filePath": "src/game/session.ts",
+          "id": "function:src/game/session.ts:requestPresetChart",
+          "lineRange": [
+            372,
+            384
+          ],
+          "name": "requestPresetChart",
+          "summary": "Requests a combat QTE chart from a saved melody preset.",
+          "tags": [
+            "session",
+            "qte",
+            "presets"
+          ],
+          "type": "function"
+        },
+        {
+          "complexity": "simple",
+          "filePath": "src/game/session.ts",
+          "id": "function:src/game/session.ts:pressChartKey",
+          "lineRange": [
+            387,
+            390
+          ],
+          "name": "pressChartKey",
+          "summary": "Scores a QTE key press on the active chart.",
+          "tags": [
+            "session",
+            "qte",
+            "input"
+          ],
+          "type": "function"
+        },
+        {
+          "complexity": "simple",
+          "filePath": "src/game/session.ts",
+          "id": "function:src/game/session.ts:pressParryKey",
+          "lineRange": [
+            393,
+            396
+          ],
+          "name": "pressParryKey",
+          "summary": "Scores a parry key press on the active chart.",
+          "tags": [
+            "session",
+            "qte",
+            "parry"
+          ],
+          "type": "function"
+        },
+        {
+          "complexity": "simple",
+          "filePath": "src/game/session.ts",
+          "id": "function:src/game/session.ts:releaseParryKey",
+          "lineRange": [
+            399,
+            412
+          ],
+          "name": "releaseParryKey",
+          "summary": "Releases a held parry key on the active chart.",
+          "tags": [
+            "session",
+            "qte",
+            "parry"
+          ],
+          "type": "function"
+        },
+        {
+          "complexity": "simple",
+          "filePath": "src/game/session.ts",
+          "id": "function:src/game/session.ts:scoreQtePress",
+          "lineRange": [
+            414,
+            425
+          ],
+          "name": "scoreQtePress",
+          "summary": "Emits subscriber updates after scoring a QTE press.",
+          "tags": [
+            "session",
+            "qte",
+            "scoring"
+          ],
+          "type": "function"
+        },
+        {
+          "complexity": "simple",
+          "filePath": "src/game/session.ts",
+          "id": "function:src/game/session.ts:cancelChart",
+          "lineRange": [
+            428,
+            434
+          ],
+          "name": "cancelChart",
+          "summary": "Cancels the active QTE chart for a given reason.",
+          "tags": [
+            "session",
+            "qte",
+            "cancel"
+          ],
+          "type": "function"
+        },
+        {
+          "complexity": "simple",
+          "filePath": "src/game/session.ts",
+          "id": "function:src/game/session.ts:resetAll",
+          "lineRange": [
+            436,
+            447
+          ],
+          "name": "resetAll",
+          "summary": "Resets arrangement, fight, bank, and phase to defaults.",
+          "tags": [
+            "session",
+            "reset",
+            "state-management"
+          ],
+          "type": "function"
+        },
+        {
+          "complexity": "simple",
+          "filePath": "src/game/session.ts",
+          "id": "function:src/game/session.ts:subscribe",
+          "lineRange": [
+            449,
+            454
+          ],
+          "name": "subscribe",
+          "summary": "Subscribes a listener to session state changes.",
+          "tags": [
+            "session",
+            "observer",
+            "subscription"
+          ],
+          "type": "function"
+        }
+      ],
+      "edges": [
+        {
+          "direction": "forward",
+          "source": "file:src/game/session.ts",
+          "target": "function:src/game/session.ts:getArrangement",
+          "type": "contains",
+          "weight": 1
+        },
+        {
+          "direction": "forward",
+          "source": "file:src/game/session.ts",
+          "target": "function:src/game/session.ts:getFight",
+          "type": "contains",
+          "weight": 1
+        },
+        {
+          "direction": "forward",
+          "source": "file:src/game/session.ts",
+          "target": "function:src/game/session.ts:getPresets",
+          "type": "contains",
+          "weight": 1
+        },
+        {
+          "direction": "forward",
+          "source": "file:src/game/session.ts",
+          "target": "function:src/game/session.ts:getMelodyBank",
+          "type": "contains",
+          "weight": 1
+        },
+        {
+          "direction": "forward",
+          "source": "file:src/game/session.ts",
+          "target": "function:src/game/session.ts:getGamePhase",
+          "type": "contains",
+          "weight": 1
+        },
+        {
+          "direction": "forward",
+          "source": "file:src/game/session.ts",
+          "target": "function:src/game/session.ts:setGamePhase",
+          "type": "contains",
+          "weight": 1
+        },
+        {
+          "direction": "forward",
+          "source": "file:src/game/session.ts",
+          "target": "function:src/game/session.ts:toMenu",
+          "type": "contains",
+          "weight": 1
+        },
+        {
+          "direction": "forward",
+          "source": "file:src/game/session.ts",
+          "target": "function:src/game/session.ts:toPrep",
+          "type": "contains",
+          "weight": 1
+        },
+        {
+          "direction": "forward",
+          "source": "file:src/game/session.ts",
+          "target": "function:src/game/session.ts:getEncounterId",
+          "type": "contains",
+          "weight": 1
+        },
+        {
+          "direction": "forward",
+          "source": "file:src/game/session.ts",
+          "target": "function:src/game/session.ts:setEncounterId",
+          "type": "contains",
+          "weight": 1
+        },
+        {
+          "direction": "forward",
+          "source": "file:src/game/session.ts",
+          "target": "function:src/game/session.ts:getClearedEncounters",
+          "type": "contains",
+          "weight": 1
+        },
+        {
+          "direction": "forward",
+          "source": "file:src/game/session.ts",
+          "target": "function:src/game/session.ts:isCurrentEncounterUnlocked",
+          "type": "contains",
+          "weight": 1
+        },
+        {
+          "direction": "forward",
+          "source": "file:src/game/session.ts",
+          "target": "function:src/game/session.ts:unlockAllEncounters",
+          "type": "contains",
+          "weight": 1
+        },
+        {
+          "direction": "forward",
+          "source": "file:src/game/session.ts",
+          "target": "function:src/game/session.ts:resetEncounterProgression",
+          "type": "contains",
+          "weight": 1
+        },
+        {
+          "direction": "forward",
+          "source": "file:src/game/session.ts",
+          "target": "function:src/game/session.ts:getSelectedParty",
+          "type": "contains",
+          "weight": 1
+        },
+        {
+          "direction": "forward",
+          "source": "file:src/game/session.ts",
+          "target": "function:src/game/session.ts:setSelectedParty",
+          "type": "contains",
+          "weight": 1
+        },
+        {
+          "direction": "forward",
+          "source": "file:src/game/session.ts",
+          "target": "function:src/game/session.ts:getCustomChordPresets",
+          "type": "contains",
+          "weight": 1
+        },
+        {
+          "direction": "forward",
+          "source": "file:src/game/session.ts",
+          "target": "function:src/game/session.ts:saveCustomChordPreset",
+          "type": "contains",
+          "weight": 1
+        },
+        {
+          "direction": "forward",
+          "source": "file:src/game/session.ts",
+          "target": "function:src/game/session.ts:mutateArrangement",
+          "type": "contains",
+          "weight": 1
+        },
+        {
+          "direction": "forward",
+          "source": "file:src/game/session.ts",
+          "target": "function:src/game/session.ts:handleStep",
+          "type": "contains",
+          "weight": 1
+        },
+        {
+          "direction": "forward",
+          "source": "file:src/game/session.ts",
+          "target": "function:src/game/session.ts:moveFighter",
+          "type": "contains",
+          "weight": 1
+        },
+        {
+          "direction": "forward",
+          "source": "file:src/game/session.ts",
+          "target": "function:src/game/session.ts:beginFight",
+          "type": "contains",
+          "weight": 1
+        },
+        {
+          "direction": "forward",
+          "source": "file:src/game/session.ts",
+          "target": "function:src/game/session.ts:startFight",
+          "type": "contains",
+          "weight": 1
+        },
+        {
+          "direction": "forward",
+          "source": "file:src/game/session.ts",
+          "target": "function:src/game/session.ts:resetFight",
+          "type": "contains",
+          "weight": 1
+        },
+        {
+          "direction": "forward",
+          "source": "file:src/game/session.ts",
+          "target": "function:src/game/session.ts:getFrontPerformerId",
+          "type": "contains",
+          "weight": 1
+        },
+        {
+          "direction": "forward",
+          "source": "file:src/game/session.ts",
+          "target": "function:src/game/session.ts:saveMelodyPreset",
+          "type": "contains",
+          "weight": 1
+        },
+        {
+          "direction": "forward",
+          "source": "file:src/game/session.ts",
+          "target": "function:src/game/session.ts:recallMelodyPreset",
+          "type": "contains",
+          "weight": 1
+        },
+        {
+          "direction": "forward",
+          "source": "file:src/game/session.ts",
+          "target": "function:src/game/session.ts:saveToMelodyBank",
+          "type": "contains",
+          "weight": 1
+        },
+        {
+          "direction": "forward",
+          "source": "file:src/game/session.ts",
+          "target": "function:src/game/session.ts:deleteFromMelodyBank",
+          "type": "contains",
+          "weight": 1
+        },
+        {
+          "direction": "forward",
+          "source": "file:src/game/session.ts",
+          "target": "function:src/game/session.ts:loadMelodyTemplate",
+          "type": "contains",
+          "weight": 1
+        },
+        {
+          "direction": "forward",
+          "source": "file:src/game/session.ts",
+          "target": "function:src/game/session.ts:requestTemplateChart",
+          "type": "contains",
+          "weight": 1
+        },
+        {
+          "direction": "forward",
+          "source": "file:src/game/session.ts",
+          "target": "function:src/game/session.ts:requestChordChart",
+          "type": "contains",
+          "weight": 1
+        },
+        {
+          "direction": "forward",
+          "source": "file:src/game/session.ts",
+          "target": "function:src/game/session.ts:requestPresetChart",
+          "type": "contains",
+          "weight": 1
+        },
+        {
+          "direction": "forward",
+          "source": "file:src/game/session.ts",
+          "target": "function:src/game/session.ts:pressChartKey",
+          "type": "contains",
+          "weight": 1
+        },
+        {
+          "direction": "forward",
+          "source": "file:src/game/session.ts",
+          "target": "function:src/game/session.ts:pressParryKey",
+          "type": "contains",
+          "weight": 1
+        },
+        {
+          "direction": "forward",
+          "source": "file:src/game/session.ts",
+          "target": "function:src/game/session.ts:releaseParryKey",
+          "type": "contains",
+          "weight": 1
+        },
+        {
+          "direction": "forward",
+          "source": "file:src/game/session.ts",
+          "target": "function:src/game/session.ts:scoreQtePress",
+          "type": "contains",
+          "weight": 1
+        },
+        {
+          "direction": "forward",
+          "source": "file:src/game/session.ts",
+          "target": "function:src/game/session.ts:cancelChart",
+          "type": "contains",
+          "weight": 1
+        },
+        {
+          "direction": "forward",
+          "source": "file:src/game/session.ts",
+          "target": "function:src/game/session.ts:resetAll",
+          "type": "contains",
+          "weight": 1
+        },
+        {
+          "direction": "forward",
+          "source": "file:src/game/session.ts",
+          "target": "function:src/game/session.ts:subscribe",
+          "type": "contains",
+          "weight": 1
+        },
+        {
+          "direction": "forward",
+          "source": "file:src/game/session.ts",
+          "target": "function:src/game/session.ts:getArrangement",
+          "type": "exports",
+          "weight": 0.8
+        },
+        {
+          "direction": "forward",
+          "source": "file:src/game/session.ts",
+          "target": "function:src/game/session.ts:getFight",
+          "type": "exports",
+          "weight": 0.8
+        },
+        {
+          "direction": "forward",
+          "source": "file:src/game/session.ts",
+          "target": "function:src/game/session.ts:getPresets",
+          "type": "exports",
+          "weight": 0.8
+        },
+        {
+          "direction": "forward",
+          "source": "file:src/game/session.ts",
+          "target": "function:src/game/session.ts:getMelodyBank",
+          "type": "exports",
+          "weight": 0.8
+        },
+        {
+          "direction": "forward",
+          "source": "file:src/game/session.ts",
+          "target": "function:src/game/session.ts:getGamePhase",
+          "type": "exports",
+          "weight": 0.8
+        },
+        {
+          "direction": "forward",
+          "source": "file:src/game/session.ts",
+          "target": "function:src/game/session.ts:setGamePhase",
+          "type": "exports",
+          "weight": 0.8
+        },
+        {
+          "direction": "forward",
+          "source": "file:src/game/session.ts",
+          "target": "function:src/game/session.ts:toMenu",
+          "type": "exports",
+          "weight": 0.8
+        },
+        {
+          "direction": "forward",
+          "source": "file:src/game/session.ts",
+          "target": "function:src/game/session.ts:toPrep",
+          "type": "exports",
+          "weight": 0.8
+        },
+        {
+          "direction": "forward",
+          "source": "file:src/game/session.ts",
+          "target": "function:src/game/session.ts:getEncounterId",
+          "type": "exports",
+          "weight": 0.8
+        },
+        {
+          "direction": "forward",
+          "source": "file:src/game/session.ts",
+          "target": "function:src/game/session.ts:setEncounterId",
+          "type": "exports",
+          "weight": 0.8
+        },
+        {
+          "direction": "forward",
+          "source": "file:src/game/session.ts",
+          "target": "function:src/game/session.ts:getClearedEncounters",
+          "type": "exports",
+          "weight": 0.8
+        },
+        {
+          "direction": "forward",
+          "source": "file:src/game/session.ts",
+          "target": "function:src/game/session.ts:isCurrentEncounterUnlocked",
+          "type": "exports",
+          "weight": 0.8
+        },
+        {
+          "direction": "forward",
+          "source": "file:src/game/session.ts",
+          "target": "function:src/game/session.ts:unlockAllEncounters",
+          "type": "exports",
+          "weight": 0.8
+        },
+        {
+          "direction": "forward",
+          "source": "file:src/game/session.ts",
+          "target": "function:src/game/session.ts:resetEncounterProgression",
+          "type": "exports",
+          "weight": 0.8
+        },
+        {
+          "direction": "forward",
+          "source": "file:src/game/session.ts",
+          "target": "function:src/game/session.ts:getSelectedParty",
+          "type": "exports",
+          "weight": 0.8
+        },
+        {
+          "direction": "forward",
+          "source": "file:src/game/session.ts",
+          "target": "function:src/game/session.ts:setSelectedParty",
+          "type": "exports",
+          "weight": 0.8
+        },
+        {
+          "direction": "forward",
+          "source": "file:src/game/session.ts",
+          "target": "function:src/game/session.ts:getCustomChordPresets",
+          "type": "exports",
+          "weight": 0.8
+        },
+        {
+          "direction": "forward",
+          "source": "file:src/game/session.ts",
+          "target": "function:src/game/session.ts:saveCustomChordPreset",
+          "type": "exports",
+          "weight": 0.8
+        },
+        {
+          "direction": "forward",
+          "source": "file:src/game/session.ts",
+          "target": "function:src/game/session.ts:mutateArrangement",
+          "type": "exports",
+          "weight": 0.8
+        },
+        {
+          "direction": "forward",
+          "source": "file:src/game/session.ts",
+          "target": "function:src/game/session.ts:handleStep",
+          "type": "exports",
+          "weight": 0.8
+        },
+        {
+          "direction": "forward",
+          "source": "file:src/game/session.ts",
+          "target": "function:src/game/session.ts:moveFighter",
+          "type": "exports",
+          "weight": 0.8
+        },
+        {
+          "direction": "forward",
+          "source": "file:src/game/session.ts",
+          "target": "function:src/game/session.ts:startFight",
+          "type": "exports",
+          "weight": 0.8
+        },
+        {
+          "direction": "forward",
+          "source": "file:src/game/session.ts",
+          "target": "function:src/game/session.ts:resetFight",
+          "type": "exports",
+          "weight": 0.8
+        },
+        {
+          "direction": "forward",
+          "source": "file:src/game/session.ts",
+          "target": "function:src/game/session.ts:getFrontPerformerId",
+          "type": "exports",
+          "weight": 0.8
+        },
+        {
+          "direction": "forward",
+          "source": "file:src/game/session.ts",
+          "target": "function:src/game/session.ts:saveMelodyPreset",
+          "type": "exports",
+          "weight": 0.8
+        },
+        {
+          "direction": "forward",
+          "source": "file:src/game/session.ts",
+          "target": "function:src/game/session.ts:recallMelodyPreset",
+          "type": "exports",
+          "weight": 0.8
+        },
+        {
+          "direction": "forward",
+          "source": "file:src/game/session.ts",
+          "target": "function:src/game/session.ts:saveToMelodyBank",
+          "type": "exports",
+          "weight": 0.8
+        },
+        {
+          "direction": "forward",
+          "source": "file:src/game/session.ts",
+          "target": "function:src/game/session.ts:deleteFromMelodyBank",
+          "type": "exports",
+          "weight": 0.8
+        },
+        {
+          "direction": "forward",
+          "source": "file:src/game/session.ts",
+          "target": "function:src/game/session.ts:loadMelodyTemplate",
+          "type": "exports",
+          "weight": 0.8
+        },
+        {
+          "direction": "forward",
+          "source": "file:src/game/session.ts",
+          "target": "function:src/game/session.ts:requestTemplateChart",
+          "type": "exports",
+          "weight": 0.8
+        },
+        {
+          "direction": "forward",
+          "source": "file:src/game/session.ts",
+          "target": "function:src/game/session.ts:requestChordChart",
+          "type": "exports",
+          "weight": 0.8
+        },
+        {
+          "direction": "forward",
+          "source": "file:src/game/session.ts",
+          "target": "function:src/game/session.ts:requestPresetChart",
+          "type": "exports",
+          "weight": 0.8
+        },
+        {
+          "direction": "forward",
+          "source": "file:src/game/session.ts",
+          "target": "function:src/game/session.ts:pressChartKey",
+          "type": "exports",
+          "weight": 0.8
+        },
+        {
+          "direction": "forward",
+          "source": "file:src/game/session.ts",
+          "target": "function:src/game/session.ts:pressParryKey",
+          "type": "exports",
+          "weight": 0.8
+        },
+        {
+          "direction": "forward",
+          "source": "file:src/game/session.ts",
+          "target": "function:src/game/session.ts:releaseParryKey",
+          "type": "exports",
+          "weight": 0.8
+        },
+        {
+          "direction": "forward",
+          "source": "file:src/game/session.ts",
+          "target": "function:src/game/session.ts:cancelChart",
+          "type": "exports",
+          "weight": 0.8
+        },
+        {
+          "direction": "forward",
+          "source": "file:src/game/session.ts",
+          "target": "function:src/game/session.ts:resetAll",
+          "type": "exports",
+          "weight": 0.8
+        },
+        {
+          "direction": "forward",
+          "source": "file:src/game/session.ts",
+          "target": "function:src/game/session.ts:subscribe",
+          "type": "exports",
+          "weight": 0.8
+        }
+      ]
+    },
+    {
+      "filePath": "src/game/timbre.test.ts",
+      "nodes": [
+        {
+          "complexity": "moderate",
+          "filePath": "src/game/timbre.test.ts",
+          "id": "file:src/game/timbre.test.ts",
+          "name": "timbre.test.ts",
+          "summary": "Tests validating instrument timbre recipe completeness, distinct lead voices, neutral kit sanity, and beat-seat instrument resolution.",
+          "tags": [
+            "test",
+            "timbre",
+            "instruments",
+            "audio-data"
+          ],
+          "type": "file"
+        }
+      ],
+      "edges": []
+    },
+    {
+      "filePath": "src/persistence/storage.ts",
+      "nodes": [
+        {
+          "id": "file:src/persistence/storage.ts",
+          "type": "file",
+          "name": "storage.ts",
+          "filePath": "src/persistence/storage.ts",
+          "summary": "Guarded localStorage helpers persisting cleared encounters, selected party, custom chords, and tutorial state.",
+          "tags": [
+            "persistence",
+            "storage",
+            "utility",
+            "tested"
+          ],
+          "complexity": "moderate"
+        },
+        {
+          "id": "function:src/persistence/storage.ts:loadClearedEncounters",
+          "type": "function",
+          "name": "loadClearedEncounters",
+          "filePath": "src/persistence/storage.ts",
+          "lineRange": [
+            20,
+            30
+          ],
+          "summary": "Reads the cleared-encounter id list from localStorage, returning null when absent or invalid.",
+          "tags": [
+            "persistence",
+            "storage",
+            "loader"
+          ],
+          "complexity": "simple"
+        },
+        {
+          "id": "function:src/persistence/storage.ts:saveClearedEncounters",
+          "type": "function",
+          "name": "saveClearedEncounters",
+          "filePath": "src/persistence/storage.ts",
+          "lineRange": [
+            32,
+            39
+          ],
+          "summary": "Writes the cleared-encounter id list to localStorage as JSON.",
+          "tags": [
+            "persistence",
+            "storage",
+            "saver"
+          ],
+          "complexity": "simple"
+        },
+        {
+          "id": "function:src/persistence/storage.ts:loadSelectedParty",
+          "type": "function",
+          "name": "loadSelectedParty",
+          "filePath": "src/persistence/storage.ts",
+          "lineRange": [
+            41,
+            51
+          ],
+          "summary": "Reads the selected 3-character party from localStorage, rejecting wrong-length payloads.",
+          "tags": [
+            "persistence",
+            "storage",
+            "loader"
+          ],
+          "complexity": "simple"
+        },
+        {
+          "id": "function:src/persistence/storage.ts:saveSelectedParty",
+          "type": "function",
+          "name": "saveSelectedParty",
+          "filePath": "src/persistence/storage.ts",
+          "lineRange": [
+            53,
+            60
+          ],
+          "summary": "Writes the selected party id list to localStorage as JSON.",
+          "tags": [
+            "persistence",
+            "storage",
+            "saver"
+          ],
+          "complexity": "simple"
+        },
+        {
+          "id": "function:src/persistence/storage.ts:loadCustomChords",
+          "type": "function",
+          "name": "loadCustomChords",
+          "filePath": "src/persistence/storage.ts",
+          "lineRange": [
+            62,
+            72
+          ],
+          "summary": "Reads saved custom chord presets from localStorage, returning null when absent or invalid.",
+          "tags": [
+            "persistence",
+            "storage",
+            "loader"
+          ],
+          "complexity": "simple"
+        },
+        {
+          "id": "function:src/persistence/storage.ts:saveCustomChords",
+          "type": "function",
+          "name": "saveCustomChords",
+          "filePath": "src/persistence/storage.ts",
+          "lineRange": [
+            74,
+            81
+          ],
+          "summary": "Writes custom chord presets to localStorage as JSON.",
+          "tags": [
+            "persistence",
+            "storage",
+            "saver"
+          ],
+          "complexity": "simple"
+        },
+        {
+          "id": "function:src/persistence/storage.ts:loadTutorialSeen",
+          "type": "function",
+          "name": "loadTutorialSeen",
+          "filePath": "src/persistence/storage.ts",
+          "lineRange": [
+            83,
+            90
+          ],
+          "summary": "Reads the tutorial-seen boolean flag from localStorage.",
+          "tags": [
+            "persistence",
+            "storage",
+            "loader"
+          ],
+          "complexity": "simple"
+        },
+        {
+          "id": "function:src/persistence/storage.ts:saveTutorialSeen",
+          "type": "function",
+          "name": "saveTutorialSeen",
+          "filePath": "src/persistence/storage.ts",
+          "lineRange": [
+            92,
+            99
+          ],
+          "summary": "Writes the tutorial-seen boolean flag to localStorage.",
+          "tags": [
+            "persistence",
+            "storage",
+            "saver"
+          ],
+          "complexity": "simple"
+        },
+        {
+          "id": "function:src/persistence/storage.ts:clearAllPersistedData",
+          "type": "function",
+          "name": "clearAllPersistedData",
+          "filePath": "src/persistence/storage.ts",
+          "lineRange": [
+            101,
+            110
+          ],
+          "summary": "Removes all sound-angels keys from localStorage for a full persistence reset.",
+          "tags": [
+            "persistence",
+            "storage",
+            "cleanup"
+          ],
+          "complexity": "simple"
+        }
+      ],
+      "edges": [
+        {
+          "source": "file:src/persistence/storage.ts",
+          "target": "function:src/persistence/storage.ts:loadClearedEncounters",
+          "type": "contains",
+          "direction": "forward",
+          "weight": 1
+        },
+        {
+          "source": "file:src/persistence/storage.ts",
+          "target": "function:src/persistence/storage.ts:loadClearedEncounters",
+          "type": "exports",
+          "direction": "forward",
+          "weight": 0.8
+        },
+        {
+          "source": "file:src/persistence/storage.ts",
+          "target": "function:src/persistence/storage.ts:saveClearedEncounters",
+          "type": "contains",
+          "direction": "forward",
+          "weight": 1
+        },
+        {
+          "source": "file:src/persistence/storage.ts",
+          "target": "function:src/persistence/storage.ts:saveClearedEncounters",
+          "type": "exports",
+          "direction": "forward",
+          "weight": 0.8
+        },
+        {
+          "source": "file:src/persistence/storage.ts",
+          "target": "function:src/persistence/storage.ts:loadSelectedParty",
+          "type": "contains",
+          "direction": "forward",
+          "weight": 1
+        },
+        {
+          "source": "file:src/persistence/storage.ts",
+          "target": "function:src/persistence/storage.ts:loadSelectedParty",
+          "type": "exports",
+          "direction": "forward",
+          "weight": 0.8
+        },
+        {
+          "source": "file:src/persistence/storage.ts",
+          "target": "function:src/persistence/storage.ts:saveSelectedParty",
+          "type": "contains",
+          "direction": "forward",
+          "weight": 1
+        },
+        {
+          "source": "file:src/persistence/storage.ts",
+          "target": "function:src/persistence/storage.ts:saveSelectedParty",
+          "type": "exports",
+          "direction": "forward",
+          "weight": 0.8
+        },
+        {
+          "source": "file:src/persistence/storage.ts",
+          "target": "function:src/persistence/storage.ts:loadCustomChords",
+          "type": "contains",
+          "direction": "forward",
+          "weight": 1
+        },
+        {
+          "source": "file:src/persistence/storage.ts",
+          "target": "function:src/persistence/storage.ts:loadCustomChords",
+          "type": "exports",
+          "direction": "forward",
+          "weight": 0.8
+        },
+        {
+          "source": "file:src/persistence/storage.ts",
+          "target": "function:src/persistence/storage.ts:saveCustomChords",
+          "type": "contains",
+          "direction": "forward",
+          "weight": 1
+        },
+        {
+          "source": "file:src/persistence/storage.ts",
+          "target": "function:src/persistence/storage.ts:saveCustomChords",
+          "type": "exports",
+          "direction": "forward",
+          "weight": 0.8
+        },
+        {
+          "source": "file:src/persistence/storage.ts",
+          "target": "function:src/persistence/storage.ts:loadTutorialSeen",
+          "type": "contains",
+          "direction": "forward",
+          "weight": 1
+        },
+        {
+          "source": "file:src/persistence/storage.ts",
+          "target": "function:src/persistence/storage.ts:loadTutorialSeen",
+          "type": "exports",
+          "direction": "forward",
+          "weight": 0.8
+        },
+        {
+          "source": "file:src/persistence/storage.ts",
+          "target": "function:src/persistence/storage.ts:saveTutorialSeen",
+          "type": "contains",
+          "direction": "forward",
+          "weight": 1
+        },
+        {
+          "source": "file:src/persistence/storage.ts",
+          "target": "function:src/persistence/storage.ts:saveTutorialSeen",
+          "type": "exports",
+          "direction": "forward",
+          "weight": 0.8
+        },
+        {
+          "source": "file:src/persistence/storage.ts",
+          "target": "function:src/persistence/storage.ts:clearAllPersistedData",
+          "type": "contains",
+          "direction": "forward",
+          "weight": 1
+        },
+        {
+          "source": "file:src/persistence/storage.ts",
+          "target": "function:src/persistence/storage.ts:clearAllPersistedData",
+          "type": "exports",
+          "direction": "forward",
+          "weight": 0.8
+        }
+      ]
+    },
+    {
+      "filePath": "src/state/leaveCombat.test.ts",
+      "nodes": [],
+      "edges": []
+    },
+    {
+      "filePath": "src/state/useSessionStore.ts",
+      "nodes": [
+        {
+          "id": "file:src/state/useSessionStore.ts",
+          "type": "file",
+          "name": "useSessionStore.ts",
+          "filePath": "src/state/useSessionStore.ts",
+          "summary": "Zustand mirror of the engine session wiring arrangement, combat, audio player, and WASD performance actions.",
+          "tags": [
+            "state",
+            "singleton",
+            "service",
+            "tested"
+          ],
+          "complexity": "complex"
+        }
+      ],
+      "edges": []
+    }
+  ]
+}

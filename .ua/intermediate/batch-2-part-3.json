@@ -1,0 +1,316 @@
+{
+  "nodes": [
+    {
+      "id": "file:src/game/phase.ts",
+      "type": "file",
+      "name": "phase.ts",
+      "filePath": "src/game/phase.ts",
+      "summary": "Game state machine: the menu -> prep <-> studio -> combat -> victory/defeat phases, with guards and the table of valid transitions.",
+      "tags": [
+        "state-machine",
+        "validation",
+        "game-flow"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:src/game/phase.ts:isGamePhase",
+      "type": "function",
+      "name": "isGamePhase",
+      "filePath": "src/game/phase.ts",
+      "lineRange": [
+        15,
+        17
+      ],
+      "summary": "Type guard testing a value against the known game phases.",
+      "tags": [
+        "validation",
+        "type-guard",
+        "state-machine"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:src/game/phase.ts:isCombatActive",
+      "type": "function",
+      "name": "isCombatActive",
+      "filePath": "src/game/phase.ts",
+      "lineRange": [
+        19,
+        21
+      ],
+      "summary": "True when the current phase is combat.",
+      "tags": [
+        "validation",
+        "state-machine",
+        "combat"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:src/game/phase.ts:canFreelyEditArrangement",
+      "type": "function",
+      "name": "canFreelyEditArrangement",
+      "filePath": "src/game/phase.ts",
+      "lineRange": [
+        23,
+        25
+      ],
+      "summary": "True in menu, prep or studio - the phases where the arrangement can be edited without disturbing a live fight.",
+      "tags": [
+        "validation",
+        "state-machine",
+        "arrangement"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:src/game/phase.ts:isValidTransition",
+      "type": "function",
+      "name": "isValidTransition",
+      "filePath": "src/game/phase.ts",
+      "lineRange": [
+        36,
+        38
+      ],
+      "summary": "Checks a phase change against the VALID_TRANSITIONS table of the game state machine.",
+      "tags": [
+        "validation",
+        "state-machine"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:src/game/positions.ts",
+      "type": "file",
+      "name": "positions.ts",
+      "filePath": "src/game/positions.ts",
+      "summary": "Deck <-> position assignment: the chord slot holds the back row, attackers hold the front row, and deck membership is derived rather than stored so it cannot desync.",
+      "tags": [
+        "data-model",
+        "formation",
+        "party"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:src/game/positions.ts:defaultSlots",
+      "type": "function",
+      "name": "defaultSlots",
+      "filePath": "src/game/positions.ts",
+      "lineRange": [
+        15,
+        20
+      ],
+      "summary": "Assigns the party's first member to the chord slot and the next up-to-three to the front row.",
+      "tags": [
+        "factory",
+        "defaults",
+        "formation"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:src/game/positions.ts:deckIds",
+      "type": "function",
+      "name": "deckIds",
+      "filePath": "src/game/positions.ts",
+      "lineRange": [
+        23,
+        26
+      ],
+      "summary": "Derives which party members sit in the deck (unassigned); membership is computed, never stored, so it cannot desync.",
+      "tags": [
+        "derivation",
+        "formation",
+        "party"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:src/game/positions.ts:assignToSlot",
+      "type": "function",
+      "name": "assignToSlot",
+      "filePath": "src/game/positions.ts",
+      "lineRange": [
+        36,
+        42
+      ],
+      "summary": "Moves a fighter into the chord or front slot, clearing any previous placement and keeping the front row at MAX_FRONT attackers.",
+      "tags": [
+        "immutable-update",
+        "formation",
+        "validation"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:src/game/positions.ts:removeToDeck",
+      "type": "function",
+      "name": "removeToDeck",
+      "filePath": "src/game/positions.ts",
+      "lineRange": [
+        45,
+        47
+      ],
+      "summary": "Sends a fighter back to the deck by clearing them from every slot.",
+      "tags": [
+        "immutable-update",
+        "formation"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:src/game/positions.ts:slotOf",
+      "type": "function",
+      "name": "slotOf",
+      "filePath": "src/game/positions.ts",
+      "lineRange": [
+        50,
+        54
+      ],
+      "summary": "Reports which slot holds a fighter, or null when they are in the deck.",
+      "tags": [
+        "read",
+        "formation",
+        "lookup"
+      ],
+      "complexity": "simple"
+    }
+  ],
+  "edges": [
+    {
+      "source": "file:src/game/phase.ts",
+      "target": "function:src/game/phase.ts:isGamePhase",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/game/phase.ts",
+      "target": "function:src/game/phase.ts:isGamePhase",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/game/phase.ts",
+      "target": "function:src/game/phase.ts:isCombatActive",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/game/phase.ts",
+      "target": "function:src/game/phase.ts:isCombatActive",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/game/phase.ts",
+      "target": "function:src/game/phase.ts:canFreelyEditArrangement",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/game/phase.ts",
+      "target": "function:src/game/phase.ts:canFreelyEditArrangement",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/game/phase.ts",
+      "target": "function:src/game/phase.ts:isValidTransition",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/game/phase.ts",
+      "target": "function:src/game/phase.ts:isValidTransition",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/game/positions.ts",
+      "target": "file:src/game/arrangement.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/game/positions.ts",
+      "target": "function:src/game/positions.ts:defaultSlots",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/game/positions.ts",
+      "target": "function:src/game/positions.ts:defaultSlots",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/game/positions.ts",
+      "target": "function:src/game/positions.ts:deckIds",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/game/positions.ts",
+      "target": "function:src/game/positions.ts:deckIds",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/game/positions.ts",
+      "target": "function:src/game/positions.ts:assignToSlot",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/game/positions.ts",
+      "target": "function:src/game/positions.ts:assignToSlot",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/game/positions.ts",
+      "target": "function:src/game/positions.ts:removeToDeck",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/game/positions.ts",
+      "target": "function:src/game/positions.ts:removeToDeck",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/game/positions.ts",
+      "target": "function:src/game/positions.ts:slotOf",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/game/positions.ts",
+      "target": "function:src/game/positions.ts:slotOf",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    }
+  ]
+}

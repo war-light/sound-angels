@@ -1,0 +1,612 @@
+{
+  "nodes": [
+    {
+      "id": "file:src/game/loadout.ts",
+      "type": "file",
+      "name": "loadout.ts",
+      "filePath": "src/game/loadout.ts",
+      "summary": "Card loadout model: the ids of the groove and melody cards a player brings into a fight, with caps, copy-on-write auto-selection and pruning against the live banks.",
+      "tags": [
+        "data-model",
+        "loadout",
+        "validation"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:src/game/loadout.ts:createDefaultLoadout",
+      "type": "function",
+      "name": "createDefaultLoadout",
+      "filePath": "src/game/loadout.ts",
+      "lineRange": [
+        22,
+        24
+      ],
+      "summary": "Builds the starting card bag: the default rig plus the default melody card.",
+      "tags": [
+        "factory",
+        "defaults",
+        "loadout"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:src/game/loadout.ts:toggleLoadoutId",
+      "type": "function",
+      "name": "toggleLoadoutId",
+      "filePath": "src/game/loadout.ts",
+      "lineRange": [
+        27,
+        34
+      ],
+      "summary": "Adds or removes a card id from a bag, respecting the max cap and the one-card floor.",
+      "tags": [
+        "immutable-update",
+        "loadout",
+        "validation"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:src/game/loadout.ts:selectLoadoutId",
+      "type": "function",
+      "name": "selectLoadoutId",
+      "filePath": "src/game/loadout.ts",
+      "lineRange": [
+        40,
+        50
+      ],
+      "summary": "Auto-selects a card, dropping the previous one first when the bag is full; used by the copy-on-write fork path.",
+      "tags": [
+        "immutable-update",
+        "loadout",
+        "copy-on-write"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:src/game/loadout.ts:sanitizeLoadout",
+      "type": "function",
+      "name": "sanitizeLoadout",
+      "filePath": "src/game/loadout.ts",
+      "lineRange": [
+        56,
+        67
+      ],
+      "summary": "Prunes ids that no longer resolve against the live card banks, falling back to the default card so a bag is never empty.",
+      "tags": [
+        "validation",
+        "loadout",
+        "reconciliation"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:src/game/loadout.ts:parseLoadout",
+      "type": "function",
+      "name": "parseLoadout",
+      "filePath": "src/game/loadout.ts",
+      "lineRange": [
+        70,
+        76
+      ],
+      "summary": "Parses a persisted loadout, keeping only string ids and returning null when either list is malformed.",
+      "tags": [
+        "parsing",
+        "persistence",
+        "validation"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:src/game/melodyBank.ts",
+      "type": "file",
+      "name": "melodyBank.ts",
+      "filePath": "src/game/melodyBank.ts",
+      "summary": "Melody card bank: preset and player-authored [slot][bar][step] loop + chord snapshots, the three starter cards, and clone/save/update/delete helpers.",
+      "tags": [
+        "data-model",
+        "melody-card",
+        "seed-data",
+        "persistence"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "function:src/game/melodyBank.ts:isPresetMelodyCard",
+      "type": "function",
+      "name": "isPresetMelodyCard",
+      "filePath": "src/game/melodyBank.ts",
+      "lineRange": [
+        34,
+        36
+      ],
+      "summary": "True when an id belongs to one of the three shipped preset melody cards.",
+      "tags": [
+        "validation",
+        "melody-card",
+        "presets"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:src/game/melodyBank.ts:cloneTracks",
+      "type": "function",
+      "name": "cloneTracks",
+      "filePath": "src/game/melodyBank.ts",
+      "lineRange": [
+        38,
+        40
+      ],
+      "summary": "Deep-copies a [slot][bar][step] track grid so note events are never shared.",
+      "tags": [
+        "cloning",
+        "immutability",
+        "melody"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:src/game/melodyBank.ts:cloneTemplate",
+      "type": "function",
+      "name": "cloneTemplate",
+      "filePath": "src/game/melodyBank.ts",
+      "lineRange": [
+        42,
+        49
+      ],
+      "summary": "Deep-copies a melody template including tracks, chords and tags.",
+      "tags": [
+        "cloning",
+        "immutability",
+        "melody-card"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:src/game/melodyBank.ts:listMelodyCards",
+      "type": "function",
+      "name": "listMelodyCards",
+      "filePath": "src/game/melodyBank.ts",
+      "lineRange": [
+        52,
+        54
+      ],
+      "summary": "Returns every card in the bank as a defensive copy.",
+      "tags": [
+        "read",
+        "melody-card",
+        "bank"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:src/game/melodyBank.ts:createDawnAnthem",
+      "type": "function",
+      "name": "createDawnAnthem",
+      "filePath": "src/game/melodyBank.ts",
+      "lineRange": [
+        81,
+        111
+      ],
+      "summary": "Authors the Dawn Anthem starter card: a balanced strings-plus-piano motif over i-VI, mirrored to fill a 4-bar loop.",
+      "tags": [
+        "factory",
+        "seed-data",
+        "melody-card",
+        "preset"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:src/game/melodyBank.ts:createStaccatoFlight",
+      "type": "function",
+      "name": "createStaccatoFlight",
+      "filePath": "src/game/melodyBank.ts",
+      "lineRange": [
+        113,
+        137
+      ],
+      "summary": "Authors the Staccato Flight starter card: rapid 16th-note stabs aimed at evasive horde enemies, over i-iv.",
+      "tags": [
+        "factory",
+        "seed-data",
+        "melody-card",
+        "preset"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:src/game/melodyBank.ts:createSolemnGround",
+      "type": "function",
+      "name": "createSolemnGround",
+      "filePath": "src/game/melodyBank.ts",
+      "lineRange": [
+        139,
+        164
+      ],
+      "summary": "Authors the Solemn Ground starter card: long sustained lines with brass punctuation for high-armor tanks, over i-V.",
+      "tags": [
+        "factory",
+        "seed-data",
+        "melody-card",
+        "preset"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:src/game/melodyBank.ts:createDefaultMelodyBank",
+      "type": "function",
+      "name": "createDefaultMelodyBank",
+      "filePath": "src/game/melodyBank.ts",
+      "lineRange": [
+        166,
+        175
+      ],
+      "summary": "Builds the starter bank of three preset cards (Dawn Anthem, Staccato Flight, Solemn Ground) keyed by id.",
+      "tags": [
+        "factory",
+        "defaults",
+        "melody-card",
+        "seed-data"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:src/game/melodyBank.ts:saveTemplate",
+      "type": "function",
+      "name": "saveTemplate",
+      "filePath": "src/game/melodyBank.ts",
+      "lineRange": [
+        181,
+        208
+      ],
+      "summary": "Snapshots tracks plus chords into a named card, generating an id when needed and labelling preset ids as preset while everything else becomes custom.",
+      "tags": [
+        "factory",
+        "melody-card",
+        "persistence"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:src/game/melodyBank.ts:updateTemplate",
+      "type": "function",
+      "name": "updateTemplate",
+      "filePath": "src/game/melodyBank.ts",
+      "lineRange": [
+        211,
+        222
+      ],
+      "summary": "Overwrites a custom card's tracks and chords in place, a no-op for unknown ids.",
+      "tags": [
+        "immutable-update",
+        "melody-card"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:src/game/melodyBank.ts:deleteTemplate",
+      "type": "function",
+      "name": "deleteTemplate",
+      "filePath": "src/game/melodyBank.ts",
+      "lineRange": [
+        224,
+        229
+      ],
+      "summary": "Removes a card from the bank, returning the bank unchanged for unknown ids.",
+      "tags": [
+        "immutable-update",
+        "melody-card",
+        "deletion"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:src/game/melodyBank.ts:getTemplate",
+      "type": "function",
+      "name": "getTemplate",
+      "filePath": "src/game/melodyBank.ts",
+      "lineRange": [
+        231,
+        233
+      ],
+      "summary": "Looks up a melody card by id.",
+      "tags": [
+        "read",
+        "melody-card",
+        "lookup"
+      ],
+      "complexity": "simple"
+    }
+  ],
+  "edges": [
+    {
+      "source": "file:src/game/loadout.ts",
+      "target": "file:src/game/melodyBank.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/game/loadout.ts",
+      "target": "function:src/game/loadout.ts:createDefaultLoadout",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/game/loadout.ts",
+      "target": "function:src/game/loadout.ts:createDefaultLoadout",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/game/loadout.ts",
+      "target": "function:src/game/loadout.ts:toggleLoadoutId",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/game/loadout.ts",
+      "target": "function:src/game/loadout.ts:toggleLoadoutId",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/game/loadout.ts",
+      "target": "function:src/game/loadout.ts:selectLoadoutId",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/game/loadout.ts",
+      "target": "function:src/game/loadout.ts:selectLoadoutId",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/game/loadout.ts",
+      "target": "function:src/game/loadout.ts:sanitizeLoadout",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/game/loadout.ts",
+      "target": "function:src/game/loadout.ts:sanitizeLoadout",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/game/loadout.ts",
+      "target": "function:src/game/loadout.ts:parseLoadout",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/game/loadout.ts",
+      "target": "function:src/game/loadout.ts:parseLoadout",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/game/melodyBank.ts",
+      "target": "file:src/game/arrangement.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/game/melodyBank.ts",
+      "target": "function:src/game/melodyBank.ts:isPresetMelodyCard",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/game/melodyBank.ts",
+      "target": "function:src/game/melodyBank.ts:isPresetMelodyCard",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/game/melodyBank.ts",
+      "target": "function:src/game/melodyBank.ts:cloneTracks",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/game/melodyBank.ts",
+      "target": "function:src/game/melodyBank.ts:cloneTracks",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/game/melodyBank.ts",
+      "target": "function:src/game/melodyBank.ts:cloneTemplate",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/game/melodyBank.ts",
+      "target": "function:src/game/melodyBank.ts:cloneTemplate",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/game/melodyBank.ts",
+      "target": "function:src/game/melodyBank.ts:listMelodyCards",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/game/melodyBank.ts",
+      "target": "function:src/game/melodyBank.ts:listMelodyCards",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/game/melodyBank.ts",
+      "target": "function:src/game/melodyBank.ts:createDawnAnthem",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/game/melodyBank.ts",
+      "target": "function:src/game/melodyBank.ts:createStaccatoFlight",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/game/melodyBank.ts",
+      "target": "function:src/game/melodyBank.ts:createSolemnGround",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/game/melodyBank.ts",
+      "target": "function:src/game/melodyBank.ts:createDefaultMelodyBank",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/game/melodyBank.ts",
+      "target": "function:src/game/melodyBank.ts:createDefaultMelodyBank",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/game/melodyBank.ts",
+      "target": "function:src/game/melodyBank.ts:saveTemplate",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/game/melodyBank.ts",
+      "target": "function:src/game/melodyBank.ts:saveTemplate",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/game/melodyBank.ts",
+      "target": "function:src/game/melodyBank.ts:updateTemplate",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/game/melodyBank.ts",
+      "target": "function:src/game/melodyBank.ts:updateTemplate",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/game/melodyBank.ts",
+      "target": "function:src/game/melodyBank.ts:deleteTemplate",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/game/melodyBank.ts",
+      "target": "function:src/game/melodyBank.ts:deleteTemplate",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/game/melodyBank.ts",
+      "target": "function:src/game/melodyBank.ts:getTemplate",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/game/melodyBank.ts",
+      "target": "function:src/game/melodyBank.ts:getTemplate",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:src/game/melodyBank.ts:listMelodyCards",
+      "target": "function:src/game/melodyBank.ts:cloneTemplate",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:src/game/melodyBank.ts:cloneTemplate",
+      "target": "function:src/game/melodyBank.ts:cloneTracks",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:src/game/melodyBank.ts:createDefaultMelodyBank",
+      "target": "function:src/game/melodyBank.ts:createDawnAnthem",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:src/game/melodyBank.ts:createDefaultMelodyBank",
+      "target": "function:src/game/melodyBank.ts:createStaccatoFlight",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:src/game/melodyBank.ts:createDefaultMelodyBank",
+      "target": "function:src/game/melodyBank.ts:createSolemnGround",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:src/game/melodyBank.ts:saveTemplate",
+      "target": "function:src/game/melodyBank.ts:isPresetMelodyCard",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:src/game/melodyBank.ts:saveTemplate",
+      "target": "function:src/game/melodyBank.ts:cloneTracks",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:src/game/melodyBank.ts:updateTemplate",
+      "target": "function:src/game/melodyBank.ts:cloneTracks",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    }
+  ]
+}

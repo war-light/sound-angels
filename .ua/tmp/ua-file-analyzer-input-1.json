@@ -1,0 +1,112 @@
+{
+  "projectRoot": "/home/david/Personal Projects/sound-angels",
+  "batchFiles": [
+    {
+      "path": "src/data/chords.ts",
+      "language": "typescript",
+      "sizeLines": 63,
+      "fileCategory": "code"
+    },
+    {
+      "path": "src/data/encounters.ts",
+      "language": "typescript",
+      "sizeLines": 90,
+      "fileCategory": "code"
+    },
+    {
+      "path": "src/data/enemies.ts",
+      "language": "typescript",
+      "sizeLines": 227,
+      "fileCategory": "code"
+    },
+    {
+      "path": "src/data/roster.ts",
+      "language": "typescript",
+      "sizeLines": 116,
+      "fileCategory": "code"
+    },
+    {
+      "path": "src/game/combat.ts",
+      "language": "typescript",
+      "sizeLines": 858,
+      "fileCategory": "code"
+    },
+    {
+      "path": "src/game/keys.ts",
+      "language": "typescript",
+      "sizeLines": 38,
+      "fileCategory": "code"
+    },
+    {
+      "path": "src/game/parryChart.ts",
+      "language": "typescript",
+      "sizeLines": 583,
+      "fileCategory": "code"
+    },
+    {
+      "path": "src/game/perform.ts",
+      "language": "typescript",
+      "sizeLines": 82,
+      "fileCategory": "code"
+    },
+    {
+      "path": "src/game/qte.ts",
+      "language": "typescript",
+      "sizeLines": 647,
+      "fileCategory": "code"
+    },
+    {
+      "path": "src/game/theory.ts",
+      "language": "typescript",
+      "sizeLines": 273,
+      "fileCategory": "code"
+    },
+    {
+      "path": "src/game/units.ts",
+      "language": "typescript",
+      "sizeLines": 156,
+      "fileCategory": "code"
+    }
+  ],
+  "batchImportData": {
+    "src/data/chords.ts": [
+      "src/game/theory.ts"
+    ],
+    "src/data/encounters.ts": [
+      "src/data/enemies.ts"
+    ],
+    "src/data/enemies.ts": [
+      "src/game/parryChart.ts"
+    ],
+    "src/data/roster.ts": [],
+    "src/game/combat.ts": [
+      "src/data/chords.ts",
+      "src/data/enemies.ts",
+      "src/data/roster.ts",
+      "src/game/arrangement.ts",
+      "src/game/keys.ts",
+      "src/game/parryChart.ts",
+      "src/game/perform.ts",
+      "src/game/positions.ts",
+      "src/game/qte.ts",
+      "src/game/theory.ts",
+      "src/game/units.ts"
+    ],
+    "src/game/keys.ts": [
+      "src/game/theory.ts"
+    ],
+    "src/game/parryChart.ts": [
+      "src/game/arrangement.ts",
+      "src/game/perform.ts",
+      "src/game/qte.ts",
+      "src/game/theory.ts"
+    ],
+    "src/game/perform.ts": [],
+    "src/game/qte.ts": [
+      "src/game/arrangement.ts",
+      "src/game/perform.ts"
+    ],
+    "src/game/theory.ts": [],
+    "src/game/units.ts": []
+  }
+}

@@ -1,0 +1,163 @@
+{
+  "src/game/arrangement.ts": [
+    {
+      "path": "src/game/theory.ts",
+      "batchIndex": 1,
+      "symbols": [
+        "DEFAULT_KEY",
+        "pitchClassOfMidi",
+        "midiToNote",
+        "degreeToMidi",
+        "romanToChord",
+        "romanFunction",
+        "voiceLeadingScore",
+        "diatonicFitScore",
+        "syntaxScore",
+        "scoreProgression",
+        "tensionOf"
+      ]
+    },
+    {
+      "path": "src/game/combat.ts",
+      "batchIndex": 1,
+      "symbols": [
+        "refreshPotency",
+        "reconcilePotency",
+        "createFight",
+        "aliveParty",
+        "aliveEnemies",
+        "moveFighter",
+        "qteLocked",
+        "melodyMuted",
+        "requestChordQte",
+        "requestPresetQte",
+        "pressQteKey",
+        "releaseQteKey",
+        "cancelQte",
+        "keeperInstrument",
+        "hasLiveAttacker",
+        "defaultPerformerId",
+        "laneAttacker",
+        "performSlot",
+        "computeNoteDamage",
+        "advanceTick"
+      ]
+    },
+    {
+      "path": "src/game/parryChart.ts",
+      "batchIndex": 1,
+      "symbols": [
+        "PARRY_LANES",
+        "laneToParryKey",
+        "parryKeyToLane",
+        "degreeToParryLane",
+        "DEFAULT_PARRY_PARAMS",
+        "PARRY_MOTIFS",
+        "parryParamsFor",
+        "PARRY_SLOT_TEMPLATES",
+        "romanRoot",
+        "laneToChordDegree",
+        "generateParryChart"
+      ]
+    },
+    {
+      "path": "src/game/qte.ts",
+      "batchIndex": 1,
+      "symbols": [
+        "degreeToPerformKey",
+        "keyToDegree",
+        "qteKeyToDegree",
+        "ratingWeight",
+        "chartFromMelody",
+        "harmonicChart",
+        "PATTERN_MOTIFS",
+        "patternMotif",
+        "fitChartToWindow",
+        "chartKeys",
+        "chartFromPattern",
+        "randomChart",
+        "createQte",
+        "pressQte",
+        "releaseQte",
+        "missOverdueNotes",
+        "isQteComplete",
+        "isQteExpired",
+        "qteSuccessRate",
+        "parryDamage"
+      ]
+    }
+  ],
+  "src/game/positions.ts": [
+    {
+      "path": "src/game/combat.ts",
+      "batchIndex": 1,
+      "symbols": [
+        "refreshPotency",
+        "reconcilePotency",
+        "createFight",
+        "aliveParty",
+        "aliveEnemies",
+        "moveFighter",
+        "qteLocked",
+        "melodyMuted",
+        "requestChordQte",
+        "requestPresetQte",
+        "pressQteKey",
+        "releaseQteKey",
+        "cancelQte",
+        "keeperInstrument",
+        "hasLiveAttacker",
+        "defaultPerformerId",
+        "laneAttacker",
+        "performSlot",
+        "computeNoteDamage",
+        "advanceTick"
+      ]
+    }
+  ],
+  "src/game/session.ts": [
+    {
+      "path": "src/game/combat.ts",
+      "batchIndex": 1,
+      "symbols": [
+        "refreshPotency",
+        "reconcilePotency",
+        "createFight",
+        "aliveParty",
+        "aliveEnemies",
+        "moveFighter",
+        "qteLocked",
+        "melodyMuted",
+        "requestChordQte",
+        "requestPresetQte",
+        "pressQteKey",
+        "releaseQteKey",
+        "cancelQte",
+        "keeperInstrument",
+        "hasLiveAttacker",
+        "defaultPerformerId",
+        "laneAttacker",
+        "performSlot",
+        "computeNoteDamage",
+        "advanceTick"
+      ]
+    },
+    {
+      "path": "src/game/theory.ts",
+      "batchIndex": 1,
+      "symbols": [
+        "DEFAULT_KEY",
+        "pitchClassOfMidi",
+        "midiToNote",
+        "degreeToMidi",
+        "romanToChord",
+        "romanFunction",
+        "voiceLeadingScore",
+        "diatonicFitScore",
+        "syntaxScore",
+        "scoreProgression",
+        "tensionOf"
+      ]
+    }
+  ]
+}
