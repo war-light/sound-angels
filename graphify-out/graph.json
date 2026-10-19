@@ -46,6 +46,19 @@
   },
   "nodes": [
     {
+      "id": "src_components_chordpicker_chordpickerprops",
+      "label": "ChordPickerProps",
+      "_callable": true,
+      "_callable_class": true,
+      "_origin": "ast",
+      "community": 0,
+      "community_name": "cn",
+      "file_type": "code",
+      "norm_label": "chordpickerprops",
+      "source_file": "src/components/ChordPicker.tsx",
+      "source_location": "L9"
+    },
+    {
       "id": "src_components_combatfeedback_floatingtag",
       "label": "FloatingTag",
       "_callable": true,
@@ -57,6 +70,19 @@
       "norm_label": "floatingtag",
       "source_file": "src/components/CombatFeedback.tsx",
       "source_location": "L4"
+    },
+    {
+      "id": "src_components_customchordbuilder_customchordbuilderprops",
+      "label": "CustomChordBuilderProps",
+      "_callable": true,
+      "_callable_class": true,
+      "_origin": "ast",
+      "community": 0,
+      "community_name": "cn",
+      "file_type": "code",
+      "norm_label": "customchordbuilderprops",
+      "source_file": "src/components/CustomChordBuilder.tsx",
+      "source_location": "L12"
     },
     {
       "id": "src_components_partycorner_dropzone",
@@ -111,17 +137,30 @@
       "source_location": "L10"
     },
     {
-      "id": "src_game_loadout_loadout",
-      "label": "Loadout",
+      "id": "src_data_chords_chordeffect",
+      "label": "ChordEffect",
       "_callable": true,
       "_callable_class": true,
       "_origin": "ast",
-      "community": 1,
-      "community_name": "session.ts",
+      "community": 0,
+      "community_name": "cn",
       "file_type": "code",
-      "norm_label": "loadout",
-      "source_file": "src/game/loadout.ts",
-      "source_location": "L15"
+      "norm_label": "chordeffect",
+      "source_file": "src/data/chords.ts",
+      "source_location": "L29"
+    },
+    {
+      "id": "src_data_chords_chordpreset",
+      "label": "ChordPreset",
+      "_callable": true,
+      "_callable_class": true,
+      "_origin": "ast",
+      "community": 0,
+      "community_name": "cn",
+      "file_type": "code",
+      "norm_label": "chordpreset",
+      "source_file": "src/data/chords.ts",
+      "source_location": "L7"
     },
     {
       "id": "src_game_session_listener",
@@ -143,7 +182,7 @@
       "_callable_class": true,
       "_origin": "ast",
       "community": 2,
-      "community_name": "QtePanel.tsx",
+      "community_name": "QteKey",
       "file_type": "code",
       "norm_label": "laneconfig",
       "source_file": "src/components/QtePanel.tsx",
@@ -156,24 +195,24 @@
       "_callable_class": true,
       "_origin": "ast",
       "community": 2,
-      "community_name": "QtePanel.tsx",
+      "community_name": "QteKey",
       "file_type": "code",
       "norm_label": "receptorprops",
       "source_file": "src/components/QtePanel.tsx",
       "source_location": "L236"
     },
     {
-      "id": "src_game_perform_performkey",
-      "label": "PerformKey",
+      "id": "src_game_combat_atbstate",
+      "label": "AtbState",
       "_callable": true,
       "_callable_class": true,
       "_origin": "ast",
       "community": 2,
-      "community_name": "QtePanel.tsx",
+      "community_name": "QteKey",
       "file_type": "code",
-      "norm_label": "performkey",
-      "source_file": "src/game/perform.ts",
-      "source_location": "L4"
+      "norm_label": "atbstate",
+      "source_file": "src/game/combat.ts",
+      "source_location": "L56"
     },
     {
       "id": "src_game_perform_qtekey",
@@ -182,11 +221,24 @@
       "_callable_class": true,
       "_origin": "ast",
       "community": 2,
-      "community_name": "QtePanel.tsx",
+      "community_name": "QteKey",
       "file_type": "code",
       "norm_label": "qtekey",
       "source_file": "src/game/perform.ts",
       "source_location": "L13"
+    },
+    {
+      "id": "src_game_positions_slots",
+      "label": "Slots",
+      "_callable": true,
+      "_callable_class": true,
+      "_origin": "ast",
+      "community": 2,
+      "community_name": "QteKey",
+      "file_type": "code",
+      "norm_label": "slots",
+      "source_file": "src/game/positions.ts",
+      "source_location": "L8"
     },
     {
       "id": "src_game_qte_qtenote",
@@ -195,7 +247,7 @@
       "_callable_class": true,
       "_origin": "ast",
       "community": 2,
-      "community_name": "QtePanel.tsx",
+      "community_name": "QteKey",
       "file_type": "code",
       "norm_label": "qtenote",
       "source_file": "src/game/qte.ts",
@@ -208,50 +260,37 @@
       "_callable_class": true,
       "_origin": "ast",
       "community": 2,
-      "community_name": "QtePanel.tsx",
+      "community_name": "QteKey",
       "file_type": "code",
       "norm_label": "qtestate",
       "source_file": "src/game/qte.ts",
       "source_location": "L66"
     },
     {
-      "id": "src_game_keys_fightkeyopts",
-      "label": "FightKeyOpts",
+      "id": "src_game_units_fighter",
+      "label": "Fighter",
       "_callable": true,
       "_callable_class": true,
       "_origin": "ast",
-      "community": 21,
-      "community_name": "Key",
+      "community": 2,
+      "community_name": "QteKey",
       "file_type": "code",
-      "norm_label": "fightkeyopts",
-      "source_file": "src/game/keys.ts",
-      "source_location": "L28"
+      "norm_label": "fighter",
+      "source_file": "src/game/units.ts",
+      "source_location": "L12"
     },
     {
-      "id": "src_game_parrychart_generateparrychartopts",
-      "label": "GenerateParryChartOpts",
+      "id": "src_game_loadout_loadout",
+      "label": "Loadout",
       "_callable": true,
       "_callable_class": true,
       "_origin": "ast",
       "community": 21,
-      "community_name": "Key",
+      "community_name": "loadout.ts",
       "file_type": "code",
-      "norm_label": "generateparrychartopts",
-      "source_file": "src/game/parryChart.ts",
-      "source_location": "L138"
-    },
-    {
-      "id": "src_game_theory_key",
-      "label": "Key",
-      "_callable": true,
-      "_callable_class": true,
-      "_origin": "ast",
-      "community": 21,
-      "community_name": "Key",
-      "file_type": "code",
-      "norm_label": "key",
-      "source_file": "src/game/theory.ts",
-      "source_location": "L11"
+      "norm_label": "loadout",
+      "source_file": "src/game/loadout.ts",
+      "source_location": "L15"
     },
     {
       "id": "src_game_arrangement_melodyvoice",
@@ -291,6 +330,58 @@
       "norm_label": "stepsnapshot",
       "source_file": "src/game/arrangement.ts",
       "source_location": "L205"
+    },
+    {
+      "id": "src_game_groove_drumvoice",
+      "label": "DrumVoice",
+      "_callable": true,
+      "_callable_class": true,
+      "_origin": "ast",
+      "community": 3,
+      "community_name": "arrangement.ts",
+      "file_type": "code",
+      "norm_label": "drumvoice",
+      "source_file": "src/game/groove.ts",
+      "source_location": "L12"
+    },
+    {
+      "id": "src_game_melodybank_melodybank",
+      "label": "MelodyBank",
+      "_callable": true,
+      "_callable_class": true,
+      "_origin": "ast",
+      "community": 3,
+      "community_name": "arrangement.ts",
+      "file_type": "code",
+      "norm_label": "melodybank",
+      "source_file": "src/game/melodyBank.ts",
+      "source_location": "L23"
+    },
+    {
+      "id": "src_game_melodybank_melodycardsource",
+      "label": "MelodyCardSource",
+      "_callable": true,
+      "_callable_class": true,
+      "_origin": "ast",
+      "community": 3,
+      "community_name": "arrangement.ts",
+      "file_type": "code",
+      "norm_label": "melodycardsource",
+      "source_file": "src/game/melodyBank.ts",
+      "source_location": "L8"
+    },
+    {
+      "id": "src_game_melodybank_melodytemplate",
+      "label": "MelodyTemplate",
+      "_callable": true,
+      "_callable_class": true,
+      "_origin": "ast",
+      "community": 3,
+      "community_name": "arrangement.ts",
+      "file_type": "code",
+      "norm_label": "melodytemplate",
+      "source_file": "src/game/melodyBank.ts",
+      "source_location": "L10"
     },
     {
       "id": "src_game_presets_presetentry",
@@ -345,30 +436,30 @@
       "source_location": "L9"
     },
     {
-      "id": "src_game_melodybank_melodybank",
-      "label": "MelodyBank",
+      "id": "src_game_units_buff",
+      "label": "Buff",
       "_callable": true,
       "_callable_class": true,
       "_origin": "ast",
       "community": 39,
-      "community_name": "melodyBank.ts",
+      "community_name": "units.ts",
       "file_type": "code",
-      "norm_label": "melodybank",
-      "source_file": "src/game/melodyBank.ts",
-      "source_location": "L23"
+      "norm_label": "buff",
+      "source_file": "src/game/units.ts",
+      "source_location": "L5"
     },
     {
-      "id": "src_game_melodybank_melodycardsource",
-      "label": "MelodyCardSource",
+      "id": "src_game_units_buffid",
+      "label": "BuffId",
       "_callable": true,
       "_callable_class": true,
       "_origin": "ast",
       "community": 39,
-      "community_name": "melodyBank.ts",
+      "community_name": "units.ts",
       "file_type": "code",
-      "norm_label": "melodycardsource",
-      "source_file": "src/game/melodyBank.ts",
-      "source_location": "L8"
+      "norm_label": "buffid",
+      "source_file": "src/game/units.ts",
+      "source_location": "L3"
     },
     {
       "id": "src_data_enemies_enemyprofile",
@@ -421,6 +512,19 @@
       "norm_label": "parrykey",
       "source_file": "src/game/perform.ts",
       "source_location": "L10"
+    },
+    {
+      "id": "src_game_perform_performkey",
+      "label": "PerformKey",
+      "_callable": true,
+      "_callable_class": true,
+      "_origin": "ast",
+      "community": 4,
+      "community_name": "parryChart.ts",
+      "file_type": "code",
+      "norm_label": "performkey",
+      "source_file": "src/game/perform.ts",
+      "source_location": "L4"
     },
     {
       "id": "src_game_qte_qtechart",
@@ -527,19 +631,6 @@
       "source_location": "L19"
     },
     {
-      "id": "src_game_groove_drumkit",
-      "label": "DrumKit",
-      "_callable": true,
-      "_callable_class": true,
-      "_origin": "ast",
-      "community": 40,
-      "community_name": "groove.ts",
-      "file_type": "code",
-      "norm_label": "drumkit",
-      "source_file": "src/game/groove.ts",
-      "source_location": "L74"
-    },
-    {
       "id": "src_game_groove_drumtimbre",
       "label": "DrumTimbre",
       "_callable": true,
@@ -551,19 +642,6 @@
       "norm_label": "drumtimbre",
       "source_file": "src/game/groove.ts",
       "source_location": "L58"
-    },
-    {
-      "id": "src_game_groove_drumvoice",
-      "label": "DrumVoice",
-      "_callable": true,
-      "_callable_class": true,
-      "_origin": "ast",
-      "community": 40,
-      "community_name": "groove.ts",
-      "file_type": "code",
-      "norm_label": "drumvoice",
-      "source_file": "src/game/groove.ts",
-      "source_location": "L12"
     },
     {
       "id": "src_game_groove_groovecell",
@@ -735,58 +813,6 @@
       "source_location": "L4"
     },
     {
-      "id": "src_components_chordpicker_chordpickerprops",
-      "label": "ChordPickerProps",
-      "_callable": true,
-      "_callable_class": true,
-      "_origin": "ast",
-      "community": 47,
-      "community_name": "ChordPicker.tsx",
-      "file_type": "code",
-      "norm_label": "chordpickerprops",
-      "source_file": "src/components/ChordPicker.tsx",
-      "source_location": "L9"
-    },
-    {
-      "id": "src_components_customchordbuilder_customchordbuilderprops",
-      "label": "CustomChordBuilderProps",
-      "_callable": true,
-      "_callable_class": true,
-      "_origin": "ast",
-      "community": 47,
-      "community_name": "ChordPicker.tsx",
-      "file_type": "code",
-      "norm_label": "customchordbuilderprops",
-      "source_file": "src/components/CustomChordBuilder.tsx",
-      "source_location": "L12"
-    },
-    {
-      "id": "src_data_chords_chordeffect",
-      "label": "ChordEffect",
-      "_callable": true,
-      "_callable_class": true,
-      "_origin": "ast",
-      "community": 47,
-      "community_name": "ChordPicker.tsx",
-      "file_type": "code",
-      "norm_label": "chordeffect",
-      "source_file": "src/data/chords.ts",
-      "source_location": "L29"
-    },
-    {
-      "id": "src_game_combat_atbstate",
-      "label": "AtbState",
-      "_callable": true,
-      "_callable_class": true,
-      "_origin": "ast",
-      "community": 49,
-      "community_name": "combat.ts",
-      "file_type": "code",
-      "norm_label": "atbstate",
-      "source_file": "src/game/combat.ts",
-      "source_location": "L56"
-    },
-    {
       "id": "src_game_combat_logentry",
       "label": "LogEntry",
       "_callable": true,
@@ -824,58 +850,6 @@
       "norm_label": "rng",
       "source_file": "src/game/combat.ts",
       "source_location": "L105"
-    },
-    {
-      "id": "src_game_positions_slots",
-      "label": "Slots",
-      "_callable": true,
-      "_callable_class": true,
-      "_origin": "ast",
-      "community": 49,
-      "community_name": "combat.ts",
-      "file_type": "code",
-      "norm_label": "slots",
-      "source_file": "src/game/positions.ts",
-      "source_location": "L8"
-    },
-    {
-      "id": "src_game_units_buff",
-      "label": "Buff",
-      "_callable": true,
-      "_callable_class": true,
-      "_origin": "ast",
-      "community": 49,
-      "community_name": "combat.ts",
-      "file_type": "code",
-      "norm_label": "buff",
-      "source_file": "src/game/units.ts",
-      "source_location": "L5"
-    },
-    {
-      "id": "src_game_units_buffid",
-      "label": "BuffId",
-      "_callable": true,
-      "_callable_class": true,
-      "_origin": "ast",
-      "community": 49,
-      "community_name": "combat.ts",
-      "file_type": "code",
-      "norm_label": "buffid",
-      "source_file": "src/game/units.ts",
-      "source_location": "L3"
-    },
-    {
-      "id": "src_game_units_fighter",
-      "label": "Fighter",
-      "_callable": true,
-      "_callable_class": true,
-      "_origin": "ast",
-      "community": 49,
-      "community_name": "combat.ts",
-      "file_type": "code",
-      "norm_label": "fighter",
-      "source_file": "src/game/units.ts",
-      "source_location": "L12"
     },
     {
       "id": "src_game_qte_qtekind",
@@ -930,19 +904,6 @@
       "source_location": "L27"
     },
     {
-      "id": "src_data_chords_chordpreset",
-      "label": "ChordPreset",
-      "_callable": true,
-      "_callable_class": true,
-      "_origin": "ast",
-      "community": 51,
-      "community_name": "SessionStore",
-      "file_type": "code",
-      "norm_label": "chordpreset",
-      "source_file": "src/data/chords.ts",
-      "source_location": "L7"
-    },
-    {
       "id": "src_data_encounters_encounterdef",
       "label": "EncounterDef",
       "_callable": true,
@@ -982,6 +943,19 @@
       "source_location": "L558"
     },
     {
+      "id": "src_game_groove_drumkit",
+      "label": "DrumKit",
+      "_callable": true,
+      "_callable_class": true,
+      "_origin": "ast",
+      "community": 51,
+      "community_name": "SessionStore",
+      "file_type": "code",
+      "norm_label": "drumkit",
+      "source_file": "src/game/groove.ts",
+      "source_location": "L74"
+    },
+    {
       "id": "src_game_groove_groove",
       "label": "Groove",
       "_callable": true,
@@ -993,19 +967,6 @@
       "norm_label": "groove",
       "source_file": "src/game/groove.ts",
       "source_location": "L88"
-    },
-    {
-      "id": "src_game_melodybank_melodytemplate",
-      "label": "MelodyTemplate",
-      "_callable": true,
-      "_callable_class": true,
-      "_origin": "ast",
-      "community": 51,
-      "community_name": "SessionStore",
-      "file_type": "code",
-      "norm_label": "melodytemplate",
-      "source_file": "src/game/melodyBank.ts",
-      "source_location": "L10"
     },
     {
       "id": "src_game_perform_performcursor",
@@ -1073,6 +1034,32 @@
       "source_location": "L120"
     },
     {
+      "id": "src_game_keys_fightkeyopts",
+      "label": "FightKeyOpts",
+      "_callable": true,
+      "_callable_class": true,
+      "_origin": "ast",
+      "community": 53,
+      "community_name": "theory.ts",
+      "file_type": "code",
+      "norm_label": "fightkeyopts",
+      "source_file": "src/game/keys.ts",
+      "source_location": "L28"
+    },
+    {
+      "id": "src_game_parrychart_generateparrychartopts",
+      "label": "GenerateParryChartOpts",
+      "_callable": true,
+      "_callable_class": true,
+      "_origin": "ast",
+      "community": 53,
+      "community_name": "theory.ts",
+      "file_type": "code",
+      "norm_label": "generateparrychartopts",
+      "source_file": "src/game/parryChart.ts",
+      "source_location": "L138"
+    },
+    {
       "id": "src_game_theory_harmonicfunction",
       "label": "HarmonicFunction",
       "_callable": true,
@@ -1084,6 +1071,19 @@
       "norm_label": "harmonicfunction",
       "source_file": "src/game/theory.ts",
       "source_location": "L143"
+    },
+    {
+      "id": "src_game_theory_key",
+      "label": "Key",
+      "_callable": true,
+      "_callable_class": true,
+      "_origin": "ast",
+      "community": 53,
+      "community_name": "theory.ts",
+      "file_type": "code",
+      "norm_label": "key",
+      "source_file": "src/game/theory.ts",
+      "source_location": "L11"
     },
     {
       "id": "src_game_theory_progressionscore",
@@ -1212,6 +1212,30 @@
       "source_location": "L11"
     },
     {
+      "id": "src_components_chordpicker_aurasummary",
+      "label": "AuraSummary()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 0,
+      "community_name": "cn",
+      "file_type": "code",
+      "norm_label": "aurasummary()",
+      "source_file": "src/components/ChordPicker.tsx",
+      "source_location": "L40"
+    },
+    {
+      "id": "src_components_chordpicker_chordlabel",
+      "label": "chordLabel()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 0,
+      "community_name": "cn",
+      "file_type": "code",
+      "norm_label": "chordlabel()",
+      "source_file": "src/components/ChordPicker.tsx",
+      "source_location": "L15"
+    },
+    {
       "id": "src_components_chordpicker_chordpicker",
       "label": "ChordPicker()",
       "_callable": true,
@@ -1222,6 +1246,30 @@
       "norm_label": "chordpicker()",
       "source_file": "src/components/ChordPicker.tsx",
       "source_location": "L54"
+    },
+    {
+      "id": "src_components_chordpicker_matcheslive",
+      "label": "matchesLive()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 0,
+      "community_name": "cn",
+      "file_type": "code",
+      "norm_label": "matcheslive()",
+      "source_file": "src/components/ChordPicker.tsx",
+      "source_location": "L35"
+    },
+    {
+      "id": "src_components_chordpicker_voicingof",
+      "label": "voicingOf()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 0,
+      "community_name": "cn",
+      "file_type": "code",
+      "norm_label": "voicingof()",
+      "source_file": "src/components/ChordPicker.tsx",
+      "source_location": "L30"
     },
     {
       "id": "src_components_combatfeedback_combatfeedback",
@@ -1246,6 +1294,30 @@
       "norm_label": "combatlog()",
       "source_file": "src/components/CombatLog.tsx",
       "source_location": "L4"
+    },
+    {
+      "id": "src_components_customchordbuilder_customchordbuilder",
+      "label": "CustomChordBuilder()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 0,
+      "community_name": "cn",
+      "file_type": "code",
+      "norm_label": "customchordbuilder()",
+      "source_file": "src/components/CustomChordBuilder.tsx",
+      "source_location": "L32"
+    },
+    {
+      "id": "src_components_customchordbuilder_metricbar",
+      "label": "MetricBar()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 0,
+      "community_name": "cn",
+      "file_type": "code",
+      "norm_label": "metricbar()",
+      "source_file": "src/components/CustomChordBuilder.tsx",
+      "source_location": "L18"
     },
     {
       "id": "src_components_encounterbanner_encounterbanner",
@@ -1368,18 +1440,6 @@
       "source_location": "L165"
     },
     {
-      "id": "src_components_partycorner_test_mockdrop",
-      "label": "mockDrop()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 0,
-      "community_name": "cn",
-      "file_type": "code",
-      "norm_label": "mockdrop()",
-      "source_file": "src/components/PartyCorner.test.tsx",
-      "source_location": "L6"
-    },
-    {
       "id": "src_components_phasestrip_phasestrip",
       "label": "PhaseStrip()",
       "_callable": true,
@@ -1390,6 +1450,54 @@
       "norm_label": "phasestrip()",
       "source_file": "src/components/PhaseStrip.tsx",
       "source_location": "L7"
+    },
+    {
+      "id": "src_components_qtepanel_activehighway",
+      "label": "ActiveHighway()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 0,
+      "community_name": "cn",
+      "file_type": "code",
+      "norm_label": "activehighway()",
+      "source_file": "src/components/QtePanel.tsx",
+      "source_location": "L119"
+    },
+    {
+      "id": "src_components_qtepanel_qtepanel",
+      "label": "QtePanel()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 0,
+      "community_name": "cn",
+      "file_type": "code",
+      "norm_label": "qtepanel()",
+      "source_file": "src/components/QtePanel.tsx",
+      "source_location": "L349"
+    },
+    {
+      "id": "src_components_qtepanel_ratingmeta",
+      "label": "ratingMeta()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 0,
+      "community_name": "cn",
+      "file_type": "code",
+      "norm_label": "ratingmeta()",
+      "source_file": "src/components/QtePanel.tsx",
+      "source_location": "L105"
+    },
+    {
+      "id": "src_components_qtepanel_standbyhighway",
+      "label": "StandbyHighway()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 0,
+      "community_name": "cn",
+      "file_type": "code",
+      "norm_label": "standbyhighway()",
+      "source_file": "src/components/QtePanel.tsx",
+      "source_location": "L207"
     },
     {
       "id": "src_components_rosterselectmodal_rosterselectmodal",
@@ -1438,18 +1546,6 @@
       "norm_label": "prepscreen()",
       "source_file": "src/components/screens/PrepScreen.tsx",
       "source_location": "L15"
-    },
-    {
-      "id": "src_components_screens_resultoverlay_resultoverlay",
-      "label": "ResultOverlay()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 0,
-      "community_name": "cn",
-      "file_type": "code",
-      "norm_label": "resultoverlay()",
-      "source_file": "src/components/screens/ResultOverlay.tsx",
-      "source_location": "L12"
     },
     {
       "id": "src_components_screens_studioscreen_studioscreen",
@@ -1644,6 +1740,42 @@
       "source_location": "L202"
     },
     {
+      "id": "src_data_chords_chordeffectfor",
+      "label": "chordEffectFor()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 0,
+      "community_name": "cn",
+      "file_type": "code",
+      "norm_label": "chordeffectfor()",
+      "source_file": "src/data/chords.ts",
+      "source_location": "L45"
+    },
+    {
+      "id": "src_game_arrangement_onsetkey",
+      "label": "onsetKey()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 0,
+      "community_name": "cn",
+      "file_type": "code",
+      "norm_label": "onsetkey()",
+      "source_file": "src/game/arrangement.ts",
+      "source_location": "L307"
+    },
+    {
+      "id": "src_game_arrangement_onsetkeysof",
+      "label": "onsetKeysOf()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 0,
+      "community_name": "cn",
+      "file_type": "code",
+      "norm_label": "onsetkeysof()",
+      "source_file": "src/game/arrangement.ts",
+      "source_location": "L311"
+    },
+    {
       "id": "src_game_arrangement_withmelody",
       "label": "withMelody()",
       "_callable": true,
@@ -1668,16 +1800,76 @@
       "source_location": "L415"
     },
     {
-      "id": "src_game_groove_countgroovehits",
-      "label": "countGrooveHits()",
+      "id": "src_game_groove_describegrooveeffect",
+      "label": "describeGrooveEffect()",
       "_callable": true,
       "_origin": "ast",
       "community": 0,
       "community_name": "cn",
       "file_type": "code",
-      "norm_label": "countgroovehits()",
+      "norm_label": "describegrooveeffect()",
       "source_file": "src/game/groove.ts",
-      "source_location": "L303"
+      "source_location": "L327"
+    },
+    {
+      "id": "src_game_perform_stepstoms",
+      "label": "stepsToMs()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 0,
+      "community_name": "cn",
+      "file_type": "code",
+      "norm_label": "stepstoms()",
+      "source_file": "src/game/perform.ts",
+      "source_location": "L80"
+    },
+    {
+      "id": "src_game_theory_degreetomidi",
+      "label": "degreeToMidi()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 0,
+      "community_name": "cn",
+      "file_type": "code",
+      "norm_label": "degreetomidi()",
+      "source_file": "src/game/theory.ts",
+      "source_location": "L85"
+    },
+    {
+      "id": "src_game_theory_pitchclassofmidi",
+      "label": "pitchClassOfMidi()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 0,
+      "community_name": "cn",
+      "file_type": "code",
+      "norm_label": "pitchclassofmidi()",
+      "source_file": "src/game/theory.ts",
+      "source_location": "L72"
+    },
+    {
+      "id": "src_game_theory_romantochord",
+      "label": "romanToChord()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 0,
+      "community_name": "cn",
+      "file_type": "code",
+      "norm_label": "romantochord()",
+      "source_file": "src/game/theory.ts",
+      "source_location": "L118"
+    },
+    {
+      "id": "src_game_theory_scoreprogression",
+      "label": "scoreProgression()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 0,
+      "community_name": "cn",
+      "file_type": "code",
+      "norm_label": "scoreprogression()",
+      "source_file": "src/game/theory.ts",
+      "source_location": "L244"
     },
     {
       "id": "src_hooks_usewasd_usewasd",
@@ -1704,40 +1896,16 @@
       "source_location": "L4"
     },
     {
-      "id": "src_data_beats_defaultrig",
-      "label": "defaultRig()",
+      "id": "src_game_combat_cancelqte",
+      "label": "cancelQte()",
       "_callable": true,
       "_origin": "ast",
       "community": 1,
       "community_name": "session.ts",
       "file_type": "code",
-      "norm_label": "defaultrig()",
-      "source_file": "src/data/beats.ts",
-      "source_location": "L207"
-    },
-    {
-      "id": "src_data_beats_getrigpreset",
-      "label": "getRigPreset()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 1,
-      "community_name": "session.ts",
-      "file_type": "code",
-      "norm_label": "getrigpreset()",
-      "source_file": "src/data/beats.ts",
-      "source_location": "L198"
-    },
-    {
-      "id": "src_game_arrangement_setgroove",
-      "label": "setGroove()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 1,
-      "community_name": "session.ts",
-      "file_type": "code",
-      "norm_label": "setgroove()",
-      "source_file": "src/game/arrangement.ts",
-      "source_location": "L135"
+      "norm_label": "cancelqte()",
+      "source_file": "src/game/combat.ts",
+      "source_location": "L363"
     },
     {
       "id": "src_game_combat_refreshpotency",
@@ -1752,64 +1920,88 @@
       "source_location": "L129"
     },
     {
-      "id": "src_game_groove_bottlegroove",
-      "label": "bottleGroove()",
+      "id": "src_game_combat_releaseqtekey",
+      "label": "releaseQteKey()",
       "_callable": true,
       "_origin": "ast",
       "community": 1,
       "community_name": "session.ts",
       "file_type": "code",
-      "norm_label": "bottlegroove()",
-      "source_file": "src/game/groove.ts",
-      "source_location": "L343"
+      "norm_label": "releaseqtekey()",
+      "source_file": "src/game/combat.ts",
+      "source_location": "L355"
     },
     {
-      "id": "src_game_groove_clonegroove",
-      "label": "cloneGroove()",
+      "id": "src_game_loadout_selectloadoutid",
+      "label": "selectLoadoutId()",
       "_callable": true,
       "_origin": "ast",
       "community": 1,
       "community_name": "session.ts",
       "file_type": "code",
-      "norm_label": "clonegroove()",
-      "source_file": "src/game/groove.ts",
-      "source_location": "L173"
-    },
-    {
-      "id": "src_game_loadout_createdefaultloadout",
-      "label": "createDefaultLoadout()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 1,
-      "community_name": "session.ts",
-      "file_type": "code",
-      "norm_label": "createdefaultloadout()",
+      "norm_label": "selectloadoutid()",
       "source_file": "src/game/loadout.ts",
-      "source_location": "L22"
+      "source_location": "L40"
     },
     {
-      "id": "src_game_loadout_parseloadout",
-      "label": "parseLoadout()",
+      "id": "src_game_loadout_toggleloadoutid",
+      "label": "toggleLoadoutId()",
       "_callable": true,
       "_origin": "ast",
       "community": 1,
       "community_name": "session.ts",
       "file_type": "code",
-      "norm_label": "parseloadout()",
+      "norm_label": "toggleloadoutid()",
       "source_file": "src/game/loadout.ts",
-      "source_location": "L70"
+      "source_location": "L27"
     },
     {
-      "id": "src_game_loadout_sanitizeloadout",
-      "label": "sanitizeLoadout()",
+      "id": "src_game_melodybank_deletetemplate",
+      "label": "deleteTemplate()",
       "_callable": true,
       "_origin": "ast",
       "community": 1,
       "community_name": "session.ts",
       "file_type": "code",
-      "norm_label": "sanitizeloadout()",
-      "source_file": "src/game/loadout.ts",
-      "source_location": "L56"
+      "norm_label": "deletetemplate()",
+      "source_file": "src/game/melodyBank.ts",
+      "source_location": "L224"
+    },
+    {
+      "id": "src_game_melodybank_gettemplate",
+      "label": "getTemplate()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 1,
+      "community_name": "session.ts",
+      "file_type": "code",
+      "norm_label": "gettemplate()",
+      "source_file": "src/game/melodyBank.ts",
+      "source_location": "L231"
+    },
+    {
+      "id": "src_game_melodybank_ispresetmelodycard",
+      "label": "isPresetMelodyCard()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 1,
+      "community_name": "session.ts",
+      "file_type": "code",
+      "norm_label": "ispresetmelodycard()",
+      "source_file": "src/game/melodyBank.ts",
+      "source_location": "L34"
+    },
+    {
+      "id": "src_game_melodybank_savetemplate",
+      "label": "saveTemplate()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 1,
+      "community_name": "session.ts",
+      "file_type": "code",
+      "norm_label": "savetemplate()",
+      "source_file": "src/game/melodyBank.ts",
+      "source_location": "L181"
     },
     {
       "id": "src_game_session_applypendingswaps",
@@ -1824,40 +2016,52 @@
       "source_location": "L677"
     },
     {
-      "id": "src_game_session_equipgroovenow",
-      "label": "equipGrooveNow()",
+      "id": "src_game_session_cancelchart",
+      "label": "cancelChart()",
       "_callable": true,
       "_origin": "ast",
       "community": 1,
       "community_name": "session.ts",
       "file_type": "code",
-      "norm_label": "equipgroovenow()",
+      "norm_label": "cancelchart()",
       "source_file": "src/game/session.ts",
-      "source_location": "L229"
+      "source_location": "L787"
     },
     {
-      "id": "src_game_session_getgroovebyid",
-      "label": "getGrooveById()",
+      "id": "src_game_session_deletegroovebottle",
+      "label": "deleteGrooveBottle()",
       "_callable": true,
       "_origin": "ast",
       "community": 1,
       "community_name": "session.ts",
       "file_type": "code",
-      "norm_label": "getgroovebyid()",
+      "norm_label": "deletegroovebottle()",
       "source_file": "src/game/session.ts",
-      "source_location": "L171"
+      "source_location": "L318"
     },
     {
-      "id": "src_game_session_getmelodymuted",
-      "label": "getMelodyMuted()",
+      "id": "src_game_session_deletemelodycard",
+      "label": "deleteMelodyCard()",
       "_callable": true,
       "_origin": "ast",
       "community": 1,
       "community_name": "session.ts",
       "file_type": "code",
-      "norm_label": "getmelodymuted()",
+      "norm_label": "deletemelodycard()",
       "source_file": "src/game/session.ts",
-      "source_location": "L149"
+      "source_location": "L567"
+    },
+    {
+      "id": "src_game_session_emit",
+      "label": "emit()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 1,
+      "community_name": "session.ts",
+      "file_type": "code",
+      "norm_label": "emit()",
+      "source_file": "src/game/session.ts",
+      "source_location": "L136"
     },
     {
       "id": "src_game_session_getpresets",
@@ -1896,16 +2100,76 @@
       "source_location": "L116"
     },
     {
-      "id": "src_game_session_queueorequip",
-      "label": "queueOrEquip()",
+      "id": "src_game_session_loadmelodytemplate",
+      "label": "loadMelodyTemplate()",
       "_callable": true,
       "_origin": "ast",
       "community": 1,
       "community_name": "session.ts",
       "file_type": "code",
-      "norm_label": "queueorequip()",
+      "norm_label": "loadmelodytemplate()",
       "source_file": "src/game/session.ts",
-      "source_location": "L239"
+      "source_location": "L669"
+    },
+    {
+      "id": "src_game_session_movefighter",
+      "label": "moveFighter()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 1,
+      "community_name": "session.ts",
+      "file_type": "code",
+      "norm_label": "movefighter()",
+      "source_file": "src/game/session.ts",
+      "source_location": "L468"
+    },
+    {
+      "id": "src_game_session_mutatearrangement",
+      "label": "mutateArrangement()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 1,
+      "community_name": "session.ts",
+      "file_type": "code",
+      "norm_label": "mutatearrangement()",
+      "source_file": "src/game/session.ts",
+      "source_location": "L435"
+    },
+    {
+      "id": "src_game_session_mutatemelody",
+      "label": "mutateMelody()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 1,
+      "community_name": "session.ts",
+      "file_type": "code",
+      "norm_label": "mutatemelody()",
+      "source_file": "src/game/session.ts",
+      "source_location": "L641"
+    },
+    {
+      "id": "src_game_session_presschartkey",
+      "label": "pressChartKey()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 1,
+      "community_name": "session.ts",
+      "file_type": "code",
+      "norm_label": "presschartkey()",
+      "source_file": "src/game/session.ts",
+      "source_location": "L746"
+    },
+    {
+      "id": "src_game_session_pressparrykey",
+      "label": "pressParryKey()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 1,
+      "community_name": "session.ts",
+      "file_type": "code",
+      "norm_label": "pressparrykey()",
+      "source_file": "src/game/session.ts",
+      "source_location": "L752"
     },
     {
       "id": "src_game_session_recallmelodypreset",
@@ -1920,12 +2184,240 @@
       "source_location": "L543"
     },
     {
-      "id": "src_game_session_resetall",
-      "label": "resetAll()",
+      "id": "src_game_session_releaseparrykey",
+      "label": "releaseParryKey()",
       "_callable": true,
       "_origin": "ast",
       "community": 1,
       "community_name": "session.ts",
+      "file_type": "code",
+      "norm_label": "releaseparrykey()",
+      "source_file": "src/game/session.ts",
+      "source_location": "L758"
+    },
+    {
+      "id": "src_game_session_requestchordchart",
+      "label": "requestChordChart()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 1,
+      "community_name": "session.ts",
+      "file_type": "code",
+      "norm_label": "requestchordchart()",
+      "source_file": "src/game/session.ts",
+      "source_location": "L718"
+    },
+    {
+      "id": "src_game_session_requestpresetchart",
+      "label": "requestPresetChart()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 1,
+      "community_name": "session.ts",
+      "file_type": "code",
+      "norm_label": "requestpresetchart()",
+      "source_file": "src/game/session.ts",
+      "source_location": "L731"
+    },
+    {
+      "id": "src_game_session_requesttemplatechart",
+      "label": "requestTemplateChart()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 1,
+      "community_name": "session.ts",
+      "file_type": "code",
+      "norm_label": "requesttemplatechart()",
+      "source_file": "src/game/session.ts",
+      "source_location": "L698"
+    },
+    {
+      "id": "src_game_session_savecustomchordpreset",
+      "label": "saveCustomChordPreset()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 1,
+      "community_name": "session.ts",
+      "file_type": "code",
+      "norm_label": "savecustomchordpreset()",
+      "source_file": "src/game/session.ts",
+      "source_location": "L422"
+    },
+    {
+      "id": "src_game_session_savecustommelodycard",
+      "label": "saveCustomMelodyCard()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 1,
+      "community_name": "session.ts",
+      "file_type": "code",
+      "norm_label": "savecustommelodycard()",
+      "source_file": "src/game/session.ts",
+      "source_location": "L583"
+    },
+    {
+      "id": "src_game_session_savemelodypreset",
+      "label": "saveMelodyPreset()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 1,
+      "community_name": "session.ts",
+      "file_type": "code",
+      "norm_label": "savemelodypreset()",
+      "source_file": "src/game/session.ts",
+      "source_location": "L531"
+    },
+    {
+      "id": "src_game_session_savetomelodybank",
+      "label": "saveToMelodyBank()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 1,
+      "community_name": "session.ts",
+      "file_type": "code",
+      "norm_label": "savetomelodybank()",
+      "source_file": "src/game/session.ts",
+      "source_location": "L554"
+    },
+    {
+      "id": "src_game_session_scoreqtepress",
+      "label": "scoreQtePress()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 1,
+      "community_name": "session.ts",
+      "file_type": "code",
+      "norm_label": "scoreqtepress()",
+      "source_file": "src/game/session.ts",
+      "source_location": "L773"
+    },
+    {
+      "id": "src_game_session_selectmelodycard",
+      "label": "selectMelodyCard()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 1,
+      "community_name": "session.ts",
+      "file_type": "code",
+      "norm_label": "selectmelodycard()",
+      "source_file": "src/game/session.ts",
+      "source_location": "L651"
+    },
+    {
+      "id": "src_game_session_syncactivemelodycard",
+      "label": "syncActiveMelodyCard()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 1,
+      "community_name": "session.ts",
+      "file_type": "code",
+      "norm_label": "syncactivemelodycard()",
+      "source_file": "src/game/session.ts",
+      "source_location": "L609"
+    },
+    {
+      "id": "src_game_session_toggleloadoutgroove",
+      "label": "toggleLoadoutGroove()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 1,
+      "community_name": "session.ts",
+      "file_type": "code",
+      "norm_label": "toggleloadoutgroove()",
+      "source_file": "src/game/session.ts",
+      "source_location": "L215"
+    },
+    {
+      "id": "src_game_session_toggleloadoutmelody",
+      "label": "toggleLoadoutMelody()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 1,
+      "community_name": "session.ts",
+      "file_type": "code",
+      "norm_label": "toggleloadoutmelody()",
+      "source_file": "src/game/session.ts",
+      "source_location": "L222"
+    },
+    {
+      "id": "src_game_session_unlockallencounters",
+      "label": "unlockAllEncounters()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 1,
+      "community_name": "session.ts",
+      "file_type": "code",
+      "norm_label": "unlockallencounters()",
+      "source_file": "src/game/session.ts",
+      "source_location": "L382"
+    },
+    {
+      "id": "src_persistence_storage_savecardloadout",
+      "label": "saveCardLoadout()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 1,
+      "community_name": "session.ts",
+      "file_type": "code",
+      "norm_label": "savecardloadout()",
+      "source_file": "src/persistence/storage.ts",
+      "source_location": "L159"
+    },
+    {
+      "id": "src_data_beats_defaultrig",
+      "label": "defaultRig()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 21,
+      "community_name": "loadout.ts",
+      "file_type": "code",
+      "norm_label": "defaultrig()",
+      "source_file": "src/data/beats.ts",
+      "source_location": "L207"
+    },
+    {
+      "id": "src_game_loadout_createdefaultloadout",
+      "label": "createDefaultLoadout()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 21,
+      "community_name": "loadout.ts",
+      "file_type": "code",
+      "norm_label": "createdefaultloadout()",
+      "source_file": "src/game/loadout.ts",
+      "source_location": "L22"
+    },
+    {
+      "id": "src_game_loadout_parseloadout",
+      "label": "parseLoadout()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 21,
+      "community_name": "loadout.ts",
+      "file_type": "code",
+      "norm_label": "parseloadout()",
+      "source_file": "src/game/loadout.ts",
+      "source_location": "L70"
+    },
+    {
+      "id": "src_game_loadout_sanitizeloadout",
+      "label": "sanitizeLoadout()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 21,
+      "community_name": "loadout.ts",
+      "file_type": "code",
+      "norm_label": "sanitizeloadout()",
+      "source_file": "src/game/loadout.ts",
+      "source_location": "L56"
+    },
+    {
+      "id": "src_game_session_resetall",
+      "label": "resetAll()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 21,
+      "community_name": "loadout.ts",
       "file_type": "code",
       "norm_label": "resetall()",
       "source_file": "src/game/session.ts",
@@ -1936,288 +2428,12 @@
       "label": "resetEncounterProgression()",
       "_callable": true,
       "_origin": "ast",
-      "community": 1,
-      "community_name": "session.ts",
+      "community": 21,
+      "community_name": "loadout.ts",
       "file_type": "code",
       "norm_label": "resetencounterprogression()",
       "source_file": "src/game/session.ts",
       "source_location": "L388"
-    },
-    {
-      "id": "src_game_session_rigunderedit",
-      "label": "rigUnderEdit()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 1,
-      "community_name": "session.ts",
-      "file_type": "code",
-      "norm_label": "rigunderedit()",
-      "source_file": "src/game/session.ts",
-      "source_location": "L250"
-    },
-    {
-      "id": "src_game_session_selectbank",
-      "label": "selectBank()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 1,
-      "community_name": "session.ts",
-      "file_type": "code",
-      "norm_label": "selectbank()",
-      "source_file": "src/game/session.ts",
-      "source_location": "L273"
-    },
-    {
-      "id": "src_game_session_selectgroovecard",
-      "label": "selectGrooveCard()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 1,
-      "community_name": "session.ts",
-      "file_type": "code",
-      "norm_label": "selectgroovecard()",
-      "source_file": "src/game/session.ts",
-      "source_location": "L258"
-    },
-    {
-      "id": "src_game_session_selectkit",
-      "label": "selectKit()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 1,
-      "community_name": "session.ts",
-      "file_type": "code",
-      "norm_label": "selectkit()",
-      "source_file": "src/game/session.ts",
-      "source_location": "L282"
-    },
-    {
-      "id": "src_game_session_selectpad",
-      "label": "selectPad()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 1,
-      "community_name": "session.ts",
-      "file_type": "code",
-      "norm_label": "selectpad()",
-      "source_file": "src/game/session.ts",
-      "source_location": "L266"
-    },
-    {
-      "id": "src_game_session_subscribe",
-      "label": "subscribe()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 1,
-      "community_name": "session.ts",
-      "file_type": "code",
-      "norm_label": "subscribe()",
-      "source_file": "src/game/session.ts",
-      "source_location": "L814"
-    },
-    {
-      "id": "src_game_session_tweakequippedgroove",
-      "label": "tweakEquippedGroove()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 1,
-      "community_name": "session.ts",
-      "file_type": "code",
-      "norm_label": "tweakequippedgroove()",
-      "source_file": "src/game/session.ts",
-      "source_location": "L290"
-    },
-    {
-      "id": "src_components_qtepanel_activehighway",
-      "label": "ActiveHighway()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 2,
-      "community_name": "QtePanel.tsx",
-      "file_type": "code",
-      "norm_label": "activehighway()",
-      "source_file": "src/components/QtePanel.tsx",
-      "source_location": "L119"
-    },
-    {
-      "id": "src_components_qtepanel_qtepanel",
-      "label": "QtePanel()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 2,
-      "community_name": "QtePanel.tsx",
-      "file_type": "code",
-      "norm_label": "qtepanel()",
-      "source_file": "src/components/QtePanel.tsx",
-      "source_location": "L349"
-    },
-    {
-      "id": "src_components_qtepanel_ratingmeta",
-      "label": "ratingMeta()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 2,
-      "community_name": "QtePanel.tsx",
-      "file_type": "code",
-      "norm_label": "ratingmeta()",
-      "source_file": "src/components/QtePanel.tsx",
-      "source_location": "L105"
-    },
-    {
-      "id": "src_components_qtepanel_standbyhighway",
-      "label": "StandbyHighway()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 2,
-      "community_name": "QtePanel.tsx",
-      "file_type": "code",
-      "norm_label": "standbyhighway()",
-      "source_file": "src/components/QtePanel.tsx",
-      "source_location": "L207"
-    },
-    {
-      "id": "src_game_perform_cursordegree",
-      "label": "cursorDegree()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 2,
-      "community_name": "QtePanel.tsx",
-      "file_type": "code",
-      "norm_label": "cursordegree()",
-      "source_file": "src/game/perform.ts",
-      "source_location": "L53"
-    },
-    {
-      "id": "src_game_perform_movecursor",
-      "label": "moveCursor()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 2,
-      "community_name": "QtePanel.tsx",
-      "file_type": "code",
-      "norm_label": "movecursor()",
-      "source_file": "src/game/perform.ts",
-      "source_location": "L35"
-    },
-    {
-      "id": "src_game_perform_presstolen",
-      "label": "pressToLen()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 2,
-      "community_name": "QtePanel.tsx",
-      "file_type": "code",
-      "norm_label": "presstolen()",
-      "source_file": "src/game/perform.ts",
-      "source_location": "L58"
-    },
-    {
-      "id": "src_game_perform_secondstosteps",
-      "label": "secondsToSteps()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 2,
-      "community_name": "QtePanel.tsx",
-      "file_type": "code",
-      "norm_label": "secondstosteps()",
-      "source_file": "src/game/perform.ts",
-      "source_location": "L75"
-    },
-    {
-      "id": "src_game_perform_stepms",
-      "label": "stepMs()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 2,
-      "community_name": "QtePanel.tsx",
-      "file_type": "code",
-      "norm_label": "stepms()",
-      "source_file": "src/game/perform.ts",
-      "source_location": "L67"
-    },
-    {
-      "id": "src_game_perform_stepstoms",
-      "label": "stepsToMs()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 2,
-      "community_name": "QtePanel.tsx",
-      "file_type": "code",
-      "norm_label": "stepstoms()",
-      "source_file": "src/game/perform.ts",
-      "source_location": "L80"
-    },
-    {
-      "id": "src_hooks_useqteplayhead_useqteplayhead",
-      "label": "useQtePlayhead()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 2,
-      "community_name": "QtePanel.tsx",
-      "file_type": "code",
-      "norm_label": "useqteplayhead()",
-      "source_file": "src/hooks/useQtePlayhead.ts",
-      "source_location": "L9"
-    },
-    {
-      "id": "src_components_transportbar_transportbar",
-      "label": "TransportBar()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 21,
-      "community_name": "Key",
-      "file_type": "code",
-      "norm_label": "transportbar()",
-      "source_file": "src/components/TransportBar.tsx",
-      "source_location": "L5"
-    },
-    {
-      "id": "src_game_keys_keyequals",
-      "label": "keyEquals()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 21,
-      "community_name": "Key",
-      "file_type": "code",
-      "norm_label": "keyequals()",
-      "source_file": "src/game/keys.ts",
-      "source_location": "L14"
-    },
-    {
-      "id": "src_game_keys_keylabel",
-      "label": "keyLabel()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 21,
-      "community_name": "Key",
-      "file_type": "code",
-      "norm_label": "keylabel()",
-      "source_file": "src/game/keys.ts",
-      "source_location": "L18"
-    },
-    {
-      "id": "src_game_keys_randomfightkey",
-      "label": "randomFightKey()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 21,
-      "community_name": "Key",
-      "file_type": "code",
-      "norm_label": "randomfightkey()",
-      "source_file": "src/game/keys.ts",
-      "source_location": "L23"
-    },
-    {
-      "id": "src_game_keys_resolvefightkey",
-      "label": "resolveFightKey()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 21,
-      "community_name": "Key",
-      "file_type": "code",
-      "norm_label": "resolvefightkey()",
-      "source_file": "src/game/keys.ts",
-      "source_location": "L35"
     },
     {
       "id": "src_audio_preview_test_firststep",
@@ -2254,18 +2470,6 @@
       "norm_label": "voicebar()",
       "source_file": "src/components/VoiceBar.tsx",
       "source_location": "L33"
-    },
-    {
-      "id": "src_game_arrangement_allonsetkeys",
-      "label": "allOnsetKeys()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 3,
-      "community_name": "arrangement.ts",
-      "file_type": "code",
-      "norm_label": "allonsetkeys()",
-      "source_file": "src/game/arrangement.ts",
-      "source_location": "L324"
     },
     {
       "id": "src_game_arrangement_checkpos",
@@ -2340,6 +2544,18 @@
       "source_location": "L48"
     },
     {
+      "id": "src_game_arrangement_fitprogression",
+      "label": "fitProgression()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 3,
+      "community_name": "arrangement.ts",
+      "file_type": "code",
+      "norm_label": "fitprogression()",
+      "source_file": "src/game/arrangement.ts",
+      "source_location": "L167"
+    },
+    {
       "id": "src_game_arrangement_grid",
       "label": "grid()",
       "_callable": true,
@@ -2364,30 +2580,6 @@
       "source_location": "L287"
     },
     {
-      "id": "src_game_arrangement_onsetkey",
-      "label": "onsetKey()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 3,
-      "community_name": "arrangement.ts",
-      "file_type": "code",
-      "norm_label": "onsetkey()",
-      "source_file": "src/game/arrangement.ts",
-      "source_location": "L307"
-    },
-    {
-      "id": "src_game_arrangement_onsetkeysof",
-      "label": "onsetKeysOf()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 3,
-      "community_name": "arrangement.ts",
-      "file_type": "code",
-      "norm_label": "onsetkeysof()",
-      "source_file": "src/game/arrangement.ts",
-      "source_location": "L311"
-    },
-    {
       "id": "src_game_arrangement_setbarchord",
       "label": "setBarChord()",
       "_callable": true,
@@ -2410,6 +2602,18 @@
       "norm_label": "setbpm()",
       "source_file": "src/game/arrangement.ts",
       "source_location": "L178"
+    },
+    {
+      "id": "src_game_arrangement_setchords",
+      "label": "setChords()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 3,
+      "community_name": "arrangement.ts",
+      "file_type": "code",
+      "norm_label": "setchords()",
+      "source_file": "src/game/arrangement.ts",
+      "source_location": "L173"
     },
     {
       "id": "src_game_arrangement_snapshotstep",
@@ -2446,18 +2650,6 @@
       "norm_label": "tweakgrooveknobs()",
       "source_file": "src/game/arrangement.ts",
       "source_location": "L153"
-    },
-    {
-      "id": "src_game_combat_hasliveattacker",
-      "label": "hasLiveAttacker()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 3,
-      "community_name": "arrangement.ts",
-      "file_type": "code",
-      "norm_label": "hasliveattacker()",
-      "source_file": "src/game/combat.ts",
-      "source_location": "L380"
     },
     {
       "id": "src_game_combatatb_test_arr",
@@ -2506,6 +2698,138 @@
       "norm_label": "swingdelaysteps()",
       "source_file": "src/game/groove.ts",
       "source_location": "L322"
+    },
+    {
+      "id": "src_game_melodybank_clonetemplate",
+      "label": "cloneTemplate()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 3,
+      "community_name": "arrangement.ts",
+      "file_type": "code",
+      "norm_label": "clonetemplate()",
+      "source_file": "src/game/melodyBank.ts",
+      "source_location": "L42"
+    },
+    {
+      "id": "src_game_melodybank_clonetracks",
+      "label": "cloneTracks()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 3,
+      "community_name": "arrangement.ts",
+      "file_type": "code",
+      "norm_label": "clonetracks()",
+      "source_file": "src/game/melodyBank.ts",
+      "source_location": "L38"
+    },
+    {
+      "id": "src_game_melodybank_createdawnanthem",
+      "label": "createDawnAnthem()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 3,
+      "community_name": "arrangement.ts",
+      "file_type": "code",
+      "norm_label": "createdawnanthem()",
+      "source_file": "src/game/melodyBank.ts",
+      "source_location": "L81"
+    },
+    {
+      "id": "src_game_melodybank_createdefaultmelodybank",
+      "label": "createDefaultMelodyBank()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 3,
+      "community_name": "arrangement.ts",
+      "file_type": "code",
+      "norm_label": "createdefaultmelodybank()",
+      "source_file": "src/game/melodyBank.ts",
+      "source_location": "L166"
+    },
+    {
+      "id": "src_game_melodybank_createsolemnground",
+      "label": "createSolemnGround()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 3,
+      "community_name": "arrangement.ts",
+      "file_type": "code",
+      "norm_label": "createsolemnground()",
+      "source_file": "src/game/melodyBank.ts",
+      "source_location": "L139"
+    },
+    {
+      "id": "src_game_melodybank_createstaccatoflight",
+      "label": "createStaccatoFlight()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 3,
+      "community_name": "arrangement.ts",
+      "file_type": "code",
+      "norm_label": "createstaccatoflight()",
+      "source_file": "src/game/melodyBank.ts",
+      "source_location": "L113"
+    },
+    {
+      "id": "src_game_melodybank_emptytracks",
+      "label": "emptyTracks()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 3,
+      "community_name": "arrangement.ts",
+      "file_type": "code",
+      "norm_label": "emptytracks()",
+      "source_file": "src/game/melodyBank.ts",
+      "source_location": "L56"
+    },
+    {
+      "id": "src_game_melodybank_fitchords",
+      "label": "fitChords()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 3,
+      "community_name": "arrangement.ts",
+      "file_type": "code",
+      "norm_label": "fitchords()",
+      "source_file": "src/game/melodyBank.ts",
+      "source_location": "L77"
+    },
+    {
+      "id": "src_game_melodybank_listmelodycards",
+      "label": "listMelodyCards()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 3,
+      "community_name": "arrangement.ts",
+      "file_type": "code",
+      "norm_label": "listmelodycards()",
+      "source_file": "src/game/melodyBank.ts",
+      "source_location": "L52"
+    },
+    {
+      "id": "src_game_melodybank_mirrorsecondphrase",
+      "label": "mirrorSecondPhrase()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 3,
+      "community_name": "arrangement.ts",
+      "file_type": "code",
+      "norm_label": "mirrorsecondphrase()",
+      "source_file": "src/game/melodyBank.ts",
+      "source_location": "L66"
+    },
+    {
+      "id": "src_game_melodybank_updatetemplate",
+      "label": "updateTemplate()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 3,
+      "community_name": "arrangement.ts",
+      "file_type": "code",
+      "norm_label": "updatetemplate()",
+      "source_file": "src/game/melodyBank.ts",
+      "source_location": "L211"
     },
     {
       "id": "src_game_presets_clonetracks",
@@ -2592,220 +2916,88 @@
       "source_location": "L34"
     },
     {
-      "id": "src_game_melodybank_clonetemplate",
-      "label": "cloneTemplate()",
+      "id": "src_game_units_addshield",
+      "label": "addShield()",
       "_callable": true,
       "_origin": "ast",
       "community": 39,
-      "community_name": "melodyBank.ts",
+      "community_name": "units.ts",
       "file_type": "code",
-      "norm_label": "clonetemplate()",
-      "source_file": "src/game/melodyBank.ts",
-      "source_location": "L42"
+      "norm_label": "addshield()",
+      "source_file": "src/game/units.ts",
+      "source_location": "L89"
     },
     {
-      "id": "src_game_melodybank_clonetracks",
-      "label": "cloneTracks()",
+      "id": "src_game_units_applybuff",
+      "label": "applyBuff()",
       "_callable": true,
       "_origin": "ast",
       "community": 39,
-      "community_name": "melodyBank.ts",
+      "community_name": "units.ts",
       "file_type": "code",
-      "norm_label": "clonetracks()",
-      "source_file": "src/game/melodyBank.ts",
-      "source_location": "L38"
+      "norm_label": "applybuff()",
+      "source_file": "src/game/units.ts",
+      "source_location": "L97"
     },
     {
-      "id": "src_game_melodybank_createdawnanthem",
-      "label": "createDawnAnthem()",
+      "id": "src_game_units_buffglyphs",
+      "label": "buffGlyphs()",
       "_callable": true,
       "_origin": "ast",
       "community": 39,
-      "community_name": "melodyBank.ts",
+      "community_name": "units.ts",
       "file_type": "code",
-      "norm_label": "createdawnanthem()",
-      "source_file": "src/game/melodyBank.ts",
-      "source_location": "L81"
+      "norm_label": "buffglyphs()",
+      "source_file": "src/game/units.ts",
+      "source_location": "L142"
     },
     {
-      "id": "src_game_melodybank_createdefaultmelodybank",
-      "label": "createDefaultMelodyBank()",
+      "id": "src_game_units_damagethroughshield",
+      "label": "damageThroughShield()",
       "_callable": true,
       "_origin": "ast",
       "community": 39,
-      "community_name": "melodyBank.ts",
+      "community_name": "units.ts",
       "file_type": "code",
-      "norm_label": "createdefaultmelodybank()",
-      "source_file": "src/game/melodyBank.ts",
-      "source_location": "L166"
+      "norm_label": "damagethroughshield()",
+      "source_file": "src/game/units.ts",
+      "source_location": "L70"
     },
     {
-      "id": "src_game_melodybank_createsolemnground",
-      "label": "createSolemnGround()",
+      "id": "src_game_units_healfighter",
+      "label": "healFighter()",
       "_callable": true,
       "_origin": "ast",
       "community": 39,
-      "community_name": "melodyBank.ts",
+      "community_name": "units.ts",
       "file_type": "code",
-      "norm_label": "createsolemnground()",
-      "source_file": "src/game/melodyBank.ts",
-      "source_location": "L139"
+      "norm_label": "healfighter()",
+      "source_file": "src/game/units.ts",
+      "source_location": "L84"
     },
     {
-      "id": "src_game_melodybank_createstaccatoflight",
-      "label": "createStaccatoFlight()",
+      "id": "src_game_units_makefighter",
+      "label": "makeFighter()",
       "_callable": true,
       "_origin": "ast",
       "community": 39,
-      "community_name": "melodyBank.ts",
+      "community_name": "units.ts",
       "file_type": "code",
-      "norm_label": "createstaccatoflight()",
-      "source_file": "src/game/melodyBank.ts",
-      "source_location": "L113"
+      "norm_label": "makefighter()",
+      "source_file": "src/game/units.ts",
+      "source_location": "L30"
     },
     {
-      "id": "src_game_melodybank_deletetemplate",
-      "label": "deleteTemplate()",
+      "id": "src_game_units_tickbuffs",
+      "label": "tickBuffs()",
       "_callable": true,
       "_origin": "ast",
       "community": 39,
-      "community_name": "melodyBank.ts",
+      "community_name": "units.ts",
       "file_type": "code",
-      "norm_label": "deletetemplate()",
-      "source_file": "src/game/melodyBank.ts",
-      "source_location": "L224"
-    },
-    {
-      "id": "src_game_melodybank_emptytracks",
-      "label": "emptyTracks()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 39,
-      "community_name": "melodyBank.ts",
-      "file_type": "code",
-      "norm_label": "emptytracks()",
-      "source_file": "src/game/melodyBank.ts",
-      "source_location": "L56"
-    },
-    {
-      "id": "src_game_melodybank_fitchords",
-      "label": "fitChords()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 39,
-      "community_name": "melodyBank.ts",
-      "file_type": "code",
-      "norm_label": "fitchords()",
-      "source_file": "src/game/melodyBank.ts",
-      "source_location": "L77"
-    },
-    {
-      "id": "src_game_melodybank_gettemplate",
-      "label": "getTemplate()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 39,
-      "community_name": "melodyBank.ts",
-      "file_type": "code",
-      "norm_label": "gettemplate()",
-      "source_file": "src/game/melodyBank.ts",
-      "source_location": "L231"
-    },
-    {
-      "id": "src_game_melodybank_ispresetmelodycard",
-      "label": "isPresetMelodyCard()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 39,
-      "community_name": "melodyBank.ts",
-      "file_type": "code",
-      "norm_label": "ispresetmelodycard()",
-      "source_file": "src/game/melodyBank.ts",
-      "source_location": "L34"
-    },
-    {
-      "id": "src_game_melodybank_listmelodycards",
-      "label": "listMelodyCards()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 39,
-      "community_name": "melodyBank.ts",
-      "file_type": "code",
-      "norm_label": "listmelodycards()",
-      "source_file": "src/game/melodyBank.ts",
-      "source_location": "L52"
-    },
-    {
-      "id": "src_game_melodybank_mirrorsecondphrase",
-      "label": "mirrorSecondPhrase()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 39,
-      "community_name": "melodyBank.ts",
-      "file_type": "code",
-      "norm_label": "mirrorsecondphrase()",
-      "source_file": "src/game/melodyBank.ts",
-      "source_location": "L66"
-    },
-    {
-      "id": "src_game_melodybank_savetemplate",
-      "label": "saveTemplate()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 39,
-      "community_name": "melodyBank.ts",
-      "file_type": "code",
-      "norm_label": "savetemplate()",
-      "source_file": "src/game/melodyBank.ts",
-      "source_location": "L181"
-    },
-    {
-      "id": "src_game_melodybank_updatetemplate",
-      "label": "updateTemplate()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 39,
-      "community_name": "melodyBank.ts",
-      "file_type": "code",
-      "norm_label": "updatetemplate()",
-      "source_file": "src/game/melodyBank.ts",
-      "source_location": "L211"
-    },
-    {
-      "id": "src_game_session_mutatemelody",
-      "label": "mutateMelody()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 39,
-      "community_name": "melodyBank.ts",
-      "file_type": "code",
-      "norm_label": "mutatemelody()",
-      "source_file": "src/game/session.ts",
-      "source_location": "L641"
-    },
-    {
-      "id": "src_game_session_savetomelodybank",
-      "label": "saveToMelodyBank()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 39,
-      "community_name": "melodyBank.ts",
-      "file_type": "code",
-      "norm_label": "savetomelodybank()",
-      "source_file": "src/game/session.ts",
-      "source_location": "L554"
-    },
-    {
-      "id": "src_game_session_syncactivemelodycard",
-      "label": "syncActiveMelodyCard()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 39,
-      "community_name": "melodyBank.ts",
-      "file_type": "code",
-      "norm_label": "syncactivemelodycard()",
-      "source_file": "src/game/session.ts",
-      "source_location": "L609"
+      "norm_label": "tickbuffs()",
+      "source_file": "src/game/units.ts",
+      "source_location": "L121"
     },
     {
       "id": "src_game_parrychart_buildantecedentcell",
@@ -2964,16 +3156,64 @@
       "source_location": "L14"
     },
     {
-      "id": "src_game_theory_degreetomidi",
-      "label": "degreeToMidi()",
+      "id": "src_game_perform_cursordegree",
+      "label": "cursorDegree()",
       "_callable": true,
       "_origin": "ast",
       "community": 4,
       "community_name": "parryChart.ts",
       "file_type": "code",
-      "norm_label": "degreetomidi()",
-      "source_file": "src/game/theory.ts",
-      "source_location": "L85"
+      "norm_label": "cursordegree()",
+      "source_file": "src/game/perform.ts",
+      "source_location": "L53"
+    },
+    {
+      "id": "src_game_perform_movecursor",
+      "label": "moveCursor()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 4,
+      "community_name": "parryChart.ts",
+      "file_type": "code",
+      "norm_label": "movecursor()",
+      "source_file": "src/game/perform.ts",
+      "source_location": "L35"
+    },
+    {
+      "id": "src_game_perform_presstolen",
+      "label": "pressToLen()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 4,
+      "community_name": "parryChart.ts",
+      "file_type": "code",
+      "norm_label": "presstolen()",
+      "source_file": "src/game/perform.ts",
+      "source_location": "L58"
+    },
+    {
+      "id": "src_game_perform_stepms",
+      "label": "stepMs()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 4,
+      "community_name": "parryChart.ts",
+      "file_type": "code",
+      "norm_label": "stepms()",
+      "source_file": "src/game/perform.ts",
+      "source_location": "L67"
+    },
+    {
+      "id": "src_hooks_useqteplayhead_useqteplayhead",
+      "label": "useQtePlayhead()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 4,
+      "community_name": "parryChart.ts",
+      "file_type": "code",
+      "norm_label": "useqteplayhead()",
+      "source_file": "src/hooks/useQtePlayhead.ts",
+      "source_location": "L9"
     },
     {
       "id": "src_data_beats_defaultbank",
@@ -3096,6 +3336,18 @@
       "source_location": "L165"
     },
     {
+      "id": "src_game_groove_countgroovehits",
+      "label": "countGrooveHits()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 40,
+      "community_name": "groove.ts",
+      "file_type": "code",
+      "norm_label": "countgroovehits()",
+      "source_file": "src/game/groove.ts",
+      "source_location": "L303"
+    },
+    {
       "id": "src_game_groove_createrig",
       "label": "createRig()",
       "_callable": true,
@@ -3106,18 +3358,6 @@
       "norm_label": "createrig()",
       "source_file": "src/game/groove.ts",
       "source_location": "L210"
-    },
-    {
-      "id": "src_game_groove_describegrooveeffect",
-      "label": "describeGrooveEffect()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 40,
-      "community_name": "groove.ts",
-      "file_type": "code",
-      "norm_label": "describegrooveeffect()",
-      "source_file": "src/game/groove.ts",
-      "source_location": "L327"
     },
     {
       "id": "src_game_groove_emptycell",
@@ -3348,100 +3588,136 @@
       "source_location": "L242"
     },
     {
-      "id": "src_game_loadout_selectloadoutid",
-      "label": "selectLoadoutId()",
+      "id": "src_data_beats_getrigpreset",
+      "label": "getRigPreset()",
       "_callable": true,
       "_origin": "ast",
       "community": 41,
-      "community_name": "emit",
+      "community_name": "cloneGroove",
       "file_type": "code",
-      "norm_label": "selectloadoutid()",
-      "source_file": "src/game/loadout.ts",
-      "source_location": "L40"
+      "norm_label": "getrigpreset()",
+      "source_file": "src/data/beats.ts",
+      "source_location": "L198"
     },
     {
-      "id": "src_game_loadout_toggleloadoutid",
-      "label": "toggleLoadoutId()",
+      "id": "src_game_arrangement_setgroove",
+      "label": "setGroove()",
       "_callable": true,
       "_origin": "ast",
       "community": 41,
-      "community_name": "emit",
+      "community_name": "cloneGroove",
       "file_type": "code",
-      "norm_label": "toggleloadoutid()",
-      "source_file": "src/game/loadout.ts",
-      "source_location": "L27"
+      "norm_label": "setgroove()",
+      "source_file": "src/game/arrangement.ts",
+      "source_location": "L135"
     },
     {
-      "id": "src_game_session_deletegroovebottle",
-      "label": "deleteGrooveBottle()",
+      "id": "src_game_groove_bottlegroove",
+      "label": "bottleGroove()",
       "_callable": true,
       "_origin": "ast",
       "community": 41,
-      "community_name": "emit",
+      "community_name": "cloneGroove",
       "file_type": "code",
-      "norm_label": "deletegroovebottle()",
+      "norm_label": "bottlegroove()",
+      "source_file": "src/game/groove.ts",
+      "source_location": "L343"
+    },
+    {
+      "id": "src_game_groove_clonegroove",
+      "label": "cloneGroove()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 41,
+      "community_name": "cloneGroove",
+      "file_type": "code",
+      "norm_label": "clonegroove()",
+      "source_file": "src/game/groove.ts",
+      "source_location": "L173"
+    },
+    {
+      "id": "src_game_session_equipgroovenow",
+      "label": "equipGrooveNow()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 41,
+      "community_name": "cloneGroove",
+      "file_type": "code",
+      "norm_label": "equipgroovenow()",
       "source_file": "src/game/session.ts",
-      "source_location": "L318"
+      "source_location": "L229"
     },
     {
-      "id": "src_game_session_deletemelodycard",
-      "label": "deleteMelodyCard()",
+      "id": "src_game_session_getgroovebottles",
+      "label": "getGrooveBottles()",
       "_callable": true,
       "_origin": "ast",
       "community": 41,
-      "community_name": "emit",
+      "community_name": "cloneGroove",
       "file_type": "code",
-      "norm_label": "deletemelodycard()",
+      "norm_label": "getgroovebottles()",
       "source_file": "src/game/session.ts",
-      "source_location": "L567"
+      "source_location": "L166"
     },
     {
-      "id": "src_game_session_emit",
-      "label": "emit()",
+      "id": "src_game_session_getgroovebyid",
+      "label": "getGrooveById()",
       "_callable": true,
       "_origin": "ast",
       "community": 41,
-      "community_name": "emit",
+      "community_name": "cloneGroove",
       "file_type": "code",
-      "norm_label": "emit()",
+      "norm_label": "getgroovebyid()",
       "source_file": "src/game/session.ts",
-      "source_location": "L136"
+      "source_location": "L171"
     },
     {
-      "id": "src_game_session_requestpresetchart",
-      "label": "requestPresetChart()",
+      "id": "src_game_session_getgroovechoices",
+      "label": "getGrooveChoices()",
       "_callable": true,
       "_origin": "ast",
       "community": 41,
-      "community_name": "emit",
+      "community_name": "cloneGroove",
       "file_type": "code",
-      "norm_label": "requestpresetchart()",
+      "norm_label": "getgroovechoices()",
       "source_file": "src/game/session.ts",
-      "source_location": "L731"
+      "source_location": "L162"
     },
     {
-      "id": "src_game_session_savecustomchordpreset",
-      "label": "saveCustomChordPreset()",
+      "id": "src_game_session_getpendinggroove",
+      "label": "getPendingGroove()",
       "_callable": true,
       "_origin": "ast",
       "community": 41,
-      "community_name": "emit",
+      "community_name": "cloneGroove",
       "file_type": "code",
-      "norm_label": "savecustomchordpreset()",
+      "norm_label": "getpendinggroove()",
       "source_file": "src/game/session.ts",
-      "source_location": "L422"
+      "source_location": "L187"
     },
     {
-      "id": "src_game_session_savecustommelodycard",
-      "label": "saveCustomMelodyCard()",
+      "id": "src_game_session_queueorequip",
+      "label": "queueOrEquip()",
       "_callable": true,
       "_origin": "ast",
       "community": 41,
-      "community_name": "emit",
+      "community_name": "cloneGroove",
       "file_type": "code",
-      "norm_label": "savecustommelodycard()",
+      "norm_label": "queueorequip()",
       "source_file": "src/game/session.ts",
-      "source_location": "L583"
+      "source_location": "L239"
+    },
+    {
+      "id": "src_game_session_rigunderedit",
+      "label": "rigUnderEdit()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 41,
+      "community_name": "cloneGroove",
+      "file_type": "code",
+      "norm_label": "rigunderedit()",
+      "source_file": "src/game/session.ts",
+      "source_location": "L250"
     },
     {
       "id": "src_game_session_savegroovebottle",
@@ -3449,83 +3725,71 @@
       "_callable": true,
       "_origin": "ast",
       "community": 41,
-      "community_name": "emit",
+      "community_name": "cloneGroove",
       "file_type": "code",
       "norm_label": "savegroovebottle()",
       "source_file": "src/game/session.ts",
       "source_location": "L303"
     },
     {
-      "id": "src_game_session_savemelodypreset",
-      "label": "saveMelodyPreset()",
+      "id": "src_game_session_selectbank",
+      "label": "selectBank()",
       "_callable": true,
       "_origin": "ast",
       "community": 41,
-      "community_name": "emit",
+      "community_name": "cloneGroove",
       "file_type": "code",
-      "norm_label": "savemelodypreset()",
+      "norm_label": "selectbank()",
       "source_file": "src/game/session.ts",
-      "source_location": "L531"
+      "source_location": "L273"
     },
     {
-      "id": "src_game_session_toggleloadoutgroove",
-      "label": "toggleLoadoutGroove()",
+      "id": "src_game_session_selectgroovecard",
+      "label": "selectGrooveCard()",
       "_callable": true,
       "_origin": "ast",
       "community": 41,
-      "community_name": "emit",
+      "community_name": "cloneGroove",
       "file_type": "code",
-      "norm_label": "toggleloadoutgroove()",
+      "norm_label": "selectgroovecard()",
       "source_file": "src/game/session.ts",
-      "source_location": "L215"
+      "source_location": "L258"
     },
     {
-      "id": "src_game_session_toggleloadoutmelody",
-      "label": "toggleLoadoutMelody()",
+      "id": "src_game_session_selectkit",
+      "label": "selectKit()",
       "_callable": true,
       "_origin": "ast",
       "community": 41,
-      "community_name": "emit",
+      "community_name": "cloneGroove",
       "file_type": "code",
-      "norm_label": "toggleloadoutmelody()",
+      "norm_label": "selectkit()",
       "source_file": "src/game/session.ts",
-      "source_location": "L222"
+      "source_location": "L282"
     },
     {
-      "id": "src_game_session_unlockallencounters",
-      "label": "unlockAllEncounters()",
+      "id": "src_game_session_selectpad",
+      "label": "selectPad()",
       "_callable": true,
       "_origin": "ast",
       "community": 41,
-      "community_name": "emit",
+      "community_name": "cloneGroove",
       "file_type": "code",
-      "norm_label": "unlockallencounters()",
+      "norm_label": "selectpad()",
       "source_file": "src/game/session.ts",
-      "source_location": "L382"
+      "source_location": "L266"
     },
     {
-      "id": "src_persistence_storage_savecardloadout",
-      "label": "saveCardLoadout()",
+      "id": "src_game_session_tweakequippedgroove",
+      "label": "tweakEquippedGroove()",
       "_callable": true,
       "_origin": "ast",
       "community": 41,
-      "community_name": "emit",
+      "community_name": "cloneGroove",
       "file_type": "code",
-      "norm_label": "savecardloadout()",
-      "source_file": "src/persistence/storage.ts",
-      "source_location": "L159"
-    },
-    {
-      "id": "src_persistence_storage_savegroovebottles",
-      "label": "saveGrooveBottles()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 41,
-      "community_name": "emit",
-      "file_type": "code",
-      "norm_label": "savegroovebottles()",
-      "source_file": "src/persistence/storage.ts",
-      "source_location": "L139"
+      "norm_label": "tweakequippedgroove()",
+      "source_file": "src/game/session.ts",
+      "source_location": "L290"
     },
     {
       "id": "src_persistence_storage_clearallpersisteddata",
@@ -3672,6 +3936,18 @@
       "source_location": "L117"
     },
     {
+      "id": "src_persistence_storage_savegroovebottles",
+      "label": "saveGrooveBottles()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 42,
+      "community_name": "storage.ts",
+      "file_type": "code",
+      "norm_label": "savegroovebottles()",
+      "source_file": "src/persistence/storage.ts",
+      "source_location": "L139"
+    },
+    {
       "id": "src_persistence_storage_saveselectedparty",
       "label": "saveSelectedParty()",
       "_callable": true,
@@ -3701,7 +3977,7 @@
       "_callable": true,
       "_origin": "ast",
       "community": 43,
-      "community_name": "sessionPhase.test.ts",
+      "community_name": "createFight",
       "file_type": "code",
       "norm_label": "getencounter()",
       "source_file": "src/data/encounters.ts",
@@ -3713,23 +3989,11 @@
       "_callable": true,
       "_origin": "ast",
       "community": 43,
-      "community_name": "sessionPhase.test.ts",
+      "community_name": "createFight",
       "file_type": "code",
       "norm_label": "createfight()",
       "source_file": "src/game/combat.ts",
       "source_location": "L155"
-    },
-    {
-      "id": "src_game_combat_reconcilepotency",
-      "label": "reconcilePotency()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 43,
-      "community_name": "sessionPhase.test.ts",
-      "file_type": "code",
-      "norm_label": "reconcilepotency()",
-      "source_file": "src/game/combat.ts",
-      "source_location": "L139"
     },
     {
       "id": "src_game_presets_resetpresetcooldowns",
@@ -3737,7 +4001,7 @@
       "_callable": true,
       "_origin": "ast",
       "community": 43,
-      "community_name": "sessionPhase.test.ts",
+      "community_name": "createFight",
       "file_type": "code",
       "norm_label": "resetpresetcooldowns()",
       "source_file": "src/game/presets.ts",
@@ -3749,47 +4013,11 @@
       "_callable": true,
       "_origin": "ast",
       "community": 43,
-      "community_name": "sessionPhase.test.ts",
+      "community_name": "createFight",
       "file_type": "code",
       "norm_label": "beginfight()",
       "source_file": "src/game/session.ts",
       "source_location": "L485"
-    },
-    {
-      "id": "src_game_session_getmelodybank",
-      "label": "getMelodyBank()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 43,
-      "community_name": "sessionPhase.test.ts",
-      "file_type": "code",
-      "norm_label": "getmelodybank()",
-      "source_file": "src/game/session.ts",
-      "source_location": "L157"
-    },
-    {
-      "id": "src_game_session_loadmelodytemplate",
-      "label": "loadMelodyTemplate()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 43,
-      "community_name": "sessionPhase.test.ts",
-      "file_type": "code",
-      "norm_label": "loadmelodytemplate()",
-      "source_file": "src/game/session.ts",
-      "source_location": "L669"
-    },
-    {
-      "id": "src_game_session_requesttemplatechart",
-      "label": "requestTemplateChart()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 43,
-      "community_name": "sessionPhase.test.ts",
-      "file_type": "code",
-      "norm_label": "requesttemplatechart()",
-      "source_file": "src/game/session.ts",
-      "source_location": "L698"
     },
     {
       "id": "src_game_session_resetfight",
@@ -3797,23 +4025,11 @@
       "_callable": true,
       "_origin": "ast",
       "community": 43,
-      "community_name": "sessionPhase.test.ts",
+      "community_name": "createFight",
       "file_type": "code",
       "norm_label": "resetfight()",
       "source_file": "src/game/session.ts",
       "source_location": "L517"
-    },
-    {
-      "id": "src_game_session_selectmelodycard",
-      "label": "selectMelodyCard()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 43,
-      "community_name": "sessionPhase.test.ts",
-      "file_type": "code",
-      "norm_label": "selectmelodycard()",
-      "source_file": "src/game/session.ts",
-      "source_location": "L651"
     },
     {
       "id": "src_game_session_setencounterid",
@@ -3821,23 +4037,11 @@
       "_callable": true,
       "_origin": "ast",
       "community": 43,
-      "community_name": "sessionPhase.test.ts",
+      "community_name": "createFight",
       "file_type": "code",
       "norm_label": "setencounterid()",
       "source_file": "src/game/session.ts",
       "source_location": "L359"
-    },
-    {
-      "id": "src_game_session_setgamephase",
-      "label": "setGamePhase()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 43,
-      "community_name": "sessionPhase.test.ts",
-      "file_type": "code",
-      "norm_label": "setgamephase()",
-      "source_file": "src/game/session.ts",
-      "source_location": "L336"
     },
     {
       "id": "src_game_session_setselectedparty",
@@ -3845,7 +4049,7 @@
       "_callable": true,
       "_origin": "ast",
       "community": 43,
-      "community_name": "sessionPhase.test.ts",
+      "community_name": "createFight",
       "file_type": "code",
       "norm_label": "setselectedparty()",
       "source_file": "src/game/session.ts",
@@ -3857,35 +4061,11 @@
       "_callable": true,
       "_origin": "ast",
       "community": 43,
-      "community_name": "sessionPhase.test.ts",
+      "community_name": "createFight",
       "file_type": "code",
       "norm_label": "startfight()",
       "source_file": "src/game/session.ts",
       "source_location": "L513"
-    },
-    {
-      "id": "src_game_session_tomenu",
-      "label": "toMenu()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 43,
-      "community_name": "sessionPhase.test.ts",
-      "file_type": "code",
-      "norm_label": "tomenu()",
-      "source_file": "src/game/session.ts",
-      "source_location": "L342"
-    },
-    {
-      "id": "src_game_session_toprep",
-      "label": "toPrep()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 43,
-      "community_name": "sessionPhase.test.ts",
-      "file_type": "code",
-      "norm_label": "toprep()",
-      "source_file": "src/game/session.ts",
-      "source_location": "L346"
     },
     {
       "id": "src_audio_player_stop",
@@ -3900,6 +4080,18 @@
       "source_location": "L108"
     },
     {
+      "id": "src_components_partycorner_test_mockdrop",
+      "label": "mockDrop()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 44,
+      "community_name": "useSessionStore.ts",
+      "file_type": "code",
+      "norm_label": "mockdrop()",
+      "source_file": "src/components/PartyCorner.test.tsx",
+      "source_location": "L6"
+    },
+    {
       "id": "src_game_arrangement_setkey",
       "label": "setKey()",
       "_callable": true,
@@ -3912,18 +4104,6 @@
       "source_location": "L183"
     },
     {
-      "id": "src_game_combat_defaultperformerid",
-      "label": "defaultPerformerId()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 44,
-      "community_name": "useSessionStore.ts",
-      "file_type": "code",
-      "norm_label": "defaultperformerid()",
-      "source_file": "src/game/combat.ts",
-      "source_location": "L391"
-    },
-    {
       "id": "src_game_perform_isparrykey",
       "label": "isParryKey()",
       "_callable": true,
@@ -3934,18 +4114,6 @@
       "norm_label": "isparrykey()",
       "source_file": "src/game/perform.ts",
       "source_location": "L17"
-    },
-    {
-      "id": "src_game_session_cancelchart",
-      "label": "cancelChart()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 44,
-      "community_name": "useSessionStore.ts",
-      "file_type": "code",
-      "norm_label": "cancelchart()",
-      "source_file": "src/game/session.ts",
-      "source_location": "L787"
     },
     {
       "id": "src_game_session_getactivemelodycardid",
@@ -4056,30 +4224,6 @@
       "source_location": "L332"
     },
     {
-      "id": "src_game_session_getgroovebottles",
-      "label": "getGrooveBottles()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 44,
-      "community_name": "useSessionStore.ts",
-      "file_type": "code",
-      "norm_label": "getgroovebottles()",
-      "source_file": "src/game/session.ts",
-      "source_location": "L166"
-    },
-    {
-      "id": "src_game_session_getgroovechoices",
-      "label": "getGrooveChoices()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 44,
-      "community_name": "useSessionStore.ts",
-      "file_type": "code",
-      "norm_label": "getgroovechoices()",
-      "source_file": "src/game/session.ts",
-      "source_location": "L162"
-    },
-    {
       "id": "src_game_session_getkits",
       "label": "getKits()",
       "_callable": true,
@@ -4104,6 +4248,18 @@
       "source_location": "L192"
     },
     {
+      "id": "src_game_session_getmelodybank",
+      "label": "getMelodyBank()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 44,
+      "community_name": "useSessionStore.ts",
+      "file_type": "code",
+      "norm_label": "getmelodybank()",
+      "source_file": "src/game/session.ts",
+      "source_location": "L157"
+    },
+    {
       "id": "src_game_session_getmelodycards",
       "label": "getMelodyCards()",
       "_callable": true,
@@ -4116,16 +4272,16 @@
       "source_location": "L197"
     },
     {
-      "id": "src_game_session_getpendinggroove",
-      "label": "getPendingGroove()",
+      "id": "src_game_session_getmelodymuted",
+      "label": "getMelodyMuted()",
       "_callable": true,
       "_origin": "ast",
       "community": 44,
       "community_name": "useSessionStore.ts",
       "file_type": "code",
-      "norm_label": "getpendinggroove()",
+      "norm_label": "getmelodymuted()",
       "source_file": "src/game/session.ts",
-      "source_location": "L187"
+      "source_location": "L149"
     },
     {
       "id": "src_game_session_getpendinggrooveid",
@@ -4164,88 +4320,52 @@
       "source_location": "L400"
     },
     {
-      "id": "src_game_session_movefighter",
-      "label": "moveFighter()",
+      "id": "src_game_session_setgamephase",
+      "label": "setGamePhase()",
       "_callable": true,
       "_origin": "ast",
       "community": 44,
       "community_name": "useSessionStore.ts",
       "file_type": "code",
-      "norm_label": "movefighter()",
+      "norm_label": "setgamephase()",
       "source_file": "src/game/session.ts",
-      "source_location": "L468"
+      "source_location": "L336"
     },
     {
-      "id": "src_game_session_mutatearrangement",
-      "label": "mutateArrangement()",
+      "id": "src_game_session_subscribe",
+      "label": "subscribe()",
       "_callable": true,
       "_origin": "ast",
       "community": 44,
       "community_name": "useSessionStore.ts",
       "file_type": "code",
-      "norm_label": "mutatearrangement()",
+      "norm_label": "subscribe()",
       "source_file": "src/game/session.ts",
-      "source_location": "L435"
+      "source_location": "L814"
     },
     {
-      "id": "src_game_session_presschartkey",
-      "label": "pressChartKey()",
+      "id": "src_game_session_tomenu",
+      "label": "toMenu()",
       "_callable": true,
       "_origin": "ast",
       "community": 44,
       "community_name": "useSessionStore.ts",
       "file_type": "code",
-      "norm_label": "presschartkey()",
+      "norm_label": "tomenu()",
       "source_file": "src/game/session.ts",
-      "source_location": "L746"
+      "source_location": "L342"
     },
     {
-      "id": "src_game_session_pressparrykey",
-      "label": "pressParryKey()",
+      "id": "src_game_session_toprep",
+      "label": "toPrep()",
       "_callable": true,
       "_origin": "ast",
       "community": 44,
       "community_name": "useSessionStore.ts",
       "file_type": "code",
-      "norm_label": "pressparrykey()",
+      "norm_label": "toprep()",
       "source_file": "src/game/session.ts",
-      "source_location": "L752"
-    },
-    {
-      "id": "src_game_session_releaseparrykey",
-      "label": "releaseParryKey()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 44,
-      "community_name": "useSessionStore.ts",
-      "file_type": "code",
-      "norm_label": "releaseparrykey()",
-      "source_file": "src/game/session.ts",
-      "source_location": "L758"
-    },
-    {
-      "id": "src_game_session_requestchordchart",
-      "label": "requestChordChart()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 44,
-      "community_name": "useSessionStore.ts",
-      "file_type": "code",
-      "norm_label": "requestchordchart()",
-      "source_file": "src/game/session.ts",
-      "source_location": "L718"
-    },
-    {
-      "id": "src_game_session_scoreqtepress",
-      "label": "scoreQtePress()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 44,
-      "community_name": "useSessionStore.ts",
-      "file_type": "code",
-      "norm_label": "scoreqtepress()",
-      "source_file": "src/game/session.ts",
-      "source_location": "L773"
+      "source_location": "L346"
     },
     {
       "id": "src_game_session_tostudio",
@@ -4356,148 +4476,16 @@
       "source_location": "L378"
     },
     {
-      "id": "src_components_chordpicker_aurasummary",
-      "label": "AuraSummary()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 47,
-      "community_name": "ChordPicker.tsx",
-      "file_type": "code",
-      "norm_label": "aurasummary()",
-      "source_file": "src/components/ChordPicker.tsx",
-      "source_location": "L40"
-    },
-    {
-      "id": "src_components_chordpicker_chordlabel",
-      "label": "chordLabel()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 47,
-      "community_name": "ChordPicker.tsx",
-      "file_type": "code",
-      "norm_label": "chordlabel()",
-      "source_file": "src/components/ChordPicker.tsx",
-      "source_location": "L15"
-    },
-    {
-      "id": "src_components_chordpicker_matcheslive",
-      "label": "matchesLive()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 47,
-      "community_name": "ChordPicker.tsx",
-      "file_type": "code",
-      "norm_label": "matcheslive()",
-      "source_file": "src/components/ChordPicker.tsx",
-      "source_location": "L35"
-    },
-    {
-      "id": "src_components_chordpicker_voicingof",
-      "label": "voicingOf()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 47,
-      "community_name": "ChordPicker.tsx",
-      "file_type": "code",
-      "norm_label": "voicingof()",
-      "source_file": "src/components/ChordPicker.tsx",
-      "source_location": "L30"
-    },
-    {
-      "id": "src_components_customchordbuilder_customchordbuilder",
-      "label": "CustomChordBuilder()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 47,
-      "community_name": "ChordPicker.tsx",
-      "file_type": "code",
-      "norm_label": "customchordbuilder()",
-      "source_file": "src/components/CustomChordBuilder.tsx",
-      "source_location": "L32"
-    },
-    {
-      "id": "src_components_customchordbuilder_metricbar",
-      "label": "MetricBar()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 47,
-      "community_name": "ChordPicker.tsx",
-      "file_type": "code",
-      "norm_label": "metricbar()",
-      "source_file": "src/components/CustomChordBuilder.tsx",
-      "source_location": "L18"
-    },
-    {
-      "id": "src_data_chords_chordeffectfor",
-      "label": "chordEffectFor()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 47,
-      "community_name": "ChordPicker.tsx",
-      "file_type": "code",
-      "norm_label": "chordeffectfor()",
-      "source_file": "src/data/chords.ts",
-      "source_location": "L45"
-    },
-    {
-      "id": "src_game_theory_pitchclassofmidi",
-      "label": "pitchClassOfMidi()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 47,
-      "community_name": "ChordPicker.tsx",
-      "file_type": "code",
-      "norm_label": "pitchclassofmidi()",
-      "source_file": "src/game/theory.ts",
-      "source_location": "L72"
-    },
-    {
-      "id": "src_game_theory_romantochord",
-      "label": "romanToChord()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 47,
-      "community_name": "ChordPicker.tsx",
-      "file_type": "code",
-      "norm_label": "romantochord()",
-      "source_file": "src/game/theory.ts",
-      "source_location": "L118"
-    },
-    {
-      "id": "src_game_theory_scoreprogression",
-      "label": "scoreProgression()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 47,
-      "community_name": "ChordPicker.tsx",
-      "file_type": "code",
-      "norm_label": "scoreprogression()",
-      "source_file": "src/game/theory.ts",
-      "source_location": "L244"
-    },
-    {
-      "id": "src_game_arrangement_fitprogression",
-      "label": "fitProgression()",
+      "id": "src_game_arrangement_allonsetkeys",
+      "label": "allOnsetKeys()",
       "_callable": true,
       "_origin": "ast",
       "community": 49,
       "community_name": "combat.ts",
       "file_type": "code",
-      "norm_label": "fitprogression()",
+      "norm_label": "allonsetkeys()",
       "source_file": "src/game/arrangement.ts",
-      "source_location": "L167"
-    },
-    {
-      "id": "src_game_arrangement_setchords",
-      "label": "setChords()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 49,
-      "community_name": "combat.ts",
-      "file_type": "code",
-      "norm_label": "setchords()",
-      "source_file": "src/game/arrangement.ts",
-      "source_location": "L173"
+      "source_location": "L324"
     },
     {
       "id": "src_game_combat_advancetick",
@@ -4560,6 +4548,18 @@
       "source_location": "L446"
     },
     {
+      "id": "src_game_combat_defaultperformerid",
+      "label": "defaultPerformerId()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 49,
+      "community_name": "combat.ts",
+      "file_type": "code",
+      "norm_label": "defaultperformerid()",
+      "source_file": "src/game/combat.ts",
+      "source_location": "L391"
+    },
+    {
       "id": "src_game_combat_evadechance",
       "label": "evadeChance()",
       "_callable": true,
@@ -4570,6 +4570,18 @@
       "norm_label": "evadechance()",
       "source_file": "src/game/combat.ts",
       "source_location": "L435"
+    },
+    {
+      "id": "src_game_combat_hasliveattacker",
+      "label": "hasLiveAttacker()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 49,
+      "community_name": "combat.ts",
+      "file_type": "code",
+      "norm_label": "hasliveattacker()",
+      "source_file": "src/game/combat.ts",
+      "source_location": "L380"
     },
     {
       "id": "src_game_combat_keeperinstrument",
@@ -4596,18 +4608,6 @@
       "source_location": "L400"
     },
     {
-      "id": "src_game_combat_melodymuted",
-      "label": "melodyMuted()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 49,
-      "community_name": "combat.ts",
-      "file_type": "code",
-      "norm_label": "melodymuted()",
-      "source_file": "src/game/combat.ts",
-      "source_location": "L282"
-    },
-    {
       "id": "src_game_combat_pickrandom",
       "label": "pickRandom()",
       "_callable": true,
@@ -4620,16 +4620,16 @@
       "source_location": "L421"
     },
     {
-      "id": "src_game_combat_releaseqtekey",
-      "label": "releaseQteKey()",
+      "id": "src_game_combat_reconcilepotency",
+      "label": "reconcilePotency()",
       "_callable": true,
       "_origin": "ast",
       "community": 49,
       "community_name": "combat.ts",
       "file_type": "code",
-      "norm_label": "releaseqtekey()",
+      "norm_label": "reconcilepotency()",
       "source_file": "src/game/combat.ts",
-      "source_location": "L355"
+      "source_location": "L139"
     },
     {
       "id": "src_game_combat_resolvemelodyvoice",
@@ -4668,16 +4668,28 @@
       "source_location": "L128"
     },
     {
-      "id": "src_game_qte_releaseqte",
-      "label": "releaseQte()",
+      "id": "src_game_perform_secondstosteps",
+      "label": "secondsToSteps()",
       "_callable": true,
       "_origin": "ast",
       "community": 49,
       "community_name": "combat.ts",
       "file_type": "code",
-      "norm_label": "releaseqte()",
+      "norm_label": "secondstosteps()",
+      "source_file": "src/game/perform.ts",
+      "source_location": "L75"
+    },
+    {
+      "id": "src_game_qte_missoverduenotes",
+      "label": "missOverdueNotes()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 49,
+      "community_name": "combat.ts",
+      "file_type": "code",
+      "norm_label": "missoverduenotes()",
       "source_file": "src/game/qte.ts",
-      "source_location": "L526"
+      "source_location": "L577"
     },
     {
       "id": "src_game_theory_tensionof",
@@ -4692,30 +4704,6 @@
       "source_location": "L257"
     },
     {
-      "id": "src_game_units_addshield",
-      "label": "addShield()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 49,
-      "community_name": "combat.ts",
-      "file_type": "code",
-      "norm_label": "addshield()",
-      "source_file": "src/game/units.ts",
-      "source_location": "L89"
-    },
-    {
-      "id": "src_game_units_applybuff",
-      "label": "applyBuff()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 49,
-      "community_name": "combat.ts",
-      "file_type": "code",
-      "norm_label": "applybuff()",
-      "source_file": "src/game/units.ts",
-      "source_location": "L97"
-    },
-    {
       "id": "src_game_units_buffdamagetaken",
       "label": "buffDamageTaken()",
       "_callable": true,
@@ -4728,42 +4716,6 @@
       "source_location": "L149"
     },
     {
-      "id": "src_game_units_buffglyphs",
-      "label": "buffGlyphs()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 49,
-      "community_name": "combat.ts",
-      "file_type": "code",
-      "norm_label": "buffglyphs()",
-      "source_file": "src/game/units.ts",
-      "source_location": "L142"
-    },
-    {
-      "id": "src_game_units_damagethroughshield",
-      "label": "damageThroughShield()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 49,
-      "community_name": "combat.ts",
-      "file_type": "code",
-      "norm_label": "damagethroughshield()",
-      "source_file": "src/game/units.ts",
-      "source_location": "L70"
-    },
-    {
-      "id": "src_game_units_healfighter",
-      "label": "healFighter()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 49,
-      "community_name": "combat.ts",
-      "file_type": "code",
-      "norm_label": "healfighter()",
-      "source_file": "src/game/units.ts",
-      "source_location": "L84"
-    },
-    {
       "id": "src_game_units_isdown",
       "label": "isDown()",
       "_callable": true,
@@ -4774,30 +4726,6 @@
       "norm_label": "isdown()",
       "source_file": "src/game/units.ts",
       "source_location": "L62"
-    },
-    {
-      "id": "src_game_units_makefighter",
-      "label": "makeFighter()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 49,
-      "community_name": "combat.ts",
-      "file_type": "code",
-      "norm_label": "makefighter()",
-      "source_file": "src/game/units.ts",
-      "source_location": "L30"
-    },
-    {
-      "id": "src_game_units_tickbuffs",
-      "label": "tickBuffs()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 49,
-      "community_name": "combat.ts",
-      "file_type": "code",
-      "norm_label": "tickbuffs()",
-      "source_file": "src/game/units.ts",
-      "source_location": "L121"
     },
     {
       "id": "src_game_qte_chartfrommelody",
@@ -4932,18 +4860,6 @@
       "source_location": "L106"
     },
     {
-      "id": "src_game_qte_missoverduenotes",
-      "label": "missOverdueNotes()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 5,
-      "community_name": "qte.ts",
-      "file_type": "code",
-      "norm_label": "missoverduenotes()",
-      "source_file": "src/game/qte.ts",
-      "source_location": "L577"
-    },
-    {
       "id": "src_game_qte_noteid",
       "label": "noteId()",
       "_callable": true,
@@ -5040,6 +4956,18 @@
       "source_location": "L142"
     },
     {
+      "id": "src_game_qte_releaseqte",
+      "label": "releaseQte()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 5,
+      "community_name": "qte.ts",
+      "file_type": "code",
+      "norm_label": "releaseqte()",
+      "source_file": "src/game/qte.ts",
+      "source_location": "L526"
+    },
+    {
       "id": "src_game_qte_synthchartfromsequence",
       "label": "synthChartFromSequence()",
       "_callable": true,
@@ -5064,16 +4992,16 @@
       "source_location": "L21"
     },
     {
-      "id": "src_game_combat_cancelqte",
-      "label": "cancelQte()",
+      "id": "src_game_combat_melodymuted",
+      "label": "melodyMuted()",
       "_callable": true,
       "_origin": "ast",
       "community": 50,
       "community_name": "combatQte.test.ts",
       "file_type": "code",
-      "norm_label": "cancelqte()",
+      "norm_label": "melodymuted()",
       "source_file": "src/game/combat.ts",
-      "source_location": "L363"
+      "source_location": "L282"
     },
     {
       "id": "src_game_combat_pressqtekey",
@@ -5145,7 +5073,7 @@
       "file_type": "code",
       "norm_label": "hitallontime()",
       "source_file": "src/game/combatQte.test.ts",
-      "source_location": "L24"
+      "source_location": "L25"
     },
     {
       "id": "src_game_combatqte_test_playallontime",
@@ -5157,7 +5085,7 @@
       "file_type": "code",
       "norm_label": "playallontime()",
       "source_file": "src/game/combatQte.test.ts",
-      "source_location": "L34"
+      "source_location": "L35"
     },
     {
       "id": "src_game_combatqte_test_seq",
@@ -5169,7 +5097,7 @@
       "file_type": "code",
       "norm_label": "seq()",
       "source_file": "src/game/combatQte.test.ts",
-      "source_location": "L18"
+      "source_location": "L19"
     },
     {
       "id": "src_game_qte_randomchart",
@@ -5266,6 +5194,66 @@
       "norm_label": "without()",
       "source_file": "src/game/positions.ts",
       "source_location": "L28"
+    },
+    {
+      "id": "src_components_transportbar_transportbar",
+      "label": "TransportBar()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 53,
+      "community_name": "theory.ts",
+      "file_type": "code",
+      "norm_label": "transportbar()",
+      "source_file": "src/components/TransportBar.tsx",
+      "source_location": "L5"
+    },
+    {
+      "id": "src_game_keys_keyequals",
+      "label": "keyEquals()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 53,
+      "community_name": "theory.ts",
+      "file_type": "code",
+      "norm_label": "keyequals()",
+      "source_file": "src/game/keys.ts",
+      "source_location": "L14"
+    },
+    {
+      "id": "src_game_keys_keylabel",
+      "label": "keyLabel()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 53,
+      "community_name": "theory.ts",
+      "file_type": "code",
+      "norm_label": "keylabel()",
+      "source_file": "src/game/keys.ts",
+      "source_location": "L18"
+    },
+    {
+      "id": "src_game_keys_randomfightkey",
+      "label": "randomFightKey()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 53,
+      "community_name": "theory.ts",
+      "file_type": "code",
+      "norm_label": "randomfightkey()",
+      "source_file": "src/game/keys.ts",
+      "source_location": "L23"
+    },
+    {
+      "id": "src_game_keys_resolvefightkey",
+      "label": "resolveFightKey()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 53,
+      "community_name": "theory.ts",
+      "file_type": "code",
+      "norm_label": "resolvefightkey()",
+      "source_file": "src/game/keys.ts",
+      "source_location": "L35"
     },
     {
       "id": "src_game_theory_diatonicfitscore",
@@ -5868,6 +5856,18 @@
       "source_location": "L156"
     },
     {
+      "id": "src_components_screens_resultoverlay_resultoverlay",
+      "label": "ResultOverlay()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 6,
+      "community_name": "preview.ts",
+      "file_type": "code",
+      "norm_label": "resultoverlay()",
+      "source_file": "src/components/screens/ResultOverlay.tsx",
+      "source_location": "L12"
+    },
+    {
       "id": "src_data_kits_getkit",
       "label": "getKit()",
       "_callable": true,
@@ -6068,6 +6068,28 @@
       "source_location": "L9"
     },
     {
+      "id": "src_components_chordpicker",
+      "label": "ChordPicker.tsx",
+      "_origin": "ast",
+      "community": 0,
+      "community_name": "cn",
+      "file_type": "code",
+      "norm_label": "chordpicker.tsx",
+      "source_file": "src/components/ChordPicker.tsx",
+      "source_location": "L1"
+    },
+    {
+      "id": "src_components_chordpicker_test",
+      "label": "ChordPicker.test.tsx",
+      "_origin": "ast",
+      "community": 0,
+      "community_name": "cn",
+      "file_type": "code",
+      "norm_label": "chordpicker.test.tsx",
+      "source_file": "src/components/ChordPicker.test.tsx",
+      "source_location": "L1"
+    },
+    {
       "id": "src_components_combatfeedback",
       "label": "CombatFeedback.tsx",
       "_origin": "ast",
@@ -6087,6 +6109,50 @@
       "file_type": "code",
       "norm_label": "combatlog.tsx",
       "source_file": "src/components/CombatLog.tsx",
+      "source_location": "L1"
+    },
+    {
+      "id": "src_components_customchordbuilder",
+      "label": "CustomChordBuilder.tsx",
+      "_origin": "ast",
+      "community": 0,
+      "community_name": "cn",
+      "file_type": "code",
+      "norm_label": "customchordbuilder.tsx",
+      "source_file": "src/components/CustomChordBuilder.tsx",
+      "source_location": "L1"
+    },
+    {
+      "id": "src_components_customchordbuilder_roman_palette_major",
+      "label": "ROMAN_PALETTE_MAJOR",
+      "_origin": "ast",
+      "community": 0,
+      "community_name": "cn",
+      "file_type": "code",
+      "norm_label": "roman_palette_major",
+      "source_file": "src/components/CustomChordBuilder.tsx",
+      "source_location": "L9"
+    },
+    {
+      "id": "src_components_customchordbuilder_roman_palette_minor",
+      "label": "ROMAN_PALETTE_MINOR",
+      "_origin": "ast",
+      "community": 0,
+      "community_name": "cn",
+      "file_type": "code",
+      "norm_label": "roman_palette_minor",
+      "source_file": "src/components/CustomChordBuilder.tsx",
+      "source_location": "L10"
+    },
+    {
+      "id": "src_components_customchordbuilder_test",
+      "label": "CustomChordBuilder.test.tsx",
+      "_origin": "ast",
+      "community": 0,
+      "community_name": "cn",
+      "file_type": "code",
+      "norm_label": "customchordbuilder.test.tsx",
+      "source_file": "src/components/CustomChordBuilder.test.tsx",
       "source_location": "L1"
     },
     {
@@ -6244,17 +6310,6 @@
       "source_location": "L19"
     },
     {
-      "id": "src_components_partycorner_test",
-      "label": "PartyCorner.test.tsx",
-      "_origin": "ast",
-      "community": 0,
-      "community_name": "cn",
-      "file_type": "code",
-      "norm_label": "partycorner.test.tsx",
-      "source_file": "src/components/PartyCorner.test.tsx",
-      "source_location": "L1"
-    },
-    {
       "id": "src_components_phasestrip",
       "label": "PhaseStrip.tsx",
       "_origin": "ast",
@@ -6264,6 +6319,50 @@
       "norm_label": "phasestrip.tsx",
       "source_file": "src/components/PhaseStrip.tsx",
       "source_location": "L1"
+    },
+    {
+      "id": "src_components_qtepanel",
+      "label": "QtePanel.tsx",
+      "_origin": "ast",
+      "community": 0,
+      "community_name": "cn",
+      "file_type": "code",
+      "norm_label": "qtepanel.tsx",
+      "source_file": "src/components/QtePanel.tsx",
+      "source_location": "L1"
+    },
+    {
+      "id": "src_components_qtepanel_lanes",
+      "label": "LANES",
+      "_origin": "ast",
+      "community": 0,
+      "community_name": "cn",
+      "file_type": "code",
+      "norm_label": "lanes",
+      "source_file": "src/components/QtePanel.tsx",
+      "source_location": "L21"
+    },
+    {
+      "id": "src_components_qtepanel_parry_lanes",
+      "label": "PARRY_LANES",
+      "_origin": "ast",
+      "community": 0,
+      "community_name": "cn",
+      "file_type": "code",
+      "norm_label": "parry_lanes",
+      "source_file": "src/components/QtePanel.tsx",
+      "source_location": "L61"
+    },
+    {
+      "id": "src_components_qtepanel_receptorrow",
+      "label": "ReceptorRow",
+      "_origin": "ast",
+      "community": 0,
+      "community_name": "cn",
+      "file_type": "code",
+      "norm_label": "receptorrow",
+      "source_file": "src/components/QtePanel.tsx",
+      "source_location": "L245"
     },
     {
       "id": "src_components_rosterselectmodal",
@@ -6307,6 +6406,17 @@
       "file_type": "code",
       "norm_label": "combatscreen.tsx",
       "source_file": "src/components/screens/CombatScreen.tsx",
+      "source_location": "L1"
+    },
+    {
+      "id": "src_components_screens_menuscreen",
+      "label": "MenuScreen.tsx",
+      "_origin": "ast",
+      "community": 0,
+      "community_name": "cn",
+      "file_type": "code",
+      "norm_label": "menuscreen.tsx",
+      "source_file": "src/components/screens/MenuScreen.tsx",
       "source_location": "L1"
     },
     {
@@ -6431,48 +6541,48 @@
       "source_location": "L1"
     },
     {
-      "id": "src_hooks_usewasd",
-      "label": "useWasd.ts",
+      "id": "src_data_chords",
+      "label": "chords.ts",
       "_origin": "ast",
       "community": 0,
       "community_name": "cn",
       "file_type": "code",
-      "norm_label": "usewasd.ts",
-      "source_file": "src/hooks/useWasd.ts",
+      "norm_label": "chords.ts",
+      "source_file": "src/data/chords.ts",
       "source_location": "L1"
     },
     {
-      "id": "src_hooks_usewasd_keys",
-      "label": "KEYS",
+      "id": "src_data_chords_chord_presets",
+      "label": "CHORD_PRESETS",
       "_origin": "ast",
       "community": 0,
       "community_name": "cn",
       "file_type": "code",
-      "norm_label": "keys",
-      "source_file": "src/hooks/useWasd.ts",
-      "source_location": "L5"
+      "norm_label": "chord_presets",
+      "source_file": "src/data/chords.ts",
+      "source_location": "L16"
     },
     {
-      "id": "src_hooks_usewasd_num_keys",
-      "label": "NUM_KEYS",
+      "id": "src_game_arrangement_steps_per_bar",
+      "label": "STEPS_PER_BAR",
       "_origin": "ast",
       "community": 0,
       "community_name": "cn",
       "file_type": "code",
-      "norm_label": "num_keys",
-      "source_file": "src/hooks/useWasd.ts",
-      "source_location": "L7"
+      "norm_label": "steps_per_bar",
+      "source_file": "src/game/arrangement.ts",
+      "source_location": "L17"
     },
     {
-      "id": "src_hooks_usewasd_parry_keys",
-      "label": "PARRY_KEYS",
+      "id": "src_game_theory_test",
+      "label": "theory.test.ts",
       "_origin": "ast",
       "community": 0,
       "community_name": "cn",
       "file_type": "code",
-      "norm_label": "parry_keys",
-      "source_file": "src/hooks/useWasd.ts",
-      "source_location": "L6"
+      "norm_label": "theory.test.ts",
+      "source_file": "src/game/theory.test.ts",
+      "source_location": "L1"
     },
     {
       "id": "src_lib_utils",
@@ -6497,6 +6607,17 @@
       "source_location": "L1"
     },
     {
+      "id": "src_test_setup",
+      "label": "setup.ts",
+      "_origin": "ast",
+      "community": 0,
+      "community_name": "cn",
+      "file_type": "code",
+      "norm_label": "setup.ts",
+      "source_file": "src/test/setup.ts",
+      "source_location": "L1"
+    },
+    {
       "id": "ref_react",
       "label": "react",
       "_origin": "ast",
@@ -6506,6 +6627,28 @@
       "norm_label": "react",
       "source_file": "package.json",
       "source_location": "L20"
+    },
+    {
+      "id": "ref_react_dom",
+      "label": "react-dom",
+      "_origin": "ast",
+      "community": 0,
+      "community_name": "cn",
+      "file_type": "concept",
+      "norm_label": "react-dom",
+      "source_file": "package.json",
+      "source_location": "L21"
+    },
+    {
+      "id": "ref_testing_library_jest_dom",
+      "label": "@testing-library/jest-dom",
+      "_origin": "ast",
+      "community": 0,
+      "community_name": "cn",
+      "file_type": "concept",
+      "norm_label": "@testing-library/jest-dom",
+      "source_file": "package.json",
+      "source_location": "L28"
     },
     {
       "id": "ref_testing_library_react",
@@ -6519,48 +6662,15 @@
       "source_location": "L29"
     },
     {
-      "id": "src_game_loadout",
-      "label": "loadout.ts",
+      "id": "ref_vitest",
+      "label": "vitest",
       "_origin": "ast",
-      "community": 1,
-      "community_name": "session.ts",
-      "file_type": "code",
-      "norm_label": "loadout.ts",
-      "source_file": "src/game/loadout.ts",
-      "source_location": "L1"
-    },
-    {
-      "id": "src_game_loadout_max_groove_cards",
-      "label": "MAX_GROOVE_CARDS",
-      "_origin": "ast",
-      "community": 1,
-      "community_name": "session.ts",
-      "file_type": "code",
-      "norm_label": "max_groove_cards",
-      "source_file": "src/game/loadout.ts",
-      "source_location": "L12"
-    },
-    {
-      "id": "src_game_loadout_max_melody_cards",
-      "label": "MAX_MELODY_CARDS",
-      "_origin": "ast",
-      "community": 1,
-      "community_name": "session.ts",
-      "file_type": "code",
-      "norm_label": "max_melody_cards",
-      "source_file": "src/game/loadout.ts",
-      "source_location": "L13"
-    },
-    {
-      "id": "src_game_melodybank_default_melody_card_id",
-      "label": "DEFAULT_MELODY_CARD_ID",
-      "_origin": "ast",
-      "community": 1,
-      "community_name": "session.ts",
-      "file_type": "code",
-      "norm_label": "default_melody_card_id",
-      "source_file": "src/game/melodyBank.ts",
-      "source_location": "L32"
+      "community": 0,
+      "community_name": "cn",
+      "file_type": "concept",
+      "norm_label": "vitest",
+      "source_file": "package.json",
+      "source_location": "L40"
     },
     {
       "id": "src_game_session",
@@ -7188,17 +7298,6 @@
       "norm_label": "@radix-ui/react-dialog",
       "source_file": "package.json",
       "source_location": "L15"
-    },
-    {
-      "id": "ref_react_dom",
-      "label": "react-dom",
-      "_origin": "ast",
-      "community": 12,
-      "community_name": "package.json",
-      "file_type": "concept",
-      "norm_label": "react-dom",
-      "source_file": "package.json",
-      "source_location": "L21"
     },
     {
       "id": "ref_tailwind_merge",
@@ -7883,191 +7982,48 @@
       "source_location": "L12"
     },
     {
-      "id": "src_components_qtepanel",
-      "label": "QtePanel.tsx",
+      "id": "src_game_loadout",
+      "label": "loadout.ts",
       "_origin": "ast",
-      "community": 2,
-      "community_name": "QtePanel.tsx",
+      "community": 21,
+      "community_name": "loadout.ts",
       "file_type": "code",
-      "norm_label": "qtepanel.tsx",
-      "source_file": "src/components/QtePanel.tsx",
+      "norm_label": "loadout.ts",
+      "source_file": "src/game/loadout.ts",
       "source_location": "L1"
     },
     {
-      "id": "src_components_qtepanel_lanes",
-      "label": "LANES",
+      "id": "src_game_loadout_max_groove_cards",
+      "label": "MAX_GROOVE_CARDS",
       "_origin": "ast",
-      "community": 2,
-      "community_name": "QtePanel.tsx",
+      "community": 21,
+      "community_name": "loadout.ts",
       "file_type": "code",
-      "norm_label": "lanes",
-      "source_file": "src/components/QtePanel.tsx",
-      "source_location": "L21"
+      "norm_label": "max_groove_cards",
+      "source_file": "src/game/loadout.ts",
+      "source_location": "L12"
     },
     {
-      "id": "src_components_qtepanel_parry_lanes",
-      "label": "PARRY_LANES",
+      "id": "src_game_loadout_max_melody_cards",
+      "label": "MAX_MELODY_CARDS",
       "_origin": "ast",
-      "community": 2,
-      "community_name": "QtePanel.tsx",
+      "community": 21,
+      "community_name": "loadout.ts",
       "file_type": "code",
-      "norm_label": "parry_lanes",
-      "source_file": "src/components/QtePanel.tsx",
-      "source_location": "L61"
+      "norm_label": "max_melody_cards",
+      "source_file": "src/game/loadout.ts",
+      "source_location": "L13"
     },
     {
-      "id": "src_components_qtepanel_receptorrow",
-      "label": "ReceptorRow",
+      "id": "src_game_melodybank_default_melody_card_id",
+      "label": "DEFAULT_MELODY_CARD_ID",
       "_origin": "ast",
-      "community": 2,
-      "community_name": "QtePanel.tsx",
+      "community": 21,
+      "community_name": "loadout.ts",
       "file_type": "code",
-      "norm_label": "receptorrow",
-      "source_file": "src/components/QtePanel.tsx",
-      "source_location": "L245"
-    },
-    {
-      "id": "src_game_perform",
-      "label": "game/perform.ts",
-      "_origin": "ast",
-      "community": 2,
-      "community_name": "QtePanel.tsx",
-      "file_type": "code",
-      "norm_label": "game/perform.ts",
-      "source_file": "src/game/perform.ts",
-      "source_location": "L1"
-    },
-    {
-      "id": "src_game_perform_home_cursor",
-      "label": "HOME_CURSOR",
-      "_origin": "ast",
-      "community": 2,
-      "community_name": "QtePanel.tsx",
-      "file_type": "code",
-      "norm_label": "home_cursor",
-      "source_file": "src/game/perform.ts",
-      "source_location": "L28"
-    },
-    {
-      "id": "src_game_perform_max_degree",
-      "label": "MAX_DEGREE",
-      "_origin": "ast",
-      "community": 2,
-      "community_name": "QtePanel.tsx",
-      "file_type": "code",
-      "norm_label": "max_degree",
-      "source_file": "src/game/perform.ts",
-      "source_location": "L30"
-    },
-    {
-      "id": "src_game_perform_max_octave",
-      "label": "MAX_OCTAVE",
-      "_origin": "ast",
-      "community": 2,
-      "community_name": "QtePanel.tsx",
-      "file_type": "code",
-      "norm_label": "max_octave",
-      "source_file": "src/game/perform.ts",
+      "norm_label": "default_melody_card_id",
+      "source_file": "src/game/melodyBank.ts",
       "source_location": "L32"
-    },
-    {
-      "id": "src_game_perform_min_degree",
-      "label": "MIN_DEGREE",
-      "_origin": "ast",
-      "community": 2,
-      "community_name": "QtePanel.tsx",
-      "file_type": "code",
-      "norm_label": "min_degree",
-      "source_file": "src/game/perform.ts",
-      "source_location": "L29"
-    },
-    {
-      "id": "src_game_perform_min_octave",
-      "label": "MIN_OCTAVE",
-      "_origin": "ast",
-      "community": 2,
-      "community_name": "QtePanel.tsx",
-      "file_type": "code",
-      "norm_label": "min_octave",
-      "source_file": "src/game/perform.ts",
-      "source_location": "L31"
-    },
-    {
-      "id": "src_game_perform_parry_keys",
-      "label": "PARRY_KEYS",
-      "_origin": "ast",
-      "community": 2,
-      "community_name": "QtePanel.tsx",
-      "file_type": "code",
-      "norm_label": "parry_keys",
-      "source_file": "src/game/perform.ts",
-      "source_location": "L15"
-    },
-    {
-      "id": "src_game_perform_test",
-      "label": "perform.test.ts",
-      "_origin": "ast",
-      "community": 2,
-      "community_name": "QtePanel.tsx",
-      "file_type": "code",
-      "norm_label": "perform.test.ts",
-      "source_file": "src/game/perform.test.ts",
-      "source_location": "L1"
-    },
-    {
-      "id": "src_hooks_useqteplayhead",
-      "label": "useQtePlayhead.ts",
-      "_origin": "ast",
-      "community": 2,
-      "community_name": "QtePanel.tsx",
-      "file_type": "code",
-      "norm_label": "useqteplayhead.ts",
-      "source_file": "src/hooks/useQtePlayhead.ts",
-      "source_location": "L1"
-    },
-    {
-      "id": "src_components_transportbar",
-      "label": "TransportBar.tsx",
-      "_origin": "ast",
-      "community": 21,
-      "community_name": "Key",
-      "file_type": "code",
-      "norm_label": "transportbar.tsx",
-      "source_file": "src/components/TransportBar.tsx",
-      "source_location": "L1"
-    },
-    {
-      "id": "src_game_keys",
-      "label": "keys.ts",
-      "_origin": "ast",
-      "community": 21,
-      "community_name": "Key",
-      "file_type": "code",
-      "norm_label": "keys.ts",
-      "source_file": "src/game/keys.ts",
-      "source_location": "L1"
-    },
-    {
-      "id": "src_game_keys_fight_keys",
-      "label": "FIGHT_KEYS",
-      "_origin": "ast",
-      "community": 21,
-      "community_name": "Key",
-      "file_type": "code",
-      "norm_label": "fight_keys",
-      "source_file": "src/game/keys.ts",
-      "source_location": "L7"
-    },
-    {
-      "id": "src_game_keys_test",
-      "label": "keys.test.ts",
-      "_origin": "ast",
-      "community": 21,
-      "community_name": "Key",
-      "file_type": "code",
-      "norm_label": "keys.test.ts",
-      "source_file": "src/game/keys.test.ts",
-      "source_location": "L1"
     },
     {
       "id": "oxlintrc",
@@ -8235,17 +8191,6 @@
       "source_location": "L18"
     },
     {
-      "id": "src_game_arrangement_steps_per_bar",
-      "label": "STEPS_PER_BAR",
-      "_origin": "ast",
-      "community": 3,
-      "community_name": "arrangement.ts",
-      "file_type": "code",
-      "norm_label": "steps_per_bar",
-      "source_file": "src/game/arrangement.ts",
-      "source_location": "L17"
-    },
-    {
       "id": "src_game_arrangement_test",
       "label": "arrangement.test.ts",
       "_origin": "ast",
@@ -8301,6 +8246,39 @@
       "source_location": "L20"
     },
     {
+      "id": "src_game_melodybank",
+      "label": "melodyBank.ts",
+      "_origin": "ast",
+      "community": 3,
+      "community_name": "arrangement.ts",
+      "file_type": "code",
+      "norm_label": "melodybank.ts",
+      "source_file": "src/game/melodyBank.ts",
+      "source_location": "L1"
+    },
+    {
+      "id": "src_game_melodybank_preset_melody_card_ids",
+      "label": "PRESET_MELODY_CARD_IDS",
+      "_origin": "ast",
+      "community": 3,
+      "community_name": "arrangement.ts",
+      "file_type": "code",
+      "norm_label": "preset_melody_card_ids",
+      "source_file": "src/game/melodyBank.ts",
+      "source_location": "L26"
+    },
+    {
+      "id": "src_game_melodybank_test",
+      "label": "melodyBank.test.ts",
+      "_origin": "ast",
+      "community": 3,
+      "community_name": "arrangement.ts",
+      "file_type": "code",
+      "norm_label": "melodybank.test.ts",
+      "source_file": "src/game/melodyBank.test.ts",
+      "source_location": "L1"
+    },
+    {
       "id": "src_game_presets",
       "label": "presets.ts",
       "_origin": "ast",
@@ -8323,69 +8301,25 @@
       "source_location": "L1"
     },
     {
-      "id": "src_test_setup",
-      "label": "setup.ts",
+      "id": "src_game_units",
+      "label": "units.ts",
       "_origin": "ast",
-      "community": 3,
-      "community_name": "arrangement.ts",
+      "community": 39,
+      "community_name": "units.ts",
       "file_type": "code",
-      "norm_label": "setup.ts",
-      "source_file": "src/test/setup.ts",
+      "norm_label": "units.ts",
+      "source_file": "src/game/units.ts",
       "source_location": "L1"
     },
     {
-      "id": "ref_testing_library_jest_dom",
-      "label": "@testing-library/jest-dom",
-      "_origin": "ast",
-      "community": 3,
-      "community_name": "arrangement.ts",
-      "file_type": "concept",
-      "norm_label": "@testing-library/jest-dom",
-      "source_file": "package.json",
-      "source_location": "L28"
-    },
-    {
-      "id": "ref_vitest",
-      "label": "vitest",
-      "_origin": "ast",
-      "community": 3,
-      "community_name": "arrangement.ts",
-      "file_type": "concept",
-      "norm_label": "vitest",
-      "source_file": "package.json",
-      "source_location": "L40"
-    },
-    {
-      "id": "src_game_melodybank",
-      "label": "melodyBank.ts",
+      "id": "src_game_units_test",
+      "label": "units.test.ts",
       "_origin": "ast",
       "community": 39,
-      "community_name": "melodyBank.ts",
+      "community_name": "units.ts",
       "file_type": "code",
-      "norm_label": "melodybank.ts",
-      "source_file": "src/game/melodyBank.ts",
-      "source_location": "L1"
-    },
-    {
-      "id": "src_game_melodybank_preset_melody_card_ids",
-      "label": "PRESET_MELODY_CARD_IDS",
-      "_origin": "ast",
-      "community": 39,
-      "community_name": "melodyBank.ts",
-      "file_type": "code",
-      "norm_label": "preset_melody_card_ids",
-      "source_file": "src/game/melodyBank.ts",
-      "source_location": "L26"
-    },
-    {
-      "id": "src_game_melodybank_test",
-      "label": "melodyBank.test.ts",
-      "_origin": "ast",
-      "community": 39,
-      "community_name": "melodyBank.ts",
-      "file_type": "code",
-      "norm_label": "melodybank.test.ts",
-      "source_file": "src/game/melodyBank.test.ts",
+      "norm_label": "units.test.ts",
+      "source_file": "src/game/units.test.ts",
       "source_location": "L1"
     },
     {
@@ -8499,6 +8433,94 @@
       "source_location": "L29"
     },
     {
+      "id": "src_game_perform",
+      "label": "game/perform.ts",
+      "_origin": "ast",
+      "community": 4,
+      "community_name": "parryChart.ts",
+      "file_type": "code",
+      "norm_label": "game/perform.ts",
+      "source_file": "src/game/perform.ts",
+      "source_location": "L1"
+    },
+    {
+      "id": "src_game_perform_home_cursor",
+      "label": "HOME_CURSOR",
+      "_origin": "ast",
+      "community": 4,
+      "community_name": "parryChart.ts",
+      "file_type": "code",
+      "norm_label": "home_cursor",
+      "source_file": "src/game/perform.ts",
+      "source_location": "L28"
+    },
+    {
+      "id": "src_game_perform_max_degree",
+      "label": "MAX_DEGREE",
+      "_origin": "ast",
+      "community": 4,
+      "community_name": "parryChart.ts",
+      "file_type": "code",
+      "norm_label": "max_degree",
+      "source_file": "src/game/perform.ts",
+      "source_location": "L30"
+    },
+    {
+      "id": "src_game_perform_max_octave",
+      "label": "MAX_OCTAVE",
+      "_origin": "ast",
+      "community": 4,
+      "community_name": "parryChart.ts",
+      "file_type": "code",
+      "norm_label": "max_octave",
+      "source_file": "src/game/perform.ts",
+      "source_location": "L32"
+    },
+    {
+      "id": "src_game_perform_min_degree",
+      "label": "MIN_DEGREE",
+      "_origin": "ast",
+      "community": 4,
+      "community_name": "parryChart.ts",
+      "file_type": "code",
+      "norm_label": "min_degree",
+      "source_file": "src/game/perform.ts",
+      "source_location": "L29"
+    },
+    {
+      "id": "src_game_perform_min_octave",
+      "label": "MIN_OCTAVE",
+      "_origin": "ast",
+      "community": 4,
+      "community_name": "parryChart.ts",
+      "file_type": "code",
+      "norm_label": "min_octave",
+      "source_file": "src/game/perform.ts",
+      "source_location": "L31"
+    },
+    {
+      "id": "src_game_perform_parry_keys",
+      "label": "PARRY_KEYS",
+      "_origin": "ast",
+      "community": 4,
+      "community_name": "parryChart.ts",
+      "file_type": "code",
+      "norm_label": "parry_keys",
+      "source_file": "src/game/perform.ts",
+      "source_location": "L15"
+    },
+    {
+      "id": "src_game_perform_test",
+      "label": "perform.test.ts",
+      "_origin": "ast",
+      "community": 4,
+      "community_name": "parryChart.ts",
+      "file_type": "code",
+      "norm_label": "perform.test.ts",
+      "source_file": "src/game/perform.test.ts",
+      "source_location": "L1"
+    },
+    {
       "id": "src_game_theory_default_key",
       "label": "DEFAULT_KEY",
       "_origin": "ast",
@@ -8508,6 +8530,61 @@
       "norm_label": "default_key",
       "source_file": "src/game/theory.ts",
       "source_location": "L20"
+    },
+    {
+      "id": "src_hooks_useqteplayhead",
+      "label": "useQtePlayhead.ts",
+      "_origin": "ast",
+      "community": 4,
+      "community_name": "parryChart.ts",
+      "file_type": "code",
+      "norm_label": "useqteplayhead.ts",
+      "source_file": "src/hooks/useQtePlayhead.ts",
+      "source_location": "L1"
+    },
+    {
+      "id": "src_hooks_usewasd",
+      "label": "useWasd.ts",
+      "_origin": "ast",
+      "community": 4,
+      "community_name": "parryChart.ts",
+      "file_type": "code",
+      "norm_label": "usewasd.ts",
+      "source_file": "src/hooks/useWasd.ts",
+      "source_location": "L1"
+    },
+    {
+      "id": "src_hooks_usewasd_keys",
+      "label": "KEYS",
+      "_origin": "ast",
+      "community": 4,
+      "community_name": "parryChart.ts",
+      "file_type": "code",
+      "norm_label": "keys",
+      "source_file": "src/hooks/useWasd.ts",
+      "source_location": "L5"
+    },
+    {
+      "id": "src_hooks_usewasd_num_keys",
+      "label": "NUM_KEYS",
+      "_origin": "ast",
+      "community": 4,
+      "community_name": "parryChart.ts",
+      "file_type": "code",
+      "norm_label": "num_keys",
+      "source_file": "src/hooks/useWasd.ts",
+      "source_location": "L7"
+    },
+    {
+      "id": "src_hooks_usewasd_parry_keys",
+      "label": "PARRY_KEYS",
+      "_origin": "ast",
+      "community": 4,
+      "community_name": "parryChart.ts",
+      "file_type": "code",
+      "norm_label": "parry_keys",
+      "source_file": "src/hooks/useWasd.ts",
+      "source_location": "L6"
     },
     {
       "id": "src_data_beats",
@@ -8796,11 +8873,22 @@
       "source_location": "L1"
     },
     {
+      "id": "src_components_partycorner_test",
+      "label": "PartyCorner.test.tsx",
+      "_origin": "ast",
+      "community": 44,
+      "community_name": "useSessionStore.ts",
+      "file_type": "code",
+      "norm_label": "partycorner.test.tsx",
+      "source_file": "src/components/PartyCorner.test.tsx",
+      "source_location": "L1"
+    },
+    {
       "id": "src_game_sessionphase_test",
       "label": "sessionPhase.test.ts",
       "_origin": "ast",
-      "community": 43,
-      "community_name": "sessionPhase.test.ts",
+      "community": 44,
+      "community_name": "useSessionStore.ts",
       "file_type": "code",
       "norm_label": "sessionphase.test.ts",
       "source_file": "src/game/sessionPhase.test.ts",
@@ -9071,94 +9159,6 @@
       "source_location": "L5"
     },
     {
-      "id": "src_components_chordpicker",
-      "label": "ChordPicker.tsx",
-      "_origin": "ast",
-      "community": 47,
-      "community_name": "ChordPicker.tsx",
-      "file_type": "code",
-      "norm_label": "chordpicker.tsx",
-      "source_file": "src/components/ChordPicker.tsx",
-      "source_location": "L1"
-    },
-    {
-      "id": "src_components_customchordbuilder",
-      "label": "CustomChordBuilder.tsx",
-      "_origin": "ast",
-      "community": 47,
-      "community_name": "ChordPicker.tsx",
-      "file_type": "code",
-      "norm_label": "customchordbuilder.tsx",
-      "source_file": "src/components/CustomChordBuilder.tsx",
-      "source_location": "L1"
-    },
-    {
-      "id": "src_components_customchordbuilder_roman_palette_major",
-      "label": "ROMAN_PALETTE_MAJOR",
-      "_origin": "ast",
-      "community": 47,
-      "community_name": "ChordPicker.tsx",
-      "file_type": "code",
-      "norm_label": "roman_palette_major",
-      "source_file": "src/components/CustomChordBuilder.tsx",
-      "source_location": "L9"
-    },
-    {
-      "id": "src_components_customchordbuilder_roman_palette_minor",
-      "label": "ROMAN_PALETTE_MINOR",
-      "_origin": "ast",
-      "community": 47,
-      "community_name": "ChordPicker.tsx",
-      "file_type": "code",
-      "norm_label": "roman_palette_minor",
-      "source_file": "src/components/CustomChordBuilder.tsx",
-      "source_location": "L10"
-    },
-    {
-      "id": "src_components_customchordbuilder_test",
-      "label": "CustomChordBuilder.test.tsx",
-      "_origin": "ast",
-      "community": 47,
-      "community_name": "ChordPicker.tsx",
-      "file_type": "code",
-      "norm_label": "customchordbuilder.test.tsx",
-      "source_file": "src/components/CustomChordBuilder.test.tsx",
-      "source_location": "L1"
-    },
-    {
-      "id": "src_data_chords",
-      "label": "chords.ts",
-      "_origin": "ast",
-      "community": 47,
-      "community_name": "ChordPicker.tsx",
-      "file_type": "code",
-      "norm_label": "chords.ts",
-      "source_file": "src/data/chords.ts",
-      "source_location": "L1"
-    },
-    {
-      "id": "src_data_chords_chord_presets",
-      "label": "CHORD_PRESETS",
-      "_origin": "ast",
-      "community": 47,
-      "community_name": "ChordPicker.tsx",
-      "file_type": "code",
-      "norm_label": "chord_presets",
-      "source_file": "src/data/chords.ts",
-      "source_location": "L16"
-    },
-    {
-      "id": "src_game_theory_test",
-      "label": "theory.test.ts",
-      "_origin": "ast",
-      "community": 47,
-      "community_name": "ChordPicker.tsx",
-      "file_type": "code",
-      "norm_label": "theory.test.ts",
-      "source_file": "src/game/theory.test.ts",
-      "source_location": "L1"
-    },
-    {
       "id": "docs_chord_remake",
       "label": "chord-remake.md",
       "_origin": "ast",
@@ -9213,28 +9213,6 @@
       "norm_label": "key",
       "source_file": "src/game/combatAtb.test.ts",
       "source_location": "L20"
-    },
-    {
-      "id": "src_game_units",
-      "label": "units.ts",
-      "_origin": "ast",
-      "community": 49,
-      "community_name": "combat.ts",
-      "file_type": "code",
-      "norm_label": "units.ts",
-      "source_file": "src/game/units.ts",
-      "source_location": "L1"
-    },
-    {
-      "id": "src_game_units_test",
-      "label": "units.test.ts",
-      "_origin": "ast",
-      "community": 49,
-      "community_name": "combat.ts",
-      "file_type": "code",
-      "norm_label": "units.test.ts",
-      "source_file": "src/game/units.test.ts",
-      "source_location": "L1"
     },
     {
       "id": "src_game_qte",
@@ -9300,7 +9278,7 @@
       "file_type": "code",
       "norm_label": "key",
       "source_file": "src/game/combatQte.test.ts",
-      "source_location": "L16"
+      "source_location": "L17"
     },
     {
       "id": "src_game_positions",
@@ -9345,6 +9323,50 @@
       "norm_label": "party",
       "source_file": "src/game/positions.test.ts",
       "source_location": "L10"
+    },
+    {
+      "id": "src_components_transportbar",
+      "label": "TransportBar.tsx",
+      "_origin": "ast",
+      "community": 53,
+      "community_name": "theory.ts",
+      "file_type": "code",
+      "norm_label": "transportbar.tsx",
+      "source_file": "src/components/TransportBar.tsx",
+      "source_location": "L1"
+    },
+    {
+      "id": "src_game_keys",
+      "label": "keys.ts",
+      "_origin": "ast",
+      "community": 53,
+      "community_name": "theory.ts",
+      "file_type": "code",
+      "norm_label": "keys.ts",
+      "source_file": "src/game/keys.ts",
+      "source_location": "L1"
+    },
+    {
+      "id": "src_game_keys_fight_keys",
+      "label": "FIGHT_KEYS",
+      "_origin": "ast",
+      "community": 53,
+      "community_name": "theory.ts",
+      "file_type": "code",
+      "norm_label": "fight_keys",
+      "source_file": "src/game/keys.ts",
+      "source_location": "L7"
+    },
+    {
+      "id": "src_game_keys_test",
+      "label": "keys.test.ts",
+      "_origin": "ast",
+      "community": 53,
+      "community_name": "theory.ts",
+      "file_type": "code",
+      "norm_label": "keys.test.ts",
+      "source_file": "src/game/keys.test.ts",
+      "source_location": "L1"
     },
     {
       "id": "src_game_scoring_test",
@@ -9553,17 +9575,6 @@
       "file_type": "code",
       "norm_label": "synths.ts",
       "source_file": "src/audio/synths.ts",
-      "source_location": "L1"
-    },
-    {
-      "id": "src_components_screens_menuscreen",
-      "label": "MenuScreen.tsx",
-      "_origin": "ast",
-      "community": 6,
-      "community_name": "preview.ts",
-      "file_type": "code",
-      "norm_label": "menuscreen.tsx",
-      "source_file": "src/components/screens/MenuScreen.tsx",
       "source_location": "L1"
     },
     {
@@ -11550,6 +11561,18 @@
       "type": "external"
     },
     {
+      "id": "src_game_combat_ismelodymuted",
+      "label": "src_game_combat_ismelodymuted",
+      "_origin": "semantic",
+      "community": 47,
+      "community_name": "src_game_combat_ismelodymuted",
+      "external": true,
+      "file_type": "concept",
+      "norm_label": "src_game_combat_ismelodymuted",
+      "source_file": "",
+      "type": "external"
+    },
+    {
       "id": "ref_fs",
       "label": "ref_fs",
       "_origin": "semantic",
@@ -11558,17 +11581,6 @@
       "external": true,
       "file_type": "concept",
       "norm_label": "ref_fs",
-      "source_file": "",
-      "type": "external"
-    },
-    {
-      "id": "src_game_combat_ismelodymuted",
-      "label": "src_game_combat_ismelodymuted",
-      "community": 1,
-      "community_name": "session.ts",
-      "external": true,
-      "file_type": "concept",
-      "norm_label": "src_game_combat_ismelodymuted",
       "source_file": "",
       "type": "external"
     }
@@ -14191,6 +14203,18 @@
       "weight": 1.0
     },
     {
+      "source": "src_components_screens_screens_test",
+      "target": "src_app_app",
+      "relation": "calls",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "call",
+      "source_file": "src/components/screens/screens.test.tsx",
+      "source_location": "L100",
+      "weight": 1.0
+    },
+    {
       "source": "src_components_screens_studioscreen_studioscreen",
       "target": "src_state_usesessionstore_usesessionstore",
       "relation": "calls",
@@ -15651,7 +15675,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "src/game/combatQte.test.ts",
-      "source_location": "L28",
+      "source_location": "L29",
       "weight": 1.0
     },
     {
@@ -15663,7 +15687,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "src/game/combatQte.test.ts",
-      "source_location": "L44",
+      "source_location": "L45",
       "weight": 1.0
     },
     {
@@ -15675,7 +15699,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "src/game/combatQte.test.ts",
-      "source_location": "L48",
+      "source_location": "L49",
       "weight": 1.0
     },
     {
@@ -16984,6 +17008,18 @@
       "context": "call",
       "source_file": "src/game/session.ts",
       "source_location": "L198",
+      "weight": 1.0
+    },
+    {
+      "source": "src_game_session_getmelodymuted",
+      "target": "src_game_combat_melodymuted",
+      "relation": "calls",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "call",
+      "source_file": "src/game/session.ts",
+      "source_location": "L150",
       "weight": 1.0
     },
     {
@@ -19815,7 +19851,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "src/game/combatQte.test.ts",
-      "source_location": "L18",
+      "source_location": "L19",
       "weight": 1.0
     },
     {
@@ -19827,7 +19863,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "src/game/combatQte.test.ts",
-      "source_location": "L24",
+      "source_location": "L25",
       "weight": 1.0
     },
     {
@@ -19839,7 +19875,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "src/game/combatQte.test.ts",
-      "source_location": "L34",
+      "source_location": "L35",
       "weight": 1.0
     },
     {
@@ -21679,6 +21715,30 @@
       "weight": 1.0
     },
     {
+      "source": "src_components_chordpicker_test",
+      "target": "src_components_chordpicker_chordpicker",
+      "relation": "imports",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "import",
+      "source_file": "src/components/ChordPicker.test.tsx",
+      "source_location": "L3",
+      "weight": 1.0
+    },
+    {
+      "source": "src_components_chordpicker_test",
+      "target": "src_state_usesessionstore_usesessionstore",
+      "relation": "imports",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "import",
+      "source_file": "src/components/ChordPicker.test.tsx",
+      "source_location": "L4",
+      "weight": 1.0
+    },
+    {
       "source": "src_components_combatfeedback",
       "target": "src_state_usesessionstore_usesessionstore",
       "relation": "imports",
@@ -23404,18 +23464,6 @@
       "context": "import",
       "source_file": "src/components/screens/screens.test.tsx",
       "source_location": "L3",
-      "weight": 1.0
-    },
-    {
-      "source": "src_components_screens_screens_test",
-      "target": "src_app_app",
-      "relation": "imports",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "context": "import",
-      "source_file": "src/components/screens/screens.test.tsx",
-      "source_location": "L4",
       "weight": 1.0
     },
     {
@@ -25431,7 +25479,7 @@
       "confidence_score": 1.0,
       "context": "import",
       "source_file": "src/game/combatQte.test.ts",
-      "source_location": "L13",
+      "source_location": "L14",
       "weight": 1.0
     },
     {
@@ -25443,7 +25491,7 @@
       "confidence_score": 1.0,
       "context": "import",
       "source_file": "src/game/combatQte.test.ts",
-      "source_location": "L14",
+      "source_location": "L15",
       "weight": 1.0
     },
     {
@@ -25485,6 +25533,18 @@
     {
       "source": "src_game_combatqte_test",
       "target": "src_game_combat_createfight",
+      "relation": "imports",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "import",
+      "source_file": "src/game/combatQte.test.ts",
+      "source_location": "L3",
+      "weight": 1.0
+    },
+    {
+      "source": "src_game_combatqte_test",
+      "target": "src_game_combat_melodymuted",
       "relation": "imports",
       "_origin": "ast",
       "confidence": "EXTRACTED",
@@ -27404,7 +27464,7 @@
     },
     {
       "source": "src_game_session",
-      "target": "src_game_combat_ismelodymuted",
+      "target": "src_game_combat_melodymuted",
       "relation": "imports",
       "_origin": "ast",
       "confidence": "EXTRACTED",
@@ -30588,6 +30648,54 @@
       "weight": 1.0
     },
     {
+      "source": "src_components_chordpicker_test",
+      "target": "ref_vitest",
+      "relation": "imports_from",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "import",
+      "source_file": "src/components/ChordPicker.test.tsx",
+      "source_location": "L1",
+      "weight": 1.0
+    },
+    {
+      "source": "src_components_chordpicker_test",
+      "target": "ref_testing_library_react",
+      "relation": "imports_from",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "import",
+      "source_file": "src/components/ChordPicker.test.tsx",
+      "source_location": "L2",
+      "weight": 1.0
+    },
+    {
+      "source": "src_components_chordpicker_test",
+      "target": "src_components_chordpicker",
+      "relation": "imports_from",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "import",
+      "source_file": "src/components/ChordPicker.test.tsx",
+      "source_location": "L3",
+      "weight": 1.0
+    },
+    {
+      "source": "src_components_chordpicker_test",
+      "target": "src_state_usesessionstore",
+      "relation": "imports_from",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "import",
+      "source_file": "src/components/ChordPicker.test.tsx",
+      "source_location": "L4",
+      "weight": 1.0
+    },
+    {
       "source": "src_components_combatfeedback",
       "target": "ref_react",
       "relation": "imports_from",
@@ -33171,7 +33279,7 @@
       "confidence_score": 1.0,
       "context": "import",
       "source_file": "src/game/combatQte.test.ts",
-      "source_location": "L13",
+      "source_location": "L14",
       "type_only": true,
       "weight": 1.0
     },
@@ -33184,7 +33292,7 @@
       "confidence_score": 1.0,
       "context": "import",
       "source_file": "src/game/combatQte.test.ts",
-      "source_location": "L14",
+      "source_location": "L15",
       "type_only": true,
       "weight": 1.0
     },
@@ -38005,7 +38113,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "src/game/combatQte.test.ts",
-      "source_location": "L16",
+      "source_location": "L17",
       "weight": 1.0
     },
     {
@@ -43621,5 +43729,5 @@
       "source_file": "docs/combat-pacing-plan.md"
     }
   ],
-  "built_at_commit": "135e09b4646689db9906fff6fd4f7ece96c6da84"
+  "built_at_commit": "dd1f74e94e230f9b11a09a380faeddf268b69ae9"
 }
