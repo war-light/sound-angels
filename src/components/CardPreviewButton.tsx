@@ -1,20 +1,25 @@
 import { Button } from "@/components/ui/button"
 import { useSessionStore } from "@/state/useSessionStore"
+import type { PreviewLayers } from "@/audio/preview"
 import type { Arrangement } from "@/game/arrangement"
 
 /**
  * One-loop audition button shared by groove cards, melody cards and the loop
- * sequencer. Clicking plays the loop once; clicking again (or another card)
- * stops it — only one preview ever sounds.
+ * sequencer. `layers` scopes the audition to the card's own layers, so a rig
+ * preview never drags the melodies (or the live loop) along. Clicking plays
+ * the loop once; clicking again (or another card) stops it — only one preview
+ * ever sounds.
  */
 export function CardPreviewButton({
   id,
   arrangement,
+  layers = "all",
   disabled,
   label,
 }: {
   id: string
   arrangement: Arrangement
+  layers?: PreviewLayers
   disabled?: boolean
   label?: string
 }) {
@@ -32,7 +37,7 @@ export function CardPreviewButton({
       title={sounding ? "Stop preview" : "Listen once through"}
       onClick={(e) => {
         e.stopPropagation()
-        togglePreview(id, arrangement)
+        togglePreview(id, arrangement, layers)
       }}
       className="h-6 gap-1 px-2 text-[11px]">
       <span aria-hidden>{sounding ? "❚❚" : "▶"}</span>

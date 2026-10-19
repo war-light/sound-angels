@@ -9,17 +9,19 @@ import {
   loopLength,
   setBarChord,
   setBpm,
+  setGroove,
   snapshotStep,
-  toggleGrooveStep,
   toggleNoteEvent,
   tweakGrooveKnobs,
 } from "./arrangement"
+import { getRigPreset } from "@/data/beats"
+import { MAX_SWING } from "./groove"
 describe("createDefaultArrangement", () => {
-  it("builds 3 tracks over a 2x16 loop with seeded slot 0", () => {
+  it("builds 3 tracks over a 4x16 loop with seeded slot 0", () => {
     const arr = createDefaultArrangement()
     expect(arr.tracks.length).toBe(ATTACK_SLOTS)
-    expect(arr.chords).toEqual(["i", "VI"])
-    expect(loopLength(arr)).toBe(32)
+    expect(arr.chords).toEqual(["i", "VI", "i", "VI"])
+    expect(loopLength(arr)).toBe(64)
     expect(arr.tracks[0][0][0]).toEqual({ degree: 1, len: 1 })
     expect(arr.tracks[1][0][0]).toBe(null)
     expect(countOnsets(arr)).toBeGreaterThan(0)
@@ -42,30 +44,33 @@ describe("edits", () => {
     expect(() => toggleNoteEvent(arr, 0, 0, 0, { degree: 1, len: 0 })).toThrow()
   })
 
-  it("toggleGrooveStep edits the equipped cell immutably and marks it custom", () => {
+  it("setGroove equips a deep copy without disturbing the shipped preset", () => {
     const arr = createDefaultArrangement()
-    const next = toggleGrooveStep(arr, "kick", 1)
-    expect(next.groove.cell.kick).toContain(1)
-    expect(next.groove.source).toBe("custom")
-    expect(arr.groove.cell.kick).not.toContain(1)
+    const preset = getRigPreset("broken:amen-chops")!
+    const next = setGroove(arr, preset)
+    expect(next.groove.id).toBe(preset.id)
+    expect(next.groove.cell).not.toBe(preset.cell)
+    next.groove.cell.kick[0] = { vel: 0.1 }
+    expect(preset.cell.kick[0]?.vel).not.toBe(0.1)
+    expect(arr.groove.id).not.toBe(preset.id)
   })
 
-  it("tweakGrooveKnobs clamps instead of throwing", () => {
-    const arr = tweakGrooveKnobs(createDefaultArrangement(), { swing: 9, density: -1 })
-    expect(arr.groove.swing).toBe(0.6)
-    expect(arr.groove.density).toBe(0)
+  it("tweakGrooveKnobs clamps the swing knob instead of throwing", () => {
+    const arr = tweakGrooveKnobs(createDefaultArrangement(), { swing: 9 })
+    expect(arr.groove.swing).toBe(MAX_SWING)
+    expect(createDefaultArrangement().groove.swing).toBe(0)
   })
 
   it("clearTracks wipes every slot", () => {
     const arr = createDefaultArrangement()
     const next = clearTracks(arr)
     expect(countOnsets(next)).toBe(0)
-    expect(next.bass[0][0]).toBe(1)
+    expect(next.bass[0][0]).toBe(null)
   })
 
   it("setBarChord + setBpm clamp and scope correctly", () => {
     const arr = createDefaultArrangement()
-    expect(setBarChord(arr, 1, "V").chords).toEqual(["i", "V"])
+    expect(setBarChord(arr, 1, "V").chords).toEqual(["i", "V", "i", "VI"])
     expect(setBpm(arr, 999).bpm).toBe(160)
     expect(setBpm(arr, 5).bpm).toBe(50)
   })
@@ -91,14 +96,20 @@ describe("snapshotStep", () => {
     expect(s0.kick).toBe(true)
   })
 
-  it("reads kick/snare/hat off the equipped groove, with density applied", () => {
+  it("resolves all four drum voices with velocity and the kit id", () => {
+    // Default rig: straight bank, kick 1 / snare 1 / hat 2 / perc 1.
     const arr = createDefaultArrangement()
-    // Steady card: hat on every 8th.
-    expect(snapshotStep(arr, 0, 2).hat).toBe(true)
-    const thin = tweakGrooveKnobs(arr, { density: 0 })
-    expect(snapshotStep(thin, 0, 2).hat).toBe(false)
-    // Quarter-note hits are the floor and always survive.
-    expect(snapshotStep(thin, 0, 0).kick).toBe(true)
+    const s0 = snapshotStep(arr, 0, 0)
+    expect(s0.kick).toBe(true)
+    expect(s0.drums.kick.vel).toBe(1)
+    expect(s0.kitId).toBe(arr.groove.kitId)
+    // Straight bank swings flat, so no lag on any step.
+    expect(s0.swingDelay).toBe(0)
+    // Offbeat sixteenth hat from the Driving column.
+    expect(snapshotStep(arr, 0, 1).hat).toBe(true)
+    // Perc lands on the "and" of 1 (step 4) in the Steady column.
+    expect(snapshotStep(arr, 0, 4).perc).toBe(true)
+    expect(snapshotStep(arr, 0, 4).drums.perc.vel).toBeGreaterThan(0)
   })
 
   it("flags non-chord tones", () => {
@@ -114,7 +125,8 @@ describe("locateStep", () => {
     const arr = createDefaultArrangement()
     expect(locateStep(arr, 0)).toEqual({ bar: 0, step: 0 })
     expect(locateStep(arr, 16)).toEqual({ bar: 1, step: 0 })
-    expect(locateStep(arr, 32)).toEqual({ bar: 0, step: 0 })
+    expect(locateStep(arr, 32)).toEqual({ bar: 2, step: 0 })
+    expect(locateStep(arr, 64)).toEqual({ bar: 0, step: 0 })
   })
 })
 

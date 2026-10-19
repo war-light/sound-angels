@@ -43,6 +43,7 @@ export function StepGrid() {
 				<CardPreviewButton
 					id="sequencer"
 					arrangement={arrangement}
+					layers="all"
 					disabled={playing}
 					label="Preview"
 				/>

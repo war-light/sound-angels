@@ -3,7 +3,7 @@
 import { create } from "zustand"
 import { auditionBlip, auditionEnd, auditionStart } from "@/audio/perform"
 import { playQteHit } from "@/audio/sfx"
-import { startPreview as startPreviewAudio, stopPreview as stopPreviewAudio } from "@/audio/preview"
+import { startPreview as startPreviewAudio, stopPreview as stopPreviewAudio, type PreviewLayers } from "@/audio/preview"
 import {
   configurePlayer,
   setBpm as playerSetBpm,
@@ -24,7 +24,6 @@ import {
 import {
   deleteGrooveBottle,
   deleteMelodyCard,
-  fireFill,
   getActiveMelodyCardId,
   getArrangement,
   getClearedEncounters,
@@ -33,10 +32,14 @@ import {
   getFight,
   getFrontPerformerId,
   getGamePhase,
+  getBanks,
   getGrooveBottles,
   getGrooveChoices,
+  getKits,
   getLoadout,
   getMelodyCards,
+  getMelodyMuted,
+  getPendingGroove,
   getPendingGrooveId,
   getPendingMelodyId,
   getSelectedParty,
@@ -54,8 +57,11 @@ import {
   saveCustomChordPreset,
   saveCustomMelodyCard,
   saveGrooveBottle,
+  selectBank,
   selectGrooveCard,
+  selectKit,
   selectMelodyCard,
+  selectPad,
   setEncounterId,
   setGamePhase,
   setSelectedParty,
@@ -63,7 +69,6 @@ import {
   toMenu,
   toPrep,
   toStudio,
-  toggleEquippedGrooveStep,
   toggleLoadoutGroove,
   toggleLoadoutMelody,
   tweakEquippedGroove,
@@ -71,9 +76,8 @@ import {
   subscribe,
   unlockAllEncounters,
 } from "@/game/session"
-import type { Groove, GrooveVoice } from "@/game/groove"
-import { beatDegreeFor } from "@/game/qte"
-import { beatInstrument, defaultPerformerId, hasLiveAttacker, keeperInstrument, laneAttacker, performSlot } from "@/game/combat"
+import type { Bank, DrumKit, DrumVoice, Groove } from "@/game/groove"
+import { defaultPerformerId, hasLiveAttacker, keeperInstrument, laneAttacker, performSlot } from "@/game/combat"
 import {
   cursorDegree,
   HOME_CURSOR,
@@ -86,7 +90,7 @@ import {
   type QteKey,
 } from "@/game/perform"
 import type { SlotId } from "@/game/positions"
-import { degreeToMidi, romanToChord } from "@/game/theory"
+import { degreeToMidi } from "@/game/theory"
 import type { AtbState } from "@/game/combat"
 import type { Key } from "@/game/theory"
 import type { GamePhase } from "@/game/phase"
@@ -101,12 +105,12 @@ configurePlayer({
   chordVoice: () => keeperInstrument(getFight()),
   /** Lane i sounds only while front[i] holds a living attacker (else muted). */
   melodyVoice: (slot) => {
+    // A chord swap mutes every soloist until the new harmony lands on the bar.
+    if (getMelodyMuted()) return null
     const fight = getFight()
     const attacker = laneAttacker(fight, fight.party, slot)
     return attacker ? (attacker.instrument ?? "strings") : null
   },
-  /** Beat seat colors drums + bass with its keeper's instrument, if seated. */
-  beatVoice: () => beatInstrument(getFight()),
   onStep: (global) => {
     handleStep()
     useSessionStore.setState({ globalStep: global })
@@ -125,10 +129,16 @@ interface SessionStore {
   /** Mid-combat picks waiting for the next loop boundary. */
   pendingGrooveId: string | null
   pendingMelodyId: string | null
-  /** Bottled grooves built in the Studio. */
+  /** The full rig queued for the next loop boundary, if any. */
+  pendingGroove: Groove | null
+  /** Bottled rigs built in the Studio. */
   grooveBottles: Groove[]
-  /** Everything equippable: the five cards, then bottles. */
+  /** Everything equippable: the curated presets, then bottles. */
   grooveChoices: Groove[]
+  /** The five rhythmic archetype banks the matrix pages through. */
+  banks: Bank[]
+  /** Every drum kit (free choice, like the swing knob). */
+  kits: DrumKit[]
   /** Id of the one-loop audition currently sounding (null = silent). */
   previewId: string | null
   gamePhase: GamePhase
@@ -160,17 +170,19 @@ interface SessionStore {
   saveCustomMelodyCard: (name: string, description?: string) => MelodyTemplate | null
   deleteMelodyCard: (id: string) => void
   /** Audition a loop once. Clicking the sounding id stops it. */
-  togglePreview: (id: string, arrangement: Arrangement) => void
+  togglePreview: (id: string, arrangement: Arrangement, layers?: PreviewLayers) => void
   stopPreview: () => void
-  /** Tweak: swing / density knobs on the equipped groove. */
-  tweakGroove: (knobs: { swing?: number; density?: number }) => void
-  /** Compose: flip one step of the equipped groove (Studio). */
-  toggleGrooveStep: (voice: GrooveVoice, step: number) => void
+  /** Tweak: the swing knob on the rig (queued to the loop boundary in combat). */
+  tweakGroove: (knobs: { swing?: number }) => void
+  /** Matrix: swap one voice's clip for another complexity tier. */
+  selectPad: (voice: DrumVoice, tier: number) => void
+  /** Matrix: page to another bank (pads + feel come with it). */
+  selectBank: (id: string) => boolean
+  /** Kit: swap drum timbre + combat effect. */
+  selectKit: (id: string) => boolean
   /** Compose → bottle: save the equipped groove under a name. */
   saveGrooveBottle: (name: string) => Groove
   deleteGrooveBottle: (id: string) => void
-  /** Combat: slam the kit (burst + wider parry window) when off cooldown. */
-  fireFill: () => boolean
   setChord: (bar: number, roman: string) => void
   setChords: (romans: string[]) => void
   setBpm: (bpm: number) => void
@@ -204,8 +216,6 @@ interface SessionStore {
 const pressStart: Partial<Record<QteKey, number>> = {}
 const pressDegree: Partial<Record<PerformKey, number>> = {}
 const pressCell: Partial<Record<PerformKey, { slot: number; bar: number; step: number }>> = {}
-/** Running tap count for the beat-keeper arpeggio mapper (always in-chord). */
-let beatTaps = 0
 
 /** Forget half-held presses without writing anything. Safe when idle. */
 function clearHeldKeys(): void {
@@ -213,6 +223,23 @@ function clearHeldKeys(): void {
   for (const k of Object.keys(pressDegree) as PerformKey[]) delete pressDegree[k]
   for (const k of Object.keys(pressCell) as PerformKey[]) delete pressCell[k]
   auditionEnd()
+}
+
+/**
+ * Tear down anything the transport owns. Leaving the combat screens must call
+ * this: the Tone repeat lives outside React, so a phase change alone leaves the
+ * loop sounding in the background (and `playing` stuck true).
+ */
+function haltPlayback(): void {
+  playerStop()
+  stopPreviewAudio()
+  clearHeldKeys()
+  useSessionStore.setState({
+    playing: false,
+    starting: false,
+    previewId: null,
+    globalStep: 0,
+  })
 }
 
 export const useSessionStore = create<SessionStore>((set, get) => ({
@@ -223,8 +250,11 @@ export const useSessionStore = create<SessionStore>((set, get) => ({
   activeMelodyCardId: getActiveMelodyCardId(),
   pendingGrooveId: getPendingGrooveId(),
   pendingMelodyId: getPendingMelodyId(),
+  pendingGroove: getPendingGroove(),
   grooveBottles: getGrooveBottles(),
   grooveChoices: getGrooveChoices(),
+  banks: getBanks(),
+  kits: getKits(),
   previewId: null,
   gamePhase: getGamePhase(),
   currentEncounterId: getEncounterId(),
@@ -251,6 +281,11 @@ export const useSessionStore = create<SessionStore>((set, get) => ({
     }
     set({ starting: true })
     try {
+      // An audition never survives into a fight: kill it before the loop starts.
+      if (get().previewId != null) {
+        stopPreviewAudio()
+        set({ previewId: null })
+      }
       // Every combat rolls its key: explicit param > picked next key > random.
       startFight({ ...opts, key: opts?.key ?? nextKey ?? undefined })
       set({
@@ -261,6 +296,7 @@ export const useSessionStore = create<SessionStore>((set, get) => ({
         activeMelodyCardId: getActiveMelodyCardId(),
         pendingGrooveId: getPendingGrooveId(),
         pendingMelodyId: getPendingMelodyId(),
+        pendingGroove: getPendingGroove(),
         gamePhase: getGamePhase(),
         currentEncounterId: getEncounterId(),
         globalStep: 0,
@@ -281,7 +317,11 @@ export const useSessionStore = create<SessionStore>((set, get) => ({
   selectGrooveCard: (id) => {
     const ok = selectGrooveCard(id)
     if (ok) {
-      set({ arrangement: getArrangement(), pendingGrooveId: getPendingGrooveId() })
+      set({
+        arrangement: getArrangement(),
+        pendingGrooveId: getPendingGrooveId(),
+        pendingGroove: getPendingGroove(),
+      })
     }
     return ok
   },
@@ -330,9 +370,11 @@ export const useSessionStore = create<SessionStore>((set, get) => ({
     })
   },
 
-  togglePreview: (id, arrangement) => {
+  togglePreview: (id, arrangement, layers) => {
     // One audition at a time: clicking the sounding card stops it, clicking
-    // another hands the transport over (the old loop never finishes).
+    // another hands the transport over (the old loop never finishes). A live
+    // fight owns the transport — an audition never cuts in mid-combat.
+    if (get().playing) return
     if (get().previewId === id) {
       stopPreviewAudio()
       set({ previewId: null })
@@ -341,7 +383,7 @@ export const useSessionStore = create<SessionStore>((set, get) => ({
     set({ previewId: id })
     void startPreviewAudio(id, arrangement, () => {
       if (get().previewId === id) set({ previewId: null })
-    })
+    }, layers)
   },
 
   stopPreview: () => {
@@ -354,9 +396,37 @@ export const useSessionStore = create<SessionStore>((set, get) => ({
     set({ arrangement: getArrangement() })
   },
 
-  toggleGrooveStep: (voice, step) => {
-    toggleEquippedGrooveStep(voice, step)
-    set({ arrangement: getArrangement() })
+  selectPad: (voice, tier) => {
+    selectPad(voice, tier)
+    set({
+      arrangement: getArrangement(),
+      pendingGroove: getPendingGroove(),
+      pendingGrooveId: getPendingGrooveId(),
+    })
+  },
+
+  selectBank: (id) => {
+    const ok = selectBank(id)
+    if (ok) {
+      set({
+        arrangement: getArrangement(),
+        pendingGroove: getPendingGroove(),
+        pendingGrooveId: getPendingGrooveId(),
+      })
+    }
+    return ok
+  },
+
+  selectKit: (id) => {
+    const ok = selectKit(id)
+    if (ok) {
+      set({
+        arrangement: getArrangement(),
+        pendingGroove: getPendingGroove(),
+        pendingGrooveId: getPendingGrooveId(),
+      })
+    }
+    return ok
   },
 
   saveGrooveBottle: (name) => {
@@ -377,12 +447,6 @@ export const useSessionStore = create<SessionStore>((set, get) => ({
       grooveChoices: getGrooveChoices(),
       loadout: getLoadout(),
     })
-  },
-
-  fireFill: () => {
-    const fired = fireFill()
-    if (fired) set({ fight: getFight(), gamePhase: getGamePhase() })
-    return fired
   },
 
   setChord: (bar, roman) => mutateMelody((a) => setBarChord(a, bar, roman)),
@@ -409,14 +473,11 @@ export const useSessionStore = create<SessionStore>((set, get) => ({
   setRandomKey: () => set({ nextKey: null }),
 
   reset: (opts) => {
-    playerStop()
-    clearHeldKeys()
+    haltPlayback()
     const { nextKey } = get()
     resetFight({ ...opts, key: opts?.key ?? nextKey ?? undefined })
     set({
-      playing: false,
       gamePhase: "prep",
-      globalStep: 0,
       cursor: HOME_CURSOR,
       performerId: defaultPerformerId(getFight()),
     })
@@ -428,16 +489,19 @@ export const useSessionStore = create<SessionStore>((set, get) => ({
   },
 
   toMenu: () => {
+    haltPlayback()
     toMenu()
     set({ gamePhase: getGamePhase() })
   },
 
   toPrep: () => {
+    haltPlayback()
     toPrep()
     set({ gamePhase: getGamePhase() })
   },
 
   toStudio: () => {
+    haltPlayback()
     toStudio()
     set({ gamePhase: getGamePhase() })
   },
@@ -445,13 +509,17 @@ export const useSessionStore = create<SessionStore>((set, get) => ({
   selectEncounter: (encounterId, force = false) => {
     const ok = setEncounterId(encounterId, force)
     if (!ok) return false
+    // Picking a trial always lands in prep with the transport halted, whether
+    // it comes from the menu, the prep list, or the victory overlay.
+    haltPlayback()
     const { nextKey, selectedPartyIds } = get()
     resetFight({ encounterId, key: nextKey ?? undefined, partyCharacterIds: selectedPartyIds })
+    setGamePhase("prep")
     set({
       currentEncounterId: getEncounterId(),
       fight: getFight(),
       arrangement: getArrangement(),
-      gamePhase: "prep",
+      gamePhase: getGamePhase(),
       performerId: defaultPerformerId(getFight()),
     })
     return true
@@ -489,13 +557,11 @@ export const useSessionStore = create<SessionStore>((set, get) => ({
 
   moveFighter: (fighterId, slot) => {
     moveFighter(fighterId, slot)
-    // The lead must stay placed: front attackers or the beat keeper hold it,
-    // otherwise the new front lead takes over so WASD never plays the void.
+    // The lead must stay placed: otherwise the new front lead takes over so
+    // WASD never plays the void.
     const { fight, performerId } = get()
-    const placed = [...fight.slots.front, ...(fight.slots.beat ? [fight.slots.beat] : [])]
-    if (performerId == null || !placed.includes(performerId)) {
-      const beatFirst = fight.slots.beat && performerId === fight.slots.beat ? performerId : null
-      set({ performerId: beatFirst ?? defaultPerformerId(fight) })
+    if (performerId == null || !fight.slots.front.includes(performerId)) {
+      set({ performerId: defaultPerformerId(fight) })
     }
   },
 
@@ -508,9 +574,8 @@ export const useSessionStore = create<SessionStore>((set, get) => ({
 
   cyclePerformer: () => {
     const { fight, performerId } = get()
-    // Tab walks front attackers, then the beat keeper (arpeggio voice).
-    const line = [...fight.slots.front, ...(fight.slots.beat ? [fight.slots.beat] : [])]
-    const full = line.length > 0 ? line : fight.party.map((f) => f.id)
+    // Tab walks the front attackers.
+    const full = fight.slots.front.length > 0 ? fight.slots.front : fight.party.map((f) => f.id)
     if (full.length === 0) return
     const i = full.indexOf(performerId ?? "")
     set({ performerId: full[(i + 1) % full.length] })
@@ -528,7 +593,7 @@ export const useSessionStore = create<SessionStore>((set, get) => ({
         if (hit && hit.rating !== "miss") {
           const live = get().fight
           const degree = hit.degree ?? 1
-          const instrument = beatInstrument(live) ?? live.party.find((f) => f.id === live.slots.front[0])?.instrument ?? null
+          const instrument = live.party.find((f) => f.id === live.slots.front[0])?.instrument ?? keeperInstrument(live)
           try {
             auditionStart(degreeToMidi(live.key, degree, 4), instrument ?? "strings")
           } catch {
@@ -542,12 +607,12 @@ export const useSessionStore = create<SessionStore>((set, get) => ({
       // An open song chart eats WASD presses: chord/preset charts lock the
       // loop. Nothing is recorded while open. ZXCV has no song meaning.
       if (isParryKey(key)) return
-      // Successful rhythmic hits sound the pitch on the back-beat keeper.
+      // Successful rhythmic hits sound the pitch on the lead attacker.
       const hit = pressChartKey(key)
       if (hit && hit.rating !== "miss") {
         const live = get().fight
         const degree = hit.degree ?? 1
-        const instrument = beatInstrument(live) ?? live.party.find((f) => f.id === live.slots.front[0])?.instrument ?? null
+        const instrument = live.party.find((f) => f.id === live.slots.front[0])?.instrument ?? keeperInstrument(live)
         try {
           auditionBlip(degreeToMidi(live.key, degree, 4), instrument)
         } catch {
@@ -557,34 +622,9 @@ export const useSessionStore = create<SessionStore>((set, get) => ({
       }
       return
     }
-    // Beat-keeper path: WASD maps an always-in-chord arpeggio into the bass
-    // grid (keys never leave the key). Works with any seated instrument.
+    // WASD records melody notes into the active attacker's lane.
     // ZXCV never records (parry presses returned above).
     if (isParryKey(key)) return
-    const beatId = fight.slots.beat
-    if (performerId != null && beatId != null && performerId === beatId) {
-      const keeper = fight.party.find((f) => f.id === beatId)
-      if (!keeper || keeper.hp <= 0) return
-      const { bar, step } = locateStep(arrangement, globalStep % loopLength(arrangement))
-      const roman = arrangement.chords[bar] ?? "i"
-      let chordMidi: number[]
-      try {
-        chordMidi = romanToChord(fight.key, roman)
-      } catch {
-        chordMidi = romanToChord(fight.key, "i")
-      }
-      const degree = beatDegreeFor(fight.key, chordMidi, beatTaps)
-      beatTaps += 1
-      pressStart[key] = performance.now()
-      pressDegree[key] = degree
-      pressCell[key] = { slot: -1, bar, step }
-      mutateArrangement((a) => ({
-        ...a,
-        bass: a.bass.map((row, b) => (b === bar ? row.map((v, s) => (s === step ? degree : v)) : [...row])),
-      }))
-      auditionStart(degreeToMidi(fight.key, degree, 2), keeper.instrument ?? "strings")
-      return
-    }
     // No living attacker, no performance: keys rest silent with nobody placed.
     if (!hasLiveAttacker(fight)) return
     const next = moveCursor(cursor, key)
@@ -624,8 +664,6 @@ export const useSessionStore = create<SessionStore>((set, get) => ({
     auditionEnd()
     if (started == null || degree == null || cell == null) return
     const { arrangement, fight } = get()
-    // Beat holds stay short taps (arpeggio steps, not held melody notes).
-    if (cell.slot === -1) return
     if (!hasLiveAttacker(fight)) return
     const len = pressToLen(performance.now() - started, stepMs(arrangement.bpm))
     mutateArrangement((a) => toggleNoteEvent(a, cell.slot, cell.bar, cell.step, { degree, len }))
@@ -650,6 +688,7 @@ subscribe(() => {
     activeMelodyCardId: getActiveMelodyCardId(),
     pendingGrooveId: getPendingGrooveId(),
     pendingMelodyId: getPendingMelodyId(),
+    pendingGroove: getPendingGroove(),
     grooveBottles: getGrooveBottles(),
     grooveChoices: getGrooveChoices(),
     gamePhase: getGamePhase(),

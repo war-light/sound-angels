@@ -4,26 +4,30 @@ import {
   createDefaultArrangement,
   loopLength,
   setGroove,
-  toggleGrooveStep,
   tweakGrooveKnobs,
   withMelody,
   type Arrangement,
 } from "./arrangement"
 import {
-  GROOVE_CARDS,
+  applyKit,
   bottleGroove,
   cloneGroove,
-  defaultGroove,
-  getGrooveCard,
   parseGroove,
+  tweakGroove,
+  withBank,
+  withPick,
+  type Bank,
+  type DrumKit,
+  type DrumVoice,
   type Groove,
-  type GrooveVoice,
 } from "./groove"
+import { BANKS, RIG_PRESETS, defaultRig, getBank, getRigPreset } from "@/data/beats"
+import { KITS, defaultKit, getKit } from "@/data/kits"
 import {
   advanceTick,
   cancelQte,
   createFight,
-  fillReady,
+  melodyMuted,
   moveFighter as moveFighterInFight,
   pressQteKey as pressQteInFight,
   releaseQteKey as releaseQteInFight,
@@ -31,7 +35,6 @@ import {
   refreshPotency,
   requestChordQte as requestChordInFight,
   requestPresetQte as requestPresetInFight,
-  fireFill as fireFillInFight,
   type AtbState,
 } from "./combat"
 import {
@@ -109,9 +112,9 @@ let fight: AtbState = createFight({
 let presets: PresetStore = {}
 /** Persistent pre-fight melody templates bank. */
 let melodyBank: MelodyBank = createDefaultMelodyBank()
-/** Every groove the player can equip right now: the cards, then the bottles. */
+/** Every rig the player can equip right now: the presets, then the bottles. */
 function knownGrooveIds(): string[] {
-  return [...GROOVE_CARDS.map((g) => g.id), ...grooveBottles.map((g) => g.id)]
+  return [...RIG_PRESETS.map((g) => g.id), ...grooveBottles.map((g) => g.id)]
 }
 /** The cards brought into a fight: 1..4 grooves + 1..6 melodies. */
 let loadout: Loadout = sanitizeLoadout(
@@ -122,7 +125,7 @@ let loadout: Loadout = sanitizeLoadout(
 /** The melody card currently loaded in the grid. Null = an unsaved loop. */
 let activeMelodyCardId: string | null = null
 /** Mid-combat picks waiting for the next loop boundary. */
-let pendingGrooveId: string | null = null
+let pendingGroove: Groove | null = null
 let pendingMelodyId: string | null = null
 /** Game state machine phase: menu -> prep -> studio -> combat -> victory / defeat. */
 let gamePhase: GamePhase = "menu"
@@ -142,6 +145,11 @@ export function getFight(): AtbState {
   return fight
 }
 
+/** True while a chord swap mutes the soloist lanes (engine + audio both read this). */
+export function getMelodyMuted(): boolean {
+  return melodyMuted(fight)
+}
+
 export function getPresets(): PresetStore {
   return presets
 }
@@ -150,18 +158,34 @@ export function getMelodyBank(): MelodyBank {
   return melodyBank
 }
 
-/** Every groove the player can equip: the five cards, then bottled builds. */
+/** Every rig the player can equip: the curated presets, then bottled builds. */
 export function getGrooveChoices(): Groove[] {
-  return [...GROOVE_CARDS.map(cloneGroove), ...getGrooveBottles()]
+  return [...RIG_PRESETS.map(cloneGroove), ...getGrooveBottles()]
 }
 
 export function getGrooveBottles(): Groove[] {
   return grooveBottles.map(cloneGroove)
 }
 
-/** Resolve a groove id against the static cards, then the bottled builds. */
+/** Resolve a rig id against the curated presets, then the bottled builds. */
 export function getGrooveById(id: string): Groove | undefined {
-  return getGrooveCard(id) ?? grooveBottles.find((g) => g.id === id)
+  const found = getRigPreset(id) ?? grooveBottles.find((g) => g.id === id)
+  return found ? cloneGroove(found) : undefined
+}
+
+/** The five rhythmic archetype banks the matrix pages through. */
+export function getBanks(): Bank[] {
+  return [...BANKS]
+}
+
+/** Every drum kit. Kits are a free choice, like the swing knob. */
+export function getKits(): DrumKit[] {
+  return [...KITS]
+}
+
+/** The rig queued for the next loop boundary, if any. */
+export function getPendingGroove(): Groove | null {
+  return pendingGroove ? cloneGroove(pendingGroove) : null
 }
 
 /** The equipped card bag: 1..4 grooves + 1..6 melodies. */
@@ -180,7 +204,7 @@ export function getActiveMelodyCardId(): string | null {
 }
 
 export function getPendingGrooveId(): string | null {
-  return pendingGrooveId
+  return pendingGroove?.id ?? null
 }
 
 export function getPendingMelodyId(): string | null {
@@ -209,32 +233,68 @@ export function equipGrooveNow(groove: Groove): void {
 }
 
 /**
- * Pick a groove card. PREP equips it at once; in combat the pick is queued
- * and lands on the next loop boundary so the pulse never breaks mid-phrase.
+ * Equip a rig now (PREP/STUDIO), or queue it for the next loop boundary in
+ * combat so the pulse never breaks mid-phrase.
+ */
+function queueOrEquip(rig: Groove): void {
+  if (gamePhase === "combat") {
+    pendingGroove = cloneGroove(rig)
+    emit()
+    return
+  }
+  pendingGroove = null
+  equipGrooveNow(rig)
+}
+
+/** The rig the next edit builds on: the queued one, else the equipped one. */
+function rigUnderEdit(): Groove {
+  return pendingGroove ?? arrangement.groove
+}
+
+/**
+ * Pick a whole rig (preset or bottle). PREP equips it at once; in combat the
+ * pick is queued and lands on the next loop boundary.
  */
 export function selectGrooveCard(id: string): boolean {
   const groove = getGrooveById(id)
   if (!groove) return false
-  if (gamePhase === "combat") {
-    pendingGrooveId = id
-    emit()
-    return true
-  }
-  pendingGrooveId = null
-  equipGrooveNow(groove)
+  queueOrEquip(groove)
   return true
 }
 
-/** Tweak knob edit (swing / density) on the equipped groove. */
-export function tweakEquippedGroove(knobs: { swing?: number; density?: number }): void {
-  arrangement = tweakGrooveKnobs(arrangement, knobs)
-  saveEquippedGroove(arrangement.groove)
-  emit()
+/** Tap one pad: swap that voice's clip (Sparse/Steady/Driving/Complex). */
+export function selectPad(voice: DrumVoice, tier: number): void {
+  const base = rigUnderEdit()
+  const bank = getBank(base.bankId) ?? BANKS[0]
+  queueOrEquip(withPick(base, voice, tier, bank))
 }
 
-/** Compose edit: flip one step of the equipped groove (marks it custom). */
-export function toggleEquippedGrooveStep(voice: GrooveVoice, step: number): void {
-  arrangement = toggleGrooveStep(arrangement, voice, step)
+/** Switch bank pages: the new bank's default pads and feel come with it. */
+export function selectBank(id: string): boolean {
+  const bank = getBank(id)
+  if (!bank) return false
+  const base = rigUnderEdit()
+  queueOrEquip(withBank(base, bank, getKit(base.kitId) ?? defaultKit()))
+  return true
+}
+
+/** Change drum kit: timbre and combat effect swap together. */
+export function selectKit(id: string): boolean {
+  const kit = getKit(id)
+  if (!kit) return false
+  queueOrEquip(applyKit(rigUnderEdit(), kit))
+  return true
+}
+
+/** Tweak knob edit (swing) on the rig. Queues in combat like any pick. */
+export function tweakEquippedGroove(knobs: { swing?: number }): void {
+  if (gamePhase === "combat") {
+    pendingGroove = tweakGroove(rigUnderEdit(), knobs)
+    emit()
+    return
+  }
+  pendingGroove = null
+  arrangement = tweakGrooveKnobs(arrangement, knobs)
   saveEquippedGroove(arrangement.groove)
   emit()
 }
@@ -267,25 +327,6 @@ export function deleteGrooveBottle(id: string): void {
   }
   saveCardLoadout(loadout)
   emit()
-}
-
-/** Fill: slam the kit for a burst + a wider parry opening, then cool down. */
-export function fireFill(): boolean {
-  if (!fillReady(fight)) return false
-  const next = fireFillInFight(fight, arrangement)
-  if (next === fight) return false
-  fight = next
-  if (fight.over === "player") {
-    if (!clearedEncounterIds.includes(currentEncounterId)) {
-      clearedEncounterIds = [...clearedEncounterIds, currentEncounterId]
-      saveClearedEncounters(clearedEncounterIds)
-    }
-    gamePhase = "victory"
-  } else if (fight.over === "enemy") {
-    gamePhase = "defeat"
-  }
-  emit()
-  return true
 }
 
 export function getGamePhase(): GamePhase {
@@ -350,7 +391,8 @@ export function resetEncounterProgression(): void {
   grooveBottles = []
   loadout = createDefaultLoadout()
   activeMelodyCardId = null
-  arrangement = setGroove(arrangement, defaultGroove())
+  arrangement = setGroove(arrangement, defaultRig())
+  pendingGroove = null
   clearAllPersistedData()
   emit()
 }
@@ -404,7 +446,7 @@ export function handleStep(): void {
   if (fight.over) return
   // Mid-combat card picks wait for the top of the loop so the phrase never
   // breaks: the swap is applied just before the new loop's first step.
-  if ((pendingGrooveId || pendingMelodyId) && (fight.tick + 1) % loopLength(arrangement) === 0) {
+  if ((pendingGroove || pendingMelodyId) && (fight.tick + 1) % loopLength(arrangement) === 0) {
     applyPendingSwaps()
   }
   const r = advanceTick(fight, arrangement)
@@ -457,7 +499,7 @@ function beginFight(opts: StartFightOpts = {}): void {
   })
   presets = resetPresetCooldowns(presets)
   // Card picks never carry over between fights.
-  pendingGrooveId = null
+  pendingGroove = null
   pendingMelodyId = null
   // The arrangement follows the fight so the grid, chords and audio
   // preview all sound in the locked combat key.
@@ -633,13 +675,10 @@ export function loadMelodyTemplate(id: string): boolean {
  * always starts on a downbeat.
  */
 function applyPendingSwaps(): void {
-  if (pendingGrooveId) {
-    const groove = getGrooveById(pendingGrooveId)
-    if (groove) {
-      arrangement = setGroove(arrangement, groove)
-      saveEquippedGroove(arrangement.groove)
-    }
-    pendingGrooveId = null
+  if (pendingGroove) {
+    arrangement = setGroove(arrangement, pendingGroove)
+    saveEquippedGroove(arrangement.groove)
+    pendingGroove = null
   }
   if (pendingMelodyId) {
     const tpl = getTemplate(melodyBank, pendingMelodyId)
@@ -765,7 +804,8 @@ export function resetAll(): void {
   melodyBank = createDefaultMelodyBank()
   loadout = createDefaultLoadout()
   activeMelodyCardId = null
-  pendingGrooveId = null
+  arrangement = setGroove(arrangement, defaultRig())
+  pendingGroove = null
   pendingMelodyId = null
   gamePhase = "prep"
   emit()

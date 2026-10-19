@@ -1,6 +1,5 @@
 import { describe, expect, it } from "vitest"
 import {
-  beatDegreeFor,
   chartFromMelody,
   chartFromPattern,
   chartKeys,
@@ -17,10 +16,7 @@ import {
   qteSuccessRate,
   releaseQte,
 } from "./qte"
-import { degreeToMidi, romanToChord, type Key } from "./theory"
 import type { NoteEvent } from "./arrangement"
-
-const KEY: Key = { tonic: "C", scale: "minor", octave: 4 }
 
 function seq(vals: number[]): () => number {
   let i = 0
@@ -64,18 +60,6 @@ describe("parryDamage", () => {
     expect(parryDamage(4, 0.25, q)).toBe(1)
     const cold = createQte({ kind: "parry", sequence: ["w", "s"], startedTick: 0, deadlineTick: 8 })
     expect(parryDamage(4, 0.25, cold)).toBe(4)
-  })
-})
-
-describe("beatDegreeFor", () => {
-  it("always lands on a chord tone", () => {
-    const chord = romanToChord(KEY, "i")
-    const pcs = new Set(chord.map((m) => ((m % 12) + 12) % 12))
-    for (let n = 0; n < 12; n++) {
-      const degree = beatDegreeFor(KEY, chord, n)
-      const pc = ((degreeToMidi(KEY, degree, 4) % 12) + 12) % 12
-      expect(pcs.has(pc)).toBe(true)
-    }
   })
 })
 

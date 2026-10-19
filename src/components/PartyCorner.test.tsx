@@ -21,15 +21,6 @@ beforeEach(() => {
 })
 
 describe("PartyCorner drag and drop", () => {
-  it("drags a front attacker onto the beat seat", () => {
-    render(<PartyCorner />)
-    expect(useSessionStore.getState().fight.slots.front).toContain("voice-1")
-    mockDrop("beat", "voice-1")
-    const fight = useSessionStore.getState().fight
-    expect(fight.slots.beat).toBe("voice-1")
-    expect(fight.slots.front).not.toContain("voice-1")
-  })
-
   it("drags a chord keeper to the front row", () => {
     render(<PartyCorner />)
     mockDrop("attackers", "voice-0")
@@ -48,7 +39,7 @@ describe("PartyCorner drag and drop", () => {
   it("ignores drops with unknown fighter ids", () => {
     render(<PartyCorner />)
     const before = useSessionStore.getState().fight.slots
-    mockDrop("beat", "ghost")
+    mockDrop("attackers", "ghost")
     expect(useSessionStore.getState().fight.slots).toEqual(before)
   })
 

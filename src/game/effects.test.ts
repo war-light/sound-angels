@@ -39,8 +39,8 @@ describe("chordEffectFor", () => {
 
 describe("setChords", () => {
   it("fits presets to the bar count by cycling or truncating", () => {
-    expect(setChords(arr(), GOLD).chords).toEqual(["I", "V"])
-    expect(setChords(arr(), ["i"]).chords).toEqual(["i", "i"])
+    expect(setChords(arr(), GOLD).chords).toEqual(["I", "V", "vi", "IV"])
+    expect(setChords(arr(), ["i"]).chords).toEqual(["i", "i", "i", "i"])
     expect(() => setChords(arr(), [])).toThrow()
   })
 })
@@ -54,7 +54,7 @@ describe("chord blessing in combat", () => {
       enemies: s.enemies.map((e) => ({ ...e, hp: 9999 })),
     }
     let a = setChords(arr(), GOLD)
-    for (let i = 0; i < 32; i++) {
+    for (let i = 0; i < 64; i++) {
       const r = advanceTick(s, a, seq([0.5]))
       s = r.state
       a = r.arrangement
@@ -100,7 +100,7 @@ describe("melody fade", () => {
     // One full loop passes: potency 1 -> 0.75.
     let s = fresh.state
     let a = fresh.arrangement
-    for (let i = 0; i < 32; i++) {
+    for (let i = 0; i < 64; i++) {
       const r = advanceTick(s, a, seq([0.99, 0.99, 0.99]))
       s = r.state
       a = r.arrangement
@@ -115,7 +115,7 @@ describe("melody fade", () => {
     let s = createFight({ key: C_MAJOR })
     s = { ...s, enemies: s.enemies.map((e) => ({ ...e, hp: 9999 })) }
     const a = setChords(arr(), SILVER)
-    for (let i = 0; i < 64; i++) {
+    for (let i = 0; i < 128; i++) {
       const r = advanceTick(s, a, seq([0.5]))
       s = r.state
     }

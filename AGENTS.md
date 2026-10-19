@@ -14,7 +14,8 @@ Vite + React 19 + TS + Tailwind v4 + shadcn (`new-york/neutral`) + Zustand + Ton
 - `src/game/` — pure TS combat + music model. No Tone.js, React, or DOM. All state JSON-serializable. Entry: `session.ts` (singleton outside React) → `combat.ts:advanceTick` (1 tick = 1 16th step).
 - `src/audio/` — browser-only Tone.js renderer. Reads engine snapshots, never writes combat state. Single wiring: `configurePlayer` called once in `src/state/useSessionStore.ts`.
 - `src/state/useSessionStore.ts` — thin Zustand mirror of `session.ts` via `subscribe()`; rules live in `src/game/`, sound in `src/audio/`.
-- `src/components/`, `src/hooks/useWasd.ts`, `src/data/` (balance: enemies, chords), `src/lib/utils.ts` (`cn()`).
+- `src/components/`, `src/hooks/useWasd.ts`, `src/data/` (balance: enemies, chords, `beats.ts` drum banks, `kits.ts` drum kits), `src/lib/utils.ts` (`cn()`).
+- Drum rig (`src/game/groove.ts` + `src/data/beats.ts`/`kits.ts`) — a `Bank` is a page of 16 clips (4 voices × 4 complexity tiers); a `Groove` is one clip pick per voice + `kitId` + `swing`. Kits own timbre *and* the combat `effect` (denormalized onto the rig on equip so `combat.ts` stays untouched). `perc` is the fourth voice. A clip is a 16-hit cell (`vel` + optional `roll`), not an offset list.
 
 ## Gotchas
 
@@ -23,6 +24,7 @@ Vite + React 19 + TS + Tailwind v4 + shadcn (`new-york/neutral`) + Zustand + Ton
 - Audio starts ONLY on user gesture via `ensureAudio()` (`src/audio/context.ts`); voices are pooled once in `src/audio/synths.ts` — never `new Synth` per note.
 - Fight key is locked at `createFight`; `session.ts:beginFight` copies it onto the arrangement so grid/chords/audio preview in the combat key. Never mutate `fight.key` mid-fight.
 - Melody lanes are front-row positions (`front[i]` = lane `i`): benching a fighter mutes its lane but keeps notes; potency fades `x0.75` per loop wrap, floor `0.25` (`combat.ts`).
+- Drum rigs: bank/pad/kit/swing changes all queue to the next loop boundary (same pending mechanism as melody cards); a bank switch also carries its own swing. Kits are decoupled from patterns (a kit owns timbre *and* the combat effect), so drums are fully independent of party formation. `density` is gone — swing is the only tweak knob.
 - Tests: Vitest + jsdom, `globals: true`, setup `src/test/setup.ts`. Combat tests use seeded `rng` — never import Tone.js in `src/game/`.
 - TS is strict: `noUnusedLocals/Parameters`, `verbatimModuleSyntax` (use `import type`), `erasableSyntaxOnly` (no enums/namespaces/parameter properties).
 

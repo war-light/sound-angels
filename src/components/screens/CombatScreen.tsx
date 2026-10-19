@@ -1,3 +1,4 @@
+import { useState } from "react";
 import { useSessionStore } from "@/state/useSessionStore";
 import { FoePanel } from "@/components/FoePanel";
 import { PartyCorner } from "@/components/PartyCorner";
@@ -5,11 +6,20 @@ import { PhaseStrip } from "@/components/PhaseStrip";
 import { LoadoutBar } from "@/components/LoadoutBar";
 import { QtePanel } from "@/components/QtePanel";
 import { StepGrid } from "@/components/StepGrid";
-import { GrooveMeter } from "@/components/GrooveMeter";
+import { GrooveMatrix } from "@/components/GrooveMatrix";
 import { VoiceBar } from "@/components/VoiceBar";
 import { CombatLog } from "@/components/CombatLog";
 import { CombatFeedback } from "@/components/CombatFeedback";
+import { ChordPicker } from "@/components/ChordPicker";
 import { Button } from "@/components/ui/button";
+import {
+	Dialog,
+	DialogContent,
+	DialogDescription,
+	DialogHeader,
+	DialogTitle,
+	DialogTrigger,
+} from "@/components/ui/dialog";
 
 export function CombatScreen() {
 	const fight = useSessionStore((s) => s.fight);
@@ -17,6 +27,7 @@ export function CombatScreen() {
 	const togglePlay = useSessionStore((s) => s.togglePlay);
 	const encounters = useSessionStore((s) => s.encounters);
 	const currentEncounterId = useSessionStore((s) => s.currentEncounterId);
+	const [modulateOpen, setModulateOpen] = useState(false);
 
 	const encounter = encounters.find((e) => e.id === currentEncounterId);
 
@@ -66,8 +77,29 @@ export function CombatScreen() {
 				<section
 					aria-label="Melody Loop and Performance"
 					className="flex min-w-0 flex-col gap-4">
-					<PhaseStrip />
-					<GrooveMeter />
+					<div className="flex items-start gap-2">
+						<div className="min-w-0 flex-1">
+							<PhaseStrip />
+						</div>
+						<Dialog open={modulateOpen} onOpenChange={setModulateOpen}>
+							<DialogTrigger asChild>
+								<Button variant="outline" size="sm" className="shrink-0 text-xs font-semibold">
+									Modulate ♪
+								</Button>
+							</DialogTrigger>
+							<DialogContent className="flex max-h-[85vh] max-w-2xl flex-col gap-4 overflow-y-auto p-5">
+								<DialogHeader>
+									<DialogTitle>Modulate the harmony</DialogTitle>
+									<DialogDescription>
+										Picking a progression opens a chart. The soloists mute while you play it, then
+										the new harmony lands on the next bar.
+									</DialogDescription>
+								</DialogHeader>
+								<ChordPicker onApplied={() => setModulateOpen(false)} />
+							</DialogContent>
+						</Dialog>
+					</div>
+					<GrooveMatrix compact />
 					<StepGrid />
 					<VoiceBar />
 					<LoadoutBar />

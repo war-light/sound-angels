@@ -3,6 +3,7 @@ import { createDefaultArrangement } from "./arrangement"
 import {
   advanceTick,
   createFight,
+  melodyMuted,
   pressQteKey,
   qteLocked,
   requestChordQte,
@@ -60,15 +61,39 @@ describe("chord charts", () => {
     expect(requestChordQte(s, ["I"])).toBe(s)
   })
 
-  it("applies the progression on a completed chart", () => {
+  it("queues the progression on a completed chart until the next bar", () => {
     let s = createFight({ key: KEY })
     s = { ...s, enemies: s.enemies.map((e) => ({ ...e, hp: 9999 })) }
     let a = createDefaultArrangement()
+    const before = [...a.chords]
     s = requestChordQte(s, ["I", "V"], seq([0.1]))
     s = hitAllOnTime(s)
-    const r = advanceTick(s, a, seq([0.99, 0.99, 0.99]))
-    expect(r.arrangement.chords).toEqual(["I", "V"])
+    let r = advanceTick(s, a, seq([0.99, 0.99, 0.99]))
+    // The swap is queued, not applied mid-bar.
+    expect(r.state.pendingChords).toEqual(["I", "V"])
+    expect(r.arrangement.chords).toEqual(before)
     expect(r.state.activeQte).toBeNull()
+    // It lands on the next bar line.
+    a = r.arrangement
+    s = r.state
+    for (let i = 0; i < 16; i++) {
+      r = advanceTick(s, a, seq([0.99, 0.99, 0.99]))
+      s = r.state
+      a = r.arrangement
+    }
+    expect(a.chords).toEqual(["I", "V", "I", "V"])
+    expect(s.pendingChords).toBeNull()
+  })
+
+  it("mutes the soloists while a chord swap is in flight", () => {
+    let s = createFight({ key: KEY })
+    expect(melodyMuted(s)).toBe(false)
+    s = requestChordQte(s, ["I", "V"], seq([0.1]))
+    expect(melodyMuted(s)).toBe(true)
+    s = hitAllOnTime(s)
+    const r = advanceTick(s, createDefaultArrangement(), seq([0.99, 0.99, 0.99]))
+    expect(r.state.pendingChords).not.toBeNull()
+    expect(melodyMuted(r.state)).toBe(true)
   })
 
   it("fumbles past the deadline with chords untouched", () => {
@@ -77,14 +102,15 @@ describe("chord charts", () => {
     let a = createDefaultArrangement()
     const before = [...a.chords]
     s = requestChordQte(s, ["V", "V"], seq([0.1]))
-    // Fast-forward past the 32-tick window (2 bars) without pressing.
-    for (let i = 0; i < 33; i++) {
+    // Fast-forward past the deadline window without pressing.
+    for (let i = 0; i < 40; i++) {
       const r = advanceTick(s, a, seq([0.99, 0.99, 0.99]))
       s = r.state
       a = r.arrangement
       if (!s.activeQte) break
     }
     expect(s.activeQte).toBeNull()
+    expect(s.pendingChords).toBeNull()
     expect(a.chords).toEqual(before)
   })
 })
@@ -95,16 +121,16 @@ describe("parry charts", () => {
     // Bypass intro grace period so scheduling starts at the first boundary.
     s = { ...s, enemies: s.enemies.map((e) => ({ ...e, hp: 9999 })), introLoopsLeft: 0 }
     let a = createDefaultArrangement()
-    // Run to the first loop end (32 steps, 2-bar loop).
-    for (let i = 0; i < 32; i++) {
+    // Run to the first loop end (64 steps, 4-bar loop).
+    for (let i = 0; i < 64; i++) {
       const r = advanceTick(s, a, seq([0.5]))
       s = r.state
       a = r.arrangement
     }
     expect(s.activeQte?.kind).toBe("parry")
-    // 5s at 90bpm ~= 30 steps -> a single 32-step loop span, strike at 64.
-    expect(s.parrySchedule?.strikeTick).toBe(64)
-    expect(s.activeQte?.deadlineTick).toBe(64)
+    // 5s at 90bpm ~= 30 steps -> a single 64-step loop span, strike at 128.
+    expect(s.parrySchedule?.strikeTick).toBe(128)
+    expect(s.activeQte?.deadlineTick).toBe(128)
     // ZXCV lanes only.
     const keys = new Set(s.activeQte?.notes.map((n) => n.note.key))
     for (const k of keys) expect(["z", "x", "c", "v"]).toContain(k)
@@ -115,7 +141,7 @@ describe("parry charts", () => {
     s = played.s
     a = played.a
     const hpBefore = s.party.reduce((n, f) => n + f.hp + f.shield, 0)
-    for (let i = 0; i < 40 && (s.activeQte || s.parrySchedule); i++) {
+    for (let i = 0; i < 100 && (s.activeQte || s.parrySchedule); i++) {
       const r = advanceTick(s, a, seq([0.5]))
       s = r.state
       a = r.arrangement
@@ -138,15 +164,15 @@ describe("parry charts", () => {
       s = r.state
       a = r.arrangement
     }
-    s = requestChordQte(s, ["I", "V"], seq([0.1]))
+    s = requestChordQte(s, ["I", "V", "vi", "IV"], seq([0.1]))
     expect(s.activeQte?.kind).toBe("chord")
     // Run past the first loop end: busy hands never get interrupted.
-    for (let i = 0; i < 22; i++) {
+    for (let i = 0; i < 54; i++) {
       const r = advanceTick(s, a, seq([0.5]))
       s = r.state
       a = r.arrangement
     }
-    expect(s.tick).toBe(32)
+    expect(s.tick).toBe(64)
     expect(s.activeQte?.kind).toBe("chord")
     expect(s.parrySchedule).toBeNull()
   })
@@ -159,7 +185,7 @@ describe("parry charts", () => {
     expect(s.activeQte?.kind).toBe("preset")
     s = hitAllOnTime(s)
     const r = advanceTick(s, a, seq([0.99, 0.99, 0.99]))
-    expect(r.arrangement.chords).toEqual(["V", "V"])
+    expect(r.arrangement.chords).toEqual(["V", "V", "V", "V"])
     expect(r.state.activeQte).toBeNull()
   })
 })

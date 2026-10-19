@@ -8,9 +8,14 @@ import {
   type StepSnapshot,
 } from "@/game/arrangement"
 import { midiToNote } from "@/game/theory"
-import { INSTRUMENTS } from "@/data/enemies"
+import { getKit } from "@/data/kits"
 import { ensureAudio } from "./context"
-import { applyKit, getVoices, initVoices, instrumentVoices } from "./synths"
+import {
+  applyDrumKit,
+  initVoices,
+  instrumentVoices,
+  triggerDrums,
+} from "./synths"
 
 export type StepHandler = (global: number, snap: StepSnapshot) => void
 
@@ -18,8 +23,6 @@ let provider: () => Arrangement | null = () => null
 let chordVoice: () => string | null = () => null
 /** Instrument sounding a melody lane, or null when the lane is muted. */
 let melodyVoice: (slot: number) => string | null = () => "strings"
-/** Instrument holding the beat seat, or null when it is empty. */
-let beatVoice: () => string | null = () => null
 let handler: StepHandler | null = null
 let playing = false
 let stepCounter = 0
@@ -30,13 +33,11 @@ export function configurePlayer(cfg: {
   arrangement: () => Arrangement | null
   chordVoice: () => string | null
   melodyVoice: (slot: number) => string | null
-  beatVoice: () => string | null
   onStep: StepHandler | null
 }): void {
   provider = cfg.arrangement
   chordVoice = cfg.chordVoice
   melodyVoice = cfg.melodyVoice
-  beatVoice = cfg.beatVoice
   handler = cfg.onStep
 }
 
@@ -45,17 +46,14 @@ export function setBpm(bpm: number): void {
 }
 
 function triggerAt(time: number, snap: StepSnapshot, bpm: number): void {
-  const v = getVoices()
   const stepDur = 60 / Math.max(50, bpm) / 4 // seconds per 16th
-  // Beat source: the keeper's instrument colors drums + bass, if seated.
-  const beat = beatVoice()
-  applyKit(beat && INSTRUMENTS[beat] ? INSTRUMENTS[beat].timbre.kit : null)
-  const bassVoice = instrumentVoices(beat).bass
-  // The groove's swing knob lags the off-beat drums (never the melody).
+  // Bass notes sound through the chord keeper's bass recipe when one exists.
+  const bassVoice = instrumentVoices(chordVoice()).bass
+  const kit = getKit(snap.kitId)
+  applyDrumKit(kit?.timbre ?? null)
+  // The rig's swing knob lags the off-beat drums (never the melody).
   const drumAt = time + snap.swingDelay * stepDur
-  if (snap.kick) v.kick.triggerAttackRelease("C1", "8n", drumAt)
-  if (snap.snare) v.snare.triggerAttackRelease("16n", drumAt)
-  if (snap.hat) v.hat.triggerAttackRelease("32n", drumAt + 0.001)
+  triggerDrums(snap.drums, drumAt, stepDur, kit?.timbre ?? null)
   if (snap.bass != null) {
     bassVoice.triggerAttackRelease(midiToNote(snap.bass), "8n", time)
   }
@@ -108,8 +106,15 @@ export async function start(): Promise<void> {
 }
 
 export function stop(): void {
+  // Detach the scheduled step even when the transport is already halted: a
+  // preview that starts the transport must never wake the live loop with it.
+  const transport = Tone.getTransport()
+  if (repeatId != null) {
+    transport.clear(repeatId)
+    repeatId = null
+  }
   if (!playing) return
-  Tone.getTransport().stop()
+  transport.stop()
   playing = false
   stepCounter = 0
 }

@@ -20,8 +20,11 @@ export function useWasd(): void {
       const t = e.target as HTMLElement | null
       return t != null && (t.tagName === "INPUT" || t.tagName === "TEXTAREA");
     }
+    // A modal (e.g. the mid-fight Modulate dialog) owns the keyboard.
+    const inDialog = () =>
+      typeof document !== "undefined" && document.querySelector('[data-slot="dialog-content"]') != null
     const down = (e: KeyboardEvent) => {
-      if (e.repeat || e.metaKey || e.ctrlKey || e.altKey || isTyping(e)) return
+      if (e.repeat || e.metaKey || e.ctrlKey || e.altKey || isTyping(e) || inDialog()) return
       const k = e.key.toLowerCase()
       if (k === "tab") {
         e.preventDefault()

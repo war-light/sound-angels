@@ -8,9 +8,11 @@ import {
   allOnsetKeys,
   ATTACK_SLOTS,
   clearTracks,
+  fitProgression,
   locateStep,
   loopLength,
   onsetKey,
+  setChords,
   snapshotStep,
   type Arrangement,
   type NoteEvent,
@@ -71,10 +73,16 @@ export interface AtbState {
    */
   introLoopsLeft: number
   enemyProfiles: Record<string, EnemyProfile>
-  /** Deck <-> position assignment (chord/beat back row, attackers front). */
+  /** Deck <-> position assignment (chord back row, attackers front). */
   slots: Slots
   /** Active chart: chord/preset (WASD, locks recording) or parry (ZXCV, sing freely). */
   activeQte: QteState | null
+  /**
+   * A chord swap cleared by a chart, waiting for the next bar line to land.
+   * While set (or while a chord chart is open) melody lanes stay muted so the
+   * ensemble records the new progression before soloists resume.
+   */
+  pendingChords: string[] | null
   /**
    * Loop-boundary parry schedule: the foe striking next + its strike tick.
    * Set when a parry chart opens (1–2 loops ahead), cleared on the strike.
@@ -90,8 +98,6 @@ export interface AtbState {
  * new ones or runs back a cooled-down preset.
  */
   potency: Record<string, number>
-  /** Steps left before the Fill button is usable again. 0 = ready. */
-  fillCooldownLeft: number
   over: "player" | "enemy" | null
   log: LogEntry[]
 }
@@ -107,11 +113,6 @@ const REFLECT_FRACTION = 0.5
 /** Melody fade: potency x0.75 per loop wrap, floored so old loops still whisper. */
 const FADE_MULT = 0.75
 const FADE_FLOOR = 0.25
-/** Fill: a kit-wide slam. Flat burst per living foe, on a loop-based cooldown. */
-const FILL_DAMAGE = 6
-const FILL_COOLDOWN_LOOPS = 2
-/** Extra ± steps a fill grants to a parry chart that is already open. */
-const FILL_WINDOW_BONUS = 2
 /** Shortest strike cadence the groove's `cadence` multiplier can produce. */
 const MIN_CADENCE_STEPS = 4
 
@@ -237,11 +238,11 @@ export function createFight(opts: {
     enemyProfiles,
     slots: defaultSlots(partyIds),
     activeQte: null,
+    pendingChords: null,
     parrySchedule: null,
     lastParryTick: {},
     lastTension: 0,
     potency: {},
-    fillCooldownLeft: 0,
     over: null,
     log: [{ tick: 0, text: `The room hums. ${first.name} stirs — but does not yet answer. Sing.` }],
   }
@@ -273,29 +274,39 @@ export function qteLocked(state: AtbState): boolean {
   return state.activeQte?.kind === "chord" || state.activeQte?.kind === "preset"
 }
 
-/** Open a chord-swap chart (2-bar window, harmonically derived). No-op when another chart is open. */
+/**
+ * True while the ensemble is busy with a chord swap: a chord chart is open or
+ * a cleared progression is waiting for the next bar line. Soloists go silent
+ * (no melody damage, no lane audio) until the new harmony takes hold.
+ */
+export function melodyMuted(state: AtbState): boolean {
+  return state.activeQte?.kind === "chord" || state.pendingChords != null
+}
+
+/** Open a chord-swap chart (one note per bar, harmonically derived). No-op when another chart is open. */
 export function requestChordQte(state: AtbState, romans: string[], rng: Rng = Math.random): AtbState {
   if (state.activeQte || state.over) return state
   if (romans.length === 0) return state
   // B.4: chart encodes the harmonic motion of the progression itself.
   const chart = harmonicChart(romans)
+  const deadlineTick = state.tick + Math.max(32, chart.lengthSteps)
   const activeQte =
     chart.notes.length >= 1
       ? createQte({
           kind: "chord",
           chart,
           startedTick: state.tick,
-          deadlineTick: state.tick + 32, // 2-bar window
+          deadlineTick,
           payload: { romans: [...romans] },
         })
       : createQte({
           kind: "chord",
           sequence: randomChart(4, rng),
           startedTick: state.tick,
-          deadlineTick: state.tick + 32,
+          deadlineTick,
           payload: { romans: [...romans] },
         })
-  return { ...state, activeQte, log: pushLog(state, "You reach for a new hymn — match its motion!") }
+  return { ...state, activeQte, log: pushLog(state, "You reach for a new progression — match its motion!") }
 }
 
 /** Open a preset-recall chart (2-bar window, melody-derived). Carries the snapshot to restore. */
@@ -312,20 +323,21 @@ export function requestPresetQte(
     presetTracks: snap.tracks.map((tr) => tr.map((row) => row.map((e) => (e ? { ...e } : null)))),
     presetChords: [...snap.chords],
   }
+  const deadlineTick = state.tick + Math.max(32, melodyQte.lengthSteps)
   const activeQte =
     melodyQte.notes.length >= 1
       ? createQte({
           kind: "preset",
           chart: melodyQte,
           startedTick: state.tick,
-          deadlineTick: state.tick + 32, // 2-bar window
+          deadlineTick,
           payload,
         })
       : createQte({
           kind: "preset",
           sequence: randomChart(4, rng),
           startedTick: state.tick,
-          deadlineTick: state.tick + 32,
+          deadlineTick,
           payload,
         })
   return { ...state, activeQte, log: pushLog(state, "You lift a bottled loop — sing it back!") }
@@ -354,56 +366,6 @@ export function cancelQte(state: AtbState, reason = "The chart slips away."): At
 }
 
 /**
- * Fill: the whole kit slams at once. Every living foe takes a flat burst and
- * a parry chart already open widens by a couple of steps. On a loop-based
- * cooldown, so it stays punctuation rather than rhythm. No-op while cooling
- * down, with no living foes, or once the fight is over.
- */
-export function fireFill(state: AtbState, arrangement: Arrangement): AtbState {
-  if (state.over || state.fillCooldownLeft > 0) return state
-  const living = state.enemies.filter((f) => !isDown(f))
-  if (living.length === 0) return state
-  let enemies = state.enemies
-  for (const foe of living) {
-    const hit = damageThroughShield(foe, FILL_DAMAGE)
-    enemies = enemies.map((f) => (f.id === foe.id ? hit.fighter : f))
-  }
-  let activeQte = state.activeQte
-  if (activeQte?.kind === "parry") {
-    const notes = activeQte.notes.map((n) => ({
-      ...n,
-      note: { ...n.note, window: n.note.window + FILL_WINDOW_BONUS },
-    }))
-    activeQte = { ...activeQte, notes, chart: { ...activeQte.chart, notes: notes.map((n) => n.note) } }
-  }
-  const over: AtbState["over"] = enemies.every(isDown) ? "player" : null
-  let log = pushLog(state, `The kit slams — a fill! Every foe takes ${FILL_DAMAGE}.`)
-  if (over === "player") {
-    log = pushLog({ ...state, log, enemies }, "The discord is quieted. You stand victorious.")
-  }
-  return {
-    ...state,
-    enemies,
-    activeQte,
-    over,
-    log,
-    fillCooldownLeft: FILL_COOLDOWN_LOOPS * loopLength(arrangement),
-  }
-}
-
-/** True when the Fill button can be pressed right now. */
-export function fillReady(state: AtbState): boolean {
-  return !state.over && state.fillCooldownLeft === 0 && aliveEnemies(state).length > 0
-}
-
-/** Fill cooldown as a 0..1 fraction of its full charge (1 = ready). */
-export function fillCharge(state: AtbState, arrangement: Arrangement): number {
-  const full = FILL_COOLDOWN_LOOPS * loopLength(arrangement)
-  if (full <= 0) return 1
-  return Math.min(1, Math.max(0, 1 - state.fillCooldownLeft / full))
-}
-
-/**
  * Living chord-keeper's instrument, or null when the chord seat is empty or
  * the keeper is down. Gates the bar-start stab: no keeper, no pad.
  */
@@ -420,17 +382,6 @@ export function hasLiveAttacker(state: AtbState): boolean {
     const f = state.party.find((c) => c.id === id)
     return !!f && !isDown(f)
   })
-}
-
-/**
- * Living beat-keeper's instrument, or null when the beat seat is empty or
- * the keeper is down. Colors the shared drum kit + selects the bass voice.
- */
-export function beatInstrument(state: AtbState): string | null {
-  if (!state.slots.beat) return null
-  const keeper = state.party.find((f) => f.id === state.slots.beat)
-  if (!keeper || isDown(keeper)) return null
-  return keeper.instrument ?? null
 }
 
 /**
@@ -616,6 +567,14 @@ export function advanceTick(
 ): TickResult {
   if (state.over) return { state, arrangement }
   const tick = state.tick + 1
+  // A progression cleared by a chart lands on the bar line, never mid-bar, so
+  // the phrase never lurches. Reassigning `arrangement` up front means the
+  // snapshot below, the audio layer, and the loop all switch together.
+  let pendingChords = state.pendingChords
+  if (pendingChords && tick % arrangement.stepsPerBar === 0) {
+    arrangement = setChords(arrangement, pendingChords)
+    pendingChords = null
+  }
   const withKey = { ...arrangement, key: state.key }
   const { bar, step } = locateStep(withKey, tick)
   const snap = snapshotStep(withKey, bar, step)
@@ -635,7 +594,6 @@ export function advanceTick(
   // per-enemy cooldowns.  Outside these windows, gauges fill normally.
   let cooldownLeft = state.cooldownLeft.map((c) => Math.max(0, c - 1))
   let introLoopsLeft = state.introLoopsLeft
-  let fillCooldownLeft = Math.max(0, state.fillCooldownLeft - 1)
   const loopLen = loopLength(withKey)
   // The equipped groove stretches or squeezes every foe's strike cadence.
   const beatScale = withKey.groove.effect.cadence
@@ -669,25 +627,23 @@ export function advanceTick(
   let nextArr = arrangement
 
   const s = (extra: Partial<AtbState> = {}): AtbState => ({
-    ...state, tick, party, enemies, gauges, cooldownLeft, introLoopsLeft, fillCooldownLeft, lastTension, potency, over, log, activeQte, parrySchedule, lastParryTick, ...extra,
+    ...state, tick, party, enemies, gauges, cooldownLeft, introLoopsLeft, lastTension, potency, over, log, activeQte, pendingChords, parrySchedule, lastParryTick, ...extra,
   })
 
-  // Player charts resolve on the tick: completed hymns/bottles land,
-  // expired ones fumble. Charts use wall-clock Math.random at spawn so the
-  // seeded combat rng stream (damage/targets) stays untouched.
+  // Player charts resolve on the tick: completed chord swaps queue for the
+  // next bar line, bottled loops land at once, expired charts fumble. Charts
+  // use wall-clock Math.random at spawn so the seeded combat rng stream
+  // (damage/targets) stays untouched.
   if (activeQte && (activeQte.kind === "chord" || activeQte.kind === "preset")) {
     if (isQteComplete(activeQte)) {
       if (activeQte.kind === "chord" && activeQte.payload.romans) {
-        const romans = activeQte.payload.romans
-        const chords = Array.from({ length: nextArr.bars }, (_, b) => romans[b % romans.length])
-        nextArr = { ...nextArr, chords }
-        potency = reconcilePotency(potency, { ...nextArr, key: state.key })
-        log = pushLog(s({ log, activeQte }), "The new hymn takes hold.")
+        pendingChords = [...activeQte.payload.romans]
+        log = pushLog(s({ log, activeQte }), "The progression is set — it lands on the next bar.")
       } else if (activeQte.kind === "preset" && activeQte.payload.presetTracks && activeQte.payload.presetChords) {
         const pt = activeQte.payload.presetTracks as (NoteEvent | null)[][][]
         const pc = activeQte.payload.presetChords as string[]
         if (pt.length === nextArr.tracks.length) {
-          nextArr = { ...nextArr, tracks: pt, chords: [...pc] }
+          nextArr = { ...nextArr, tracks: pt, chords: fitProgression(pc, nextArr.bars) }
           const live: Record<string, number> = {}
           for (const k of allOnsetKeys(nextArr)) live[k] = 1
           potency = live
@@ -700,7 +656,7 @@ export function advanceTick(
     } else if (tick >= activeQte.deadlineTick) {
       log = pushLog(
         s({ log, activeQte }),
-        activeQte.kind === "chord" ? "You fumble the hymn change." : "The bottled loop slips away.",
+        activeQte.kind === "chord" ? "You fumble the progression change." : "The bottled loop slips away.",
       )
       activeQte = null
     }
@@ -790,11 +746,6 @@ export function advanceTick(
           : "The progression steadies: the party is faintly warded.",
       )
     }
-    const keeper = state.slots.beat ? party.find((f) => f.id === state.slots.beat) : undefined
-    if (keeper && !isDown(keeper)) {
-      party = party.map((f) => (isDown(f) ? f : addShield(f, 1)))
-      lines.push(`${keeper.name} keeps the beat: the party is warded.`)
-    }
     party = party.map((f) => {
       const r = tickBuffs(f)
       lines.push(...r.events)
@@ -809,9 +760,11 @@ export function advanceTick(
   }
 
   // The loop sings: every onset under the playhead hits a random foe.
-  // Silence deals nothing (and stays quiet — no log spam on empty steps).
+  // During a chord swap the soloists stay muted (the ensemble records the new
+  // harmony first); silence deals nothing, so no log spam on empty steps.
+  const swapped = activeQte?.kind === "chord" || pendingChords != null
   for (const voice of snap.melodies) {
-    if (over) break
+    if (over || swapped) break
     const foes = enemies.filter((f) => !isDown(f))
     if (foes.length === 0) break
     const r = resolveMelodyVoice(

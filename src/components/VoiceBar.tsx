@@ -34,7 +34,6 @@ export function VoiceBar() {
   const fight = useSessionStore((s) => s.fight)
   const arrangement = useSessionStore((s) => s.arrangement)
   const playing = useSessionStore((s) => s.playing)
-  const performerId = useSessionStore((s) => s.performerId)
   const typing = useTypingFocus()
 
   const voices = countOnsets(arrangement)
@@ -51,7 +50,7 @@ export function VoiceBar() {
     status = "keys captured by the input — click out to sing"
   } else if (fight.activeQte?.kind === "chord" || fight.activeQte?.kind === "preset") {
     status = "chart open — WASD belongs to the chart"
-  } else if (!hasLiveAttacker(fight) && performerId !== fight.slots.beat) {
+  } else if (!hasLiveAttacker(fight)) {
     status = "no living attacker — seat a voice up front"
   } else if (voices === 0) {
     status = "the loop is silent — sing with WASD"

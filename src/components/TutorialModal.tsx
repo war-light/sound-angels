@@ -31,12 +31,12 @@ const STEPS: TutorialStep[] = [
   },
   {
     title: "Harmonic Chords & Blessings",
-    badge: "Hymn Crafting",
+    badge: "Progression Crafting",
     icon: "✦",
     summary: "The back-row chord keeper grounds your ensemble with harmonic progressions that bless the party.",
     bullets: [
-      { label: "Hymn Wheel", text: "Choose from ancient 4-bar progressions like Sunfall, Ascension, or Lament." },
-      { label: "Harmonic Forge", text: "Craft your own custom progression by arranging Roman numerals (I, IV, V, vi, etc.)." },
+      { label: "Progression Cards", text: "One-click the classics — Pop Axis, Doo-Wop, Jazz Cadence, Epic Minor — or pick a custom progression you saved." },
+      { label: "Harmonic Forge", text: "Craft your own 4-bar progression by arranging Roman numerals (I, IV, V, vi, etc.)." },
       { label: "Tier Blessings", text: "Gold Tier (score >= 75) grants HP Regen, Shield Ward, and Bonus Damage each loop wrap. Silver Tier grants Shield Ward." },
     ],
     tip: "Good voice-leading and cadential flow (Tonic -> Subdominant -> Dominant) produce Gold tier blessings.",
@@ -61,7 +61,6 @@ const STEPS: TutorialStep[] = [
     bullets: [
       { label: "Front · Attackers", text: "Fills the 3 battle lanes. Each attacker strikes enemies with their instrument timbre (Violin, Piano, Trumpet)." },
       { label: "Back · Chords", text: "Fighter voices the harmonic stabs and channels the loop blessing to the party." },
-      { label: "Back · Beat", text: "Colors the rhythm drums and allows playing chord-fitting bass arpeggios." },
     ],
     tip: "Visit the Voices Roster in preparation to choose heroes tailored to enemy weaknesses.",
   },

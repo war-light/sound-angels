@@ -135,7 +135,11 @@ export function MelodyCardBar() {
                   title="Load this card into the loop grid">
                   {active ? "Loaded" : "Load"}
                 </Button>
-                <CardPreviewButton id={`melody:${card.id}`} arrangement={previewArrangement(card)} />
+                <CardPreviewButton
+                  id={`melody:${card.id}`}
+                  arrangement={previewArrangement(card)}
+                  layers="melody"
+                />
                 <Button
                   type="button"
                   variant={bagged ? "secondary" : "ghost"}

@@ -7,9 +7,6 @@ import {
   createFight,
   advanceTick,
   defaultPerformerId,
-  fillCharge,
-  fillReady,
-  fireFill,
   hasLiveAttacker,
   keeperInstrument,
   laneAttacker,
@@ -95,20 +92,20 @@ describe("advanceTick", () => {
     const hpBefore = s.party.reduce((n, f) => n + f.hp + f.shield, 0)
     let a = arr()
     // No chart before the first loop end.
-    for (let i = 0; i < 31; i++) {
+    for (let i = 0; i < 63; i++) {
       const r = advanceTick(s, a, seq([0.5]))
       s = r.state
       a = r.arrangement
     }
     expect(s.activeQte).toBeNull()
     // Loop end: parry chart opens, strike scheduled one loop out.
-    const r32 = advanceTick(s, a, seq([0.5]))
-    s = r32.state
-    a = r32.arrangement
+    const r64 = advanceTick(s, a, seq([0.5]))
+    s = r64.state
+    a = r64.arrangement
     expect(s.activeQte?.kind).toBe("parry")
-    expect(s.parrySchedule?.strikeTick).toBe(64)
+    expect(s.parrySchedule?.strikeTick).toBe(128)
     // Ride to the strike without playing: the unblocked blow lands.
-    for (let i = 0; i < 32; i++) {
+    for (let i = 0; i < 64; i++) {
       const r = advanceTick(s, a, seq([0.5]))
       s = r.state
       a = r.arrangement
@@ -125,7 +122,7 @@ describe("advanceTick", () => {
     // Bypass intro grace period so scheduling starts at the first boundary.
     s = { ...s, enemies: s.enemies.map((e) => ({ ...e, hp: 9999 })), introLoopsLeft: 0 }
     let a = arr()
-    for (let i = 0; i < 32; i++) {
+    for (let i = 0; i < 64; i++) {
       const r = advanceTick(s, a, seq([0.1]))
       s = r.state
       a = r.arrangement
@@ -133,28 +130,34 @@ describe("advanceTick", () => {
     // First boundary: echo opens the chart (stable order on the cadence tie).
     expect(s.activeQte?.kind).toBe("parry")
     expect(s.parrySchedule?.foeId).toBe("echo-0")
-    expect(s.parrySchedule?.strikeTick).toBe(64)
-    // Ride through the echo strike to the next boundary: mite is due
-    // (every 2 loops) while echo recharges (every 3).
+    expect(s.parrySchedule?.strikeTick).toBe(128)
+    // Ride through the echo strike at 128, then to the next boundary: mite is
+    // due (every 2 loops) while echo recharges (every 3).
     for (let i = 0; i < 64; i++) {
       const r = advanceTick(s, a, seq([0.1]))
       s = r.state
       a = r.arrangement
     }
-    expect(s.tick).toBe(96)
+    expect(s.tick).toBe(128)
+    expect(s.log.some((l) => l.text.includes("Echo") && l.text.includes("strikes"))).toBe(true)
+    for (let i = 0; i < 64; i++) {
+      const r = advanceTick(s, a, seq([0.1]))
+      s = r.state
+      a = r.arrangement
+    }
+    expect(s.tick).toBe(192)
     expect(s.activeQte?.kind).toBe("parry")
     expect(s.parrySchedule?.foeId).toBe("mite-1")
-    expect(s.parrySchedule?.strikeTick).toBe(128)
-    expect(s.log.some((l) => l.text.includes("Echo") && l.text.includes("strikes"))).toBe(true)
+    expect(s.parrySchedule?.strikeTick).toBe(256)
   })
 
   it("track-wipe enemies erase all melody tracks", () => {
     let s = createFight({ key: KEY, enemyIds: ["moth"] })
-    // Bypass intro; the moth (every 3 loops) charts at 32, strikes at 64.
+    // Bypass intro; the moth (every 3 loops) charts at 64, strikes at 128.
     s = { ...s, enemies: s.enemies.map((e) => ({ ...e, hp: 9999 })), introLoopsLeft: 0 }
     let a = arr()
     expect(countOnsets(a)).toBeGreaterThan(0)
-    for (let i = 0; i < 70; i++) {
+    for (let i = 0; i < 134; i++) {
       const r = advanceTick(s, a, seq([0.5]))
       s = r.state
       a = r.arrangement
@@ -171,7 +174,7 @@ describe("advanceTick", () => {
     }
     // Empty loop: no melody damage, so the hp drop is the poison alone.
     let a = clearTracks(arr())
-    for (let i = 0; i < 32; i++) {
+    for (let i = 0; i < 64; i++) {
       const r = advanceTick(s, a, seq([0.5]))
       s = r.state
       a = r.arrangement
@@ -195,11 +198,11 @@ describe("positions in combat", () => {
 
   it("moveFighter re-seats and reports unknown ids as no-ops", () => {
     let s = createFight({ key: KEY })
-    s = moveFighter(s, "voice-0", "beat")
-    expect(s.slots.beat).toBe("voice-0")
+    s = moveFighter(s, "voice-0", "front")
+    expect(s.slots.front).toContain("voice-0")
     expect(s.slots.chord).toBe(null)
     expect(keeperInstrument(s)).toBe(null)
-    expect(s.log.some((l) => l.text.includes("beat"))).toBe(true)
+    expect(s.log.some((l) => l.text.includes("front"))).toBe(true)
     const same = moveFighter(s, "ghost", "front")
     expect(same).toBe(s)
   })
@@ -270,23 +273,6 @@ describe("positions in combat", () => {
       party: s.party.map((f) => (f.id.startsWith("voice-") && s.slots.front.includes(f.id) ? { ...f, hp: 0 } : f)),
     }
     expect(hasLiveAttacker(fallen)).toBe(false)
-  })
-
-  it("beat-keeper wards the party on each loop wrap", () => {
-    let s = createFight({ key: KEY })
-    s = moveFighter(s, "voice-2", "beat")
-    s = { ...s, enemies: s.enemies.map((e) => ({ ...e, hp: 9999 })) }
-    let a = arr()
-    for (let i = 0; i < 32; i++) {
-      const r = advanceTick(s, a, seq([0.5]))
-      s = r.state
-      a = r.arrangement
-    }
-    // Echo deals 3 through wards; keeper added +1 shield per wrap (1 wrap).
-    // Shields absorb first: party took 3 total, distributed by ward.
-    const total = s.party.reduce((n, f) => n + f.hp, 0)
-    expect(total).toBeGreaterThan(60 - 3)
-    expect(s.log.some((l) => l.text.includes("warded"))).toBe(true)
   })
 })
 
@@ -411,8 +397,8 @@ describe("loop damage", () => {
     let s = createFight({ key: KEY })
     expect(s.introLoopsLeft).toBe(2)
     let a = arr()
-    // Run for 1 full loop (32 steps) — still in intro phase
-    for (let i = 0; i < 32; i++) {
+    // Run for 1 full loop (64 steps) — still in intro phase
+    for (let i = 0; i < 64; i++) {
       const r = advanceTick(s, a, seq([0.99, 0.99, 0.99]))
       s = r.state
       a = r.arrangement
@@ -420,8 +406,8 @@ describe("loop damage", () => {
     expect(s.introLoopsLeft).toBe(1)
     expect(s.gauges[0]).toBe(0)
 
-    // Run for second loop (32 steps) — transitions out of intro
-    for (let i = 0; i < 32; i++) {
+    // Run for second loop (64 steps) — transitions out of intro
+    for (let i = 0; i < 64; i++) {
       const r = advanceTick(s, a, seq([0.99, 0.99, 0.99]))
       s = r.state
       a = r.arrangement
@@ -443,14 +429,14 @@ describe("loop damage", () => {
     }
     let a = arr()
     const r = advanceTick(s, a, seq([0.5]))
-    // Echo cooldown is 1 loop: 1 * 32 = 32 steps of frozen gauge.
-    expect(r.state.cooldownLeft[0]).toBe(32)
+    // Echo cooldown is 1 loop: 1 * 64 = 64 steps of frozen gauge.
+    expect(r.state.cooldownLeft[0]).toBe(64)
     expect(r.state.gauges[0]).toBe(0)
     expect(r.state.parrySchedule).toBeNull()
 
     // Next tick decrements cooldown while keeping gauge at 0
     const r2 = advanceTick(r.state, r.arrangement, seq([0.5]))
-    expect(r2.state.cooldownLeft[0]).toBe(31)
+    expect(r2.state.cooldownLeft[0]).toBe(63)
     expect(r2.state.gauges[0]).toBe(0)
   })
 
@@ -465,57 +451,7 @@ describe("loop damage", () => {
     }
     let a = arr()
     const r = advanceTick(s, a, seq([0.5]))
-    // Normal cooldown = 2 loops * 32 = 64. Enraged halves to 1 loop = 32.
-    expect(r.state.cooldownLeft[0]).toBe(32)
-  })
-})
-
-describe("fill (the kit slam)", () => {
-  it("hits every living foe flat and starts the loop-based cooldown", () => {
-    const s = createFight({ key: KEY, enemyIds: ["echo", "mite"] })
-    const before = s.enemies.map((e) => e.hp)
-    const after = fireFill(s, arr())
-    expect(after.enemies.map((e) => e.hp)).toEqual(before.map((hp) => hp - 6))
-    // 2 loops * 32 steps.
-    expect(after.fillCooldownLeft).toBe(64)
-    expect(fillReady(s)).toBe(true)
-    expect(fillReady(after)).toBe(false)
-  })
-
-  it("is a no-op while cooling, with no living foes, or once the fight is over", () => {
-    const s = createFight({ key: KEY, enemyIds: ["echo"] })
-    const cooling = { ...s, fillCooldownLeft: 5 }
-    expect(fireFill(cooling, arr())).toBe(cooling)
-    const dead = { ...s, enemies: s.enemies.map((e) => ({ ...e, hp: 0 })) }
-    expect(fireFill(dead, arr())).toBe(dead)
-    const over = { ...s, over: "player" as const }
-    expect(fireFill(over, arr())).toBe(over)
-  })
-
-  it("wins the fight when the burst finishes the pack", () => {
-    const s = createFight({ key: KEY, enemyIds: ["echo"] })
-    const nearly = { ...s, enemies: [{ ...s.enemies[0], hp: 3 }] }
-    const after = fireFill(nearly, arr())
-    expect(after.over).toBe("player")
-    expect(aliveEnemies(after).length).toBe(0)
-  })
-
-  it("widens an already-open parry chart and reports full drain", () => {
-    let s = createFight({ key: KEY, enemyIds: ["echo"] })
-    s = { ...s, enemies: s.enemies.map((e) => ({ ...e, hp: 9999 })), introLoopsLeft: 0 }
-    let a = arr()
-    for (let i = 0; i < 32; i++) {
-      const r = advanceTick(s, a, seq([0.5]))
-      s = r.state
-      a = r.arrangement
-    }
-    expect(s.activeQte?.kind).toBe("parry")
-    const before = s.activeQte!.notes.map((n) => n.note.window)
-    const after = fireFill(s, a)
-    expect(after.activeQte!.notes.map((n) => n.note.window)).toEqual(
-      before.map((w) => w + 2),
-    )
-    // Just fired: the meter reads empty.
-    expect(fillCharge(after, a)).toBe(0)
+    // Normal cooldown = 2 loops * 64 = 128. Enraged halves to 1 loop = 64.
+    expect(r.state.cooldownLeft[0]).toBe(64)
   })
 })

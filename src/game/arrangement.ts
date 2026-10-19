@@ -5,17 +5,17 @@
 import { DEFAULT_KEY, degreeToMidi, type Key, romanToChord } from "./theory"
 import {
   cloneGroove,
-  defaultGroove,
-  grooveHit,
+  grooveHitVel,
   swingDelaySteps,
   tweakGroove,
-  toggleCellStep,
+  DRUM_VOICES,
+  type DrumVoice,
   type Groove,
-  type GrooveVoice,
 } from "./groove"
+import { defaultRig } from "@/data/beats"
 
 export const STEPS_PER_BAR = 16
-export const DEFAULT_BARS = 2
+export const DEFAULT_BARS = 4
 /** Attacker melody slots (stacked characters in Phase 2). */
 export const ATTACK_SLOTS = 3
 
@@ -64,19 +64,21 @@ export function createDefaultArrangement(): Arrangement {
   ]
   tracks[0][0] = seed.map((d) => (d == null ? null : { degree: d, len: 1 }))
   tracks[0][1] = seed2.map((d) => (d == null ? null : { degree: d, len: 1 }))
-  const bass = grid<number | null>(bars, steps, null)
-  for (let b = 0; b < bars; b++) {
-    for (const s of [0, 4, 8, 12]) bass[b][s] = 1
+  // The 4-bar loop repeats the opening 2-bar phrase into its second half.
+  if (bars >= 4) {
+    tracks[0][2] = seed.map((d) => (d == null ? null : { degree: d, len: 1 }))
+    tracks[0][3] = seed2.map((d) => (d == null ? null : { degree: d, len: 1 }))
   }
+  const bass = grid<number | null>(bars, steps, null)
   return {
     bpm: 90,
     bars,
     stepsPerBar: steps,
     key: { ...DEFAULT_KEY },
-    chords: ["i", "VI"],
+    chords: fitProgression(["i", "VI"], bars),
     tracks,
     bass,
-    groove: defaultGroove(),
+    groove: defaultRig(),
   }
 }
 
@@ -129,25 +131,9 @@ export function countOnsets(arr: Arrangement): number {
   return n
 }
 
-/** Equip a groove (card pick or bottle recall). Stores a copy. */
+/** Equip a groove (rig pick or bottle recall). Stores a deep copy. */
 export function setGroove(arr: Arrangement, groove: Groove): Arrangement {
   return { ...arr, groove: cloneGroove(groove) }
-}
-
-/**
- * Tweak one step of the equipped groove. Edits happen in the Studio (outside
- * combat) and mark the groove custom — it no longer matches any card.
- */
-export function toggleGrooveStep(
-  arr: Arrangement,
-  voice: GrooveVoice,
-  step: number,
-): Arrangement {
-  const edited = toggleCellStep(arr.groove, voice, step)
-  return {
-    ...arr,
-    groove: { ...edited, source: "custom", blurb: "Hand-built in the Studio." },
-  }
 }
 
 /** Swap in a melody card's tracks + chords (defensive copy). */
@@ -159,27 +145,14 @@ export function withMelody(
   return {
     ...arr,
     tracks: tracks.map((tr) => tr.map((row) => row.map((e) => (e ? { ...e } : null)))),
-    chords: [...chords],
+    chords: fitProgression(chords, arr.bars),
   }
 }
 
-/**
- * Drum-only view for auditioning a groove card: nobody sings, only the kit
- * (plus the bar-start chord stab so the audition has a tonal center).
- */
-export function drumOnly(arr: Arrangement, groove: Groove): Arrangement {
-  return {
-    ...arr,
-    groove: cloneGroove(groove),
-    tracks: arr.tracks.map((tr) => tr.map((row) => row.map(() => null))),
-    bass: arr.bass.map((row) => row.map(() => null)),
-  }
-}
-
-/** Swing / density knobs on the equipped groove. */
+/** Swing knob on the equipped rig. */
 export function tweakGrooveKnobs(
   arr: Arrangement,
-  knobs: { swing?: number; density?: number },
+  knobs: { swing?: number },
 ): Arrangement {
   return { ...arr, groove: tweakGroove(arr.groove, knobs) }
 }
@@ -190,11 +163,16 @@ export function setBarChord(arr: Arrangement, bar: number, roman: string): Arran
   return { ...arr, chords }
 }
 
+/** Repeat a Roman progression across `bars` slots (one chord per bar). */
+export function fitProgression(romans: string[], bars: number): string[] {
+  const clean = romans.length > 0 ? romans : ["i"]
+  return Array.from({ length: bars }, (_, b) => clean[b % clean.length])
+}
+
 /** Replace the whole progression (preset picker). Cycles/truncates to fit bars. */
 export function setChords(arr: Arrangement, romans: string[]): Arrangement {
   if (romans.length === 0) throw new Error("A progression needs at least one chord")
-  const chords = Array.from({ length: arr.bars }, (_, b) => romans[b % romans.length])
-  return { ...arr, chords }
+  return { ...arr, chords: fitProgression(romans, arr.bars) }
 }
 
 export function setBpm(arr: Arrangement, bpm: number): Arrangement {
@@ -215,6 +193,14 @@ export interface MelodyVoice {
   chordTone: boolean
 }
 
+/** One drum slot as the audio layer needs it. */
+export interface DrumHitSnapshot {
+  /** 0 = rest; otherwise 0..1 velocity. */
+  vel: number
+  /** Extra 32nd sub-hits inside this step. */
+  roll: number
+}
+
 /** Resolved absolute-pitch view of one step. Consumed by the audio renderer. */
 export interface StepSnapshot {
   bar: number
@@ -222,9 +208,15 @@ export interface StepSnapshot {
   chord: number[]
   melodies: MelodyVoice[]
   bass: number | null
+  /** Per-voice drum hits (velocity + roll), always one entry per voice. */
+  drums: Record<DrumVoice, DrumHitSnapshot>
+  /** Convenience flags for the drum pads/meter. */
   kick: boolean
   snare: boolean
   hat: boolean
+  perc: boolean
+  /** Timbre id the drums should be played through. */
+  kitId: string
   /**
    * Swing lag for the drum voices on this step, in 16th steps. The audio
    * layer multiplies it by the step duration, so the feel holds at any bpm.
@@ -236,7 +228,7 @@ export interface StepSnapshot {
 export function snapshotStep(arr: Arrangement, bar: number, step: number): StepSnapshot {
   checkPos(arr, bar, step)
   const key = arr.key
-  const roman = arr.chords[bar] ?? "i"
+  const roman = arr.chords.length > 0 ? arr.chords[bar % arr.chords.length] ?? "i" : "i"
   const chord = romanToChord(key, roman)
   const chordPcs = new Set(chord.map((m) => ((m % 12) + 12) % 12))
   const melodies: MelodyVoice[] = []
@@ -252,15 +244,25 @@ export function snapshotStep(arr: Arrangement, bar: number, step: number): StepS
     })
   })
   const bassDeg = arr.bass[bar][step]
+  const drums = {} as Record<DrumVoice, DrumHitSnapshot>
+  for (const voice of DRUM_VOICES) {
+    drums[voice] = {
+      vel: grooveHitVel(arr.groove, voice, step),
+      roll: arr.groove.cell[voice][step]?.roll ?? 0,
+    }
+  }
   return {
     bar,
     step,
     chord,
     melodies,
     bass: bassDeg == null ? null : degreeToMidi(key, bassDeg, 2),
-    kick: grooveHit(arr.groove, "kick", step),
-    snare: grooveHit(arr.groove, "snare", step),
-    hat: grooveHit(arr.groove, "hat", step),
+    drums,
+    kick: drums.kick.vel > 0,
+    snare: drums.snare.vel > 0,
+    hat: drums.hat.vel > 0,
+    perc: drums.perc.vel > 0,
+    kitId: arr.groove.kitId,
     swingDelay: swingDelaySteps(step, arr.groove.swing),
   }
 }

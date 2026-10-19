@@ -59,6 +59,25 @@ function emptyTracks(slots = ATTACK_SLOTS, bars = DEFAULT_BARS, steps = STEPS_PE
   )
 }
 
+/**
+ * Preset cards are written as a 2-bar phrase. When the live loop is 4 bars,
+ * mirror bars 0-1 into bars 2-3 so the card fills the whole loop.
+ */
+function mirrorSecondPhrase(tracks: (NoteEvent | null)[][][]): void {
+  for (const slot of tracks) {
+    if (slot.length < 4) continue
+    for (let s = 0; s < slot[0].length; s++) {
+      slot[2][s] = slot[0][s] ? { ...slot[0][s]! } : null
+      slot[3][s] = slot[1][s] ? { ...slot[1][s]! } : null
+    }
+  }
+}
+
+/** Repeat a 2-chord phrase across the loop's bar count. */
+function fitChords(chords: string[]): string[] {
+  return Array.from({ length: DEFAULT_BARS }, (_, b) => chords[b % chords.length])
+}
+
 function createDawnAnthem(): MelodyTemplate {
   const tracks = emptyTracks()
   // Slot 0 (strings): melodic motif
@@ -78,13 +97,15 @@ function createDawnAnthem(): MelodyTemplate {
   tracks[1][1][4] = { degree: 3, len: 2 }
   tracks[1][1][8] = { degree: 5, len: 2 }
 
+  mirrorSecondPhrase(tracks)
+
   return {
     id: "dawn-anthem",
     name: "Dawn Anthem",
     description: "A balanced diatonic motif blending strings and piano over a steady i–VI progression.",
     source: "preset",
     tracks,
-    chords: ["i", "VI"],
+    chords: fitChords(["i", "VI"]),
     tags: ["balanced", "starter"],
   }
 }
@@ -102,13 +123,15 @@ function createStaccatoFlight(): MelodyTemplate {
     tracks[1][1][s] = { degree: 5, len: 1 }
   }
 
+  mirrorSecondPhrase(tracks)
+
   return {
     id: "staccato-flight",
     name: "Staccato Flight",
     description: "Rapid short notes designed to overwhelm evasive horde enemies like Mites.",
     source: "preset",
     tracks,
-    chords: ["i", "iv"],
+    chords: fitChords(["i", "iv"]),
     tags: ["burst", "anti-horde"],
   }
 }
@@ -127,13 +150,15 @@ function createSolemnGround(): MelodyTemplate {
   tracks[2][1][4] = { degree: 5, len: 4 }
   tracks[2][1][12] = { degree: 1, len: 4 }
 
+  mirrorSecondPhrase(tracks)
+
   return {
     id: "solemn-ground",
     name: "Solemn Ground",
     description: "Extended sustained notes that crush high-armor tank enemies like Carapace.",
     source: "preset",
     tracks,
-    chords: ["i", "V"],
+    chords: fitChords(["i", "V"]),
     tags: ["sustained", "tank-buster"],
   }
 }

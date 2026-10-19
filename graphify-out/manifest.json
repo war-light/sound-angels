@@ -372,34 +372,28 @@
     "semantic_hash": "7e5aa2c54ae344e601c85b0c35cbc8bf"
   },
   "src/audio/player.ts": {
-    "mtime": 1792177546.340677,
-    "seen": 1792184841.9332204,
-    "ast_hash": "bfa872a523b97c797762ecb26492194f",
+    "mtime": 1792438055.0231328,
+    "seen": 1792438327.4923444,
+    "ast_hash": "4bc2f71aed3d12c64a9c0cc861c408fe",
     "semantic_hash": ""
   },
   "src/audio/sfx.ts": {
-    "mtime": 1792177468.9417214,
-    "seen": 1792184841.9332235,
-    "ast_hash": "d9927cc16a303f6b75e2f71d0c043a6c",
+    "mtime": 1792432554.5872862,
+    "seen": 1792437337.564006,
+    "ast_hash": "1f9ef006fd029b30556430000cda38d2",
     "semantic_hash": ""
   },
   "src/audio/synths.ts": {
-    "mtime": 1792153423.5530698,
-    "seen": 1792162326.0887408,
-    "ast_hash": "9fa9765c338d047ddb56408c733e3e99",
-    "semantic_hash": "9fa9765c338d047ddb56408c733e3e99"
+    "mtime": 1792433109.0844538,
+    "seen": 1792437337.5640068,
+    "ast_hash": "d29ab1c8f5bd26c986df7cbc3260def9",
+    "semantic_hash": ""
   },
   "src/components/ChordPicker.tsx": {
-    "mtime": 1792153423.55407,
-    "seen": 1792162326.0887413,
-    "ast_hash": "04eed865a6050ba7ac6ae973b695afb7",
-    "semantic_hash": "04eed865a6050ba7ac6ae973b695afb7"
-  },
-  "src/components/ChordWheel.tsx": {
-    "mtime": 1792153423.55407,
-    "seen": 1792162326.0887423,
-    "ast_hash": "fad4b2b01d5bd3b4f4afcf2392208fe0",
-    "semantic_hash": "fad4b2b01d5bd3b4f4afcf2392208fe0"
+    "mtime": 1792439119.2733316,
+    "seen": 1792439302.7401404,
+    "ast_hash": "9d13e3dab4c16b9179a4b09cc252bcf2",
+    "semantic_hash": ""
   },
   "src/components/CombatFeedback.tsx": {
     "mtime": 1792153423.55407,
@@ -420,10 +414,10 @@
     "semantic_hash": "5186ef86e19754b6f118138fae9db2e9"
   },
   "src/components/CustomChordBuilder.tsx": {
-    "mtime": 1792153423.55407,
-    "seen": 1792162326.0887458,
-    "ast_hash": "9d6bf1734440c8e431ca542064fcd819",
-    "semantic_hash": "9d6bf1734440c8e431ca542064fcd819"
+    "mtime": 1792439226.247031,
+    "seen": 1792439302.7401447,
+    "ast_hash": "aa77445db41fa693492bcf9b698846a1",
+    "semantic_hash": ""
   },
   "src/components/EncounterBanner.tsx": {
     "mtime": 1792153423.55407,
@@ -444,15 +438,15 @@
     "semantic_hash": "5055df917a020228e7edbd8963700218"
   },
   "src/components/PartyCorner.test.tsx": {
-    "mtime": 1792184428.6906526,
-    "seen": 1792184841.9332404,
-    "ast_hash": "95f9f9e162c55c002169f705a0d10536",
+    "mtime": 1792437262.3384676,
+    "seen": 1792437337.5640233,
+    "ast_hash": "e797a36edc136b0c962e82a8243c0a6a",
     "semantic_hash": ""
   },
   "src/components/PartyCorner.tsx": {
-    "mtime": 1792173821.6397812,
-    "seen": 1792184841.9332416,
-    "ast_hash": "fa651c7402d4d86531dafebb518c27f1",
+    "mtime": 1792437151.7675898,
+    "seen": 1792437337.5640242,
+    "ast_hash": "d6a5ec42823db9c53e6ae2cba45e89bc",
     "semantic_hash": ""
   },
   "src/components/PhaseStrip.tsx": {
@@ -480,9 +474,9 @@
     "semantic_hash": ""
   },
   "src/components/StepGrid.tsx": {
-    "mtime": 1792184327.3682854,
-    "seen": 1792184841.9332476,
-    "ast_hash": "502ea7543aa5481f85613f6dd99a7026",
+    "mtime": 1792438138.082678,
+    "seen": 1792438327.492381,
+    "ast_hash": "05f6fa473e5c074ec253007ea2d3d3c0",
     "semantic_hash": ""
   },
   "src/components/TransportBar.tsx": {
@@ -498,10 +492,10 @@
     "semantic_hash": "4f96fd9088cebf0d13c5dbfe8b7b1c6a"
   },
   "src/components/TutorialModal.tsx": {
-    "mtime": 1792160861.0480983,
-    "seen": 1792162326.0887616,
-    "ast_hash": "6181621e213a10314932354a0d6378ff",
-    "semantic_hash": "6181621e213a10314932354a0d6378ff"
+    "mtime": 1792439295.1267118,
+    "seen": 1792439302.7401614,
+    "ast_hash": "3129a2cfeef8f57397cdff7b881f2b5c",
+    "semantic_hash": ""
   },
   "src/components/VoiceBar.test.tsx": {
     "mtime": 1792153423.5560699,
@@ -510,27 +504,27 @@
     "semantic_hash": "3b47ca8f6474bb1d771d7a01bd3f7303"
   },
   "src/components/VoiceBar.tsx": {
-    "mtime": 1792153423.5560699,
-    "seen": 1792162326.0887632,
-    "ast_hash": "1673cc195ced48c636be42c505117b1b",
-    "semantic_hash": "1673cc195ced48c636be42c505117b1b"
+    "mtime": 1792437294.0948665,
+    "seen": 1792437337.5640328,
+    "ast_hash": "4b6eff2ee8a2d065cecb82a0ae93563d",
+    "semantic_hash": ""
   },
   "src/components/screens/CombatScreen.tsx": {
-    "mtime": 1792184335.5281544,
-    "seen": 1792184841.9332528,
-    "ast_hash": "63a048f48c84eb330f0c9f4c595d54cd",
+    "mtime": 1792439273.9208195,
+    "seen": 1792439302.7401643,
+    "ast_hash": "9ddad501348eac5b76a67a7d46e1b5a2",
     "semantic_hash": ""
   },
   "src/components/screens/MenuScreen.tsx": {
-    "mtime": 1792153423.5560699,
-    "seen": 1792162326.088765,
-    "ast_hash": "70adfb7b02c9d7ba720cadd45bba05f2",
-    "semantic_hash": "70adfb7b02c9d7ba720cadd45bba05f2"
+    "mtime": 1792418971.5851283,
+    "seen": 1792437337.5640342,
+    "ast_hash": "ebdc86743b44f67ac5a2b5e470589d56",
+    "semantic_hash": ""
   },
   "src/components/screens/PrepScreen.tsx": {
-    "mtime": 1792184343.691023,
-    "seen": 1792184841.9332545,
-    "ast_hash": "78e0dc30fe0184340559d49b670c231d",
+    "mtime": 1792437811.431433,
+    "seen": 1792438327.4923909,
+    "ast_hash": "c32c094a0343b4f61947e1d80c99f9c0",
     "semantic_hash": ""
   },
   "src/components/screens/ResultOverlay.tsx": {
@@ -540,10 +534,10 @@
     "semantic_hash": "fb4a1a0e257096ab8bbbc5968c97a21f"
   },
   "src/components/screens/screens.test.tsx": {
-    "mtime": 1792153423.5560699,
-    "seen": 1792162326.0887675,
-    "ast_hash": "0815d2a34e9356c8525c4a6aaa5a0dc8",
-    "semantic_hash": "0815d2a34e9356c8525c4a6aaa5a0dc8"
+    "mtime": 1792439268.1688473,
+    "seen": 1792439302.7401683,
+    "ast_hash": "d2073e552d49a34a81e72861ef64a00c",
+    "semantic_hash": ""
   },
   "src/components/ui/button.tsx": {
     "mtime": 1792153423.5570698,
@@ -552,10 +546,10 @@
     "semantic_hash": "a58688bbb6e590a1db227ceeb9e9c84f"
   },
   "src/data/chords.ts": {
-    "mtime": 1792153423.5570698,
-    "seen": 1792162326.0887692,
-    "ast_hash": "01449c27095843fc93c6860aa793eedb",
-    "semantic_hash": "01449c27095843fc93c6860aa793eedb"
+    "mtime": 1792439028.9123657,
+    "seen": 1792439302.740173,
+    "ast_hash": "7fd2aff9b15b1b5974c50a1bb3de932c",
+    "semantic_hash": ""
   },
   "src/data/encounters.test.ts": {
     "mtime": 1792153423.5570698,
@@ -570,10 +564,10 @@
     "semantic_hash": "70fb41b4f7b6fae8e766fefc0780ac8a"
   },
   "src/data/enemies.ts": {
-    "mtime": 1792160382.9267364,
-    "seen": 1792162326.0887718,
-    "ast_hash": "ce4cac206c88187aebf9cc5c7523366e",
-    "semantic_hash": "ce4cac206c88187aebf9cc5c7523366e"
+    "mtime": 1792433109.0844538,
+    "seen": 1792437337.564044,
+    "ast_hash": "4403c2ba85906db4bc7195f10a672ac6",
+    "semantic_hash": ""
   },
   "src/data/roster.test.ts": {
     "mtime": 1792153423.5570698,
@@ -588,27 +582,27 @@
     "semantic_hash": "e83ad0e5e1dee9d218068ec5b22402f9"
   },
   "src/game/arrangement.test.ts": {
-    "mtime": 1792177089.9753418,
-    "seen": 1792184841.9332647,
-    "ast_hash": "ca2ca5aea7dcd20dfc463228d06febc4",
+    "mtime": 1792437122.608158,
+    "seen": 1792437337.5640473,
+    "ast_hash": "39c8e864ec0d8c2941f67f392d5f8c4f",
     "semantic_hash": ""
   },
   "src/game/arrangement.ts": {
-    "mtime": 1792183817.0543137,
-    "seen": 1792184841.9332657,
-    "ast_hash": "5b0c7563051943578531d81987ca2855",
+    "mtime": 1792438847.4633813,
+    "seen": 1792439302.7401807,
+    "ast_hash": "d76294b2f6e508fcf81c6ea158d32ff7",
     "semantic_hash": ""
   },
   "src/game/combat.ts": {
-    "mtime": 1792181520.7984993,
-    "seen": 1792184841.9332666,
-    "ast_hash": "fe4368aef42cd0fed2d694e4bba43ee4",
+    "mtime": 1792438963.9373744,
+    "seen": 1792439302.7401814,
+    "ast_hash": "bb68844c5aea5508418ceaadac249364",
     "semantic_hash": ""
   },
   "src/game/combatAtb.test.ts": {
-    "mtime": 1792177703.9244807,
-    "seen": 1792184841.9332674,
-    "ast_hash": "b807c2d54bca1adaf790a70462b28afa",
+    "mtime": 1792437254.9306083,
+    "seen": 1792437337.5640502,
+    "ast_hash": "10b9b18e99d86e797628293b6b3fb06b",
     "semantic_hash": ""
   },
   "src/game/combatQte.test.ts": {
@@ -642,9 +636,9 @@
     "semantic_hash": "079dba6f392d65365eab83f0e88d4178"
   },
   "src/game/melodyBank.ts": {
-    "mtime": 1792183805.4884899,
-    "seen": 1792184841.9332762,
-    "ast_hash": "a03fa72bb123474d04574be44c9de146",
+    "mtime": 1792438872.1529558,
+    "seen": 1792439302.7401896,
+    "ast_hash": "96db554fd50d048f4119684c55128723",
     "semantic_hash": ""
   },
   "src/game/parryChart.test.ts": {
@@ -678,16 +672,16 @@
     "semantic_hash": ""
   },
   "src/game/positions.test.ts": {
-    "mtime": 1791925299.9142103,
-    "seen": 1792162326.0887902,
-    "ast_hash": "bd9ae2aedbc1cab39c237e817ff76e26",
-    "semantic_hash": "bd9ae2aedbc1cab39c237e817ff76e26"
+    "mtime": 1792436959.999357,
+    "seen": 1792437337.5640638,
+    "ast_hash": "db8b79c4ab1d5675986fb91b27d56832",
+    "semantic_hash": ""
   },
   "src/game/positions.ts": {
-    "mtime": 1792153423.5590699,
-    "seen": 1792162326.0887914,
-    "ast_hash": "27021b963e3007e6585e54ad61db8361",
-    "semantic_hash": "27021b963e3007e6585e54ad61db8361"
+    "mtime": 1792436923.696969,
+    "seen": 1792437337.5640643,
+    "ast_hash": "56077525482abfd5d28920d75baeac10",
+    "semantic_hash": ""
   },
   "src/game/presets.test.ts": {
     "mtime": 1791924584.3350267,
@@ -702,16 +696,16 @@
     "semantic_hash": "410ca9a049ec179d3aecda6494918ba8"
   },
   "src/game/qte.test.ts": {
-    "mtime": 1792160652.1560993,
-    "seen": 1792162326.088795,
-    "ast_hash": "edf6c2d5d811d6377d7f1b596217f447",
-    "semantic_hash": "edf6c2d5d811d6377d7f1b596217f447"
+    "mtime": 1792437262.3384676,
+    "seen": 1792437337.564067,
+    "ast_hash": "014ab161250a5396c1ab2d792e808238",
+    "semantic_hash": ""
   },
   "src/game/qte.ts": {
-    "mtime": 1792160621.167315,
-    "seen": 1792162326.088805,
-    "ast_hash": "3f0ca1943eac4167f2d3762215bd4b9e",
-    "semantic_hash": "3f0ca1943eac4167f2d3762215bd4b9e"
+    "mtime": 1792437294.0948665,
+    "seen": 1792437337.5640678,
+    "ast_hash": "55221719b6811e04bd69521a27c7f875",
+    "semantic_hash": ""
   },
   "src/game/scoring.test.ts": {
     "mtime": 1791924508.979274,
@@ -720,9 +714,9 @@
     "semantic_hash": "f17b384e28bc0012b24e98b886468a1f"
   },
   "src/game/session.ts": {
-    "mtime": 1792184084.475157,
-    "seen": 1792184841.933287,
-    "ast_hash": "c921dd438ced5cc115b7e73d31dab2df",
+    "mtime": 1792438985.7289991,
+    "seen": 1792439302.7402005,
+    "ast_hash": "93451116ad13f7f604899cf30ca375ef",
     "semantic_hash": ""
   },
   "src/game/sessionPhase.test.ts": {
@@ -744,10 +738,10 @@
     "semantic_hash": "0d7eb76436e4c2f18e2921b2f3a093de"
   },
   "src/game/timbre.test.ts": {
-    "mtime": 1792153423.5600698,
-    "seen": 1792162326.08881,
-    "ast_hash": "362f4ab5560209f834892c07ba5fde7a",
-    "semantic_hash": "362f4ab5560209f834892c07ba5fde7a"
+    "mtime": 1792437254.9306083,
+    "seen": 1792437337.5640724,
+    "ast_hash": "5d3cffe5fdab19e14788d843ecc6d2f1",
+    "semantic_hash": ""
   },
   "src/game/units.test.ts": {
     "mtime": 1791924436.416476,
@@ -804,9 +798,9 @@
     "semantic_hash": "9d16fdbc4dc870d5e32315292254b7d8"
   },
   "src/state/useSessionStore.ts": {
-    "mtime": 1792184500.7614863,
-    "seen": 1792184841.9332986,
-    "ast_hash": "f7f8004b1a4afb42e233479a7b7735c4",
+    "mtime": 1792439109.0293462,
+    "seen": 1792439302.740215,
+    "ast_hash": "84541040fd63f9957141763a38edcce4",
     "semantic_hash": ""
   },
   "src/test/setup.ts": {
@@ -840,9 +834,9 @@
     "semantic_hash": "248afdecfd2b97ccaaec36b023b39e9b"
   },
   "AGENTS.md": {
-    "mtime": 1792170765.7639627,
-    "seen": 1792184841.9333034,
-    "ast_hash": "46ab6d6a30f50b721b02d6fe886b9ae4",
+    "mtime": 1792437262.322468,
+    "seen": 1792437337.564085,
+    "ast_hash": "df878cf92688a4d8fc3a48eb1dd700b2",
     "semantic_hash": ""
   },
   "README.md": {
@@ -858,10 +852,10 @@
     "semantic_hash": "c705a95ede93c7a50381c5c8eb3dd549"
   },
   "docs/mechanics.md": {
-    "mtime": 1792153423.55107,
-    "seen": 1792162326.0888276,
-    "ast_hash": "0ea95257196febce7715a8cd6c374c15",
-    "semantic_hash": "0ea95257196febce7715a8cd6c374c15"
+    "mtime": 1792433172.634503,
+    "seen": 1792437337.5640883,
+    "ast_hash": "654f440d2c3b37fc11be1013c8dde420",
+    "semantic_hash": ""
   },
   "docs/qte-redesign.md": {
     "mtime": 1792158405.392316,
@@ -918,33 +912,27 @@
     "semantic_hash": ""
   },
   "src/audio/preview.ts": {
-    "mtime": 1792183843.4359102,
-    "seen": 1792184841.9332213,
-    "ast_hash": "2f774be2698e20c9f94d68e66d2b0bc8",
+    "mtime": 1792438245.6908,
+    "seen": 1792438327.4923475,
+    "ast_hash": "467f71defa9910105fa57b18fe8efae7",
     "semantic_hash": ""
   },
   "src/components/CardPreviewButton.tsx": {
-    "mtime": 1792184293.2388334,
-    "seen": 1792184841.9332259,
-    "ast_hash": "a78779946f7f420c1116b89213ed5dfe",
-    "semantic_hash": ""
-  },
-  "src/components/GrooveMeter.tsx": {
-    "mtime": 1792177501.7842815,
-    "seen": 1792184841.9332352,
-    "ast_hash": "e0436a76eed6479f171cf864ee1f4921",
+    "mtime": 1792438090.500511,
+    "seen": 1792438327.4923553,
+    "ast_hash": "f4f5ce18dd01f9c846b8e5d698747585",
     "semantic_hash": ""
   },
   "src/components/GroovePicker.tsx": {
-    "mtime": 1792184301.068708,
-    "seen": 1792184841.933236,
-    "ast_hash": "77a003a2f0aec6e1e5579b1ac1a465b6",
+    "mtime": 1792438119.4380043,
+    "seen": 1792438327.4923687,
+    "ast_hash": "dd6ceebfbd39c07935c874590a8218db",
     "semantic_hash": ""
   },
   "src/components/LoadoutBar.tsx": {
-    "mtime": 1792184733.7876935,
-    "seen": 1792184841.9332368,
-    "ast_hash": "12e4d29d2d5361b7d8c35996513fe4eb",
+    "mtime": 1792438131.9327857,
+    "seen": 1792438327.4923697,
+    "ast_hash": "fbbf79e3a480b644f536a232c74d320c",
     "semantic_hash": ""
   },
   "src/components/MelodyCardBar.test.tsx": {
@@ -954,15 +942,15 @@
     "semantic_hash": ""
   },
   "src/components/MelodyCardBar.tsx": {
-    "mtime": 1792184310.4155579,
-    "seen": 1792184841.9332383,
-    "ast_hash": "ea49da0d39abd25077cd2c1484b16b41",
+    "mtime": 1792438135.406725,
+    "seen": 1792438327.4923723,
+    "ast_hash": "5657a4d64f3f9f81158e55b99bcfb50f",
     "semantic_hash": ""
   },
   "src/components/screens/StudioScreen.tsx": {
-    "mtime": 1792184352.0998876,
-    "seen": 1792184841.9332557,
-    "ast_hash": "73994a11f6c6d4ef4ff6306fe9d5dd1c",
+    "mtime": 1792432658.6459043,
+    "seen": 1792437337.5640368,
+    "ast_hash": "9bcab505c9bf421bdf53adb201ddb765",
     "semantic_hash": ""
   },
   "src/components/ui/dialog.tsx": {
@@ -972,21 +960,69 @@
     "semantic_hash": ""
   },
   "src/game/groove.test.ts": {
-    "mtime": 1792177689.3486872,
-    "seen": 1792184841.93327,
-    "ast_hash": "f528a0ce235480225463043af9adefa9",
+    "mtime": 1792433114.5273726,
+    "seen": 1792437337.5640535,
+    "ast_hash": "5b2f2f9f39a3605e668dccfe97ee6f54",
     "semantic_hash": ""
   },
   "src/game/groove.ts": {
-    "mtime": 1792177492.3934078,
-    "seen": 1792184841.9332707,
-    "ast_hash": "c1000ea37a166aaa223ee2bcef4c1f4a",
+    "mtime": 1792432768.7013888,
+    "seen": 1792437337.5640545,
+    "ast_hash": "348cf4120a09326775a1b319493a6e4b",
     "semantic_hash": ""
   },
   "src/game/loadout.ts": {
-    "mtime": 1792184012.8872828,
-    "seen": 1792184841.933274,
-    "ast_hash": "998eb91c953a87638cff77929ae24beb",
+    "mtime": 1792433114.5193727,
+    "seen": 1792437337.564057,
+    "ast_hash": "e5fbb0603fddb885ab649968bbbda0eb",
+    "semantic_hash": ""
+  },
+  "src/components/GrooveMatrix.tsx": {
+    "mtime": 1792438524.5299587,
+    "seen": 1792439302.7401478,
+    "ast_hash": "eeeb3f9e93d4a95d23fe1f8bbd1fe6e7",
+    "semantic_hash": ""
+  },
+  "src/data/beats.test.ts": {
+    "mtime": 1792432852.4362051,
+    "seen": 1792437337.5640402,
+    "ast_hash": "3614991c099772fbeb2d64ef795ac390",
+    "semantic_hash": ""
+  },
+  "src/data/beats.ts": {
+    "mtime": 1792432376.1935058,
+    "seen": 1792437337.564041,
+    "ast_hash": "3e33aad89fb8dcd4a110fd4d668e6f2a",
+    "semantic_hash": ""
+  },
+  "src/data/kits.ts": {
+    "mtime": 1792432346.828849,
+    "seen": 1792437337.564045,
+    "ast_hash": "f48f423ab9f1925bd686369ac03ba677",
+    "semantic_hash": ""
+  },
+  "docs/chord-remake.md": {
+    "mtime": 1792434936.8628485,
+    "seen": 1792437337.5640864,
+    "ast_hash": "a6a08f9f5a7c6164cefca9351a540f3d",
+    "semantic_hash": ""
+  },
+  "src/audio/preview.test.ts": {
+    "mtime": 1792438295.0599406,
+    "seen": 1792438327.492346,
+    "ast_hash": "2d24e36aedd03cd770ed3de6f5d41a27",
+    "semantic_hash": ""
+  },
+  "src/components/CardPreviewButton.test.tsx": {
+    "mtime": 1792438302.2218158,
+    "seen": 1792438327.4923508,
+    "ast_hash": "f79bb82e23041574bf45697ca6284f02",
+    "semantic_hash": ""
+  },
+  "src/state/leaveCombat.test.ts": {
+    "mtime": 1792439120.886329,
+    "seen": 1792439302.7402112,
+    "ast_hash": "794ba12e817e23dc27afbac66c0144dc",
     "semantic_hash": ""
   }
 }

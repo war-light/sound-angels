@@ -1,7 +1,6 @@
 // Pure QTE model: FNF-style WASD charts for chord swaps, preset recalls,
 // and ZXCV parry charts with tap + hold notes. No audio, no React.
 // All state JSON-serializable.
-import { degreeToMidi, type Key } from "./theory"
 import type { NoteEvent } from "./arrangement"
 import type { PerformKey, QteKey } from "./perform"
 
@@ -645,21 +644,4 @@ export function parryDamage(base: number, chip: number, qte: QteState | null): n
   const rate = qteSuccessRate(qte)
   const mult = chip + (1 - chip) * (1 - rate)
   return Math.max(0, Math.round(base * mult))
-}
-
-/**
- * Beat-keeper mapping: WASD never leaves the key. Cycle through scale degrees
- * whose pitch class sits inside the current chord (tonic triad fallback).
- * `pressCount` is the running tap count so each key maps an arpeggio step
- * that always fits the base chord.
- */
-export function beatDegreeFor(key: Key, chordMidi: number[], pressCount: number): number {
-  const pcs = new Set(chordMidi.map((m) => ((m % 12) + 12) % 12))
-  const fitting: number[] = []
-  for (let degree = 1; degree <= 15; degree++) {
-    const pc = ((degreeToMidi(key, degree, 4) % 12) + 12) % 12
-    if (pcs.has(pc)) fitting.push(degree)
-  }
-  const pool = fitting.length > 0 ? fitting : [1, 3, 5, 8]
-  return pool[((pressCount % pool.length) + pool.length) % pool.length]
 }
