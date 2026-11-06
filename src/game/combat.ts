@@ -32,7 +32,7 @@ import {
   releaseQte,
   type QteState,
 } from "./qte"
-import { generateParryChart, parryParamsFor } from "./parryChart"
+import { generateParryChartFromMelody, parryParamsFor } from "./parryChart"
 import type { QteKey } from "./perform"
 import { secondsToSteps } from "./perform"
 import { assignToSlot, defaultSlots, removeToDeck, type SlotId, type Slots } from "./positions"
@@ -687,7 +687,7 @@ export function advanceTick(
       const warningTicks = secondsToSteps(5, arrangement.bpm)
       const spanLoops = Math.min(2, Math.max(1, Math.ceil(warningTicks / loopLen)))
       const span = spanLoops * loopLen
-      const chart = generateParryChart({
+      const chart = generateParryChartFromMelody({
         params: parryParamsFor(profile.pattern, profile.parry),
         pattern: profile.pattern,
         spanSteps: span,

@@ -22,6 +22,8 @@ export function PrepScreen() {
 	const setBpm = useSessionStore((s) => s.setBpm);
 	const setKey = useSessionStore((s) => s.setKey);
 	const setRandomKey = useSessionStore((s) => s.setRandomKey);
+	const combatMode = useSessionStore((s) => s.combatMode);
+	const setCombatMode = useSessionStore((s) => s.setCombatMode);
 
 	const [guideOpen, setGuideOpen] = useState<boolean>(() => !loadTutorialSeen());
 
@@ -53,6 +55,15 @@ export function PrepScreen() {
 						className="text-xs font-semibold gap-1 text-muted-foreground hover:text-foreground">
 						<span>Guide</span>
 						<span>📖</span>
+					</Button>
+
+					<Button
+						variant="outline"
+						size="sm"
+						title="Stage: pick clips + hichord. Classic: the step-sequencer fight."
+						onClick={() => setCombatMode(combatMode === "stage" ? "classic" : "stage")}
+						className="text-xs font-semibold">
+						Mode: {combatMode === "stage" ? "Stage" : "Classic"}
 					</Button>
 
 					<Button

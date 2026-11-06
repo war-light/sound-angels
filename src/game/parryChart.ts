@@ -9,6 +9,7 @@ import { stepMs, type ParryKey } from "./perform"
 import { DEFAULT_KEY, degreeToMidi, romanToChord, type Key } from "./theory"
 import type { QteChart, QteNote } from "./qte"
 import type { NoteEvent } from "./arrangement"
+import { MarkovMelodyGenerator, type MelodyStyle } from "./melodyGenerator"
 
 /** Lane order left→right on the highway (0=z, 1=x, 2=c, 3=v). */
 export const PARRY_LANES: ParryKey[] = ["z", "x", "c", "v"]
@@ -576,6 +577,156 @@ export function generateParryChart(opts: GenerateParryChartOpts): QteChart {
       window: Math.max(1, (params.bursts ? 1 : 2) + (opts.windowBonus ?? 0)),
       holdSteps,
       degree,
+    }
+  })
+
+  return { notes, lengthSteps: span }
+}
+
+// ---------------------------------------------------------------------------
+// Melody-generator–based parry chart (replaces the cell model above)
+// ---------------------------------------------------------------------------
+
+/**
+ * Maps each enemy pattern name to the `MelodyStyle` that best captures its
+ * musical character.  The generator's rhythm and pitch transitions shape the
+ * feel of the chart even before lane mapping.
+ */
+export const PATTERN_TO_STYLE: Record<string, MelodyStyle> = {
+  swarm:      "fast-busy",        // horde rush: dense 16th-note bursts
+  ostinato:   "slow-lyrical",     // tank march: slow, sustained quarter notes
+  inversion:  "arpeggio",         // mirror descent: arpeggiated chord leaps
+  erasure:    "pop-balanced",     // moth erasure: syncopated 8th-note groove
+  retrograde: "spacious-ambient", // echo ascent: sparse, open phrase
+}
+
+/**
+ * Tiny seeded LCG so generated charts are deterministic given the same
+ * (pattern, variant) pair — no external PRNG library needed.
+ */
+function makeLcgRng(seed: number): () => number {
+  let s = (seed >>> 0) + 1
+  return () => {
+    s = Math.imul(s, 1664525) + 1013904223 >>> 0
+    return s / 4294967296
+  }
+}
+
+/** Derive an integer seed from a string (djb2 hash). */
+function hashStr(str: string): number {
+  let h = 5381
+  for (let i = 0; i < str.length; i++) h = (Math.imul(h, 33) ^ str.charCodeAt(i)) >>> 0
+  return h
+}
+
+/**
+ * Generate a parry `QteChart` by running the `MarkovMelodyGenerator` over
+ * the fight's active chord progression and converting the resulting melody
+ * notes into ZXCV lane hits.
+ *
+ * Degree → lane mapping (mirrors `degreeToParryLane`):
+ *   1       → Z (lane 0, root)
+ *   2–3     → X (lane 1, lower-mid)
+ *   4–5     → C (lane 2, upper-mid)
+ *   6–7+    → V (lane 3, high)
+ *
+ * Long notes (`len >= 4`) become hold notes with `holdSteps = len - 1`
+ * (beat-snapped to multiples of 4 steps for visual clarity).
+ *
+ * The chart is culled to `spanSteps`, deduped by gap floor, and padded to
+ * at least 3 notes so the highway is never empty.
+ */
+export function generateParryChartFromMelody(opts: GenerateParryChartOpts): QteChart {
+  const { params, spanSteps, bpm } = opts
+  const span = Math.max(1, Math.round(spanSteps))
+  const key = opts.key ?? { ...DEFAULT_KEY }
+  const chords = opts.chords && opts.chords.length > 0 ? [...opts.chords] : ["i"]
+  const stepsPerBar = Math.max(4, Math.round(opts.stepsPerBar ?? 16))
+  const pattern = opts.pattern ?? "ostinato"
+  const variant = opts.variant ?? 0
+  const windowBonus = opts.windowBonus ?? 0
+
+  // Degenerate small spans (<= 4 steps): single tap on chord root
+  if (span <= 4) {
+    const roman = chords[0] ?? "i"
+    const degree = romanRoot(roman)
+    const lane = degreeToParryLane(degree)
+    return {
+      notes: [{ id: `${lane}-0-0`, key: lane, stepOffset: 0, window: 2, holdSteps: 0, degree }],
+      lengthSteps: span,
+    }
+  }
+
+  // --- Run the Markov melody generator seeded by (pattern, variant) --------
+  const style: MelodyStyle = PATTERN_TO_STYLE[pattern] ?? "pop-balanced"
+  const seed = hashStr(pattern) ^ (variant * 2654435761)
+  const rng = makeLcgRng(seed)
+  const generator = new MarkovMelodyGenerator(style, rng)
+
+  // How many bars does the span cover?
+  const numBars = Math.max(1, Math.ceil(span / stepsPerBar))
+  // Tile chords across bars
+  const barChords = Array.from({ length: numBars }, (_, b) => chords[b % chords.length] ?? "i")
+
+  const melodyNotes = generator.generate(barChords, key)
+
+  // --- Convert MelodyNote[] → raw hits in step space ----------------------
+  interface RawHit {
+    offset: number   // absolute step within [0, span)
+    lane: number     // 0..3
+    degree: number
+    holdSteps: number
+  }
+
+  const stepMs_ = stepMs(bpm)
+  const minGap = Math.max(2, Math.ceil(params.minGapMs / stepMs_))
+  const floor = params.bursts ? 2 : minGap
+
+  const rawHits: RawHit[] = []
+  for (const n of melodyNotes) {
+    const offset = n.bar * stepsPerBar + n.step
+    if (offset >= span) continue
+    const lane = ["z", "x", "c", "v"].indexOf(degreeToParryLane(n.degree))
+    // Long notes become holds (snap hold length to multiples of 4)
+    const holdSteps = n.len >= 4 ? Math.min(Math.floor(n.len / 4) * 4, span - offset - 1) : 0
+    rawHits.push({ offset, lane, degree: n.degree, holdSteps })
+  }
+
+  // Sort by onset
+  rawHits.sort((a, b) => a.offset - b.offset)
+
+  // --- Enforce gap floor (same lane needs extra clearance) ----------------
+  const filtered: RawHit[] = []
+  for (const cand of rawHits) {
+    if (filtered.length === 0) { filtered.push(cand); continue }
+    const prev = filtered[filtered.length - 1]
+    const gap = cand.offset - prev.offset
+    const requiredGap = cand.lane === prev.lane && !params.bursts ? Math.max(floor, 4) : floor
+    if (gap >= requiredGap) filtered.push(cand)
+  }
+
+  // --- Pad to at least 3 notes if sparse ----------------------------------
+  if (filtered.length < 3 && span >= 16) {
+    const mid = Math.round(stepsPerBar / 2)
+    for (let b = 0; b < numBars && filtered.length < 3; b++) {
+      const offset = b * stepsPerBar + mid
+      if (offset < span && !filtered.some((h) => Math.abs(h.offset - offset) < floor)) {
+        filtered.push({ offset, lane: 1, degree: 2, holdSteps: 0 })
+      }
+    }
+    filtered.sort((a, b) => a.offset - b.offset)
+  }
+
+  // --- Convert to QteNote[] -----------------------------------------------
+  const notes: QteNote[] = filtered.map((h, i) => {
+    const keyLane = laneToParryKey(h.lane)
+    return {
+      id: `${keyLane}-${h.offset}-${i}`,
+      key: keyLane,
+      stepOffset: h.offset,
+      window: Math.max(1, (params.bursts ? 1 : 2) + windowBonus),
+      holdSteps: h.holdSteps,
+      degree: h.degree,
     }
   })
 

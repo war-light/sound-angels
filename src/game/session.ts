@@ -44,6 +44,14 @@ import {
   type PresetStore,
 } from "./presets"
 import type { Key } from "./theory"
+import {
+  advanceStage,
+  createStage,
+  pressChord,
+  toggleClip,
+  type StageState,
+} from "./stageCombat"
+import type { ChordPick } from "./stageMusic"
 import type { SlotId } from "./positions"
 import { DEFAULT_ENCOUNTER_ID, ENCOUNTERS, getEncounter, isEncounterUnlocked } from "@/data/encounters"
 import { DEFAULT_PARTY_ROSTER } from "@/data/roster"
@@ -108,6 +116,8 @@ let fight: AtbState = createFight({
   enemyIds: getEncounter(currentEncounterId)?.enemyIds,
   partyCharacterIds: selectedPartyCharacterIds,
 })
+/** Stage combat (clip queue + hichord). Rebuilt from `fight` on every start. */
+let stage: StageState = createStage(fight)
 /** Saved melody sets (hash-keyed, tombstoned on delete, never truly removed). */
 let presets: PresetStore = {}
 /** Persistent pre-fight melody templates bank. */
@@ -148,6 +158,47 @@ export function getFight(): AtbState {
 /** True while a chord swap mutes the soloist lanes (engine + audio both read this). */
 export function getMelodyMuted(): boolean {
   return melodyMuted(fight)
+}
+
+export function getStage(): StageState {
+  return stage
+}
+
+/** Stage: tap a clip. It joins (or leaves) on the next loop. */
+export function toggleStageClip(id: string): void {
+  const next = toggleClip(stage, id)
+  if (next === stage) return
+  stage = next
+  emit()
+}
+
+/** Stage: press a hichord chord. It lands on the next bar line. */
+export function pressStageChord(pick: ChordPick): void {
+  const next = pressChord(stage, pick)
+  if (next === stage) return
+  stage = next
+  emit()
+}
+
+/**
+ * Stage clock: run the rules up to global step `g`. Called by the stage
+ * renderer just before it sounds that step. Settles victory / defeat.
+ */
+export function advanceStageTo(g: number): void {
+  if (stage.over) return
+  const next = advanceStage(stage, g)
+  if (next === stage) return
+  stage = next
+  if (stage.over === "player") {
+    if (!clearedEncounterIds.includes(currentEncounterId)) {
+      clearedEncounterIds = [...clearedEncounterIds, currentEncounterId]
+      saveClearedEncounters(clearedEncounterIds)
+    }
+    gamePhase = "victory"
+  } else if (stage.over === "enemy") {
+    gamePhase = "defeat"
+  }
+  emit()
 }
 
 export function getPresets(): PresetStore {
@@ -505,6 +556,7 @@ function beginFight(opts: StartFightOpts = {}): void {
   // preview all sound in the locked combat key.
   arrangement = { ...arrangement, key: { ...fight.key } }
   fight = { ...fight, potency: reconcilePotency(fight.potency, arrangement) }
+  stage = createStage(fight)
   gamePhase = "combat"
   emit()
 }
@@ -800,6 +852,7 @@ export function resetAll(): void {
     key: arrangement.key,
     enemyIds: getEncounter(currentEncounterId)?.enemyIds,
   })
+  stage = createStage(fight)
   presets = {}
   melodyBank = createDefaultMelodyBank()
   loadout = createDefaultLoadout()

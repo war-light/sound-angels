@@ -52,11 +52,39 @@ describe("Screen flow and UI state machine", () => {
       expect(screen.getByRole("button", { name: /Halt \/ Retreat/i })).toBeInTheDocument()
     })
 
-    it("offers mid-fight modulation", () => {
+    it("offers mid-fight modulation in classic mode", () => {
+      useSessionStore.setState({ combatMode: "classic" })
       render(<CombatScreen />)
       fireEvent.click(screen.getByRole("button", { name: /Modulate/i }))
       expect(screen.getByText(/Modulate the harmony/i)).toBeInTheDocument()
       expect(screen.getByRole("button", { name: /Pop Axis/i })).toBeInTheDocument()
+    })
+  })
+
+  describe("Stage combat", () => {
+    beforeEach(() => {
+      useSessionStore.setState({ combatMode: "stage" })
+    })
+
+    it("renders the sound board and the hichord", () => {
+      render(<CombatScreen />)
+      expect(screen.getByRole("region", { name: /Sound board/i })).toBeInTheDocument()
+      expect(screen.getByRole("button", { name: /Hero's Call/i })).toBeInTheDocument()
+      expect(screen.getAllByRole("button", { name: /^Chord / })).toHaveLength(7)
+    })
+
+    it("queues a tapped clip for the next loop", () => {
+      render(<CombatScreen />)
+      fireEvent.click(screen.getByRole("button", { name: /Sub Pressure/i }))
+      expect(useSessionStore.getState().stage.queued.bass).toBe("bass:sub")
+      expect(screen.getByText(/joins next loop/i)).toBeInTheDocument()
+    })
+
+    it("modifiers relabel the chords", () => {
+      render(<CombatScreen />)
+      fireEvent.click(screen.getByRole("button", { name: /7th/ }))
+      expect(useSessionStore.getState().chordMod).toBe("seventh")
+      expect(screen.getByRole("button", { name: /^Chord V7$/ })).toBeInTheDocument()
     })
   })
 

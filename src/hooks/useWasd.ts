@@ -1,10 +1,18 @@
 import { useEffect } from "react"
 import { useSessionStore } from "@/state/useSessionStore"
 import type { QteKey } from "@/game/perform"
+import type { ChordMod } from "@/game/stageMusic"
 
 const KEYS = new Set(["w", "a", "s", "d"])
 const PARRY_KEYS = new Set(["z", "x", "c", "v"])
 const NUM_KEYS = new Set(["1", "2", "3"])
+/** Stage combat: hichord modifiers. Chords are 1-7. */
+const MOD_KEYS: Record<string, ChordMod> = { q: "seventh", w: "sus", e: "flip" }
+
+function inStageCombat(): boolean {
+  const s = useSessionStore.getState()
+  return s.gamePhase === "combat" && s.combatMode === "stage"
+}
 
 /**
  * WASD relative-motion performance + ZXCV parry lanes. Key down moves the
@@ -27,6 +35,18 @@ export function useWasd(): void {
     const down = (e: KeyboardEvent) => {
       if (e.repeat || e.metaKey || e.ctrlKey || e.altKey || isTyping(e) || inDialog()) return
       const k = e.key.toLowerCase()
+      // Stage combat: 1-7 press a chord, Q/W/E toggle its modifier.
+      if (inStageCombat()) {
+        const st = useSessionStore.getState()
+        if (/^[1-7]$/.test(k)) {
+          e.preventDefault()
+          st.pressChord(Number(k))
+        } else if (MOD_KEYS[k]) {
+          e.preventDefault()
+          st.toggleChordMod(MOD_KEYS[k])
+        }
+        return
+      }
       if (k === "tab") {
         e.preventDefault()
         useSessionStore.getState().cyclePerformer()
@@ -44,6 +64,7 @@ export function useWasd(): void {
       useSessionStore.getState().performDown(k as QteKey)
     }
     const up = (e: KeyboardEvent) => {
+      if (inStageCombat()) return
       const k = e.key.toLowerCase()
       if (!KEYS.has(k) && !PARRY_KEYS.has(k)) return
       useSessionStore.getState().performUp(k as QteKey)

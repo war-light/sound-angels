@@ -11,6 +11,7 @@ import { VoiceBar } from "@/components/VoiceBar";
 import { CombatLog } from "@/components/CombatLog";
 import { CombatFeedback } from "@/components/CombatFeedback";
 import { ChordPicker } from "@/components/ChordPicker";
+import { StageCombatScreen } from "@/components/screens/StageCombatScreen";
 import { Button } from "@/components/ui/button";
 import {
 	Dialog,
@@ -22,6 +23,11 @@ import {
 } from "@/components/ui/dialog";
 
 export function CombatScreen() {
+	const combatMode = useSessionStore((s) => s.combatMode);
+	return combatMode === "stage" ? <StageCombatScreen /> : <ClassicCombatScreen />;
+}
+
+function ClassicCombatScreen() {
 	const fight = useSessionStore((s) => s.fight);
 	const bpm = useSessionStore((s) => s.arrangement.bpm);
 	const togglePlay = useSessionStore((s) => s.togglePlay);

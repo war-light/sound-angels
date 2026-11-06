@@ -10,6 +10,7 @@ import {
   start as playerStart,
   stop as playerStop,
 } from "@/audio/player"
+import { configureStage, startStage, stopStage } from "@/audio/stage"
 import {
   locateStep,
   loopLength,
@@ -43,6 +44,10 @@ import {
   getPendingGrooveId,
   getPendingMelodyId,
   getSelectedParty,
+  getStage,
+  advanceStageTo,
+  pressStageChord,
+  toggleStageClip,
   handleStep,
   moveFighter,
   mutateArrangement,
@@ -99,6 +104,11 @@ import type { Loadout } from "@/game/loadout"
 import type { MelodyTemplate } from "@/game/melodyBank"
 import { ROSTER, type CharacterDef } from "@/data/roster"
 import type { ChordPreset } from "@/data/chords"
+import type { StageState } from "@/game/stageCombat"
+import type { ChordMod } from "@/game/stageMusic"
+
+/** "stage": clip queue + hichord. "classic": the step-sequencer fight. */
+export type CombatMode = "stage" | "classic"
 
 configurePlayer({
   arrangement: getArrangement,
@@ -117,7 +127,26 @@ configurePlayer({
   },
 })
 
+configureStage({
+  state: getStage,
+  advance: advanceStageTo,
+  draw: (global) => useSessionStore.setState({ globalStep: global }),
+})
+
 interface SessionStore {
+  /** Which combat the Engage button starts. */
+  combatMode: CombatMode
+  setCombatMode: (mode: CombatMode) => void
+  /** Stage combat state (clip queue + hichord). */
+  stage: StageState
+  /** Hichord modifier applied to the next chord press. */
+  chordMod: ChordMod
+  /** Toggle a modifier on; pressing the lit one turns it back off. */
+  toggleChordMod: (mod: ChordMod) => void
+  /** Hichord: press scale degree 1..7 with the current modifier. */
+  pressChord: (degree: number) => void
+  /** Board: tap a clip (joins / leaves on the next loop). */
+  toggleClip: (id: string) => void
   arrangement: Arrangement
   fight: AtbState
   /** Every melody card in the bank, presets first. */
@@ -232,6 +261,7 @@ function clearHeldKeys(): void {
  */
 function haltPlayback(): void {
   playerStop()
+  stopStage()
   stopPreviewAudio()
   clearHeldKeys()
   useSessionStore.setState({
@@ -243,6 +273,16 @@ function haltPlayback(): void {
 }
 
 export const useSessionStore = create<SessionStore>((set, get) => ({
+  combatMode: "stage",
+  setCombatMode: (mode) => set({ combatMode: mode }),
+  stage: getStage(),
+  chordMod: "none",
+  toggleChordMod: (mod) => set({ chordMod: get().chordMod === mod ? "none" : mod }),
+  pressChord: (degree) => {
+    if (!get().playing) return
+    pressStageChord({ degree, mod: get().chordMod })
+  },
+  toggleClip: (id) => toggleStageClip(id),
   arrangement: getArrangement(),
   fight: getFight(),
   melodyCards: getMelodyCards(),
@@ -275,6 +315,7 @@ export const useSessionStore = create<SessionStore>((set, get) => ({
     if (starting) return
     if (playing) {
       playerStop()
+      stopStage()
       clearHeldKeys()
       set({ playing: false, gamePhase: "prep" })
       return
@@ -291,6 +332,8 @@ export const useSessionStore = create<SessionStore>((set, get) => ({
       set({
         arrangement: getArrangement(),
         fight: getFight(),
+        stage: getStage(),
+        chordMod: "none",
         melodyCards: getMelodyCards(),
         loadout: getLoadout(),
         activeMelodyCardId: getActiveMelodyCardId(),
@@ -303,8 +346,12 @@ export const useSessionStore = create<SessionStore>((set, get) => ({
         cursor: HOME_CURSOR,
         performerId: defaultPerformerId(getFight()),
       })
-      await playerStart()
-      playerSetBpm(getArrangement().bpm)
+      if (get().combatMode === "stage") {
+        await startStage()
+      } else {
+        await playerStart()
+        playerSetBpm(getArrangement().bpm)
+      }
       set({ playing: true })
     } finally {
       set({ starting: false })
@@ -683,6 +730,7 @@ subscribe(() => {
   useSessionStore.setState({
     arrangement: getArrangement(),
     fight: getFight(),
+    stage: getStage(),
     melodyCards: getMelodyCards(),
     loadout: getLoadout(),
     activeMelodyCardId: getActiveMelodyCardId(),
