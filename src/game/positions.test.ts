@@ -13,7 +13,6 @@ describe("defaultSlots", () => {
   it("seats voice-0 at chords, the rest up front", () => {
     expect(defaultSlots(PARTY)).toEqual({
       chord: "voice-0",
-      beat: null,
       front: ["voice-1", "voice-2"],
     })
     expect(deckIds(PARTY, defaultSlots(PARTY))).toEqual([])
@@ -36,15 +35,15 @@ describe("assignToSlot", () => {
     // front was [v1, v2], adding v0 keeps the last two + newcomer
     expect(s.front).toEqual(["voice-1", "voice-2", "voice-0"].slice(-3))
     expect(s.front.length).toBeLessThanOrEqual(3)
-    s = assignToSlot(s, "voice-0", "beat")
-    expect(s.beat).toBe("voice-0")
+    s = assignToSlot(s, "voice-0", "chord")
+    expect(s.chord).toBe("voice-0")
     expect(s.front).not.toContain("voice-0")
   })
 
   it("is immutable and serializable", () => {
     const s = defaultSlots(PARTY)
-    assignToSlot(s, "voice-2", "beat")
-    expect(s.beat).toBe(null)
+    assignToSlot(s, "voice-2", "chord")
+    expect(s.chord).toBe("voice-0")
     expect(JSON.parse(JSON.stringify(s))).toEqual(s)
   })
 })

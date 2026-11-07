@@ -17,14 +17,13 @@ describe("Screen flow and UI state machine", () => {
     it("renders title text and start actions", () => {
       render(<MenuScreen />)
       expect(screen.getByText(/A dark room/i)).toBeInTheDocument()
-      expect(screen.getByText(/A faint hum/i)).toBeInTheDocument()
-      expect(screen.getByRole("button", { name: /Listen to the Hum/i })).toBeInTheDocument()
-      expect(screen.getByRole("button", { name: /Step into the Chamber/i })).toBeInTheDocument()
+      expect(screen.getByRole("button", { name: /Preview/i })).toBeInTheDocument()
+      expect(screen.getByRole("button", { name: /^Start$/i })).toBeInTheDocument()
     })
 
-    it("transitions to prep when Step into the Chamber is clicked", () => {
+    it("transitions to prep when Start is clicked", () => {
       render(<MenuScreen />)
-      fireEvent.click(screen.getByRole("button", { name: /Step into the Chamber/i }))
+      fireEvent.click(screen.getByRole("button", { name: /^Start$/i }))
       expect(useSessionStore.getState().gamePhase).toBe("prep")
     })
   })
@@ -52,6 +51,41 @@ describe("Screen flow and UI state machine", () => {
       expect(screen.getByText(/Key:/i)).toBeInTheDocument()
       expect(screen.getByRole("button", { name: /Halt \/ Retreat/i })).toBeInTheDocument()
     })
+
+    it("offers mid-fight modulation in classic mode", () => {
+      useSessionStore.setState({ combatMode: "classic" })
+      render(<CombatScreen />)
+      fireEvent.click(screen.getByRole("button", { name: /Modulate/i }))
+      expect(screen.getByText(/Modulate the harmony/i)).toBeInTheDocument()
+      expect(screen.getByRole("button", { name: /Pop Axis/i })).toBeInTheDocument()
+    })
+  })
+
+  describe("Stage combat", () => {
+    beforeEach(() => {
+      useSessionStore.setState({ combatMode: "stage" })
+    })
+
+    it("renders the sound board and the hichord", () => {
+      render(<CombatScreen />)
+      expect(screen.getByRole("region", { name: /Sound board/i })).toBeInTheDocument()
+      expect(screen.getByRole("button", { name: /Hero's Call/i })).toBeInTheDocument()
+      expect(screen.getAllByRole("button", { name: /^Chord / })).toHaveLength(7)
+    })
+
+    it("queues a tapped clip for the next loop", () => {
+      render(<CombatScreen />)
+      fireEvent.click(screen.getByRole("button", { name: /Sub Pressure/i }))
+      expect(useSessionStore.getState().stage.queued.bass).toBe("bass:sub")
+      expect(screen.getByText(/joins next loop/i)).toBeInTheDocument()
+    })
+
+    it("modifiers relabel the chords", () => {
+      render(<CombatScreen />)
+      fireEvent.click(screen.getByRole("button", { name: /7th/ }))
+      expect(useSessionStore.getState().chordMod).toBe("seventh")
+      expect(screen.getByRole("button", { name: /^Chord V7$/ })).toBeInTheDocument()
+    })
   })
 
   describe("ResultOverlay", () => {
@@ -65,6 +99,26 @@ describe("Screen flow and UI state machine", () => {
       render(<ResultOverlay phase="defeat" />)
       expect(screen.getByText(/The Hum Fades/i)).toBeInTheDocument()
       expect(screen.getByRole("button", { name: /Try Again/i })).toBeInTheDocument()
+    })
+
+    it("halts the transport when Next Encounter leaves for prep", () => {
+      useSessionStore.setState({ playing: true, gamePhase: "victory" })
+      render(<ResultOverlay phase="victory" />)
+
+      fireEvent.click(screen.getByRole("button", { name: /Next Encounter/i }))
+
+      expect(useSessionStore.getState().playing).toBe(false)
+      expect(useSessionStore.getState().gamePhase).toBe("prep")
+    })
+
+    it("halts the transport when returning to preparation", () => {
+      useSessionStore.setState({ playing: true, gamePhase: "victory" })
+      render(<ResultOverlay phase="victory" />)
+
+      fireEvent.click(screen.getByRole("button", { name: /Return to Preparation/i }))
+
+      expect(useSessionStore.getState().playing).toBe(false)
+      expect(useSessionStore.getState().gamePhase).toBe("prep")
     })
   })
 

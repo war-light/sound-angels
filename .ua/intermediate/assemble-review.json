@@ -1,0 +1,18 @@
+{
+  "fixedSectionOk": true,
+  "nodesRecovered": 0,
+  "edgesRestored": 0,
+  "crossBatchEdgesAdded": 0,
+  "typesRemapped": 0,
+  "complexityRemapped": 0,
+  "notes": [
+    "No 'Fixed' pattern section was emitted in the merge report; inspected the graph directly. All 424 nodes have valid IDs, known types (function/file/config/document), and normalized complexity values (simple/moderate/complex only). No duplicate IDs, no missing summaries or tags, no functions missing lineRange, all edges carry source/target/type/direction/weight.",
+    "Node accounting matches the batches exactly: 12 batch files contained 424 nodes and 1011 edges; output is 424 nodes / 1010 edges. No node was dropped or deduplicated.",
+    "The single 'could not fix' item — document:docs/qte-redesign.md -[documents]-> file:src/game/combatQte.test.ts — correctly points at an excluded test file (*.test.* is in .ua/.understandignore). The target genuinely does not exist in this analysis scope, so restoring it would have been wrong; left dropped as expected.",
+    "Confirmed the batch files contain exactly one dangling edge and it is that same test-file reference. No other edges reference test files, .spec files, or the excluded graphify-out/ directory.",
+    "Cross-batch import verification: import-map.json has 80 scanned files / 20 with imports / 46 total import relationships. All 46 are already present as file->file 'imports' edges in the assembled graph — 46/46 matched, 0 missing. There are also 0 imports edges not backed by importMap. No cross-batch gaps to fill (consistent with the script recovering 0).",
+    "Every importMap key resolves to a node in the graph (65 file + 7 document + 8 config = 80 paths), and every graph path appears in the importMap. Every function node has a matching file node and a 'contains' parent.",
+    "Only minor stylistic observations, not errors: a 'configures' edge runs file:vite.config.ts -> file:src/main.tsx (file-to-file config, plausible), and a 'related' edge file:src/index.css -> file:src/components/ui/button.tsx. 5 file nodes have no 'contains' children (src/data/enemies.ts, index.html, src/index.css, src/main.tsx, vite.config.ts), which is expected for data-only or bootstrap files.",
+    "No fixes were required or applied to assembled-graph.json."
+  ]
+}

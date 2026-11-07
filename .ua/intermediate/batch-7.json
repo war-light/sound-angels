@@ -1,0 +1,1354 @@
+{
+  "nodes": [
+    {
+      "id": "file:src/components/screens/PrepScreen.tsx",
+      "type": "file",
+      "name": "PrepScreen.tsx",
+      "filePath": "src/components/screens/PrepScreen.tsx",
+      "summary": "Battle preparation screen where the player tunes key and tempo, harmonizes chords, seats the party, and edits the looping melody grid before engaging combat.",
+      "tags": ["component", "react", "screen", "music-editor", "prep"],
+      "complexity": "moderate",
+      "languageNotes": "Reads store slices with individual useSessionStore selectors to keep re-renders narrow; tutorial visibility is seeded lazily from persistence."
+    },
+    {
+      "id": "function:src/components/screens/PrepScreen.tsx:PrepScreen",
+      "type": "function",
+      "name": "PrepScreen",
+      "filePath": "src/components/screens/PrepScreen.tsx",
+      "lineRange": [15, 171],
+      "summary": "Renders the full preparation workstation: title header, key and BPM strip, phase/chord pickers, groove and melody card racks, the step grid, and the party formation corner.",
+      "tags": ["component", "react", "screen", "composition"],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:src/components/screens/ResultOverlay.tsx",
+      "type": "file",
+      "name": "ResultOverlay.tsx",
+      "filePath": "src/components/screens/ResultOverlay.tsx",
+      "summary": "Victory and defeat overlay that reports combat duration, chord progression scoring, the next encounter, and retry or return-to-prep actions.",
+      "tags": ["component", "react", "overlay", "results", "ui"],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:src/components/screens/ResultOverlay.tsx:ResultOverlay",
+      "type": "function",
+      "name": "ResultOverlay",
+      "filePath": "src/components/screens/ResultOverlay.tsx",
+      "lineRange": [12, 149],
+      "summary": "Resolves the current and next encounter, plays the victory jingle or defeat sting on mount, and renders the result card with progression blessing and tactical tip.",
+      "tags": ["component", "react", "overlay", "event-handler"],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:src/components/screens/StudioScreen.tsx",
+      "type": "file",
+      "name": "StudioScreen.tsx",
+      "filePath": "src/components/screens/StudioScreen.tsx",
+      "summary": "Studio screen for composing drum rigs: page the bank matrix, pick a kit, then bottle the equipped groove under a name for reuse as an equippable rig.",
+      "tags": ["component", "react", "screen", "studio", "drum-rig"],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:src/components/screens/StudioScreen.tsx:StudioScreen",
+      "type": "function",
+      "name": "StudioScreen",
+      "filePath": "src/components/screens/StudioScreen.tsx",
+      "lineRange": [11, 128],
+      "summary": "Renders the groove matrix plus the bottling form and bottle shelf, wiring equip and delete actions back into the session store.",
+      "tags": ["component", "react", "screen", "drum-rig"],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:src/components/ui/button.tsx",
+      "type": "file",
+      "name": "button.tsx",
+      "filePath": "src/components/ui/button.tsx",
+      "summary": "shadcn button primitive with variant and size maps plus asChild slot support, used by every screen for actions.",
+      "tags": ["component", "ui", "shadcn", "design-system"],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:src/components/ui/button.tsx:Button",
+      "type": "function",
+      "name": "Button",
+      "filePath": "src/components/ui/button.tsx",
+      "lineRange": [23, 33],
+      "summary": "Button component that merges variant and size class maps with the caller className through the cn helper.",
+      "tags": ["component", "ui", "design-system"],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:src/components/ui/dialog.tsx",
+      "type": "file",
+      "name": "dialog.tsx",
+      "filePath": "src/components/ui/dialog.tsx",
+      "summary": "shadcn dialog primitive re-exporting Radix dialog parts (trigger, portal, overlay, content, header, footer, title, description) with themed styling.",
+      "tags": ["component", "ui", "shadcn", "modal", "design-system"],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:src/components/ui/dialog.tsx:Dialog",
+      "type": "function",
+      "name": "Dialog",
+      "filePath": "src/components/ui/dialog.tsx",
+      "lineRange": [7, 9],
+      "summary": "Root dialog wrapper forwarding props to the Radix dialog root with data-slot metadata.",
+      "tags": ["component", "ui", "modal"],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:src/components/ui/dialog.tsx:DialogTrigger",
+      "type": "function",
+      "name": "DialogTrigger",
+      "filePath": "src/components/ui/dialog.tsx",
+      "lineRange": [11, 13],
+      "summary": "Trigger element that opens the surrounding dialog.",
+      "tags": ["component", "ui", "modal"],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:src/components/ui/dialog.tsx:DialogPortal",
+      "type": "function",
+      "name": "DialogPortal",
+      "filePath": "src/components/ui/dialog.tsx",
+      "lineRange": [15, 17],
+      "summary": "Portal target that renders dialog content outside the parent DOM tree.",
+      "tags": ["component", "ui", "modal"],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:src/components/ui/dialog.tsx:DialogClose",
+      "type": "function",
+      "name": "DialogClose",
+      "filePath": "src/components/ui/dialog.tsx",
+      "lineRange": [19, 21],
+      "summary": "Close button that dismisses the surrounding dialog.",
+      "tags": ["component", "ui", "modal"],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:src/components/ui/dialog.tsx:DialogOverlay",
+      "type": "function",
+      "name": "DialogOverlay",
+      "filePath": "src/components/ui/dialog.tsx",
+      "lineRange": [23, 34],
+      "summary": "Backdrop layer behind dialog content with themed blur and fade animation classes.",
+      "tags": ["component", "ui", "modal"],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:src/components/ui/dialog.tsx:DialogContent",
+      "type": "function",
+      "name": "DialogContent",
+      "filePath": "src/components/ui/dialog.tsx",
+      "lineRange": [36, 60],
+      "summary": "Dialog panel that renders overlay, portal, an inline close affordance, and the caller children.",
+      "tags": ["component", "ui", "modal"],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:src/components/ui/dialog.tsx:DialogHeader",
+      "type": "function",
+      "name": "DialogHeader",
+      "filePath": "src/components/ui/dialog.tsx",
+      "lineRange": [62, 70],
+      "summary": "Layout wrapper stacking the dialog title and description.",
+      "tags": ["component", "ui", "modal", "layout"],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:src/components/ui/dialog.tsx:DialogFooter",
+      "type": "function",
+      "name": "DialogFooter",
+      "filePath": "src/components/ui/dialog.tsx",
+      "lineRange": [72, 80],
+      "summary": "Layout wrapper for dialog action buttons, stacking on mobile and rowing on larger screens.",
+      "tags": ["component", "ui", "modal", "layout"],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:src/components/ui/dialog.tsx:DialogTitle",
+      "type": "function",
+      "name": "DialogTitle",
+      "filePath": "src/components/ui/dialog.tsx",
+      "lineRange": [82, 90],
+      "summary": "Accessible dialog heading element with themed typography.",
+      "tags": ["component", "ui", "modal", "accessibility"],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:src/components/ui/dialog.tsx:DialogDescription",
+      "type": "function",
+      "name": "DialogDescription",
+      "filePath": "src/components/ui/dialog.tsx",
+      "lineRange": [92, 103],
+      "summary": "Muted supporting text element that provides the accessible dialog description.",
+      "tags": ["component", "ui", "modal", "accessibility"],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:src/data/beats.ts",
+      "type": "file",
+      "name": "beats.ts",
+      "filePath": "src/data/beats.ts",
+      "summary": "Balance data for the drum rig: five rhythmic archetype banks of 16-hit clips plus curated rig presets that bind a clip per voice to a kit and swing.",
+      "tags": ["data-model", "balance", "drum-bank", "music-model", "presets"],
+      "complexity": "complex",
+      "languageNotes": "Bank specs are authored as compact row strings and parsed into 16-hit cells (velocity plus optional roll) by makeBank, so clips are grids rather than offset lists."
+    },
+    {
+      "id": "function:src/data/beats.ts:makeBank",
+      "type": "function",
+      "name": "makeBank",
+      "filePath": "src/data/beats.ts",
+      "lineRange": [34, 55],
+      "summary": "Factory that expands one bank spec, parsing each voice row string into a 16-hit clip cell grid with velocity and roll data.",
+      "tags": ["factory", "data-model", "parsing", "drum-bank"],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:src/data/beats.ts:getBank",
+      "type": "function",
+      "name": "getBank",
+      "filePath": "src/data/beats.ts",
+      "lineRange": [145, 147],
+      "summary": "Looks up a bank by id in the BANKS table, returning undefined when no such bank exists.",
+      "tags": ["lookup", "data-model", "utility"],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:src/data/beats.ts:defaultBank",
+      "type": "function",
+      "name": "defaultBank",
+      "filePath": "src/data/beats.ts",
+      "lineRange": [149, 151],
+      "summary": "Returns the fallback bank used when no bank has been selected.",
+      "tags": ["lookup", "data-model", "default"],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:src/data/beats.ts:getRigPreset",
+      "type": "function",
+      "name": "getRigPreset",
+      "filePath": "src/data/beats.ts",
+      "lineRange": [198, 200],
+      "summary": "Looks up a curated rig preset by id in the RIG_PRESETS table.",
+      "tags": ["lookup", "presets", "utility"],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:src/data/beats.ts:rigsForBank",
+      "type": "function",
+      "name": "rigsForBank",
+      "filePath": "src/data/beats.ts",
+      "lineRange": [202, 204],
+      "summary": "Filters the preset table down to the rigs authored for one bank, returning deep copies so callers can mutate freely.",
+      "tags": ["lookup", "presets", "filtering"],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:src/data/beats.ts:defaultRig",
+      "type": "function",
+      "name": "defaultRig",
+      "filePath": "src/data/beats.ts",
+      "lineRange": [207, 209],
+      "summary": "Builds the starting rig by cloning the default preset groove so the engine never hands out shared state.",
+      "tags": ["factory", "default", "presets"],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:src/data/kits.ts",
+      "type": "file",
+      "name": "kits.ts",
+      "filePath": "src/data/kits.ts",
+      "summary": "Drum kit catalog pairing each kit id with its timbre settings and the combat effect it contributes when equipped onto a rig.",
+      "tags": ["data-model", "balance", "drum-kit", "music-model"],
+      "complexity": "moderate",
+      "languageNotes": "Kits own both timbre and the denormalized combat effect, which is copied onto the rig on equip so the combat engine stays unaware of kits."
+    },
+    {
+      "id": "function:src/data/kits.ts:kit",
+      "type": "function",
+      "name": "kit",
+      "filePath": "src/data/kits.ts",
+      "lineRange": [16, 36],
+      "summary": "Factory that assembles one kit definition, defaulting the timbre and effect maps against the neutral timbre baseline.",
+      "tags": ["factory", "data-model", "drum-kit"],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:src/data/kits.ts:getKit",
+      "type": "function",
+      "name": "getKit",
+      "filePath": "src/data/kits.ts",
+      "lineRange": [81, 83],
+      "summary": "Looks up a drum kit by id in the KITS table.",
+      "tags": ["lookup", "data-model", "utility"],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:src/data/kits.ts:defaultKit",
+      "type": "function",
+      "name": "defaultKit",
+      "filePath": "src/data/kits.ts",
+      "lineRange": [86, 88],
+      "summary": "Returns the fallback kit used when no kit has been equipped.",
+      "tags": ["lookup", "data-model", "default"],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:src/hooks/useQtePlayhead.ts",
+      "type": "file",
+      "name": "useQtePlayhead.ts",
+      "filePath": "src/hooks/useQtePlayhead.ts",
+      "summary": "Animation-frame hook that interpolates a smooth QTE playhead between engine ticks so the timing bar moves at display refresh rate.",
+      "tags": ["hook", "react", "animation", "qte", "timing"],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:src/hooks/useQtePlayhead.ts:useQtePlayhead",
+      "type": "function",
+      "name": "useQtePlayhead",
+      "filePath": "src/hooks/useQtePlayhead.ts",
+      "lineRange": [9, 45],
+      "summary": "Tracks elapsed time from the step start and clamps the interpolated playhead progress between 0 and 1 on each animation frame.",
+      "tags": ["hook", "react", "animation", "timing"],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:src/hooks/useWasd.ts",
+      "type": "file",
+      "name": "useWasd.ts",
+      "filePath": "src/hooks/useWasd.ts",
+      "summary": "Global keyboard hook translating WASD harmony keys, number keys, and ZXCV parry keys into session store performance actions while ignoring typing and dialog focus.",
+      "tags": ["hook", "react", "keyboard", "event-handler", "input"],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:src/hooks/useWasd.ts:useWasd",
+      "type": "function",
+      "name": "useWasd",
+      "filePath": "src/hooks/useWasd.ts",
+      "lineRange": [17, 61],
+      "summary": "Registers keydown, keyup, and blur listeners on window, routing presses to performer selection, QTE performance, and parry release, and clearing held keys on blur.",
+      "tags": ["hook", "react", "keyboard", "event-handler"],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:src/index.css",
+      "type": "file",
+      "name": "index.css",
+      "filePath": "src/index.css",
+      "summary": "Global stylesheet defining the shadcn light and dark theme tokens, the Tailwind v4 theme bridge, and the combat animation keyframes used by the battle UI.",
+      "tags": ["stylesheet", "theme", "tailwind", "animation", "design-system"],
+      "complexity": "moderate",
+      "languageNotes": "Uses Tailwind v4 @theme inline to map raw shadcn CSS variables onto utility color names, plus @custom-variant for dark-mode class scoping."
+    },
+    {
+      "id": "file:src/lib/utils.ts",
+      "type": "file",
+      "name": "utils.ts",
+      "filePath": "src/lib/utils.ts",
+      "summary": "Shared class name helper that merges conditional clsx input and resolves Tailwind conflicts with twMerge.",
+      "tags": ["utility", "styling", "tailwind", "helper"],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:src/lib/utils.ts:cn",
+      "type": "function",
+      "name": "cn",
+      "filePath": "src/lib/utils.ts",
+      "lineRange": [4, 6],
+      "summary": "Combines class name inputs with clsx and dedupes conflicting Tailwind utilities via twMerge.",
+      "tags": ["utility", "styling", "tailwind"],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:src/main.tsx",
+      "type": "file",
+      "name": "main.tsx",
+      "filePath": "src/main.tsx",
+      "summary": "Browser entry point that mounts the App component into the root element under React StrictMode and loads the global stylesheet.",
+      "tags": ["entry-point", "react", "bootstrap", "browser"],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:src/persistence/storage.ts",
+      "type": "file",
+      "name": "storage.ts",
+      "filePath": "src/persistence/storage.ts",
+      "summary": "localStorage persistence layer with load and save pairs for cleared encounters, party selection, custom chords, tutorial state, equipped groove, groove bottles, and card loadout.",
+      "tags": ["persistence", "localstorage", "serialization", "utility"],
+      "complexity": "moderate",
+      "languageNotes": "Every accessor guards on an isStorageAvailable probe and wraps JSON parsing, degrading to defaults rather than throwing in private-mode or server contexts."
+    },
+    {
+      "id": "function:src/persistence/storage.ts:loadClearedEncounters",
+      "type": "function",
+      "name": "loadClearedEncounters",
+      "filePath": "src/persistence/storage.ts",
+      "lineRange": [25, 35],
+      "summary": "Reads the persisted list of cleared encounter ids, validating that the stored value is an array before returning it.",
+      "tags": ["persistence", "localstorage", "validation"],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:src/persistence/storage.ts:saveClearedEncounters",
+      "type": "function",
+      "name": "saveClearedEncounters",
+      "filePath": "src/persistence/storage.ts",
+      "lineRange": [37, 44],
+      "summary": "Serializes the cleared encounter ids to localStorage, no-oping when storage is unavailable.",
+      "tags": ["persistence", "localstorage", "serialization"],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:src/persistence/storage.ts:loadSelectedParty",
+      "type": "function",
+      "name": "loadSelectedParty",
+      "filePath": "src/persistence/storage.ts",
+      "lineRange": [46, 56],
+      "summary": "Reads the persisted party roster ids, returning an empty selection when nothing valid is stored.",
+      "tags": ["persistence", "localstorage", "validation"],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:src/persistence/storage.ts:saveSelectedParty",
+      "type": "function",
+      "name": "saveSelectedParty",
+      "filePath": "src/persistence/storage.ts",
+      "lineRange": [58, 65],
+      "summary": "Persists the chosen party character ids so the formation survives reloads.",
+      "tags": ["persistence", "localstorage", "serialization"],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:src/persistence/storage.ts:loadCustomChords",
+      "type": "function",
+      "name": "loadCustomChords",
+      "filePath": "src/persistence/storage.ts",
+      "lineRange": [67, 77],
+      "summary": "Reads user-authored chord presets from localStorage, falling back to an empty list on parse failure.",
+      "tags": ["persistence", "localstorage", "validation"],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:src/persistence/storage.ts:saveCustomChords",
+      "type": "function",
+      "name": "saveCustomChords",
+      "filePath": "src/persistence/storage.ts",
+      "lineRange": [79, 86],
+      "summary": "Writes the custom chord preset list to localStorage.",
+      "tags": ["persistence", "localstorage", "serialization"],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:src/persistence/storage.ts:loadTutorialSeen",
+      "type": "function",
+      "name": "loadTutorialSeen",
+      "filePath": "src/persistence/storage.ts",
+      "lineRange": [88, 95],
+      "summary": "Reports whether the player has already dismissed the tutorial guide, seeding the prep screen modal state.",
+      "tags": ["persistence", "localstorage", "tutorial"],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:src/persistence/storage.ts:saveTutorialSeen",
+      "type": "function",
+      "name": "saveTutorialSeen",
+      "filePath": "src/persistence/storage.ts",
+      "lineRange": [97, 104],
+      "summary": "Records that the tutorial has been seen so the guide does not reopen on later visits.",
+      "tags": ["persistence", "localstorage", "tutorial"],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:src/persistence/storage.ts:loadEquippedGroove",
+      "type": "function",
+      "name": "loadEquippedGroove",
+      "filePath": "src/persistence/storage.ts",
+      "lineRange": [107, 115],
+      "summary": "Restores the groove rig equipped before the last session ended, returning null when absent.",
+      "tags": ["persistence", "localstorage", "drum-rig"],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:src/persistence/storage.ts:saveEquippedGroove",
+      "type": "function",
+      "name": "saveEquippedGroove",
+      "filePath": "src/persistence/storage.ts",
+      "lineRange": [117, 124],
+      "summary": "Persists the currently equipped groove rig as JSON.",
+      "tags": ["persistence", "localstorage", "drum-rig"],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:src/persistence/storage.ts:loadGrooveBottles",
+      "type": "function",
+      "name": "loadGrooveBottles",
+      "filePath": "src/persistence/storage.ts",
+      "lineRange": [127, 137],
+      "summary": "Reads the studio-built groove bottles, validating the stored value is an array.",
+      "tags": ["persistence", "localstorage", "validation"],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:src/persistence/storage.ts:saveGrooveBottles",
+      "type": "function",
+      "name": "saveGrooveBottles",
+      "filePath": "src/persistence/storage.ts",
+      "lineRange": [139, 146],
+      "summary": "Writes the studio bottle shelf to localStorage.",
+      "tags": ["persistence", "localstorage", "serialization"],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:src/persistence/storage.ts:loadCardLoadout",
+      "type": "function",
+      "name": "loadCardLoadout",
+      "filePath": "src/persistence/storage.ts",
+      "lineRange": [149, 157],
+      "summary": "Restores the brought-into-fight card loadout of groove and melody cards.",
+      "tags": ["persistence", "localstorage", "loadout"],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:src/persistence/storage.ts:saveCardLoadout",
+      "type": "function",
+      "name": "saveCardLoadout",
+      "filePath": "src/persistence/storage.ts",
+      "lineRange": [159, 166],
+      "summary": "Persists the chosen card loadout for the next session.",
+      "tags": ["persistence", "localstorage", "loadout"],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:src/persistence/storage.ts:clearAllPersistedData",
+      "type": "function",
+      "name": "clearAllPersistedData",
+      "filePath": "src/persistence/storage.ts",
+      "lineRange": [168, 177],
+      "summary": "Wipes every known persistence key, used when resetting progression entirely.",
+      "tags": ["persistence", "localstorage", "reset"],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:src/state/useSessionStore.ts",
+      "type": "file",
+      "name": "useSessionStore.ts",
+      "filePath": "src/state/useSessionStore.ts",
+      "summary": "Zustand store that mirrors the non-React engine session into React and exposes every transport, arrangement, loadout, and performance action the screens call.",
+      "tags": ["state-management", "zustand", "store", "singleton", "bridge"],
+      "complexity": "complex",
+      "languageNotes": "Deliberately thin: rules stay in src/game and sound in src/audio, and this module is the single place configurePlayer() wires the engine to the Tone.js renderer."
+    },
+    {
+      "id": "function:src/state/useSessionStore.ts:haltPlayback",
+      "type": "function",
+      "name": "haltPlayback",
+      "filePath": "src/state/useSessionStore.ts",
+      "lineRange": [233, 243],
+      "summary": "Tears down anything the transport owns (Tone loop, audition, half-held keys) and resets playback flags, since the repeat lives outside React.",
+      "tags": ["transport", "teardown", "audio", "utility"],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:src/state/useSessionStore.ts:useSessionStore",
+      "type": "function",
+      "name": "useSessionStore",
+      "filePath": "src/state/useSessionStore.ts",
+      "lineRange": [245, 679],
+      "summary": "Underscore-free Zustand hook holding arrangement, fight, loadout, and cursor state with actions that delegate to the engine session and stop the transport whenever the combat screens are left.",
+      "tags": ["state-management", "zustand", "store", "singleton"],
+      "complexity": "complex"
+    },
+    {
+      "id": "file:vite.config.ts",
+      "type": "file",
+      "name": "vite.config.ts",
+      "filePath": "vite.config.ts",
+      "summary": "Vite build configuration wiring the React and Tailwind plugins together with the @ path alias pointing at src.",
+      "tags": ["configuration", "build-system", "vite", "typescript"],
+      "complexity": "simple"
+    }
+  ],
+  "edges": [
+    {
+      "source": "file:src/components/screens/PrepScreen.tsx",
+      "target": "function:src/components/screens/PrepScreen.tsx:PrepScreen",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:src/components/screens/PrepScreen.tsx",
+      "target": "function:src/components/screens/PrepScreen.tsx:PrepScreen",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/components/screens/ResultOverlay.tsx",
+      "target": "function:src/components/screens/ResultOverlay.tsx:ResultOverlay",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:src/components/screens/ResultOverlay.tsx",
+      "target": "function:src/components/screens/ResultOverlay.tsx:ResultOverlay",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/components/screens/StudioScreen.tsx",
+      "target": "function:src/components/screens/StudioScreen.tsx:StudioScreen",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:src/components/screens/StudioScreen.tsx",
+      "target": "function:src/components/screens/StudioScreen.tsx:StudioScreen",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/components/ui/button.tsx",
+      "target": "function:src/components/ui/button.tsx:Button",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:src/components/ui/button.tsx",
+      "target": "function:src/components/ui/button.tsx:Button",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/components/ui/dialog.tsx",
+      "target": "function:src/components/ui/dialog.tsx:Dialog",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:src/components/ui/dialog.tsx",
+      "target": "function:src/components/ui/dialog.tsx:DialogTrigger",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:src/components/ui/dialog.tsx",
+      "target": "function:src/components/ui/dialog.tsx:DialogPortal",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:src/components/ui/dialog.tsx",
+      "target": "function:src/components/ui/dialog.tsx:DialogClose",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:src/components/ui/dialog.tsx",
+      "target": "function:src/components/ui/dialog.tsx:DialogOverlay",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:src/components/ui/dialog.tsx",
+      "target": "function:src/components/ui/dialog.tsx:DialogContent",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:src/components/ui/dialog.tsx",
+      "target": "function:src/components/ui/dialog.tsx:DialogHeader",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:src/components/ui/dialog.tsx",
+      "target": "function:src/components/ui/dialog.tsx:DialogFooter",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:src/components/ui/dialog.tsx",
+      "target": "function:src/components/ui/dialog.tsx:DialogTitle",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:src/components/ui/dialog.tsx",
+      "target": "function:src/components/ui/dialog.tsx:DialogDescription",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:src/components/ui/dialog.tsx",
+      "target": "function:src/components/ui/dialog.tsx:Dialog",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/components/ui/dialog.tsx",
+      "target": "function:src/components/ui/dialog.tsx:DialogTrigger",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/components/ui/dialog.tsx",
+      "target": "function:src/components/ui/dialog.tsx:DialogPortal",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/components/ui/dialog.tsx",
+      "target": "function:src/components/ui/dialog.tsx:DialogClose",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/components/ui/dialog.tsx",
+      "target": "function:src/components/ui/dialog.tsx:DialogOverlay",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/components/ui/dialog.tsx",
+      "target": "function:src/components/ui/dialog.tsx:DialogContent",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/components/ui/dialog.tsx",
+      "target": "function:src/components/ui/dialog.tsx:DialogHeader",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/components/ui/dialog.tsx",
+      "target": "function:src/components/ui/dialog.tsx:DialogFooter",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/components/ui/dialog.tsx",
+      "target": "function:src/components/ui/dialog.tsx:DialogTitle",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/components/ui/dialog.tsx",
+      "target": "function:src/components/ui/dialog.tsx:DialogDescription",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/data/beats.ts",
+      "target": "function:src/data/beats.ts:makeBank",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:src/data/beats.ts",
+      "target": "function:src/data/beats.ts:getBank",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:src/data/beats.ts",
+      "target": "function:src/data/beats.ts:defaultBank",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:src/data/beats.ts",
+      "target": "function:src/data/beats.ts:getRigPreset",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:src/data/beats.ts",
+      "target": "function:src/data/beats.ts:rigsForBank",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:src/data/beats.ts",
+      "target": "function:src/data/beats.ts:defaultRig",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:src/data/beats.ts",
+      "target": "function:src/data/beats.ts:getBank",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/data/beats.ts",
+      "target": "function:src/data/beats.ts:defaultBank",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/data/beats.ts",
+      "target": "function:src/data/beats.ts:getRigPreset",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/data/beats.ts",
+      "target": "function:src/data/beats.ts:rigsForBank",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/data/beats.ts",
+      "target": "function:src/data/beats.ts:defaultRig",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/data/kits.ts",
+      "target": "function:src/data/kits.ts:kit",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:src/data/kits.ts",
+      "target": "function:src/data/kits.ts:getKit",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:src/data/kits.ts",
+      "target": "function:src/data/kits.ts:defaultKit",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:src/data/kits.ts",
+      "target": "function:src/data/kits.ts:getKit",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/data/kits.ts",
+      "target": "function:src/data/kits.ts:defaultKit",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/hooks/useQtePlayhead.ts",
+      "target": "function:src/hooks/useQtePlayhead.ts:useQtePlayhead",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:src/hooks/useQtePlayhead.ts",
+      "target": "function:src/hooks/useQtePlayhead.ts:useQtePlayhead",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/hooks/useWasd.ts",
+      "target": "function:src/hooks/useWasd.ts:useWasd",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:src/hooks/useWasd.ts",
+      "target": "function:src/hooks/useWasd.ts:useWasd",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/lib/utils.ts",
+      "target": "function:src/lib/utils.ts:cn",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:src/lib/utils.ts",
+      "target": "function:src/lib/utils.ts:cn",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/persistence/storage.ts",
+      "target": "function:src/persistence/storage.ts:loadClearedEncounters",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:src/persistence/storage.ts",
+      "target": "function:src/persistence/storage.ts:saveClearedEncounters",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:src/persistence/storage.ts",
+      "target": "function:src/persistence/storage.ts:loadSelectedParty",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:src/persistence/storage.ts",
+      "target": "function:src/persistence/storage.ts:saveSelectedParty",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:src/persistence/storage.ts",
+      "target": "function:src/persistence/storage.ts:loadCustomChords",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:src/persistence/storage.ts",
+      "target": "function:src/persistence/storage.ts:saveCustomChords",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:src/persistence/storage.ts",
+      "target": "function:src/persistence/storage.ts:loadTutorialSeen",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:src/persistence/storage.ts",
+      "target": "function:src/persistence/storage.ts:saveTutorialSeen",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:src/persistence/storage.ts",
+      "target": "function:src/persistence/storage.ts:loadEquippedGroove",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:src/persistence/storage.ts",
+      "target": "function:src/persistence/storage.ts:saveEquippedGroove",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:src/persistence/storage.ts",
+      "target": "function:src/persistence/storage.ts:loadGrooveBottles",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:src/persistence/storage.ts",
+      "target": "function:src/persistence/storage.ts:saveGrooveBottles",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:src/persistence/storage.ts",
+      "target": "function:src/persistence/storage.ts:loadCardLoadout",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:src/persistence/storage.ts",
+      "target": "function:src/persistence/storage.ts:saveCardLoadout",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:src/persistence/storage.ts",
+      "target": "function:src/persistence/storage.ts:clearAllPersistedData",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:src/persistence/storage.ts",
+      "target": "function:src/persistence/storage.ts:loadClearedEncounters",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/persistence/storage.ts",
+      "target": "function:src/persistence/storage.ts:saveClearedEncounters",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/persistence/storage.ts",
+      "target": "function:src/persistence/storage.ts:loadSelectedParty",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/persistence/storage.ts",
+      "target": "function:src/persistence/storage.ts:saveSelectedParty",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/persistence/storage.ts",
+      "target": "function:src/persistence/storage.ts:loadCustomChords",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/persistence/storage.ts",
+      "target": "function:src/persistence/storage.ts:saveCustomChords",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/persistence/storage.ts",
+      "target": "function:src/persistence/storage.ts:loadTutorialSeen",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/persistence/storage.ts",
+      "target": "function:src/persistence/storage.ts:saveTutorialSeen",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/persistence/storage.ts",
+      "target": "function:src/persistence/storage.ts:loadEquippedGroove",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/persistence/storage.ts",
+      "target": "function:src/persistence/storage.ts:saveEquippedGroove",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/persistence/storage.ts",
+      "target": "function:src/persistence/storage.ts:loadGrooveBottles",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/persistence/storage.ts",
+      "target": "function:src/persistence/storage.ts:saveGrooveBottles",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/persistence/storage.ts",
+      "target": "function:src/persistence/storage.ts:loadCardLoadout",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/persistence/storage.ts",
+      "target": "function:src/persistence/storage.ts:saveCardLoadout",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/persistence/storage.ts",
+      "target": "function:src/persistence/storage.ts:clearAllPersistedData",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/state/useSessionStore.ts",
+      "target": "function:src/state/useSessionStore.ts:haltPlayback",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:src/state/useSessionStore.ts",
+      "target": "function:src/state/useSessionStore.ts:useSessionStore",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:src/state/useSessionStore.ts",
+      "target": "function:src/state/useSessionStore.ts:useSessionStore",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/data/beats.ts",
+      "target": "file:src/data/kits.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/main.tsx",
+      "target": "file:src/App.tsx",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/main.tsx",
+      "target": "file:src/index.css",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "function:src/components/screens/PrepScreen.tsx:PrepScreen",
+      "target": "function:src/state/useSessionStore.ts:useSessionStore",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:src/components/screens/ResultOverlay.tsx:ResultOverlay",
+      "target": "function:src/state/useSessionStore.ts:useSessionStore",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:src/components/screens/StudioScreen.tsx:StudioScreen",
+      "target": "function:src/state/useSessionStore.ts:useSessionStore",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:src/hooks/useWasd.ts:useWasd",
+      "target": "function:src/state/useSessionStore.ts:useSessionStore",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:src/data/beats.ts:defaultBank",
+      "target": "function:src/data/beats.ts:getBank",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:src/data/kits.ts:defaultKit",
+      "target": "function:src/data/kits.ts:getKit",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:src/components/ui/button.tsx:Button",
+      "target": "function:src/lib/utils.ts:cn",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:src/components/ui/dialog.tsx:DialogOverlay",
+      "target": "function:src/lib/utils.ts:cn",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:src/components/ui/dialog.tsx:DialogContent",
+      "target": "function:src/lib/utils.ts:cn",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:src/components/ui/dialog.tsx:DialogHeader",
+      "target": "function:src/lib/utils.ts:cn",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:src/components/ui/dialog.tsx:DialogFooter",
+      "target": "function:src/lib/utils.ts:cn",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:src/components/ui/dialog.tsx:DialogTitle",
+      "target": "function:src/lib/utils.ts:cn",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:src/components/ui/dialog.tsx:DialogDescription",
+      "target": "function:src/lib/utils.ts:cn",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/components/screens/PrepScreen.tsx",
+      "target": "file:src/state/useSessionStore.ts",
+      "type": "depends_on",
+      "direction": "forward",
+      "weight": 0.6
+    },
+    {
+      "source": "file:src/components/screens/PrepScreen.tsx",
+      "target": "file:src/persistence/storage.ts",
+      "type": "depends_on",
+      "direction": "forward",
+      "weight": 0.6
+    },
+    {
+      "source": "file:src/components/screens/PrepScreen.tsx",
+      "target": "file:src/components/ui/button.tsx",
+      "type": "depends_on",
+      "direction": "forward",
+      "weight": 0.6
+    },
+    {
+      "source": "file:src/components/screens/ResultOverlay.tsx",
+      "target": "file:src/state/useSessionStore.ts",
+      "type": "depends_on",
+      "direction": "forward",
+      "weight": 0.6
+    },
+    {
+      "source": "file:src/components/screens/ResultOverlay.tsx",
+      "target": "file:src/components/ui/button.tsx",
+      "type": "depends_on",
+      "direction": "forward",
+      "weight": 0.6
+    },
+    {
+      "source": "file:src/components/screens/StudioScreen.tsx",
+      "target": "file:src/state/useSessionStore.ts",
+      "type": "depends_on",
+      "direction": "forward",
+      "weight": 0.6
+    },
+    {
+      "source": "file:src/components/screens/StudioScreen.tsx",
+      "target": "file:src/components/ui/button.tsx",
+      "type": "depends_on",
+      "direction": "forward",
+      "weight": 0.6
+    },
+    {
+      "source": "file:src/components/ui/button.tsx",
+      "target": "file:src/lib/utils.ts",
+      "type": "depends_on",
+      "direction": "forward",
+      "weight": 0.6
+    },
+    {
+      "source": "file:src/components/ui/dialog.tsx",
+      "target": "file:src/lib/utils.ts",
+      "type": "depends_on",
+      "direction": "forward",
+      "weight": 0.6
+    },
+    {
+      "source": "file:src/hooks/useWasd.ts",
+      "target": "file:src/state/useSessionStore.ts",
+      "type": "depends_on",
+      "direction": "forward",
+      "weight": 0.6
+    },
+    {
+      "source": "file:vite.config.ts",
+      "target": "file:src/main.tsx",
+      "type": "configures",
+      "direction": "forward",
+      "weight": 0.6
+    },
+    {
+      "source": "file:src/index.css",
+      "target": "file:src/components/ui/button.tsx",
+      "type": "related",
+      "direction": "forward",
+      "weight": 0.5
+    }
+  ]
+}

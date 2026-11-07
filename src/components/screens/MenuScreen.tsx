@@ -43,17 +43,10 @@ export function MenuScreen() {
     <div className="flex flex-1 flex-col items-center justify-center p-6 text-center select-none">
       <div className="max-w-xl flex flex-col items-center gap-6 animate-in fade-in duration-700">
         <div className="space-y-2">
-          <p className="text-xs tracking-widest uppercase text-muted-foreground">Antigravity Sound Chamber</p>
           <h1 className="text-4xl font-light tracking-tight sm:text-5xl">
             A dark room. <br />
-            <span className="font-semibold text-primary">A faint hum.</span>
           </h1>
         </div>
-
-        <p className="text-sm text-muted-foreground leading-relaxed max-w-md">
-          In the quiet between worlds, music is your weapon and harmonies are your shield.
-          Assemble your voices, sculpt the loop, and silence the discord.
-        </p>
 
         {/* Audio Awaken / Sound Preview */}
         {!audioAwake ? (
@@ -64,13 +57,12 @@ export function MenuScreen() {
               onClick={handleWakeAudio}
               className="border-primary/40 hover:border-primary text-sm tracking-wide"
             >
-              <span className="animate-pulse mr-2 text-primary">●</span> Listen to the Hum
+              <span className="animate-pulse mr-2 text-primary">●</span> Preview
             </Button>
-            <p className="text-xs text-muted-foreground mt-2">Enables Web Audio for interactive preview & combat</p>
           </div>
         ) : (
           <div className="flex flex-col items-center gap-2 pt-1 border border-border/60 rounded-lg p-4 bg-muted/20 w-full">
-            <span className="text-xs text-muted-foreground uppercase tracking-wider">Tone Room Active — Test Harmony</span>
+            <span className="text-xs text-muted-foreground uppercase tracking-wider">Test Harmony</span>
             <div className="flex gap-2">
               {[
                 { key: "W", degree: 1, name: "Tonic" },
@@ -128,7 +120,7 @@ export function MenuScreen() {
             }}
             className="w-full font-semibold tracking-wide text-base shadow-lg bg-primary hover:bg-primary/90 text-primary-foreground"
           >
-            Step into the Chamber
+            Start
           </Button>
 
           <Button

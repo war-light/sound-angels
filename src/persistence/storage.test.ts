@@ -34,7 +34,7 @@ describe("storage persistence module", () => {
 
   it("handles custom chord presets persistence", () => {
     expect(loadCustomChords()).toBeNull()
-    const custom = [{ name: "My Hymn", romans: ["I", "IV", "V", "I"], example: "C-F-G-C" }]
+    const custom = [{ name: "My Progression", romans: ["I", "IV", "V", "I"], example: "C-F-G-C" }]
     saveCustomChords(custom)
     expect(loadCustomChords()).toEqual(custom)
   })

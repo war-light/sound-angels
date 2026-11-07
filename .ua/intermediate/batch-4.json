@@ -1,0 +1,189 @@
+{
+  "nodes": [
+    {
+      "id": "config:.oxlintrc.json",
+      "type": "config",
+      "name": ".oxlintrc.json",
+      "filePath": ".oxlintrc.json",
+      "summary": "Oxlint configuration enabling the React, TypeScript, and Oxc plugins and enforcing rules-of-hooks plus the only-export-components rule.",
+      "tags": ["configuration", "linting", "react", "typescript", "build-system"],
+      "complexity": "simple"
+    },
+    {
+      "id": "document:AGENTS.md",
+      "type": "document",
+      "name": "AGENTS.md",
+      "filePath": "AGENTS.md",
+      "summary": "Agent-facing contributor guide for the repository, documenting commands, the strict separation between src/game, src/audio, and src/state, project gotchas, hard rules, and graphify usage.",
+      "tags": ["documentation", "development", "architecture", "conventions", "onboarding"],
+      "complexity": "simple"
+    },
+    {
+      "id": "document:README.md",
+      "type": "document",
+      "name": "README.md",
+      "filePath": "README.md",
+      "summary": "Project overview describing the Dark Room-like music-as-combat browser game, its stack choices, pnpm scripts, the src/ layout, and the versioned localStorage save format.",
+      "tags": ["documentation", "entry-point", "overview", "architecture"],
+      "complexity": "simple"
+    },
+    {
+      "id": "config:components.json",
+      "type": "config",
+      "name": "components.json",
+      "filePath": "components.json",
+      "summary": "shadcn/ui configuration selecting the new-york style with the neutral base color, cssVariables, a lucide icon library, and the @/* import aliases used by generated components.",
+      "tags": ["configuration", "ui", "shadcn", "build-system"],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:index.html",
+      "type": "file",
+      "name": "index.html",
+      "filePath": "index.html",
+      "summary": "Vite HTML entry shell that provides the #root mount element and loads the React application via the /src/main.tsx module script.",
+      "tags": ["markup", "entry-point", "html", "vite"],
+      "complexity": "simple",
+      "languageNotes": "Plain Vite index shell with a module script tag; no bundler-specific templating."
+    },
+    {
+      "id": "config:opencode.json",
+      "type": "config",
+      "name": "opencode.json",
+      "filePath": "opencode.json",
+      "summary": "OpenCode agent configuration enabling the lightpanda plugin and defining the coder, plan, and reviewer agents with their models, modes, system prompts, and step limits.",
+      "tags": ["configuration", "tooling", "agents", "development"],
+      "complexity": "simple"
+    },
+    {
+      "id": "config:package.json",
+      "type": "config",
+      "name": "package.json",
+      "filePath": "package.json",
+      "summary": "Project manifest declaring the ESM sound-angels package, its dev/build/lint/preview/test scripts, and runtime dependencies (React 19, Zustand, Tone.js, Tailwind/shadcn) with the Vite and Vitest toolchain.",
+      "tags": ["configuration", "build-system", "dependencies", "scripts"],
+      "complexity": "simple"
+    },
+    {
+      "id": "config:tsconfig.app.json",
+      "type": "config",
+      "name": "tsconfig.app.json",
+      "filePath": "tsconfig.app.json",
+      "summary": "TypeScript compiler options for the browser app under src/, targeting ES2023 with bundler resolution, react-jsx, strict unused checks, erasable syntax only, and the @/* path alias for shadcn.",
+      "tags": ["configuration", "typescript", "build-system", "strict-mode"],
+      "complexity": "simple",
+      "languageNotes": "Uses verbatimModuleSyntax and erasableSyntaxOnly, which forbid enums, namespaces, and parameter properties in the app sources."
+    },
+    {
+      "id": "config:tsconfig.json",
+      "type": "config",
+      "name": "tsconfig.json",
+      "filePath": "tsconfig.json",
+      "summary": "Solution-style TypeScript config with no files of its own that references the app and node project configs for `tsc -b` composite builds.",
+      "tags": ["configuration", "typescript", "build-system", "project-references"],
+      "complexity": "simple"
+    },
+    {
+      "id": "config:tsconfig.node.json",
+      "type": "config",
+      "name": "tsconfig.node.json",
+      "filePath": "tsconfig.node.json",
+      "summary": "TypeScript compiler options for the Node-side build tooling, compiling vite.config.ts with nodenext resolution and the same strict unused/erasable-syntax checks.",
+      "tags": ["configuration", "typescript", "build-system", "tooling"],
+      "complexity": "simple"
+    }
+  ],
+  "edges": [
+    {
+      "source": "config:tsconfig.json",
+      "target": "config:tsconfig.app.json",
+      "type": "configures",
+      "direction": "forward",
+      "weight": 0.6
+    },
+    {
+      "source": "config:tsconfig.json",
+      "target": "config:tsconfig.node.json",
+      "type": "configures",
+      "direction": "forward",
+      "weight": 0.6
+    },
+    {
+      "source": "config:tsconfig.app.json",
+      "target": "file:src/main.tsx",
+      "type": "configures",
+      "direction": "forward",
+      "weight": 0.6
+    },
+    {
+      "source": "config:tsconfig.node.json",
+      "target": "file:vite.config.ts",
+      "type": "configures",
+      "direction": "forward",
+      "weight": 0.6
+    },
+    {
+      "source": "config:.oxlintrc.json",
+      "target": "file:src/main.tsx",
+      "type": "configures",
+      "direction": "forward",
+      "weight": 0.6
+    },
+    {
+      "source": "config:package.json",
+      "target": "file:src/main.tsx",
+      "type": "configures",
+      "direction": "forward",
+      "weight": 0.6
+    },
+    {
+      "source": "config:package.json",
+      "target": "file:vite.config.ts",
+      "type": "configures",
+      "direction": "forward",
+      "weight": 0.6
+    },
+    {
+      "source": "config:components.json",
+      "target": "file:src/index.css",
+      "type": "configures",
+      "direction": "forward",
+      "weight": 0.6
+    },
+    {
+      "source": "config:components.json",
+      "target": "file:src/lib/utils.ts",
+      "type": "configures",
+      "direction": "forward",
+      "weight": 0.6
+    },
+    {
+      "source": "document:AGENTS.md",
+      "target": "file:src/game/session.ts",
+      "type": "documents",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "document:README.md",
+      "target": "file:src/main.tsx",
+      "type": "documents",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "file:index.html",
+      "target": "file:src/main.tsx",
+      "type": "depends_on",
+      "direction": "forward",
+      "weight": 0.6
+    },
+    {
+      "source": "config:opencode.json",
+      "target": "document:AGENTS.md",
+      "type": "related",
+      "direction": "forward",
+      "weight": 0.5
+    }
+  ]
+}

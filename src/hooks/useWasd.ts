@@ -1,18 +1,27 @@
 import { useEffect } from "react"
 import { useSessionStore } from "@/state/useSessionStore"
 import type { QteKey } from "@/game/perform"
+import type { ChordMod } from "@/game/stageMusic"
 
 const KEYS = new Set(["w", "a", "s", "d"])
 const PARRY_KEYS = new Set(["z", "x", "c", "v"])
 const NUM_KEYS = new Set(["1", "2", "3"])
+/** Stage combat: hichord modifiers. Chords are 1-7. */
+const MOD_KEYS: Record<string, ChordMod> = { q: "seventh", w: "sus", e: "flip" }
+
+function inStageCombat(): boolean {
+  const s = useSessionStore.getState()
+  return s.gamePhase === "combat" && s.combatMode === "stage"
+}
 
 /**
  * WASD relative-motion performance + ZXCV parry lanes. Key down moves the
  * cursor + auditions (WASD) or scores the parry chart (ZXCV); key up
  * records the held note into the loop (WASD) or scores a hold tail (ZXCV).
  * Tab cycles the active front performer. 1/2/3 directly select front-row
- * positions. Ignores repeats and text inputs. Half-held presses are dropped
- * when the window loses focus (lost keyups never trap a key).
+ * positions (except on the prep screen, where the loop sequencer owns the
+ * number row for note entry). Ignores repeats and text inputs. Half-held
+ * presses are dropped when the window loses focus (lost keyups never trap).
  */
 export function useWasd(): void {
   useEffect(() => {
@@ -20,16 +29,32 @@ export function useWasd(): void {
       const t = e.target as HTMLElement | null
       return t != null && (t.tagName === "INPUT" || t.tagName === "TEXTAREA");
     }
+    // A modal (e.g. the mid-fight Modulate dialog) owns the keyboard.
+    const inDialog = () =>
+      typeof document !== "undefined" && document.querySelector('[data-slot="dialog-content"]') != null
     const down = (e: KeyboardEvent) => {
-      if (e.repeat || e.metaKey || e.ctrlKey || e.altKey || isTyping(e)) return
+      if (e.repeat || e.metaKey || e.ctrlKey || e.altKey || isTyping(e) || inDialog()) return
       const k = e.key.toLowerCase()
+      // Stage combat: 1-7 press a chord, Q/W/E toggle its modifier.
+      if (inStageCombat()) {
+        const st = useSessionStore.getState()
+        if (/^[1-7]$/.test(k)) {
+          e.preventDefault()
+          st.pressChord(Number(k))
+        } else if (MOD_KEYS[k]) {
+          e.preventDefault()
+          st.toggleChordMod(MOD_KEYS[k])
+        }
+        return
+      }
       if (k === "tab") {
         e.preventDefault()
         useSessionStore.getState().cyclePerformer()
         return
       }
       // C.1: number keys 1/2/3 → direct front-row performer selection.
-      if (NUM_KEYS.has(k)) {
+      // The prep-screen sequencer reserves the number row, so skip it there.
+      if (NUM_KEYS.has(k) && useSessionStore.getState().gamePhase !== "prep") {
         e.preventDefault()
         useSessionStore.getState().selectPerformerByIndex(parseInt(k) - 1)
         return
@@ -39,6 +64,7 @@ export function useWasd(): void {
       useSessionStore.getState().performDown(k as QteKey)
     }
     const up = (e: KeyboardEvent) => {
+      if (inStageCombat()) return
       const k = e.key.toLowerCase()
       if (!KEYS.has(k) && !PARRY_KEYS.has(k)) return
       useSessionStore.getState().performUp(k as QteKey)

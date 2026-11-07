@@ -3,8 +3,11 @@
 //
 //   Prep    — pick 1..4 groove cards and 1..6 melody cards.
 //   Combat  — swap between equipped cards; the swap lands at the loop boundary.
-import { DEFAULT_GROOVE_ID } from "./groove"
+import { defaultRig } from "@/data/beats"
 import { DEFAULT_MELODY_CARD_ID } from "./melodyBank"
+
+/** The rig every fresh bag starts with (and prunes back to). */
+const DEFAULT_GROOVE_ID = defaultRig().id
 
 export const MAX_GROOVE_CARDS = 4
 export const MAX_MELODY_CARDS = 6

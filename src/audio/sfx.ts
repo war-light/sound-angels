@@ -82,13 +82,14 @@ export function playUiClick(): void {
   })
 }
 
-/** Audition one drum voice (Studio step toggles). */
-export function playDrumHit(voice: "kick" | "snare" | "hat"): void {
+/** Audition one drum voice (Studio pad taps). */
+export function playDrumHit(voice: "kick" | "snare" | "hat" | "perc"): void {
   safeTrigger(() => {
     const v = getVoices()
     const now = Tone.now()
     if (voice === "kick") v.kick.triggerAttackRelease("C1", "16n", now, 0.8)
     else if (voice === "snare") v.snare.triggerAttackRelease("16n", now, 0.6)
+    else if (voice === "perc") v.perc.triggerAttackRelease("C4", "32n", now, 0.5)
     else v.hat.triggerAttackRelease("32n", now, 0.4)
   })
 }

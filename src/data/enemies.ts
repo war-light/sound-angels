@@ -151,39 +151,11 @@ export interface BassRecipe {
   volume: number
 }
 
-/** Drum-kit coloration applied live when this instrument holds the beat seat. */
-export interface KitRecipe {
-  kickPitchDecay: number
-  kickOctaves: number
-  kickDecay: number
-  kickVolume: number
-  snareDecay: number
-  snareVolume: number
-  hatDecay: number
-  hatVolume: number
-}
-
+/** Per-role timbre for one instrument. Drum kits are separate (see DrumKit). */
 export interface InstrumentTimbre {
-  /** Melody-lane voice. */
   lead: VoiceRecipe
-  /** Chord-pad voice (whole-note stabs). */
   pad: VoiceRecipe
-  /** Beat-source bass voice. */
   bass: BassRecipe
-  /** Beat-source drum coloration. */
-  kit: KitRecipe
-}
-
-/** Neutral kit: the room's own pulse when the beat seat is empty. */
-export const NEUTRAL_KIT: KitRecipe = {
-  kickPitchDecay: 0.04,
-  kickOctaves: 6,
-  kickDecay: 0.35,
-  kickVolume: -8,
-  snareDecay: 0.17,
-  snareVolume: -14,
-  hatDecay: 0.05,
-  hatVolume: -20,
 }
 
 /** Starter roster stub — full unlockable characters + deck land in Phase 2. */
@@ -208,10 +180,6 @@ export const INSTRUMENTS: Record<string, InstrumentDef> = {
         envelope: { attack: 0.01, decay: 0.2, sustain: 0.6, release: 0.3 },
         volume: -6,
       },
-      kit: {
-        kickPitchDecay: 0.04, kickOctaves: 5, kickDecay: 0.3, kickVolume: -10,
-        snareDecay: 0.12, snareVolume: -16, hatDecay: 0.04, hatVolume: -22,
-      },
     },
   },
   piano: {
@@ -233,10 +201,6 @@ export const INSTRUMENTS: Record<string, InstrumentDef> = {
         envelope: { attack: 0.005, decay: 0.25, sustain: 0.2, release: 0.3 },
         volume: -7,
       },
-      kit: {
-        kickPitchDecay: 0.03, kickOctaves: 7, kickDecay: 0.28, kickVolume: -8,
-        snareDecay: 0.2, snareVolume: -13, hatDecay: 0.06, hatVolume: -19,
-      },
     },
   },
   brass: {
@@ -257,10 +221,6 @@ export const INSTRUMENTS: Record<string, InstrumentDef> = {
         oscillator: "sawtooth", cutoff: 220,
         envelope: { attack: 0.02, decay: 0.25, sustain: 0.7, release: 0.35 },
         volume: -9,
-      },
-      kit: {
-        kickPitchDecay: 0.06, kickOctaves: 4, kickDecay: 0.45, kickVolume: -6,
-        snareDecay: 0.14, snareVolume: -14, hatDecay: 0.03, hatVolume: -21,
       },
     },
   },

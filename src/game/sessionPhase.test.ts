@@ -98,7 +98,7 @@ describe("session game phase, encounters, and melody bank", () => {
       const ok = loadMelodyTemplate("staccato-flight")
       expect(ok).toBe(true)
       const arr = getArrangement()
-      expect(arr.chords).toEqual(["i", "iv"])
+      expect(arr.chords).toEqual(["i", "iv", "i", "iv"])
       // Check that notes exist on slot 0
       const hasNotes = arr.tracks[0].some((bar) => bar.some((n) => n != null))
       expect(hasNotes).toBe(true)
@@ -112,7 +112,7 @@ describe("session game phase, encounters, and melody bank", () => {
 
       // Modify arrangement
       loadMelodyTemplate("solemn-ground")
-      expect(getArrangement().chords).toEqual(["i", "V"])
+      expect(getArrangement().chords).toEqual(["i", "V", "i", "V"])
 
       // Reload test preset
       loadMelodyTemplate(template.id)
@@ -124,7 +124,7 @@ describe("session game phase, encounters, and melody bank", () => {
       const ok = requestTemplateChart("solemn-ground")
       expect(ok).toBe(true)
       expect(getFight().activeQte?.kind).toBe("preset")
-      expect(getFight().activeQte?.payload.presetChords).toEqual(["i", "V"])
+      expect(getFight().activeQte?.payload.presetChords).toEqual(["i", "V", "i", "V"])
     })
   })
 

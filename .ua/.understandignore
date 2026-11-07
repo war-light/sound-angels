@@ -36,6 +36,17 @@
 # *.test.*
 # *.spec.*
 # *.snap
+# --- Project additions (active) ---
+# Generated graph/dashboard output — never part of the code graph.
+graphify-out/
+.ua/
+
+# Tests and test scaffolding (source-only run).
+*.test.*
+*.spec.*
+*.snap
+src/test/
+
 # C# / .NET
 # **/*Tests.cs
 # **/*Test.cs

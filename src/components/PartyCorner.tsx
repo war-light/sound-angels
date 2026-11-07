@@ -159,7 +159,7 @@ function Card({
 }
 
 /**
- * Party corner: deck + back row (chord/beat) + front row (attackers).
+ * Party corner: deck + back row (chords) + front row (attackers).
  * Cards move by drag-and-drop between seats.
  */
 export function PartyCorner() {
@@ -245,7 +245,6 @@ export function PartyCorner() {
 			</div>
 
 			{slotRow("chords", "chord", [fight.slots.chord])}
-			{slotRow("beat", "beat", [fight.slots.beat])}
 
 			<div
 				className={cn(

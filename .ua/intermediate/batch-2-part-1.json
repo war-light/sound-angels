@@ -1,0 +1,1619 @@
+{
+  "nodes": [
+    {
+      "id": "file:src/game/arrangement.ts",
+      "type": "file",
+      "name": "arrangement.ts",
+      "filePath": "src/game/arrangement.ts",
+      "summary": "Loop arrangement model: music as relative, serializable data. Melody onsets live in per-attacker-slot tracks as NoteEvents and chords as Roman numerals, with absolute MIDI resolved only at the audio boundary by snapshotStep.",
+      "tags": [
+        "data-model",
+        "music-model",
+        "serialization",
+        "core-engine"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "function:src/game/arrangement.ts:createDefaultArrangement",
+      "type": "function",
+      "name": "createDefaultArrangement",
+      "filePath": "src/game/arrangement.ts",
+      "lineRange": [
+        53,
+        83
+      ],
+      "summary": "Builds the starter 4-bar C-minor loop at 90bpm: i-VI progression, a seeded two-bar motif on slot 0 and the default rig.",
+      "tags": [
+        "factory",
+        "defaults",
+        "arrangement",
+        "music-model"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:src/game/arrangement.ts:toggleNoteEvent",
+      "type": "function",
+      "name": "toggleNoteEvent",
+      "filePath": "src/game/arrangement.ts",
+      "lineRange": [
+        95,
+        116
+      ],
+      "summary": "Returns a new arrangement with one attacker-track step set to the given NoteEvent (or cleared), validating slot/bar/step bounds and degree/length.",
+      "tags": [
+        "immutable-update",
+        "validation",
+        "music-model"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:src/game/arrangement.ts:clearTracks",
+      "type": "function",
+      "name": "clearTracks",
+      "filePath": "src/game/arrangement.ts",
+      "lineRange": [
+        119,
+        121
+      ],
+      "summary": "Returns a copy of the arrangement with every attacker melody track wiped; used by track-wipe enemies.",
+      "tags": [
+        "immutable-update",
+        "arrangement",
+        "combat-support"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:src/game/arrangement.ts:countOnsets",
+      "type": "function",
+      "name": "countOnsets",
+      "filePath": "src/game/arrangement.ts",
+      "lineRange": [
+        124,
+        132
+      ],
+      "summary": "Counts melody onsets across all attacker slots, feeding preset cooldown scaling and log lines.",
+      "tags": [
+        "utility",
+        "counting",
+        "arrangement"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:src/game/arrangement.ts:setGroove",
+      "type": "function",
+      "name": "setGroove",
+      "filePath": "src/game/arrangement.ts",
+      "lineRange": [
+        135,
+        137
+      ],
+      "summary": "Equips a groove onto the arrangement, storing a deep clone so callers cannot mutate the source rig.",
+      "tags": [
+        "immutable-update",
+        "drum-rig",
+        "arrangement"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:src/game/arrangement.ts:withMelody",
+      "type": "function",
+      "name": "withMelody",
+      "filePath": "src/game/arrangement.ts",
+      "lineRange": [
+        140,
+        150
+      ],
+      "summary": "Swaps in a melody card's tracks (defensively copied) and fits its chord progression to the current bar count.",
+      "tags": [
+        "immutable-update",
+        "melody-card",
+        "card-swap"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:src/game/arrangement.ts:tweakGrooveKnobs",
+      "type": "function",
+      "name": "tweakGrooveKnobs",
+      "filePath": "src/game/arrangement.ts",
+      "lineRange": [
+        153,
+        158
+      ],
+      "summary": "Applies swing-knob edits to the arrangement's equipped groove.",
+      "tags": [
+        "immutable-update",
+        "drum-rig",
+        "tuning"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:src/game/arrangement.ts:setBarChord",
+      "type": "function",
+      "name": "setBarChord",
+      "filePath": "src/game/arrangement.ts",
+      "lineRange": [
+        160,
+        164
+      ],
+      "summary": "Replaces the Roman numeral of a single bar, bounds-checking the bar index.",
+      "tags": [
+        "immutable-update",
+        "harmony",
+        "arrangement"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:src/game/arrangement.ts:fitProgression",
+      "type": "function",
+      "name": "fitProgression",
+      "filePath": "src/game/arrangement.ts",
+      "lineRange": [
+        167,
+        170
+      ],
+      "summary": "Repeats or truncates a Roman-numeral progression to exactly `bars` entries, defaulting to i when empty.",
+      "tags": [
+        "harmony",
+        "utility",
+        "arrangement"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:src/game/arrangement.ts:setChords",
+      "type": "function",
+      "name": "setChords",
+      "filePath": "src/game/arrangement.ts",
+      "lineRange": [
+        173,
+        176
+      ],
+      "summary": "Replaces the whole chord progression, rejecting empty input and cycling it to fit the loop length.",
+      "tags": [
+        "immutable-update",
+        "harmony",
+        "validation"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:src/game/arrangement.ts:setBpm",
+      "type": "function",
+      "name": "setBpm",
+      "filePath": "src/game/arrangement.ts",
+      "lineRange": [
+        178,
+        181
+      ],
+      "summary": "Sets tempo, clamping to 50-160 bpm and rounding to an integer.",
+      "tags": [
+        "immutable-update",
+        "tempo",
+        "validation"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:src/game/arrangement.ts:setKey",
+      "type": "function",
+      "name": "setKey",
+      "filePath": "src/game/arrangement.ts",
+      "lineRange": [
+        183,
+        185
+      ],
+      "summary": "Sets the arrangement key, storing a copy so the caller's Key object cannot be mutated.",
+      "tags": [
+        "immutable-update",
+        "key",
+        "arrangement"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:src/game/arrangement.ts:snapshotStep",
+      "type": "function",
+      "name": "snapshotStep",
+      "filePath": "src/game/arrangement.ts",
+      "lineRange": [
+        228,
+        268
+      ],
+      "summary": "Resolves one bar/step to absolute MIDI - chord tones, melody voices with chord-tone flags, bass, per-voice drum hits, kit id and swing delay - the only place scale degrees become pitches.",
+      "tags": [
+        "serialization",
+        "audio-boundary",
+        "music-model",
+        "critical-path"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:src/game/arrangement.ts:loopLength",
+      "type": "function",
+      "name": "loopLength",
+      "filePath": "src/game/arrangement.ts",
+      "lineRange": [
+        271,
+        273
+      ],
+      "summary": "Returns the loop length in steps (bars x stepsPerBar).",
+      "tags": [
+        "utility",
+        "timing",
+        "arrangement"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:src/game/arrangement.ts:locateStep",
+      "type": "function",
+      "name": "locateStep",
+      "filePath": "src/game/arrangement.ts",
+      "lineRange": [
+        276,
+        280
+      ],
+      "summary": "Maps a global step counter to a {bar, step} pair, wrapping negative and overflowing indices back into the loop.",
+      "tags": [
+        "utility",
+        "timing",
+        "arrangement"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:src/game/arrangement.ts:hashMelodySet",
+      "type": "function",
+      "name": "hashMelodySet",
+      "filePath": "src/game/arrangement.ts",
+      "lineRange": [
+        287,
+        300
+      ],
+      "summary": "Hashes a melody set plus progression into a stable 8-char hex key over sorted onset tuples, so renames, slot no-ops and delete/recreate all dedupe to the same preset.",
+      "tags": [
+        "hashing",
+        "deduplication",
+        "presets"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:src/game/arrangement.ts:onsetKey",
+      "type": "function",
+      "name": "onsetKey",
+      "filePath": "src/game/arrangement.ts",
+      "lineRange": [
+        307,
+        309
+      ],
+      "summary": "Builds the canonical `slot:bar:step:degree:len` identity string for one melody onset, shared by preset dedup and potency tracking.",
+      "tags": [
+        "serialization",
+        "identity",
+        "melody"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:src/game/arrangement.ts:onsetKeysOf",
+      "type": "function",
+      "name": "onsetKeysOf",
+      "filePath": "src/game/arrangement.ts",
+      "lineRange": [
+        311,
+        321
+      ],
+      "summary": "Flattens every non-null melody onset of a track grid into its canonical onset key.",
+      "tags": [
+        "utility",
+        "serialization",
+        "melody"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:src/game/arrangement.ts:allOnsetKeys",
+      "type": "function",
+      "name": "allOnsetKeys",
+      "filePath": "src/game/arrangement.ts",
+      "lineRange": [
+        324,
+        326
+      ],
+      "summary": "Returns the canonical keys of every onset currently on the loop.",
+      "tags": [
+        "utility",
+        "serialization",
+        "melody"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:src/game/groove.ts",
+      "type": "file",
+      "name": "groove.ts",
+      "filePath": "src/game/groove.ts",
+      "summary": "Drum rig model: banks of 4x4 clips (4 voices x 4 complexity tiers), rigs that pick one clip per voice, kits that own timbre plus the combat effect, swing feel, bottling and legacy-aware persistence parsing.",
+      "tags": [
+        "data-model",
+        "drum-rig",
+        "drum-notation",
+        "serialization",
+        "core-engine"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "function:src/game/groove.ts:parsePattern",
+      "type": "function",
+      "name": "parsePattern",
+      "filePath": "src/game/groove.ts",
+      "lineRange": [
+        124,
+        133
+      ],
+      "summary": "Parses a 16-character notation string (X/x/g/r/R/-) into a clip's hit array, throwing on bad length or unknown glyphs.",
+      "tags": [
+        "parsing",
+        "notation",
+        "validation",
+        "drum-rig"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:src/game/groove.ts:formatPattern",
+      "type": "function",
+      "name": "formatPattern",
+      "filePath": "src/game/groove.ts",
+      "lineRange": [
+        136,
+        146
+      ],
+      "summary": "Renders a clip's steps back to the readable 16-character notation, round-tripping parsePattern.",
+      "tags": [
+        "serialization",
+        "notation",
+        "drum-rig"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:src/game/groove.ts:emptySteps",
+      "type": "function",
+      "name": "emptySteps",
+      "filePath": "src/game/groove.ts",
+      "lineRange": [
+        152,
+        154
+      ],
+      "summary": "Creates a 16-slot all-rest clip step array.",
+      "tags": [
+        "factory",
+        "defaults",
+        "drum-rig"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:src/game/groove.ts:emptyCell",
+      "type": "function",
+      "name": "emptyCell",
+      "filePath": "src/game/groove.ts",
+      "lineRange": [
+        156,
+        163
+      ],
+      "summary": "Creates a four-voice groove cell with every column resting.",
+      "tags": [
+        "factory",
+        "defaults",
+        "drum-rig"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:src/game/groove.ts:cloneCell",
+      "type": "function",
+      "name": "cloneCell",
+      "filePath": "src/game/groove.ts",
+      "lineRange": [
+        165,
+        171
+      ],
+      "summary": "Deep-copies a groove cell so hit objects are never shared between rigs.",
+      "tags": [
+        "cloning",
+        "immutability",
+        "drum-rig"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:src/game/groove.ts:cloneGroove",
+      "type": "function",
+      "name": "cloneGroove",
+      "filePath": "src/game/groove.ts",
+      "lineRange": [
+        173,
+        180
+      ],
+      "summary": "Deep-copies a rig including picks, effect and the resolved cell.",
+      "tags": [
+        "cloning",
+        "immutability",
+        "drum-rig"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:src/game/groove.ts:clampTier",
+      "type": "function",
+      "name": "clampTier",
+      "filePath": "src/game/groove.ts",
+      "lineRange": [
+        182,
+        185
+      ],
+      "summary": "Coerces an arbitrary number into a valid clip tier 0-3, defaulting to 0 for non-finite input.",
+      "tags": [
+        "validation",
+        "utility",
+        "drum-rig"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:src/game/groove.ts:clampSwing",
+      "type": "function",
+      "name": "clampSwing",
+      "filePath": "src/game/groove.ts",
+      "lineRange": [
+        187,
+        189
+      ],
+      "summary": "Clamps swing into 0..MAX_SWING (0.6), rounded to two decimals.",
+      "tags": [
+        "validation",
+        "utility",
+        "swing"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:src/game/groove.ts:resolveCell",
+      "type": "function",
+      "name": "resolveCell",
+      "filePath": "src/game/groove.ts",
+      "lineRange": [
+        192,
+        200
+      ],
+      "summary": "Copies each picked clip from a bank into its voice's 16-step column; a bank missing a clip leaves that column silent instead of throwing.",
+      "tags": [
+        "resolution",
+        "drum-rig",
+        "defensive"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:src/game/groove.ts:createRig",
+      "type": "function",
+      "name": "createRig",
+      "filePath": "src/game/groove.ts",
+      "lineRange": [
+        210,
+        234
+      ],
+      "summary": "Builds a rig from a bank, per-voice picks, a kit and an optional identity seed: clamps tiers, resolves the cell and adopts the bank's swing feel.",
+      "tags": [
+        "factory",
+        "drum-rig",
+        "equipment"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:src/game/groove.ts:applyKit",
+      "type": "function",
+      "name": "applyKit",
+      "filePath": "src/game/groove.ts",
+      "lineRange": [
+        237,
+        239
+      ],
+      "summary": "Swaps a rig's drum kit - timbre id and the denormalized combat effect - without touching its pattern.",
+      "tags": [
+        "immutable-update",
+        "kit",
+        "combat-effect"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:src/game/groove.ts:withPick",
+      "type": "function",
+      "name": "withPick",
+      "filePath": "src/game/groove.ts",
+      "lineRange": [
+        242,
+        255
+      ],
+      "summary": "Swaps one voice's clip tier from a bank and marks the rig as hand-built (custom).",
+      "tags": [
+        "immutable-update",
+        "drum-rig",
+        "customization"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:src/game/groove.ts:withBank",
+      "type": "function",
+      "name": "withBank",
+      "filePath": "src/game/groove.ts",
+      "lineRange": [
+        258,
+        271
+      ],
+      "summary": "Switches a rig to another bank page, adopting that bank's default pads, feel and identity while bottled rigs keep their id.",
+      "tags": [
+        "immutable-update",
+        "bank",
+        "drum-rig"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:src/game/groove.ts:tweakGroove",
+      "type": "function",
+      "name": "tweakGroove",
+      "filePath": "src/game/groove.ts",
+      "lineRange": [
+        274,
+        279
+      ],
+      "summary": "Applies knob edits (swing) to a rig, clamping out-of-range values instead of throwing.",
+      "tags": [
+        "immutable-update",
+        "tuning",
+        "swing"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:src/game/groove.ts:grooveHitVel",
+      "type": "function",
+      "name": "grooveHitVel",
+      "filePath": "src/game/groove.ts",
+      "lineRange": [
+        286,
+        289
+      ],
+      "summary": "Returns the hit velocity at a step, 0 for rests and out-of-range steps.",
+      "tags": [
+        "read",
+        "drum-rig",
+        "playback"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:src/game/groove.ts:grooveHit",
+      "type": "function",
+      "name": "grooveHit",
+      "filePath": "src/game/groove.ts",
+      "lineRange": [
+        292,
+        294
+      ],
+      "summary": "True when the rig sounds the given voice on the given step.",
+      "tags": [
+        "read",
+        "drum-rig",
+        "playback"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:src/game/groove.ts:grooveHitRoll",
+      "type": "function",
+      "name": "grooveHitRoll",
+      "filePath": "src/game/groove.ts",
+      "lineRange": [
+        297,
+        300
+      ],
+      "summary": "Returns the number of extra 32nd-note sub-hits scheduled inside a step.",
+      "tags": [
+        "read",
+        "drum-rig",
+        "playback"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:src/game/groove.ts:countGrooveHits",
+      "type": "function",
+      "name": "countGrooveHits",
+      "filePath": "src/game/groove.ts",
+      "lineRange": [
+        303,
+        311
+      ],
+      "summary": "Counts the hits the rig will actually sound across one bar.",
+      "tags": [
+        "counting",
+        "drum-rig",
+        "read"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:src/game/groove.ts:isSilent",
+      "type": "function",
+      "name": "isSilent",
+      "filePath": "src/game/groove.ts",
+      "lineRange": [
+        314,
+        316
+      ],
+      "summary": "True when every drum column of the rig rests.",
+      "tags": [
+        "validation",
+        "drum-rig",
+        "read"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:src/game/groove.ts:swingDelaySteps",
+      "type": "function",
+      "name": "swingDelaySteps",
+      "filePath": "src/game/groove.ts",
+      "lineRange": [
+        322,
+        324
+      ],
+      "summary": "Swing lag for one step in 16th-step units - half the swing value on odd steps, 0 on even - so the feel holds at any bpm.",
+      "tags": [
+        "timing",
+        "swing",
+        "playback"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:src/game/groove.ts:describeGrooveEffect",
+      "type": "function",
+      "name": "describeGrooveEffect",
+      "filePath": "src/game/groove.ts",
+      "lineRange": [
+        327,
+        336
+      ],
+      "summary": "Renders a rig's combat effect (cadence, crit bonus, parry window) into a short human-readable line for cards and the battle meter.",
+      "tags": [
+        "formatting",
+        "ui-copy",
+        "combat-effect"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:src/game/groove.ts:bottleGroove",
+      "type": "function",
+      "name": "bottleGroove",
+      "filePath": "src/game/groove.ts",
+      "lineRange": [
+        343,
+        351
+      ],
+      "summary": "Compose-to-bottle: names the current rig, gives it a unique bottle id and hands it back as a recallable bottle card.",
+      "tags": [
+        "factory",
+        "persistence",
+        "bottling"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:src/game/groove.ts:isHit",
+      "type": "function",
+      "name": "isHit",
+      "filePath": "src/game/groove.ts",
+      "lineRange": [
+        353,
+        362
+      ],
+      "summary": "Type guard validating that a persisted step value carries a 0..1 velocity and an optional roll of 0/1/2.",
+      "tags": [
+        "validation",
+        "type-guard",
+        "parsing"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:src/game/groove.ts:parseSteps",
+      "type": "function",
+      "name": "parseSteps",
+      "filePath": "src/game/groove.ts",
+      "lineRange": [
+        364,
+        376
+      ],
+      "summary": "Validates and normalises a persisted 16-slot step array, returning null when malformed.",
+      "tags": [
+        "parsing",
+        "validation",
+        "persistence"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:src/game/groove.ts:parsePicks",
+      "type": "function",
+      "name": "parsePicks",
+      "filePath": "src/game/groove.ts",
+      "lineRange": [
+        387,
+        397
+      ],
+      "summary": "Reads persisted per-voice tier picks, defaulting each unknown voice to tier 0.",
+      "tags": [
+        "parsing",
+        "validation",
+        "persistence"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:src/game/groove.ts:parseEffect",
+      "type": "function",
+      "name": "parseEffect",
+      "filePath": "src/game/groove.ts",
+      "lineRange": [
+        399,
+        408
+      ],
+      "summary": "Reads a persisted groove effect, falling back to the neutral value per field for missing or non-finite entries.",
+      "tags": [
+        "parsing",
+        "validation",
+        "persistence"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:src/game/groove.ts:parseGroove",
+      "type": "function",
+      "name": "parseGroove",
+      "filePath": "src/game/groove.ts",
+      "lineRange": [
+        415,
+        449
+      ],
+      "summary": "Parses a persisted rig from either the v2 cell format or the legacy hit-offset format, returning null for anything malformed so old saves degrade instead of crashing.",
+      "tags": [
+        "parsing",
+        "migration",
+        "persistence",
+        "validation"
+      ],
+      "complexity": "moderate"
+    }
+  ],
+  "edges": [
+    {
+      "source": "file:src/game/arrangement.ts",
+      "target": "file:src/game/groove.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/game/arrangement.ts",
+      "target": "file:src/game/theory.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/game/arrangement.ts",
+      "target": "function:src/game/arrangement.ts:createDefaultArrangement",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/game/arrangement.ts",
+      "target": "function:src/game/arrangement.ts:createDefaultArrangement",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/game/arrangement.ts",
+      "target": "function:src/game/arrangement.ts:toggleNoteEvent",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/game/arrangement.ts",
+      "target": "function:src/game/arrangement.ts:toggleNoteEvent",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/game/arrangement.ts",
+      "target": "function:src/game/arrangement.ts:clearTracks",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/game/arrangement.ts",
+      "target": "function:src/game/arrangement.ts:clearTracks",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/game/arrangement.ts",
+      "target": "function:src/game/arrangement.ts:countOnsets",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/game/arrangement.ts",
+      "target": "function:src/game/arrangement.ts:countOnsets",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/game/arrangement.ts",
+      "target": "function:src/game/arrangement.ts:setGroove",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/game/arrangement.ts",
+      "target": "function:src/game/arrangement.ts:setGroove",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/game/arrangement.ts",
+      "target": "function:src/game/arrangement.ts:withMelody",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/game/arrangement.ts",
+      "target": "function:src/game/arrangement.ts:withMelody",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/game/arrangement.ts",
+      "target": "function:src/game/arrangement.ts:tweakGrooveKnobs",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/game/arrangement.ts",
+      "target": "function:src/game/arrangement.ts:tweakGrooveKnobs",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/game/arrangement.ts",
+      "target": "function:src/game/arrangement.ts:setBarChord",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/game/arrangement.ts",
+      "target": "function:src/game/arrangement.ts:setBarChord",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/game/arrangement.ts",
+      "target": "function:src/game/arrangement.ts:fitProgression",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/game/arrangement.ts",
+      "target": "function:src/game/arrangement.ts:fitProgression",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/game/arrangement.ts",
+      "target": "function:src/game/arrangement.ts:setChords",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/game/arrangement.ts",
+      "target": "function:src/game/arrangement.ts:setChords",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/game/arrangement.ts",
+      "target": "function:src/game/arrangement.ts:setBpm",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/game/arrangement.ts",
+      "target": "function:src/game/arrangement.ts:setBpm",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/game/arrangement.ts",
+      "target": "function:src/game/arrangement.ts:setKey",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/game/arrangement.ts",
+      "target": "function:src/game/arrangement.ts:setKey",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/game/arrangement.ts",
+      "target": "function:src/game/arrangement.ts:snapshotStep",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/game/arrangement.ts",
+      "target": "function:src/game/arrangement.ts:snapshotStep",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/game/arrangement.ts",
+      "target": "function:src/game/arrangement.ts:loopLength",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/game/arrangement.ts",
+      "target": "function:src/game/arrangement.ts:loopLength",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/game/arrangement.ts",
+      "target": "function:src/game/arrangement.ts:locateStep",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/game/arrangement.ts",
+      "target": "function:src/game/arrangement.ts:locateStep",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/game/arrangement.ts",
+      "target": "function:src/game/arrangement.ts:hashMelodySet",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/game/arrangement.ts",
+      "target": "function:src/game/arrangement.ts:hashMelodySet",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/game/arrangement.ts",
+      "target": "function:src/game/arrangement.ts:onsetKey",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/game/arrangement.ts",
+      "target": "function:src/game/arrangement.ts:onsetKey",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/game/arrangement.ts",
+      "target": "function:src/game/arrangement.ts:onsetKeysOf",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/game/arrangement.ts",
+      "target": "function:src/game/arrangement.ts:allOnsetKeys",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/game/arrangement.ts",
+      "target": "function:src/game/arrangement.ts:allOnsetKeys",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/game/groove.ts",
+      "target": "function:src/game/groove.ts:parsePattern",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/game/groove.ts",
+      "target": "function:src/game/groove.ts:parsePattern",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/game/groove.ts",
+      "target": "function:src/game/groove.ts:formatPattern",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/game/groove.ts",
+      "target": "function:src/game/groove.ts:formatPattern",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/game/groove.ts",
+      "target": "function:src/game/groove.ts:emptySteps",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/game/groove.ts",
+      "target": "function:src/game/groove.ts:emptySteps",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/game/groove.ts",
+      "target": "function:src/game/groove.ts:emptyCell",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/game/groove.ts",
+      "target": "function:src/game/groove.ts:emptyCell",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/game/groove.ts",
+      "target": "function:src/game/groove.ts:cloneCell",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/game/groove.ts",
+      "target": "function:src/game/groove.ts:cloneCell",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/game/groove.ts",
+      "target": "function:src/game/groove.ts:cloneGroove",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/game/groove.ts",
+      "target": "function:src/game/groove.ts:cloneGroove",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/game/groove.ts",
+      "target": "function:src/game/groove.ts:clampTier",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/game/groove.ts",
+      "target": "function:src/game/groove.ts:clampTier",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/game/groove.ts",
+      "target": "function:src/game/groove.ts:clampSwing",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/game/groove.ts",
+      "target": "function:src/game/groove.ts:clampSwing",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/game/groove.ts",
+      "target": "function:src/game/groove.ts:resolveCell",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/game/groove.ts",
+      "target": "function:src/game/groove.ts:resolveCell",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/game/groove.ts",
+      "target": "function:src/game/groove.ts:createRig",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/game/groove.ts",
+      "target": "function:src/game/groove.ts:createRig",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/game/groove.ts",
+      "target": "function:src/game/groove.ts:applyKit",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/game/groove.ts",
+      "target": "function:src/game/groove.ts:applyKit",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/game/groove.ts",
+      "target": "function:src/game/groove.ts:withPick",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/game/groove.ts",
+      "target": "function:src/game/groove.ts:withPick",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/game/groove.ts",
+      "target": "function:src/game/groove.ts:withBank",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/game/groove.ts",
+      "target": "function:src/game/groove.ts:withBank",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/game/groove.ts",
+      "target": "function:src/game/groove.ts:tweakGroove",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/game/groove.ts",
+      "target": "function:src/game/groove.ts:tweakGroove",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/game/groove.ts",
+      "target": "function:src/game/groove.ts:grooveHitVel",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/game/groove.ts",
+      "target": "function:src/game/groove.ts:grooveHitVel",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/game/groove.ts",
+      "target": "function:src/game/groove.ts:grooveHit",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/game/groove.ts",
+      "target": "function:src/game/groove.ts:grooveHit",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/game/groove.ts",
+      "target": "function:src/game/groove.ts:grooveHitRoll",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/game/groove.ts",
+      "target": "function:src/game/groove.ts:grooveHitRoll",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/game/groove.ts",
+      "target": "function:src/game/groove.ts:countGrooveHits",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/game/groove.ts",
+      "target": "function:src/game/groove.ts:countGrooveHits",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/game/groove.ts",
+      "target": "function:src/game/groove.ts:isSilent",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/game/groove.ts",
+      "target": "function:src/game/groove.ts:isSilent",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/game/groove.ts",
+      "target": "function:src/game/groove.ts:swingDelaySteps",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/game/groove.ts",
+      "target": "function:src/game/groove.ts:swingDelaySteps",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/game/groove.ts",
+      "target": "function:src/game/groove.ts:describeGrooveEffect",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/game/groove.ts",
+      "target": "function:src/game/groove.ts:describeGrooveEffect",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/game/groove.ts",
+      "target": "function:src/game/groove.ts:bottleGroove",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/game/groove.ts",
+      "target": "function:src/game/groove.ts:bottleGroove",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/game/groove.ts",
+      "target": "function:src/game/groove.ts:isHit",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/game/groove.ts",
+      "target": "function:src/game/groove.ts:parseSteps",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/game/groove.ts",
+      "target": "function:src/game/groove.ts:parsePicks",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/game/groove.ts",
+      "target": "function:src/game/groove.ts:parseEffect",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/game/groove.ts",
+      "target": "function:src/game/groove.ts:parseGroove",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/game/groove.ts",
+      "target": "function:src/game/groove.ts:parseGroove",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:src/game/arrangement.ts:createDefaultArrangement",
+      "target": "function:src/game/arrangement.ts:fitProgression",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:src/game/arrangement.ts:withMelody",
+      "target": "function:src/game/arrangement.ts:fitProgression",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:src/game/arrangement.ts:setChords",
+      "target": "function:src/game/arrangement.ts:fitProgression",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:src/game/arrangement.ts:locateStep",
+      "target": "function:src/game/arrangement.ts:loopLength",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:src/game/arrangement.ts:hashMelodySet",
+      "target": "function:src/game/arrangement.ts:onsetKeysOf",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:src/game/arrangement.ts:allOnsetKeys",
+      "target": "function:src/game/arrangement.ts:onsetKeysOf",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:src/game/arrangement.ts:setGroove",
+      "target": "function:src/game/groove.ts:cloneGroove",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:src/game/arrangement.ts:tweakGrooveKnobs",
+      "target": "function:src/game/groove.ts:tweakGroove",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:src/game/arrangement.ts:snapshotStep",
+      "target": "function:src/game/groove.ts:grooveHitVel",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:src/game/arrangement.ts:snapshotStep",
+      "target": "function:src/game/groove.ts:swingDelaySteps",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:src/game/arrangement.ts:snapshotStep",
+      "target": "function:src/game/theory.ts:degreeToMidi",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:src/game/arrangement.ts:snapshotStep",
+      "target": "function:src/game/theory.ts:romanToChord",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:src/game/groove.ts:cloneGroove",
+      "target": "function:src/game/groove.ts:cloneCell",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:src/game/groove.ts:createRig",
+      "target": "function:src/game/groove.ts:resolveCell",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:src/game/groove.ts:withPick",
+      "target": "function:src/game/groove.ts:resolveCell",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:src/game/groove.ts:withBank",
+      "target": "function:src/game/groove.ts:applyKit",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:src/game/groove.ts:withBank",
+      "target": "function:src/game/groove.ts:resolveCell",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:src/game/groove.ts:tweakGroove",
+      "target": "function:src/game/groove.ts:clampSwing",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:src/game/groove.ts:grooveHit",
+      "target": "function:src/game/groove.ts:grooveHitVel",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:src/game/groove.ts:countGrooveHits",
+      "target": "function:src/game/groove.ts:grooveHit",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:src/game/groove.ts:isSilent",
+      "target": "function:src/game/groove.ts:countGrooveHits",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:src/game/groove.ts:bottleGroove",
+      "target": "function:src/game/groove.ts:cloneGroove",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:src/game/groove.ts:parseGroove",
+      "target": "function:src/game/groove.ts:parseSteps",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:src/game/groove.ts:parseSteps",
+      "target": "function:src/game/groove.ts:isHit",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:src/game/groove.ts:parsePicks",
+      "target": "function:src/game/groove.ts:clampTier",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    }
+  ]
+}

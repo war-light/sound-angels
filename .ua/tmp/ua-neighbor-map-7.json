@@ -1,0 +1,11 @@
+{
+  "src/main.tsx": [
+    {
+      "path": "src/App.tsx",
+      "batchIndex": 6,
+      "symbols": [
+        "App"
+      ]
+    }
+  ]
+}

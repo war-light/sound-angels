@@ -1,8 +1,11 @@
 import { useEffect, useRef } from "react"
 import { useSessionStore } from "@/state/useSessionStore"
+import type { LogEntry } from "@/game/combat"
 
-export function CombatLog() {
-  const log = useSessionStore((s) => s.fight.log)
+/** Defaults to the classic fight log; stage combat passes its own entries. */
+export function CombatLog({ entries }: { entries?: LogEntry[] } = {}) {
+  const fightLog = useSessionStore((s) => s.fight.log)
+  const log = entries ?? fightLog
   const bottomRef = useRef<HTMLDivElement>(null)
 
   useEffect(() => {

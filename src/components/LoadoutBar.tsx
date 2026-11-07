@@ -3,7 +3,7 @@ import { useSessionStore } from "@/state/useSessionStore"
 import { Button } from "@/components/ui/button"
 import { cn } from "@/lib/utils"
 import { CardPreviewButton } from "@/components/CardPreviewButton"
-import { drumOnly, withMelody } from "@/game/arrangement"
+import { setGroove, withMelody } from "@/game/arrangement"
 
 /**
  * In-combat card bar: the grooves and melodies carried into the fight. Picks
@@ -49,7 +49,7 @@ export function LoadoutBar() {
   return (
     <section aria-label="Card loadout" className="flex flex-col gap-2">
       <div className="flex flex-wrap items-center gap-1.5">
-        <span className="text-muted-foreground text-xs tracking-widest uppercase">grooves</span>
+        <span className="text-muted-foreground text-xs tracking-widest uppercase">rigs</span>
         {grooves.map((g) => {
           const equipped = equippedGrooveId === g.id
           const pending = pendingGrooveId === g.id
@@ -76,7 +76,8 @@ export function LoadoutBar() {
               </Button>
               <CardPreviewButton
                 id={`groove:${g.id}`}
-                arrangement={drumOnly(arrangement, g)}
+                arrangement={setGroove(arrangement, g)}
+                layers="drums"
                 disabled={playing}
               />
             </div>
@@ -147,6 +148,7 @@ export function LoadoutBar() {
               <CardPreviewButton
                 id={`melody:${c.id}`}
                 arrangement={withMelody(arrangement, c.tracks, c.chords)}
+                layers="melody"
                 disabled={playing}
               />
             </div>

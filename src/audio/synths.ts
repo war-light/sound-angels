@@ -3,9 +3,12 @@
 //
 // Source x instrument rule: every instrument owns a lead (melody lanes), a
 // pad (chord stabs), and a bass (beat source). Drums are shared hardware
-// recolored live via each instrument's kit recipe when it holds the beat.
+// recolored live from the equipped drum kit (see data/kits.ts).
 import * as Tone from "tone"
-import { INSTRUMENTS, NEUTRAL_KIT, type BassRecipe, type KitRecipe, type VoiceRecipe } from "@/data/enemies"
+import { INSTRUMENTS, type BassRecipe, type VoiceRecipe } from "@/data/enemies"
+import { NEUTRAL_TIMBRE } from "@/data/kits"
+import type { DrumTimbre, DrumVoice } from "@/game/groove"
+import type { DrumHitSnapshot } from "@/game/arrangement"
 import { ensureAudio, getMaster } from "./context"
 
 export interface InstrumentVoices {
@@ -19,12 +22,13 @@ export interface Voices {
   kick: Tone.MembraneSynth
   snare: Tone.NoiseSynth
   hat: Tone.NoiseSynth
+  perc: Tone.MetalSynth
   reverb: Tone.Reverb
 }
 
 let voices: Voices | null = null
 /** Kit currently dialed into the shared drums (avoids redundant sets). */
-let liveKit: KitRecipe | null = null
+let liveKit: DrumTimbre | null = null
 
 function makeLead(recipe: VoiceRecipe, verbGain: Tone.Gain, master: Tone.Gain): Tone.PolySynth {
   const synth = new Tone.PolySynth(Tone.Synth, {
@@ -72,30 +76,41 @@ export async function initVoices(): Promise<Voices> {
     }
   }
 
+  const kit = NEUTRAL_TIMBRE
   const kick = new Tone.MembraneSynth({
-    pitchDecay: NEUTRAL_KIT.kickPitchDecay,
-    octaves: NEUTRAL_KIT.kickOctaves,
-    envelope: { attack: 0.001, decay: NEUTRAL_KIT.kickDecay, sustain: 0.01, release: 0.4 },
+    pitchDecay: kit.kick.pitchDecay,
+    octaves: kit.kick.octaves,
+    envelope: { attack: 0.001, decay: kit.kick.decay, sustain: 0.01, release: 0.4 },
   })
-  kick.volume.value = NEUTRAL_KIT.kickVolume
+  kick.volume.value = kit.kick.volume
   kick.connect(master)
 
   const snare = new Tone.NoiseSynth({
     noise: { type: "white" },
-    envelope: { attack: 0.001, decay: NEUTRAL_KIT.snareDecay, sustain: 0, release: 0.1 },
+    envelope: { attack: 0.001, decay: kit.snare.decay, sustain: 0, release: 0.1 },
   })
-  snare.volume.value = NEUTRAL_KIT.snareVolume
+  snare.volume.value = kit.snare.volume
   snare.connect(master)
 
   const hat = new Tone.NoiseSynth({
     noise: { type: "pink" },
-    envelope: { attack: 0.001, decay: NEUTRAL_KIT.hatDecay, sustain: 0, release: 0.03 },
+    envelope: { attack: 0.001, decay: kit.hat.decay, sustain: 0, release: 0.03 },
   })
-  hat.volume.value = NEUTRAL_KIT.hatVolume
+  hat.volume.value = kit.hat.volume
   hat.connect(master)
 
-  voices = { instruments, kick, snare, hat, reverb }
-  liveKit = NEUTRAL_KIT
+  const perc = new Tone.MetalSynth({
+    harmonicity: kit.perc.harmonicity,
+    resonance: kit.perc.resonance,
+    modulationIndex: 12,
+    octaves: 1.5,
+    envelope: { attack: 0.001, decay: kit.perc.decay, release: 0.02 },
+  })
+  perc.volume.value = kit.perc.volume
+  perc.connect(master)
+
+  voices = { instruments, kick, snare, hat, perc, reverb }
+  liveKit = kit
   return voices
 }
 
@@ -112,22 +127,51 @@ export function instrumentVoices(id: string | null): InstrumentVoices {
 }
 
 /**
- * Dial an instrument's kit recipe into the shared drums. Null restores the
- * neutral room pulse. Live param sets only — no reallocation.
+ * Dial a drum kit's timbre into the shared drums. Null restores the neutral
+ * room pulse. Live param sets only — no reallocation.
  */
-export function applyKit(kit: KitRecipe | null): void {
-  const next = kit ?? NEUTRAL_KIT
+export function applyDrumKit(kit: DrumTimbre | null): void {
+  const next = kit ?? NEUTRAL_TIMBRE
   if (next === liveKit) return
   liveKit = next
   const v = getVoices()
-  v.kick.pitchDecay = next.kickPitchDecay
-  v.kick.octaves = next.kickOctaves
-  v.kick.envelope.decay = next.kickDecay
-  v.kick.volume.value = next.kickVolume
-  v.snare.envelope.decay = next.snareDecay
-  v.snare.volume.value = next.snareVolume
-  v.hat.envelope.decay = next.hatDecay
-  v.hat.volume.value = next.hatVolume
+  v.kick.pitchDecay = next.kick.pitchDecay
+  v.kick.octaves = next.kick.octaves
+  v.kick.envelope.decay = next.kick.decay
+  v.kick.volume.value = next.kick.volume
+  v.snare.envelope.decay = next.snare.decay
+  v.snare.volume.value = next.snare.volume
+  v.hat.envelope.decay = next.hat.decay
+  v.hat.volume.value = next.hat.volume
+  v.perc.harmonicity = next.perc.harmonicity
+  v.perc.resonance = next.perc.resonance
+  v.perc.envelope.decay = next.perc.decay
+  v.perc.volume.value = next.perc.volume
+}
+
+/**
+ * Fire one step of drums. Rolls schedule extra 32nd sub-hits inside the
+ * step; velocity carries accents and ghosts.
+ */
+export function triggerDrums(
+  drums: Record<DrumVoice, DrumHitSnapshot>,
+  at: number,
+  stepDur: number,
+  kit: DrumTimbre | null,
+): void {
+  const v = getVoices()
+  const note = (kit ?? NEUTRAL_TIMBRE).perc.note
+  const fire = (hit: DrumHitSnapshot, run: (time: number, vel: number) => void) => {
+    if (hit.vel <= 0) return
+    run(at, hit.vel)
+    for (let i = 1; i <= hit.roll; i++) {
+      run(at + (stepDur * i) / (hit.roll + 1), hit.vel * 0.6)
+    }
+  }
+  fire(drums.kick, (t, vel) => v.kick.triggerAttackRelease("C1", "8n", t, vel))
+  fire(drums.snare, (t, vel) => v.snare.triggerAttackRelease("16n", t, vel))
+  fire(drums.hat, (t, vel) => v.hat.triggerAttackRelease("32n", t, vel))
+  fire(drums.perc, (t, vel) => v.perc.triggerAttackRelease(note, "32n", t, vel))
 }
 
 /** False before initVoices() (e.g. audition keys pressed while halted). */

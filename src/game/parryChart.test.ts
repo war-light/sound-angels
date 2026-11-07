@@ -2,6 +2,7 @@ import { describe, expect, it } from "vitest"
 import {
   degreeToParryLane,
   generateParryChart,
+  generateParryChartFromMelody,
   laneToChordDegree,
   parryKeyToLane,
   PARRY_MOTIFS,
@@ -302,5 +303,46 @@ describe("generateParryChart (grid-locked, song-derived)", () => {
         expect(chordPcs(roman).has(pc)).toBe(true)
       }
     }
+  })
+
+  describe("generateParryChartFromMelody", () => {
+    it("generates valid QTE charts using MarkovMelodyGenerator", () => {
+      const patterns = ["swarm", "ostinato", "inversion", "erasure", "retrograde"]
+      for (const pattern of patterns) {
+        const chart = generateParryChartFromMelody({
+          params: parryParamsFor(pattern),
+          pattern,
+          spanSteps: 32,
+          bpm: 120,
+          key: KEY,
+          chords: ["i", "VI"],
+          stepsPerBar: 16,
+          variant: 0,
+        })
+        expect(chart.lengthSteps).toBe(32)
+        expect(chart.notes.length).toBeGreaterThanOrEqual(3)
+        // All keys are valid ZXCV parry lanes
+        for (const n of chart.notes) {
+          expect(["z", "x", "c", "v"]).toContain(n.key)
+          expect(n.stepOffset).toBeGreaterThanOrEqual(0)
+          expect(n.stepOffset).toBeLessThan(32)
+          expect(n.degree).toBeGreaterThanOrEqual(1)
+        }
+      }
+    })
+
+    it("handles short spans gracefully", () => {
+      const chart = generateParryChartFromMelody({
+        params: parryParamsFor("ostinato"),
+        pattern: "ostinato",
+        spanSteps: 4,
+        bpm: 120,
+        key: KEY,
+        chords: ["i"],
+      })
+      expect(chart.notes.length).toBe(1)
+      expect(chart.lengthSteps).toBe(4)
+      expect(["z", "x", "c", "v"]).toContain(chart.notes[0].key)
+    })
   })
 })

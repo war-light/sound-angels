@@ -1,0 +1,84 @@
+{
+  "projectRoot": "/home/david/Personal Projects/sound-angels",
+  "batchFiles": [
+    {
+      "path": "src/game/arrangement.ts",
+      "language": "typescript",
+      "sizeLines": 326,
+      "fileCategory": "code"
+    },
+    {
+      "path": "src/game/groove.ts",
+      "language": "typescript",
+      "sizeLines": 449,
+      "fileCategory": "code"
+    },
+    {
+      "path": "src/game/loadout.ts",
+      "language": "typescript",
+      "sizeLines": 76,
+      "fileCategory": "code"
+    },
+    {
+      "path": "src/game/melodyBank.ts",
+      "language": "typescript",
+      "sizeLines": 233,
+      "fileCategory": "code"
+    },
+    {
+      "path": "src/game/phase.ts",
+      "language": "typescript",
+      "sizeLines": 39,
+      "fileCategory": "code"
+    },
+    {
+      "path": "src/game/positions.ts",
+      "language": "typescript",
+      "sizeLines": 54,
+      "fileCategory": "code"
+    },
+    {
+      "path": "src/game/presets.ts",
+      "language": "typescript",
+      "sizeLines": 104,
+      "fileCategory": "code"
+    },
+    {
+      "path": "src/game/session.ts",
+      "language": "typescript",
+      "sizeLines": 819,
+      "fileCategory": "code"
+    }
+  ],
+  "batchImportData": {
+    "src/game/arrangement.ts": [
+      "src/game/groove.ts",
+      "src/game/theory.ts"
+    ],
+    "src/game/groove.ts": [],
+    "src/game/loadout.ts": [
+      "src/game/melodyBank.ts"
+    ],
+    "src/game/melodyBank.ts": [
+      "src/game/arrangement.ts"
+    ],
+    "src/game/phase.ts": [],
+    "src/game/positions.ts": [
+      "src/game/arrangement.ts"
+    ],
+    "src/game/presets.ts": [
+      "src/game/arrangement.ts"
+    ],
+    "src/game/session.ts": [
+      "src/game/arrangement.ts",
+      "src/game/combat.ts",
+      "src/game/groove.ts",
+      "src/game/loadout.ts",
+      "src/game/melodyBank.ts",
+      "src/game/phase.ts",
+      "src/game/positions.ts",
+      "src/game/presets.ts",
+      "src/game/theory.ts"
+    ]
+  }
+}

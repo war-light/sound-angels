@@ -11,6 +11,9 @@ interface ResultOverlayProps {
 
 export function ResultOverlay({ phase }: ResultOverlayProps) {
   const fight = useSessionStore((s) => s.fight)
+  const stage = useSessionStore((s) => s.stage)
+  const isStage = useSessionStore((s) => s.combatMode === "stage")
+  const key = isStage ? stage.key : fight.key
   const arrangement = useSessionStore((s) => s.arrangement)
   const encounters = useSessionStore((s) => s.encounters)
   const currentEncounterId = useSessionStore((s) => s.currentEncounterId)
@@ -80,11 +83,31 @@ export function ResultOverlay({ phase }: ResultOverlayProps) {
               : "The Hum Fades"}
           </h2>
           <p className="text-xs text-muted-foreground">
-            {encounter ? encounter.name : "Combat Arena"} · Key of {fight.key.tonic} {fight.key.scale}
+            {encounter ? encounter.name : "Combat Arena"} · Key of {key.tonic} {key.scale}
           </p>
         </div>
 
         {/* Stats & Summary */}
+        {isStage ? (
+          <div className="grid grid-cols-2 gap-3 p-3 rounded-lg bg-muted/20 border border-border/50 text-left text-xs font-mono">
+            <div>
+              <span className="text-muted-foreground block text-[10px] uppercase">Combat Duration</span>
+              <span className="text-foreground font-semibold">{Math.floor(Math.max(0, stage.step) / 16) + 1} bars</span>
+            </div>
+            <div>
+              <span className="text-muted-foreground block text-[10px] uppercase">Damage Dealt</span>
+              <span className="text-foreground font-semibold">{stage.stats.damage}</span>
+            </div>
+            <div>
+              <span className="text-muted-foreground block text-[10px] uppercase">Resolutions</span>
+              <span className="text-primary font-semibold">{stage.stats.resolutions} (best ×{stage.stats.bestMult})</span>
+            </div>
+            <div>
+              <span className="text-muted-foreground block text-[10px] uppercase">Combos Found</span>
+              <span className="text-primary font-semibold">{stage.discovered.length}</span>
+            </div>
+          </div>
+        ) : (
         <div className="grid grid-cols-2 gap-3 p-3 rounded-lg bg-muted/20 border border-border/50 text-left text-xs font-mono">
           <div>
             <span className="text-muted-foreground block text-[10px] uppercase">Combat Duration</span>
@@ -99,6 +122,7 @@ export function ResultOverlay({ phase }: ResultOverlayProps) {
             <span className="text-foreground text-[11px] font-sans">{chordEffect.label}</span>
           </div>
         </div>
+        )}
 
         {/* Tactical Feedback */}
         {!isVictory && encounter?.tip && (

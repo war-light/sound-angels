@@ -1,0 +1,401 @@
+{
+  "nodes": [
+    {
+      "id": "document:docs/chord-remake.md",
+      "type": "document",
+      "name": "chord-remake.md",
+      "filePath": "docs/chord-remake.md",
+      "summary": "Design brief proposing a rebuild of the note-attack system: map the 7 diatonic chords to QWERTYU with arrow-key chord modifications, add a live chord loop, and record melody notes as chord tones plus tension/color tones.",
+      "tags": ["documentation", "design-plan", "chords", "input-mapping"],
+      "complexity": "simple"
+    },
+    {
+      "id": "document:docs/combat-pacing-plan.md",
+      "type": "document",
+      "name": "combat-pacing-plan.md",
+      "filePath": "docs/combat-pacing-plan.md",
+      "summary": "Phased redesign plan for combat pacing: engine work (enemy attack cooldowns, intro grace period, enemy and party HP rebalance), rhythm-aware QTE charts derived from melodies and enemy patterns, number-key character selection, and additive suggestions like stagger and dynamic loop length.",
+      "tags": ["documentation", "planning", "combat", "pacing", "qte"],
+      "complexity": "complex"
+    },
+    {
+      "id": "document:docs/mechanics.md",
+      "type": "document",
+      "name": "mechanics.md",
+      "filePath": "docs/mechanics.md",
+      "summary": "Game design specification for the Polyphonic Active Time Battle system, covering party roles, the four pillars (Harmonic Engine, Melodic Sequencer, Groove Matrix, Cadence Highway), combat math, enemy archetypes, and the three-zone UI screen layout.",
+      "tags": ["documentation", "design-spec", "combat", "music-theory", "game-design"],
+      "complexity": "moderate"
+    },
+    {
+      "id": "document:docs/qte-redesign.md",
+      "type": "document",
+      "name": "qte-redesign.md",
+      "filePath": "docs/qte-redesign.md",
+      "summary": "QTE panel rebuild plan that diagnoses current RAF/state churn jank, surveys FNF/DDR/Guitar Hero conventions, and specifies an always-visible bottom-receptor highway, a single audio-anchored playhead hook, memoized note transforms, and consolidated judgement feedback.",
+      "tags": ["documentation", "planning", "qte", "ui", "performance"],
+      "complexity": "simple"
+    },
+    {
+      "id": "document:docs/v1-plan.md",
+      "type": "document",
+      "name": "v1-plan.md",
+      "filePath": "docs/v1-plan.md",
+      "summary": "V1 audit that compares the mechanics spec against the actual codebase (matches, mismatches, missing features), criticizes the UI, and lays out a phased roadmap from engine fixes through screen flow, combat UI, missing mechanics, and polish.",
+      "tags": ["documentation", "roadmap", "audit", "planning", "game-design"],
+      "complexity": "moderate"
+    }
+  ],
+  "edges": [
+    {
+      "source": "document:docs/mechanics.md",
+      "target": "file:src/game/combat.ts",
+      "type": "documents",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "document:docs/mechanics.md",
+      "target": "file:src/game/theory.ts",
+      "type": "documents",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "document:docs/mechanics.md",
+      "target": "file:src/game/groove.ts",
+      "type": "documents",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "document:docs/mechanics.md",
+      "target": "file:src/game/qte.ts",
+      "type": "documents",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "document:docs/mechanics.md",
+      "target": "file:src/game/arrangement.ts",
+      "type": "documents",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "document:docs/mechanics.md",
+      "target": "file:src/data/enemies.ts",
+      "type": "documents",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "document:docs/mechanics.md",
+      "target": "file:src/components/QtePanel.tsx",
+      "type": "documents",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "document:docs/mechanics.md",
+      "target": "file:src/components/GrooveMatrix.tsx",
+      "type": "documents",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "document:docs/mechanics.md",
+      "target": "file:src/components/screens/CombatScreen.tsx",
+      "type": "documents",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "document:docs/chord-remake.md",
+      "target": "file:src/components/ChordPicker.tsx",
+      "type": "documents",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "document:docs/chord-remake.md",
+      "target": "file:src/game/theory.ts",
+      "type": "documents",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "document:docs/chord-remake.md",
+      "target": "file:src/game/perform.ts",
+      "type": "documents",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "document:docs/chord-remake.md",
+      "target": "file:src/hooks/useWasd.ts",
+      "type": "documents",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "document:docs/chord-remake.md",
+      "target": "file:src/game/session.ts",
+      "type": "documents",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "document:docs/qte-redesign.md",
+      "target": "file:src/components/QtePanel.tsx",
+      "type": "documents",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "document:docs/qte-redesign.md",
+      "target": "file:src/game/qte.ts",
+      "type": "documents",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "document:docs/qte-redesign.md",
+      "target": "file:src/audio/player.ts",
+      "type": "documents",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "document:docs/qte-redesign.md",
+      "target": "file:src/hooks/useQtePlayhead.ts",
+      "type": "documents",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "document:docs/qte-redesign.md",
+      "target": "file:src/state/useSessionStore.ts",
+      "type": "documents",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "document:docs/qte-redesign.md",
+      "target": "file:src/hooks/useWasd.ts",
+      "type": "documents",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "document:docs/qte-redesign.md",
+      "target": "file:src/game/combatQte.test.ts",
+      "type": "documents",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "document:docs/combat-pacing-plan.md",
+      "target": "file:src/game/combat.ts",
+      "type": "documents",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "document:docs/combat-pacing-plan.md",
+      "target": "file:src/data/enemies.ts",
+      "type": "documents",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "document:docs/combat-pacing-plan.md",
+      "target": "file:src/game/qte.ts",
+      "type": "documents",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "document:docs/combat-pacing-plan.md",
+      "target": "file:src/audio/player.ts",
+      "type": "documents",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "document:docs/combat-pacing-plan.md",
+      "target": "file:src/game/arrangement.ts",
+      "type": "documents",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "document:docs/combat-pacing-plan.md",
+      "target": "file:src/data/encounters.ts",
+      "type": "documents",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "document:docs/combat-pacing-plan.md",
+      "target": "file:src/data/roster.ts",
+      "type": "documents",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "document:docs/combat-pacing-plan.md",
+      "target": "file:src/game/units.ts",
+      "type": "documents",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "document:docs/combat-pacing-plan.md",
+      "target": "file:src/game/session.ts",
+      "type": "documents",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "document:docs/combat-pacing-plan.md",
+      "target": "file:src/hooks/useWasd.ts",
+      "type": "documents",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "document:docs/v1-plan.md",
+      "target": "file:src/game/combat.ts",
+      "type": "documents",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "document:docs/v1-plan.md",
+      "target": "file:src/data/chords.ts",
+      "type": "documents",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "document:docs/v1-plan.md",
+      "target": "file:src/game/theory.ts",
+      "type": "documents",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "document:docs/v1-plan.md",
+      "target": "file:src/game/presets.ts",
+      "type": "documents",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "document:docs/v1-plan.md",
+      "target": "file:src/game/qte.ts",
+      "type": "documents",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "document:docs/v1-plan.md",
+      "target": "file:src/data/encounters.ts",
+      "type": "documents",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "document:docs/v1-plan.md",
+      "target": "file:src/game/phase.ts",
+      "type": "documents",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "document:docs/v1-plan.md",
+      "target": "file:src/game/session.ts",
+      "type": "documents",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "document:docs/v1-plan.md",
+      "target": "file:src/game/melodyBank.ts",
+      "type": "documents",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "document:docs/v1-plan.md",
+      "target": "file:src/components/screens/MenuScreen.tsx",
+      "type": "documents",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "document:docs/v1-plan.md",
+      "target": "file:src/components/screens/PrepScreen.tsx",
+      "type": "documents",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "document:docs/v1-plan.md",
+      "target": "file:src/components/screens/CombatScreen.tsx",
+      "type": "documents",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "document:docs/v1-plan.md",
+      "target": "file:src/components/screens/ResultOverlay.tsx",
+      "type": "documents",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "document:docs/v1-plan.md",
+      "target": "file:src/components/StepGrid.tsx",
+      "type": "documents",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "document:docs/v1-plan.md",
+      "target": "file:src/components/TransportBar.tsx",
+      "type": "documents",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "document:docs/v1-plan.md",
+      "target": "file:src/components/QtePanel.tsx",
+      "type": "documents",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "document:docs/v1-plan.md",
+      "target": "file:src/hooks/useWasd.ts",
+      "type": "documents",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "document:docs/v1-plan.md",
+      "target": "document:docs/mechanics.md",
+      "type": "related",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "document:docs/combat-pacing-plan.md",
+      "target": "document:docs/v1-plan.md",
+      "type": "related",
+      "direction": "forward",
+      "weight": 0.5
+    }
+  ]
+}

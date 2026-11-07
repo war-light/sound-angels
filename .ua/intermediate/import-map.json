@@ -1,0 +1,157 @@
+{
+  "scriptCompleted": true,
+  "stats": {
+    "filesScanned": 80,
+    "filesWithImports": 20,
+    "totalEdges": 46
+  },
+  "failures": [],
+  "importMap": {
+    ".gitattributes": [],
+    ".oxlintrc.json": [],
+    "@/components/ui/progress.tsx": [],
+    "AGENTS.md": [],
+    "README.md": [],
+    "components.json": [],
+    "docs/chord-remake.md": [],
+    "docs/combat-pacing-plan.md": [],
+    "docs/mechanics.md": [],
+    "docs/qte-redesign.md": [],
+    "docs/v1-plan.md": [],
+    "index.html": [],
+    "opencode.json": [],
+    "package.json": [],
+    "src/App.tsx": [],
+    "src/audio/context.ts": [],
+    "src/audio/perform.ts": [
+      "src/audio/synths.ts"
+    ],
+    "src/audio/player.ts": [
+      "src/audio/context.ts",
+      "src/audio/synths.ts"
+    ],
+    "src/audio/preview.ts": [
+      "src/audio/context.ts",
+      "src/audio/synths.ts"
+    ],
+    "src/audio/sfx.ts": [
+      "src/audio/synths.ts"
+    ],
+    "src/audio/synths.ts": [
+      "src/audio/context.ts"
+    ],
+    "src/components/CardPreviewButton.tsx": [],
+    "src/components/ChordPicker.tsx": [],
+    "src/components/CombatFeedback.tsx": [],
+    "src/components/CombatLog.tsx": [],
+    "src/components/CustomChordBuilder.tsx": [],
+    "src/components/EncounterBanner.tsx": [],
+    "src/components/FoePanel.tsx": [],
+    "src/components/GrooveMatrix.tsx": [],
+    "src/components/GroovePicker.tsx": [],
+    "src/components/LoadoutBar.tsx": [],
+    "src/components/MelodyCardBar.tsx": [],
+    "src/components/Meter.tsx": [],
+    "src/components/PartyCorner.tsx": [],
+    "src/components/PhaseStrip.tsx": [],
+    "src/components/QtePanel.tsx": [],
+    "src/components/RosterSelectModal.tsx": [],
+    "src/components/StepGrid.tsx": [],
+    "src/components/TransportBar.tsx": [],
+    "src/components/TutorialModal.tsx": [],
+    "src/components/VoiceBar.tsx": [],
+    "src/components/screens/CombatScreen.tsx": [],
+    "src/components/screens/MenuScreen.tsx": [],
+    "src/components/screens/PrepScreen.tsx": [],
+    "src/components/screens/ResultOverlay.tsx": [],
+    "src/components/screens/StudioScreen.tsx": [],
+    "src/components/ui/button.tsx": [],
+    "src/components/ui/dialog.tsx": [],
+    "src/data/beats.ts": [
+      "src/data/kits.ts"
+    ],
+    "src/data/chords.ts": [
+      "src/game/theory.ts"
+    ],
+    "src/data/encounters.ts": [
+      "src/data/enemies.ts"
+    ],
+    "src/data/enemies.ts": [
+      "src/game/parryChart.ts"
+    ],
+    "src/data/kits.ts": [],
+    "src/data/roster.ts": [],
+    "src/game/arrangement.ts": [
+      "src/game/groove.ts",
+      "src/game/theory.ts"
+    ],
+    "src/game/combat.ts": [
+      "src/data/chords.ts",
+      "src/data/enemies.ts",
+      "src/data/roster.ts",
+      "src/game/arrangement.ts",
+      "src/game/keys.ts",
+      "src/game/parryChart.ts",
+      "src/game/perform.ts",
+      "src/game/positions.ts",
+      "src/game/qte.ts",
+      "src/game/theory.ts",
+      "src/game/units.ts"
+    ],
+    "src/game/groove.ts": [],
+    "src/game/keys.ts": [
+      "src/game/theory.ts"
+    ],
+    "src/game/loadout.ts": [
+      "src/game/melodyBank.ts"
+    ],
+    "src/game/melodyBank.ts": [
+      "src/game/arrangement.ts"
+    ],
+    "src/game/parryChart.ts": [
+      "src/game/arrangement.ts",
+      "src/game/perform.ts",
+      "src/game/qte.ts",
+      "src/game/theory.ts"
+    ],
+    "src/game/perform.ts": [],
+    "src/game/phase.ts": [],
+    "src/game/positions.ts": [
+      "src/game/arrangement.ts"
+    ],
+    "src/game/presets.ts": [
+      "src/game/arrangement.ts"
+    ],
+    "src/game/qte.ts": [
+      "src/game/arrangement.ts",
+      "src/game/perform.ts"
+    ],
+    "src/game/session.ts": [
+      "src/game/arrangement.ts",
+      "src/game/combat.ts",
+      "src/game/groove.ts",
+      "src/game/loadout.ts",
+      "src/game/melodyBank.ts",
+      "src/game/phase.ts",
+      "src/game/positions.ts",
+      "src/game/presets.ts",
+      "src/game/theory.ts"
+    ],
+    "src/game/theory.ts": [],
+    "src/game/units.ts": [],
+    "src/hooks/useQtePlayhead.ts": [],
+    "src/hooks/useWasd.ts": [],
+    "src/index.css": [],
+    "src/lib/utils.ts": [],
+    "src/main.tsx": [
+      "src/App.tsx",
+      "src/index.css"
+    ],
+    "src/persistence/storage.ts": [],
+    "src/state/useSessionStore.ts": [],
+    "tsconfig.app.json": [],
+    "tsconfig.json": [],
+    "tsconfig.node.json": [],
+    "vite.config.ts": []
+  }
+}

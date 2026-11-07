@@ -1,0 +1,1186 @@
+{
+  "nodes": [
+    {
+      "id": "config:.gitattributes",
+      "type": "config",
+      "name": ".gitattributes",
+      "filePath": ".gitattributes",
+      "summary": "Git attributes file that routes the generated graphify-out/graph.json through a graphify merge driver, keeping the knowledge-graph artifact conflict-free on merges.",
+      "tags": ["configuration", "git", "merge-driver", "tooling"],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:@/components/ui/progress.tsx",
+      "type": "file",
+      "name": "progress.tsx",
+      "filePath": "@/components/ui/progress.tsx",
+      "summary": "Stray copy of the shadcn Progress bar component that lives in a literal `@/` directory instead of src/components/ui; renders a Radix progress root with a translateX indicator.",
+      "tags": ["component", "ui", "shadcn", "progress-bar", "stray-file"],
+      "complexity": "simple",
+      "languageNotes": "Imports cn from the bare specifier \"cn\" (should resolve via the @/* alias) and uses an inline style for the indicator transform — both deviating from the project's shadcn/Tailwind conventions."
+    },
+    {
+      "id": "function:@/components/ui/progress.tsx:Progress",
+      "type": "function",
+      "name": "Progress",
+      "filePath": "@/components/ui/progress.tsx",
+      "lineRange": [5, 26],
+      "summary": "Exported progress-bar component that forwards Radix Progress props and positions the indicator via a translateX transform derived from `value`.",
+      "tags": ["component", "ui", "wrapper"],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:src/App.tsx",
+      "type": "file",
+      "name": "App.tsx",
+      "filePath": "src/App.tsx",
+      "summary": "Root application component that installs the global WASD key handler and switches between the menu, prep, studio, combat and result screens based on the session's gamePhase.",
+      "tags": ["entry-point", "component", "router", "screen-switcher"],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:src/App.tsx:App",
+      "type": "function",
+      "name": "App",
+      "filePath": "src/App.tsx",
+      "lineRange": [9, 26],
+      "summary": "Default-exported root component: wires useWasd and the session store's gamePhase into the top-level dark layout and its phase-gated screens.",
+      "tags": ["component", "entry-point", "screen-switcher"],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:src/components/CardPreviewButton.tsx",
+      "type": "file",
+      "name": "CardPreviewButton.tsx",
+      "filePath": "src/components/CardPreviewButton.tsx",
+      "summary": "Reusable one-loop audition button shared by groove cards, melody cards and the loop sequencer; scopes playback to the card's own layers so previews never drag the live loop along.",
+      "tags": ["component", "ui", "audio-preview", "shared"],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:src/components/CardPreviewButton.tsx:CardPreviewButton",
+      "type": "function",
+      "name": "CardPreviewButton",
+      "filePath": "src/components/CardPreviewButton.tsx",
+      "lineRange": [13, 47],
+      "summary": "Renders a play/stop button that toggles the session store's single preview slot via togglePreview, showing a sounding state when this card owns the preview.",
+      "tags": ["component", "audio-preview", "event-handler"],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:src/components/ChordPicker.tsx",
+      "type": "file",
+      "name": "ChordPicker.tsx",
+      "filePath": "src/components/ChordPicker.tsx",
+      "summary": "Chord-progression workstation offering one-click cards for built-in and saved custom progressions plus an embedded Harmonic Forge; mid-fight picks open a chart and mute the soloists until the next bar.",
+      "tags": ["component", "music", "harmony", "picker", "combat"],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:src/components/ChordPicker.tsx:chordLabel",
+      "type": "function",
+      "name": "chordLabel",
+      "filePath": "src/components/ChordPicker.tsx",
+      "lineRange": [15, 28],
+      "summary": "Converts a Roman numeral in a key to a short absolute chord label (e.g. \"Am\", \"G7\", \"Bdim\") by inspecting the scale intervals, falling back to an em dash on bad input.",
+      "tags": ["utility", "music-theory", "formatting"],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:src/components/ChordPicker.tsx:ChordPicker",
+      "type": "function",
+      "name": "ChordPicker",
+      "filePath": "src/components/ChordPicker.tsx",
+      "lineRange": [54, 161],
+      "summary": "Exported picker component that maps CHORD_PRESETS and custom presets into selectable cards with tier/aura readouts and toggles the custom Harmonic Forge builder.",
+      "tags": ["component", "music", "picker", "combat"],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:src/components/CombatFeedback.tsx",
+      "type": "file",
+      "name": "CombatFeedback.tsx",
+      "filePath": "src/components/CombatFeedback.tsx",
+      "summary": "Floating combat-callout overlay that watches the fight log and pops transient tags such as CRITICAL STRIKE, PERFECT PARRY, reflects and track wipes for roughly a second each.",
+      "tags": ["component", "combat", "feedback", "animation", "event-handler"],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:src/components/CombatFeedback.tsx:CombatFeedback",
+      "type": "function",
+      "name": "CombatFeedback",
+      "filePath": "src/components/CombatFeedback.tsx",
+      "lineRange": [10, 94],
+      "summary": "Exported overlay component that parses the latest log entry into a typed floating tag, self-expires it after one second, and renders the styled tag stack.",
+      "tags": ["component", "combat", "feedback", "event-handler"],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:src/components/CombatLog.tsx",
+      "type": "file",
+      "name": "CombatLog.tsx",
+      "filePath": "src/components/CombatLog.tsx",
+      "summary": "Scrolling tick-stamped combat log that auto-scrolls to the newest entry via a sentinel ref, exposed as an aria-live status region.",
+      "tags": ["component", "combat", "log", "accessibility"],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:src/components/CombatLog.tsx:CombatLog",
+      "type": "function",
+      "name": "CombatLog",
+      "filePath": "src/components/CombatLog.tsx",
+      "lineRange": [4, 29],
+      "summary": "Exported component that renders each fight.log entry with its tick and scrolls a bottom sentinel into view whenever the log length changes.",
+      "tags": ["component", "combat", "log"],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:src/components/CustomChordBuilder.tsx",
+      "type": "file",
+      "name": "CustomChordBuilder.tsx",
+      "filePath": "src/components/CustomChordBuilder.tsx",
+      "summary": "Harmonic Forge panel where players assemble a multi-bar Roman-numeral progression, see live voice-leading/diatonic/cadence scores and the resulting combat blessing, and save it as a named preset.",
+      "tags": ["component", "music", "harmony", "crafting", "form"],
+      "complexity": "complex"
+    },
+    {
+      "id": "function:src/components/CustomChordBuilder.tsx:MetricBar",
+      "type": "function",
+      "name": "MetricBar",
+      "filePath": "src/components/CustomChordBuilder.tsx",
+      "lineRange": [18, 30],
+      "summary": "Ten-segment readout bar for a 0..100 quality metric, filling segments instead of using an inline width style.",
+      "tags": ["component", "ui", "meter"],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:src/components/CustomChordBuilder.tsx:CustomChordBuilder",
+      "type": "function",
+      "name": "CustomChordBuilder",
+      "filePath": "src/components/CustomChordBuilder.tsx",
+      "lineRange": [32, 266],
+      "summary": "Exported builder component managing bar state and an active bar, applying or charting the progression against the session store, and saving named custom presets.",
+      "tags": ["component", "music", "form", "state-management"],
+      "complexity": "complex"
+    },
+    {
+      "id": "file:src/components/EncounterBanner.tsx",
+      "type": "file",
+      "name": "EncounterBanner.tsx",
+      "filePath": "src/components/EncounterBanner.tsx",
+      "summary": "Encounter stage selector showing the unlocked/cleared state of every trial, prev/next steppers, recommended BPM, and the enemy composition with HP, archetype and weaknesses.",
+      "tags": ["component", "progression", "encounters", "selection"],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:src/components/EncounterBanner.tsx:EncounterBanner",
+      "type": "function",
+      "name": "EncounterBanner",
+      "filePath": "src/components/EncounterBanner.tsx",
+      "lineRange": [7, 175],
+      "summary": "Exported banner component that guards encounter selection behind isEncounterUnlocked and renders the active trial's title, status, enemy badges and tip.",
+      "tags": ["component", "progression", "selection", "gating"],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:src/components/PartyCorner.tsx",
+      "type": "file",
+      "name": "PartyCorner.tsx",
+      "filePath": "src/components/PartyCorner.tsx",
+      "summary": "Party formation panel with the chord seat, three front-row attacker seats and a scrollable deck; fighter cards move between seats by drag-and-drop.",
+      "tags": ["component", "party", "drag-and-drop", "formation", "combat"],
+      "complexity": "complex"
+    },
+    {
+      "id": "function:src/components/PartyCorner.tsx:Card",
+      "type": "function",
+      "name": "Card",
+      "filePath": "src/components/PartyCorner.tsx",
+      "lineRange": [27, 159],
+      "summary": "Draggable fighter card showing avatar, name, role, trait, HP/shield meters, an optional seat-number badge, active buffs and a take-the-lead button.",
+      "tags": ["component", "fighter-card", "drag-and-drop", "ui"],
+      "complexity": "complex"
+    },
+    {
+      "id": "function:src/components/PartyCorner.tsx:PartyCorner",
+      "type": "function",
+      "name": "PartyCorner",
+      "filePath": "src/components/PartyCorner.tsx",
+      "lineRange": [165, 318],
+      "summary": "Exported panel component owning drag-over state and roster-modal state, resolving deck membership via deckIds and committing drops through moveFighter.",
+      "tags": ["component", "party", "formation", "state-management"],
+      "complexity": "complex"
+    },
+    {
+      "id": "file:src/components/FoePanel.tsx",
+      "type": "file",
+      "name": "FoePanel.tsx",
+      "filePath": "src/components/FoePanel.tsx",
+      "summary": "Enemy roster during combat: one card per foe with avatar, HP/shield meters, ATB strike gauge, archetype, reflect/track-wipe traits, weaknesses, resists and active buffs.",
+      "tags": ["component", "combat", "enemies", "status-display"],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:src/components/FoePanel.tsx:FoePanel",
+      "type": "function",
+      "name": "FoePanel",
+      "filePath": "src/components/FoePanel.tsx",
+      "lineRange": [21, 193],
+      "summary": "Exported panel that derives alive/charging/ready-to-strike states from the fight state and renders each enemy with meters and trait pills.",
+      "tags": ["component", "combat", "enemies", "status-display"],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:src/components/GrooveMatrix.tsx",
+      "type": "file",
+      "name": "GrooveMatrix.tsx",
+      "filePath": "src/components/GrooveMatrix.tsx",
+      "summary": "The 4x4 drum groove matrix: voice columns by complexity tiers, one pad per complete 16-step clip, with bank paging and kit selection; edits queue to the next loop boundary.",
+      "tags": ["component", "drums", "groove", "grid", "combat"],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:src/components/GrooveMatrix.tsx:Sparkline",
+      "type": "function",
+      "name": "Sparkline",
+      "filePath": "src/components/GrooveMatrix.tsx",
+      "lineRange": [20, 46],
+      "summary": "Renders 16 tiny ticks giving a clip's velocity shape at a glance, accenting steps that carry a roll.",
+      "tags": ["component", "ui", "visualization", "drums"],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:src/components/GrooveMatrix.tsx:GrooveMatrix",
+      "type": "function",
+      "name": "GrooveMatrix",
+      "filePath": "src/components/GrooveMatrix.tsx",
+      "lineRange": [53, 170],
+      "summary": "Exported matrix component that previews the pending groove over the live one and exposes bank, pad and kit selection to the session store.",
+      "tags": ["component", "drums", "groove", "grid"],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:src/components/GroovePicker.tsx",
+      "type": "file",
+      "name": "GroovePicker.tsx",
+      "filePath": "src/components/GroovePicker.tsx",
+      "summary": "Studio drum-rig picker combining the groove matrix with curated ready-made rigs for the active bank, bag toggles, one-loop auditions and a swing-feel slider.",
+      "tags": ["component", "drums", "picker", "studio", "loadout"],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:src/components/GroovePicker.tsx:GroovePicker",
+      "type": "function",
+      "name": "GroovePicker",
+      "filePath": "src/components/GroovePicker.tsx",
+      "lineRange": [16, 124],
+      "summary": "Exported picker component that lists rigsForBank(view.bankId), marks equipped/pending/bagged rigs and exposes swing tweaking to the store.",
+      "tags": ["component", "drums", "picker", "loadout"],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:src/components/LoadoutBar.tsx",
+      "type": "file",
+      "name": "LoadoutBar.tsx",
+      "filePath": "src/components/LoadoutBar.tsx",
+      "summary": "In-combat card bar listing the grooves and melodies carried into the fight, with queued next-loop swaps and a control to snapshot the live loop into a new custom melody card.",
+      "tags": ["component", "loadout", "combat", "cards"],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:src/components/LoadoutBar.tsx:LoadoutBar",
+      "type": "function",
+      "name": "LoadoutBar",
+      "filePath": "src/components/LoadoutBar.tsx",
+      "lineRange": [13, 160],
+      "summary": "Exported bar that resolves bagged groove/melody ids against the available choices, queues selections, and snapshots the loop into a named custom card.",
+      "tags": ["component", "loadout", "combat", "state-management"],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:src/components/MelodyCardBar.tsx",
+      "type": "file",
+      "name": "MelodyCardBar.tsx",
+      "filePath": "src/components/MelodyCardBar.tsx",
+      "summary": "Studio melody-card rack where attackers' templates can be loaded into the grid, bagged for combat, auditioned once, deleted when custom, or saved from the live loop.",
+      "tags": ["component", "melody", "cards", "studio", "loadout"],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:src/components/MelodyCardBar.tsx:MelodyCardBar",
+      "type": "function",
+      "name": "MelodyCardBar",
+      "filePath": "src/components/MelodyCardBar.tsx",
+      "lineRange": [14, 168],
+      "summary": "Exported rack component rendering every melody card with active/pending/bagged state and wiring load, preview, bag, delete and save actions to the store.",
+      "tags": ["component", "melody", "cards", "state-management"],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:src/components/Meter.tsx",
+      "type": "file",
+      "name": "Meter.tsx",
+      "filePath": "src/components/Meter.tsx",
+      "summary": "Shared 0..100 bar meter used for HP, shields, enemy gauges and voice levels, with a caller-supplied bar class and optional overlay children.",
+      "tags": ["component", "ui", "meter", "shared"],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:src/components/Meter.tsx:Meter",
+      "type": "function",
+      "name": "Meter",
+      "filePath": "src/components/Meter.tsx",
+      "lineRange": [5, 22],
+      "summary": "Exported meter component that fills a rounded track by a percentage width and slots extra children (e.g. a shield overlay) inside the track.",
+      "tags": ["component", "ui", "meter"],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:src/components/PhaseStrip.tsx",
+      "type": "file",
+      "name": "PhaseStrip.tsx",
+      "filePath": "src/components/PhaseStrip.tsx",
+      "summary": "Chord progression strip that highlights the currently sounding bar from the global step and shows a tier-reactive aura tag with the blessing summary.",
+      "tags": ["component", "harmony", "phase", "visualization", "combat"],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:src/components/PhaseStrip.tsx:PhaseStrip",
+      "type": "function",
+      "name": "PhaseStrip",
+      "filePath": "src/components/PhaseStrip.tsx",
+      "lineRange": [7, 84],
+      "summary": "Exported strip component deriving the active bar from globalStep modulo the loop length and colouring the strip by the progression's craft tier.",
+      "tags": ["component", "harmony", "visualization"],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:src/components/QtePanel.tsx",
+      "type": "file",
+      "name": "QtePanel.tsx",
+      "filePath": "src/components/QtePanel.tsx",
+      "summary": "Rhythm QTE panel rendering the falling-note highway and receptor row for chord swaps, bottled recalls and enemy parries, with judgement popups, combo/accuracy readouts and miss/telegraph SFX.",
+      "tags": ["component", "qte", "rhythm", "combat", "animation"],
+      "complexity": "complex"
+    },
+    {
+      "id": "function:src/components/QtePanel.tsx:ratingMeta",
+      "type": "function",
+      "name": "ratingMeta",
+      "filePath": "src/components/QtePanel.tsx",
+      "lineRange": [105, 116],
+      "summary": "Maps a hit rating (sick/good/bad/other) to its display text and glow class used by the judgement popup.",
+      "tags": ["utility", "qte", "formatting"],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:src/components/QtePanel.tsx:ActiveHighway",
+      "type": "function",
+      "name": "ActiveHighway",
+      "filePath": "src/components/QtePanel.tsx",
+      "lineRange": [119, 205],
+      "summary": "Smooth falling-note highway that owns the panel's only 60fps state, positioning hold tails and note glyphs from the playhead and culling notes outside the lookahead window.",
+      "tags": ["component", "qte", "animation", "performance"],
+      "complexity": "complex",
+      "languageNotes": "Lookahead is expressed in wall-clock ms and converted to steps so the chart feels identical at any tempo."
+    },
+    {
+      "id": "function:src/components/QtePanel.tsx:StandbyHighway",
+      "type": "function",
+      "name": "StandbyHighway",
+      "filePath": "src/components/QtePanel.tsx",
+      "lineRange": [207, 234],
+      "summary": "Idle highway shown when no chart is open: four pulsing receptor ghosts plus a threat line naming the foe gathering an attack.",
+      "tags": ["component", "qte", "placeholder"],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:src/components/QtePanel.tsx:ReceptorRow",
+      "type": "function",
+      "name": "ReceptorRow",
+      "filePath": "src/components/QtePanel.tsx",
+      "lineRange": [245, 347],
+      "summary": "Always-mounted bottom receptor row that flashes keys locally on press and taps, and overlays the engine-rated judgement popup with combo multiplier.",
+      "tags": ["component", "qte", "input", "animation"],
+      "complexity": "complex"
+    },
+    {
+      "id": "function:src/components/QtePanel.tsx:QtePanel",
+      "type": "function",
+      "name": "QtePanel",
+      "filePath": "src/components/QtePanel.tsx",
+      "lineRange": [349, 488],
+      "summary": "Exported panel that selects WASD or ZXCV lanes from the active QTE kind, fires miss and telegraph audio, computes the threat label and forwards presses to the store.",
+      "tags": ["component", "qte", "combat", "event-handler"],
+      "complexity": "complex"
+    },
+    {
+      "id": "file:src/components/RosterSelectModal.tsx",
+      "type": "file",
+      "name": "RosterSelectModal.tsx",
+      "filePath": "src/components/RosterSelectModal.tsx",
+      "summary": "Full-screen roster dialog for assembling the three-member party: staged slots, instrument filter, character cards with element badges/traits/lore, and a confirm-formation action.",
+      "tags": ["component", "roster", "dialog", "party", "selection"],
+      "complexity": "complex"
+    },
+    {
+      "id": "function:src/components/RosterSelectModal.tsx:RosterSelectModal",
+      "type": "function",
+      "name": "RosterSelectModal",
+      "filePath": "src/components/RosterSelectModal.tsx",
+      "lineRange": [26, 243],
+      "summary": "Exported dialog that stages party picks locally, swaps a re-selected character out of its other slot, auto-advances the active slot, and commits on confirm.",
+      "tags": ["component", "roster", "dialog", "state-management"],
+      "complexity": "complex"
+    },
+    {
+      "id": "file:src/components/StepGrid.tsx",
+      "type": "file",
+      "name": "StepGrid.tsx",
+      "filePath": "src/components/StepGrid.tsx",
+      "summary": "Per-lane 16-step melody sequencer grid showing note spans, playhead and potency fading, letting the player toggle note onsets in each front-row attacker's track.",
+      "tags": ["component", "sequencer", "melody", "grid", "combat"],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:src/components/StepGrid.tsx:StepGrid",
+      "type": "function",
+      "name": "StepGrid",
+      "filePath": "src/components/StepGrid.tsx",
+      "lineRange": [18, 155],
+      "summary": "Exported grid component resolving the recording lane via performSlot and rendering note buttons whose opacity reflects the loop's potency decay.",
+      "tags": ["component", "sequencer", "grid", "editor"],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:src/components/TransportBar.tsx",
+      "type": "file",
+      "name": "TransportBar.tsx",
+      "filePath": "src/components/TransportBar.tsx",
+      "summary": "Transport controls: play/halt, reset, BPM slider and the key selector that is locked to the fight key while playing and otherwise sets or randomizes the next fight's key.",
+      "tags": ["component", "transport", "controls", "music"],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:src/components/TransportBar.tsx:TransportBar",
+      "type": "function",
+      "name": "TransportBar",
+      "filePath": "src/components/TransportBar.tsx",
+      "lineRange": [5, 77],
+      "summary": "Exported transport component that disables key controls mid-fight and highlights the locked combat key or the picked next-fight key.",
+      "tags": ["component", "transport", "controls"],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:src/components/TutorialModal.tsx",
+      "type": "file",
+      "name": "TutorialModal.tsx",
+      "filePath": "src/components/TutorialModal.tsx",
+      "summary": "Field-guide modal with four paged tutorial steps (combat rhythm, harmony and blessings, ATB/parry QTE, party roles) driven by a static STEPS array.",
+      "tags": ["component", "tutorial", "dialog", "onboarding"],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:src/components/TutorialModal.tsx:TutorialModal",
+      "type": "function",
+      "name": "TutorialModal",
+      "filePath": "src/components/TutorialModal.tsx",
+      "lineRange": [69, 191],
+      "summary": "Exported modal component paging through the guide with step dots, bullet lists and previous/next controls, returning null while closed.",
+      "tags": ["component", "tutorial", "dialog"],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:src/components/VoiceBar.tsx",
+      "type": "file",
+      "name": "VoiceBar.tsx",
+      "filePath": "src/components/VoiceBar.tsx",
+      "summary": "Read-only loop status line that explains why WASD is dead: stopped transport, captured input focus, an open chart, no living attacker, or a silent loop.",
+      "tags": ["component", "status", "combat", "accessibility"],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:src/components/VoiceBar.tsx:useTypingFocus",
+      "type": "function",
+      "name": "useTypingFocus",
+      "filePath": "src/components/VoiceBar.tsx",
+      "lineRange": [7, 27],
+      "summary": "Hook that tracks whether keyboard focus sits inside an INPUT or TEXTAREA by listening to focusin/focusout on the window.",
+      "tags": ["hook", "event-handler", "input", "focus"],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:src/components/VoiceBar.tsx:VoiceBar",
+      "type": "function",
+      "name": "VoiceBar",
+      "filePath": "src/components/VoiceBar.tsx",
+      "lineRange": [33, 73],
+      "summary": "Exported status component that combines fight outcome, playing state, typing focus, open chart and onset counts into a single human-readable sentence.",
+      "tags": ["component", "status", "combat"],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:src/components/screens/CombatScreen.tsx",
+      "type": "file",
+      "name": "CombatScreen.tsx",
+      "filePath": "src/components/screens/CombatScreen.tsx",
+      "summary": "Combat arena layout that composes the enemy panel, combat log, phase strip, groove matrix, step grid, voice bar, loadout bar, QTE panel and party corner around a three-column stage with a modulate dialog.",
+      "tags": ["component", "screen", "combat", "layout", "composition"],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:src/components/screens/CombatScreen.tsx:CombatScreen",
+      "type": "function",
+      "name": "CombatScreen",
+      "filePath": "src/components/screens/CombatScreen.tsx",
+      "lineRange": [24, 116],
+      "summary": "Exported screen component showing the locked fight key and tempo header, the three-column combat stage and the mid-fight chord-modulation dialog.",
+      "tags": ["component", "screen", "combat", "composition"],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:src/components/screens/MenuScreen.tsx",
+      "type": "file",
+      "name": "MenuScreen.tsx",
+      "filePath": "src/components/screens/MenuScreen.tsx",
+      "summary": "Title screen that awakens audio on first gesture, offers a WASD-degree harmony audition pad, previews encounter selection and opens the field guide before starting.",
+      "tags": ["component", "screen", "menu", "onboarding", "audio"],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:src/components/screens/MenuScreen.tsx:MenuScreen",
+      "type": "function",
+      "name": "MenuScreen",
+      "filePath": "src/components/screens/MenuScreen.tsx",
+      "lineRange": [10, 140],
+      "summary": "Exported menu component that initializes voices on user gesture, auditions scale degrees through the preview voices, and gates encounter options on clear progress.",
+      "tags": ["component", "screen", "menu", "audio"],
+      "complexity": "moderate"
+    }
+  ],
+  "edges": [
+    {
+      "source": "file:@/components/ui/progress.tsx",
+      "target": "function:@/components/ui/progress.tsx:Progress",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:@/components/ui/progress.tsx",
+      "target": "function:@/components/ui/progress.tsx:Progress",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/App.tsx",
+      "target": "function:src/App.tsx:App",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:src/App.tsx",
+      "target": "function:src/App.tsx:App",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/App.tsx",
+      "target": "file:src/components/screens/MenuScreen.tsx",
+      "type": "depends_on",
+      "direction": "forward",
+      "weight": 0.6
+    },
+    {
+      "source": "file:src/App.tsx",
+      "target": "file:src/components/screens/CombatScreen.tsx",
+      "type": "depends_on",
+      "direction": "forward",
+      "weight": 0.6
+    },
+    {
+      "source": "file:src/components/CardPreviewButton.tsx",
+      "target": "function:src/components/CardPreviewButton.tsx:CardPreviewButton",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:src/components/CardPreviewButton.tsx",
+      "target": "function:src/components/CardPreviewButton.tsx:CardPreviewButton",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/components/ChordPicker.tsx",
+      "target": "function:src/components/ChordPicker.tsx:chordLabel",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:src/components/ChordPicker.tsx",
+      "target": "function:src/components/ChordPicker.tsx:ChordPicker",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:src/components/ChordPicker.tsx",
+      "target": "function:src/components/ChordPicker.tsx:ChordPicker",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:src/components/ChordPicker.tsx:ChordPicker",
+      "target": "function:src/components/ChordPicker.tsx:chordLabel",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/components/ChordPicker.tsx",
+      "target": "file:src/components/CustomChordBuilder.tsx",
+      "type": "depends_on",
+      "direction": "forward",
+      "weight": 0.6
+    },
+    {
+      "source": "file:src/components/CombatFeedback.tsx",
+      "target": "function:src/components/CombatFeedback.tsx:CombatFeedback",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:src/components/CombatFeedback.tsx",
+      "target": "function:src/components/CombatFeedback.tsx:CombatFeedback",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/components/CombatLog.tsx",
+      "target": "function:src/components/CombatLog.tsx:CombatLog",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:src/components/CombatLog.tsx",
+      "target": "function:src/components/CombatLog.tsx:CombatLog",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/components/CustomChordBuilder.tsx",
+      "target": "function:src/components/CustomChordBuilder.tsx:MetricBar",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:src/components/CustomChordBuilder.tsx",
+      "target": "function:src/components/CustomChordBuilder.tsx:CustomChordBuilder",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:src/components/CustomChordBuilder.tsx",
+      "target": "function:src/components/CustomChordBuilder.tsx:CustomChordBuilder",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:src/components/CustomChordBuilder.tsx:CustomChordBuilder",
+      "target": "function:src/components/CustomChordBuilder.tsx:MetricBar",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/components/EncounterBanner.tsx",
+      "target": "function:src/components/EncounterBanner.tsx:EncounterBanner",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:src/components/EncounterBanner.tsx",
+      "target": "function:src/components/EncounterBanner.tsx:EncounterBanner",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/components/FoePanel.tsx",
+      "target": "function:src/components/FoePanel.tsx:FoePanel",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:src/components/FoePanel.tsx",
+      "target": "function:src/components/FoePanel.tsx:FoePanel",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/components/FoePanel.tsx",
+      "target": "file:src/components/Meter.tsx",
+      "type": "depends_on",
+      "direction": "forward",
+      "weight": 0.6
+    },
+    {
+      "source": "file:src/components/GrooveMatrix.tsx",
+      "target": "function:src/components/GrooveMatrix.tsx:Sparkline",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:src/components/GrooveMatrix.tsx",
+      "target": "function:src/components/GrooveMatrix.tsx:GrooveMatrix",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:src/components/GrooveMatrix.tsx",
+      "target": "function:src/components/GrooveMatrix.tsx:GrooveMatrix",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:src/components/GrooveMatrix.tsx:GrooveMatrix",
+      "target": "function:src/components/GrooveMatrix.tsx:Sparkline",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/components/GroovePicker.tsx",
+      "target": "function:src/components/GroovePicker.tsx:GroovePicker",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:src/components/GroovePicker.tsx",
+      "target": "function:src/components/GroovePicker.tsx:GroovePicker",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/components/GroovePicker.tsx",
+      "target": "file:src/components/GrooveMatrix.tsx",
+      "type": "depends_on",
+      "direction": "forward",
+      "weight": 0.6
+    },
+    {
+      "source": "file:src/components/GroovePicker.tsx",
+      "target": "file:src/components/CardPreviewButton.tsx",
+      "type": "depends_on",
+      "direction": "forward",
+      "weight": 0.6
+    },
+    {
+      "source": "file:src/components/LoadoutBar.tsx",
+      "target": "function:src/components/LoadoutBar.tsx:LoadoutBar",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:src/components/LoadoutBar.tsx",
+      "target": "function:src/components/LoadoutBar.tsx:LoadoutBar",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/components/LoadoutBar.tsx",
+      "target": "file:src/components/CardPreviewButton.tsx",
+      "type": "depends_on",
+      "direction": "forward",
+      "weight": 0.6
+    },
+    {
+      "source": "file:src/components/MelodyCardBar.tsx",
+      "target": "function:src/components/MelodyCardBar.tsx:MelodyCardBar",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:src/components/MelodyCardBar.tsx",
+      "target": "function:src/components/MelodyCardBar.tsx:MelodyCardBar",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/components/MelodyCardBar.tsx",
+      "target": "file:src/components/CardPreviewButton.tsx",
+      "type": "depends_on",
+      "direction": "forward",
+      "weight": 0.6
+    },
+    {
+      "source": "file:src/components/Meter.tsx",
+      "target": "function:src/components/Meter.tsx:Meter",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:src/components/Meter.tsx",
+      "target": "function:src/components/Meter.tsx:Meter",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/components/PartyCorner.tsx",
+      "target": "function:src/components/PartyCorner.tsx:Card",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:src/components/PartyCorner.tsx",
+      "target": "function:src/components/PartyCorner.tsx:PartyCorner",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:src/components/PartyCorner.tsx",
+      "target": "function:src/components/PartyCorner.tsx:PartyCorner",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:src/components/PartyCorner.tsx:PartyCorner",
+      "target": "function:src/components/PartyCorner.tsx:Card",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/components/PartyCorner.tsx",
+      "target": "file:src/components/Meter.tsx",
+      "type": "depends_on",
+      "direction": "forward",
+      "weight": 0.6
+    },
+    {
+      "source": "file:src/components/PartyCorner.tsx",
+      "target": "file:src/components/RosterSelectModal.tsx",
+      "type": "depends_on",
+      "direction": "forward",
+      "weight": 0.6
+    },
+    {
+      "source": "file:src/components/PhaseStrip.tsx",
+      "target": "function:src/components/PhaseStrip.tsx:PhaseStrip",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:src/components/PhaseStrip.tsx",
+      "target": "function:src/components/PhaseStrip.tsx:PhaseStrip",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/components/QtePanel.tsx",
+      "target": "function:src/components/QtePanel.tsx:ratingMeta",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:src/components/QtePanel.tsx",
+      "target": "function:src/components/QtePanel.tsx:ActiveHighway",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:src/components/QtePanel.tsx",
+      "target": "function:src/components/QtePanel.tsx:StandbyHighway",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:src/components/QtePanel.tsx",
+      "target": "function:src/components/QtePanel.tsx:ReceptorRow",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:src/components/QtePanel.tsx",
+      "target": "function:src/components/QtePanel.tsx:QtePanel",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:src/components/QtePanel.tsx",
+      "target": "function:src/components/QtePanel.tsx:QtePanel",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:src/components/QtePanel.tsx:QtePanel",
+      "target": "function:src/components/QtePanel.tsx:ActiveHighway",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:src/components/QtePanel.tsx:QtePanel",
+      "target": "function:src/components/QtePanel.tsx:StandbyHighway",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:src/components/QtePanel.tsx:QtePanel",
+      "target": "function:src/components/QtePanel.tsx:ReceptorRow",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:src/components/QtePanel.tsx:ReceptorRow",
+      "target": "function:src/components/QtePanel.tsx:ratingMeta",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/components/RosterSelectModal.tsx",
+      "target": "function:src/components/RosterSelectModal.tsx:RosterSelectModal",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:src/components/RosterSelectModal.tsx",
+      "target": "function:src/components/RosterSelectModal.tsx:RosterSelectModal",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/components/StepGrid.tsx",
+      "target": "function:src/components/StepGrid.tsx:StepGrid",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:src/components/StepGrid.tsx",
+      "target": "function:src/components/StepGrid.tsx:StepGrid",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/components/StepGrid.tsx",
+      "target": "file:src/components/CardPreviewButton.tsx",
+      "type": "depends_on",
+      "direction": "forward",
+      "weight": 0.6
+    },
+    {
+      "source": "file:src/components/TransportBar.tsx",
+      "target": "function:src/components/TransportBar.tsx:TransportBar",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:src/components/TransportBar.tsx",
+      "target": "function:src/components/TransportBar.tsx:TransportBar",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/components/TutorialModal.tsx",
+      "target": "function:src/components/TutorialModal.tsx:TutorialModal",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:src/components/TutorialModal.tsx",
+      "target": "function:src/components/TutorialModal.tsx:TutorialModal",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/components/VoiceBar.tsx",
+      "target": "function:src/components/VoiceBar.tsx:useTypingFocus",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:src/components/VoiceBar.tsx",
+      "target": "function:src/components/VoiceBar.tsx:VoiceBar",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:src/components/VoiceBar.tsx",
+      "target": "function:src/components/VoiceBar.tsx:VoiceBar",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:src/components/VoiceBar.tsx:VoiceBar",
+      "target": "function:src/components/VoiceBar.tsx:useTypingFocus",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/components/screens/CombatScreen.tsx",
+      "target": "function:src/components/screens/CombatScreen.tsx:CombatScreen",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:src/components/screens/CombatScreen.tsx",
+      "target": "function:src/components/screens/CombatScreen.tsx:CombatScreen",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/components/screens/CombatScreen.tsx",
+      "target": "file:src/components/FoePanel.tsx",
+      "type": "depends_on",
+      "direction": "forward",
+      "weight": 0.6
+    },
+    {
+      "source": "file:src/components/screens/CombatScreen.tsx",
+      "target": "file:src/components/CombatLog.tsx",
+      "type": "depends_on",
+      "direction": "forward",
+      "weight": 0.6
+    },
+    {
+      "source": "file:src/components/screens/CombatScreen.tsx",
+      "target": "file:src/components/CombatFeedback.tsx",
+      "type": "depends_on",
+      "direction": "forward",
+      "weight": 0.6
+    },
+    {
+      "source": "file:src/components/screens/CombatScreen.tsx",
+      "target": "file:src/components/PhaseStrip.tsx",
+      "type": "depends_on",
+      "direction": "forward",
+      "weight": 0.6
+    },
+    {
+      "source": "file:src/components/screens/CombatScreen.tsx",
+      "target": "file:src/components/ChordPicker.tsx",
+      "type": "depends_on",
+      "direction": "forward",
+      "weight": 0.6
+    },
+    {
+      "source": "file:src/components/screens/CombatScreen.tsx",
+      "target": "file:src/components/GrooveMatrix.tsx",
+      "type": "depends_on",
+      "direction": "forward",
+      "weight": 0.6
+    },
+    {
+      "source": "file:src/components/screens/CombatScreen.tsx",
+      "target": "file:src/components/StepGrid.tsx",
+      "type": "depends_on",
+      "direction": "forward",
+      "weight": 0.6
+    },
+    {
+      "source": "file:src/components/screens/CombatScreen.tsx",
+      "target": "file:src/components/VoiceBar.tsx",
+      "type": "depends_on",
+      "direction": "forward",
+      "weight": 0.6
+    },
+    {
+      "source": "file:src/components/screens/CombatScreen.tsx",
+      "target": "file:src/components/LoadoutBar.tsx",
+      "type": "depends_on",
+      "direction": "forward",
+      "weight": 0.6
+    },
+    {
+      "source": "file:src/components/screens/CombatScreen.tsx",
+      "target": "file:src/components/QtePanel.tsx",
+      "type": "depends_on",
+      "direction": "forward",
+      "weight": 0.6
+    },
+    {
+      "source": "file:src/components/screens/CombatScreen.tsx",
+      "target": "file:src/components/PartyCorner.tsx",
+      "type": "depends_on",
+      "direction": "forward",
+      "weight": 0.6
+    },
+    {
+      "source": "file:src/components/screens/MenuScreen.tsx",
+      "target": "function:src/components/screens/MenuScreen.tsx:MenuScreen",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:src/components/screens/MenuScreen.tsx",
+      "target": "function:src/components/screens/MenuScreen.tsx:MenuScreen",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/components/screens/MenuScreen.tsx",
+      "target": "file:src/components/TutorialModal.tsx",
+      "type": "depends_on",
+      "direction": "forward",
+      "weight": 0.6
+    }
+  ]
+}
