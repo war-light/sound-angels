@@ -11,6 +11,22 @@ export default defineConfig({
       '@': path.resolve(import.meta.dirname, './src'),
     },
   },
+  server: {
+    watch: {
+      usePolling: true,
+      interval: 300,
+      ignored: [
+        '**/.ua/**',
+        '**/graphify-out/**',
+        '**/@/**',
+        '**/.git/**',
+        '**/node_modules/**',
+        '**/dist/**',
+        '**/logs/**',
+        '**/*.log',
+      ],
+    },
+  },
   test: {
     environment: 'jsdom',
     setupFiles: './src/test/setup.ts',

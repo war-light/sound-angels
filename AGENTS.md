@@ -34,4 +34,5 @@ Vite + React 19 + TS + Tailwind v4 + shadcn (`new-york/neutral`) + Zustand + Ton
 
 ## Graphify
 
-- Check the graph before answering codebase questions and rebuild after code changes
+- Check the graph before answering codebase questions: `graphify query "<question>"` (scoped), `GRAPH_REPORT.md` only for broad architecture.
+- After code changes rebuild with `graphify update .` (code-only, no LLM). Do not run `/graphify --update` (semantic, uses model quota) unless asked.
